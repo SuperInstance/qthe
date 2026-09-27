@@ -37,9 +37,18 @@
 //       occupant each), but live reads (R2) keep same-slot twins mutually
 //       audible. A cell never resonates with its OWN write (guard:
 //       different (x,y) AND resonance != 0).
-//   R5  makeSubstrate/tick carry the grid dimensions and the persistent
-//       wormhole table as named properties on the Uint8Array (w, h, ticks,
-//       __wormholes). Serialize state with traceView(), not JSON.stringify.
+//   R5  makeSubstrate/tick carry the grid dimensions, tick counter, the
+//       persistent wormhole table and a self-readback shim as named
+//       properties on the Uint8Array (w, h, ticks, __wormholes, bytes).
+//       `bytes` points at the substrate itself: the field lane's frozen
+//       bytePlane() contract reads sub.bytes. Serialize state with
+//       traceView(), not JSON.stringify (the expandos stay out of it).
+//   R6  CROSS-LANE CONTRACT (frozen by lane 33-b's pre_registration.json
+//       BEFORE this kernel landed — the newcomer fits the earlier record):
+//       seedFn(x, y, i) — x first, index optional third; tick(sub, opts)
+//       MUTATES the substrate in place AND returns it (callers may reassign
+//       or not). Neighbors always come from the pre-tick snapshot, so
+//       in-place update stays synchronous-exact.
 //
 // Stone law: a receipt without a chain is a rumor. Tests seal G1-G6 into
 // tests/receipts.jsonl (stone-v1) with observed numbers; honest FAILs stay.
@@ -143,9 +152,10 @@ export function makeSubstrate(w, h, seedFn) {
   const cells = new Uint8Array(w * h);
   let i = 0;
   for (let y = 0; y < h; y++) {
-    for (let x = 0; x < w; x++, i++) cells[i] = seedFn(i, x, y) & 0xff;
+    for (let x = 0; x < w; x++, i++) cells[i] = seedFn(x, y, i) & 0xff;
   }
   cells.w = w; cells.h = h; cells.ticks = 0; cells.__wormholes = undefined;
+  cells.bytes = cells;   // frozen field-lane bytePlane() contract (R6)
   return cells;
 }
 
@@ -159,14 +169,15 @@ export function nextD(d, pressure) {
   return d;
 }
 
-// One synchronous Moore-8 tick (toroidal, R1). opts:
+// One synchronous Moore-8 tick (toroidal, R1). MUTATES the substrate in
+// place and returns it (R6, the field lane's frozen contract); neighbors are
+// read from a pre-tick snapshot so the update stays synchronous-exact. opts:
 //   wormholes : true (default) — Abstain cells read/write the table
 //               false — the table is never touched (paired-arm OFF arm, G6)
 //   table     : a persistent WormholeTable; default = the substrate's own
 //               lazy table (cells.__wormholes), created on first use
 //   sigma     : override the bridge scale for this tick (C3 sweeps)
-// Returns the NEXT substrate (fresh Uint8Array; dims/ticks/table ride along).
-// Wormhole twin hits are emitted as events:
+// Returns the SAME substrate, advanced one tick (dims/ticks/table ride along). Wormhole twin hits are emitted as events:
 //   { kind:'twin', x, y, slot, resonance, term }  (term = resonance * sigma)
 export function tick(cells, opts = {}) {
   const w = cells.w, h = cells.h;
@@ -178,27 +189,29 @@ export function tick(cells, opts = {}) {
   }
   const sigma = opts.sigma !== undefined ? opts.sigma : (table ? table.sigma : DEFAULT_SIGMA);
   const n = w * h;
-  const next = new Uint8Array(n);
+  const snap = cells.__scratch instanceof Uint8Array && cells.__scratch.length === n
+    ? cells.__scratch : (cells.__scratch = new Uint8Array(n));
+  snap.set(cells);                                  // pre-tick neighbor snapshot
   const events = [];
 
   for (let y = 0; y < h; y++) {
     const yUp = (y + h - 1) % h, yDn = (y + 1) % h;
     for (let x = 0; x < w; x++) {
       const i = y * w + x;
-      const c = cells[i];
+      const c = snap[i];
       const tau = c >> 6, d = c & D_MAX;
 
       // real accumulator over Moore-8 (pre-tick grid, R2): Attract +d, Repel -d
       const xL = (x + w - 1) % w, xR = (x + 1) % w;
       let acc = 0;
-      let nb = cells[yUp * w + xL]; if ((nb >> 6) === 1) acc += nb & D_MAX; else if ((nb >> 6) === 2) acc -= nb & D_MAX;
-      nb = cells[yUp * w + x];      if ((nb >> 6) === 1) acc += nb & D_MAX; else if ((nb >> 6) === 2) acc -= nb & D_MAX;
-      nb = cells[yUp * w + xR];     if ((nb >> 6) === 1) acc += nb & D_MAX; else if ((nb >> 6) === 2) acc -= nb & D_MAX;
-      nb = cells[y * w + xL];       if ((nb >> 6) === 1) acc += nb & D_MAX; else if ((nb >> 6) === 2) acc -= nb & D_MAX;
-      nb = cells[y * w + xR];       if ((nb >> 6) === 1) acc += nb & D_MAX; else if ((nb >> 6) === 2) acc -= nb & D_MAX;
-      nb = cells[yDn * w + xL];     if ((nb >> 6) === 1) acc += nb & D_MAX; else if ((nb >> 6) === 2) acc -= nb & D_MAX;
-      nb = cells[yDn * w + x];      if ((nb >> 6) === 1) acc += nb & D_MAX; else if ((nb >> 6) === 2) acc -= nb & D_MAX;
-      nb = cells[yDn * w + xR];     if ((nb >> 6) === 1) acc += nb & D_MAX; else if ((nb >> 6) === 2) acc -= nb & D_MAX;
+      let nb = snap[yUp * w + xL]; if ((nb >> 6) === 1) acc += nb & D_MAX; else if ((nb >> 6) === 2) acc -= nb & D_MAX;
+      nb = snap[yUp * w + x];      if ((nb >> 6) === 1) acc += nb & D_MAX; else if ((nb >> 6) === 2) acc -= nb & D_MAX;
+      nb = snap[yUp * w + xR];     if ((nb >> 6) === 1) acc += nb & D_MAX; else if ((nb >> 6) === 2) acc -= nb & D_MAX;
+      nb = snap[y * w + xL];       if ((nb >> 6) === 1) acc += nb & D_MAX; else if ((nb >> 6) === 2) acc -= nb & D_MAX;
+      nb = snap[y * w + xR];       if ((nb >> 6) === 1) acc += nb & D_MAX; else if ((nb >> 6) === 2) acc -= nb & D_MAX;
+      nb = snap[yDn * w + xL];     if ((nb >> 6) === 1) acc += nb & D_MAX; else if ((nb >> 6) === 2) acc -= nb & D_MAX;
+      nb = snap[yDn * w + x];      if ((nb >> 6) === 1) acc += nb & D_MAX; else if ((nb >> 6) === 2) acc -= nb & D_MAX;
+      nb = snap[yDn * w + xR];     if ((nb >> 6) === 1) acc += nb & D_MAX; else if ((nb >> 6) === 2) acc -= nb & D_MAX;
 
       let pressure = acc;
       if (tau === 3 && wormholes) {
@@ -210,20 +223,20 @@ export function tick(cells, opts = {}) {
         }
         table.write(d, x, y, Math.abs(acc) + 1);      // write for the next tick
       }
-      next[i] = (tau << 6) | nextD(d, pressure);
+      cells[i] = (tau << 6) | nextD(d, pressure);   // in place (R6); tau frozen
     }
   }
-  next.w = w; next.h = h;
-  next.ticks = (cells.ticks | 0) + 1;
-  next.__wormholes = wormholes ? table : cells.__wormholes;
-  next.lastEvents = events;
-  return next;
+  cells.ticks = (cells.ticks | 0) + 1;
+  cells.__wormholes = wormholes ? table : cells.__wormholes;
+  cells.lastEvents = events;
+  return cells;
 }
 
 // ── telemetry & seeded randomness (callers only, never tick) ───────────────
 
 // Canonical JSON-able view of substrate + table + this tick's events — the
-// thing G3/G6 hash and the A2UI HUD displays. bytes Are copied by value.
+// thing G3/G6 hash and the A2UI HUD displays. Cells are copied by value; the
+// expandos (w/h/ticks/bytes/__scratch/__) never enter the view.
 export function traceView(cells, events) {
   const table = cells.__wormholes instanceof WormholeTable ? cells.__wormholes : null;
   return {
