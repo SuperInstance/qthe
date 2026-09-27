@@ -1,0 +1,135 @@
+{
+ "receipt": "E-Q10 REGISTRATION + PREDICTIONS — the tavern round-9 keyed session (task 45-b, lane eq10-executor). Sealed BEFORE any LLM call of this lane (zero deepseek wire requests at seal time; the only prior round-9 rows on disk are the wave-39-e fail-closed attempts, attempted:false, /bin/bash.00 spend) and BEFORE any E-Q10 kernel tick (none exist). Pricing-first law: this file and the runner were committed together PRE-RUN; git history is the witness.",
+ "name_law": "Registered id: E-Q10 — the GUEST-OWNED next lever of the E-Q series. The repo names no experiment E-Q10: situations/eq9_deep_trace_registration.json name_law states the E-Q* lever numbering belongs to the tavern guest (E-Q9 was the guest round-8 registered lever; the wave-41 informal nickname E-Q10-seed-ordering DIES there and stays dead). The repo deepseek-gated E-Q10 in exactly one sense: the guest had no key (wave-39-e fail-closed rows, situations/guest_rows_r9.jsonl), so the round-9 seat could not speak. DISCLOSED CHOICE: E-Q10 is therefore registered here as the lever the guest returns in the round-9 keyed session (next_lever, r6 contract field) — or, if the guest returns null, the clearest falsifiable lever in the reasoner key_points, numbered E-Q10 by the fleet with this disclosure. No fleet-invented question: every candidate lever below traces to a sealed guest/reasoner sentence receipted in situations/guest_rows_r9_keyed.jsonl.",
+ "what_runs": {
+  "experiment": "TAVERN ROUND NINE, keyed — the repo own registered next step (cache_economics_r9.json budget max_calls 9 planned 7; r9_prefix_asset.txt = the reasoner OWN prefix asset; guest arm on the r6 sealed asset). Two arms:",
+  "guest_arm": "3 rows r9-q1..q3 on the r6 SEALED ASSET sha 777938e2e... (5025 chars, embedded in situations/deepseek_guest_r6.mjs, byte-verified at runtime, never edited), model requested deepseek-chat (r6-r8 precedent: served deepseek-flash), temperature 0.3/0.6/0.3, max_tokens 1000/1200/800.",
+  "reasoner_arm": "3 slots on the R9 REASONER OWN PREFIX ASSET sha 3ccb796a... (situations/r9_prefix_asset.txt, 2808 bytes, byte-identical across slots), model requested deepseek-reasoner, temperature omitted (r8 precedent), max_tokens 2000 (task hard cap). This IS the registered 3-call curve: slot 1 cold, slots 2-3 warm (r8 precedent 0/640/640/640 of 867 prompt tokens on the 2492-char r8 asset).",
+  "cold_sanity_arm": "NOT RUN — the task hard wire budget (8) is fully consumed by the two registered arms; receipted as a budget decision, not an omission.",
+  "disclosure_lost_runner": "The original round-9 runner (scripts/39e-round9-run.mjs, sealed_by of the fail-closed mirror) is NOT present in this environment; the r9-q1..q3 user turns are therefore REGISTERED HERE VERBATIM (generated from the runner scripts/45b-round9-run.mjs so the two cannot drift). The sealed assets (both prefixes), the output contracts, the budget, and the AS-SAID law are the repo own and are honored byte-exact.",
+  "endpoint": "POST https://api.deepseek.com/chat/completions, Authorization: Bearer $DEEPSEEK_API_KEY (runtime env only)",
+  "budget": "HARD 8 wire requests (task law). Planned 6 (3 guest + 3 reasoner). A failed call may be retried AT MOST ONCE within the remaining wire budget. max_tokens <= 2000 every call.",
+  "key_law": "DEEPSEEK_API_KEY lives only in process env / /home/z/my-project/.env parsed at runtime. Never printed, logged, receipted, or committed. no_leak_scan (literal key + sk- shape) runs on every written file before exit; a leak LOUD-deletes and exits nonzero.",
+  "receipts_layout": "situations/guest_rows_r9_keyed.jsonl (append+flush per row, resume-safe by call_id, content_raw verbatim AS SAID, per-call usage + cache telemetry); situations/raw_r9_keyed/<call_id>.json (raw API response bodies, response-side only); situations/cache_economics_r9_keyed.json (curve totals, price basis, budget receipt)."
+ },
+ "reachable_set_floor_wave44c": {
+  "statement": "Wave-44 law adopted: a target may only be registered if it is INSIDE the quantizer reachable set — for the LLM phase, the quantizer is the sealed output contract + the API wire, and no prediction may be scored against an output the contract cannot produce.",
+  "operationalization": [
+   "Guest predictions score only against the r6 contract reachable set: ONE strict JSON object with question_id (string), verdict (string), key_points (2-4 strings), residual_risks (0-3 strings), next_lever ({title, why, cheapest_decisive_run} | null). Round-8 precedent: the guest adds turn-invited extras (moved, stance_delta, eq9_candidate) — extras are IN-set only when the registered user turn explicitly invites them (q1 invites moved/stance_delta; q2 works through next_lever; no other extras are scored).",
+   "Reasoner predictions score only against the r9 contract reachable set: question_id, verdict (<=3 sentences), key_points (2-4), residual_risks (0-3). The r9 contract has NO next_lever field: a lever extracted from reasoner key_points is an OUT-OF-BAND extraction registered as such (Q7 secondary source), never scored as a contract field.",
+   "Cache-curve predictions are integers in [0, prompt_tokens] only (API-reachable range).",
+   "No prediction references a served-model name as a target (served model is the wire own choice, r7-r8 precedent: reasoner-requested served flash)."
+  ],
+  "kernel_phase": "The E-Q10 KERNEL phase (if the sealed lever names a measurable) inherits the E-Q9 floors BY REFERENCE before any tick: census recompute sha 552d171c asserted in-run, sigmaToFixed door asserted per arm sigma, EQ9-D1 byte-identical doubling, E-Q9 extended taxonomy with zero-UNEXPLAINED bar, families restricted to the registered census space (n<=252 dd<=253 gcd=1 stable set or explicitly receipted out-of-scope). A lever target outside that reachable set is rewritten AS A REGISTERED AMENDMENT (addition-only) or receipted as NOT RUN — never silently reinterpreted.",
+  "moth_law": "If (and only if) the sealed lever needs randomized sampling or an ordering, the seed source is the moth whitening recipe VERBATIM (situations/eq9_deep_trace_registration.json whitener block; module in-repo experiments/moth_client.mjs): raw bits receipted AS RUN (job id, raw sha, never used raw), von Neumann + byte-pack + SHA-256 counter stream, whitened seed sha receipted; lane budget max 2 jobs, fail-closed to honest FAIL. If the lever needs no randomness, zero moth jobs are spent — receipted."
+ },
+ "predictions": {
+  "Q1_all_calls_seal": {
+   "claim": "All 6 planned calls return HTTP 200 with a served model and content that parses under the declared extractor (direct / fence-strip / brace-extract / first-object / brace-close).",
+   "p": 0.9
+  },
+  "Q2_guest_next_lever_nonnull": {
+   "claim": "Guest r9-q2 returns next_lever non-null with title, why, and cheapest_decisive_run all non-empty strings (the round-8 q2 precedent: eq9_candidate landed in exactly this shape).",
+   "p": 0.8
+  },
+  "Q3_question_ids_match": {
+   "claim": "Every sealed row content_parsed.question_id equals the asked call_id (r6/r8 precedent 10/10).",
+   "p": 0.9
+  },
+  "Q4_reasoner_slot1_cold": {
+   "claim": "Reasoner slot-1 prompt_cache_hit_tokens == 0 (the curve cold call).",
+   "p": 0.85
+  },
+  "Q5_reasoner_slots23_warm": {
+   "claim": "Reasoner slots 2 AND 3 prompt_cache_hit_tokens > 0 on the byte-identical own prefix (r8 warm precedent).",
+   "p": 0.8
+  },
+  "Q6_reasoner_prompt_tokens_band": {
+   "claim": "Reasoner slot-1 prompt_tokens in [600, 1600] (the 2808-byte asset + suffix at ~0.3-0.5 tok/char).",
+   "p": 0.85
+  },
+  "Q7_lever_executable": {
+   "claim": "The sealed E-Q10 lever (primary: guest q2 next_lever; secondary: a reasoner key_points sentence, out-of-band extraction receipted) is EXECUTABLE on the qthe kernels: it names at least one concrete measurable (a family/sigma/board/claim/count) expressible in the registered census space.",
+   "p": 0.75
+  },
+  "Q8_zero_key_material": {
+   "claim": "Zero key material in any committed byte (no_leak_scan clean on every receipted file).",
+   "p": 0.99
+  }
+ },
+ "scoring": "Q1..Q8 binary (p-o)^2, mean reported; nothing edited post-run. Q2/Q7 have registered primary/secondary sources; a fallback firing is scored honestly, not silently substituted.",
+ "falsifier": {
+  "statement": "Any of: a guest row that stays unparseable after the declared repairs; guest q2 next_lever null; the sealed lever NOT executable (no measurable inside the census reachable set); a wire-budget breach (any 9th request); any key-material leak; a cache-curve claim outside [0, prompt_tokens] recorded as observed — recorded AS RUN and the verdict ships the honest FAIL standing.",
+  "commitment": "Predictions, p values, prompts (the QUESTIONS verbatim block below), budget numbers, and the reachable-set floor are frozen now. The verdict may add explanations but may not edit any of them. If the guest lever lands, the KERNEL-phase claims+floors are sealed in a SECOND registration (situations/eq10_lever_registration.json) BEFORE the first kernel tick, quoting the lever text verbatim from the sealed rows."
+ },
+ "quality_bar": "Every prediction scored; the guest words sealed AS SAID with per-call usage; zero key material; honest FAILs ship standing.",
+ "receipts_cited": {
+  "r6_asset": "situations/deepseek_guest_r6.mjs embedded SYSTEM_PREFIX — sha256 777938e243d34ef4667c1d52a89ee3fe30e41529804746c7b71deccbc0866e39, 5025 chars (byte-verified in this registration seal)",
+  "r9_asset": "situations/r9_prefix_asset.txt — sha256 3ccb796a09798e13c4d2c8128c1f349a5e06ebf557a870446e838bb2d10a8a4d, 2808 bytes (the reasoner own prefix, committed at ec23a31)",
+  "fail_closed_rows": "situations/guest_rows_r9.jsonl (wave-39-e: 3 attempted:false + 1 anonymous 401 probe, $0.00 spend) — the gate this session discharges",
+  "cache_economics_r9": "situations/cache_economics_r9.json (budget max_calls 9 planned 7, curve_table fail-closed) — the design this session executes",
+  "runner": "scripts/45b-round9-run.mjs (lane-owned, outside repo; QUESTIONS below are generated from it verbatim)",
+  "deepseek_precedent": "rounds 6-8 rows: cache curve 0/640/640/640 of 867 (r8), served deepseek-flash on every row incl. reasoner-requested (r7/r8), output contract honored in JSON (r6/r8 10/10 parse)"
+ },
+ "task_id": "45-b",
+ "agent": "eq10-executor (lane)",
+ "wave": 45,
+ "repo": "SuperInstance/qthe",
+ "registered_before_run": "YES — zero deepseek wire requests spent by this lane at seal time and zero E-Q10 kernel ticks exist; both sealed assets byte-verified at seal time. Git history is the witness.",
+ "questions_verbatim": [
+  {
+   "call_id": "r9-q1-scoreboard-move",
+   "phase": "guest",
+   "prefix": "r6",
+   "model": "deepseek-chat",
+   "temperature": 0.3,
+   "max_tokens": 1000,
+   "user": "question_id: r9-q1-scoreboard-move. Receipts since your round-8 seat, all committed (qthe ee00b99): E-Q9 RAN and RESOLVED — 466,932 kernel runs over 38,911 stable exact-zero families x {rat, sqrt2, near-ulp} x {float, fixed} x 2, mean Brier 0.00662, E1-E10 all TRUE, zero UNEXPLAINED. Your falsifier was read BOTH ways AS RUN: the literal reading FIRED exactly as you pre-priced it too strong (the fixed kernel HOLDS at the 1,134 dyadic family points — the two planes AGREEING in exactness, not an artifact), and the intended reading did NOT fire (0 off-family divergences anywhere, 0 artifact inversions at any family point) — the float-only artifact is FAMILY-SPECIFIC: it lives exactly on the float-collapse set A+D = 90.67% of stable space and FAILS on B∪C where float also moves; your 7/10 residual risk resolved IN-family at tick 1 (fixed DOWN -1, |dd|=1). The moth deep-trace (E-Q9-DT) full-traced 16 moth-ordered dyadic families: 9/11 registered events PASS, two letter-fires (B drifts -1/tick IDENTICALLY on both kernels — sweep-label semantics, never a kernel disagreement), zero UNEXPLAINED, zero D1 failures. Does your round-8 stance move? Return your round-9 JSON: set \"moved\" true/false with stance_delta, keeping the round-6 contract fields."
+  },
+  {
+   "call_id": "r9-q2-next-lever",
+   "phase": "guest",
+   "prefix": "r6",
+   "model": "deepseek-chat",
+   "temperature": 0.6,
+   "max_tokens": 1200,
+   "user": "question_id: r9-q2-next-lever. You own the E-Q* lever numbering: E-Q9 closed, so the next number is E-Q10 and it is yours to register. Open space after the round-9 receipts: C1 OPEN; C2 LIVES (E-Q1 160/160, mechanistic floor exact); C5' injector one-pager still OPEN (spec'd by you at round 6, never run); the C4 cascade's terminal semantics unpriced since E-Q7 (the cascade LIVED — full-torus spread by tick 64 in all four alpha pairs — but substrate-wide flip-attributable inversion was 0 everywhere at 256); the artifact class is ESTABLISHED (float-collapse set A+D = 90.67%, fixed dyadic-exact, FIXED-BLIND-INVERSION off-family 379 cells, QUANTIZATION-BLINDNESS |dd|=2); the moth is a standing whitened-order instrument (receipted two-step recipe, 1-2-job budget class, fail-closed). Register E-Q10 in next_lever: title, why, and cheapest_decisive_run in the round-8 shape — point prediction, a falsifier that can actually fire, and cost named before the run. If you claim C5' or the cascade terminal semantics, say which and why it is the CHEAPEST decisive lever now."
+  },
+  {
+   "call_id": "r9-q3-seat-economics",
+   "phase": "guest",
+   "prefix": "r6",
+   "model": "deepseek-chat",
+   "temperature": 0.3,
+   "max_tokens": 800,
+   "user": "question_id: r9-q3-seat-economics. Your seat: JEV 0.51 stands as an upper bound (the instrument self-contradicts 0.53-vs-0.28); of your levers, L1 died by its own falsifier at E-Q7, C5 died as an honest null at E-Q5, E-Q8 CONFIRMED your float-only artifact at the family points, and E-Q9 CLOSED your round-8 lever with the artifact family-bound. After E-Q9 + E-Q9-DT: what is your honest residual_risks list for the QTHE program — what has NOT been priced that should be, and what observation, if it could ever fire, would falsify the family-bound artifact reading? Keep the round-6 contract fields."
+  },
+  {
+   "call_id": "r9-reasoner-asset-1",
+   "phase": "reasoner",
+   "prefix": "r9",
+   "model": "deepseek-reasoner",
+   "temperature": null,
+   "max_tokens": 2000,
+   "user": "ROUND-9 RECEIPTS DELTA (post-seal — your prefix says E-Q9 is RUNNING; it has since RESOLVED): E-Q9 verdict (qthe e7634ef): 466,932 kernel runs over 38,911 stable exact-zero families x {rat, sqrt2, near-ulp} x {float, fixed} x 2, mean Brier 0.00662, E1-E10 all TRUE, zero UNEXPLAINED; falsifier AS RUN: the literal reading fired as pre-priced (dyadic both-hold = the planes agreeing), the intended reading held — the float-only artifact is family-specific, living exactly on the float-collapse set A+D = 90.67%, failing on B∪C where float also moves. E-Q9-DT moth deep-trace (qthe ee00b99): 16 whitened-ordered dyadic families full-traced float-vs-fixed, 9/11 registered events PASS, dt_b/dt_c fired on their letter (B drifts -1/tick identically on both kernels; explained, Brier paid), zero UNEXPLAINED, zero D1 failures. Give your round-9 verdict per your OUTPUT CONTRACT. Put your next-lever recommendation (one falsifiable sentence + its falsifier) inside key_points."
+  },
+  {
+   "call_id": "r9-reasoner-asset-2",
+   "phase": "reasoner",
+   "prefix": "r9",
+   "model": "deepseek-reasoner",
+   "temperature": null,
+   "max_tokens": 2000,
+   "user": "Your prefix's scoreboard line \"E-Q9 … is RUNNING this wave\" is now stale: E-Q9 RESOLVED (466,932 runs, mean Brier 0.00662, artifact family-bound A+D 90.67%, B∪C moves even on float, 7/10 fixed DOWN -1 resolved in-family) and E-Q9-DT deep-traced 16 moth-ordered dyadics (9/11 PASS, two letter-fires explained, zero holes). Your contract says: if the receipts contradict a standing stance, say so plainly. Does anything above contradict what you believed at round 8? Give your round-9 JSON per your OUTPUT CONTRACT."
+  },
+  {
+   "call_id": "r9-reasoner-asset-3",
+   "phase": "reasoner",
+   "prefix": "r9",
+   "model": "deepseek-reasoner",
+   "temperature": null,
+   "max_tokens": 2000,
+   "user": "The deep trace's two FIRES stand as honest FAILs by registration law (no prediction, p, or whitener may be edited post-run): dt_b \"B stays d=20 every tick\" and dt_c \"fixed never moves at rat+near\" fired 16/16+32/32 because the scaled board's dyadic residual pressure drifts B -1/tick IDENTICALLY on both kernels — byte-identical planes, D1-clean, zero kernel disagreement anywhere the census forbids it. Give your round-9 JSON per your OUTPUT CONTRACT, reading the register: what should a house learn from a letter-fire whose intent held?"
+  }
+ ]
+}
