@@ -1,0 +1,3584 @@
+{
+ "experiment": "E-Q8",
+ "claim": "float-only artifact via S3 same-slot live-read at the uncoupled exact-zero families (registered claim verbatim in pre_registration_e_q8.json)",
+ "kernel": {
+  "float": {
+   "kernelKind": "real",
+   "kernelPath": "qthe/qthe.mjs"
+  },
+  "fixed": "fixedpoint/qthe_fixed.mjs (READ-ONLY import)",
+  "floatCloneProvenance": "float kernel byte-identical to nested untracked clone qthe/ @ 7569060 (never committed)"
+ },
+ "stonePath": "../../quilt-stone/stone.mjs",
+ "registrationSha256": "3cd333b47021e392ba831453f017f830bf66389cee74f186f60e8b418413bae6",
+ "mothReceiptSha256": "9d1856e812c8150a5fb58ed1e4a02f8e5ca6dcd7277a6a191e5180ec684ffe16",
+ "registeredFloor": "pre_registration_e_q8.json (26b1d3b, PRE-RUN): converged wave-37 probe; moth-chosen PRIMARY 2/3 (bit 1), SECONDARY 8/5; EQ8-D1 carried; EQ8-R8 attribution audit; cooker_diff secondary per typesafe",
+ "families": {
+  "2/3": {
+   "real": 0.6666666666666666,
+   "q": 2863311531,
+   "regKey": "2/3",
+   "m": 2,
+   "r": 3,
+   "accA": -2,
+   "pA": 2,
+   "pB": 2,
+   "primary": true
+  },
+  "8/5": {
+   "real": 1.6,
+   "q": 6871947674,
+   "regKey": "1.6",
+   "m": 8,
+   "r": 5,
+   "accA": -4,
+   "pA": 4,
+   "pB": 8,
+   "primary": false
+  }
+ },
+ "board": {
+  "W": 6,
+  "H": 3,
+  "T_PROBE": 16,
+  "SLOT": 20,
+  "A_XY": [
+   1,
+   1
+  ],
+  "B_XY": [
+   2,
+   1
+  ],
+  "PA_XY": [
+   0,
+   1
+  ],
+  "PB_XY": [
+   3,
+   1
+  ],
+  "cook": {
+   "COOK_W": 64,
+   "COOK_H": 1,
+   "T_COOK": 64
+  }
+ },
+ "probe": {
+  "2/3": {
+   "determinism": {
+    "float": true,
+    "fixed": true
+   },
+   "run2Hashes": {
+    "float": {
+     "eventSeqHash": "a500ef57d7113f52ce2b25598b4f8a43619a5052f7b1accd3bf90d6ae865a8fe",
+     "snapshotHash": "5ff93e0f1571b360d75b073f9d4ca601da7ac2a3d0e29bdcbcfe97b68c79889b"
+    },
+    "fixed": {
+     "eventSeqHash": "7f0fa61e6a40db8de5e5ef90bcb1ce04059990847e3a704198c8a6927baebbd7",
+     "snapshotHash": "fe43809238c7e6ce0a1c0b58eaa768a819b33a7d9a324cf38e42e7537b27f3dc"
+    }
+   },
+   "twinEventsTotal": 8,
+   "float": {
+    "K": "float:qthe.mjs",
+    "eventSeqHash": "a500ef57d7113f52ce2b25598b4f8a43619a5052f7b1accd3bf90d6ae865a8fe",
+    "snapshotHash": "5ff93e0f1571b360d75b073f9d4ca601da7ac2a3d0e29bdcbcfe97b68c79889b",
+    "planeHashes": [
+     "85d1e7a10b7fa99f9718f10ec5fb5f69828e01ae07f4e999efa991c0db9aa33b",
+     "5ef89a04365b664d4b88636f0fe40e7acfa249b2355d1bb2d6abafeac6718fa0",
+     "e89efc5f786413e7f5c189815712b58a672951455613838ce405e85702a36893",
+     "241a698cc45e6fe35ce6b25d62d163ef17ab1da1a7b0dd0f5d7f66b2e882ffc5",
+     "fa9ced2813591606f057e8c1d63eeec348344d5ceb238e384e374f21ea7d2899",
+     "151ba0f97ab8844eb1389fc8c299003707d23787f6f1f7d4fc80ada72fc5038d",
+     "9c73b1657d0d97c86dab71339842eade78d70e7c9be98dc5c8087e966156bf38",
+     "2086291705ec911399f9ed5973d3f5c52b111df068612ae955a531f9c525abf2",
+     "5918a85596c88ce10faad7e0bfd179f665af671430722bc73d824603c01a589f",
+     "b4679752e7da48b522db1c213a6e12b6071674e1eb0222e0c26036d7d4161762",
+     "2c5c71ec519dc54dba03c94c33ef936ce325e300aedb8c67a66b82d7c1f725ec",
+     "cd38f79e50d072a61405433cbbda3f95f02544da6a8bac7b197a41f38b1aaa7c",
+     "0354dfe37cab6fee24b374e07c57cb3d925420c73cfa48ef1d25a2e499c4dc1a",
+     "022e18d6acaeee289c974ce98a1d875a948ef857ea2712b26714dde9f3689514",
+     "47f02cb4da82c7807a5e33fd2c3e631213cd6ec1f591fb1e446ec2a80191d9ea",
+     "951ada9c3c694c62f494f62163860d052fc096399ee87786842e5153e23b7571",
+     "4a189fb43beeef69ccc2e1a665ee4f719590085382115a1c4358a2b51c4c29f9"
+    ],
+    "eventTuples": [
+     [
+      1,
+      2,
+      1,
+      20,
+      3
+     ],
+     [
+      3,
+      2,
+      1,
+      19,
+      3
+     ],
+     [
+      5,
+      2,
+      1,
+      18,
+      3
+     ],
+     [
+      7,
+      2,
+      1,
+      17,
+      3
+     ],
+     [
+      9,
+      2,
+      1,
+      16,
+      3
+     ],
+     [
+      11,
+      2,
+      1,
+      15,
+      3
+     ],
+     [
+      13,
+      2,
+      1,
+      14,
+      3
+     ],
+     [
+      15,
+      2,
+      1,
+      13,
+      3
+     ]
+    ],
+    "termsByTick": [
+     [
+      {
+       "x": 2,
+       "y": 1,
+       "slot": 20,
+       "resonance": 3,
+       "term": "2"
+      }
+     ],
+     [],
+     [
+      {
+       "x": 2,
+       "y": 1,
+       "slot": 19,
+       "resonance": 3,
+       "term": "2"
+      }
+     ],
+     [],
+     [
+      {
+       "x": 2,
+       "y": 1,
+       "slot": 18,
+       "resonance": 3,
+       "term": "2"
+      }
+     ],
+     [],
+     [
+      {
+       "x": 2,
+       "y": 1,
+       "slot": 17,
+       "resonance": 3,
+       "term": "2"
+      }
+     ],
+     [],
+     [
+      {
+       "x": 2,
+       "y": 1,
+       "slot": 16,
+       "resonance": 3,
+       "term": "2"
+      }
+     ],
+     [],
+     [
+      {
+       "x": 2,
+       "y": 1,
+       "slot": 15,
+       "resonance": 3,
+       "term": "2"
+      }
+     ],
+     [],
+     [
+      {
+       "x": 2,
+       "y": 1,
+       "slot": 14,
+       "resonance": 3,
+       "term": "2"
+      }
+     ],
+     [],
+     [
+      {
+       "x": 2,
+       "y": 1,
+       "slot": 13,
+       "resonance": 3,
+       "term": "2"
+      }
+     ],
+     []
+    ],
+    "perTick": [
+     {
+      "t": 1,
+      "firings": 1,
+      "firers": [
+       [
+        2,
+        1
+       ]
+      ],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 3
+      },
+      "dA": 19,
+      "dB": 20,
+      "occupiedCount": 1
+     },
+     {
+      "t": 2,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 3
+      },
+      "dA": 18,
+      "dB": 19,
+      "occupiedCount": 2
+     },
+     {
+      "t": 3,
+      "firings": 1,
+      "firers": [
+       [
+        2,
+        1
+       ]
+      ],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 3
+      },
+      "dA": 17,
+      "dB": 19,
+      "occupiedCount": 3
+     },
+     {
+      "t": 4,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 3
+      },
+      "dA": 16,
+      "dB": 18,
+      "occupiedCount": 4
+     },
+     {
+      "t": 5,
+      "firings": 1,
+      "firers": [
+       [
+        2,
+        1
+       ]
+      ],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 3
+      },
+      "dA": 15,
+      "dB": 18,
+      "occupiedCount": 5
+     },
+     {
+      "t": 6,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 3
+      },
+      "dA": 14,
+      "dB": 17,
+      "occupiedCount": 6
+     },
+     {
+      "t": 7,
+      "firings": 1,
+      "firers": [
+       [
+        2,
+        1
+       ]
+      ],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 3
+      },
+      "dA": 13,
+      "dB": 17,
+      "occupiedCount": 7
+     },
+     {
+      "t": 8,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 3
+      },
+      "dA": 12,
+      "dB": 16,
+      "occupiedCount": 8
+     },
+     {
+      "t": 9,
+      "firings": 1,
+      "firers": [
+       [
+        2,
+        1
+       ]
+      ],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 3
+      },
+      "dA": 11,
+      "dB": 16,
+      "occupiedCount": 9
+     },
+     {
+      "t": 10,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 3
+      },
+      "dA": 10,
+      "dB": 15,
+      "occupiedCount": 10
+     },
+     {
+      "t": 11,
+      "firings": 1,
+      "firers": [
+       [
+        2,
+        1
+       ]
+      ],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 3
+      },
+      "dA": 9,
+      "dB": 15,
+      "occupiedCount": 11
+     },
+     {
+      "t": 12,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 3
+      },
+      "dA": 8,
+      "dB": 14,
+      "occupiedCount": 12
+     },
+     {
+      "t": 13,
+      "firings": 1,
+      "firers": [
+       [
+        2,
+        1
+       ]
+      ],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 3
+      },
+      "dA": 7,
+      "dB": 14,
+      "occupiedCount": 13
+     },
+     {
+      "t": 14,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 3
+      },
+      "dA": 6,
+      "dB": 13,
+      "occupiedCount": 14
+     },
+     {
+      "t": 15,
+      "firings": 1,
+      "firers": [
+       [
+        2,
+        1
+       ]
+      ],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 3
+      },
+      "dA": 5,
+      "dB": 13,
+      "occupiedCount": 15
+     },
+     {
+      "t": 16,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 3
+      },
+      "dA": 4,
+      "dB": 12,
+      "occupiedCount": 16
+     }
+    ]
+   },
+   "fixed": {
+    "K": "fixed:qthe_fixed.mjs",
+    "eventSeqHash": "7f0fa61e6a40db8de5e5ef90bcb1ce04059990847e3a704198c8a6927baebbd7",
+    "snapshotHash": "fe43809238c7e6ce0a1c0b58eaa768a819b33a7d9a324cf38e42e7537b27f3dc",
+    "planeHashes": [
+     "85d1e7a10b7fa99f9718f10ec5fb5f69828e01ae07f4e999efa991c0db9aa33b",
+     "a8a42b98ce8adb38b4373372ba3740e036efcbf682486872f1ed3e4f27f3073a",
+     "61c60a6f136c8412fd9bcf1b3ee40e1fbb4c46cb15aecc60ba982f098d70bdaa",
+     "241a698cc45e6fe35ce6b25d62d163ef17ab1da1a7b0dd0f5d7f66b2e882ffc5",
+     "54b5284cf19ce4513549350fc6231318e0ee63c7749455a6370ce18313dc60be",
+     "dd5398de9516441fca1a764ffa6d3ea782a81301d3aa8160cd23686d1e440775",
+     "058eaf308e51c0373e95aeab89ab9f6a0266cab8462da279b1aea2956987aaeb",
+     "18fa846290c3ae6069e7514555ba5477e8f775a99013c635f4733f4e7f6a5eda",
+     "9946cc23e9da2b5258631ce32ae1fd021268bb96f5be3257f05dfdf189f22977",
+     "75a7585c566cfe0af640b653f07495675056ed5f7a4ee0402dca7c3383f638db",
+     "441626c5fb81600207df2a7a34c77f1103e783e8828504db78aeb092044c7bed",
+     "7c19df387b5aa28efc0341a2403deac1026adee81b72386b3defee2ed0226d12",
+     "11ae92bf01044908874f461bc6f14c7d0c1167f9eef30df663eeedf44d2e97dc",
+     "51a385a76b140b275f5a5227463366313bf357da2f6c1fc921fa0e38b04f0150",
+     "778bb455c37029df86b87aec4509231e015dd15b554b178da92f01a388f5d364",
+     "9b688004d4e2178d964db2642f34f0032b6a1d0a08a7b95a1f932dfeb7645098",
+     "501b2888f95ba4021550053c701452be06b4901bb97c961a2e8d12776fb16197"
+    ],
+    "eventTuples": [
+     [
+      1,
+      2,
+      1,
+      20,
+      3
+     ],
+     [
+      4,
+      2,
+      1,
+      19,
+      3
+     ],
+     [
+      7,
+      2,
+      1,
+      18,
+      3
+     ],
+     [
+      10,
+      2,
+      1,
+      17,
+      3
+     ],
+     [
+      13,
+      2,
+      1,
+      16,
+      3
+     ],
+     [
+      16,
+      2,
+      1,
+      15,
+      3
+     ]
+    ],
+    "termsByTick": [
+     [
+      {
+       "x": 2,
+       "y": 1,
+       "slot": 20,
+       "resonance": 3,
+       "term": "8589934593"
+      }
+     ],
+     [],
+     [],
+     [
+      {
+       "x": 2,
+       "y": 1,
+       "slot": 19,
+       "resonance": 3,
+       "term": "8589934593"
+      }
+     ],
+     [],
+     [],
+     [
+      {
+       "x": 2,
+       "y": 1,
+       "slot": 18,
+       "resonance": 3,
+       "term": "8589934593"
+      }
+     ],
+     [],
+     [],
+     [
+      {
+       "x": 2,
+       "y": 1,
+       "slot": 17,
+       "resonance": 3,
+       "term": "8589934593"
+      }
+     ],
+     [],
+     [],
+     [
+      {
+       "x": 2,
+       "y": 1,
+       "slot": 16,
+       "resonance": 3,
+       "term": "8589934593"
+      }
+     ],
+     [],
+     [],
+     [
+      {
+       "x": 2,
+       "y": 1,
+       "slot": 15,
+       "resonance": 3,
+       "term": "8589934593"
+      }
+     ]
+    ],
+    "perTick": [
+     {
+      "t": 1,
+      "firings": 1,
+      "firers": [
+       [
+        2,
+        1
+       ]
+      ],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 3
+      },
+      "dA": 19,
+      "dB": 21,
+      "occupiedCount": 1
+     },
+     {
+      "t": 2,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 3
+      },
+      "dA": 18,
+      "dB": 20,
+      "occupiedCount": 3
+     },
+     {
+      "t": 3,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 3
+      },
+      "dA": 17,
+      "dB": 19,
+      "occupiedCount": 4
+     },
+     {
+      "t": 4,
+      "firings": 1,
+      "firers": [
+       [
+        2,
+        1
+       ]
+      ],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 3
+      },
+      "dA": 16,
+      "dB": 20,
+      "occupiedCount": 5
+     },
+     {
+      "t": 5,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 3
+      },
+      "dA": 15,
+      "dB": 19,
+      "occupiedCount": 6
+     },
+     {
+      "t": 6,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 3
+      },
+      "dA": 14,
+      "dB": 18,
+      "occupiedCount": 7
+     },
+     {
+      "t": 7,
+      "firings": 1,
+      "firers": [
+       [
+        2,
+        1
+       ]
+      ],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 3
+      },
+      "dA": 13,
+      "dB": 19,
+      "occupiedCount": 8
+     },
+     {
+      "t": 8,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 3
+      },
+      "dA": 12,
+      "dB": 18,
+      "occupiedCount": 9
+     },
+     {
+      "t": 9,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 3
+      },
+      "dA": 11,
+      "dB": 17,
+      "occupiedCount": 10
+     },
+     {
+      "t": 10,
+      "firings": 1,
+      "firers": [
+       [
+        2,
+        1
+       ]
+      ],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 3
+      },
+      "dA": 10,
+      "dB": 18,
+      "occupiedCount": 11
+     },
+     {
+      "t": 11,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 3
+      },
+      "dA": 9,
+      "dB": 17,
+      "occupiedCount": 12
+     },
+     {
+      "t": 12,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 3
+      },
+      "dA": 8,
+      "dB": 16,
+      "occupiedCount": 13
+     },
+     {
+      "t": 13,
+      "firings": 1,
+      "firers": [
+       [
+        2,
+        1
+       ]
+      ],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 3
+      },
+      "dA": 7,
+      "dB": 17,
+      "occupiedCount": 14
+     },
+     {
+      "t": 14,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 3
+      },
+      "dA": 6,
+      "dB": 16,
+      "occupiedCount": 15
+     },
+     {
+      "t": 15,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 3
+      },
+      "dA": 5,
+      "dB": 15,
+      "occupiedCount": 16
+     },
+     {
+      "t": 16,
+      "firings": 1,
+      "firers": [
+       [
+        2,
+        1
+       ]
+      ],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 3
+      },
+      "dA": 4,
+      "dB": 16,
+      "occupiedCount": 17
+     }
+    ]
+   }
+  },
+  "8/5": {
+   "determinism": {
+    "float": true,
+    "fixed": true
+   },
+   "run2Hashes": {
+    "float": {
+     "eventSeqHash": "c7195d3018cc9a8495d17f2d6d2c04156957c16d3cf9bc5f905b5d57b3e148e3",
+     "snapshotHash": "7d326f8ba2bec5a31b0cfa5148d7175dfe6b9feab149b934e195a10bef4175e4"
+    },
+    "fixed": {
+     "eventSeqHash": "cd21aefbf8fde375d70154320d04078f567e1c46e07a37b27282aad1116dcc2c",
+     "snapshotHash": "fc5067c3a50a6a026bee4ce90697cce99d06b82c4e7ded49dffc9044d0545f8a"
+    }
+   },
+   "twinEventsTotal": 8,
+   "float": {
+    "K": "float:qthe.mjs",
+    "eventSeqHash": "c7195d3018cc9a8495d17f2d6d2c04156957c16d3cf9bc5f905b5d57b3e148e3",
+    "snapshotHash": "7d326f8ba2bec5a31b0cfa5148d7175dfe6b9feab149b934e195a10bef4175e4",
+    "planeHashes": [
+     "bb229326b18efa549f734a3aa969d58497591156b1bf9fd74a62a781464d26b3",
+     "f61179cd16e29fe5a424b6dcb6ad32fbad98c3a6c3f35b4659ef3ee9bd2d5021",
+     "fbea01e768d3d2348a91d4e78820180037a2b417bf73facf4b6a05b8772add48",
+     "8a94faf0a55e84c4321784b421f9b7a5ef65aa831e50ab7051036cb589fa7173",
+     "947fc22671e05dc774b7b4b352dfe2fa96a71f11266ce145717ec1fc950753c7",
+     "357a59da91db95a8391fc33ad96887a020cb61e4ae4e916d19ca1123df3f0121",
+     "e73e866137065c1b8361700fde169a9b7a8853eba2409c3d10240de907bb930c",
+     "57a8f5e32de6908de76b3d41099be698ceccf94fcc06e90e73ccf5a035ef57a7",
+     "570cbe2d34ace50b3b5fbb8db7ef67ab3836ef3777bc699159b94580d0fbf995",
+     "1d53b1bd43682a2018a026e84f75c968a05f2cfbc7d57b6a4a7c3a05739247a4",
+     "612c080ac3663170e674e3f556573783b7fec7d2994a77a032cb1e1064bc604c",
+     "6a373f505ca2f7b34f4778e68f0428de5183f5dcdb291be46a66c041d99d17fb",
+     "d5ec20daa9bac835127b3f24fbc51a93a6fb957373992d9c54d439abf7408c2b",
+     "39794b729a8af9bb1485939c049d34162446ec52ccfc179ae85ef5d4737dd325",
+     "e4ad3bdf79fd12574bfa72ddbfcd9b6621346bea276d46af74f67cd3d47fc6ec",
+     "ba9955b3f1989ce0b3b20261919b03aa8296bbf9811c225f8bd9965107025cc1",
+     "5ce598fdfa3c90918c234796d4fda9630dd8b9464bb61d1d906cd80cb0334769"
+    ],
+    "eventTuples": [
+     [
+      1,
+      2,
+      1,
+      20,
+      5
+     ],
+     [
+      3,
+      2,
+      1,
+      19,
+      5
+     ],
+     [
+      5,
+      2,
+      1,
+      18,
+      5
+     ],
+     [
+      7,
+      2,
+      1,
+      17,
+      5
+     ],
+     [
+      9,
+      2,
+      1,
+      16,
+      5
+     ],
+     [
+      11,
+      2,
+      1,
+      15,
+      5
+     ],
+     [
+      13,
+      2,
+      1,
+      14,
+      5
+     ],
+     [
+      15,
+      2,
+      1,
+      13,
+      5
+     ]
+    ],
+    "termsByTick": [
+     [
+      {
+       "x": 2,
+       "y": 1,
+       "slot": 20,
+       "resonance": 5,
+       "term": "8"
+      }
+     ],
+     [],
+     [
+      {
+       "x": 2,
+       "y": 1,
+       "slot": 19,
+       "resonance": 5,
+       "term": "8"
+      }
+     ],
+     [],
+     [
+      {
+       "x": 2,
+       "y": 1,
+       "slot": 18,
+       "resonance": 5,
+       "term": "8"
+      }
+     ],
+     [],
+     [
+      {
+       "x": 2,
+       "y": 1,
+       "slot": 17,
+       "resonance": 5,
+       "term": "8"
+      }
+     ],
+     [],
+     [
+      {
+       "x": 2,
+       "y": 1,
+       "slot": 16,
+       "resonance": 5,
+       "term": "8"
+      }
+     ],
+     [],
+     [
+      {
+       "x": 2,
+       "y": 1,
+       "slot": 15,
+       "resonance": 5,
+       "term": "8"
+      }
+     ],
+     [],
+     [
+      {
+       "x": 2,
+       "y": 1,
+       "slot": 14,
+       "resonance": 5,
+       "term": "8"
+      }
+     ],
+     [],
+     [
+      {
+       "x": 2,
+       "y": 1,
+       "slot": 13,
+       "resonance": 5,
+       "term": "8"
+      }
+     ],
+     []
+    ],
+    "perTick": [
+     {
+      "t": 1,
+      "firings": 1,
+      "firers": [
+       [
+        2,
+        1
+       ]
+      ],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 9
+      },
+      "dA": 19,
+      "dB": 20,
+      "occupiedCount": 1
+     },
+     {
+      "t": 2,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 9
+      },
+      "dA": 18,
+      "dB": 19,
+      "occupiedCount": 2
+     },
+     {
+      "t": 3,
+      "firings": 1,
+      "firers": [
+       [
+        2,
+        1
+       ]
+      ],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 9
+      },
+      "dA": 17,
+      "dB": 19,
+      "occupiedCount": 3
+     },
+     {
+      "t": 4,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 9
+      },
+      "dA": 16,
+      "dB": 18,
+      "occupiedCount": 4
+     },
+     {
+      "t": 5,
+      "firings": 1,
+      "firers": [
+       [
+        2,
+        1
+       ]
+      ],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 9
+      },
+      "dA": 15,
+      "dB": 18,
+      "occupiedCount": 5
+     },
+     {
+      "t": 6,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 9
+      },
+      "dA": 14,
+      "dB": 17,
+      "occupiedCount": 6
+     },
+     {
+      "t": 7,
+      "firings": 1,
+      "firers": [
+       [
+        2,
+        1
+       ]
+      ],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 9
+      },
+      "dA": 13,
+      "dB": 17,
+      "occupiedCount": 7
+     },
+     {
+      "t": 8,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 9
+      },
+      "dA": 12,
+      "dB": 16,
+      "occupiedCount": 8
+     },
+     {
+      "t": 9,
+      "firings": 1,
+      "firers": [
+       [
+        2,
+        1
+       ]
+      ],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 9
+      },
+      "dA": 11,
+      "dB": 16,
+      "occupiedCount": 9
+     },
+     {
+      "t": 10,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 9
+      },
+      "dA": 10,
+      "dB": 15,
+      "occupiedCount": 10
+     },
+     {
+      "t": 11,
+      "firings": 1,
+      "firers": [
+       [
+        2,
+        1
+       ]
+      ],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 9
+      },
+      "dA": 9,
+      "dB": 15,
+      "occupiedCount": 11
+     },
+     {
+      "t": 12,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 9
+      },
+      "dA": 8,
+      "dB": 14,
+      "occupiedCount": 12
+     },
+     {
+      "t": 13,
+      "firings": 1,
+      "firers": [
+       [
+        2,
+        1
+       ]
+      ],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 9
+      },
+      "dA": 7,
+      "dB": 14,
+      "occupiedCount": 13
+     },
+     {
+      "t": 14,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 9
+      },
+      "dA": 6,
+      "dB": 13,
+      "occupiedCount": 14
+     },
+     {
+      "t": 15,
+      "firings": 1,
+      "firers": [
+       [
+        2,
+        1
+       ]
+      ],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 9
+      },
+      "dA": 5,
+      "dB": 13,
+      "occupiedCount": 15
+     },
+     {
+      "t": 16,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 9
+      },
+      "dA": 4,
+      "dB": 12,
+      "occupiedCount": 16
+     }
+    ]
+   },
+   "fixed": {
+    "K": "fixed:qthe_fixed.mjs",
+    "eventSeqHash": "cd21aefbf8fde375d70154320d04078f567e1c46e07a37b27282aad1116dcc2c",
+    "snapshotHash": "fc5067c3a50a6a026bee4ce90697cce99d06b82c4e7ded49dffc9044d0545f8a",
+    "planeHashes": [
+     "bb229326b18efa549f734a3aa969d58497591156b1bf9fd74a62a781464d26b3",
+     "a58b3ac5d3341a3933318946ff428181a5646ba7b472a47a7202d8672b8eb1e1",
+     "67d35dff6a466bc3318497c594fd9167e4b125f0dcd3d7fce0b9e461263af0b8",
+     "8a94faf0a55e84c4321784b421f9b7a5ef65aa831e50ab7051036cb589fa7173",
+     "779ccde8a12e4f8d08ad6d934974ba8d1621d38da473d14ced2a63433665f1e5",
+     "c983b5f4ac17da428c0684dc23a1e0f477e2607e383376b7bdbb64b201e836e1",
+     "bedb1bdde7e3545a3fc02d644ac9961256c282a3e733502db1e499baba9dbccb",
+     "9101c44c2dd9ba0fae5b83269f1edfe1109e5c8a71d2f5f11bc410398d5c4b9f",
+     "4a1af7a27e906125349464b1b09d0227c84801f45887486c84819a6838004699",
+     "16ba9f9af21be2fc01ad397df6013c5fd2ae660f55a1109e0b3d362835d3ddae",
+     "aece380683d7ac29de1826aa00657c86ec57dd9575333e09cf5310f57644e029",
+     "fa22e902bf793eabd258feba80e6f4540636b48966f3d55c9978347c093858aa",
+     "a9d71229db5acffcd68c2730a3f667e1f450da18e9e607800eb78595082c9051",
+     "82acc17363453c56c4df2e19bab048b4762c1e591ab5916c7f5a45d6ef1b728b",
+     "3b0bee0958957b8bdfbfad9b6d9a47b9b5f71cb24be5548db8a0e390ef05bb74",
+     "9b0365764104b6eded37c9e2553e93d2ede4130bd9712bfe095146d1d38d8c32",
+     "a95a4534a0e70938a900dba83ec42d95517da0a2b57f87d6c25a5ed2b8956acd"
+    ],
+    "eventTuples": [
+     [
+      1,
+      2,
+      1,
+      20,
+      5
+     ],
+     [
+      4,
+      2,
+      1,
+      19,
+      5
+     ],
+     [
+      7,
+      2,
+      1,
+      18,
+      5
+     ],
+     [
+      10,
+      2,
+      1,
+      17,
+      5
+     ],
+     [
+      13,
+      2,
+      1,
+      16,
+      5
+     ],
+     [
+      16,
+      2,
+      1,
+      15,
+      5
+     ]
+    ],
+    "termsByTick": [
+     [
+      {
+       "x": 2,
+       "y": 1,
+       "slot": 20,
+       "resonance": 5,
+       "term": "34359738370"
+      }
+     ],
+     [],
+     [],
+     [
+      {
+       "x": 2,
+       "y": 1,
+       "slot": 19,
+       "resonance": 5,
+       "term": "34359738370"
+      }
+     ],
+     [],
+     [],
+     [
+      {
+       "x": 2,
+       "y": 1,
+       "slot": 18,
+       "resonance": 5,
+       "term": "34359738370"
+      }
+     ],
+     [],
+     [],
+     [
+      {
+       "x": 2,
+       "y": 1,
+       "slot": 17,
+       "resonance": 5,
+       "term": "34359738370"
+      }
+     ],
+     [],
+     [],
+     [
+      {
+       "x": 2,
+       "y": 1,
+       "slot": 16,
+       "resonance": 5,
+       "term": "34359738370"
+      }
+     ],
+     [],
+     [],
+     [
+      {
+       "x": 2,
+       "y": 1,
+       "slot": 15,
+       "resonance": 5,
+       "term": "34359738370"
+      }
+     ]
+    ],
+    "perTick": [
+     {
+      "t": 1,
+      "firings": 1,
+      "firers": [
+       [
+        2,
+        1
+       ]
+      ],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 9
+      },
+      "dA": 19,
+      "dB": 21,
+      "occupiedCount": 1
+     },
+     {
+      "t": 2,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 9
+      },
+      "dA": 18,
+      "dB": 20,
+      "occupiedCount": 3
+     },
+     {
+      "t": 3,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 9
+      },
+      "dA": 17,
+      "dB": 19,
+      "occupiedCount": 4
+     },
+     {
+      "t": 4,
+      "firings": 1,
+      "firers": [
+       [
+        2,
+        1
+       ]
+      ],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 9
+      },
+      "dA": 16,
+      "dB": 20,
+      "occupiedCount": 5
+     },
+     {
+      "t": 5,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 9
+      },
+      "dA": 15,
+      "dB": 19,
+      "occupiedCount": 6
+     },
+     {
+      "t": 6,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 9
+      },
+      "dA": 14,
+      "dB": 18,
+      "occupiedCount": 7
+     },
+     {
+      "t": 7,
+      "firings": 1,
+      "firers": [
+       [
+        2,
+        1
+       ]
+      ],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 9
+      },
+      "dA": 13,
+      "dB": 19,
+      "occupiedCount": 8
+     },
+     {
+      "t": 8,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 9
+      },
+      "dA": 12,
+      "dB": 18,
+      "occupiedCount": 9
+     },
+     {
+      "t": 9,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 9
+      },
+      "dA": 11,
+      "dB": 17,
+      "occupiedCount": 10
+     },
+     {
+      "t": 10,
+      "firings": 1,
+      "firers": [
+       [
+        2,
+        1
+       ]
+      ],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 9
+      },
+      "dA": 10,
+      "dB": 18,
+      "occupiedCount": 11
+     },
+     {
+      "t": 11,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 9
+      },
+      "dA": 9,
+      "dB": 17,
+      "occupiedCount": 12
+     },
+     {
+      "t": 12,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 9
+      },
+      "dA": 8,
+      "dB": 16,
+      "occupiedCount": 13
+     },
+     {
+      "t": 13,
+      "firings": 1,
+      "firers": [
+       [
+        2,
+        1
+       ]
+      ],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 9
+      },
+      "dA": 7,
+      "dB": 17,
+      "occupiedCount": 14
+     },
+     {
+      "t": 14,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 9
+      },
+      "dA": 6,
+      "dB": 16,
+      "occupiedCount": 15
+     },
+     {
+      "t": 15,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 9
+      },
+      "dA": 5,
+      "dB": 15,
+      "occupiedCount": 16
+     },
+     {
+      "t": 16,
+      "firings": 1,
+      "firers": [
+       [
+        2,
+        1
+       ]
+      ],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 9
+      },
+      "dA": 4,
+      "dB": 16,
+      "occupiedCount": 17
+     }
+    ]
+   }
+  }
+ },
+ "control": {
+  "2/3": {
+   "sigmaInert": true,
+   "determinism": {
+    "float": true,
+    "fixed": true
+   },
+   "twinEventsTotal": 0,
+   "float": {
+    "eventSeqHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "planeHashes": [
+     "1f231688caaa61bb0c3b723fae7b778e2d8e84e02d59bbd44e0b641273957deb",
+     "3b2654c41944c952cee0c9d5c4629acf2000b5de0ff4d4afc39a8ac50b10f85c",
+     "e9484890d795366cfaadf4b68d4d452186ef4ec01ba52091c173d7f367ed19f8",
+     "a9cb20cf9c6fbff61bb36315de75e2c143330f97b1ae21edd37adfc93e16dc62",
+     "022cbeaac378c6fe50f21deddcf1db7cbd9c2a5c2e65b51527e9a17ea6487b91",
+     "5afe1175bff404048153400a9717d9139745f2cc93ec1bb7ab91e0a8b52c4e6a",
+     "e04dac446b612f9de72195a97fa364208d4e52e49bfdcd952579bc4e7e814929",
+     "8b981748dbfd6a1f9bcc56940123b39b178912e3ab086375ca6e01ab63936108",
+     "9c55a6d00387b5b85edb7526508872c1f1637a70109ee1840d00ed78876284d3",
+     "95fa0e596c1ec50f80f67ab76dbdc080d866a04889daf229d3d3898f9481af9c",
+     "67e4475fe44c9c949e79e827021fe71dab6a78c134c452c263011a25be9e8c6d",
+     "005c35290cd19ac6c4455f323c9fd0ff918b66e7b96774ea0630f111f841f432",
+     "b8d4811f181d7392090973a40970d3a7c571ca291b84c72c055c99b46a116563",
+     "14b50edc4f770c7811c3f541bc38086fb209fb9ef69a550f45cb624e0e1f51e6",
+     "f8ddbf0ff0b7151837532a92e631d11c91d17f9bcfa7059af9c56487c8098c04",
+     "1e6ec43a70643d06304073318b60218ff9201ec88f80805bf496d12f3678feae",
+     "ac008f606137a78ae04f65b782f9784f2ecdf0cdd436eaf8cacbdf35ab15f0c1"
+    ],
+    "perTick": [
+     {
+      "t": 1,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 3
+      },
+      "dA": 0,
+      "dB": 19,
+      "occupiedCount": 1
+     },
+     {
+      "t": 2,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 3
+      },
+      "dA": 0,
+      "dB": 18,
+      "occupiedCount": 2
+     },
+     {
+      "t": 3,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 3
+      },
+      "dA": 0,
+      "dB": 17,
+      "occupiedCount": 3
+     },
+     {
+      "t": 4,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 3
+      },
+      "dA": 0,
+      "dB": 16,
+      "occupiedCount": 4
+     },
+     {
+      "t": 5,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 3
+      },
+      "dA": 0,
+      "dB": 15,
+      "occupiedCount": 5
+     },
+     {
+      "t": 6,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 3
+      },
+      "dA": 0,
+      "dB": 14,
+      "occupiedCount": 6
+     },
+     {
+      "t": 7,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 3
+      },
+      "dA": 0,
+      "dB": 13,
+      "occupiedCount": 7
+     },
+     {
+      "t": 8,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 3
+      },
+      "dA": 0,
+      "dB": 12,
+      "occupiedCount": 8
+     },
+     {
+      "t": 9,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 3
+      },
+      "dA": 0,
+      "dB": 11,
+      "occupiedCount": 9
+     },
+     {
+      "t": 10,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 3
+      },
+      "dA": 0,
+      "dB": 10,
+      "occupiedCount": 10
+     },
+     {
+      "t": 11,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 3
+      },
+      "dA": 0,
+      "dB": 9,
+      "occupiedCount": 11
+     },
+     {
+      "t": 12,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 3
+      },
+      "dA": 0,
+      "dB": 8,
+      "occupiedCount": 12
+     },
+     {
+      "t": 13,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 3
+      },
+      "dA": 0,
+      "dB": 7,
+      "occupiedCount": 13
+     },
+     {
+      "t": 14,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 3
+      },
+      "dA": 0,
+      "dB": 6,
+      "occupiedCount": 14
+     },
+     {
+      "t": 15,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 3
+      },
+      "dA": 0,
+      "dB": 5,
+      "occupiedCount": 15
+     },
+     {
+      "t": 16,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 3
+      },
+      "dA": 0,
+      "dB": 4,
+      "occupiedCount": 16
+     }
+    ]
+   },
+   "fixed": {
+    "eventSeqHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "planeHashes": [
+     "1f231688caaa61bb0c3b723fae7b778e2d8e84e02d59bbd44e0b641273957deb",
+     "3b2654c41944c952cee0c9d5c4629acf2000b5de0ff4d4afc39a8ac50b10f85c",
+     "e9484890d795366cfaadf4b68d4d452186ef4ec01ba52091c173d7f367ed19f8",
+     "a9cb20cf9c6fbff61bb36315de75e2c143330f97b1ae21edd37adfc93e16dc62",
+     "022cbeaac378c6fe50f21deddcf1db7cbd9c2a5c2e65b51527e9a17ea6487b91",
+     "5afe1175bff404048153400a9717d9139745f2cc93ec1bb7ab91e0a8b52c4e6a",
+     "e04dac446b612f9de72195a97fa364208d4e52e49bfdcd952579bc4e7e814929",
+     "8b981748dbfd6a1f9bcc56940123b39b178912e3ab086375ca6e01ab63936108",
+     "9c55a6d00387b5b85edb7526508872c1f1637a70109ee1840d00ed78876284d3",
+     "95fa0e596c1ec50f80f67ab76dbdc080d866a04889daf229d3d3898f9481af9c",
+     "67e4475fe44c9c949e79e827021fe71dab6a78c134c452c263011a25be9e8c6d",
+     "005c35290cd19ac6c4455f323c9fd0ff918b66e7b96774ea0630f111f841f432",
+     "b8d4811f181d7392090973a40970d3a7c571ca291b84c72c055c99b46a116563",
+     "14b50edc4f770c7811c3f541bc38086fb209fb9ef69a550f45cb624e0e1f51e6",
+     "f8ddbf0ff0b7151837532a92e631d11c91d17f9bcfa7059af9c56487c8098c04",
+     "1e6ec43a70643d06304073318b60218ff9201ec88f80805bf496d12f3678feae",
+     "ac008f606137a78ae04f65b782f9784f2ecdf0cdd436eaf8cacbdf35ab15f0c1"
+    ],
+    "perTick": [
+     {
+      "t": 1,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 3
+      },
+      "dA": 0,
+      "dB": 19,
+      "occupiedCount": 1
+     },
+     {
+      "t": 2,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 3
+      },
+      "dA": 0,
+      "dB": 18,
+      "occupiedCount": 2
+     },
+     {
+      "t": 3,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 3
+      },
+      "dA": 0,
+      "dB": 17,
+      "occupiedCount": 3
+     },
+     {
+      "t": 4,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 3
+      },
+      "dA": 0,
+      "dB": 16,
+      "occupiedCount": 4
+     },
+     {
+      "t": 5,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 3
+      },
+      "dA": 0,
+      "dB": 15,
+      "occupiedCount": 5
+     },
+     {
+      "t": 6,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 3
+      },
+      "dA": 0,
+      "dB": 14,
+      "occupiedCount": 6
+     },
+     {
+      "t": 7,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 3
+      },
+      "dA": 0,
+      "dB": 13,
+      "occupiedCount": 7
+     },
+     {
+      "t": 8,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 3
+      },
+      "dA": 0,
+      "dB": 12,
+      "occupiedCount": 8
+     },
+     {
+      "t": 9,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 3
+      },
+      "dA": 0,
+      "dB": 11,
+      "occupiedCount": 9
+     },
+     {
+      "t": 10,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 3
+      },
+      "dA": 0,
+      "dB": 10,
+      "occupiedCount": 10
+     },
+     {
+      "t": 11,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 3
+      },
+      "dA": 0,
+      "dB": 9,
+      "occupiedCount": 11
+     },
+     {
+      "t": 12,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 3
+      },
+      "dA": 0,
+      "dB": 8,
+      "occupiedCount": 12
+     },
+     {
+      "t": 13,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 3
+      },
+      "dA": 0,
+      "dB": 7,
+      "occupiedCount": 13
+     },
+     {
+      "t": 14,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 3
+      },
+      "dA": 0,
+      "dB": 6,
+      "occupiedCount": 14
+     },
+     {
+      "t": 15,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 3
+      },
+      "dA": 0,
+      "dB": 5,
+      "occupiedCount": 15
+     },
+     {
+      "t": 16,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 3
+      },
+      "dA": 0,
+      "dB": 4,
+      "occupiedCount": 16
+     }
+    ]
+   }
+  },
+  "8/5": {
+   "sigmaInert": true,
+   "determinism": {
+    "float": true,
+    "fixed": true
+   },
+   "twinEventsTotal": 0,
+   "float": {
+    "eventSeqHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "planeHashes": [
+     "16124d8ebae2e05742033fcadc8194bb7772adb42ae5ac9e23dda49309295219",
+     "d3d6588a3932bee2d9d0715408f6fae682beafcb9bf40d6a44526aba4dd1f343",
+     "fa831b658e85b9ada3ad006b4375c5af9888148be014ffc90b851074c5d352e7",
+     "62e032149ad69e69f869638e66e1c83b00b21fca057fea55063426aeb9f379a9",
+     "cca3d326e1e6a5330c1eb38096d7b070a54ef7cf6629fa2207b447f9eba01a64",
+     "c4da722924ab5016e5adfcd9bcb10cc50f244671a311b6bbd8374b9ddff09c2b",
+     "7434414e8f59320cd343a66273cfdea69772e677d66020f103d838fba5f623c5",
+     "b2f0a32fa46a4f78aa4b42400ce1a3126029a5cc86452659963374bb4b2fcd2f",
+     "4fe3269eb5ad7c4ff987abd9afd68d8b3b526dfc344aa5543002cb0134ee16ae",
+     "0f598ee5d9a0c9f34f49dcb69d9d3ca0e8343ee6b5dcb7144d789d782188af86",
+     "d1b26b0ace0e9741364e32d0edb8ba372dd5f60a2e32eeecf7f88b6dc06ba25c",
+     "c0390c4a84775ee24312b49eaa5e56facf691f856537264c842ee398ee5e2c52",
+     "384c8c9f2683f698309cfd58c9f96dfe009c91eb6d247de87b50e36f0b1bbeea",
+     "dc224e51e6bee64b11b8a7a86c8e79e3cb983a9c6f57d279eab983a61f856ec0",
+     "a4ad1a11757e211a296c08b741f95d1107682a40209ae850433d6eb240a9d50d",
+     "a7aaf09bfd301310a9af9343c214c979f33fba566f54dcdb93dda515a434b52c",
+     "11d63c1ee812afc80735b6363b61274046304604f219aabfb164670890e2590a"
+    ],
+    "perTick": [
+     {
+      "t": 1,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 9
+      },
+      "dA": 0,
+      "dB": 19,
+      "occupiedCount": 1
+     },
+     {
+      "t": 2,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 9
+      },
+      "dA": 0,
+      "dB": 18,
+      "occupiedCount": 2
+     },
+     {
+      "t": 3,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 9
+      },
+      "dA": 0,
+      "dB": 17,
+      "occupiedCount": 3
+     },
+     {
+      "t": 4,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 9
+      },
+      "dA": 0,
+      "dB": 16,
+      "occupiedCount": 4
+     },
+     {
+      "t": 5,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 9
+      },
+      "dA": 0,
+      "dB": 15,
+      "occupiedCount": 5
+     },
+     {
+      "t": 6,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 9
+      },
+      "dA": 0,
+      "dB": 14,
+      "occupiedCount": 6
+     },
+     {
+      "t": 7,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 9
+      },
+      "dA": 0,
+      "dB": 13,
+      "occupiedCount": 7
+     },
+     {
+      "t": 8,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 9
+      },
+      "dA": 0,
+      "dB": 12,
+      "occupiedCount": 8
+     },
+     {
+      "t": 9,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 9
+      },
+      "dA": 0,
+      "dB": 11,
+      "occupiedCount": 9
+     },
+     {
+      "t": 10,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 9
+      },
+      "dA": 0,
+      "dB": 10,
+      "occupiedCount": 10
+     },
+     {
+      "t": 11,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 9
+      },
+      "dA": 0,
+      "dB": 9,
+      "occupiedCount": 11
+     },
+     {
+      "t": 12,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 9
+      },
+      "dA": 0,
+      "dB": 8,
+      "occupiedCount": 12
+     },
+     {
+      "t": 13,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 9
+      },
+      "dA": 0,
+      "dB": 7,
+      "occupiedCount": 13
+     },
+     {
+      "t": 14,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 9
+      },
+      "dA": 0,
+      "dB": 6,
+      "occupiedCount": 14
+     },
+     {
+      "t": 15,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 9
+      },
+      "dA": 0,
+      "dB": 5,
+      "occupiedCount": 15
+     },
+     {
+      "t": 16,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 9
+      },
+      "dA": 0,
+      "dB": 4,
+      "occupiedCount": 16
+     }
+    ]
+   },
+   "fixed": {
+    "eventSeqHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "planeHashes": [
+     "16124d8ebae2e05742033fcadc8194bb7772adb42ae5ac9e23dda49309295219",
+     "d3d6588a3932bee2d9d0715408f6fae682beafcb9bf40d6a44526aba4dd1f343",
+     "fa831b658e85b9ada3ad006b4375c5af9888148be014ffc90b851074c5d352e7",
+     "62e032149ad69e69f869638e66e1c83b00b21fca057fea55063426aeb9f379a9",
+     "cca3d326e1e6a5330c1eb38096d7b070a54ef7cf6629fa2207b447f9eba01a64",
+     "c4da722924ab5016e5adfcd9bcb10cc50f244671a311b6bbd8374b9ddff09c2b",
+     "7434414e8f59320cd343a66273cfdea69772e677d66020f103d838fba5f623c5",
+     "b2f0a32fa46a4f78aa4b42400ce1a3126029a5cc86452659963374bb4b2fcd2f",
+     "4fe3269eb5ad7c4ff987abd9afd68d8b3b526dfc344aa5543002cb0134ee16ae",
+     "0f598ee5d9a0c9f34f49dcb69d9d3ca0e8343ee6b5dcb7144d789d782188af86",
+     "d1b26b0ace0e9741364e32d0edb8ba372dd5f60a2e32eeecf7f88b6dc06ba25c",
+     "c0390c4a84775ee24312b49eaa5e56facf691f856537264c842ee398ee5e2c52",
+     "384c8c9f2683f698309cfd58c9f96dfe009c91eb6d247de87b50e36f0b1bbeea",
+     "dc224e51e6bee64b11b8a7a86c8e79e3cb983a9c6f57d279eab983a61f856ec0",
+     "a4ad1a11757e211a296c08b741f95d1107682a40209ae850433d6eb240a9d50d",
+     "a7aaf09bfd301310a9af9343c214c979f33fba566f54dcdb93dda515a434b52c",
+     "11d63c1ee812afc80735b6363b61274046304604f219aabfb164670890e2590a"
+    ],
+    "perTick": [
+     {
+      "t": 1,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 9
+      },
+      "dA": 0,
+      "dB": 19,
+      "occupiedCount": 1
+     },
+     {
+      "t": 2,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 9
+      },
+      "dA": 0,
+      "dB": 18,
+      "occupiedCount": 2
+     },
+     {
+      "t": 3,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 9
+      },
+      "dA": 0,
+      "dB": 17,
+      "occupiedCount": 3
+     },
+     {
+      "t": 4,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 9
+      },
+      "dA": 0,
+      "dB": 16,
+      "occupiedCount": 4
+     },
+     {
+      "t": 5,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 9
+      },
+      "dA": 0,
+      "dB": 15,
+      "occupiedCount": 5
+     },
+     {
+      "t": 6,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 9
+      },
+      "dA": 0,
+      "dB": 14,
+      "occupiedCount": 6
+     },
+     {
+      "t": 7,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 9
+      },
+      "dA": 0,
+      "dB": 13,
+      "occupiedCount": 7
+     },
+     {
+      "t": 8,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 9
+      },
+      "dA": 0,
+      "dB": 12,
+      "occupiedCount": 8
+     },
+     {
+      "t": 9,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 9
+      },
+      "dA": 0,
+      "dB": 11,
+      "occupiedCount": 9
+     },
+     {
+      "t": 10,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 9
+      },
+      "dA": 0,
+      "dB": 10,
+      "occupiedCount": 10
+     },
+     {
+      "t": 11,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 9
+      },
+      "dA": 0,
+      "dB": 9,
+      "occupiedCount": 11
+     },
+     {
+      "t": 12,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 9
+      },
+      "dA": 0,
+      "dB": 8,
+      "occupiedCount": 12
+     },
+     {
+      "t": 13,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 9
+      },
+      "dA": 0,
+      "dB": 7,
+      "occupiedCount": 13
+     },
+     {
+      "t": 14,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 9
+      },
+      "dA": 0,
+      "dB": 6,
+      "occupiedCount": 14
+     },
+     {
+      "t": 15,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 9
+      },
+      "dA": 0,
+      "dB": 5,
+      "occupiedCount": 15
+     },
+     {
+      "t": 16,
+      "firings": 0,
+      "firers": [],
+      "slot20Occupant": {
+       "x": 2,
+       "y": 1,
+       "resonance": 9
+      },
+      "dA": 0,
+      "dB": 4,
+      "occupiedCount": 16
+     }
+    ]
+   }
+  }
+ },
+ "attribution": [
+  {
+   "kind": "result.attribution",
+   "experiment": "E-Q8",
+   "family": "2/3",
+   "firstDivergenceTick": 1,
+   "audit": {
+    "firstDivergenceTick": 1,
+    "preTickPlanesIdentical": true,
+    "divergentCells": 1,
+    "maxAbsDd": 1,
+    "classifications": {
+     "ENGINEERED-COUPLED-EXCEPTION": 1
+    },
+    "cells": [
+     {
+      "x": 2,
+      "y": 1,
+      "dd": 1,
+      "tauOk": true,
+      "twinHeard": true,
+      "rHit": 3,
+      "readerAcc": -2,
+      "floatTerm": "2",
+      "fixedTerm": "8589934593",
+      "classification": "ENGINEERED-COUPLED-EXCEPTION"
+     }
+    ]
+   },
+   "holdMove": {
+    "tStar": 1,
+    "floatdB": 20,
+    "floatdBPrev": 20,
+    "floatHeld": true,
+    "fixeddB": 21,
+    "fixeddBPrev": 20,
+    "fixedMoved": true,
+    "floatdA": 19,
+    "fixeddA": 19,
+    "floatHeldA": false,
+    "fixedMovedA": true
+   },
+   "writeOrderEvidence": {
+    "firstHitTuples": [
+     [
+      1,
+      2,
+      1,
+      20,
+      3
+     ]
+    ],
+    "firstHitTuplesIdentical": true,
+    "note": "twin tuples at the FIRST hit (t=1) identical across kernels => write-order semantics identical; later-tick tuple divergence is the deterministic amplification of the sigma-representation d-split (EQ7-R8: amplification after the audited first divergence is not re-audited)"
+   }
+  },
+  {
+   "kind": "result.attribution",
+   "experiment": "E-Q8",
+   "family": "8/5",
+   "firstDivergenceTick": 1,
+   "audit": {
+    "firstDivergenceTick": 1,
+    "preTickPlanesIdentical": true,
+    "divergentCells": 1,
+    "maxAbsDd": 1,
+    "classifications": {
+     "SIGMA-REPRESENTATION": 1
+    },
+    "cells": [
+     {
+      "x": 2,
+      "y": 1,
+      "dd": 1,
+      "tauOk": true,
+      "twinHeard": true,
+      "rHit": 5,
+      "readerAcc": -8,
+      "floatTerm": "8",
+      "fixedTerm": "34359738370",
+      "classification": "SIGMA-REPRESENTATION"
+     }
+    ]
+   },
+   "holdMove": {
+    "tStar": 1,
+    "floatdB": 20,
+    "floatdBPrev": 20,
+    "floatHeld": true,
+    "fixeddB": 21,
+    "fixeddBPrev": 20,
+    "fixedMoved": true,
+    "floatdA": 19,
+    "fixeddA": 19,
+    "floatHeldA": false,
+    "fixedMovedA": true
+   },
+   "writeOrderEvidence": {
+    "firstHitTuples": [
+     [
+      1,
+      2,
+      1,
+      20,
+      5
+     ]
+    ],
+    "firstHitTuplesIdentical": true,
+    "note": "twin tuples at the FIRST hit (t=1) identical across kernels => write-order semantics identical; later-tick tuple divergence is the deterministic amplification of the sigma-representation d-split (EQ7-R8: amplification after the audited first divergence is not re-audited)"
+   }
+  }
+ ],
+ "cookerDiff": {
+  "determinism": {
+   "float": true,
+   "fixed": true
+  },
+  "planesByteIdentical": true,
+  "structureIdentical": true,
+  "totalFirings": 4032,
+  "totalWriteAttempts": 4096,
+  "maxAbsTermDiff": "0.33333349227905273",
+  "bandViolations": 0,
+  "bandR": 1,
+  "floatEventSeqHash": "79bca31ad0215f2955494fe20b872ce8f544092f87f162362e6a042fce144400",
+  "fixedEventSeqHash": "79bca31ad0215f2955494fe20b872ce8f544092f87f162362e6a042fce144400",
+  "matchesEQ7_C_2_3": true,
+  "matchesEQ6_COOK": true,
+  "eq7C23EventSeqHash": "79bca31ad0215f2955494fe20b872ce8f544092f87f162362e6a042fce144400",
+  "eq6CookEventSeqHash": "79bca31ad0215f2955494fe20b872ce8f544092f87f162362e6a042fce144400",
+  "float": {
+   "planeHashes": [
+    "da7d8a6c0fb53026c5b6695142700db3ccf75973b01eea534558054d4964201d",
+    "57699ca6640b56ed3c7aaf25f2cc3a6d3150ac1b18b13b18f6101107502d5d07",
+    "fed19d93e02aa985381286cb489d00602726335bf00d8f1d18fdcadc3b67c0aa",
+    "7ee91f82cfe7d37bd334ba8a133d63277196b31032fdd140b2c75b80296238cb",
+    "4dbef3bc228de4c300b55a830f2368cf87916dfc5c1838bfbf16d658bc967221",
+    "65542e87aaa45bbfc27b9e7be77f8577f0ebc204dfb3f435b9c53cf216351b9e",
+    "20e2aa1a4367b59a7804454b277dc53e86e6912b79f8a52eb3d61c9fd446d88f",
+    "7cf57d1e64e3bb41b3e4cfb406031ce67b270e83172b63cff647e4c3462c0c5c",
+    "bfc740cad12d494af7609487c3d9f1c9ab31a10a3dfd3da35fe5bd64676e6a3e",
+    "2e918065948a275c7e5a54fb0f3b7e3e761a1169edb51bcc7dcb8b561f546d7e",
+    "00b4e9aba5c354e446e7ffc36afdec0f9a6dbab23572737ad93a675fecac38de",
+    "740ce9f18047bab72622ba4fe75b35beb9442d12977dc11d102b95a7d51009fb",
+    "7e0823bb3c45eb7b21cacc42eb5ae1518a26f37c4b438fc95e0e1babaee675e3",
+    "5b2f5378f54157b4ce4dc04ba5c1c0af8919dae40431a36fc016429415181f62",
+    "77d515109ffdac9bd3bd5e3a2a385a36dccdfd292c540df973add5936527945f",
+    "34a14e203bf8c09e01e361d12c8acf63b34ab64f8354de1ebf9370dfc997ec36",
+    "20516a9f76e52ebd99a150b7a0e08e82a8e6b87dd3f5ec5be2364bf104487856",
+    "2d78b10229c8cc129708e62b0d2e3f3b3c76959923870a26f85aead606e3d08d",
+    "670d272d49f9f8f0f452aeb3ebf04b46c15b3518995cced751c773947b25e74a",
+    "30458df00ffb18f8f0738555d560c96351188f043866122d2e62ceca7fc2396e",
+    "38e5b44926ceba327efef1a6cd5c8eef330f77142173d7df817b8ec9dbb2ae08",
+    "6a56e62160a86473f40de9fa50f79939aa6089b3e8d01b7f1c2185b535b64f30",
+    "0786a6dc389671d6f42e65d5aefb884fcdf5d3ff6c9d70045b403669af1dca74",
+    "6e7acba33f8de20e424a15d1422e192cfac90c4e3027153fa2038abd266eea4f",
+    "bb9ca2773c6071a3a375628ddb016bc1bceb1b0946d5503a114e5f059f295bae",
+    "29b64aa94bb503469f3fcec6b363c8b98bc081aff495b5cf272dd03185a6d36a",
+    "1b90d3dabf8442732a2ed97cafe3a48d8ee34d462930d3ee7f835ddbd1b9e288",
+    "ddfdd02f6ef531b2b1915283ab9f10c78f3cc36251f38244a3fafca2860afc43",
+    "cd1777e6bc57df56dc313aed4641ae34465acfdeebf3bd228d46fb1570235650",
+    "e778156875567ac52b455084eb52f89582b5c2d97dc0972855ded349a0472d28",
+    "16a4a6aa19ae2ff3571093e19b218dbef921223103338a3b5a2feca3a9eac496",
+    "0c4ee64fa44ef7929b7b1729157006af6c384a0135ef6968e5461ea0ea7c201c",
+    "07dbb59b1ae84aa55b3c986ae127734be93e1d1b93d8cfab193954682debdd75",
+    "a2a4e216fe9ca6ced03ac9cd75fadd96e32d02d057c172e66b0628279347bddf",
+    "de4a3df0d936e06b0946efa5cff5ceebac1954036050b8eb7b65cc00edbe9695",
+    "246bf5f8e5c09f8e137aabe9c8cc2533a78b93025ba9c784d452cc03a3d05cb2",
+    "a8dababc45b2232f5f8c614474fcb2abb8b43a782c0baaf7187f6ef720d5ea07",
+    "157d4253304be312b7fdb392a8050d3eac124050966c3cb0662c06dd0b0ad4fd",
+    "4695100c375ba34e3e775529d5e50fd1a26b7cc008eb6d2130ee78bc40fed2f5",
+    "ce0d6346268e72f8bd6dec814b94f5be38b92674ec8ec4dfd32f8383e7f0c4dc",
+    "abdf60b7cb686051f975b1fdeeea8d7d99915d5a1d9d7219ecfc58b4bc5e41bd",
+    "97a70922dfdccef24919092f6a4926c112d4fdf3755a716d16a48f2959432b98",
+    "d70fb79a9cb4e34a36f21e697c82618b1efee9134480c5f8d7c361926bdef186",
+    "9cfb00d09463fbf4d774e6b0b61f56036ebed431a94fda652cc92e5269dacbf6",
+    "3dc41af7d20a2984bd69d8a7be54c7a7fd72a2434fbdc6beda6d21554de3643a",
+    "4bdac2e65c7a7f3f60c1df979d013ab72f034acb5055005d94ed7ed07a666949",
+    "467d05abd99ad292d99baac17fe36b6e43bdc9249451d3922cbefee05f2a0f76",
+    "3dcd32f72031041c36de50d498f91a0a6209723f1766d22186295b974d6b83fa",
+    "837211b5055ed6bd54ccdd36105ddc989cae220f7aff4b7986dcc507bc592119",
+    "8f5b0a53743a6c955dbd866fc1d1721515f0a49a5d827e9add0c28cb914889fb",
+    "ecdb9fd21b2fc137199a50aab14ff2b5e3c4cb84fe426da550623bdb5bba9f60",
+    "c9acee30a792d99ff82fa8fcc15f289bf69a50425c7484fd9b0618a760cede1c",
+    "825450b33bade2aa92a307d5d20a2385e910ea71c2c75051501a1abdeb462f81",
+    "5b6c977bd4eff590797dc693b72c72909bbf87dc93897b8cfd6442a4242367f5",
+    "50b142157f69857862749e2bbf31260adad54f34f041e673f67881140d932b8d",
+    "b672dbca263d7a972f8415d82a32466083450c10e5d889204d62f10a4e2d7c3a",
+    "1db8f1017280b0db207fbeb05f551da72ccb588d4568890b7af47f6889979d7f",
+    "8ec16c36136caa11e694daf2890fb41a4e5b07dbec3df56721688fbbcefb6229",
+    "5dcade3ff1951d2ac22791395c21a63c3de174ee6631af39d68aa5b29e704409",
+    "cdba6d2368c6e2eeffac7232726c5c6e82f27807b6fe39e27fdfb2e73cc44c91",
+    "2fa7ec3589bf081cb9f2fe782fabb704c08f535b964de0dd68cb4efdb0f5c5de",
+    "7ddde651d0131986ab444267cdc173ce6218dbd05230632c308c72e8ea3f3672",
+    "e1f41d8d0075c7ae914dd2b43fff2cb39f06d57797672464e124655754064a82",
+    "eda354c2f802fa9cbddec9b4a6d5888e08225aa60e5426a5cde0999cf2a54433",
+    "3b8b562c72396ad22169c00c74a5ee7fd6df2edfd7aeeb3886850c9e1cfc89ac"
+   ],
+   "perTick": [
+    {
+     "t": 1,
+     "firings": 63,
+     "occupiedCount": 1
+    },
+    {
+     "t": 2,
+     "firings": 63,
+     "occupiedCount": 2
+    },
+    {
+     "t": 3,
+     "firings": 63,
+     "occupiedCount": 3
+    },
+    {
+     "t": 4,
+     "firings": 63,
+     "occupiedCount": 4
+    },
+    {
+     "t": 5,
+     "firings": 63,
+     "occupiedCount": 5
+    },
+    {
+     "t": 6,
+     "firings": 63,
+     "occupiedCount": 6
+    },
+    {
+     "t": 7,
+     "firings": 63,
+     "occupiedCount": 7
+    },
+    {
+     "t": 8,
+     "firings": 63,
+     "occupiedCount": 8
+    },
+    {
+     "t": 9,
+     "firings": 63,
+     "occupiedCount": 9
+    },
+    {
+     "t": 10,
+     "firings": 63,
+     "occupiedCount": 10
+    },
+    {
+     "t": 11,
+     "firings": 63,
+     "occupiedCount": 11
+    },
+    {
+     "t": 12,
+     "firings": 63,
+     "occupiedCount": 12
+    },
+    {
+     "t": 13,
+     "firings": 63,
+     "occupiedCount": 13
+    },
+    {
+     "t": 14,
+     "firings": 63,
+     "occupiedCount": 14
+    },
+    {
+     "t": 15,
+     "firings": 63,
+     "occupiedCount": 15
+    },
+    {
+     "t": 16,
+     "firings": 63,
+     "occupiedCount": 16
+    },
+    {
+     "t": 17,
+     "firings": 63,
+     "occupiedCount": 17
+    },
+    {
+     "t": 18,
+     "firings": 63,
+     "occupiedCount": 18
+    },
+    {
+     "t": 19,
+     "firings": 63,
+     "occupiedCount": 19
+    },
+    {
+     "t": 20,
+     "firings": 63,
+     "occupiedCount": 20
+    },
+    {
+     "t": 21,
+     "firings": 63,
+     "occupiedCount": 21
+    },
+    {
+     "t": 22,
+     "firings": 63,
+     "occupiedCount": 22
+    },
+    {
+     "t": 23,
+     "firings": 63,
+     "occupiedCount": 23
+    },
+    {
+     "t": 24,
+     "firings": 63,
+     "occupiedCount": 24
+    },
+    {
+     "t": 25,
+     "firings": 63,
+     "occupiedCount": 25
+    },
+    {
+     "t": 26,
+     "firings": 63,
+     "occupiedCount": 26
+    },
+    {
+     "t": 27,
+     "firings": 63,
+     "occupiedCount": 27
+    },
+    {
+     "t": 28,
+     "firings": 63,
+     "occupiedCount": 28
+    },
+    {
+     "t": 29,
+     "firings": 63,
+     "occupiedCount": 29
+    },
+    {
+     "t": 30,
+     "firings": 63,
+     "occupiedCount": 30
+    },
+    {
+     "t": 31,
+     "firings": 63,
+     "occupiedCount": 31
+    },
+    {
+     "t": 32,
+     "firings": 63,
+     "occupiedCount": 32
+    },
+    {
+     "t": 33,
+     "firings": 63,
+     "occupiedCount": 33
+    },
+    {
+     "t": 34,
+     "firings": 63,
+     "occupiedCount": 34
+    },
+    {
+     "t": 35,
+     "firings": 63,
+     "occupiedCount": 35
+    },
+    {
+     "t": 36,
+     "firings": 63,
+     "occupiedCount": 36
+    },
+    {
+     "t": 37,
+     "firings": 63,
+     "occupiedCount": 37
+    },
+    {
+     "t": 38,
+     "firings": 63,
+     "occupiedCount": 38
+    },
+    {
+     "t": 39,
+     "firings": 63,
+     "occupiedCount": 39
+    },
+    {
+     "t": 40,
+     "firings": 63,
+     "occupiedCount": 40
+    },
+    {
+     "t": 41,
+     "firings": 63,
+     "occupiedCount": 41
+    },
+    {
+     "t": 42,
+     "firings": 63,
+     "occupiedCount": 42
+    },
+    {
+     "t": 43,
+     "firings": 63,
+     "occupiedCount": 43
+    },
+    {
+     "t": 44,
+     "firings": 63,
+     "occupiedCount": 44
+    },
+    {
+     "t": 45,
+     "firings": 63,
+     "occupiedCount": 45
+    },
+    {
+     "t": 46,
+     "firings": 63,
+     "occupiedCount": 46
+    },
+    {
+     "t": 47,
+     "firings": 63,
+     "occupiedCount": 47
+    },
+    {
+     "t": 48,
+     "firings": 63,
+     "occupiedCount": 48
+    },
+    {
+     "t": 49,
+     "firings": 63,
+     "occupiedCount": 49
+    },
+    {
+     "t": 50,
+     "firings": 63,
+     "occupiedCount": 50
+    },
+    {
+     "t": 51,
+     "firings": 63,
+     "occupiedCount": 51
+    },
+    {
+     "t": 52,
+     "firings": 63,
+     "occupiedCount": 52
+    },
+    {
+     "t": 53,
+     "firings": 63,
+     "occupiedCount": 53
+    },
+    {
+     "t": 54,
+     "firings": 63,
+     "occupiedCount": 54
+    },
+    {
+     "t": 55,
+     "firings": 63,
+     "occupiedCount": 55
+    },
+    {
+     "t": 56,
+     "firings": 63,
+     "occupiedCount": 56
+    },
+    {
+     "t": 57,
+     "firings": 63,
+     "occupiedCount": 57
+    },
+    {
+     "t": 58,
+     "firings": 63,
+     "occupiedCount": 58
+    },
+    {
+     "t": 59,
+     "firings": 63,
+     "occupiedCount": 59
+    },
+    {
+     "t": 60,
+     "firings": 63,
+     "occupiedCount": 60
+    },
+    {
+     "t": 61,
+     "firings": 63,
+     "occupiedCount": 61
+    },
+    {
+     "t": 62,
+     "firings": 63,
+     "occupiedCount": 62
+    },
+    {
+     "t": 63,
+     "firings": 63,
+     "occupiedCount": 63
+    },
+    {
+     "t": 64,
+     "firings": 63,
+     "occupiedCount": 64
+    }
+   ],
+   "termsFirst16": [
+    "0.6666666666666666",
+    "0.6666666666666666",
+    "0.6666666666666666",
+    "0.6666666666666666",
+    "0.6666666666666666",
+    "0.6666666666666666",
+    "0.6666666666666666",
+    "0.6666666666666666",
+    "0.6666666666666666",
+    "0.6666666666666666",
+    "0.6666666666666666",
+    "0.6666666666666666",
+    "0.6666666666666666",
+    "0.6666666666666666",
+    "0.6666666666666666",
+    "0.6666666666666666"
+   ]
+  },
+  "fixed": {
+   "planeHashes": [
+    "da7d8a6c0fb53026c5b6695142700db3ccf75973b01eea534558054d4964201d",
+    "57699ca6640b56ed3c7aaf25f2cc3a6d3150ac1b18b13b18f6101107502d5d07",
+    "fed19d93e02aa985381286cb489d00602726335bf00d8f1d18fdcadc3b67c0aa",
+    "7ee91f82cfe7d37bd334ba8a133d63277196b31032fdd140b2c75b80296238cb",
+    "4dbef3bc228de4c300b55a830f2368cf87916dfc5c1838bfbf16d658bc967221",
+    "65542e87aaa45bbfc27b9e7be77f8577f0ebc204dfb3f435b9c53cf216351b9e",
+    "20e2aa1a4367b59a7804454b277dc53e86e6912b79f8a52eb3d61c9fd446d88f",
+    "7cf57d1e64e3bb41b3e4cfb406031ce67b270e83172b63cff647e4c3462c0c5c",
+    "bfc740cad12d494af7609487c3d9f1c9ab31a10a3dfd3da35fe5bd64676e6a3e",
+    "2e918065948a275c7e5a54fb0f3b7e3e761a1169edb51bcc7dcb8b561f546d7e",
+    "00b4e9aba5c354e446e7ffc36afdec0f9a6dbab23572737ad93a675fecac38de",
+    "740ce9f18047bab72622ba4fe75b35beb9442d12977dc11d102b95a7d51009fb",
+    "7e0823bb3c45eb7b21cacc42eb5ae1518a26f37c4b438fc95e0e1babaee675e3",
+    "5b2f5378f54157b4ce4dc04ba5c1c0af8919dae40431a36fc016429415181f62",
+    "77d515109ffdac9bd3bd5e3a2a385a36dccdfd292c540df973add5936527945f",
+    "34a14e203bf8c09e01e361d12c8acf63b34ab64f8354de1ebf9370dfc997ec36",
+    "20516a9f76e52ebd99a150b7a0e08e82a8e6b87dd3f5ec5be2364bf104487856",
+    "2d78b10229c8cc129708e62b0d2e3f3b3c76959923870a26f85aead606e3d08d",
+    "670d272d49f9f8f0f452aeb3ebf04b46c15b3518995cced751c773947b25e74a",
+    "30458df00ffb18f8f0738555d560c96351188f043866122d2e62ceca7fc2396e",
+    "38e5b44926ceba327efef1a6cd5c8eef330f77142173d7df817b8ec9dbb2ae08",
+    "6a56e62160a86473f40de9fa50f79939aa6089b3e8d01b7f1c2185b535b64f30",
+    "0786a6dc389671d6f42e65d5aefb884fcdf5d3ff6c9d70045b403669af1dca74",
+    "6e7acba33f8de20e424a15d1422e192cfac90c4e3027153fa2038abd266eea4f",
+    "bb9ca2773c6071a3a375628ddb016bc1bceb1b0946d5503a114e5f059f295bae",
+    "29b64aa94bb503469f3fcec6b363c8b98bc081aff495b5cf272dd03185a6d36a",
+    "1b90d3dabf8442732a2ed97cafe3a48d8ee34d462930d3ee7f835ddbd1b9e288",
+    "ddfdd02f6ef531b2b1915283ab9f10c78f3cc36251f38244a3fafca2860afc43",
+    "cd1777e6bc57df56dc313aed4641ae34465acfdeebf3bd228d46fb1570235650",
+    "e778156875567ac52b455084eb52f89582b5c2d97dc0972855ded349a0472d28",
+    "16a4a6aa19ae2ff3571093e19b218dbef921223103338a3b5a2feca3a9eac496",
+    "0c4ee64fa44ef7929b7b1729157006af6c384a0135ef6968e5461ea0ea7c201c",
+    "07dbb59b1ae84aa55b3c986ae127734be93e1d1b93d8cfab193954682debdd75",
+    "a2a4e216fe9ca6ced03ac9cd75fadd96e32d02d057c172e66b0628279347bddf",
+    "de4a3df0d936e06b0946efa5cff5ceebac1954036050b8eb7b65cc00edbe9695",
+    "246bf5f8e5c09f8e137aabe9c8cc2533a78b93025ba9c784d452cc03a3d05cb2",
+    "a8dababc45b2232f5f8c614474fcb2abb8b43a782c0baaf7187f6ef720d5ea07",
+    "157d4253304be312b7fdb392a8050d3eac124050966c3cb0662c06dd0b0ad4fd",
+    "4695100c375ba34e3e775529d5e50fd1a26b7cc008eb6d2130ee78bc40fed2f5",
+    "ce0d6346268e72f8bd6dec814b94f5be38b92674ec8ec4dfd32f8383e7f0c4dc",
+    "abdf60b7cb686051f975b1fdeeea8d7d99915d5a1d9d7219ecfc58b4bc5e41bd",
+    "97a70922dfdccef24919092f6a4926c112d4fdf3755a716d16a48f2959432b98",
+    "d70fb79a9cb4e34a36f21e697c82618b1efee9134480c5f8d7c361926bdef186",
+    "9cfb00d09463fbf4d774e6b0b61f56036ebed431a94fda652cc92e5269dacbf6",
+    "3dc41af7d20a2984bd69d8a7be54c7a7fd72a2434fbdc6beda6d21554de3643a",
+    "4bdac2e65c7a7f3f60c1df979d013ab72f034acb5055005d94ed7ed07a666949",
+    "467d05abd99ad292d99baac17fe36b6e43bdc9249451d3922cbefee05f2a0f76",
+    "3dcd32f72031041c36de50d498f91a0a6209723f1766d22186295b974d6b83fa",
+    "837211b5055ed6bd54ccdd36105ddc989cae220f7aff4b7986dcc507bc592119",
+    "8f5b0a53743a6c955dbd866fc1d1721515f0a49a5d827e9add0c28cb914889fb",
+    "ecdb9fd21b2fc137199a50aab14ff2b5e3c4cb84fe426da550623bdb5bba9f60",
+    "c9acee30a792d99ff82fa8fcc15f289bf69a50425c7484fd9b0618a760cede1c",
+    "825450b33bade2aa92a307d5d20a2385e910ea71c2c75051501a1abdeb462f81",
+    "5b6c977bd4eff590797dc693b72c72909bbf87dc93897b8cfd6442a4242367f5",
+    "50b142157f69857862749e2bbf31260adad54f34f041e673f67881140d932b8d",
+    "b672dbca263d7a972f8415d82a32466083450c10e5d889204d62f10a4e2d7c3a",
+    "1db8f1017280b0db207fbeb05f551da72ccb588d4568890b7af47f6889979d7f",
+    "8ec16c36136caa11e694daf2890fb41a4e5b07dbec3df56721688fbbcefb6229",
+    "5dcade3ff1951d2ac22791395c21a63c3de174ee6631af39d68aa5b29e704409",
+    "cdba6d2368c6e2eeffac7232726c5c6e82f27807b6fe39e27fdfb2e73cc44c91",
+    "2fa7ec3589bf081cb9f2fe782fabb704c08f535b964de0dd68cb4efdb0f5c5de",
+    "7ddde651d0131986ab444267cdc173ce6218dbd05230632c308c72e8ea3f3672",
+    "e1f41d8d0075c7ae914dd2b43fff2cb39f06d57797672464e124655754064a82",
+    "eda354c2f802fa9cbddec9b4a6d5888e08225aa60e5426a5cde0999cf2a54433",
+    "3b8b562c72396ad22169c00c74a5ee7fd6df2edfd7aeeb3886850c9e1cfc89ac"
+   ],
+   "perTick": [
+    {
+     "t": 1,
+     "firings": 63,
+     "occupiedCount": 1
+    },
+    {
+     "t": 2,
+     "firings": 63,
+     "occupiedCount": 2
+    },
+    {
+     "t": 3,
+     "firings": 63,
+     "occupiedCount": 3
+    },
+    {
+     "t": 4,
+     "firings": 63,
+     "occupiedCount": 4
+    },
+    {
+     "t": 5,
+     "firings": 63,
+     "occupiedCount": 5
+    },
+    {
+     "t": 6,
+     "firings": 63,
+     "occupiedCount": 6
+    },
+    {
+     "t": 7,
+     "firings": 63,
+     "occupiedCount": 7
+    },
+    {
+     "t": 8,
+     "firings": 63,
+     "occupiedCount": 8
+    },
+    {
+     "t": 9,
+     "firings": 63,
+     "occupiedCount": 9
+    },
+    {
+     "t": 10,
+     "firings": 63,
+     "occupiedCount": 10
+    },
+    {
+     "t": 11,
+     "firings": 63,
+     "occupiedCount": 11
+    },
+    {
+     "t": 12,
+     "firings": 63,
+     "occupiedCount": 12
+    },
+    {
+     "t": 13,
+     "firings": 63,
+     "occupiedCount": 13
+    },
+    {
+     "t": 14,
+     "firings": 63,
+     "occupiedCount": 14
+    },
+    {
+     "t": 15,
+     "firings": 63,
+     "occupiedCount": 15
+    },
+    {
+     "t": 16,
+     "firings": 63,
+     "occupiedCount": 16
+    },
+    {
+     "t": 17,
+     "firings": 63,
+     "occupiedCount": 17
+    },
+    {
+     "t": 18,
+     "firings": 63,
+     "occupiedCount": 18
+    },
+    {
+     "t": 19,
+     "firings": 63,
+     "occupiedCount": 19
+    },
+    {
+     "t": 20,
+     "firings": 63,
+     "occupiedCount": 20
+    },
+    {
+     "t": 21,
+     "firings": 63,
+     "occupiedCount": 21
+    },
+    {
+     "t": 22,
+     "firings": 63,
+     "occupiedCount": 22
+    },
+    {
+     "t": 23,
+     "firings": 63,
+     "occupiedCount": 23
+    },
+    {
+     "t": 24,
+     "firings": 63,
+     "occupiedCount": 24
+    },
+    {
+     "t": 25,
+     "firings": 63,
+     "occupiedCount": 25
+    },
+    {
+     "t": 26,
+     "firings": 63,
+     "occupiedCount": 26
+    },
+    {
+     "t": 27,
+     "firings": 63,
+     "occupiedCount": 27
+    },
+    {
+     "t": 28,
+     "firings": 63,
+     "occupiedCount": 28
+    },
+    {
+     "t": 29,
+     "firings": 63,
+     "occupiedCount": 29
+    },
+    {
+     "t": 30,
+     "firings": 63,
+     "occupiedCount": 30
+    },
+    {
+     "t": 31,
+     "firings": 63,
+     "occupiedCount": 31
+    },
+    {
+     "t": 32,
+     "firings": 63,
+     "occupiedCount": 32
+    },
+    {
+     "t": 33,
+     "firings": 63,
+     "occupiedCount": 33
+    },
+    {
+     "t": 34,
+     "firings": 63,
+     "occupiedCount": 34
+    },
+    {
+     "t": 35,
+     "firings": 63,
+     "occupiedCount": 35
+    },
+    {
+     "t": 36,
+     "firings": 63,
+     "occupiedCount": 36
+    },
+    {
+     "t": 37,
+     "firings": 63,
+     "occupiedCount": 37
+    },
+    {
+     "t": 38,
+     "firings": 63,
+     "occupiedCount": 38
+    },
+    {
+     "t": 39,
+     "firings": 63,
+     "occupiedCount": 39
+    },
+    {
+     "t": 40,
+     "firings": 63,
+     "occupiedCount": 40
+    },
+    {
+     "t": 41,
+     "firings": 63,
+     "occupiedCount": 41
+    },
+    {
+     "t": 42,
+     "firings": 63,
+     "occupiedCount": 42
+    },
+    {
+     "t": 43,
+     "firings": 63,
+     "occupiedCount": 43
+    },
+    {
+     "t": 44,
+     "firings": 63,
+     "occupiedCount": 44
+    },
+    {
+     "t": 45,
+     "firings": 63,
+     "occupiedCount": 45
+    },
+    {
+     "t": 46,
+     "firings": 63,
+     "occupiedCount": 46
+    },
+    {
+     "t": 47,
+     "firings": 63,
+     "occupiedCount": 47
+    },
+    {
+     "t": 48,
+     "firings": 63,
+     "occupiedCount": 48
+    },
+    {
+     "t": 49,
+     "firings": 63,
+     "occupiedCount": 49
+    },
+    {
+     "t": 50,
+     "firings": 63,
+     "occupiedCount": 50
+    },
+    {
+     "t": 51,
+     "firings": 63,
+     "occupiedCount": 51
+    },
+    {
+     "t": 52,
+     "firings": 63,
+     "occupiedCount": 52
+    },
+    {
+     "t": 53,
+     "firings": 63,
+     "occupiedCount": 53
+    },
+    {
+     "t": 54,
+     "firings": 63,
+     "occupiedCount": 54
+    },
+    {
+     "t": 55,
+     "firings": 63,
+     "occupiedCount": 55
+    },
+    {
+     "t": 56,
+     "firings": 63,
+     "occupiedCount": 56
+    },
+    {
+     "t": 57,
+     "firings": 63,
+     "occupiedCount": 57
+    },
+    {
+     "t": 58,
+     "firings": 63,
+     "occupiedCount": 58
+    },
+    {
+     "t": 59,
+     "firings": 63,
+     "occupiedCount": 59
+    },
+    {
+     "t": 60,
+     "firings": 63,
+     "occupiedCount": 60
+    },
+    {
+     "t": 61,
+     "firings": 63,
+     "occupiedCount": 61
+    },
+    {
+     "t": 62,
+     "firings": 63,
+     "occupiedCount": 62
+    },
+    {
+     "t": 63,
+     "firings": 63,
+     "occupiedCount": 63
+    },
+    {
+     "t": 64,
+     "firings": 63,
+     "occupiedCount": 64
+    }
+   ],
+   "termsFirst16": [
+    "2863311531",
+    "2863311531",
+    "2863311531",
+    "2863311531",
+    "2863311531",
+    "2863311531",
+    "2863311531",
+    "2863311531",
+    "2863311531",
+    "2863311531",
+    "2863311531",
+    "2863311531",
+    "2863311531",
+    "2863311531",
+    "2863311531",
+    "2863311531"
+   ]
+  }
+ },
+ "aggregates": {
+  "anyUnexplained": false,
+  "bothFamiliesDiverge": true,
+  "bothHoldMove": true,
+  "controlsInert": true,
+  "orderEvidence": true,
+  "allDet": true,
+  "VERDICT": "ESTABLISHED",
+  "verdictLine": "E-Q8 VERDICT: FLOAT-ONLY-ARTIFACT ESTABLISHED — primary 2/3: float held / fixed moved at tick 1 (contested slot 20), secondary 8/5: float held / fixed moved at tick 1; first-divergence ticks 2/3=1 8/5=1; attribution 2/3:{\"ENGINEERED-COUPLED-EXCEPTION\":1} 8/5:{\"SIGMA-REPRESENTATION\":1}; determinism EQ8-D1 PASS (all arms byte-identical across fresh reruns, both kernels); cooker_diff byte-identical planes + identical structure, terms differ within band (maxAbsTermDiff=0.33333349227905273, violations=0), ==E-Q7 C_2_3 / E-Q6 COOK: true/true. No floor edited post-run."
+ }
+}
