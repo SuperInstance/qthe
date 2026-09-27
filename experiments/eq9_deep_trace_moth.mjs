@@ -539,9 +539,13 @@ function stageTrace() {
       const sigmaReal = arm === 'rat' ? n / dd : arm === 'near' ? n / dd + IRR_STEP : Math.SQRT2;
       const sigmaQint = sigmaQFor(sigmaReal);
       const f1 = runOnce(FLOAT_K, n, dd, sigmaReal, sigmaQint, false, true, true);
-      const f2 = runOnce(FLOAT_K, n, dd, sigmaReal, sigmaQint, false, false, false);
+      // D1 twin runs in the SAME (full, trace) mode — like-for-like compact comparison.
+      // (Run-1 defect, caught and fixed pre-commit: comparing a trace-mode run against an
+      // audit-mode rerun fails on perTick SHAPE — the exact defect E-Q9's primaries
+      // receipted ("comparison bug, never kernels"). Event hashes were never in question.)
+      const f2 = runOnce(FLOAT_K, n, dd, sigmaReal, sigmaQint, false, true, true);
       const x1 = runOnce(FIXED_K, n, dd, sigmaReal, sigmaQint, false, true, true);
-      const x2 = runOnce(FIXED_K, n, dd, sigmaReal, sigmaQint, false, false, false);
+      const x2 = runOnce(FIXED_K, n, dd, sigmaReal, sigmaQint, false, true, true);
       const d1 = f1.eventSeqHash === f2.eventSeqHash && f1.snapshotHash === f2.snapshotHash
         && JSON.stringify(f1.planeHashes) === JSON.stringify(f2.planeHashes) && f1.compact === f2.compact
         && x1.eventSeqHash === x2.eventSeqHash && x1.snapshotHash === x2.snapshotHash
@@ -590,7 +594,14 @@ function stageTrace() {
         const gotDir = sign(f1.perTick[0].dB - SLOT);
         row.far_dir = gotDir;
         if (gotDir !== wantDir) { flags.dt_g = false; misses.dt_g.push(`${sigmaKey}/far/dir want ${wantDir} got ${gotDir}`); }
-        if (x1.perTick.some((p) => p.dB === SLOT)) { flags.dt_g = false; misses.dt_g.push(`${sigmaKey}/far/no-move`); }
+        // Run-1 scorer defect, caught in verdict review pre-commit (audit-shape bug, never kernels —
+        // the E-Q9 primaries defect class): the no-move check flagged any fixed trajectory that
+        // LANDS on d=20 mid-staircase (B's dyadic drift revisits slot 20; 1/4 + 39/128 were
+        // false-positived while their tick-1 moves were present and correctly directed). The
+        // registered claim is "both planes move every tick", so the check IS the per-tick movement,
+        // on BOTH kernels: t=1 leaves SLOT, every later tick differs from its predecessor.
+        const movedEveryTick = (k) => k.perTick.every((p, i) => (i === 0 ? p.dB !== SLOT : p.dB !== k.perTick[i - 1].dB));
+        if (!movedEveryTick(f1) || !movedEveryTick(x1)) { flags.dt_g = false; misses.dt_g.push(`${sigmaKey}/far/no-move`); }
       }
       for (const c of audit.cells) if (c.cls === 'UNEXPLAINED') {
         flags.dt_i = false;

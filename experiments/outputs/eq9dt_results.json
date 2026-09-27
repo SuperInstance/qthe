@@ -1,0 +1,246 @@
+{
+ "receipt": "eq9_deep_trace_moth (E-Q9-DT RUN, task 42-b, wave 42, lane moth-smith). Registered floors: situations/eq9_deep_trace_registration.json (PRE-RUN). Census recompute sha asserted before any tick: 552d171c6ddf2cdd5b7a87cc28cae2c2eb8435a560ad66aa934225eb6dbc20f6",
+ "registration": "situations/eq9_deep_trace_registration.json",
+ "seed_receipt": {
+  "path": "experiments/outputs/eq9dt_seed_receipt.json",
+  "mode": "live",
+  "moth_job_id": "2caa822b-7c46-4f65-a0c9-152c46272e19",
+  "moth_jobs_used": 1,
+  "raw_bits_sha256": "ebc8a43d90be5c0b01788f7cc63021ab0b0dac1a0294756e73a2882360b5e9b9",
+  "raw_bits_len": 4848,
+  "vn_bits_len": 1254,
+  "vn_bytes_sha256": "4477ebbfe3069445ee65a4d20a582de6527cac811f6072366064b97566eea179",
+  "whitened_seed_block0_sha256": "836985ec99d5e5e69cef6445ce5bf33b3b232c2ce0733ca72f9b88d244e8ddeb"
+ },
+ "board": {
+  "W": 9,
+  "H": 5,
+  "SLOT": 20,
+  "T": 16,
+  "A_XY": [
+   1,
+   2
+  ],
+  "B_XY": [
+   6,
+   2
+  ],
+  "PA_SLOTS": [
+   [
+    0,
+    1
+   ],
+   [
+    2,
+    1
+   ],
+   [
+    0,
+    3
+   ],
+   [
+    2,
+    3
+   ]
+  ],
+  "PB_SLOTS": [
+   [
+    5,
+    1
+   ],
+   [
+    7,
+    1
+   ],
+   [
+    5,
+    3
+   ],
+   [
+    7,
+    3
+   ]
+  ],
+  "geometry_note": "E-Q9 board machinery VERBATIM (e_q9_sweep.mjs): same-slot S3 live-read probe scaled to the Repel mass; t=0 acc assertions LOUD per run"
+ },
+ "deep_trace": {
+  "families": 16,
+  "arms": [
+   "rat",
+   "near",
+   "far"
+  ],
+  "kernels": [
+   "float:qthe.mjs",
+   "fixed:qthe_fixed.mjs"
+  ],
+  "d1": "x2 fresh constructions per (family, arm, kernel)",
+  "controls": "A->Ground rat control per family, sigmaInert REQUIRED",
+  "sigma_door_checks": 68,
+  "run_order": "MOTH SHUFFLE ORDER (rank 1..16 receipted in the seed receipt)"
+ },
+ "eq8_drift_guard": {
+  "2/3": {
+   "float": true,
+   "fixed": true
+  },
+  "8/5": {
+   "float": true,
+   "fixed": true
+  }
+ },
+ "pmf_cross_check": {
+  "pool": 1134,
+  "f_inv": 379,
+  "pmf_sha": "343fd02bc8570042fefee351cb5c6acd7abd6bf3d5f65f342e027b5cd1ff562d",
+  "registered_pmf_sha": "343fd02bc8570042fefee351cb5c6acd7abd6bf3d5f65f342e027b5cd1ff562d",
+  "equal": true
+ },
+ "outcomes": {
+  "dt_a": {
+   "claim": "How many of the 16 moth-chosen families show F-INV at near-sigma (fixed BLIND/holds while float moves) vs stay D (both hold): the count follows the pool mixture — hypergeometric(N=1134, K=379, n=16). This is the honest distribution registered BEFORE the job decides which 16.",
+   "observed_finv_count": 3,
+   "expected": 5.3474,
+   "pmf_brier": 0.939633,
+   "pass_full_pmf": true
+  },
+  "dt_b": {
+   "claim": "ALL 16 families at the family point (rat arm): the planes are byte-identical across float/fixed at every tick 0..16 and B stays d=20 every tick. (Writer A may move, but only IDENTICALLY on both planes — dyadic pressures are exactly representable in both kernels; that identity is what byte-identity asserts, E-Q9 E5 precedent.) The dispatcher's headline question: the 7/10-style fixed-DOWN -1 move CANNOT appear here — dyadic dd | 2^32 makes the fixed B pressure exactly zero (T2), so the answer registered is 16 hold / 0 fixed-DOWN -1.",
+   "p": 0.97,
+   "pass": false,
+   "misses": [
+    "192/1/rat",
+    "113/8/rat",
+    "219/8/rat",
+    "193/8/rat",
+    "94/1/rat",
+    "1/4/rat",
+    "243/2/rat",
+    "135/2/rat",
+    "248/1/rat",
+    "119/1/rat",
+    "73/8/rat",
+    "232/1/rat",
+    "39/128/rat",
+    "97/32/rat",
+    "131/1/rat",
+    "77/16/rat"
+   ],
+   "brier": 0.9409
+  },
+  "dt_c": {
+   "claim": "The fixed kernel's B response never moves at rat AND near across all 16 families x 16 ticks (fixed dB === 20 in every per-tick row; every audit cell on those arms has the fixed plane held). Writer A may move identically on both planes — that is not an artifact event and byte-identity covers it. The fixed-DOWN -1 class (the 7/10-style B response) belongs to NON-dyadic A families (17,042 of the 38,911 sweep set); its count in this dyadic deep trace is registered 0.",
+   "p": 0.97,
+   "pass": false,
+   "misses": [
+    "192/1/rat/fixed-moved",
+    "192/1/near/fixed-moved",
+    "113/8/rat/fixed-moved",
+    "113/8/near/fixed-moved",
+    "219/8/rat/fixed-moved",
+    "219/8/near/fixed-moved",
+    "193/8/rat/fixed-moved",
+    "193/8/near/fixed-moved",
+    "94/1/rat/fixed-moved",
+    "94/1/near/fixed-moved",
+    "1/4/rat/fixed-moved",
+    "1/4/near/fixed-moved",
+    "243/2/rat/fixed-moved",
+    "243/2/near/fixed-moved",
+    "135/2/rat/fixed-moved",
+    "135/2/near/fixed-moved",
+    "248/1/rat/fixed-moved",
+    "248/1/near/fixed-moved",
+    "119/1/rat/fixed-moved",
+    "119/1/near/fixed-moved",
+    "73/8/rat/fixed-moved",
+    "73/8/near/fixed-moved",
+    "232/1/rat/fixed-moved",
+    "232/1/near/fixed-moved",
+    "39/128/rat/fixed-moved",
+    "39/128/near/fixed-moved",
+    "97/32/rat/fixed-moved",
+    "97/32/near/fixed-moved",
+    "131/1/rat/fixed-moved",
+    "131/1/near/fixed-moved",
+    "77/16/rat/fixed-moved",
+    "77/16/near/fixed-moved"
+   ],
+   "brier": 0.9409
+  },
+  "dt_d": {
+   "claim": "Every census-pinned near-F-INV family: first divergence at tick 1, exactly ONE cell at B (6,2), |dd|=1, fixed held & float moved, pre-tick planes byte-identical, tau preserved — DIV1-FINV under the E-Q9 taxonomy.",
+   "p": 0.93,
+   "pass": true,
+   "misses": [],
+   "brier": 0.0049
+  },
+  "dt_e": {
+   "claim": "Every F-INV float move is UP +1 (float d 20->21), matching the pre-run arithmetic 379/379 positive-sign cells.",
+   "p": 0.9,
+   "pass": true,
+   "misses": [],
+   "brier": 0.01
+  },
+  "dt_f": {
+   "claim": "Every census-pinned near-degenerate family (sigma >= 4): the near run is byte-identical to its rat run on BOTH kernels (17/17 plane hashes) — the float plane literally cannot see the irrational step there.",
+   "p": 0.95,
+   "pass": true,
+   "misses": [],
+   "brier": 0.0025
+  },
+  "dt_g": {
+   "claim": "Far arm (sqrt2): plane hashes byte-identical across kernels at every tick for all 16, both planes move every tick, and the shared d-response direction is DOWN -1 exactly for the selected families with sigma > sqrt2 (pre-run pool arithmetic: 953/1,134) — B-class both-move, zero fixed-hold, zero UNEXPLAINED.",
+   "p": 0.9,
+   "pass": true,
+   "misses": [],
+   "brier": 0.01
+  },
+  "dt_h": {
+   "claim": "Determinism (EQ9-D1 at deep-trace scale): every (family x arm x kernel) run twice from fresh construction — byte-identical plane-hash sequences, event-seq hashes, snapshot hashes, compact per-tick strings.",
+   "p": 0.99,
+   "pass": true,
+   "misses": [],
+   "d1_failures": [],
+   "brier": 0.0001
+  },
+  "dt_i": {
+   "claim": "Zero UNEXPLAINED cells under the E-Q9 extended taxonomy (SIGMA-REPRESENTATION / FIXED-BLIND-INVERSION / QUANTIZATION-BLINDNESS; everything else UNEXPLAINED) across all 48 family-arm audits.",
+   "p": 0.9,
+   "pass": true,
+   "misses": [],
+   "holes": [],
+   "brier": 0.01
+  },
+  "dt_j": {
+   "claim": "No-twin control (A -> Ground) at the rat arm for each of the 16: sigmaInert — float and fixed control planes byte-identical, equal event-seq and snapshot hashes (E-Q8/E-Q9 control precedent).",
+   "p": 0.95,
+   "pass": true,
+   "misses": [],
+   "brier": 0.0025
+  },
+  "dt_k": {
+   "claim": "Kernel-drift guard BEFORE any deep-trace tick: the E-Q8 6x3 board rebuilt for 2/3 and 8/5 reproduces the RECEIPTED E-Q8 plane hashes byte-for-byte (17/17 ticks, float and fixed, from e_q8_results.json on disk).",
+   "p": 0.99,
+   "pass": true,
+   "detail": {
+    "2/3": {
+     "float": true,
+     "fixed": true
+    },
+    "8/5": {
+     "float": true,
+     "fixed": true
+    }
+   },
+   "brier": 0.0001
+  }
+ },
+ "mean_brier_binary_events": 0.19219,
+ "tallies": {
+  "finv_observed": 3,
+  "d1_failures": 0,
+  "unexplained_holes": 0
+ },
+ "unexplained_holes": []
+}
