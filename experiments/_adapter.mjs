@@ -13,6 +13,17 @@
 // Priority: real kernel ../qthe.mjs (if present on disk) -> TEST-ONLY
 // experiments/_ref_kernel.mjs (clearly marked, used only while the real kernel
 // has not landed; every receipt must record kernelKind).
+//
+// ADAPTED TO THE LANDED KERNEL (commit 492333e, interpretation receipts R1-R5):
+//  - substrate IS a Uint8Array with named props (w, h, ticks, __wormholes) [R5]
+//  - tick() returns the NEXT substrate (fresh Uint8Array) — callers reassign
+//  - seedFn signature is (i, x, y)
+//  - NO persistent per-cell imaginary accumulator exists in the kernel: twin
+//    hits are emitted as events {kind:'twin', x, y, slot, resonance, term}.
+//    The harness builds the cumulative imaginary meter FROM THE EVENT STREAM
+//    (see pre_registration_amendment_1.json — receipted before runs).
+//  - _ref_kernel.mjs was NEVER BUILT: the real kernel landed during
+//    registration. The TEST-ONLY fallback is dead code that stays unwritten.
 import { statSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
@@ -46,6 +57,7 @@ export async function loadKernel() {
 
 // --- byte-plane readback (probe chain; returns Uint8Array or throws ADAPT) ---
 export function bytePlane(sub) {
+  if (sub instanceof Uint8Array) return sub; // real kernel [R5]
   if (sub.bytes instanceof Uint8Array) return sub.bytes;
   if (sub.buffer instanceof Uint8Array) return sub.buffer;
   if (Array.isArray(sub.cells) && typeof sub.cells[0] === 'number') return Uint8Array.from(sub.cells);
@@ -84,6 +96,7 @@ export function imagAcc(sub) {
 
 // --- mid-run mutation (injector arm, E-Q5 A2) — null if unsupported ---
 export function setCell(sub, x, y, byte) {
+  if (sub instanceof Uint8Array) { sub[y * sub.w + x] = byte & 0xff; return true; } // real kernel [R5]
   if (sub.bytes instanceof Uint8Array) { sub.bytes[y * sub.w + x] = byte; return true; }
   if (Array.isArray(sub.cells) && typeof sub.cells[0] === 'number') { sub.cells[y * sub.w + x] = byte; return true; }
   if (Array.isArray(sub.cells) && sub.cells[0] && typeof sub.cells[0] === 'object') {
