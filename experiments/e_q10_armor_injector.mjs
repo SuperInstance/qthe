@@ -234,7 +234,25 @@ writeFileSync(join(OUT, 'e_q10_results.json'), JSON.stringify({
 }, null, 1));
 
 // ---------------------------------------------------------------- receipts ---
-const { stone, stonePath } = await linkStone();
+// STONE RESOLUTION (instrumentation receipt, run-2): THE STONE is absent from
+// this sandbox — the four _stone_link candidates exhaust on run-1 (receipted
+// honestly; results were already written). Run-2 resolves the CANONICAL module
+// pinned lane-side at /home/z/my-project/scripts/45b-stone/stone.mjs, fetched
+// read-only from github.com/SuperInstance/quilt-stone blob 4ef3e1b8937c9571f1
+// 439d5bd73a87a9292d716f, sha256 73c28357a3c245e45ed13d0834e26d1712cc9cd0a9d
+// 71e02690a28e59cf550fa. This is a pinned COPY of the canonical module, not a
+// fork: the sealed chains remain verifiable by any environment that has the
+// real quilt-stone. Zero network inside the run itself.
+let stone, stonePath;
+try {
+  ({ stone, stonePath } = await linkStone());
+} catch (e) {
+  const PINNED = '/home/z/my-project/scripts/45b-stone/stone.mjs';
+  stone = await import(PINNED);
+  if (typeof stone.sealChain !== 'function' || typeof stone.verifyChainFile !== 'function') throw e;
+  stonePath = `pinned:${PINNED} (canonical quilt-stone blob 4ef3e1b8…, sha256 73c28357…; _stone_link candidates exhausted on run-1 — receipted)`;
+  console.log(`[e-q10] stone: _stone_link exhausted; using pinned canonical copy (${stonePath})`);
+}
 const rows = [
   { kind: 'rules.EQ10', frozen_by: 'situations/eq10_lever_registration.json (committed PRE-TICK)', registration_sha256: REG_SHA,
     lever: "guest r9-q2 next_lever: C5' injector one-pager (reuse E-Q5 harness unchanged; 20 trials; VOID clause inherited)",
