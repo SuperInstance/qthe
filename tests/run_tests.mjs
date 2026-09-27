@@ -35,6 +35,12 @@
 //     xs = [2, 3, 5, 7]; literals written BEFORE the run:
 //       row0 [A10, R4, I6, G63]  -> { re: 10*2 - 4*3 =   8, im: 6*5 = 30 }
 //       row1 [I1, I2, A7, R0]    -> { re:  7*2 - 0*3 =  14, im: 1*2+2*3 = 8 }
+//       ROW1 CORRECTION (run 1, kept beside the fix — never rewrite a
+//       registered gate): the re literal above was MY hand-arithmetic error
+//       (d=7 multiplies x=xs[2]=5, not x=2). Correct: re = 7*5 - 0*3 = 35.
+//       G4 therefore FAILS BY LETTER forever; post-hoc gate G4-P2 checks the
+//       corrected literal and the kernel verdict. Prediction was wrong, not
+//       the kernel.
 //       row2 [G1, G2, G3, G4]    -> { re: 0, im: 0 }   (Ground excluded even
 //                                        with d>0 — the tau=0 exclusion rule)
 //       row3 [R9, R1]            -> { re: -(9*2+1*3) = -21, im: 0 }
@@ -210,7 +216,11 @@ function runTrace(seed, ticks) {
   const planeEq = deepEq(Array.from(A1.sub), Array.from(A2.sub));
   const diffSeed = A1.digest !== B.digest;
   const kernelSrc = fs.readFileSync(path.join(HERE, '..', 'qthe.mjs'), 'utf8');
-  const randHits = (kernelSrc.match(/Math\.random/g) || []).length;
+  // static scan runs on COMMENT-STRIPPED source (run 1 finding: the scan hit
+  // this project's own determinism-contract comment — a docstring false
+  // positive, the same lesson Task 26-b's e_st1 scanner learned)
+  const stripped = kernelSrc.replace(/\/\*[\s\S]*?\*\//g, ' ').replace(/\/\/[^\n]*/g, '');
+  const randHits = (stripped.match(/Math\.random/g) || []).length;
   gate('G3', 'determinism: same seed -> byte-identical 1000-tick trace; no Math.random in kernel',
     'A1==A2 1000/1000 per-tick; planes equal; seed 20260928 differs; randHits=0',
     match === 1000 && planeEq && diffSeed && randHits === 0,
@@ -229,10 +239,19 @@ function runTrace(seed, ticks) {
   const EXPECT = [{ re: 8, im: 30 }, { re: 14, im: 8 }, { re: 0, im: 0 }, { re: -21, im: 0 }];
   const got = q.vectorPass(weights, xs);
   const allInt = got.every((o) => Number.isInteger(o.re) && Number.isInteger(o.im));
-  gate('G4', 'split-channel vectorPass exact vs hand-computed literals',
-    'exact [{re:8,im:30},{re:14,im:8},{re:0,im:0},{re:-21,im:0}], all integers',
+  const g4 = gate('G4', 'split-channel vectorPass exact vs hand-computed literals',
+    'exact [{re:8,im:30},{re:14,im:8},{re:0,im:0},{re:-21,im:0}], all integers (see header CORRECTION)',
     deepEq(got, EXPECT) && allInt,
     { got, allInt });
+  // POST-HOC G4-P2 (run 1 correction — the registered gate above stays as
+  // written): corrected literal for row1 is re = 7*5 = 35.
+  const g4p2 = gate('G4-P2', 'post-hoc: corrected row1 literal (prediction error, not kernel error)',
+    'exact [{re:8,im:30},{re:35,im:8},{re:0,im:0},{re:-21,im:0}], all integers',
+    deepEq(got, [{ re: 8, im: 30 }, { re: 35, im: 8 }, { re: 0, im: 0 }, { re: -21, im: 0 }]) && allInt,
+    { got, allInt });
+  gates[gates.length - 2].postHocPass = g4p2;      // G4's failure is a prediction error...
+  gates[gates.length - 2].postHocOf = 'G4-P2';     // ...vindicated by the corrected literal
+  gates[gates.length - 1].isPostHocFor = 'G4';     // G4-P2 exists only because G4's literal was wrong
 }
 
 // ── G5: wormhole twin-resonance, pinned schedule ──────────────────────────
@@ -315,7 +334,10 @@ function pairedArm(seed, tauSpan, ticks = 200) {
 }
 
 // ── receipt: stone-v1 chain + verdict json (deterministic, no wall-clock) ─
-const allPass = gates.every((g) => g.pass);
+// all_pass: every registered gate passes, or its failure is diagnosed as a
+// PREDICTION error with the post-hoc corrected gate passing (house pattern:
+// falsified predictions stay beside their post-hoc labels — never rewritten).
+const allPass = gates.every((g) => g.pass || g.postHocPass === true);
 const kernelPath = path.join(HERE, '..', 'qthe.mjs');
 const receipt = {
   kernel: 'qthe.mjs',

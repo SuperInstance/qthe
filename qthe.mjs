@@ -237,12 +237,15 @@ export function tick(cells, opts = {}) {
 // Canonical JSON-able view of substrate + table + this tick's events — the
 // thing G3/G6 hash and the A2UI HUD displays. Cells are copied by value; the
 // expandos (w/h/ticks/bytes/__scratch/__) never enter the view.
+// R7 (found by gate G6 run 1 — the flag leaked into traces): the view records
+// wormhole STATE, not the flag — an EMPTY table is trace-equivalent to
+// wormholes disabled. Without Abstain cells the paired arms are byte-equal.
 export function traceView(cells, events) {
   const table = cells.__wormholes instanceof WormholeTable ? cells.__wormholes : null;
   return {
     w: cells.w, h: cells.h, ticks: cells.ticks | 0,
     cells: Array.from(cells),
-    wormholes: table ? table.snapshot() : null,
+    wormholes: table && table.occupiedCount() > 0 ? table.snapshot() : null,
     events: events !== undefined ? events : (cells.lastEvents || []),
   };
 }

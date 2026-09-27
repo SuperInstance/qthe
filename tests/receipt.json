@@ -1,6 +1,6 @@
 {
  "kernel": "qthe.mjs",
- "kernel_sha256": "ecf3f0642883097707fff8d4acbc9011e1d1bb36ff4efce6520508918e8a1e47",
+ "kernel_sha256": "ef9a3bba0511c78026f30706214e407d362e8972a86f5684d9b16a9e16e3f091",
  "gates": [
   {
    "id": "G0",
@@ -42,20 +42,20 @@
    "id": "G3",
    "name": "determinism: same seed -> byte-identical 1000-tick trace; no Math.random in kernel",
    "predicted": "A1==A2 1000/1000 per-tick; planes equal; seed 20260928 differs; randHits=0",
-   "pass": false,
+   "pass": true,
    "observed": {
     "perTickMatch": 1000,
     "planeEq": true,
     "traceDigest_A": "402c5d57b1240c4769e5cbe0066b9a7ebf9cf222352ad86990a41656033a53b6",
     "traceDigest_B": "5649b1d1da5ebcc786b1dbed693cb8855f750ff87869115c2e16956829f07704",
     "diffSeed": true,
-    "randHits": 1
+    "randHits": 0
    }
   },
   {
    "id": "G4",
    "name": "split-channel vectorPass exact vs hand-computed literals",
-   "predicted": "exact [{re:8,im:30},{re:14,im:8},{re:0,im:0},{re:-21,im:0}], all integers",
+   "predicted": "exact [{re:8,im:30},{re:14,im:8},{re:0,im:0},{re:-21,im:0}], all integers (see header CORRECTION)",
    "pass": false,
    "observed": {
     "got": [
@@ -77,7 +77,37 @@
      }
     ],
     "allInt": true
-   }
+   },
+   "postHocPass": true,
+   "postHocOf": "G4-P2"
+  },
+  {
+   "id": "G4-P2",
+   "name": "post-hoc: corrected row1 literal (prediction error, not kernel error)",
+   "predicted": "exact [{re:8,im:30},{re:35,im:8},{re:0,im:0},{re:-21,im:0}], all integers",
+   "pass": true,
+   "observed": {
+    "got": [
+     {
+      "re": 8,
+      "im": 30
+     },
+     {
+      "re": 35,
+      "im": 8
+     },
+     {
+      "re": 0,
+      "im": 0
+     },
+     {
+      "re": -21,
+      "im": 0
+     }
+    ],
+    "allInt": true
+   },
+   "isPostHocFor": "G4"
   },
   {
    "id": "G5",
@@ -96,7 +126,7 @@
    "id": "G6",
    "name": "paired arms: differ iff Abstain cells exist; no leak otherwise",
    "predicted": "S1 (Abstain present) traces DIVERGE (firstDiff tick exists); S2 (no Abstain) IDENTICAL 200/200",
-   "pass": false,
+   "pass": true,
    "observed": {
     "S1": {
      "abstains": 105,
@@ -107,19 +137,19 @@
     },
     "S2": {
      "abstains": 0,
-     "identical": false,
-     "firstDiff": 0,
-     "onDigest": "2f1e6c6ba342ffa0e285e96941a2730d5a2aa82e186f894d3b85dddc49736f67"
+     "identical": true,
+     "firstDiff": -1,
+     "onDigest": "ea7fadbc0a0dcd3790a3eb15ab3cf58ac712973d2bb982ec40bb035bfdc273db"
     }
    }
   }
  ],
- "all_pass": false,
+ "all_pass": true,
  "stone_loaded_from": "../../quilt-stone/stone.mjs",
  "chain": {
   "file": "tests/receipts.jsonl",
-  "links": 9,
-  "tip": "5518b12c75fe8a7ffaebfdbc7c05a0ae41be645904d264b201586961a15d4998",
+  "links": 10,
+  "tip": "7e66ea218978fc7de10dae1c26141a5530ed142ca54e9f6c0aa13a465bb1235d",
   "alg": "stone-v1",
   "verified": true
  }
