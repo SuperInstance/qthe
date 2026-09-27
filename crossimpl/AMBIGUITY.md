@@ -115,7 +115,37 @@ and every d consumed by vectorPass is in [0,63] — by exhaustion over all 256.)
 
 ## RESOLUTIONS (appended ONLY after the Python self-tests pass and qthe.mjs is opened)
 
-- (pending — to be filled post-peek, each ambiguity A1..A10: kernel's actual
-  reading, agreement/divergence with the chosen reading, classification
-  [SPEC-ambiguity finding | kernel defect | porter error], and what changed,
-  which must be: nothing silent.)
+Post-peek: opened `qthe.mjs` (sha256 ef9a3bba…) only after the Python passed
+its own 36-assertion self-test. Every resolution below is confirmed by the
+conformance run (`findings.md`); zero divergence required reinterpreting a
+chosen reading.
+
+- **A1 pack direction — CONFIRMED.** Kernel `pack(tau,d) = ((tau&3)<<6 | (d&63)) & 0xff`
+  — identical to the chosen reading ON THE SPECIFIED DOMAIN. Difference:
+  kernel MASKS out-of-range inputs, chosen reading RAISES → logged as
+  finding F3 (validation-style, outside the specified surface).
+- **A2 imag coefficient +1 — CONFIRMED.** Kernel `case 3: im += dv*x`. Its
+  exported `PSI[3]` is the operator CHARACTER `'i'` — notation, never used in
+  arithmetic; the exact-integer reading is what its own vectorPass computes.
+- **A3 shape — CONFIRMED.** Kernel `vectorPass(weights, xs)`: array of rows ×
+  integer inputs → `[{re, im}]` per row. No ragged validation in kernel
+  (row > xs silently NaNs) vs chosen raise → finding F2.
+- **A4 x domain — CONFIRMED on the specified surface.** Kernel exact for
+  everything the pre-registered battery exercised. True horizon: ±2^53
+  (JS Number), and it is SILENT on the input side (P2/P3 probe) → finding F1.
+- **A5 order — CLOSED as predicted.** Exact integers on both sides; no
+  order-observable difference exists (10,012 vectors agree).
+- **A6 no bias/activation — CONFIRMED.** Kernel has none.
+- **A7 weight validity — CONFIRMED on the specified domain.** Kernel masks
+  (`w & 0xff`), chosen reading raises → finding F3.
+- **A8 channel pair — CONFIRMED.** Kernel returns `{re, im}` integers per
+  output j; the complex form is notation on both sides.
+- **A9 degenerate shapes — CONFIRMED.** Kernel: K=0 → `{re:0,im:0}`, J=0 →
+  `[]` — agrees with the chosen reading (edge vector edge-12).
+- **A10 ground silence — CONFIRMED.** Kernel `default: break`; τ-cycling and
+  max-d edge vectors pin it numerically.
+
+Net: 10/10 readings stood; 3 findings (F1 exactness horizon, F2 ragged NaN,
+F3 masking-vs-raising) all live OUTSIDE the specified surface and are
+classified SPEC-ambiguity, receipted in `findings.md` and the chain. Nothing
+was patched on either side to force agreement — none was needed.
