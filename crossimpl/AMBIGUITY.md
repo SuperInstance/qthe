@@ -85,7 +85,9 @@ and every d consumed by vectorPass is in [0,63] — by exhaustion over all 256.)
 - **Ψ map (exhaustive):** domain = {0,1,2,3} (stated: 4 inputs). Compared as
   the channel-coefficient table (real coeff, imag coeff) per τ, byte-exact.
 - **vectorPass (randomized):** N = 10,000 vectors; PRNG = mulberry32;
-  SEED = `0x5EED34E` = 1586879822 (recorded here before any run). Per vector:
+  SEED = `0x5EED34E` = 99537742 (the hex is normative; the first registration
+  of this line carried a wrong decimal expansion, 1586879822 — caught and
+  corrected HERE before any vector was generated or any run happened). Per vector:
   J = 1 + ⌊r·6⌋ ∈ [1..6], K = 1 + ⌊r·8⌋ ∈ [1..8]; weights uniform [0,255];
   x_k mixture by next draw: r<0.5 → signed byte [-128,127]; r<0.8 →
   unsigned byte [0,255]; else ± value in [2^36, 2^40]. Exactness bound:

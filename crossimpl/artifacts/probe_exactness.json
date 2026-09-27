@@ -1,0 +1,40 @@
+{
+  "probe": "exactness boundary",
+  "kernelWeight": 127,
+  "js_literal_2pow53plus1_is_2pow53": true,
+  "battery_domain_note": "pre-registered battery stays <= 8*63*2^40 ~ 5.57e14 < 2^53: byte-parity decidable",
+  "rows": [
+    {
+      "probe": "P1 x=2^53",
+      "note": "63*2^53 exactly representable (6-bit mantissa) though outside Number.isSafeInteger",
+      "js_re": "567453553048682496",
+      "py_re": "567453553048682496",
+      "agree": true,
+      "js_input_constructed_exactly": true
+    },
+    {
+      "probe": "P2 x=2^53+1",
+      "note": "JS literal rounds to 2^53 BEFORE Layer 0 sees it; Python multiplies the true input -> disagreement IS the finding",
+      "js_re": "567453553048682496",
+      "py_re": "567453553048682559",
+      "agree": false,
+      "js_input_constructed_exactly": false
+    },
+    {
+      "probe": "P3 x=-(2^53+1)",
+      "note": "mirror of P2",
+      "js_re": "-567453553048682496",
+      "py_re": "-567453553048682559",
+      "agree": false,
+      "js_input_constructed_exactly": false
+    },
+    {
+      "probe": "P4 ragged (row > xs)",
+      "note": "outside specified surface: kernel silently NaNs (float poison), Python raises ValueError (A3)",
+      "js_re": "NaN",
+      "js_isNaN": true,
+      "py_re": "exit 1 (ValueError: ragged weights: row length 2 != K=1 (A3))",
+      "agree": false
+    }
+  ]
+}
