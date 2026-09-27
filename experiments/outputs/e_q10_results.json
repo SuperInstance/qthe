@@ -1,0 +1,519 @@
+{
+ "experiment": "E-Q10",
+ "claim": "C5' injector one-pager (the guest's round-9 registered lever)",
+ "registration": "situations/eq10_lever_registration.json",
+ "registrationSha256": "774aff3f571d28cf32762405c735af121739d2b01e36dc0cb18225de449d0ae8",
+ "kernels": {
+  "float": "qthe.mjs",
+  "fixed": "fixedpoint/qthe_fixed.mjs"
+ },
+ "task": {
+  "w": 64,
+  "h": 64,
+  "ring": "900<=r2<=1156 Repel d=55",
+  "core": "r2<=64 Attract d=63",
+  "cuts": 12,
+  "halfArc": 0.0234375,
+  "T": 400,
+  "injectAt": 50,
+  "trials": 20,
+  "baseSeed": 55001,
+  "ringCells": 698,
+  "injectorBudget": "1 application x 698 cell-writes (harness-side setCell path)"
+ },
+ "voidTrials": [
+  {
+   "seed": 55003,
+   "carvedCount": 57,
+   "reason": "carved=57 outside registered window [60,120] — per-TRIAL VOID per the inherited E-Q5 damage clause"
+  },
+  {
+   "seed": 55012,
+   "carvedCount": 58,
+   "reason": "carved=58 outside registered window [60,120] — per-TRIAL VOID per the inherited E-Q5 damage clause"
+  },
+  {
+   "seed": 55016,
+   "carvedCount": 59,
+   "reason": "carved=59 outside registered window [60,120] — per-TRIAL VOID per the inherited E-Q5 damage clause"
+  }
+ ],
+ "admissibleTrials": 17,
+ "trials": [
+  {
+   "seed": 55001,
+   "carvedCount": 69,
+   "damagedIntegrity": "0.9011461318051576",
+   "a0": {
+    "finalIntegrity": 0,
+    "monotone": true,
+    "firstZeroTick": 55
+   },
+   "a1": {
+    "finalIntegrity": 0,
+    "monotone": true,
+    "repairTick": null,
+    "firstZeroTick": 55
+   },
+   "a2": {
+    "postInjectIntegrity": 1,
+    "injectWrites": 698,
+    "reErosionMonotone": true,
+    "repairTick": null,
+    "firstZeroTick": 105,
+    "finalIntegrity": 0
+   },
+   "detOk": true,
+   "fixedMatch": true
+  },
+  {
+   "seed": 55002,
+   "carvedCount": 60,
+   "damagedIntegrity": "0.9140401146131805",
+   "a0": {
+    "finalIntegrity": 0,
+    "monotone": true,
+    "firstZeroTick": 55
+   },
+   "a1": {
+    "finalIntegrity": 0,
+    "monotone": true,
+    "repairTick": null,
+    "firstZeroTick": 55
+   },
+   "a2": {
+    "postInjectIntegrity": 1,
+    "injectWrites": 698,
+    "reErosionMonotone": true,
+    "repairTick": null,
+    "firstZeroTick": 105,
+    "finalIntegrity": 0
+   },
+   "detOk": true,
+   "fixedMatch": true
+  },
+  {
+   "seed": 55004,
+   "carvedCount": 66,
+   "damagedIntegrity": "0.9054441260744985",
+   "a0": {
+    "finalIntegrity": 0,
+    "monotone": true,
+    "firstZeroTick": 55
+   },
+   "a1": {
+    "finalIntegrity": 0,
+    "monotone": true,
+    "repairTick": null,
+    "firstZeroTick": 55
+   },
+   "a2": {
+    "postInjectIntegrity": 1,
+    "injectWrites": 698,
+    "reErosionMonotone": true,
+    "repairTick": null,
+    "firstZeroTick": 105,
+    "finalIntegrity": 0
+   },
+   "detOk": true,
+   "fixedMatch": true
+  },
+  {
+   "seed": 55005,
+   "carvedCount": 64,
+   "damagedIntegrity": "0.9083094555873925",
+   "a0": {
+    "finalIntegrity": 0,
+    "monotone": true,
+    "firstZeroTick": 55
+   },
+   "a1": {
+    "finalIntegrity": 0,
+    "monotone": true,
+    "repairTick": null,
+    "firstZeroTick": 55
+   },
+   "a2": {
+    "postInjectIntegrity": 1,
+    "injectWrites": 698,
+    "reErosionMonotone": true,
+    "repairTick": null,
+    "firstZeroTick": 105,
+    "finalIntegrity": 0
+   },
+   "detOk": true,
+   "fixedMatch": true
+  },
+  {
+   "seed": 55006,
+   "carvedCount": 67,
+   "damagedIntegrity": "0.9040114613180515",
+   "a0": {
+    "finalIntegrity": 0,
+    "monotone": true,
+    "firstZeroTick": 55
+   },
+   "a1": {
+    "finalIntegrity": 0,
+    "monotone": true,
+    "repairTick": null,
+    "firstZeroTick": 55
+   },
+   "a2": {
+    "postInjectIntegrity": 1,
+    "injectWrites": 698,
+    "reErosionMonotone": true,
+    "repairTick": null,
+    "firstZeroTick": 105,
+    "finalIntegrity": 0
+   },
+   "detOk": true,
+   "fixedMatch": true
+  },
+  {
+   "seed": 55007,
+   "carvedCount": 62,
+   "damagedIntegrity": "0.9111747851002865",
+   "a0": {
+    "finalIntegrity": 0,
+    "monotone": true,
+    "firstZeroTick": 55
+   },
+   "a1": {
+    "finalIntegrity": 0,
+    "monotone": true,
+    "repairTick": null,
+    "firstZeroTick": 55
+   },
+   "a2": {
+    "postInjectIntegrity": 1,
+    "injectWrites": 698,
+    "reErosionMonotone": true,
+    "repairTick": null,
+    "firstZeroTick": 105,
+    "finalIntegrity": 0
+   },
+   "detOk": true,
+   "fixedMatch": true
+  },
+  {
+   "seed": 55008,
+   "carvedCount": 70,
+   "damagedIntegrity": "0.8997134670487106",
+   "a0": {
+    "finalIntegrity": 0,
+    "monotone": true,
+    "firstZeroTick": 55
+   },
+   "a1": {
+    "finalIntegrity": 0,
+    "monotone": true,
+    "repairTick": null,
+    "firstZeroTick": 55
+   },
+   "a2": {
+    "postInjectIntegrity": 1,
+    "injectWrites": 698,
+    "reErosionMonotone": true,
+    "repairTick": null,
+    "firstZeroTick": 105,
+    "finalIntegrity": 0
+   },
+   "detOk": true,
+   "fixedMatch": true
+  },
+  {
+   "seed": 55009,
+   "carvedCount": 67,
+   "damagedIntegrity": "0.9040114613180515",
+   "a0": {
+    "finalIntegrity": 0,
+    "monotone": true,
+    "firstZeroTick": 55
+   },
+   "a1": {
+    "finalIntegrity": 0,
+    "monotone": true,
+    "repairTick": null,
+    "firstZeroTick": 55
+   },
+   "a2": {
+    "postInjectIntegrity": 1,
+    "injectWrites": 698,
+    "reErosionMonotone": true,
+    "repairTick": null,
+    "firstZeroTick": 105,
+    "finalIntegrity": 0
+   },
+   "detOk": true,
+   "fixedMatch": true
+  },
+  {
+   "seed": 55010,
+   "carvedCount": 63,
+   "damagedIntegrity": "0.9097421203438395",
+   "a0": {
+    "finalIntegrity": 0,
+    "monotone": true,
+    "firstZeroTick": 55
+   },
+   "a1": {
+    "finalIntegrity": 0,
+    "monotone": true,
+    "repairTick": null,
+    "firstZeroTick": 55
+   },
+   "a2": {
+    "postInjectIntegrity": 1,
+    "injectWrites": 698,
+    "reErosionMonotone": true,
+    "repairTick": null,
+    "firstZeroTick": 105,
+    "finalIntegrity": 0
+   },
+   "detOk": true,
+   "fixedMatch": true
+  },
+  {
+   "seed": 55011,
+   "carvedCount": 60,
+   "damagedIntegrity": "0.9140401146131805",
+   "a0": {
+    "finalIntegrity": 0,
+    "monotone": true,
+    "firstZeroTick": 55
+   },
+   "a1": {
+    "finalIntegrity": 0,
+    "monotone": true,
+    "repairTick": null,
+    "firstZeroTick": 55
+   },
+   "a2": {
+    "postInjectIntegrity": 1,
+    "injectWrites": 698,
+    "reErosionMonotone": true,
+    "repairTick": null,
+    "firstZeroTick": 105,
+    "finalIntegrity": 0
+   },
+   "detOk": true,
+   "fixedMatch": true
+  },
+  {
+   "seed": 55013,
+   "carvedCount": 60,
+   "damagedIntegrity": "0.9140401146131805",
+   "a0": {
+    "finalIntegrity": 0,
+    "monotone": true,
+    "firstZeroTick": 55
+   },
+   "a1": {
+    "finalIntegrity": 0,
+    "monotone": true,
+    "repairTick": null,
+    "firstZeroTick": 55
+   },
+   "a2": {
+    "postInjectIntegrity": 1,
+    "injectWrites": 698,
+    "reErosionMonotone": true,
+    "repairTick": null,
+    "firstZeroTick": 105,
+    "finalIntegrity": 0
+   },
+   "detOk": true,
+   "fixedMatch": true
+  },
+  {
+   "seed": 55014,
+   "carvedCount": 64,
+   "damagedIntegrity": "0.9083094555873925",
+   "a0": {
+    "finalIntegrity": 0,
+    "monotone": true,
+    "firstZeroTick": 55
+   },
+   "a1": {
+    "finalIntegrity": 0,
+    "monotone": true,
+    "repairTick": null,
+    "firstZeroTick": 55
+   },
+   "a2": {
+    "postInjectIntegrity": 1,
+    "injectWrites": 698,
+    "reErosionMonotone": true,
+    "repairTick": null,
+    "firstZeroTick": 105,
+    "finalIntegrity": 0
+   },
+   "detOk": true,
+   "fixedMatch": true
+  },
+  {
+   "seed": 55015,
+   "carvedCount": 62,
+   "damagedIntegrity": "0.9111747851002865",
+   "a0": {
+    "finalIntegrity": 0,
+    "monotone": true,
+    "firstZeroTick": 55
+   },
+   "a1": {
+    "finalIntegrity": 0,
+    "monotone": true,
+    "repairTick": null,
+    "firstZeroTick": 55
+   },
+   "a2": {
+    "postInjectIntegrity": 1,
+    "injectWrites": 698,
+    "reErosionMonotone": true,
+    "repairTick": null,
+    "firstZeroTick": 105,
+    "finalIntegrity": 0
+   },
+   "detOk": true,
+   "fixedMatch": true
+  },
+  {
+   "seed": 55017,
+   "carvedCount": 60,
+   "damagedIntegrity": "0.9140401146131805",
+   "a0": {
+    "finalIntegrity": 0,
+    "monotone": true,
+    "firstZeroTick": 55
+   },
+   "a1": {
+    "finalIntegrity": 0,
+    "monotone": true,
+    "repairTick": null,
+    "firstZeroTick": 55
+   },
+   "a2": {
+    "postInjectIntegrity": 1,
+    "injectWrites": 698,
+    "reErosionMonotone": true,
+    "repairTick": null,
+    "firstZeroTick": 105,
+    "finalIntegrity": 0
+   },
+   "detOk": true,
+   "fixedMatch": true
+  },
+  {
+   "seed": 55018,
+   "carvedCount": 61,
+   "damagedIntegrity": "0.9126074498567335",
+   "a0": {
+    "finalIntegrity": 0,
+    "monotone": true,
+    "firstZeroTick": 55
+   },
+   "a1": {
+    "finalIntegrity": 0,
+    "monotone": true,
+    "repairTick": null,
+    "firstZeroTick": 55
+   },
+   "a2": {
+    "postInjectIntegrity": 1,
+    "injectWrites": 698,
+    "reErosionMonotone": true,
+    "repairTick": null,
+    "firstZeroTick": 105,
+    "finalIntegrity": 0
+   },
+   "detOk": true,
+   "fixedMatch": true
+  },
+  {
+   "seed": 55019,
+   "carvedCount": 61,
+   "damagedIntegrity": "0.9126074498567335",
+   "a0": {
+    "finalIntegrity": 0,
+    "monotone": true,
+    "firstZeroTick": 55
+   },
+   "a1": {
+    "finalIntegrity": 0,
+    "monotone": true,
+    "repairTick": null,
+    "firstZeroTick": 55
+   },
+   "a2": {
+    "postInjectIntegrity": 1,
+    "injectWrites": 698,
+    "reErosionMonotone": true,
+    "repairTick": null,
+    "firstZeroTick": 105,
+    "finalIntegrity": 0
+   },
+   "detOk": true,
+   "fixedMatch": true
+  },
+  {
+   "seed": 55020,
+   "carvedCount": 61,
+   "damagedIntegrity": "0.9126074498567335",
+   "a0": {
+    "finalIntegrity": 0,
+    "monotone": true,
+    "firstZeroTick": 55
+   },
+   "a1": {
+    "finalIntegrity": 0,
+    "monotone": true,
+    "repairTick": null,
+    "firstZeroTick": 55
+   },
+   "a2": {
+    "postInjectIntegrity": 1,
+    "injectWrites": 698,
+    "reErosionMonotone": true,
+    "repairTick": null,
+    "firstZeroTick": 105,
+    "finalIntegrity": 0
+   },
+   "detOk": true,
+   "fixedMatch": true
+  }
+ ],
+ "aggregates": {
+  "C1": true,
+  "C2": true,
+  "C3": true,
+  "C4": true,
+  "C5": true,
+  "C6": true,
+  "C7": true,
+  "C8": true,
+  "C9": true,
+  "admissible": 17,
+  "falsifierFired": false,
+  "firstZeroTicks": [
+   105,
+   105,
+   105,
+   105,
+   105,
+   105,
+   105,
+   105,
+   105,
+   105,
+   105,
+   105,
+   105,
+   105,
+   105,
+   105,
+   105
+  ],
+  "verdict": "C5' AS STATED STANDS — repair is injector semantics and the one-page spec REPRODUCES E-Q5's restore-to-1.000-then-re-erode with zero substrate self-repair (the guest's pre-priced \"definitional, not empirical\" risk is hereby receipted: the spec reproduces, the kernel has no repair term to find)"
+ }
+}
