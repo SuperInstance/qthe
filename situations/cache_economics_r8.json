@@ -1,0 +1,112 @@
+{
+ "wave": "37-g",
+ "round": 8,
+ "artifact": "situations/cache_economics_r8.json",
+ "sealed_at": "2026-09-27T10:38:07Z",
+ "experiment": "tavern round 8 guest + SEED-38-A reasoner warm-up curve + cold-sanity arm",
+ "price_basis_declared": "off_peak",
+ "price_source": "https://api-docs.deepseek.com/quick_start/pricing fetched 2026-09-27 (round-6 declared basis)",
+ "served_note": "round-6 receipted basis, reused rounds 7-8; r7 wire served deepseek-flash for every call incl. reasoner",
+ "prefixes": {
+  "r6_sealed_asset": {
+   "sha256": "777938e243d34ef4667c1d52a89ee3fe30e41529804746c7b71deccbc0866e39",
+   "chars": 5025,
+   "used_by": "guest r8-q1..q3 (warm)"
+  },
+  "r8_fresh_curve_asset": {
+   "sha256": "e81cf8128af5f6877fcf0170818739e91d82d2103fd451a36e78db002eddd8fd",
+   "chars": 2492,
+   "used_by": "SEED-38-A warmup slots 1-4 (byte-identical, same user text)"
+  }
+ },
+ "totals": {
+  "calls": 8,
+  "attempts_total": 8,
+  "attempts_this_run": 0,
+  "sealed_this_run": 0,
+  "prompt_tokens": 11167,
+  "prompt_cache_hit_tokens": 5760,
+  "prompt_cache_miss_tokens": 5407,
+  "completion_tokens": 4417,
+  "reasoning_tokens": 2994,
+  "ms_total": 1366,
+  "usd_total": 0.0034785299999999996
+ },
+ "curve_table": [
+  {
+   "slot": 1,
+   "call_id": "r8-reasoner-warmup-1",
+   "sealed": true,
+   "prompt_tokens": 867,
+   "cache_hit_tokens": 0,
+   "cache_miss_tokens": 867,
+   "completion_tokens": 1818,
+   "reasoning_tokens": 1750,
+   "served": "deepseek-flash",
+   "predicted_hit_gt_0_p": 0.2,
+   "hit_prediction_correct": true,
+   "brier": 0.04000000000000001
+  },
+  {
+   "slot": 2,
+   "call_id": "r8-reasoner-warmup-2",
+   "sealed": true,
+   "prompt_tokens": 867,
+   "cache_hit_tokens": 640,
+   "cache_miss_tokens": 227,
+   "completion_tokens": 595,
+   "reasoning_tokens": 526,
+   "served": "deepseek-flash",
+   "predicted_hit_gt_0_p": 0.6,
+   "hit_prediction_correct": true,
+   "brier": 0.16000000000000003
+  },
+  {
+   "slot": 3,
+   "call_id": "r8-reasoner-warmup-3",
+   "sealed": true,
+   "prompt_tokens": 867,
+   "cache_hit_tokens": 640,
+   "cache_miss_tokens": 227,
+   "completion_tokens": 664,
+   "reasoning_tokens": 578,
+   "served": "deepseek-flash",
+   "predicted_hit_gt_0_p": 0.65,
+   "hit_prediction_correct": true,
+   "brier": 0.12249999999999998
+  },
+  {
+   "slot": 4,
+   "call_id": "r8-reasoner-warmup-4",
+   "sealed": true,
+   "prompt_tokens": 867,
+   "cache_hit_tokens": 640,
+   "cache_miss_tokens": 227,
+   "completion_tokens": 204,
+   "reasoning_tokens": 140,
+   "served": "deepseek-flash",
+   "predicted_hit_gt_0_p": 0.65,
+   "hit_prediction_correct": true,
+   "brier": 0.12249999999999998
+  }
+ ],
+ "warmup_verdict": "CONFIRMED — the reasoner warms its OWN byte-identical prefix within one session",
+ "cold_sanity": {
+  "agreement": {
+   "cold_stance": "stand",
+   "warm_stance": "stand",
+   "agree": true,
+   "cold_reason": "C5' was spec'd before any run and never retrofitted onto dead C5, so it remains the last standing item; E-Q7 falsified C4 and E-Q8 established the float-only artifact with determinism PASS, leaving no basis to withdraw or revise. JEV's 0.53 vs noul 0.28 favors holding."
+  },
+  "usd": null
+ },
+ "savings_ratio": 0.1957620946766082,
+ "budget": {
+  "max_calls": 8,
+  "attempts_total": 8,
+  "attempts_this_run": 0,
+  "sealed_rows_this_run": 0,
+  "sealed_rows_total": 8,
+  "note": "8/8 rows sealed on the first run (zero failures, zero retries); later runs were resume-safe re-seals only"
+ }
+}
