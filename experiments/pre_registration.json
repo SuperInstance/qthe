@@ -1,0 +1,71 @@
+{
+  "law": "FLOORS FROZEN BEFORE ANY RUN. The runs may confirm or falsify these floors; they may not edit them. Honest null = crown jewel (house law). Git history of this repo must show this file committed before every result commit.",
+  "task_id": "33-b",
+  "agent": "field-smith",
+  "wave": 33,
+  "repo": "SuperInstance/qthe",
+  "repo_genesis": "be7849f",
+  "scope": "I OWN experiments/ and receipts/ (+ root findings.md). I do NOT touch qthe.mjs, tests/, index.html (core-smith's lane).",
+  "kernel_status_at_registration": "qthe.mjs NOT YET LANDED — core-smith is building the kernel concurrently. Scripts are written against the SPEC.md LAYER 0/1 interface contract: tick(substrate, {wormholes}) with opts.wormholes=false arm; makeSubstrate(w, h, seedFn); mulberry32 seeded RNG helper; WormholeTable with sigma parameter. Runs execute on the real kernel when it lands (git pull --rebase, then run); if it has not landed after registration work completes, runs execute on experiments/_ref_kernel.mjs, a TEST-ONLY local reference implementation of the same interface, and every receipt records kernelKind='ref(TEST-ONLY)' — real-kernel replication stays OPEN until core-smith lands.",
+  "shared_fixed_points": {
+    "substrate": "64x64, all cells byte-packed tau<<6|d, tau: 0=Ground 1=Attract 2=Repel 3=Abstain",
+    "determinism": "same seed -> byte-identical trace. Every trial is run TWICE (fresh build); checkpoint plane hashes must match exactly or the experiment is void.",
+    "plane_hash": "sha256 over w x h and the byte plane hex (stone sha256Hex); imaginary accumulators are NEVER in hashed content (floats ride as receipted strings only)",
+    "checkpoint_ticks": { "EQ1_EQ2": [0, 50, 100, 150, 200], "EQ5": [0, 50, 100, 200, 300, 400] },
+    "delivery_metric_EQ1_EQ2": "a pair member DELIVERS at first tick its cumulative imaginary accumulator >= theta_del; a PAIR delivers at the max of its two members' first-delivery ticks; pair BRIDGES at first tick either member's imaginary accumulator increases (twin-resonance receipt)",
+    "seeds": { "EQ1_EQ2_base": 33001, "EQ5_base": 55001, "trials": 20 }
+  },
+  "experiments": {
+    "E-Q1": {
+      "claim": "C2: wormhole (Abstain) beats graph-traversal for non-local alignment",
+      "task_class": "plant K=8 pairs of Abstain cells with per-pair distinct d in 8..15 at distant coordinates (pair members Chebyshev >= 24 apart, cross-pair cells >= 8 apart, deterministic rejection sampling from the trial seed); plus 3 non-Abstain 'weather' cells (2x Attract d=40/41, 1x Repel d=30) >= 10 from every pair member so the byte plane evolves and determinism hashes are non-trivial",
+      "arms": "paired: {wormholes: true} vs {wormholes: false} on the SAME planted substrate per trial; plus CONTROL: same procedure with NO Abstain cells planted, both flags run",
+      "T": 200,
+      "K": 8,
+      "theta_del": 8,
+      "trials": 20,
+      "floors": {
+        "F0_determinism": "every trial's ON and OFF runs reproduce byte-identical checkpoint plane hashes on fresh rebuild; 40/40 runs must match or the experiment is VOID",
+        "F1_control_cleanliness": "in all 20 control trials (no Abstain cells), wormholes ON vs OFF traces are byte-identical at every checkpoint; any divergence means the wormhole flag leaks into non-Abstain dynamics = kernel defect finding",
+        "F2_mechanistic_floor": "OFF arm delivers 0 pairs in 20/20 trials (mechanism: without the wormhole table the imaginary channel can receive nothing, and under SPEC L1 s5 local influence cannot propagate through Ground cells, which contribute nothing to their neighbors); ANY OFF-arm delivery falsifies this mechanism model and triggers autopsy",
+        "F3_claim_floor": "C2 LIVES iff ON arm median pairs-delivered >= K/2 = 4 within T=200 across 20 trials AND F2 holds; if the ON arm median < 4, C2 DIES as an honest null with a mechanism-level autopsy (candidate mechanism: wormhole-table scan-order last-writer self-shadowing); if ON delivers but only on the TEST-ONLY ref kernel, verdict is staged LIVES-ON-REF / REAL-KERNEL-REPLICATION-OPEN"
+      }
+    },
+    "E-Q2": {
+      "claim": "C3: sigma = log2(3) is the critical bridge scale",
+      "posture": "the gifted log2(3) 'proof' is decorative (Gaussian integral yields sigma*sqrt(2pi) for ANY sigma — it singles out nothing). NO favorite sigma is registered. The expected winner is named ONLY as 'one of the swept values, decided by data'.",
+      "task_set": "FIXED = E-Q1's planted task set (same 20 seeds, same coordinates), arms differ ONLY in sigma",
+      "sigma_arms": ["0.5", "1", "1.584962500721156 (log2(3))", "2", "4"],
+      "T": 200,
+      "metrics": [
+        "bridge formation rate: fraction of the 8 pairs with >= 1 twin-resonance receipt by T, median across trials",
+        "ticks-to-first-bridge per pair; stability = IQR across trials per sigma",
+        "theta-delivery rate at theta_del = 8 (magnitude-dependent, expected ~1/sigma in ticks)",
+        "imaginary-mass divergence between sigma arms: sum over ticks of |M_sigma(t) - M_1(t)| where M = total substrate imaginary mass; recorded as receipted strings (floats never hashed)"
+      ],
+      "pre_registered_mechanistic_prediction": "on this task class sigma is a PURE GAIN on imaginary receipts: bridge OCCURRENCE and TIMING are sigma-invariant (first receipt fires at the same tick for every sigma); only theta-delivery timing scales ~ 1/sigma. If ticks-to-first-bridge varies with sigma, the pure-gain reading is FALSIFIED and the kernel couples sigma into dynamics — either outcome is decided by the sweep, not by the gift.",
+      "verdict_rule_sealed": "winner = argmax bridge formation rate; ties -> argmin median ticks-to-first-bridge; ties -> argmin IQR; if ALL swept sigma tie on ALL three metrics, verdict is 'no critical scale on this task class: sigma is monotone-inert as a pure gain' -> C3 UNSUPPORTED here, honest null, kept beside the sweep"
+    },
+    "E-Q5": {
+      "claim": "C5: the substrate self-repairs (the armor-ring scenario)",
+      "interpretation_decision_sealed_before_runs": "SPEC tick() never changes timbre (tau is immutable under the update rules), so a ring cell whose TIMBRE is flipped cannot repair under any reading — 'self-repair' is therefore priced on d-DEPLETION damage (d -> 0, tau kept at 2/Repel), the claim's fair reading. Timbre-repurposing repair would require an injector by construction; this interpretation decision is itself receipted here, before the runs.",
+      "geometry": "64x64, center (32,32), Euclidean r: ring = Repel(d=55) on 30 <= r <= 34; core = Attract(d=63) on r <= 8; else Ground(0)",
+      "damage": "N=12 adversarial thin cuts: cut i centered at angle 2*pi*i/12 + jitter(U[-0.2, 0.2] rad) from the trial seed; a ring cell is carved iff angular distance to a cut center < 0.6/32 rad (thin radial severance, full thickness); carved cells set to d=0 (tau=2 kept); assert 60 <= carved <= 120 AND post-damage global integrity < 0.95 (else the 95% gate is pre-met and the trial design is void)",
+      "window_T": 400,
+      "metrics": "global integrity(t) = sum(min(d,55) over ring) / (55 * |ring|); repairTick = first t with integrity >= 0.95 SUSTAINED 10 consecutive ticks (null if never); carved-restoration(t) = fraction of carved cells back at d >= 55; newly_depleted(t) = ring cells (not carved) with d < 55 (erosion front)",
+      "arms": {
+        "A0_pristine_control": "no damage, 400 ticks — exists to detect SELF-EROSION of an undamaged ring",
+        "A1_damaged": "damage as initial condition, 400 ticks",
+        "A2_injector": "damage as initial condition; at t=50 ALL ring cells re-written to d=55 via direct injection (adapter setCell; skipped with receipt if the kernel exposes no mutation path); tests the 'repair requires an injector' reading"
+      },
+      "honest_expectation_sealed_before_runs": {
+        "P1": "A1: integrity is NON-INCREASING; repairTick = null (no repair within 400). Mechanism: a carved Repel cell is surrounded by Repel neighbors, which SUBTRACT d into its real accumulator (SPEC L1 s5) -> net-negative pressure -> own d moves toward 0, never toward 55. No positive-pressure source exists near the ring (the Attract core is at r<=8, unreachable from r>=30). Repair to 95% is structurally impossible under the published rule table.",
+        "P2": "A0: the pristine ring ALSO self-erodes (every ring cell is surrounded by like-timbre Repel neighbors -> net-negative -> d falls ~1/tick); integrity crosses 0.95 within a handful of ticks and reaches ~0 by ~55. If pristine integrity instead HOLDS >= 0.95 for 400 ticks, the kernel's rule table shields own-cells from like-timbre pressure — that falsifies my literal reading of s5 and the autopsy follows the real coupling.",
+        "P3": "A2: injected repair does NOT hold — re-erosion follows the same curve (unless P2's shielding exists, in which case injector-mediated repair holds and the honest verdict becomes 'repair possible via injector only, not via tick()')"
+      },
+      "falsifier_of_C5_null": "any arm reaching sustained integrity >= 0.95 after damage WITHOUT injection -> C5 LIVES, with a mechanism-level explanation of the coupling that made repair possible",
+      "trials": 20
+    }
+  },
+  "receipt_discipline": "one stone-v1 chain per experiment (receipts/e_q1_chain.jsonl, e_q2_chain.jsonl, e_q5_chain.jsonl); every append is re-verified FROM DISK (verifyChainFile, refuse-if-broken = loud exit); raw per-pair/per-tick data in experiments/outputs/*.json; chain tips recorded in findings.md and in commit messages"
+}
