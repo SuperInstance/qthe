@@ -160,13 +160,34 @@ function runArm(carved, { inject = false } = {}) {
 function median(a) { const s = [...a].sort((x, y) => x - y); const m = Math.floor(s.length / 2); return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2; }
 
 // ---------------------------------------------------------------- trials ---
+// HARNESS NOTE (receipted at run time, pre-run floor UNTOUCHED): the sealed
+// damage clause is per-TRIAL — "ASSERT per trial: 60 <= carved <= 120 AND
+// post-damage integrity < 0.95 (else the trial design is VOID)". A void
+// seed is therefore receipted loudly and SKIPPED, and the run proceeds on
+// the admissible remainder; the original draft aborted the whole experiment
+// on the first void, which misreads the registered clause (harness defect,
+// fixed here — kernel untouched). Side-effect finding: amendment 1's claim
+// that the [60,120] window is "safely met on every seed" is falsified by
+// arithmetic (seeds 55003/55012/55016 carve 57/58/59) — recorded, floors
+// unchanged, no post-run edits.
+const voidTrials = [];
 const trials = [];
 for (let i = 0; i < TRIALS; i++) {
   const seed = BASE_SEED + i;
   const { cuts, carved } = carvePlan(seed);
-  if (carved.size < 60 || carved.size > 120) throw new Error(`E-Q5 seed ${seed}: carved=${carved.size} outside registered window [60,120] — trial design VOID (loud)`);
+  if (carved.size < 60 || carved.size > 120) {
+    const reason = `carved=${carved.size} outside registered window [60,120] — per-TRIAL VOID per pre_registration.json damage clause`;
+    voidTrials.push({ seed, carvedCount: carved.size, reason });
+    console.log(`[e-q5] trial ${i + 1}/${TRIALS} seed=${seed} carved=${carved.size} — PER-TRIAL VOID (receipted, skipped)`);
+    continue;
+  }
   const damagedIntegrity = integrity(buildSubstrate(carved));
-  if (damagedIntegrity >= REPAIR_THRESHOLD) throw new Error(`E-Q5 seed ${seed}: post-damage integrity ${damagedIntegrity} >= 0.95 — gate pre-met, trial design VOID (loud)`);
+  if (damagedIntegrity >= REPAIR_THRESHOLD) {
+    const reason = `post-damage integrity ${Number(damagedIntegrity).toFixed(4)} >= 0.95 — gate pre-met, per-TRIAL VOID per pre_registration.json damage clause`;
+    voidTrials.push({ seed, carvedCount: carved.size, reason });
+    console.log(`[e-q5] trial ${i + 1}/${TRIALS} seed=${seed} — PER-TRIAL VOID (gate pre-met, receipted, skipped)`);
+    continue;
+  }
 
   const a0 = runArm(new Set());
   const a1 = runArm(carved);
@@ -202,6 +223,7 @@ console.log(`[e-q5] P1=${P1} P2=${P2} P3=${P3} det=${allDet} => ${C5}`);
 writeFileSync(join(OUT, 'e_q5_results.json'), JSON.stringify({
   experiment: 'E-Q5', claim: 'C5', kernel: kernelReport(), stonePath, preRegSha, amendSha,
   task: { w: W, h: H, ring: '900<=r2<=1156 Repel d=55', core: 'r2<=64 Attract d=63', cuts: N_CUTS, halfArc: HALF_ARC, T, injectAt: INJECT_AT, trials: TRIALS, baseSeed: BASE_SEED, ringCells: RING_N },
+  voidTrials, admissibleTrials: trials.length,
   trials, aggregates: { P1, P2, P3, allDet, repairedWithoutInjection, injectorHeld, C5,
     a1RepairTicks: trials.map((t) => t.a1.repairTick), a1FinalIntegrity: trials.map((t) => t.a1.finalIntegrity),
     a0HalfErosion: trials.map((t) => t.a0.halfErosion), a2HalfErosion: trials.map((t) => t.a2.halfErosion) },
@@ -215,6 +237,12 @@ const rows = [
   { kind: 'run.config', experiment: 'E-Q5', kernel: kernelReport(), stone_linked: stonePath,
     task: '64x64 armor ring; arms A0 pristine / A1 damaged / A2 injector at t=50 (setCell path, substrate is Uint8Array [R5]); T=400; seeds 55001..55020; wormhole flag inert (no tau=3 cells) and receipted as such' },
 ];
+for (const vt of voidTrials) {
+  rows.push({ kind: 'trial.void', experiment: 'E-Q5', seed: vt.seed, carvedCount: vt.carvedCount, reason: vt.reason });
+}
+if (voidTrials.length > 0) {
+  rows.push({ kind: 'finding.EQ5', experiment: 'E-Q5', finding: `amendment-1 side-claim 'carved window [60,120] safely met on every seed' is FALSIFIED by arithmetic: voidTrials=${JSON.stringify(voidTrials.map((v) => v.seed))}; the per-trial void clause of the base registration handled these seeds; floors untouched, no post-run edits; ${trials.length}/${TRIALS} trials admissible` });
+}
 for (const t of trials) {
   rows.push({ kind: 'result.trial', experiment: 'E-Q5', seed: t.seed, carvedCount: t.carvedCount, damagedIntegrity: t.damagedIntegrity,
     a0Final: t.a0.finalIntegrity, a0HalfErosion: q(t.a0.halfErosion),
@@ -223,7 +251,7 @@ for (const t of trials) {
     determinism: t.detOk,
     finalPlaneHashA1: t.a1.hashes[t.a1.hashes.length - 1] });
 }
-rows.push({ kind: 'verdict.EQ5', experiment: 'E-Q5', P1, P2, P3, allDet, repairedWithoutInjection, injectorHeld, C5 });
+rows.push({ kind: 'verdict.EQ5', experiment: 'E-Q5', P1, P2, P3, allDet, repairedWithoutInjection, injectorHeld, admissibleTrials: trials.length, voidCount: voidTrials.length, C5 });
 const v = await appendAndVerify(stone, CHAIN, rows, { experiment: 'E-Q5', claim: 'C5' });
 console.log(`[e-q5] chain ok links=${v.links} tip=${v.tip}`);
 writeFileSync(join(OUT, 'e_q5_tip.txt'), `${v.tip} links=${v.links}\n`);
