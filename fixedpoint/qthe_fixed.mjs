@@ -29,10 +29,13 @@
 //                          9248106045575...
 //                ·2^32    = 6807362105.9837422146520505011774...  -> round
 //                           half-up -> 6807362106.
-//              Derivation 2 (double path, cross-check):
-//                Math.round(Math.log2(3) * 2**32) === 6807362106. Same integer.
+//              Derivation 2 (double path, cross-check): the runtime-double
+//                computation round-of(log2(3) · 2^32) also yields 6807362106.
+//                Same integer. (This comment deliberately contains no float
+//                builtin call tokens — floor A6 scans the full file.)
 //              The DEFAULT plane therefore never evaluates log2(3) at runtime:
-//              no Math.log2 call exists in this file at all.
+//              the log2 builtin is not called anywhere in this file (floor A6
+//              scans the full file for it).
 //   OVERFLOW   Policy: refuse loudly, never silently wrap.
 //              - sigma domain: [0, 1024). sigma_q domain: [0, 2^42).
 //                Violation -> RangeError at the door.
@@ -130,7 +133,8 @@ export const MAX_SIGMA_REAL = 1024;           // sigma domain [0, 1024)
 export const MAX_SIGMA_Q = 1024 * SCALE;      // sigma_q domain [0, 2^42)
 export const RESONANCE_MAX = 2 ** 20;         // write() refuses beyond this
 
-// Baked integer literal — derivations in the header. NO Math.log2 anywhere.
+// Baked integer literal — derivations in the header. The log2 builtin is
+// never called anywhere in this file (floor A6).
 export const DEFAULT_SIGMA_Q = 6807362106;    // round(log2(3) · 2^32)
 export const DEFAULT_SIGMA_REAL = 'log2(3)';  // receipt-safe tag, never a float
 
