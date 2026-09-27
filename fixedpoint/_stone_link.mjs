@@ -1,0 +1,29 @@
+// fixedpoint/_stone_link.mjs — READ-ONLY link to THE STONE for lane 34-b
+// (kernel-smith). Same discipline as experiments/_stone_link.mjs: qthe
+// consumes the fleet's canonical receipt-chain module, quilt-stone/stone.mjs
+// (Task 26-b canonical); it NEVER forks it. Dynamic-import fallback chain,
+// first candidate that loads wins.
+import { pathToFileURL } from 'node:url';
+
+const CANDIDATES = [
+  '../../../quilt-stone/stone.mjs',
+  '../../quilt-stone/stone.mjs',
+  'quilt-stone/stone.mjs',
+  '/home/z/my-project/download/quilt-stone/stone.mjs',
+];
+
+export async function linkStone() {
+  const errs = [];
+  for (const c of CANDIDATES) {
+    try {
+      const mod = await import(c.startsWith('/') ? pathToFileURL(c).href : c);
+      if (typeof mod.sealChain !== 'function' || typeof mod.verifyChainFile !== 'function') {
+        throw new Error('module loaded but stone API missing (sealChain/verifyChainFile)');
+      }
+      return { stone: mod, stonePath: c };
+    } catch (e) {
+      errs.push(`${c}: ${e.message}`);
+    }
+  }
+  throw new Error(`_stone_link: THE STONE could not be resolved READ-ONLY:\n${errs.join('\n')}`);
+}

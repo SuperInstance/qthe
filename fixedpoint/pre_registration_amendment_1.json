@@ -1,0 +1,11 @@
+{
+  "law": "AMENDMENT 1 to fixedpoint/pre_registration.json (8fe1f54d474c24848cc5032feed21125ec18b867c2ddaa1335a9074b04ef3a19), receipted BEFORE the conformance run per the house amendment pattern (33-b amendment 1; 34-a E-Q6 erratum). Floors are not edited retroactively after runs; this amendment refines ONE clause of floor F_A/A6 that the registration's own text over-constrained, and it is committed before any run executes.",
+  "amended_clause": "F_A_layer0_exhaustive.predictions[5] (A6 static hygiene), division rule",
+  "as_frozen": "zero division operators outside the exempt regions",
+  "defect_in_registration": "the kernel's OUTBOUND DIAGNOSTIC door sigmaFromFixed(q) = q / SCALE (qthe_fixed.mjs) contains exactly one division operator outside the two exempt regions. This door produces a float OUTSIDE kernel state (receipts/inspection/reconstruction only) and is never called inside tick(); freezing the law as written would fail the kernel on a door the registration itself declares legal in representation_law.float_doors ('Outbound diagnostic door').",
+  "amended_law": "A6 static hygiene (final form): after stripping comments and the EXEMPT regions (sigmaToFixed body — the inbound boundary door; mulberry32 body — caller-side PRNG by contract), the remaining kernel source must contain: (a) zero Math.random; (b) zero Math.<builtin> EXCEPT Math.abs; (c) zero float literals (\\d+\\.\\d+, \\d[eE][-+]?\\d); (d) zero division operators EXCEPT the single outbound-door division inside sigmaFromFixed, which must be verifiably OUTSIDE tick() (checked: the tick function body contains no '/' character); (e) full-file (comments included): zero Math.random, zero Math.log2 tokens.",
+  "kernel_state_impact": "none — the amendment touches the SCANNER LAW only; the kernel file is unchanged by this amendment (its current sha is recorded in the rules row of the receipt chain).",
+  "committed_before_run": true,
+  "pre_registration_sha256": "8fe1f54d474c24848cc5032feed21125ec18b867c2ddaa1335a9074b04ef3a19",
+  "kernel_sha256_at_amendment": "88b6d781e2dcec6814cde0f26f29cd77e1df9ca977972306358ab3caf366a4be"
+}

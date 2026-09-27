@@ -1,0 +1,6 @@
+{
+ "protocol": "seeds 34001-34004 x arms {default,0.5,log2(3),2/3} x T=100, per-tick cells+snapshot+events(term included) vs BigInt shadow",
+ "ticksCompared": 1600,
+ "mismatches": [],
+ "pass": true
+}

@@ -1,0 +1,637 @@
+{
+ "law": "P-B1 autopsy only — floors untouched (explains what f_b_results.json already recorded)",
+ "t1SanityBad": [
+  {
+   "arm": "0.7",
+   "seed": 34004
+  }
+ ],
+ "perCase": [
+  {
+   "arm": "1.6",
+   "seed": 34001,
+   "tick": 18,
+   "cellIndex": 277,
+   "x": 13,
+   "y": 11,
+   "floatCell": {
+    "tau": 3,
+    "d": 46
+   },
+   "fixedCell": {
+    "tau": 3,
+    "d": 47
+   },
+   "dStart": 46,
+   "acc": -32,
+   "hit": {
+    "x": 21,
+    "y": 7,
+    "resonance": 20
+   },
+   "twin": true,
+   "floatPressure": "0",
+   "floatPressureIsExactZero": true,
+   "fixedPressureSUnits": "8",
+   "classification": "float-collapses-to-exact-zero (double rounding); fixed keeps honest remainder"
+  },
+  {
+   "arm": "1.6",
+   "seed": 34002,
+   "tick": 17,
+   "cellIndex": 168,
+   "x": 0,
+   "y": 7,
+   "floatCell": {
+    "tau": 3,
+    "d": 57
+   },
+   "fixedCell": {
+    "tau": 3,
+    "d": 58
+   },
+   "dStart": 57,
+   "acc": -16,
+   "hit": {
+    "x": 8,
+    "y": 2,
+    "resonance": 10
+   },
+   "twin": true,
+   "floatPressure": "0",
+   "floatPressureIsExactZero": true,
+   "fixedPressureSUnits": "4",
+   "classification": "float-collapses-to-exact-zero (double rounding); fixed keeps honest remainder"
+  },
+  {
+   "arm": "1.6",
+   "seed": 34003,
+   "tick": 82,
+   "cellIndex": 160,
+   "x": 16,
+   "y": 6,
+   "floatCell": {
+    "tau": 3,
+    "d": 61
+   },
+   "fixedCell": {
+    "tau": 3,
+    "d": 62
+   },
+   "dStart": 61,
+   "acc": -56,
+   "hit": {
+    "x": 6,
+    "y": 11,
+    "resonance": 35
+   },
+   "twin": true,
+   "floatPressure": "0",
+   "floatPressureIsExactZero": true,
+   "fixedPressureSUnits": "14",
+   "classification": "float-collapses-to-exact-zero (double rounding); fixed keeps honest remainder"
+  },
+  {
+   "arm": "1.6",
+   "seed": 34004,
+   "tick": 5,
+   "cellIndex": 349,
+   "x": 13,
+   "y": 14,
+   "floatCell": {
+    "tau": 3,
+    "d": 51
+   },
+   "fixedCell": {
+    "tau": 3,
+    "d": 52
+   },
+   "dStart": 51,
+   "acc": -16,
+   "hit": {
+    "x": 10,
+    "y": 12,
+    "resonance": 10
+   },
+   "twin": true,
+   "floatPressure": "0",
+   "floatPressureIsExactZero": true,
+   "fixedPressureSUnits": "4",
+   "classification": "float-collapses-to-exact-zero (double rounding); fixed keeps honest remainder"
+  },
+  {
+   "arm": "1.6",
+   "seed": 34005,
+   "tick": 17,
+   "cellIndex": 79,
+   "x": 7,
+   "y": 3,
+   "floatCell": {
+    "tau": 3,
+    "d": 51
+   },
+   "fixedCell": {
+    "tau": 3,
+    "d": 52
+   },
+   "dStart": 51,
+   "acc": -32,
+   "hit": {
+    "x": 21,
+    "y": 15,
+    "resonance": 20
+   },
+   "twin": true,
+   "floatPressure": "0",
+   "floatPressureIsExactZero": true,
+   "fixedPressureSUnits": "8",
+   "classification": "float-collapses-to-exact-zero (double rounding); fixed keeps honest remainder"
+  },
+  {
+   "arm": "1.6",
+   "seed": 34006,
+   "divergence": null
+  },
+  {
+   "arm": "1.6",
+   "seed": 34007,
+   "tick": 3,
+   "cellIndex": 97,
+   "x": 1,
+   "y": 4,
+   "floatCell": {
+    "tau": 3,
+    "d": 4
+   },
+   "fixedCell": {
+    "tau": 3,
+    "d": 5
+   },
+   "dStart": 4,
+   "acc": -64,
+   "hit": {
+    "x": 13,
+    "y": 11,
+    "resonance": 40
+   },
+   "twin": true,
+   "floatPressure": "0",
+   "floatPressureIsExactZero": true,
+   "fixedPressureSUnits": "16",
+   "classification": "float-collapses-to-exact-zero (double rounding); fixed keeps honest remainder"
+  },
+  {
+   "arm": "1.6",
+   "seed": 34008,
+   "tick": 3,
+   "cellIndex": 356,
+   "x": 20,
+   "y": 14,
+   "floatCell": {
+    "tau": 3,
+    "d": 38
+   },
+   "fixedCell": {
+    "tau": 3,
+    "d": 39
+   },
+   "dStart": 38,
+   "acc": -8,
+   "hit": {
+    "x": 5,
+    "y": 15,
+    "resonance": 5
+   },
+   "twin": true,
+   "floatPressure": "0",
+   "floatPressureIsExactZero": true,
+   "fixedPressureSUnits": "2",
+   "classification": "float-collapses-to-exact-zero (double rounding); fixed keeps honest remainder"
+  },
+  {
+   "arm": "0.7",
+   "seed": 34001,
+   "tick": 8,
+   "cellIndex": 36,
+   "x": 12,
+   "y": 1,
+   "floatCell": {
+    "tau": 3,
+    "d": 61
+   },
+   "fixedCell": {
+    "tau": 3,
+    "d": 60
+   },
+   "dStart": 61,
+   "acc": -14,
+   "hit": {
+    "x": 3,
+    "y": 11,
+    "resonance": 20
+   },
+   "twin": true,
+   "floatPressure": "0",
+   "floatPressureIsExactZero": true,
+   "fixedPressureSUnits": "-4",
+   "classification": "float-collapses-to-exact-zero (double rounding); fixed keeps honest remainder"
+  },
+  {
+   "arm": "0.7",
+   "seed": 34002,
+   "divergence": null
+  },
+  {
+   "arm": "0.7",
+   "seed": 34003,
+   "tick": 54,
+   "cellIndex": 339,
+   "x": 3,
+   "y": 14,
+   "floatCell": {
+    "tau": 3,
+    "d": 60
+   },
+   "fixedCell": {
+    "tau": 3,
+    "d": 59
+   },
+   "dStart": 60,
+   "acc": -7,
+   "hit": {
+    "x": 10,
+    "y": 10,
+    "resonance": 10
+   },
+   "twin": true,
+   "floatPressure": "0",
+   "floatPressureIsExactZero": true,
+   "fixedPressureSUnits": "-2",
+   "classification": "float-collapses-to-exact-zero (double rounding); fixed keeps honest remainder"
+  },
+  {
+   "arm": "0.7",
+   "seed": 34004,
+   "tick": 1,
+   "cellIndex": 381,
+   "x": 21,
+   "y": 15,
+   "floatCell": {
+    "tau": 3,
+    "d": 43
+   },
+   "fixedCell": {
+    "tau": 3,
+    "d": 42
+   },
+   "dStart": 43,
+   "acc": -21,
+   "hit": {
+    "x": 7,
+    "y": 15,
+    "resonance": 30
+   },
+   "twin": true,
+   "floatPressure": "0",
+   "floatPressureIsExactZero": true,
+   "fixedPressureSUnits": "-6",
+   "classification": "float-collapses-to-exact-zero (double rounding); fixed keeps honest remainder"
+  },
+  {
+   "arm": "0.7",
+   "seed": 34005,
+   "tick": 5,
+   "cellIndex": 378,
+   "x": 18,
+   "y": 15,
+   "floatCell": {
+    "tau": 3,
+    "d": 59
+   },
+   "fixedCell": {
+    "tau": 3,
+    "d": 58
+   },
+   "dStart": 59,
+   "acc": -42,
+   "hit": {
+    "x": 12,
+    "y": 8,
+    "resonance": 60
+   },
+   "twin": true,
+   "floatPressure": "0",
+   "floatPressureIsExactZero": true,
+   "fixedPressureSUnits": "-12",
+   "classification": "float-collapses-to-exact-zero (double rounding); fixed keeps honest remainder"
+  },
+  {
+   "arm": "0.7",
+   "seed": 34006,
+   "tick": 25,
+   "cellIndex": 75,
+   "x": 3,
+   "y": 3,
+   "floatCell": {
+    "tau": 3,
+    "d": 34
+   },
+   "fixedCell": {
+    "tau": 3,
+    "d": 33
+   },
+   "dStart": 34,
+   "acc": -42,
+   "hit": {
+    "x": 23,
+    "y": 10,
+    "resonance": 60
+   },
+   "twin": true,
+   "floatPressure": "0",
+   "floatPressureIsExactZero": true,
+   "fixedPressureSUnits": "-12",
+   "classification": "float-collapses-to-exact-zero (double rounding); fixed keeps honest remainder"
+  },
+  {
+   "arm": "0.7",
+   "seed": 34007,
+   "tick": 15,
+   "cellIndex": 177,
+   "x": 9,
+   "y": 7,
+   "floatCell": {
+    "tau": 3,
+    "d": 63
+   },
+   "fixedCell": {
+    "tau": 3,
+    "d": 62
+   },
+   "dStart": 63,
+   "acc": -49,
+   "hit": {
+    "x": 0,
+    "y": 6,
+    "resonance": 70
+   },
+   "twin": true,
+   "floatPressure": "0",
+   "floatPressureIsExactZero": true,
+   "fixedPressureSUnits": "-14",
+   "classification": "float-collapses-to-exact-zero (double rounding); fixed keeps honest remainder"
+  },
+  {
+   "arm": "0.7",
+   "seed": 34008,
+   "tick": 13,
+   "cellIndex": 175,
+   "x": 7,
+   "y": 7,
+   "floatCell": {
+    "tau": 3,
+    "d": 28
+   },
+   "fixedCell": {
+    "tau": 3,
+    "d": 27
+   },
+   "dStart": 28,
+   "acc": -70,
+   "hit": {
+    "x": 16,
+    "y": 15,
+    "resonance": 100
+   },
+   "twin": true,
+   "floatPressure": "0",
+   "floatPressureIsExactZero": true,
+   "fixedPressureSUnits": "-20",
+   "classification": "float-collapses-to-exact-zero (double rounding); fixed keeps honest remainder"
+  },
+  {
+   "arm": "2/3",
+   "seed": 34001,
+   "tick": 3,
+   "cellIndex": 235,
+   "x": 19,
+   "y": 9,
+   "floatCell": {
+    "tau": 3,
+    "d": 16
+   },
+   "fixedCell": {
+    "tau": 3,
+    "d": 17
+   },
+   "dStart": 16,
+   "acc": -38,
+   "hit": {
+    "x": 19,
+    "y": 2,
+    "resonance": 57
+   },
+   "twin": true,
+   "floatPressure": "0",
+   "floatPressureIsExactZero": true,
+   "fixedPressureSUnits": "19",
+   "classification": "float-collapses-to-exact-zero (double rounding); fixed keeps honest remainder"
+  },
+  {
+   "arm": "2/3",
+   "seed": 34002,
+   "tick": 7,
+   "cellIndex": 101,
+   "x": 5,
+   "y": 4,
+   "floatCell": {
+    "tau": 3,
+    "d": 19
+   },
+   "fixedCell": {
+    "tau": 3,
+    "d": 20
+   },
+   "dStart": 19,
+   "acc": -96,
+   "hit": {
+    "x": 17,
+    "y": 7,
+    "resonance": 144
+   },
+   "twin": true,
+   "floatPressure": "0",
+   "floatPressureIsExactZero": true,
+   "fixedPressureSUnits": "48",
+   "classification": "float-collapses-to-exact-zero (double rounding); fixed keeps honest remainder"
+  },
+  {
+   "arm": "2/3",
+   "seed": 34003,
+   "tick": 10,
+   "cellIndex": 266,
+   "x": 2,
+   "y": 11,
+   "floatCell": {
+    "tau": 3,
+    "d": 56
+   },
+   "fixedCell": {
+    "tau": 3,
+    "d": 57
+   },
+   "dStart": 56,
+   "acc": -30,
+   "hit": {
+    "x": 14,
+    "y": 10,
+    "resonance": 45
+   },
+   "twin": true,
+   "floatPressure": "0",
+   "floatPressureIsExactZero": true,
+   "fixedPressureSUnits": "15",
+   "classification": "float-collapses-to-exact-zero (double rounding); fixed keeps honest remainder"
+  },
+  {
+   "arm": "2/3",
+   "seed": 34004,
+   "tick": 17,
+   "cellIndex": 36,
+   "x": 12,
+   "y": 1,
+   "floatCell": {
+    "tau": 3,
+    "d": 49
+   },
+   "fixedCell": {
+    "tau": 3,
+    "d": 50
+   },
+   "dStart": 49,
+   "acc": -34,
+   "hit": {
+    "x": 22,
+    "y": 8,
+    "resonance": 51
+   },
+   "twin": true,
+   "floatPressure": "0",
+   "floatPressureIsExactZero": true,
+   "fixedPressureSUnits": "17",
+   "classification": "float-collapses-to-exact-zero (double rounding); fixed keeps honest remainder"
+  },
+  {
+   "arm": "2/3",
+   "seed": 34005,
+   "tick": 4,
+   "cellIndex": 350,
+   "x": 14,
+   "y": 14,
+   "floatCell": {
+    "tau": 3,
+    "d": 55
+   },
+   "fixedCell": {
+    "tau": 3,
+    "d": 56
+   },
+   "dStart": 55,
+   "acc": -38,
+   "hit": {
+    "x": 6,
+    "y": 13,
+    "resonance": 57
+   },
+   "twin": true,
+   "floatPressure": "0",
+   "floatPressureIsExactZero": true,
+   "fixedPressureSUnits": "19",
+   "classification": "float-collapses-to-exact-zero (double rounding); fixed keeps honest remainder"
+  },
+  {
+   "arm": "2/3",
+   "seed": 34006,
+   "tick": 6,
+   "cellIndex": 82,
+   "x": 10,
+   "y": 3,
+   "floatCell": {
+    "tau": 3,
+    "d": 6
+   },
+   "fixedCell": {
+    "tau": 3,
+    "d": 7
+   },
+   "dStart": 6,
+   "acc": -36,
+   "hit": {
+    "x": 3,
+    "y": 0,
+    "resonance": 54
+   },
+   "twin": true,
+   "floatPressure": "0",
+   "floatPressureIsExactZero": true,
+   "fixedPressureSUnits": "18",
+   "classification": "float-collapses-to-exact-zero (double rounding); fixed keeps honest remainder"
+  },
+  {
+   "arm": "2/3",
+   "seed": 34007,
+   "tick": 6,
+   "cellIndex": 177,
+   "x": 9,
+   "y": 7,
+   "floatCell": {
+    "tau": 3,
+    "d": 61
+   },
+   "fixedCell": {
+    "tau": 3,
+    "d": 62
+   },
+   "dStart": 61,
+   "acc": -22,
+   "hit": {
+    "x": 5,
+    "y": 0,
+    "resonance": 33
+   },
+   "twin": true,
+   "floatPressure": "0",
+   "floatPressureIsExactZero": true,
+   "fixedPressureSUnits": "11",
+   "classification": "float-collapses-to-exact-zero (double rounding); fixed keeps honest remainder"
+  },
+  {
+   "arm": "2/3",
+   "seed": 34008,
+   "tick": 6,
+   "cellIndex": 331,
+   "x": 19,
+   "y": 13,
+   "floatCell": {
+    "tau": 3,
+    "d": 7
+   },
+   "fixedCell": {
+    "tau": 3,
+    "d": 8
+   },
+   "dStart": 7,
+   "acc": -34,
+   "hit": {
+    "x": 23,
+    "y": 10,
+    "resonance": 51
+   },
+   "twin": true,
+   "floatPressure": "0",
+   "floatPressureIsExactZero": true,
+   "fixedPressureSUnits": "17",
+   "classification": "float-collapses-to-exact-zero (double rounding); fixed keeps honest remainder"
+  }
+ ]
+}

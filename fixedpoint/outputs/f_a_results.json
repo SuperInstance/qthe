@@ -1,0 +1,93 @@
+{
+ "A1": {
+  "checked": 256,
+  "mismatches": [],
+  "pass": true
+ },
+ "A2": {
+  "envelope": 34816,
+  "randomRows": 64,
+  "mismatches": [],
+  "nonInteger": 0,
+  "pass": true,
+  "X17": [
+   -8,
+   -4,
+   -2,
+   -1,
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   16,
+   32,
+   63,
+   100
+  ],
+  "P8": [
+   0,
+   2,
+   4,
+   6,
+   8,
+   10,
+   12,
+   14
+  ]
+ },
+ "A3": {
+  "checked": 448,
+  "mismatches": 0,
+  "pass": true
+ },
+ "A4": {
+  "seeds": [
+   0,
+   1,
+   34055,
+   4294967295
+  ],
+  "draws": 10000,
+  "mismatches": 0,
+  "pass": true
+ },
+ "A5": {
+  "points": 9081,
+  "disagreements": [
+   {
+    "arm": "2/3",
+    "acc": -2,
+    "floatClass": 0,
+    "fixedClass": 1,
+    "floatP": "0",
+    "fixedP": "1"
+   }
+  ],
+  "predictedExactly": [
+   {
+    "arm": "2/3",
+    "acc": -2,
+    "floatClass": 0,
+    "fixedClass": 1
+   }
+  ],
+  "pass": true
+ },
+ "A6": {
+  "checkedFile": "fixedpoint/qthe_fixed.mjs",
+  "a_zero_MathRandom_scanned": true,
+  "a_zero_MathRandom_fullfile": true,
+  "c_zero_float_literals": true,
+  "d_exactly_one_division_in_sigmaFromFixed": true,
+  "d_tick_body_has_no_slash": true,
+  "e_zero_MathLog2_fullfile": true,
+  "b_badMathBuiltins": [],
+  "b_zero_except_abs_scanned": true,
+  "pass": true
+ }
+}

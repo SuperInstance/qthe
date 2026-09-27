@@ -1,0 +1,10 @@
+{
+ "fA_all_pass": true,
+ "fB_P_B1_zero_divergence": false,
+ "fB_P_B2_cooker_exact": true,
+ "fB_P_B4_term_band": true,
+ "fC_20_of_20": true,
+ "fD_bigint_shadow": true,
+ "breachClosed": false,
+ "R5_answer": "NOT closed as registered — see honest_alternatives in pre_registration.json F_E; the divergence/defect profile is the real fidelity cost and stands as recorded."
+}

@@ -1,0 +1,480 @@
+{
+ "arms": {
+  "1": {
+   "prediction": "P-B1 zero divergence",
+   "perSeed": [
+    {
+     "seed": 34001,
+     "firstDivergenceTick": null,
+     "divergedTicks": 0
+    },
+    {
+     "seed": 34002,
+     "firstDivergenceTick": null,
+     "divergedTicks": 0
+    },
+    {
+     "seed": 34003,
+     "firstDivergenceTick": null,
+     "divergedTicks": 0
+    },
+    {
+     "seed": 34004,
+     "firstDivergenceTick": null,
+     "divergedTicks": 0
+    },
+    {
+     "seed": 34005,
+     "firstDivergenceTick": null,
+     "divergedTicks": 0
+    },
+    {
+     "seed": 34006,
+     "firstDivergenceTick": null,
+     "divergedTicks": 0
+    },
+    {
+     "seed": 34007,
+     "firstDivergenceTick": null,
+     "divergedTicks": 0
+    },
+    {
+     "seed": 34008,
+     "firstDivergenceTick": null,
+     "divergedTicks": 0
+    }
+   ],
+   "zeroDivergence": true
+  },
+  "2": {
+   "prediction": "P-B1 zero divergence",
+   "perSeed": [
+    {
+     "seed": 34001,
+     "firstDivergenceTick": null,
+     "divergedTicks": 0
+    },
+    {
+     "seed": 34002,
+     "firstDivergenceTick": null,
+     "divergedTicks": 0
+    },
+    {
+     "seed": 34003,
+     "firstDivergenceTick": null,
+     "divergedTicks": 0
+    },
+    {
+     "seed": 34004,
+     "firstDivergenceTick": null,
+     "divergedTicks": 0
+    },
+    {
+     "seed": 34005,
+     "firstDivergenceTick": null,
+     "divergedTicks": 0
+    },
+    {
+     "seed": 34006,
+     "firstDivergenceTick": null,
+     "divergedTicks": 0
+    },
+    {
+     "seed": 34007,
+     "firstDivergenceTick": null,
+     "divergedTicks": 0
+    },
+    {
+     "seed": 34008,
+     "firstDivergenceTick": null,
+     "divergedTicks": 0
+    }
+   ],
+   "zeroDivergence": true
+  },
+  "4": {
+   "prediction": "P-B1 zero divergence",
+   "perSeed": [
+    {
+     "seed": 34001,
+     "firstDivergenceTick": null,
+     "divergedTicks": 0
+    },
+    {
+     "seed": 34002,
+     "firstDivergenceTick": null,
+     "divergedTicks": 0
+    },
+    {
+     "seed": 34003,
+     "firstDivergenceTick": null,
+     "divergedTicks": 0
+    },
+    {
+     "seed": 34004,
+     "firstDivergenceTick": null,
+     "divergedTicks": 0
+    },
+    {
+     "seed": 34005,
+     "firstDivergenceTick": null,
+     "divergedTicks": 0
+    },
+    {
+     "seed": 34006,
+     "firstDivergenceTick": null,
+     "divergedTicks": 0
+    },
+    {
+     "seed": 34007,
+     "firstDivergenceTick": null,
+     "divergedTicks": 0
+    },
+    {
+     "seed": 34008,
+     "firstDivergenceTick": null,
+     "divergedTicks": 0
+    }
+   ],
+   "zeroDivergence": true
+  },
+  "0.5": {
+   "prediction": "P-B1 zero divergence",
+   "perSeed": [
+    {
+     "seed": 34001,
+     "firstDivergenceTick": null,
+     "divergedTicks": 0
+    },
+    {
+     "seed": 34002,
+     "firstDivergenceTick": null,
+     "divergedTicks": 0
+    },
+    {
+     "seed": 34003,
+     "firstDivergenceTick": null,
+     "divergedTicks": 0
+    },
+    {
+     "seed": 34004,
+     "firstDivergenceTick": null,
+     "divergedTicks": 0
+    },
+    {
+     "seed": 34005,
+     "firstDivergenceTick": null,
+     "divergedTicks": 0
+    },
+    {
+     "seed": 34006,
+     "firstDivergenceTick": null,
+     "divergedTicks": 0
+    },
+    {
+     "seed": 34007,
+     "firstDivergenceTick": null,
+     "divergedTicks": 0
+    },
+    {
+     "seed": 34008,
+     "firstDivergenceTick": null,
+     "divergedTicks": 0
+    }
+   ],
+   "zeroDivergence": true
+  },
+  "log2(3)": {
+   "prediction": "P-B1 zero divergence",
+   "perSeed": [
+    {
+     "seed": 34001,
+     "firstDivergenceTick": null,
+     "divergedTicks": 0
+    },
+    {
+     "seed": 34002,
+     "firstDivergenceTick": null,
+     "divergedTicks": 0
+    },
+    {
+     "seed": 34003,
+     "firstDivergenceTick": null,
+     "divergedTicks": 0
+    },
+    {
+     "seed": 34004,
+     "firstDivergenceTick": null,
+     "divergedTicks": 0
+    },
+    {
+     "seed": 34005,
+     "firstDivergenceTick": null,
+     "divergedTicks": 0
+    },
+    {
+     "seed": 34006,
+     "firstDivergenceTick": null,
+     "divergedTicks": 0
+    },
+    {
+     "seed": 34007,
+     "firstDivergenceTick": null,
+     "divergedTicks": 0
+    },
+    {
+     "seed": 34008,
+     "firstDivergenceTick": null,
+     "divergedTicks": 0
+    }
+   ],
+   "zeroDivergence": true
+  },
+  "1.6": {
+   "prediction": "P-B1 zero divergence",
+   "perSeed": [
+    {
+     "seed": 34001,
+     "firstDivergenceTick": 18,
+     "divergedTicks": 383
+    },
+    {
+     "seed": 34002,
+     "firstDivergenceTick": 17,
+     "divergedTicks": 30
+    },
+    {
+     "seed": 34003,
+     "firstDivergenceTick": 82,
+     "divergedTicks": 319
+    },
+    {
+     "seed": 34004,
+     "firstDivergenceTick": 5,
+     "divergedTicks": 396
+    },
+    {
+     "seed": 34005,
+     "firstDivergenceTick": 17,
+     "divergedTicks": 384
+    },
+    {
+     "seed": 34006,
+     "firstDivergenceTick": null,
+     "divergedTicks": 0
+    },
+    {
+     "seed": 34007,
+     "firstDivergenceTick": 3,
+     "divergedTicks": 398
+    },
+    {
+     "seed": 34008,
+     "firstDivergenceTick": 3,
+     "divergedTicks": 29
+    }
+   ],
+   "zeroDivergence": false
+  },
+  "0.7": {
+   "prediction": "P-B1 zero divergence",
+   "perSeed": [
+    {
+     "seed": 34001,
+     "firstDivergenceTick": 8,
+     "divergedTicks": 393
+    },
+    {
+     "seed": 34002,
+     "firstDivergenceTick": null,
+     "divergedTicks": 0
+    },
+    {
+     "seed": 34003,
+     "firstDivergenceTick": 54,
+     "divergedTicks": 9
+    },
+    {
+     "seed": 34004,
+     "firstDivergenceTick": 1,
+     "divergedTicks": 400
+    },
+    {
+     "seed": 34005,
+     "firstDivergenceTick": 5,
+     "divergedTicks": 396
+    },
+    {
+     "seed": 34006,
+     "firstDivergenceTick": 25,
+     "divergedTicks": 376
+    },
+    {
+     "seed": 34007,
+     "firstDivergenceTick": 15,
+     "divergedTicks": 386
+    },
+    {
+     "seed": 34008,
+     "firstDivergenceTick": 13,
+     "divergedTicks": 388
+    }
+   ],
+   "zeroDivergence": false
+  },
+  "default": {
+   "prediction": "P-B1 zero divergence",
+   "perSeed": [
+    {
+     "seed": 34001,
+     "firstDivergenceTick": null,
+     "divergedTicks": 0
+    },
+    {
+     "seed": 34002,
+     "firstDivergenceTick": null,
+     "divergedTicks": 0
+    },
+    {
+     "seed": 34003,
+     "firstDivergenceTick": null,
+     "divergedTicks": 0
+    },
+    {
+     "seed": 34004,
+     "firstDivergenceTick": null,
+     "divergedTicks": 0
+    },
+    {
+     "seed": 34005,
+     "firstDivergenceTick": null,
+     "divergedTicks": 0
+    },
+    {
+     "seed": 34006,
+     "firstDivergenceTick": null,
+     "divergedTicks": 0
+    },
+    {
+     "seed": 34007,
+     "firstDivergenceTick": null,
+     "divergedTicks": 0
+    },
+    {
+     "seed": 34008,
+     "firstDivergenceTick": null,
+     "divergedTicks": 0
+    }
+   ],
+   "zeroDivergence": true
+  },
+  "2/3": {
+   "prediction": "P-B3 rule: divergence at or before first twin hit with acc=-2, else none; absorbing",
+   "perSeed": [
+    {
+     "seed": 34001,
+     "firstDivergenceTick": 3,
+     "divergedTicks": 398
+    },
+    {
+     "seed": 34002,
+     "firstDivergenceTick": 7,
+     "divergedTicks": 394
+    },
+    {
+     "seed": 34003,
+     "firstDivergenceTick": 10,
+     "divergedTicks": 391
+    },
+    {
+     "seed": 34004,
+     "firstDivergenceTick": 17,
+     "divergedTicks": 384
+    },
+    {
+     "seed": 34005,
+     "firstDivergenceTick": 4,
+     "divergedTicks": 397
+    },
+    {
+     "seed": 34006,
+     "firstDivergenceTick": 6,
+     "divergedTicks": 395
+    },
+    {
+     "seed": 34007,
+     "firstDivergenceTick": 6,
+     "divergedTicks": 395
+    },
+    {
+     "seed": 34008,
+     "firstDivergenceTick": 6,
+     "divergedTicks": 395
+    }
+   ]
+  }
+ },
+ "cooker": {
+  "tick1": {
+   "eventsEqualShape": true,
+   "floatTermIs2": true,
+   "fixedTermIs_3x2863311531": true,
+   "float_B_d_holds_7": true,
+   "fixed_B_ascends_8": true,
+   "A_d_6_both": true,
+   "table_slot7_LWW_B_both": true,
+   "planeDivergesAtTick1": true,
+   "pass": true
+  },
+  "absorbing": true,
+  "trace": [
+   {
+    "tick": 1,
+    "eventsEqualShape": true,
+    "floatTermIs2": true,
+    "fixedTermIs_3x2863311531": true,
+    "float_B_d_holds_7": true,
+    "fixed_B_ascends_8": true,
+    "A_d_6_both": true,
+    "table_slot7_LWW_B_both": true,
+    "planeDivergesAtTick1": true,
+    "pass": true
+   },
+   {
+    "tick": 2,
+    "planeDiverges": true,
+    "snapshotDiffers": true,
+    "eventsDiffer": false
+   },
+   {
+    "tick": 3,
+    "planeDiverges": true,
+    "snapshotDiffers": true,
+    "eventsDiffer": false
+   },
+   {
+    "tick": 4,
+    "planeDiverges": true,
+    "snapshotDiffers": true,
+    "eventsDiffer": false
+   },
+   {
+    "tick": 5,
+    "planeDiverges": true,
+    "snapshotDiffers": true,
+    "eventsDiffer": false
+   },
+   {
+    "tick": 6,
+    "planeDiverges": true,
+    "snapshotDiffers": true,
+    "eventsDiffer": false
+   }
+  ],
+  "pass": true
+ },
+ "termStats": {
+  "checked": 2085522,
+  "violations": []
+ }
+}

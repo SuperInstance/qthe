@@ -1,0 +1,114 @@
+{
+ "determinism": {
+  "runs": 20,
+  "identical": true,
+  "hash": "e4f1d36a95ac50a3a29f1db8a53b1aad963632142f87a8dbe9ce65653120c38a"
+ },
+ "nonDegeneracy": {
+  "seed34101Differs": true,
+  "hash34101": "11a8054f786d5050ce0323323d0c087dba12471aa61b8dab68e3e2673778c036"
+ },
+ "g5": {
+  "scheduleEq": true,
+  "fixedTermsAll_6807362106": true,
+  "totalWritesFixed": 12,
+  "totalWritesFloat": 12,
+  "eventsFixed": [
+   [
+    [
+     "twin",
+     6,
+     6,
+     40,
+     1
+    ]
+   ],
+   [
+    [
+     "twin",
+     1,
+     1,
+     40,
+     1
+    ]
+   ],
+   [
+    [
+     "twin",
+     1,
+     1,
+     41,
+     1
+    ],
+    [
+     "twin",
+     6,
+     6,
+     41,
+     1
+    ]
+   ],
+   [
+    [
+     "twin",
+     6,
+     6,
+     42,
+     1
+    ]
+   ],
+   [
+    [
+     "twin",
+     1,
+     1,
+     42,
+     1
+    ]
+   ],
+   [
+    [
+     "twin",
+     1,
+     1,
+     43,
+     1
+    ],
+    [
+     "twin",
+     6,
+     6,
+     43,
+     1
+    ]
+   ]
+  ],
+  "dladderFixed": [
+   [
+    40,
+    41
+   ],
+   [
+    41,
+    41
+   ],
+   [
+    42,
+    42
+   ],
+   [
+    42,
+    43
+   ],
+   [
+    43,
+    43
+   ],
+   [
+    44,
+    44
+   ]
+  ]
+ },
+ "pass": true
+}
