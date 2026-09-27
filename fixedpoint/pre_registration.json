@@ -1,0 +1,86 @@
+{
+  "law": "FLOORS FROZEN BEFORE ANY RUN (house law: pricing-first). The runs may confirm or falsify these floors; they may not edit them. Honest FAILs stay standing. Git history of this repo must show this file committed before every result commit. The floor numbers below were derived by hand-arithmetic and verified by a pre-freeze arithmetic check (Node, coupled sign grid 9 sigmas x 1009 accs -> exactly 1 exception); the CONFORMANCE RUN itself executes only after this file is committed.",
+  "task_id": "34-b",
+  "agent": "kernel-smith",
+  "wave": 34,
+  "repo": "SuperInstance/qthe",
+  "repo_at_registration": "0b98db8",
+  "kernel_commit": "b7e6b23 (fixedpoint/qthe_fixed.mjs)",
+  "scope": "I OWN fixedpoint/ in qthe. I do NOT touch qthe.mjs, experiments/, tests/, demo/, index.html, crossimpl/, receipts/ (lanes 34-a/34-c/34-e own those).",
+  "answers": "DeepSeek guest review R5 (CRITICAL, situations/guest_rows.jsonl call 5-R5-resonance-sigma-sweep): 'resonance*log2(3) is irrational and breaks the no-floats plane'. R5's own fix (b) adopted: integer fixed-point bridge scale with a declared rounding rule. Jointly pointed at by E-Q2 (33-b): sigma is monotone-inert on the swept classes — an engineering knob, not a law of nature — so quantizing it costs nothing the data ever measured.",
+  "representation_law": {
+    "name": "R8 — the no-floats plane",
+    "scale": "S = 2^32; kernel-state quantity is the integer sigma_q = sigma * S",
+    "rounding": "round-half-toward-+Infinity via ECMAScript Math.round (fully specified, platform-independent); sigmaToFixed(real) = Math.round(real * 2^32); the *2^32 is an exact exponent shift in IEEE-754",
+    "float_doors": "exactly ONE inbound door: sigmaToFixed, boundary-only (caller-supplied real sigma; opts.sigma; fromReal). NEVER executed inside tick() unless the caller passes opts.sigma. Outbound diagnostic door sigmaFromFixed (receipts/inspection only). DEFAULT path touches no float at all.",
+    "default_sigma_q": 6807362106,
+    "default_sigma_q_derivation": "round(log2(3) * 2^32); derivation 1 from the 60-digit real log2(3)=1.58496250072115618145373894394781650875981440769248106045575... * 2^32 = 6807362105.9837422146520505011774... -> 6807362106; derivation 2 double-path cross-check Math.round(Math.log2(3)*2**32) === 6807362106. BAKED INTEGER LITERAL — no Math.log2 anywhere in the kernel file.",
+    "quantization_error_default": "0.01625823974609375 S-units (= 3.78e-12 in real units); the float kernel's default double sits 4.77e-7 S-units from sigma_q",
+    "overflow_policy": "refuse loudly, never silent wrap: sigma domain [0,1024) -> sigma_q in [0,2^42) else RangeError; table.write refuses |resonance| > 2^20 (kernel-reachable max 505); all tick intermediates proven < 2^53 (acc*S < 2^41, term = r*sigma_q < 2^51, pressure < 2^52) so the Number carrier is EXACT by IEEE-754 integer-exactness; BigInt shadow floor F-D proves carrier-independence empirically per run",
+    "term_unit": "twin event term = resonance * sigma_q, an INTEGER in S-units (float kernel: resonance * sigma, a float). The one deliberate representation difference.",
+    "layer0_parity": "pack/unpack/psi/tauOf/dOf/vectorPass/nextD/makeSubstrate/mulberry32 byte-identical code to qthe.mjs by construction (the float kernel was already exact-integer there); mulberry32 stays CALLER-side by contract, integer-quantized at the makeSubstrate boundary (& 0xff)"
+  },
+  "sigma_arms": {
+    "real_inputs_passed_to_both_kernels": ["0.5", "1", "log2(3) (the float kernel's own Math.log2(3) double)", "2", "4"],
+    "adversarial_additions": ["2/3 (the cooker — chosen because 3*double(2/3) rounds to 2.0 EXACTLY)", "1.6 (5*1.6 rounds to 8 in float64 — near-boundary but sigma>1 so sign-safe)", "0.7 (boundary acc at sigma/(1-sigma)=2.33, margins 0.1/0.2 >> band)"],
+    "default_arm": "neither kernel receives sigma: float uses Math.log2(3) table default, fixed uses baked DEFAULT_SIGMA_Q",
+    "fixed_point_counterparts": {
+      "0.5": 2147483648,
+      "1": 4294967296,
+      "log2(3)": 6807362106,
+      "2": 8589934592,
+      "4": 17179869184,
+      "2/3": 2863311531,
+      "1.6": 6871947674,
+      "0.7": 3006477107,
+      "default": 6807362106,
+      "exactly_representable_in_Q32.32": ["0.5", "1", "2", "4"],
+      "irrational_approximations": ["log2(3)", "2/3 (rational but its double is not a dyadic rational, so quantization is lossy)", "1.6", "0.7"]
+    }
+  },
+  "floors": {
+    "F_A_layer0_exhaustive": {
+      "claim": "Layer 0 conformance floor: the fixed kernel is BYTE-IDENTICAL to qthe.mjs on the FULL Layer 0 domain, no exceptions.",
+      "predictions": [
+        "A1 pack/unpack/tauOf/dOf/psi: 256/256 byte values identical outputs both directions + PSI table identity",
+        "A2 vectorPass equivalence: 256 weight bytes x 8 row positions x 17 integer xs (single-perturbation envelope) + 64 deterministic random rows (mulberry32(34055), row length 16) — every {re,im} EXACTLY equal (===) and Number.isInteger",
+        "A3 nextD: d in [0,63] x pressure in {-2^52, -2^31, -1, 0, 1, 2^31, 2^52} identical (sanity — same code)",
+        "A4 mulberry32 4 seeds x 10000 draws + makeSubstrate outputs identical",
+        "A5 SIGN GRID (the R5 theorem as data): over acc in [-504,504] x the 9 sigma arms, sign class of float pressure (acc + (|acc|+1)*sigma_real, computed as the float kernel computes it) vs sign class of fixed pressure (acc*S + (|acc|+1)*sigma_q): EXACTLY ONE class disagreement in the entire 9081-point grid: (sigma=2/3, acc=-2): float class 0 (pressure === 0 exactly: -2 + 3*double(2/3) === 0 because 3*double(2/3) rounds to 2.0), fixed class +1 (pressure = -2*S + 3*2863311531 = +1). Any OTHER disagreement falsifies the sign law.",
+        "A6 static hygiene (law stated pre-run): after stripping // comments and the EXEMPT regions (mulberry32 function body — caller-side by contract; sigmaToFixed body — the declared boundary door), the remaining kernel source must contain: zero occurrences of Math.random, zero of /Math\\.(?!abs\\b|round\\b)/ (only Math.abs survives, inside tick's resonance), zero float literals (/\\d+\\.\\d+/, /\\d[eE][+-]?\\d/), zero division operators outside the exempt regions. Math.log2 must not appear ANYWHERE in the file (comments included — the derivation rides as decimal digits, not code)."
+      ]
+    },
+    "F_B_layer1_traces": {
+      "claim": "Layer 1 divergence expectation: WHERE do fixed vs float traces diverge across the sigma sweep?",
+      "comparison_law": "per (arm, seed, tick): compare full cell plane bytes + wormhole table snapshot JSON + event core (kind,x,y,slot,resonance). term is compared under the TERM BAND LAW, not byte-equal (it is the one declared representation difference): for exactly-representable sigma in {0.5,1,2,4} term_q must EXACTLY equal the float term lifted to S-units (both are exact integers); for all other arms |term_q - floatTerm*S| <= resonance (a priori band: |sigma_q - sigma*S| <= 0.5 S-units gives r/2, plus float term rounding r*2^-19; bound r).",
+      "substrate": "24x16, mulberry32 seedFn, tau uniform over {0,1,2,3} (~25% Abstain -> heavy twin traffic), d uniform [0,64); seeds 34001..34008 (N=8), T=400 ticks, wormholes ON",
+      "predictions": [
+        "P-B1 ZERO divergence (first-divergence tick = null) at ALL 8 seeds x ALL 400 ticks for arms 0.5, 1, log2(3), 2, 4, and default, and for adversarial 1.6 and 0.7. Mechanism: (i) 0.5/1/2/4 are dyadic -> fixed sigma_q is EXACT and the float kernel's own arithmetic on them is exact-integer -> the planes are the same computation; (ii) log2(3)/default: sigma>1 makes every twin-hit pressure >= sigma ≈ 1.585 in true arithmetic (coupling r=|acc|+1: for acc<0, pressure = |acc|(sigma-1)+sigma; for acc>=0, pressure = acc(1+sigma)+sigma) — the r*2^-33 quantization band can never flip a sign with margin 1.585; (iii) 1.6: same sigma>1 argument; (iv) 0.7: the sign boundary acc = sigma/(1-sigma) ≈ 2.33 falls between acc=-2 (margin +0.1) and acc=-3 (margin -0.2) — both margins dwarf the <= r*2^-33 ≈ 5.9e-8 band. If ANY sweep/default/1.6/0.7 arm diverges on the cell plane, the sign law is falsified and the autopsy is the finding.",
+        "P-B2 COOKER arm (sigma=2/3, engineered 8x8 fixture, T=6): divergence at tick 1, exact. Fixture: Abstain d=7 at (1,1) and (5,5); Repel d=1 at (1,0),(0,1) [A's neighborhood, acc=-2] and (5,4),(4,5) [B's neighborhood, acc=-2]; else Ground. Row-major: A reads slot 7 first (empty, writes {1,1,r=3}), B reads slot 7 -> twin hit, term = 3*sigma. Predicted EXACT tick-1 state: BOTH kernels emit exactly one event {twin,(5,5),slot 7,resonance 3}; float term === 2 (the double 2.0), fixed term === 8589934593 (= 3*2863311531 = 2*S + 1 — ONE S-unit above the float plane); float B.d stays 7 (pressure === 0 -> nextD holds), fixed B.d = 8 (pressure +1 -> ascend); A.d = 6 in BOTH (A never twin-hits: pressure = acc = -2); table slot 7 = {x:5,y:5,resonance:3} in BOTH after tick 1 (B's LWW write). Divergence then ABSORBS (persists at every tick through T=6): once B.d differs, B reads/writes slot 8 (fixed) vs slot 7 (float) forever; table snapshots differ from tick 2 on (fixed slot 7 keeps r=3 and gains slot 8; float slot 7 decays to r=1 via B's own-write loop). No re-convergence (re-identification of the planes) is predicted; if observed it would be recorded honestly.",
+        "P-B3 on the RANDOM substrates with sigma=2/3: divergence occurs at or before the first twin hit with acc=-2 (the only sign-boundary point); if no such hit occurs in 400 ticks, no divergence. Prediction is the RULE, not a per-seed claim — the battery records first-divergence tick per seed.",
+        "P-B4 term band: 100% of twin events satisfy the TERM BAND LAW (exact equality on dyadic arms; |term_q - floatTerm*S| <= r elsewhere). A band violation = floor failure.",
+        "P-B5 compounding: any cell-plane divergence that occurs is predicted ABSORBING (persists to T) — the plane feeds forward. Re-convergence is not excluded by logic, only predicted against."
+      ]
+    },
+    "F_C_determinism": {
+      "claim": "fixed-kernel self-determinism floor: 20/20 rerun-hash stability.",
+      "protocol": "seed 34100, 24x16, T=400, default sigma, wormholes ON: 20 INDEPENDENT fresh builds (kernel + substrate + table all rebuilt from scratch each time), full-trace hash = sha256 over the per-tick record sequence (plane hex + table snapshot JSON + event core JSON, floats never hashed — term excluded from records).",
+      "prediction": "20/20 identical trace hashes; plus non-degeneracy control: seed 34101 trace hash DIFFERENT from seed 34100; plus the fixed kernel's G5 twin-resonance schedule (8x8, A=(1,1) B=(6,6) pack(3,40), default sigma, 6 ticks) reproduces the float kernel's pinned schedule exactly (event x/y/slot/resonance sequence and d-ladder), terms in S-units (1*6807362106), totalWrites = 12."
+    },
+    "F_D_bigint_shadow": {
+      "claim": "carrier independence: the Number-carried fixed kernel never rounds.",
+      "protocol": "a self-contained BigInt re-implementation of the fixed tick (same table semantics, sigma_q as BigInt, pressure = acc*S + r*sigma_q in BigInt) run on seeds 34001..34004 x arms {default, 0.5, log2(3), 2/3} x T=100; per-tick cell bytes + table snapshots + event cores (x,y,slot,resonance,term) compared against the Number-carried fixed kernel.",
+      "prediction": "100% byte equality across all arms/seeds/ticks — proving every Number intermediate stayed < 2^53 and exact on the actual run."
+    },
+    "F_E_verdict_rule": {
+      "R5_answer_rule": "The no-floats breach is CLOSED (integer-only path exists end-to-end for a full tick) iff: F_A all pass (including the 1-exception sign grid and the static hygiene law) AND F_B P-B1 passes (zero divergence on sweep+default+1.6+0.7) AND F_B P-B2 confirms the cooker's exact 1-quantum divergence AND F_C is 20/20 AND F_D passes. The fidelity cost is then EXACTLY PRICED: ZERO on every sigma the data has swept or defaulted to (trace-identical planes), and exactly ONE S-unit of pressure at the single pre-registered boundary point (sigma=2/3, acc=-2) — i.e. cost exists only for sigma choices engineered within ~r*2^-33 of a sign boundary, which no measured dynamics has ever visited.",
+      "honest_alternatives": [
+        "if F_B P-B1 fails on any arm: the integer plane is NOT behaviorally free — report the divergence profile (first tick, growth bounded vs compounding) as the real fidelity cost and let R5's answer become 'closed with measured cost'",
+        "if F_C fails (<20/20): the fixed kernel is void as a substrate — determinism is the house's first law",
+        "if F_D fails: the 2^53 exactness bound is wrong — the carrier law must be re-derived, kernel amended, floors re-registered (no post-hoc edits)"
+      ]
+    }
+  },
+  "receipt_discipline": "one stone-v1 chain: fixedpoint/receipts/fixedpoint_chain.jsonl; every append re-verified FROM DISK (verifyChainFile, refuse-if-broken = loud exit); pre-registration sha256 recorded in the rules row; raw per-arm data in fixedpoint/outputs/*.json; chain tip recorded in fixedpoint/findings.md and commit messages",
+  "frozen_at": "before any conformance run; kernel b7e6b23 already committed (build-only commit, no results)"
+}
