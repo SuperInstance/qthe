@@ -1,0 +1,126 @@
+{
+ "kernel": "qthe.mjs",
+ "kernel_sha256": "ecf3f0642883097707fff8d4acbc9011e1d1bb36ff4efce6520508918e8a1e47",
+ "gates": [
+  {
+   "id": "G0",
+   "name": "demo-sha256 == stone sha256Hex (3 published vectors + 1 fixture)",
+   "predicted": "4/4 byte-identical digests",
+   "pass": true,
+   "observed": {
+    "ok": 4,
+    "misses": []
+   }
+  },
+  {
+   "id": "G1",
+   "name": "pack/unpack bijection over all 256 values + Psi map",
+   "predicted": "256/256 round-trips; 256 distinct; PSI=[0,1,-1,i]",
+   "pass": true,
+   "observed": {
+    "roundTrips": 256,
+    "distinctPacked": 256,
+    "psiOk": true,
+    "firstMiss": -1
+   }
+  },
+  {
+   "id": "G2",
+   "name": "bounds invariance by exhaustion (nextD + full tick, tau frozen)",
+   "predicted": "2304/2304 nextD; 3840/3840 tick cells in [0,63] with tau preserved",
+   "pass": true,
+   "observed": {
+    "nextD_cases": 2304,
+    "nextD_inBounds": 2304,
+    "tick_cellsChecked": 3840,
+    "tick_cellsOk": 3840,
+    "tauFlip": null,
+    "oob": null
+   }
+  },
+  {
+   "id": "G3",
+   "name": "determinism: same seed -> byte-identical 1000-tick trace; no Math.random in kernel",
+   "predicted": "A1==A2 1000/1000 per-tick; planes equal; seed 20260928 differs; randHits=0",
+   "pass": false,
+   "observed": {
+    "perTickMatch": 1000,
+    "planeEq": true,
+    "traceDigest_A": "402c5d57b1240c4769e5cbe0066b9a7ebf9cf222352ad86990a41656033a53b6",
+    "traceDigest_B": "5649b1d1da5ebcc786b1dbed693cb8855f750ff87869115c2e16956829f07704",
+    "diffSeed": true,
+    "randHits": 1
+   }
+  },
+  {
+   "id": "G4",
+   "name": "split-channel vectorPass exact vs hand-computed literals",
+   "predicted": "exact [{re:8,im:30},{re:14,im:8},{re:0,im:0},{re:-21,im:0}], all integers",
+   "pass": false,
+   "observed": {
+    "got": [
+     {
+      "re": 8,
+      "im": 30
+     },
+     {
+      "re": 35,
+      "im": 8
+     },
+     {
+      "re": 0,
+      "im": 0
+     },
+     {
+      "re": -21,
+      "im": 0
+     }
+    ],
+    "allInt": true
+   }
+  },
+  {
+   "id": "G5",
+   "name": "twin resonance: pinned schedule t0..t5 + own-write guard + OFF arm",
+   "predicted": "exact schedule (see header); term=log2(3); lone cell silent; OFF arm silent+tableless",
+   "pass": true,
+   "observed": {
+    "misses": [],
+    "loneEvents": 0,
+    "loneD": 25,
+    "totalWrites": 12,
+    "offOk": true
+   }
+  },
+  {
+   "id": "G6",
+   "name": "paired arms: differ iff Abstain cells exist; no leak otherwise",
+   "predicted": "S1 (Abstain present) traces DIVERGE (firstDiff tick exists); S2 (no Abstain) IDENTICAL 200/200",
+   "pass": false,
+   "observed": {
+    "S1": {
+     "abstains": 105,
+     "firstDiff": 0,
+     "firstCellDiff": 7,
+     "identical": false,
+     "onDigest": "38c12a5d09ee07bb81c8bd8032aa5682690888fc2c477375285d45d86ca5f1ba"
+    },
+    "S2": {
+     "abstains": 0,
+     "identical": false,
+     "firstDiff": 0,
+     "onDigest": "2f1e6c6ba342ffa0e285e96941a2730d5a2aa82e186f894d3b85dddc49736f67"
+    }
+   }
+  }
+ ],
+ "all_pass": false,
+ "stone_loaded_from": "../../quilt-stone/stone.mjs",
+ "chain": {
+  "file": "tests/receipts.jsonl",
+  "links": 9,
+  "tip": "5518b12c75fe8a7ffaebfdbc7c05a0ae41be645904d264b201586961a15d4998",
+  "alg": "stone-v1",
+  "verified": true
+ }
+}
