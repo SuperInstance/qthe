@@ -1,0 +1,143 @@
+{
+ "receipt": "eq9_family_census (E-Q9 PRE-RUN, task 40-c, wave 40, lane qthe-smith)",
+ "generated_before": "situations/eq9_predictions.json seal + any kernel run — pricing-first law; ZERO kernel runs, ZERO LLM calls",
+ "family_predicate": "k=1 uncoupled exact-zero family of sigma=n/dd (lowest terms): acc_reader=-n, writer resonance=dd, writer acc=-(dd-1); true pressure -n+dd*(n/dd)=0. Code cited: qthe.mjs tick() (term=hit.resonance*sigma, table.write resonance=|acc|+1), fixedpoint/qthe_fixed.mjs R8 (pressure=acc*S+resonance*sigmaQ, sigmaToFixed=Math.round(sigma*2^32))",
+ "bounds_registered": {
+  "census_dd_max": 1000,
+  "census_n_max": 504,
+  "stable_n_max": 252,
+  "stable_dd_max": 253,
+  "stable_justification": "stable Repel engineering caps one cell mass at 4 non-adjacent Moore-8 ring cells x d<=63 = 252 (independence number of the neighbor ring); E-Q8 every-tick tuning-stability law requires acc(P)==0 at every tick",
+  "out_of_space_note": "dd>505: writer resonance unhostable even unstably (|acc|<=504 kernel ceiling); 253<dd<=505: kernel-reachable only via drifting adjacent Repel cells (breaks the every-tick tuning assertion) — receipted OUT-OF-ENGINEERING-SPACE, not silently dropped; n in (252,504]: same for the reader",
+  "sigma_arms": {
+   "rat": "double(n/dd) — the family point",
+   "irrFar": "Math.SQRT2 — family-distant irrational",
+   "irrNear": "double(n/dd + SQRT2*2^-52) — irrational step ~1-3 ulp above the family point"
+  }
+ },
+ "census_totals": {
+  "fractions_total": 306773,
+  "stable_runnable": 38911,
+  "kernel_reachable_not_stable": 116176,
+  "out_of_engineering_space": 151686
+ },
+ "stable_class_counts": {
+  "rat": {
+   "D": 1134,
+   "A": 34144,
+   "B": 1729,
+   "C": 1904
+  },
+  "near": {
+   "F-INV": 379,
+   "D": 755,
+   "C": 16763,
+   "B": 16649,
+   "A": 4365
+  },
+  "far": {
+   "B": 38911
+  }
+ },
+ "near_arm_degeneracy": {
+  "degenerate_to_rat_count": 4836,
+  "min_sigma_degenerate": 4,
+  "note": "the irrational step sqrt(2)*2^-52 is below half-ulp for sigma >= 4 => the double sum rounds BACK to the family point: the float kernel CANNOT see the irrational perturbation there (measured, not assumed)"
+ },
+ "far_arm_theorems_measured": {
+  "collapse_count": 0,
+  "sign_disagreement_count": 0,
+  "min_liouville_margin": 0.00001237894114238608,
+  "max_band_r33": 2.9453076422214508e-8,
+  "note": "|dd*sqrt2 - n| >= 1/(dd^2*(sqrt2+n/dd)) (2dd^2-n^2 is a nonzero integer) — orders above the r*2^-33 band and above any double rounding error => no collapse, full sign agreement expected"
+ },
+ "guest_named_families": {
+  "2/3": {
+   "stable": true,
+   "rat": {
+    "cls": "A",
+    "fColl": true,
+    "fxPressure": 1,
+    "fSign": 0,
+    "fxSign": 1
+   },
+   "near": {
+    "cls": "B",
+    "fColl": false,
+    "fxPressure": 1,
+    "degenerate": false,
+    "inBand": true
+   },
+   "far": {
+    "cls": "B",
+    "fColl": false,
+    "fxPressure": 9632068408,
+    "fSign": 1,
+    "fxSign": 1,
+    "liouvilleMargin": 0.7475468957064283
+   }
+  },
+  "8/5": {
+   "stable": true,
+   "rat": {
+    "cls": "A",
+    "fColl": true,
+    "fxPressure": 2,
+    "fSign": 0,
+    "fxSign": 1
+   },
+   "near": {
+    "cls": "B",
+    "fColl": false,
+    "fxPressure": 2,
+    "degenerate": false,
+    "inBand": true
+   },
+   "far": {
+    "cls": "B",
+    "fColl": false,
+    "fxPressure": -3989733368,
+    "fSign": -1,
+    "fxSign": -1,
+    "liouvilleMargin": 0.18578643762690492
+   }
+  },
+  "7/10": {
+   "stable": true,
+   "rat": {
+    "cls": "A",
+    "fColl": true,
+    "fxPressure": -2,
+    "fSign": 0,
+    "fxSign": -1
+   },
+   "near": {
+    "cls": "C",
+    "fColl": false,
+    "fxPressure": -2,
+    "degenerate": false,
+    "inBand": true
+   },
+   "far": {
+    "cls": "B",
+    "fColl": false,
+    "fxPressure": 30675238928,
+    "fSign": 1,
+    "fxSign": 1,
+    "liouvilleMargin": 0.7142135623730951
+   }
+  }
+ },
+ "theorems_asserted": {
+  "T2_fixed_hold_implies_dyadic": "fxHold <=> dd in {1,2,4,8,16,32,64,128} within dd<=253 (measured 0 violations across the full census)",
+  "F_INV_empty": "fixed-holds-while-float-moves is empty (0 occurrences) — fixed hold forces dyadic sigma, which the float plane represents EXACTLY",
+  "dyadic_implies_collapse": "dyadic dd => fl(n/dd)=n/dd exactly => float collapse (0 violations)"
+ },
+ "kernel_contact": "NONE — sigmaToFixed/SCALE re-derived here from the R8 law (Math.round(sigma*2^32), S=2^32); the sweep runner asserts its own re-derivation against fixedpoint/qthe_fixed.mjs at run time",
+ "full_table": {
+  "path_outside_repo": "/home/z/my-project/scripts/40c-eq9-census-table.json",
+  "rows": 306773,
+  "sha256": "552d171c6ddf2cdd5b7a87cc28cae2c2eb8435a560ad66aa934225eb6dbc20f6",
+  "note": "the sweep runner recomputes this table from the same registered bounds and asserts sha equality before its first tick"
+ }
+}

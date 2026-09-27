@@ -1,0 +1,79 @@
+{
+ "receipt": "E-Q9 PREDICTIONS — pre-registered BEFORE any sweep run (task 40-c, wave 40, lane qthe-smith). Pricing-first law: this file was sealed before the first E-Q9 kernel tick executed; its mtime and the git commit order are the receipts. The only prior kernel contact this wave is READ-ONLY (qthe.mjs, fixedpoint/qthe_fixed.mjs, the E-Q8 probe/verdict code, the round-8 mirror) — reading is not running.",
+ "experiment": "E-Q9 — the round-8 registered lever, run to closure: the full uncoupled exact-zero family sweep x {rational, irrational} sigma on the E-Q8 same-slot S3 live-read probe (float kernel qthe.mjs vs fixed kernel fixedpoint/qthe_fixed.mjs).",
+ "guest_lever_verbatim_r8": "eq9_candidate: 'Run the same 6x3 two-writer S3 live-read probe across the full uncoupled exact-zero family set (3acc+2r=0, 5acc+8r=0, 10acc+7r=0) with sigma swept over both rational and irrational-adjacent Q32.32 values, counting float-vs-fixed divergence cells per family.' falsifier: 'If any swept sigma produces a float-vs-fixed divergence OUTSIDE an exact-zero family, or the fixed kernel itself holds at an exact-zero family point, the artifact is not family-specific and the fixed plane's faithfulness claim dies.'",
+ "open_variables_closed_here": {
+  "family_bound": "The round-8 registration left the family bound OPEN. CLOSED HERE: census space = all reduced fractions n/dd with 1 <= dd <= 1000 (the bound the task suggests; adopted), 1 <= n <= 504 (the kernel's absolute |acc| ceiling: 8 Moore-8 neighbors x d<=63), gcd(n,dd)=1, sigma=n/dd in the fixed kernel's domain [0,1024). RUNNABLE SWEEP SET = the stable-engineering subset n <= 252 AND dd <= 253 (a cell's Repel mass is capped at 4 NON-ADJACENT ring neighbors x 63 = 252 — the independence number of the Moore-8 neighbor ring — because E-Q8's every-tick tuning-stability law requires acc(P)==0 at every tick, and adjacent Repel cells see each other). The rest is receipted, not dropped: 116,176 fractions are kernel-reachable only through drifting adjacent Repel cells (out-of-engineering-space-stability), 151,686 are beyond kernel reach at k=1 (dd > 505 makes the writer resonance |acc|+1 unhostable). k >= 2 family lines (scaled tunings of the same sigma) are OUT OF SCOPE by registration: the round-8 lever names k=1 lines and E-Q8 ran k=1.",
+  "family_predicate": "A k=1 uncoupled exact-zero family of sigma = n/dd (lowest terms) is the tuning (acc_reader = -n, writer resonance r = dd, writer acc = -(dd-1)): the TRUE twin pressure acc_reader + r*sigma = -n + dd*(n/dd) === 0 in real arithmetic. Cited code: qthe.mjs tick() — 'const term = hit.resonance * sigma; pressure = acc + term' with resonance = |acc|+1 written by table.write; fixedpoint/qthe_fixed.mjs R8 — 'pressure = acc * SCALE + term' with term = resonance*sigmaQ, sigmaQ = sigmaToFixed(sigma) = Math.round(sigma*2^32). Two nested predicates are kept EXPLICITLY apart: TRUE-EXACT-ZERO (all 38,911 stable reduced fractions) vs FLOAT-COLLAPSE class-ii (the repo's EQ7-R8 operative predicate: r*double(sigma) === integer m with acc_reader = -m). The sweep measures which is which.",
+  "sigma_arms": "rat = double(n/dd) (the family point); irrFar = Math.SQRT2 (family-distant irrational); irrNear = double(n/dd + SQRT2*2^-52) (irrational step of ~0.7-2.8 ulp above the family point). Every arm runs on BOTH kernels: float gets opts.sigma (double), fixed gets the frozen integer sigmaQ = Math.round(sigmaDouble*2^32) asserted against sigmaToFixed at run time.",
+  "audit_taxonomy_extension": "EQ8-R8 classified first-divergence cells as SIGMA-REPRESENTATION / ENGINEERED-COUPLED-EXCEPTION / UNEXPLAINED with |dd|=1 required. E-Q9 extends by ADDITION (no E-Q8 floor edited; E-Q8 floors govern E-Q8): QUANTIZATION-BLINDNESS (twin-heard, |dd|=2, neither plane collapsed, opposite signs, true pressure inside the fixed kernel's own r*2^-33 sign-law band — the 39c 'DIVERGENCE OPPOSITE' class) and FIXED-BLIND-INVERSION (twin-heard, |dd|=1, fixed pressure === 0 while float moves by ~1 ulp-scale pressure — possible OFF family points only; T2 makes it impossible AT family points). Everything else stays UNEXPLAINED.",
+  "determinism_scope": "EQ9-D1 committed unconditionally: EVERY (family x arm x kernel) run TWICE from fresh construction, byte-identical (plane-hash sequence, event-sequence hash, table snapshot hash, compact per-tick metric rows) — 12 runs per family, ~467k runs total. No sampling escape hatch.",
+  "moth_family_ordering": "SKIP receipted: the wave-37 moth entropy client (scripts/37b-moth-entropy.mjs, job 1f674719) died with the sandbox recycle and the moth API is not documented in any repo on disk. Reverse-engineering an undocumented API to pick loop order is exactly what the task law says to skip. MOTH_KEY present but UNUSED; zero moth calls; family loop order is the registered deterministic census order (dd ascending, then n ascending)."
+ },
+ "arithmetic_receipt": {
+  "source": "experiments/eq9_family_census.mjs -> experiments/outputs/eq9_census.json (ZERO kernel runs, ZERO LLM calls, ZERO key material)",
+  "census_totals": { "fractions_total": 306773, "stable_runnable": 38911, "kernel_reachable_not_stable": 116176, "out_of_engineering_space": 151686 },
+  "stable_rat_classes": { "A_floatHolds_fixedMoves": 34144, "D_bothHold_dyadic": 1134, "B_bothMoveSameSign_planesIdentical": 1729, "C_oppositeSigns_diverge_dd2": 1904 },
+  "stable_near_classes": { "A": 4365, "B_nondegenerate": 16464, "C_nondegenerate": 16526, "D": 755, "F_INV_fixedBlind": 379, "degenerate_to_rat": 4836 },
+  "stable_far_classes": { "B": 38911 },
+  "measured_theorems": [
+    "T2: fixed hold at a family point <=> dd dyadic (dd in {1,2,4,8,16,32,64,128} within the stable space): 0 violations over all 306,773 census fractions; mechanism: fxHold => dd | n*S => (gcd=1) dd | 2^32.",
+    "F-INV empty AT family points: fixed-holds-while-float-moves never occurs at rat (0 occurrences) — dyadic sigma is float-exact, so fixed hold forces float hold. (It DOES occur off-family: 379 near-arm dyadic cells where the Q32.32 door is blind to the sqrt(2)*2^-20 S-unit step while the float plane sees the ~1-ulp step.)",
+    "far arm: zero collapse, zero sign disagreement across all 38,911 stable families (Liouville: |dd*sqrt2 - n| >= 1/(dd^2*(sqrt2+n/dd)) >= 1.24e-5, orders above both the r*2^-33 band and double rounding error).",
+    "near-arm degeneracy: for sigma >= 4 the irrational step sqrt(2)*2^-52 is below half-ulp, so the double sum rounds BACK to the family point: 4,836 near-arm cells are kernel-identical to their rat arm — the float plane literally cannot see irrationality there.",
+    "class-A fixed-move direction is pseudo-uniform: +1 S-scale in 17,102 families, -1 in 17,042 (7/10-style DOWN moves are half the artifact class); |fixed pressure| <= dd/2 always (measured max 126 at dd=253)."
+  ],
+  "full_table": { "rows": 306773, "sha256": "552d171c6ddf2cdd5b7a87cc28cae2c2eb8435a560ad66aa934225eb6dbc20f6", "path_outside_repo": "/home/z/my-project/scripts/40c-eq9-census-table.json", "note": "the sweep runner recomputes this table from the registered bounds and asserts sha equality before its first tick" }
+ },
+ "predictions": {
+  "a_family_count": {
+   "modal": "38,911 exact-zero (k=1, stable-space) families in the closed bound; all of them sweepable on the E-Q8 same-slot probe geometry scaled to the Repel mass",
+   "p_modal_exact": 0.95,
+   "distribution_rat": { "A": 34144, "D": 1134, "B": 1729, "C": 1904 },
+   "note": "these counts are arithmetic (the census), so the honest prediction is that the KERNEL RUN reproduces them; the 5% residual is board-engineering or assertion failure, not arithmetic doubt"
+  },
+  "b_all_like_2_3": {
+   "modal": "NO — not all families behave like 2/3. The E-Q8 pattern (float HOLDS, fixed MOVES, tick 1, one cell) is the MODAL class but only ~87.75% of the space. Named counterexample classes, predicted BEFORE the run: (i) 1,134 dyadic families (dd in {1,2,4,8,16,32,64,128}) where the FIXED kernel also HOLDS — the artifact needs a representation GAP and dyadics have none (float fl(n/dd) is exact, fixed sigmaQ = n*S/dd is exact); planes agree. (ii) 3,633 non-collapse non-dyadic families (1,729 B + 1,904 C) where the FLOAT kernel also MOVES at the family point — the float plane's rounding does not collapse to the cancelling integer, so 'float holds at exact-zero families' is FALSE outside the collapse predicate; in 1,904 of them (class C) the two planes move OPPOSITE ways at tick 1 (|dd|=2, in-band).",
+   "p_artifact_class_observed_as_predicted": 0.92,
+   "p_at_least_one_counterexample_class_exists": 0.995,
+   "generalization_statement_priced": "'The float kernel holds at exact-zero families' generalizes EXACTLY to the float-collapse set (A + D = 35,278 families, 90.67%) and FAILS on B + C (float moves). 'The fixed kernel moves at exact-zero families' FAILS on D (fixed holds). 'The planes diverge at exact-zero families' holds on A + C (92.6%) and fails on B + D."
+  },
+  "c_irrational_sigma": {
+   "modal": "Irrationality is INERT per se — it never changes the divergence tick. irrFar (sqrt2): ZERO divergences in all 38,911 families (no collapse, no fixed hold, full sign agreement) => the tick stays unset; the artifact is family-PROXIMITY-bound, not rationality-bound. irrNear: where it diverges at all it still diverges at tick 1 (the mechanism is the tick-1 same-slot live-read); 4,836 cells degenerate to the rat arm (sigma >= 4: below half-ulp, invisible); the novel measured structure is 379 FIXED-BLIND-INVERSION cells (dyadic, sigma < 4): fixed HOLDS while float moves — off-family the blindness flips sides.",
+   "p_far_arm_zero_divergences": 0.98,
+   "p_near_arm_matches_census_classes": 0.85,
+   "p_no_tick_other_than_1_anywhere": 0.93,
+   "p_fixed_blind_inversions_as_counted": 0.8
+  },
+  "d_cell_pattern": {
+   "modal": "SINGLE-CELL divergence at the FIRST divergent tick for every divergent (family, arm): exactly the later row-major writer B (the reader), |dd| = 1 for collapse/inversion classes and |dd| = 2 for quantization-blindness classes, tau preserved, twin-heard, pre-tick planes byte-identical. Structurally forced: at tick 1 the earlier writer A reads a FRESH table (empty slot) and can never twin, so only B can respond to A's same-tick write. Multi-cell patterns can only emerge at ticks >= 2 as deterministic amplification (EQ7-R8 law: not re-audited).",
+   "p_single_cell_at_first_divergence_everywhere": 0.97,
+   "p_zero_unexplained_cells_under_extended_taxonomy": 0.9
+  }
+ },
+ "brier_scoreable_events": {
+  "E1": { "claim": "rat-arm observed class counts equal the census arithmetic exactly (A/D/B/C all exact)", "p": 0.9 },
+  "E2": { "claim": "every rat class-A family: first divergence at tick 1, exactly 1 cell (B), |dd|=1, twin-heard, tau preserved, float held & fixed moved", "p": 0.93 },
+  "E3": { "claim": "every rat class-B family: plane hashes byte-identical across kernels at every tick 0..16", "p": 0.95 },
+  "E4": { "claim": "every rat class-C family: first divergence at tick 1, exactly 1 cell, |dd|=2, opposite movement directions", "p": 0.9 },
+  "E5": { "claim": "every rat class-D family: plane hashes byte-identical across kernels at every tick (both planes hold B)", "p": 0.93 },
+  "E6": { "claim": "irrFar arm: zero divergent families out of 38,911", "p": 0.98 },
+  "E7": { "claim": "irrNear arm: observed class counts equal the census (incl. 379 fixed-blind inversions, 4,836 degenerate)", "p": 0.85 },
+  "E8": { "claim": "zero UNEXPLAINED cells under the extended taxonomy across all arms", "p": 0.9 },
+  "E9": { "claim": "EQ9-D1: every rerun byte-identical (all families, arms, kernels)", "p": 0.99 },
+  "E10": { "claim": "every first divergence is at the B cell (the later writer); A never participates in a first divergence", "p": 0.97 }
+ },
+ "falsifier_operationalization": {
+  "guest_verbatim": "divergence OUTSIDE an exact-zero family, or the fixed kernel itself holds at an exact-zero family point",
+  "reading_1_literal": "FIRES at the 1,134 dyadic family points (fixed holds there — T2, predicted pre-run). Under this reading the E-Q9 outcome is known before the run and the falsifier's literal words are too strong: the guest wrote 'the artifact is not family-specific', but dyadic both-hold is the opposite of an artifact (both planes exact, planes agree).",
+  "reading_2_intended": "FIRES only if (a) the fixed kernel holds while the FLOAT kernel moves at a family point (artifact inversion — T2 says impossible, F-INV observed at rat would be a kernel bug), or (b) any divergence classifies UNEXPLAINED (outside A/C-quintessential mechanics + the two registered off-family classes). The artifact's family-specificity survives iff reading 2 does not fire.",
+  "commitment": "the verdict reports BOTH readings AS RUN, neither is edited post-run"
+ },
+ "quality_bar": "zero UNEXPLAINED cells. Any unexplained divergence must be either explained in the verdict or listed as an open hole — a FAIL ships honestly.",
+ "primaries": "the guest's three named families 2/3 (3acc+2r=0), 8/5 (5acc+8r=0), 7/10 (10acc+7r=0) run as PRIMARY rows with full per-tick traces and twin tuples (E-Q8 comparability; 7/10's tick-1 receipt is the guest's own declared residual risk), plus no-twin controls (A -> Ground) with sigmaInert REQUIRED.",
+ "task_id": "40-c",
+ "agent": "qthe-smith (lane)",
+ "wave": 40,
+ "repo": "SuperInstance/qthe",
+ "registered_before_run": "YES — zero E-Q9 kernel ticks had executed at commit time; the census is arithmetic only (no qthe.mjs / qthe_fixed.mjs tick was called). Git history is the witness."
+}
