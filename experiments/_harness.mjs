@@ -133,11 +133,11 @@ export function plantWeather(rng, pairs, w, h, { awayFromPairs = 10, mutual = 4,
   return out;
 }
 
-// seedFn in the KERNEL's signature (i, x, y) [R5]. Key y*4096+x is unique for
-// 64x64 (x < 64 < 4096).
+// seedFn in the KERNEL's signature (x, y, i) — x-FIRST per R6 (cross-lane
+// contract fit, commit 80b2e6b). Key y*4096+x is unique for 64x64 (x < 64 < 4096).
 export function seedFnFrom(pairs, weather) {
   const map = new Map();
   for (const p of pairs) { map.set(p.a.y * 4096 + p.a.x, packByte(3, p.d)); map.set(p.b.y * 4096 + p.b.x, packByte(3, p.d)); }
   for (const c of weather) map.set(c.y * 4096 + c.x, c.byte);
-  return (i, x, y) => map.get(y * 4096 + x) ?? 0;
+  return (x, y, i) => map.get(y * 4096 + x) ?? 0;
 }

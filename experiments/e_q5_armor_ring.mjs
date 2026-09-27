@@ -93,7 +93,7 @@ function carvePlan(seed) {
 }
 
 function buildSubstrate(carved) {
-  const seedFn = (i, x, y) => {
+  const seedFn = (x, y, i) => { // x-FIRST per kernel R6
     const dx = x - CX, dy = y - CY, r2 = dx * dx + dy * dy;
     if (r2 <= 64) return packByte(1, CORE_D);
     if (r2 >= 900 && r2 <= 1156) return carved.has(y * W + x) ? packByte(2, 0) : packByte(2, RING_BYTES);

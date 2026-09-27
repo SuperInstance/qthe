@@ -1,0 +1,7033 @@
+{
+ "experiment": "E-Q1",
+ "claim": "C2",
+ "kernel": {
+  "kernelKind": "real",
+  "kernelPath": "qthe/qthe.mjs"
+ },
+ "stonePath": "../../quilt-stone/stone.mjs",
+ "preRegSha": "7eb803947507cd53b3713e3dce0b614095adbd7d298c3dca167c00c0996d9587",
+ "task": {
+  "w": 64,
+  "h": 64,
+  "K": 8,
+  "T": 200,
+  "theta_del": 8,
+  "trials": 20,
+  "baseSeed": 33001,
+  "sigma": "kernel default log2(3)"
+ },
+ "trials": [
+  {
+   "seed": 33001,
+   "on": [
+    {
+     "pairId": 0,
+     "d": 8,
+     "a": {
+      "x": 60,
+      "y": 49
+     },
+     "b": {
+      "x": 25,
+      "y": 45
+     },
+     "aDeliver": 6,
+     "bDeliver": 7,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "316.9925001442309",
+     "bMeter": "315.4075376435098",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 1,
+     "d": 9,
+     "a": {
+      "x": 29,
+      "y": 16
+     },
+     "b": {
+      "x": 43,
+      "y": 41
+     },
+     "aDeliver": 7,
+     "bDeliver": 6,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "315.4075376435098",
+     "bMeter": "315.4075376435098",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 2,
+     "d": 10,
+     "a": {
+      "x": 52,
+      "y": 48
+     },
+     "b": {
+      "x": 18,
+      "y": 57
+     },
+     "aDeliver": 7,
+     "bDeliver": 6,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "313.82257514278865",
+     "bMeter": "315.4075376435098",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 3,
+     "d": 11,
+     "a": {
+      "x": 18,
+      "y": 16
+     },
+     "b": {
+      "x": 4,
+      "y": 56
+     },
+     "aDeliver": 7,
+     "bDeliver": 6,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "312.2376126420675",
+     "bMeter": "312.2376126420675",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 4,
+     "d": 12,
+     "a": {
+      "x": 7,
+      "y": 16
+     },
+     "b": {
+      "x": 43,
+      "y": 28
+     },
+     "aDeliver": 7,
+     "bDeliver": 6,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "310.6526501413464",
+     "bMeter": "310.6526501413464",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 5,
+     "d": 13,
+     "a": {
+      "x": 39,
+      "y": 16
+     },
+     "b": {
+      "x": 9,
+      "y": 7
+     },
+     "aDeliver": 6,
+     "bDeliver": 7,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "309.06768764062525",
+     "bMeter": "309.06768764062525",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 6,
+     "d": 14,
+     "a": {
+      "x": 25,
+      "y": 37
+     },
+     "b": {
+      "x": 63,
+      "y": 18
+     },
+     "aDeliver": 7,
+     "bDeliver": 7,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "307.4827251399041",
+     "bMeter": "307.4827251399041",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 7,
+     "d": 15,
+     "a": {
+      "x": 53,
+      "y": 8
+     },
+     "b": {
+      "x": 13,
+      "y": 32
+     },
+     "aDeliver": 9,
+     "bDeliver": 8,
+     "pairDeliver": 9,
+     "bridgeTick": 1,
+     "aMeter": "305.897762639183",
+     "bMeter": "305.897762639183",
+     "aFinalD": 63,
+     "bFinalD": 63
+    }
+   ],
+   "off": [
+    {
+     "pairId": 0,
+     "d": 8,
+     "a": {
+      "x": 60,
+      "y": 49
+     },
+     "b": {
+      "x": 25,
+      "y": 45
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 8,
+     "bFinalD": 8
+    },
+    {
+     "pairId": 1,
+     "d": 9,
+     "a": {
+      "x": 29,
+      "y": 16
+     },
+     "b": {
+      "x": 43,
+      "y": 41
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 9,
+     "bFinalD": 9
+    },
+    {
+     "pairId": 2,
+     "d": 10,
+     "a": {
+      "x": 52,
+      "y": 48
+     },
+     "b": {
+      "x": 18,
+      "y": 57
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 10,
+     "bFinalD": 10
+    },
+    {
+     "pairId": 3,
+     "d": 11,
+     "a": {
+      "x": 18,
+      "y": 16
+     },
+     "b": {
+      "x": 4,
+      "y": 56
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 11,
+     "bFinalD": 11
+    },
+    {
+     "pairId": 4,
+     "d": 12,
+     "a": {
+      "x": 7,
+      "y": 16
+     },
+     "b": {
+      "x": 43,
+      "y": 28
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 12,
+     "bFinalD": 12
+    },
+    {
+     "pairId": 5,
+     "d": 13,
+     "a": {
+      "x": 39,
+      "y": 16
+     },
+     "b": {
+      "x": 9,
+      "y": 7
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 13,
+     "bFinalD": 13
+    },
+    {
+     "pairId": 6,
+     "d": 14,
+     "a": {
+      "x": 25,
+      "y": 37
+     },
+     "b": {
+      "x": 63,
+      "y": 18
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 14,
+     "bFinalD": 14
+    },
+    {
+     "pairId": 7,
+     "d": 15,
+     "a": {
+      "x": 53,
+      "y": 8
+     },
+     "b": {
+      "x": 13,
+      "y": 32
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 15,
+     "bFinalD": 15
+    }
+   ],
+   "onDelivered": 8,
+   "offDelivered": 0,
+   "onEvents": 3144,
+   "offEvents": 0,
+   "detOk": true,
+   "controlEqual": true,
+   "somaticAt": 50,
+   "hashesOn": [
+    "7ced4c31b7d45660de4f7b9d98d51177adefa243ecf8833fb9c4d8b37ea35dfa",
+    "4d40bb836cd3eb5253e45eb6fecd496dcbf587e7e2b520aae63a67cfc022712d",
+    "02ac6948a490c1a97d83a86b1e3a1641b3e91bf813910c0232908714899b7f9d",
+    "af5c6264d9763453fae127cbef1bcc770f054c1c545705df38268fef58e0c17e",
+    "dfbc14c8c9eb5e71647f9f40f22647c7349d753ac1ec4a311cc90819fb595b1b"
+   ],
+   "hashesOff": [
+    "7ced4c31b7d45660de4f7b9d98d51177adefa243ecf8833fb9c4d8b37ea35dfa",
+    "33d1b29342a5d1fe7c978216bdc361d2b9380929d985f8224492854add1abe4d",
+    "46cd8a58b4218878036fe962a4e4a9468df98d140fc77326d55042b5df350a33",
+    "66f9949835e4e3f2e02cbc9ef281cb74ff190ea8e812144b85beecbb06640515",
+    "aa51950daabb7e22b12bb79172f0433bc2487a356a08a50b25594718d56db727"
+   ]
+  },
+  {
+   "seed": 33002,
+   "on": [
+    {
+     "pairId": 0,
+     "d": 8,
+     "a": {
+      "x": 10,
+      "y": 63
+     },
+     "b": {
+      "x": 42,
+      "y": 22
+     },
+     "aDeliver": 6,
+     "bDeliver": 7,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "316.9925001442309",
+     "bMeter": "315.4075376435098",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 1,
+     "d": 9,
+     "a": {
+      "x": 4,
+      "y": 16
+     },
+     "b": {
+      "x": 56,
+      "y": 49
+     },
+     "aDeliver": 7,
+     "bDeliver": 6,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "315.4075376435098",
+     "bMeter": "315.4075376435098",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 2,
+     "d": 10,
+     "a": {
+      "x": 26,
+      "y": 31
+     },
+     "b": {
+      "x": 20,
+      "y": 63
+     },
+     "aDeliver": 7,
+     "bDeliver": 6,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "313.82257514278865",
+     "bMeter": "315.4075376435098",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 3,
+     "d": 11,
+     "a": {
+      "x": 4,
+      "y": 50
+     },
+     "b": {
+      "x": 43,
+      "y": 62
+     },
+     "aDeliver": 7,
+     "bDeliver": 6,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "312.2376126420675",
+     "bMeter": "312.2376126420675",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 4,
+     "d": 12,
+     "a": {
+      "x": 8,
+      "y": 41
+     },
+     "b": {
+      "x": 61,
+      "y": 7
+     },
+     "aDeliver": 6,
+     "bDeliver": 7,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "310.6526501413464",
+     "bMeter": "310.6526501413464",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 5,
+     "d": 13,
+     "a": {
+      "x": 42,
+      "y": 43
+     },
+     "b": {
+      "x": 51,
+      "y": 19
+     },
+     "aDeliver": 6,
+     "bDeliver": 7,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "309.06768764062525",
+     "bMeter": "309.06768764062525",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 6,
+     "d": 14,
+     "a": {
+      "x": 20,
+      "y": 19
+     },
+     "b": {
+      "x": 47,
+      "y": 34
+     },
+     "aDeliver": 7,
+     "bDeliver": 7,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "307.4827251399041",
+     "bMeter": "307.4827251399041",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 7,
+     "d": 15,
+     "a": {
+      "x": 41,
+      "y": 8
+     },
+     "b": {
+      "x": 18,
+      "y": 45
+     },
+     "aDeliver": 9,
+     "bDeliver": 8,
+     "pairDeliver": 9,
+     "bridgeTick": 1,
+     "aMeter": "305.897762639183",
+     "bMeter": "305.897762639183",
+     "aFinalD": 63,
+     "bFinalD": 63
+    }
+   ],
+   "off": [
+    {
+     "pairId": 0,
+     "d": 8,
+     "a": {
+      "x": 10,
+      "y": 63
+     },
+     "b": {
+      "x": 42,
+      "y": 22
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 8,
+     "bFinalD": 8
+    },
+    {
+     "pairId": 1,
+     "d": 9,
+     "a": {
+      "x": 4,
+      "y": 16
+     },
+     "b": {
+      "x": 56,
+      "y": 49
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 9,
+     "bFinalD": 9
+    },
+    {
+     "pairId": 2,
+     "d": 10,
+     "a": {
+      "x": 26,
+      "y": 31
+     },
+     "b": {
+      "x": 20,
+      "y": 63
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 10,
+     "bFinalD": 10
+    },
+    {
+     "pairId": 3,
+     "d": 11,
+     "a": {
+      "x": 4,
+      "y": 50
+     },
+     "b": {
+      "x": 43,
+      "y": 62
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 11,
+     "bFinalD": 11
+    },
+    {
+     "pairId": 4,
+     "d": 12,
+     "a": {
+      "x": 8,
+      "y": 41
+     },
+     "b": {
+      "x": 61,
+      "y": 7
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 12,
+     "bFinalD": 12
+    },
+    {
+     "pairId": 5,
+     "d": 13,
+     "a": {
+      "x": 42,
+      "y": 43
+     },
+     "b": {
+      "x": 51,
+      "y": 19
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 13,
+     "bFinalD": 13
+    },
+    {
+     "pairId": 6,
+     "d": 14,
+     "a": {
+      "x": 20,
+      "y": 19
+     },
+     "b": {
+      "x": 47,
+      "y": 34
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 14,
+     "bFinalD": 14
+    },
+    {
+     "pairId": 7,
+     "d": 15,
+     "a": {
+      "x": 41,
+      "y": 8
+     },
+     "b": {
+      "x": 18,
+      "y": 45
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 15,
+     "bFinalD": 15
+    }
+   ],
+   "onDelivered": 8,
+   "offDelivered": 0,
+   "onEvents": 3144,
+   "offEvents": 0,
+   "detOk": true,
+   "controlEqual": true,
+   "somaticAt": 50,
+   "hashesOn": [
+    "6425fdee74dab0d38ef6cef39467e9d55fa96e01ce261aa333fecb67db6b0825",
+    "9f6934285506f5d5d8a49840316e4f0ca56f9b0ed2f970d1a3dae3ebd99da12c",
+    "284442e890cc858c8487c6061d756a7e02f6c65c7a8b8fc5d1fe13d24572ab2b",
+    "8a25987b8885c241774b47fde992e15ff4ab21a672b650dd2e8e66593cca744b",
+    "bab2e4fc16d8d9a7da906632be4569e4b7a33ecf255cb9e7b19ecbbab991b78d"
+   ],
+   "hashesOff": [
+    "6425fdee74dab0d38ef6cef39467e9d55fa96e01ce261aa333fecb67db6b0825",
+    "f110677b82295d6e74d022e0df95637d99581182d4c3ea8697d944947535d251",
+    "03620a990fb220745dc394129f2f66ff7a272e0a4a597e6981cae419869b697e",
+    "f9d4bd60f292219feb8b8cc60fb0f01362b6bc4446397118f01f9dcb9da93268",
+    "f7e94d34291cf739b9bdd4e40e753ee4513065a3d330c88bbde0e0ca7fc82f16"
+   ]
+  },
+  {
+   "seed": 33003,
+   "on": [
+    {
+     "pairId": 0,
+     "d": 8,
+     "a": {
+      "x": 7,
+      "y": 23
+     },
+     "b": {
+      "x": 27,
+      "y": 59
+     },
+     "aDeliver": 7,
+     "bDeliver": 6,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "315.4075376435098",
+     "bMeter": "316.9925001442309",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 1,
+     "d": 9,
+     "a": {
+      "x": 32,
+      "y": 12
+     },
+     "b": {
+      "x": 24,
+      "y": 40
+     },
+     "aDeliver": 7,
+     "bDeliver": 6,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "315.4075376435098",
+     "bMeter": "315.4075376435098",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 2,
+     "d": 10,
+     "a": {
+      "x": 29,
+      "y": 3
+     },
+     "b": {
+      "x": 19,
+      "y": 30
+     },
+     "aDeliver": 7,
+     "bDeliver": 6,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "313.82257514278865",
+     "bMeter": "313.82257514278865",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 3,
+     "d": 11,
+     "a": {
+      "x": 55,
+      "y": 14
+     },
+     "b": {
+      "x": 11,
+      "y": 38
+     },
+     "aDeliver": 7,
+     "bDeliver": 6,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "312.2376126420675",
+     "bMeter": "312.2376126420675",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 4,
+     "d": 12,
+     "a": {
+      "x": 34,
+      "y": 36
+     },
+     "b": {
+      "x": 46,
+      "y": 1
+     },
+     "aDeliver": 6,
+     "bDeliver": 7,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "310.6526501413464",
+     "bMeter": "310.6526501413464",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 5,
+     "d": 13,
+     "a": {
+      "x": 6,
+      "y": 63
+     },
+     "b": {
+      "x": 43,
+      "y": 33
+     },
+     "aDeliver": 6,
+     "bDeliver": 7,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "310.6526501413464",
+     "bMeter": "309.06768764062525",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 6,
+     "d": 14,
+     "a": {
+      "x": 38,
+      "y": 21
+     },
+     "b": {
+      "x": 37,
+      "y": 45
+     },
+     "aDeliver": 7,
+     "bDeliver": 7,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "307.4827251399041",
+     "bMeter": "307.4827251399041",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 7,
+     "d": 15,
+     "a": {
+      "x": 58,
+      "y": 27
+     },
+     "b": {
+      "x": 58,
+      "y": 54
+     },
+     "aDeliver": 8,
+     "bDeliver": 8,
+     "pairDeliver": 8,
+     "bridgeTick": 1,
+     "aMeter": "305.897762639183",
+     "bMeter": "305.897762639183",
+     "aFinalD": 63,
+     "bFinalD": 63
+    }
+   ],
+   "off": [
+    {
+     "pairId": 0,
+     "d": 8,
+     "a": {
+      "x": 7,
+      "y": 23
+     },
+     "b": {
+      "x": 27,
+      "y": 59
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 8,
+     "bFinalD": 8
+    },
+    {
+     "pairId": 1,
+     "d": 9,
+     "a": {
+      "x": 32,
+      "y": 12
+     },
+     "b": {
+      "x": 24,
+      "y": 40
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 9,
+     "bFinalD": 9
+    },
+    {
+     "pairId": 2,
+     "d": 10,
+     "a": {
+      "x": 29,
+      "y": 3
+     },
+     "b": {
+      "x": 19,
+      "y": 30
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 10,
+     "bFinalD": 10
+    },
+    {
+     "pairId": 3,
+     "d": 11,
+     "a": {
+      "x": 55,
+      "y": 14
+     },
+     "b": {
+      "x": 11,
+      "y": 38
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 11,
+     "bFinalD": 11
+    },
+    {
+     "pairId": 4,
+     "d": 12,
+     "a": {
+      "x": 34,
+      "y": 36
+     },
+     "b": {
+      "x": 46,
+      "y": 1
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 12,
+     "bFinalD": 12
+    },
+    {
+     "pairId": 5,
+     "d": 13,
+     "a": {
+      "x": 6,
+      "y": 63
+     },
+     "b": {
+      "x": 43,
+      "y": 33
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 13,
+     "bFinalD": 13
+    },
+    {
+     "pairId": 6,
+     "d": 14,
+     "a": {
+      "x": 38,
+      "y": 21
+     },
+     "b": {
+      "x": 37,
+      "y": 45
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 14,
+     "bFinalD": 14
+    },
+    {
+     "pairId": 7,
+     "d": 15,
+     "a": {
+      "x": 58,
+      "y": 27
+     },
+     "b": {
+      "x": 58,
+      "y": 54
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 15,
+     "bFinalD": 15
+    }
+   ],
+   "onDelivered": 8,
+   "offDelivered": 0,
+   "onEvents": 3144,
+   "offEvents": 0,
+   "detOk": true,
+   "controlEqual": true,
+   "somaticAt": 50,
+   "hashesOn": [
+    "8694219813a0ee7d325b5e2f52a7920fbd4e0ccdcc70d6c7a9214f8ff81a7481",
+    "bc225f7b7e47040ae38237a77fb34f38a767d2bba1e55edf8061ea84fa76d9d9",
+    "2ebce74c8b3aff0bce1c598db0d902256a3f008c1000f4a9f16d6661bb57de3a",
+    "93968c5dbfaf898ae8a0aac0fcabc2aa7c41305ed44186b6097199ad9363d835",
+    "a8f7e98414a22fb3f7bda15f990626a08d37bdfabd928a145fe2eb1c8a656494"
+   ],
+   "hashesOff": [
+    "8694219813a0ee7d325b5e2f52a7920fbd4e0ccdcc70d6c7a9214f8ff81a7481",
+    "c36e9a04ea17d7f70052d9c68a3d2412208f07ddb08b42cc095b4117b591e723",
+    "8e0c7bdf4605299f4ae91c7f43a4ffdce0ce7fd5f4d413872b33bb64afc37c4c",
+    "512b6fc1cd692aa963c1e04fee917e4b00f3b31c7c8fa1f4db387789d48fd749",
+    "7c435dedda2010509f9d7f36ff4d9e8e2f9176b7308deb6275a05f63456f8fa8"
+   ]
+  },
+  {
+   "seed": 33004,
+   "on": [
+    {
+     "pairId": 0,
+     "d": 8,
+     "a": {
+      "x": 24,
+      "y": 12
+     },
+     "b": {
+      "x": 37,
+      "y": 47
+     },
+     "aDeliver": 7,
+     "bDeliver": 6,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "315.4075376435098",
+     "bMeter": "316.9925001442309",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 1,
+     "d": 9,
+     "a": {
+      "x": 62,
+      "y": 21
+     },
+     "b": {
+      "x": 60,
+      "y": 53
+     },
+     "aDeliver": 7,
+     "bDeliver": 6,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "315.4075376435098",
+     "bMeter": "315.4075376435098",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 2,
+     "d": 10,
+     "a": {
+      "x": 52,
+      "y": 27
+     },
+     "b": {
+      "x": 5,
+      "y": 60
+     },
+     "aDeliver": 7,
+     "bDeliver": 6,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "313.82257514278865",
+     "bMeter": "315.4075376435098",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 3,
+     "d": 11,
+     "a": {
+      "x": 8,
+      "y": 12
+     },
+     "b": {
+      "x": 51,
+      "y": 37
+     },
+     "aDeliver": 7,
+     "bDeliver": 6,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "312.2376126420675",
+     "bMeter": "312.2376126420675",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 4,
+     "d": 12,
+     "a": {
+      "x": 17,
+      "y": 27
+     },
+     "b": {
+      "x": 45,
+      "y": 7
+     },
+     "aDeliver": 6,
+     "bDeliver": 7,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "310.6526501413464",
+     "bMeter": "310.6526501413464",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 5,
+     "d": 13,
+     "a": {
+      "x": 36,
+      "y": 7
+     },
+     "b": {
+      "x": 5,
+      "y": 47
+     },
+     "aDeliver": 7,
+     "bDeliver": 6,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "309.06768764062525",
+     "bMeter": "309.06768764062525",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 6,
+     "d": 14,
+     "a": {
+      "x": 34,
+      "y": 57
+     },
+     "b": {
+      "x": 8,
+      "y": 38
+     },
+     "aDeliver": 7,
+     "bDeliver": 7,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "307.4827251399041",
+     "bMeter": "307.4827251399041",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 7,
+     "d": 15,
+     "a": {
+      "x": 56,
+      "y": 11
+     },
+     "b": {
+      "x": 60,
+      "y": 40
+     },
+     "aDeliver": 9,
+     "bDeliver": 8,
+     "pairDeliver": 9,
+     "bridgeTick": 1,
+     "aMeter": "305.897762639183",
+     "bMeter": "305.897762639183",
+     "aFinalD": 63,
+     "bFinalD": 63
+    }
+   ],
+   "off": [
+    {
+     "pairId": 0,
+     "d": 8,
+     "a": {
+      "x": 24,
+      "y": 12
+     },
+     "b": {
+      "x": 37,
+      "y": 47
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 8,
+     "bFinalD": 8
+    },
+    {
+     "pairId": 1,
+     "d": 9,
+     "a": {
+      "x": 62,
+      "y": 21
+     },
+     "b": {
+      "x": 60,
+      "y": 53
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 9,
+     "bFinalD": 9
+    },
+    {
+     "pairId": 2,
+     "d": 10,
+     "a": {
+      "x": 52,
+      "y": 27
+     },
+     "b": {
+      "x": 5,
+      "y": 60
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 10,
+     "bFinalD": 10
+    },
+    {
+     "pairId": 3,
+     "d": 11,
+     "a": {
+      "x": 8,
+      "y": 12
+     },
+     "b": {
+      "x": 51,
+      "y": 37
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 11,
+     "bFinalD": 11
+    },
+    {
+     "pairId": 4,
+     "d": 12,
+     "a": {
+      "x": 17,
+      "y": 27
+     },
+     "b": {
+      "x": 45,
+      "y": 7
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 12,
+     "bFinalD": 12
+    },
+    {
+     "pairId": 5,
+     "d": 13,
+     "a": {
+      "x": 36,
+      "y": 7
+     },
+     "b": {
+      "x": 5,
+      "y": 47
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 13,
+     "bFinalD": 13
+    },
+    {
+     "pairId": 6,
+     "d": 14,
+     "a": {
+      "x": 34,
+      "y": 57
+     },
+     "b": {
+      "x": 8,
+      "y": 38
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 14,
+     "bFinalD": 14
+    },
+    {
+     "pairId": 7,
+     "d": 15,
+     "a": {
+      "x": 56,
+      "y": 11
+     },
+     "b": {
+      "x": 60,
+      "y": 40
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 15,
+     "bFinalD": 15
+    }
+   ],
+   "onDelivered": 8,
+   "offDelivered": 0,
+   "onEvents": 3144,
+   "offEvents": 0,
+   "detOk": true,
+   "controlEqual": true,
+   "somaticAt": 50,
+   "hashesOn": [
+    "1d386b2751071fb49606d4876d6d207e548a99b2e3614217886e60830c602a4a",
+    "54adfb84ea246e747610f53c65c2b4fe1083245106d1cddbec85197fad7f404a",
+    "ed22a64f5e67ab65bbc43e9cb6498fe5c658cee5128f9a8cf4e3ffb9aebe58cf",
+    "8ffdc3bcca6e3506ac76fc50242bcd408687dc3ef84004c9f02de16d45172321",
+    "3ab65b295197d80391a1befea89e1114a2a67cb7b5be94ef60a69a42ad01dda8"
+   ],
+   "hashesOff": [
+    "1d386b2751071fb49606d4876d6d207e548a99b2e3614217886e60830c602a4a",
+    "a2703de7f6985690cbc887a9abfc4c110e62337f184fdb54b8f639c9690b75cf",
+    "b2eb203441d5351a2c52de629eb7f334b9e8224e2837ebaf6bad06027355c9e1",
+    "430015cdd85db49003b571242c975a92521780d250f9979a87f1bc07a312796e",
+    "0e38c0caba62b298d9365ef2641fd44299df8c28b229e803cc38777a093d3f01"
+   ]
+  },
+  {
+   "seed": 33005,
+   "on": [
+    {
+     "pairId": 0,
+     "d": 8,
+     "a": {
+      "x": 5,
+      "y": 34
+     },
+     "b": {
+      "x": 22,
+      "y": 6
+     },
+     "aDeliver": 6,
+     "bDeliver": 7,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "316.9925001442309",
+     "bMeter": "315.4075376435098",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 1,
+     "d": 9,
+     "a": {
+      "x": 56,
+      "y": 7
+     },
+     "b": {
+      "x": 28,
+      "y": 21
+     },
+     "aDeliver": 7,
+     "bDeliver": 6,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "315.4075376435098",
+     "bMeter": "315.4075376435098",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 2,
+     "d": 10,
+     "a": {
+      "x": 19,
+      "y": 42
+     },
+     "b": {
+      "x": 56,
+      "y": 40
+     },
+     "aDeliver": 6,
+     "bDeliver": 7,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "313.82257514278865",
+     "bMeter": "313.82257514278865",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 3,
+     "d": 11,
+     "a": {
+      "x": 9,
+      "y": 58
+     },
+     "b": {
+      "x": 45,
+      "y": 61
+     },
+     "aDeliver": 7,
+     "bDeliver": 6,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "312.2376126420675",
+     "bMeter": "313.82257514278865",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 4,
+     "d": 12,
+     "a": {
+      "x": 52,
+      "y": 19
+     },
+     "b": {
+      "x": 41,
+      "y": 47
+     },
+     "aDeliver": 7,
+     "bDeliver": 6,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "310.6526501413464",
+     "bMeter": "310.6526501413464",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 5,
+     "d": 13,
+     "a": {
+      "x": 24,
+      "y": 34
+     },
+     "b": {
+      "x": 0,
+      "y": 13
+     },
+     "aDeliver": 6,
+     "bDeliver": 7,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "309.06768764062525",
+     "bMeter": "309.06768764062525",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 6,
+     "d": 14,
+     "a": {
+      "x": 19,
+      "y": 59
+     },
+     "b": {
+      "x": 5,
+      "y": 25
+     },
+     "aDeliver": 7,
+     "bDeliver": 7,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "307.4827251399041",
+     "bMeter": "307.4827251399041",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 7,
+     "d": 15,
+     "a": {
+      "x": 16,
+      "y": 15
+     },
+     "b": {
+      "x": 34,
+      "y": 39
+     },
+     "aDeliver": 9,
+     "bDeliver": 8,
+     "pairDeliver": 9,
+     "bridgeTick": 1,
+     "aMeter": "305.897762639183",
+     "bMeter": "305.897762639183",
+     "aFinalD": 63,
+     "bFinalD": 63
+    }
+   ],
+   "off": [
+    {
+     "pairId": 0,
+     "d": 8,
+     "a": {
+      "x": 5,
+      "y": 34
+     },
+     "b": {
+      "x": 22,
+      "y": 6
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 8,
+     "bFinalD": 8
+    },
+    {
+     "pairId": 1,
+     "d": 9,
+     "a": {
+      "x": 56,
+      "y": 7
+     },
+     "b": {
+      "x": 28,
+      "y": 21
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 9,
+     "bFinalD": 9
+    },
+    {
+     "pairId": 2,
+     "d": 10,
+     "a": {
+      "x": 19,
+      "y": 42
+     },
+     "b": {
+      "x": 56,
+      "y": 40
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 10,
+     "bFinalD": 10
+    },
+    {
+     "pairId": 3,
+     "d": 11,
+     "a": {
+      "x": 9,
+      "y": 58
+     },
+     "b": {
+      "x": 45,
+      "y": 61
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 11,
+     "bFinalD": 11
+    },
+    {
+     "pairId": 4,
+     "d": 12,
+     "a": {
+      "x": 52,
+      "y": 19
+     },
+     "b": {
+      "x": 41,
+      "y": 47
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 12,
+     "bFinalD": 12
+    },
+    {
+     "pairId": 5,
+     "d": 13,
+     "a": {
+      "x": 24,
+      "y": 34
+     },
+     "b": {
+      "x": 0,
+      "y": 13
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 13,
+     "bFinalD": 13
+    },
+    {
+     "pairId": 6,
+     "d": 14,
+     "a": {
+      "x": 19,
+      "y": 59
+     },
+     "b": {
+      "x": 5,
+      "y": 25
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 14,
+     "bFinalD": 14
+    },
+    {
+     "pairId": 7,
+     "d": 15,
+     "a": {
+      "x": 16,
+      "y": 15
+     },
+     "b": {
+      "x": 34,
+      "y": 39
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 15,
+     "bFinalD": 15
+    }
+   ],
+   "onDelivered": 8,
+   "offDelivered": 0,
+   "onEvents": 3144,
+   "offEvents": 0,
+   "detOk": true,
+   "controlEqual": true,
+   "somaticAt": 50,
+   "hashesOn": [
+    "c840c970d169d2b56bc6c6a933e7ca5c31178f4b6270b75ef5235ff0d371ea86",
+    "d6fe2da78c28a0907790291cd6c4067b1c21636b696cfeaf7b1f12bac9719b7b",
+    "51c833d9ab1e2262831b90b0518a2fcca7f714a7de367cafa464ea06e42fd247",
+    "7e8cbc2006442b4956cea5d65483be48725f0b726f4738d01df5044b9e56bf24",
+    "51bffbf0bc1665215ba401fc1140f35906db19f7fa85aad317e660a736ef9d48"
+   ],
+   "hashesOff": [
+    "c840c970d169d2b56bc6c6a933e7ca5c31178f4b6270b75ef5235ff0d371ea86",
+    "2616c6d0c060efbcaf258e955567474bd42c54bbdc604212036373473181a90d",
+    "8a6ef8f979f42b0afe2207a62208a67c3cf0cf2a255b226850fb6f6face6eb50",
+    "7daa06df3d3aeaf9e54a483df0bafa4ade6cee0e8ac87908df78a41b96e9cd15",
+    "d629b53a4b4bd942910a0f757ad1217ea2d97b21dfdc6e93fdc341d080196d25"
+   ]
+  },
+  {
+   "seed": 33006,
+   "on": [
+    {
+     "pairId": 0,
+     "d": 8,
+     "a": {
+      "x": 43,
+      "y": 54
+     },
+     "b": {
+      "x": 14,
+      "y": 29
+     },
+     "aDeliver": 6,
+     "bDeliver": 7,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "316.9925001442309",
+     "bMeter": "315.4075376435098",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 1,
+     "d": 9,
+     "a": {
+      "x": 4,
+      "y": 58
+     },
+     "b": {
+      "x": 38,
+      "y": 30
+     },
+     "aDeliver": 6,
+     "bDeliver": 7,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "316.9925001442309",
+     "bMeter": "315.4075376435098",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 2,
+     "d": 10,
+     "a": {
+      "x": 55,
+      "y": 16
+     },
+     "b": {
+      "x": 51,
+      "y": 56
+     },
+     "aDeliver": 7,
+     "bDeliver": 6,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "313.82257514278865",
+     "bMeter": "313.82257514278865",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 3,
+     "d": 11,
+     "a": {
+      "x": 27,
+      "y": 8
+     },
+     "b": {
+      "x": 10,
+      "y": 38
+     },
+     "aDeliver": 7,
+     "bDeliver": 6,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "312.2376126420675",
+     "bMeter": "312.2376126420675",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 4,
+     "d": 12,
+     "a": {
+      "x": 22,
+      "y": 16
+     },
+     "b": {
+      "x": 23,
+      "y": 45
+     },
+     "aDeliver": 7,
+     "bDeliver": 6,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "310.6526501413464",
+     "bMeter": "310.6526501413464",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 5,
+     "d": 13,
+     "a": {
+      "x": 33,
+      "y": 17
+     },
+     "b": {
+      "x": 6,
+      "y": 23
+     },
+     "aDeliver": 7,
+     "bDeliver": 6,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "309.06768764062525",
+     "bMeter": "309.06768764062525",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 6,
+     "d": 14,
+     "a": {
+      "x": 4,
+      "y": 6
+     },
+     "b": {
+      "x": 46,
+      "y": 40
+     },
+     "aDeliver": 7,
+     "bDeliver": 7,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "307.4827251399041",
+     "bMeter": "307.4827251399041",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 7,
+     "d": 15,
+     "a": {
+      "x": 45,
+      "y": 14
+     },
+     "b": {
+      "x": 19,
+      "y": 8
+     },
+     "aDeliver": 8,
+     "bDeliver": 8,
+     "pairDeliver": 8,
+     "bridgeTick": 1,
+     "aMeter": "305.897762639183",
+     "bMeter": "305.897762639183",
+     "aFinalD": 63,
+     "bFinalD": 63
+    }
+   ],
+   "off": [
+    {
+     "pairId": 0,
+     "d": 8,
+     "a": {
+      "x": 43,
+      "y": 54
+     },
+     "b": {
+      "x": 14,
+      "y": 29
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 8,
+     "bFinalD": 8
+    },
+    {
+     "pairId": 1,
+     "d": 9,
+     "a": {
+      "x": 4,
+      "y": 58
+     },
+     "b": {
+      "x": 38,
+      "y": 30
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 9,
+     "bFinalD": 9
+    },
+    {
+     "pairId": 2,
+     "d": 10,
+     "a": {
+      "x": 55,
+      "y": 16
+     },
+     "b": {
+      "x": 51,
+      "y": 56
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 10,
+     "bFinalD": 10
+    },
+    {
+     "pairId": 3,
+     "d": 11,
+     "a": {
+      "x": 27,
+      "y": 8
+     },
+     "b": {
+      "x": 10,
+      "y": 38
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 11,
+     "bFinalD": 11
+    },
+    {
+     "pairId": 4,
+     "d": 12,
+     "a": {
+      "x": 22,
+      "y": 16
+     },
+     "b": {
+      "x": 23,
+      "y": 45
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 12,
+     "bFinalD": 12
+    },
+    {
+     "pairId": 5,
+     "d": 13,
+     "a": {
+      "x": 33,
+      "y": 17
+     },
+     "b": {
+      "x": 6,
+      "y": 23
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 13,
+     "bFinalD": 13
+    },
+    {
+     "pairId": 6,
+     "d": 14,
+     "a": {
+      "x": 4,
+      "y": 6
+     },
+     "b": {
+      "x": 46,
+      "y": 40
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 14,
+     "bFinalD": 14
+    },
+    {
+     "pairId": 7,
+     "d": 15,
+     "a": {
+      "x": 45,
+      "y": 14
+     },
+     "b": {
+      "x": 19,
+      "y": 8
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 15,
+     "bFinalD": 15
+    }
+   ],
+   "onDelivered": 8,
+   "offDelivered": 0,
+   "onEvents": 3144,
+   "offEvents": 0,
+   "detOk": true,
+   "controlEqual": true,
+   "somaticAt": 50,
+   "hashesOn": [
+    "879690fe1244794a69c55c7a2f84720f3e01f09cdf3686682c6f91468ed222a3",
+    "3fca4acbb6bab99a58d4e7971377ee196364e127df00e3adf29a9345af2cca24",
+    "eccf4bb5df9a168901986e7a3d1a93df7f6c2aa43b4b3e039178ac1ba9a16061",
+    "a3d0b18624051edfacca25f00b27b7f786e06121368789c3bfd0fc96a0e9ddfc",
+    "3eac844d2668c7ae5bc95b36d5ec108e65bdd423187595a39d7bd85428098cde"
+   ],
+   "hashesOff": [
+    "879690fe1244794a69c55c7a2f84720f3e01f09cdf3686682c6f91468ed222a3",
+    "7f5b724af2f2f415e883b4d9fce8eb92bbc81b08f4bb8f062bdfae04d39dcc74",
+    "4af2f17ba47a4d00e501ef237e34a784cab4302b4bacf0f82d553723c195d5ea",
+    "b87c4bf38f19943c09f853ac57dce70ca86d1e4f776ca37b85a7a21dfb49e575",
+    "52ac68955a6a2349add1a02ddab566c92e5869fead314c5059708c0b4091834a"
+   ]
+  },
+  {
+   "seed": 33007,
+   "on": [
+    {
+     "pairId": 0,
+     "d": 8,
+     "a": {
+      "x": 10,
+      "y": 41
+     },
+     "b": {
+      "x": 39,
+      "y": 15
+     },
+     "aDeliver": 6,
+     "bDeliver": 7,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "316.9925001442309",
+     "bMeter": "315.4075376435098",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 1,
+     "d": 9,
+     "a": {
+      "x": 20,
+      "y": 10
+     },
+     "b": {
+      "x": 59,
+      "y": 27
+     },
+     "aDeliver": 7,
+     "bDeliver": 6,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "315.4075376435098",
+     "bMeter": "315.4075376435098",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 2,
+     "d": 10,
+     "a": {
+      "x": 55,
+      "y": 51
+     },
+     "b": {
+      "x": 19,
+      "y": 43
+     },
+     "aDeliver": 6,
+     "bDeliver": 7,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "313.82257514278865",
+     "bMeter": "313.82257514278865",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 3,
+     "d": 11,
+     "a": {
+      "x": 29,
+      "y": 33
+     },
+     "b": {
+      "x": 53,
+      "y": 41
+     },
+     "aDeliver": 7,
+     "bDeliver": 6,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "312.2376126420675",
+     "bMeter": "312.2376126420675",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 4,
+     "d": 12,
+     "a": {
+      "x": 27,
+      "y": 60
+     },
+     "b": {
+      "x": 39,
+      "y": 26
+     },
+     "aDeliver": 6,
+     "bDeliver": 7,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "312.2376126420675",
+     "bMeter": "310.6526501413464",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 5,
+     "d": 13,
+     "a": {
+      "x": 17,
+      "y": 28
+     },
+     "b": {
+      "x": 19,
+      "y": 58
+     },
+     "aDeliver": 7,
+     "bDeliver": 6,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "309.06768764062525",
+     "bMeter": "309.06768764062525",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 6,
+     "d": 14,
+     "a": {
+      "x": 11,
+      "y": 11
+     },
+     "b": {
+      "x": 41,
+      "y": 5
+     },
+     "aDeliver": 7,
+     "bDeliver": 7,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "307.4827251399041",
+     "bMeter": "307.4827251399041",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 7,
+     "d": 15,
+     "a": {
+      "x": 4,
+      "y": 1
+     },
+     "b": {
+      "x": 8,
+      "y": 30
+     },
+     "aDeliver": 9,
+     "bDeliver": 8,
+     "pairDeliver": 9,
+     "bridgeTick": 1,
+     "aMeter": "305.897762639183",
+     "bMeter": "305.897762639183",
+     "aFinalD": 63,
+     "bFinalD": 63
+    }
+   ],
+   "off": [
+    {
+     "pairId": 0,
+     "d": 8,
+     "a": {
+      "x": 10,
+      "y": 41
+     },
+     "b": {
+      "x": 39,
+      "y": 15
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 8,
+     "bFinalD": 8
+    },
+    {
+     "pairId": 1,
+     "d": 9,
+     "a": {
+      "x": 20,
+      "y": 10
+     },
+     "b": {
+      "x": 59,
+      "y": 27
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 9,
+     "bFinalD": 9
+    },
+    {
+     "pairId": 2,
+     "d": 10,
+     "a": {
+      "x": 55,
+      "y": 51
+     },
+     "b": {
+      "x": 19,
+      "y": 43
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 10,
+     "bFinalD": 10
+    },
+    {
+     "pairId": 3,
+     "d": 11,
+     "a": {
+      "x": 29,
+      "y": 33
+     },
+     "b": {
+      "x": 53,
+      "y": 41
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 11,
+     "bFinalD": 11
+    },
+    {
+     "pairId": 4,
+     "d": 12,
+     "a": {
+      "x": 27,
+      "y": 60
+     },
+     "b": {
+      "x": 39,
+      "y": 26
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 12,
+     "bFinalD": 12
+    },
+    {
+     "pairId": 5,
+     "d": 13,
+     "a": {
+      "x": 17,
+      "y": 28
+     },
+     "b": {
+      "x": 19,
+      "y": 58
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 13,
+     "bFinalD": 13
+    },
+    {
+     "pairId": 6,
+     "d": 14,
+     "a": {
+      "x": 11,
+      "y": 11
+     },
+     "b": {
+      "x": 41,
+      "y": 5
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 14,
+     "bFinalD": 14
+    },
+    {
+     "pairId": 7,
+     "d": 15,
+     "a": {
+      "x": 4,
+      "y": 1
+     },
+     "b": {
+      "x": 8,
+      "y": 30
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 15,
+     "bFinalD": 15
+    }
+   ],
+   "onDelivered": 8,
+   "offDelivered": 0,
+   "onEvents": 3144,
+   "offEvents": 0,
+   "detOk": true,
+   "controlEqual": true,
+   "somaticAt": 50,
+   "hashesOn": [
+    "fc2985e848d8232d5bc0f048c1bd5b012d77ba2dfbef8b7294d4545579d91c07",
+    "cee62c9e2794ae9c7a1a2cc136538f2d52a590e6554aef55afb51511413e9a06",
+    "06df4ad0efc1ee6a0bcf659ad07da7bc8b53e4c66daa898bbf0b95b1859997ce",
+    "8373b8f46bb94eb8558720fc5dcbed6482e9cf58ac00884dbd62627a23ea109a",
+    "0c5e50ea72cb991d1c08ba37ab4969ee38cc58a934ba185ef4205dbd9ab156d7"
+   ],
+   "hashesOff": [
+    "fc2985e848d8232d5bc0f048c1bd5b012d77ba2dfbef8b7294d4545579d91c07",
+    "b75180bc0de5fb0a2a22bc2589a36ac6a60b3ca8039978a52cbfaa0e4fa02127",
+    "405d9a2f82a4cdae8a2462265bcafd513b00dfd306789e69ed34997a949d950b",
+    "637de3d58342ce1167ad7ac0edac44bd080176fac439fe20deeeadcb2a7fe74b",
+    "7890c18e775dfe7c167dc63d53c629fca33e3d8574adaf78ecccd5c55fcb2255"
+   ]
+  },
+  {
+   "seed": 33008,
+   "on": [
+    {
+     "pairId": 0,
+     "d": 8,
+     "a": {
+      "x": 39,
+      "y": 39
+     },
+     "b": {
+      "x": 30,
+      "y": 13
+     },
+     "aDeliver": 6,
+     "bDeliver": 7,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "316.9925001442309",
+     "bMeter": "315.4075376435098",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 1,
+     "d": 9,
+     "a": {
+      "x": 56,
+      "y": 10
+     },
+     "b": {
+      "x": 22,
+      "y": 34
+     },
+     "aDeliver": 7,
+     "bDeliver": 6,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "315.4075376435098",
+     "bMeter": "315.4075376435098",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 2,
+     "d": 10,
+     "a": {
+      "x": 21,
+      "y": 8
+     },
+     "b": {
+      "x": 53,
+      "y": 51
+     },
+     "aDeliver": 7,
+     "bDeliver": 6,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "313.82257514278865",
+     "bMeter": "315.4075376435098",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 3,
+     "d": 11,
+     "a": {
+      "x": 48,
+      "y": 22
+     },
+     "b": {
+      "x": 14,
+      "y": 44
+     },
+     "aDeliver": 7,
+     "bDeliver": 6,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "312.2376126420675",
+     "bMeter": "312.2376126420675",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 4,
+     "d": 12,
+     "a": {
+      "x": 4,
+      "y": 25
+     },
+     "b": {
+      "x": 58,
+      "y": 1
+     },
+     "aDeliver": 6,
+     "bDeliver": 7,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "310.6526501413464",
+     "bMeter": "310.6526501413464",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 5,
+     "d": 13,
+     "a": {
+      "x": 13,
+      "y": 20
+     },
+     "b": {
+      "x": 45,
+      "y": 13
+     },
+     "aDeliver": 6,
+     "bDeliver": 7,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "309.06768764062525",
+     "bMeter": "309.06768764062525",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 6,
+     "d": 14,
+     "a": {
+      "x": 29,
+      "y": 42
+     },
+     "b": {
+      "x": 3,
+      "y": 16
+     },
+     "aDeliver": 7,
+     "bDeliver": 7,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "307.4827251399041",
+     "bMeter": "307.4827251399041",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 7,
+     "d": 15,
+     "a": {
+      "x": 12,
+      "y": 4
+     },
+     "b": {
+      "x": 47,
+      "y": 39
+     },
+     "aDeliver": 9,
+     "bDeliver": 8,
+     "pairDeliver": 9,
+     "bridgeTick": 1,
+     "aMeter": "305.897762639183",
+     "bMeter": "305.897762639183",
+     "aFinalD": 63,
+     "bFinalD": 63
+    }
+   ],
+   "off": [
+    {
+     "pairId": 0,
+     "d": 8,
+     "a": {
+      "x": 39,
+      "y": 39
+     },
+     "b": {
+      "x": 30,
+      "y": 13
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 8,
+     "bFinalD": 8
+    },
+    {
+     "pairId": 1,
+     "d": 9,
+     "a": {
+      "x": 56,
+      "y": 10
+     },
+     "b": {
+      "x": 22,
+      "y": 34
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 9,
+     "bFinalD": 9
+    },
+    {
+     "pairId": 2,
+     "d": 10,
+     "a": {
+      "x": 21,
+      "y": 8
+     },
+     "b": {
+      "x": 53,
+      "y": 51
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 10,
+     "bFinalD": 10
+    },
+    {
+     "pairId": 3,
+     "d": 11,
+     "a": {
+      "x": 48,
+      "y": 22
+     },
+     "b": {
+      "x": 14,
+      "y": 44
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 11,
+     "bFinalD": 11
+    },
+    {
+     "pairId": 4,
+     "d": 12,
+     "a": {
+      "x": 4,
+      "y": 25
+     },
+     "b": {
+      "x": 58,
+      "y": 1
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 12,
+     "bFinalD": 12
+    },
+    {
+     "pairId": 5,
+     "d": 13,
+     "a": {
+      "x": 13,
+      "y": 20
+     },
+     "b": {
+      "x": 45,
+      "y": 13
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 13,
+     "bFinalD": 13
+    },
+    {
+     "pairId": 6,
+     "d": 14,
+     "a": {
+      "x": 29,
+      "y": 42
+     },
+     "b": {
+      "x": 3,
+      "y": 16
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 14,
+     "bFinalD": 14
+    },
+    {
+     "pairId": 7,
+     "d": 15,
+     "a": {
+      "x": 12,
+      "y": 4
+     },
+     "b": {
+      "x": 47,
+      "y": 39
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 15,
+     "bFinalD": 15
+    }
+   ],
+   "onDelivered": 8,
+   "offDelivered": 0,
+   "onEvents": 3144,
+   "offEvents": 0,
+   "detOk": true,
+   "controlEqual": true,
+   "somaticAt": 50,
+   "hashesOn": [
+    "4b8c8fab1e162d6ba0d141bdd5acf52f57ce8ab7d307b31406669a3ee9bcc97a",
+    "34e7f2d5bb52980f63417e1a467b0ff2dab98013d2ccd11a0bd76712ff7c814f",
+    "d0719e872691615f6d56acd3edab1ed10b48aee158e3c6ddda0525c41ad1a6ba",
+    "4c510a9d79686f4b95cd9e7da1a60e2d9c2256a12fa24ee127e3b92e6fce3c2a",
+    "189efbae7165357896c08f4d8a5fff07a4aa22d0b8da87403aa78dd070886c00"
+   ],
+   "hashesOff": [
+    "4b8c8fab1e162d6ba0d141bdd5acf52f57ce8ab7d307b31406669a3ee9bcc97a",
+    "c2d522a2bd201a5d0d967be7d20c9b4724400b7688cd644c400fccc955286784",
+    "86fe1e6d4178d7d2c9d87276f8e32edc1eee7e2d4c46c7c4b90c9bdb4b07c00b",
+    "daf173d2c08e64e8212f80a762b842654d46982edd2546095911db74e1e21cdc",
+    "173909343e4bfeeef14ddc389c16cb947c95c1fc193e24aa65b5b673566afabd"
+   ]
+  },
+  {
+   "seed": 33009,
+   "on": [
+    {
+     "pairId": 0,
+     "d": 8,
+     "a": {
+      "x": 33,
+      "y": 13
+     },
+     "b": {
+      "x": 11,
+      "y": 45
+     },
+     "aDeliver": 7,
+     "bDeliver": 6,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "315.4075376435098",
+     "bMeter": "316.9925001442309",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 1,
+     "d": 9,
+     "a": {
+      "x": 3,
+      "y": 41
+     },
+     "b": {
+      "x": 27,
+      "y": 22
+     },
+     "aDeliver": 6,
+     "bDeliver": 7,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "315.4075376435098",
+     "bMeter": "315.4075376435098",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 2,
+     "d": 10,
+     "a": {
+      "x": 10,
+      "y": 12
+     },
+     "b": {
+      "x": 36,
+      "y": 0
+     },
+     "aDeliver": 6,
+     "bDeliver": 7,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "313.82257514278865",
+     "bMeter": "313.82257514278865",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 3,
+     "d": 11,
+     "a": {
+      "x": 24,
+      "y": 47
+     },
+     "b": {
+      "x": 0,
+      "y": 21
+     },
+     "aDeliver": 6,
+     "bDeliver": 7,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "312.2376126420675",
+     "bMeter": "312.2376126420675",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 4,
+     "d": 12,
+     "a": {
+      "x": 40,
+      "y": 28
+     },
+     "b": {
+      "x": 46,
+      "y": 58
+     },
+     "aDeliver": 7,
+     "bDeliver": 6,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "310.6526501413464",
+     "bMeter": "312.2376126420675",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 5,
+     "d": 13,
+     "a": {
+      "x": 19,
+      "y": 25
+     },
+     "b": {
+      "x": 51,
+      "y": 27
+     },
+     "aDeliver": 7,
+     "bDeliver": 6,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "309.06768764062525",
+     "bMeter": "309.06768764062525",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 6,
+     "d": 14,
+     "a": {
+      "x": 47,
+      "y": 19
+     },
+     "b": {
+      "x": 10,
+      "y": 2
+     },
+     "aDeliver": 7,
+     "bDeliver": 7,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "307.4827251399041",
+     "bMeter": "307.4827251399041",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 7,
+     "d": 15,
+     "a": {
+      "x": 5,
+      "y": 32
+     },
+     "b": {
+      "x": 42,
+      "y": 47
+     },
+     "aDeliver": 8,
+     "bDeliver": 8,
+     "pairDeliver": 8,
+     "bridgeTick": 1,
+     "aMeter": "305.897762639183",
+     "bMeter": "305.897762639183",
+     "aFinalD": 63,
+     "bFinalD": 63
+    }
+   ],
+   "off": [
+    {
+     "pairId": 0,
+     "d": 8,
+     "a": {
+      "x": 33,
+      "y": 13
+     },
+     "b": {
+      "x": 11,
+      "y": 45
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 8,
+     "bFinalD": 8
+    },
+    {
+     "pairId": 1,
+     "d": 9,
+     "a": {
+      "x": 3,
+      "y": 41
+     },
+     "b": {
+      "x": 27,
+      "y": 22
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 9,
+     "bFinalD": 9
+    },
+    {
+     "pairId": 2,
+     "d": 10,
+     "a": {
+      "x": 10,
+      "y": 12
+     },
+     "b": {
+      "x": 36,
+      "y": 0
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 10,
+     "bFinalD": 10
+    },
+    {
+     "pairId": 3,
+     "d": 11,
+     "a": {
+      "x": 24,
+      "y": 47
+     },
+     "b": {
+      "x": 0,
+      "y": 21
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 11,
+     "bFinalD": 11
+    },
+    {
+     "pairId": 4,
+     "d": 12,
+     "a": {
+      "x": 40,
+      "y": 28
+     },
+     "b": {
+      "x": 46,
+      "y": 58
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 12,
+     "bFinalD": 12
+    },
+    {
+     "pairId": 5,
+     "d": 13,
+     "a": {
+      "x": 19,
+      "y": 25
+     },
+     "b": {
+      "x": 51,
+      "y": 27
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 13,
+     "bFinalD": 13
+    },
+    {
+     "pairId": 6,
+     "d": 14,
+     "a": {
+      "x": 47,
+      "y": 19
+     },
+     "b": {
+      "x": 10,
+      "y": 2
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 14,
+     "bFinalD": 14
+    },
+    {
+     "pairId": 7,
+     "d": 15,
+     "a": {
+      "x": 5,
+      "y": 32
+     },
+     "b": {
+      "x": 42,
+      "y": 47
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 15,
+     "bFinalD": 15
+    }
+   ],
+   "onDelivered": 8,
+   "offDelivered": 0,
+   "onEvents": 3144,
+   "offEvents": 0,
+   "detOk": true,
+   "controlEqual": true,
+   "somaticAt": 50,
+   "hashesOn": [
+    "03278b941f6e6e1681901dca1684f8e9e63b3e605dc9b8ed6c8ad54b7c658b0a",
+    "49808f2edd3c4751b11708e53e43925093edbb061771ac444db49666f9492612",
+    "ec3d48c3877e21b0aa360ed4c88930d1fb96d5583494353cdd93b941d1cc6277",
+    "e37880242d06b59f976d664c6e8bf5c6e0b82317dac55bc24d557834e73478e9",
+    "e79d8bf968e80792fda9061a458b0b711f418fd6280243eb9f21996365b12210"
+   ],
+   "hashesOff": [
+    "03278b941f6e6e1681901dca1684f8e9e63b3e605dc9b8ed6c8ad54b7c658b0a",
+    "969e66568887d746e86f5cbcacfc1362985c0db809e474f1e9fb89c389255c9f",
+    "bc246aca98ed49c64870ccfdf4fac67b04c9c5dda1fb40a86773fee7d4fabade",
+    "6b5c697cd939206c851be91090169086c0ced0973cd3b6c7263dcd28a572e37c",
+    "f8f8dd23691e86c2357dda9bf6412cc8ad43cd4aed4ded3dbfbe49fc08bd391a"
+   ]
+  },
+  {
+   "seed": 33010,
+   "on": [
+    {
+     "pairId": 0,
+     "d": 8,
+     "a": {
+      "x": 60,
+      "y": 40
+     },
+     "b": {
+      "x": 31,
+      "y": 18
+     },
+     "aDeliver": 6,
+     "bDeliver": 7,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "316.9925001442309",
+     "bMeter": "315.4075376435098",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 1,
+     "d": 9,
+     "a": {
+      "x": 2,
+      "y": 0
+     },
+     "b": {
+      "x": 50,
+      "y": 34
+     },
+     "aDeliver": 7,
+     "bDeliver": 6,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "315.4075376435098",
+     "bMeter": "315.4075376435098",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 2,
+     "d": 10,
+     "a": {
+      "x": 27,
+      "y": 10
+     },
+     "b": {
+      "x": 60,
+      "y": 50
+     },
+     "aDeliver": 7,
+     "bDeliver": 6,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "313.82257514278865",
+     "bMeter": "313.82257514278865",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 3,
+     "d": 11,
+     "a": {
+      "x": 10,
+      "y": 52
+     },
+     "b": {
+      "x": 38,
+      "y": 62
+     },
+     "aDeliver": 7,
+     "bDeliver": 6,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "312.2376126420675",
+     "bMeter": "313.82257514278865",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 4,
+     "d": 12,
+     "a": {
+      "x": 12,
+      "y": 34
+     },
+     "b": {
+      "x": 43,
+      "y": 12
+     },
+     "aDeliver": 6,
+     "bDeliver": 7,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "310.6526501413464",
+     "bMeter": "310.6526501413464",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 5,
+     "d": 13,
+     "a": {
+      "x": 40,
+      "y": 40
+     },
+     "b": {
+      "x": 5,
+      "y": 11
+     },
+     "aDeliver": 6,
+     "bDeliver": 7,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "309.06768764062525",
+     "bMeter": "309.06768764062525",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 6,
+     "d": 14,
+     "a": {
+      "x": 30,
+      "y": 57
+     },
+     "b": {
+      "x": 39,
+      "y": 21
+     },
+     "aDeliver": 7,
+     "bDeliver": 7,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "307.4827251399041",
+     "bMeter": "307.4827251399041",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 7,
+     "d": 15,
+     "a": {
+      "x": 57,
+      "y": 19
+     },
+     "b": {
+      "x": 21,
+      "y": 43
+     },
+     "aDeliver": 9,
+     "bDeliver": 8,
+     "pairDeliver": 9,
+     "bridgeTick": 1,
+     "aMeter": "305.897762639183",
+     "bMeter": "305.897762639183",
+     "aFinalD": 63,
+     "bFinalD": 63
+    }
+   ],
+   "off": [
+    {
+     "pairId": 0,
+     "d": 8,
+     "a": {
+      "x": 60,
+      "y": 40
+     },
+     "b": {
+      "x": 31,
+      "y": 18
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 8,
+     "bFinalD": 8
+    },
+    {
+     "pairId": 1,
+     "d": 9,
+     "a": {
+      "x": 2,
+      "y": 0
+     },
+     "b": {
+      "x": 50,
+      "y": 34
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 9,
+     "bFinalD": 9
+    },
+    {
+     "pairId": 2,
+     "d": 10,
+     "a": {
+      "x": 27,
+      "y": 10
+     },
+     "b": {
+      "x": 60,
+      "y": 50
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 10,
+     "bFinalD": 10
+    },
+    {
+     "pairId": 3,
+     "d": 11,
+     "a": {
+      "x": 10,
+      "y": 52
+     },
+     "b": {
+      "x": 38,
+      "y": 62
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 11,
+     "bFinalD": 11
+    },
+    {
+     "pairId": 4,
+     "d": 12,
+     "a": {
+      "x": 12,
+      "y": 34
+     },
+     "b": {
+      "x": 43,
+      "y": 12
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 12,
+     "bFinalD": 12
+    },
+    {
+     "pairId": 5,
+     "d": 13,
+     "a": {
+      "x": 40,
+      "y": 40
+     },
+     "b": {
+      "x": 5,
+      "y": 11
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 13,
+     "bFinalD": 13
+    },
+    {
+     "pairId": 6,
+     "d": 14,
+     "a": {
+      "x": 30,
+      "y": 57
+     },
+     "b": {
+      "x": 39,
+      "y": 21
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 14,
+     "bFinalD": 14
+    },
+    {
+     "pairId": 7,
+     "d": 15,
+     "a": {
+      "x": 57,
+      "y": 19
+     },
+     "b": {
+      "x": 21,
+      "y": 43
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 15,
+     "bFinalD": 15
+    }
+   ],
+   "onDelivered": 8,
+   "offDelivered": 0,
+   "onEvents": 3144,
+   "offEvents": 0,
+   "detOk": true,
+   "controlEqual": true,
+   "somaticAt": 50,
+   "hashesOn": [
+    "5f6c8812769640b846157f042783a808207c4089625ff378f2a7a9d2fddb5637",
+    "4554717ce79416cd390394bbd07dd5440fcfe5f918b7ddbc9afe0fe83fc52973",
+    "d26c4f1b9dd636713eb65bae02ea008ebfde7c6633c72f32199889cf5d6001d9",
+    "00b308b7c5a53abd4b84ccaa873517c762e8fd865aa4dc88b8ae4d849ff77ead",
+    "6079f3d29c2fa4a4392abf388cbc5922a5b754784c4fbf7e3113f45d5b162102"
+   ],
+   "hashesOff": [
+    "5f6c8812769640b846157f042783a808207c4089625ff378f2a7a9d2fddb5637",
+    "320eedb2cc3b7f56076ff5efb65bdb89528204b57f8cd80e28ea9e3cbc5b3577",
+    "0db326864e97c5d984f96da6246b9eea1ac1c4756d5a3ed4c48f303a60085f19",
+    "ff35d597674e4d10a0d954eff7364eb77d2834589ccd3a1a576d5838006157e5",
+    "6efb162913363a8cc5ddd1278213fe289e07941ff1d44f3d744542c72948865c"
+   ]
+  },
+  {
+   "seed": 33011,
+   "on": [
+    {
+     "pairId": 0,
+     "d": 8,
+     "a": {
+      "x": 5,
+      "y": 25
+     },
+     "b": {
+      "x": 43,
+      "y": 28
+     },
+     "aDeliver": 7,
+     "bDeliver": 6,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "315.4075376435098",
+     "bMeter": "316.9925001442309",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 1,
+     "d": 9,
+     "a": {
+      "x": 3,
+      "y": 41
+     },
+     "b": {
+      "x": 16,
+      "y": 6
+     },
+     "aDeliver": 6,
+     "bDeliver": 7,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "315.4075376435098",
+     "bMeter": "315.4075376435098",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 2,
+     "d": 10,
+     "a": {
+      "x": 49,
+      "y": 53
+     },
+     "b": {
+      "x": 14,
+      "y": 19
+     },
+     "aDeliver": 6,
+     "bDeliver": 7,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "313.82257514278865",
+     "bMeter": "313.82257514278865",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 3,
+     "d": 11,
+     "a": {
+      "x": 61,
+      "y": 56
+     },
+     "b": {
+      "x": 17,
+      "y": 29
+     },
+     "aDeliver": 6,
+     "bDeliver": 7,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "312.2376126420675",
+     "bMeter": "312.2376126420675",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 4,
+     "d": 12,
+     "a": {
+      "x": 33,
+      "y": 60
+     },
+     "b": {
+      "x": 35,
+      "y": 32
+     },
+     "aDeliver": 6,
+     "bDeliver": 7,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "312.2376126420675",
+     "bMeter": "310.6526501413464",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 5,
+     "d": 13,
+     "a": {
+      "x": 0,
+      "y": 12
+     },
+     "b": {
+      "x": 32,
+      "y": 11
+     },
+     "aDeliver": 6,
+     "bDeliver": 7,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "309.06768764062525",
+     "bMeter": "309.06768764062525",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 6,
+     "d": 14,
+     "a": {
+      "x": 36,
+      "y": 50
+     },
+     "b": {
+      "x": 53,
+      "y": 18
+     },
+     "aDeliver": 7,
+     "bDeliver": 7,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "307.4827251399041",
+     "bMeter": "307.4827251399041",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 7,
+     "d": 15,
+     "a": {
+      "x": 49,
+      "y": 45
+     },
+     "b": {
+      "x": 41,
+      "y": 13
+     },
+     "aDeliver": 8,
+     "bDeliver": 8,
+     "pairDeliver": 8,
+     "bridgeTick": 1,
+     "aMeter": "305.897762639183",
+     "bMeter": "305.897762639183",
+     "aFinalD": 63,
+     "bFinalD": 63
+    }
+   ],
+   "off": [
+    {
+     "pairId": 0,
+     "d": 8,
+     "a": {
+      "x": 5,
+      "y": 25
+     },
+     "b": {
+      "x": 43,
+      "y": 28
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 8,
+     "bFinalD": 8
+    },
+    {
+     "pairId": 1,
+     "d": 9,
+     "a": {
+      "x": 3,
+      "y": 41
+     },
+     "b": {
+      "x": 16,
+      "y": 6
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 9,
+     "bFinalD": 9
+    },
+    {
+     "pairId": 2,
+     "d": 10,
+     "a": {
+      "x": 49,
+      "y": 53
+     },
+     "b": {
+      "x": 14,
+      "y": 19
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 10,
+     "bFinalD": 10
+    },
+    {
+     "pairId": 3,
+     "d": 11,
+     "a": {
+      "x": 61,
+      "y": 56
+     },
+     "b": {
+      "x": 17,
+      "y": 29
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 11,
+     "bFinalD": 11
+    },
+    {
+     "pairId": 4,
+     "d": 12,
+     "a": {
+      "x": 33,
+      "y": 60
+     },
+     "b": {
+      "x": 35,
+      "y": 32
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 12,
+     "bFinalD": 12
+    },
+    {
+     "pairId": 5,
+     "d": 13,
+     "a": {
+      "x": 0,
+      "y": 12
+     },
+     "b": {
+      "x": 32,
+      "y": 11
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 13,
+     "bFinalD": 13
+    },
+    {
+     "pairId": 6,
+     "d": 14,
+     "a": {
+      "x": 36,
+      "y": 50
+     },
+     "b": {
+      "x": 53,
+      "y": 18
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 14,
+     "bFinalD": 14
+    },
+    {
+     "pairId": 7,
+     "d": 15,
+     "a": {
+      "x": 49,
+      "y": 45
+     },
+     "b": {
+      "x": 41,
+      "y": 13
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 15,
+     "bFinalD": 15
+    }
+   ],
+   "onDelivered": 8,
+   "offDelivered": 0,
+   "onEvents": 3144,
+   "offEvents": 0,
+   "detOk": true,
+   "controlEqual": true,
+   "somaticAt": 50,
+   "hashesOn": [
+    "92aad3abf53cd10b1c6cf820851ca0abacde2e40eaa6d329d9a394cc51a30dfa",
+    "7201bed5c2b52d4c24e68f5718dfbfd74267f7ec7d7eec59c882b5b1f70d5cea",
+    "926bd2b5573fb744c4d2df3ce1af1d4326af1cabf99b5a26a691a9aae6fef439",
+    "8a70d7516d82e4252d7a17646f531b252d361ae4b61a993c2c071ebc93e444f8",
+    "f8155724292b33a769bf5294240862c7d094bb1123206d74ce5fb748ccb75b84"
+   ],
+   "hashesOff": [
+    "92aad3abf53cd10b1c6cf820851ca0abacde2e40eaa6d329d9a394cc51a30dfa",
+    "f7bb65c887c439166e9d2d750a05838d86bd09317397e324ef686fe6c581d151",
+    "7bfffb8fcbacd632e464c5b5b523fc90bd70955b29c4851256dfa203f14c5b05",
+    "4ed06246bdb4319f1ad12cd3904c8af7e1ab0f4a8047a0311a7af8e165cf7abb",
+    "18337fa557097c6d32fb14e0bad0d7fc6cf5c8f6758f1265b2a2bd96b4ce9f7d"
+   ]
+  },
+  {
+   "seed": 33012,
+   "on": [
+    {
+     "pairId": 0,
+     "d": 8,
+     "a": {
+      "x": 21,
+      "y": 56
+     },
+     "b": {
+      "x": 60,
+      "y": 49
+     },
+     "aDeliver": 6,
+     "bDeliver": 7,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "316.9925001442309",
+     "bMeter": "315.4075376435098",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 1,
+     "d": 9,
+     "a": {
+      "x": 10,
+      "y": 6
+     },
+     "b": {
+      "x": 46,
+      "y": 40
+     },
+     "aDeliver": 7,
+     "bDeliver": 6,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "315.4075376435098",
+     "bMeter": "315.4075376435098",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 2,
+     "d": 10,
+     "a": {
+      "x": 40,
+      "y": 19
+     },
+     "b": {
+      "x": 1,
+      "y": 1
+     },
+     "aDeliver": 6,
+     "bDeliver": 7,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "313.82257514278865",
+     "bMeter": "313.82257514278865",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 3,
+     "d": 11,
+     "a": {
+      "x": 50,
+      "y": 53
+     },
+     "b": {
+      "x": 27,
+      "y": 22
+     },
+     "aDeliver": 6,
+     "bDeliver": 7,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "313.82257514278865",
+     "bMeter": "312.2376126420675",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 4,
+     "d": 12,
+     "a": {
+      "x": 34,
+      "y": 52
+     },
+     "b": {
+      "x": 57,
+      "y": 20
+     },
+     "aDeliver": 6,
+     "bDeliver": 7,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "310.6526501413464",
+     "bMeter": "310.6526501413464",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 5,
+     "d": 13,
+     "a": {
+      "x": 45,
+      "y": 2
+     },
+     "b": {
+      "x": 1,
+      "y": 30
+     },
+     "aDeliver": 7,
+     "bDeliver": 6,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "309.06768764062525",
+     "bMeter": "309.06768764062525",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 6,
+     "d": 14,
+     "a": {
+      "x": 56,
+      "y": 1
+     },
+     "b": {
+      "x": 19,
+      "y": 38
+     },
+     "aDeliver": 7,
+     "bDeliver": 7,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "307.4827251399041",
+     "bMeter": "307.4827251399041",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 7,
+     "d": 15,
+     "a": {
+      "x": 20,
+      "y": 11
+     },
+     "b": {
+      "x": 45,
+      "y": 28
+     },
+     "aDeliver": 8,
+     "bDeliver": 8,
+     "pairDeliver": 8,
+     "bridgeTick": 1,
+     "aMeter": "305.897762639183",
+     "bMeter": "305.897762639183",
+     "aFinalD": 63,
+     "bFinalD": 63
+    }
+   ],
+   "off": [
+    {
+     "pairId": 0,
+     "d": 8,
+     "a": {
+      "x": 21,
+      "y": 56
+     },
+     "b": {
+      "x": 60,
+      "y": 49
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 8,
+     "bFinalD": 8
+    },
+    {
+     "pairId": 1,
+     "d": 9,
+     "a": {
+      "x": 10,
+      "y": 6
+     },
+     "b": {
+      "x": 46,
+      "y": 40
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 9,
+     "bFinalD": 9
+    },
+    {
+     "pairId": 2,
+     "d": 10,
+     "a": {
+      "x": 40,
+      "y": 19
+     },
+     "b": {
+      "x": 1,
+      "y": 1
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 10,
+     "bFinalD": 10
+    },
+    {
+     "pairId": 3,
+     "d": 11,
+     "a": {
+      "x": 50,
+      "y": 53
+     },
+     "b": {
+      "x": 27,
+      "y": 22
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 11,
+     "bFinalD": 11
+    },
+    {
+     "pairId": 4,
+     "d": 12,
+     "a": {
+      "x": 34,
+      "y": 52
+     },
+     "b": {
+      "x": 57,
+      "y": 20
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 12,
+     "bFinalD": 12
+    },
+    {
+     "pairId": 5,
+     "d": 13,
+     "a": {
+      "x": 45,
+      "y": 2
+     },
+     "b": {
+      "x": 1,
+      "y": 30
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 13,
+     "bFinalD": 13
+    },
+    {
+     "pairId": 6,
+     "d": 14,
+     "a": {
+      "x": 56,
+      "y": 1
+     },
+     "b": {
+      "x": 19,
+      "y": 38
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 14,
+     "bFinalD": 14
+    },
+    {
+     "pairId": 7,
+     "d": 15,
+     "a": {
+      "x": 20,
+      "y": 11
+     },
+     "b": {
+      "x": 45,
+      "y": 28
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 15,
+     "bFinalD": 15
+    }
+   ],
+   "onDelivered": 8,
+   "offDelivered": 0,
+   "onEvents": 3144,
+   "offEvents": 0,
+   "detOk": true,
+   "controlEqual": true,
+   "somaticAt": 50,
+   "hashesOn": [
+    "38f071bb3b393138a8ddfff6d2a373b16528ecc85e9c3913f5bd994a068e5dd4",
+    "08e7b505dd0becf739c31c92ae4d2e7c9860540c9c56a26c2019d467e8859ecb",
+    "55a3b8509762cf83dbf2e2690c48f459adc31e5fbf749ddc0312c1869b43c4ab",
+    "58b6aef61d13d28d6c7c5d5724cca7107561853c50c1d71059a218f148246145",
+    "7c9fe1b0cdf143cb4911d813f001bea9a342da7f3b87a239bf220b71998af934"
+   ],
+   "hashesOff": [
+    "38f071bb3b393138a8ddfff6d2a373b16528ecc85e9c3913f5bd994a068e5dd4",
+    "55eed644b43fcc9639bc577e2320b770784ee4be113c3443b0cdb6631275d3d1",
+    "fb2bac1aef6a0114b7d96ab3fa83a00248d88eff6b210fbb5856acd3ce7b907e",
+    "f9849d8ac2808a10f2b40288c447e44e6d6b09f68e5e8f1327fc66b3194be6da",
+    "3b812287ff6f2f51f122d1a626963d8349864a6baf4be8cd94d985e3b86820fd"
+   ]
+  },
+  {
+   "seed": 33013,
+   "on": [
+    {
+     "pairId": 0,
+     "d": 8,
+     "a": {
+      "x": 39,
+      "y": 61
+     },
+     "b": {
+      "x": 39,
+      "y": 31
+     },
+     "aDeliver": 6,
+     "bDeliver": 7,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "316.9925001442309",
+     "bMeter": "315.4075376435098",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 1,
+     "d": 9,
+     "a": {
+      "x": 48,
+      "y": 8
+     },
+     "b": {
+      "x": 9,
+      "y": 12
+     },
+     "aDeliver": 7,
+     "bDeliver": 6,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "315.4075376435098",
+     "bMeter": "315.4075376435098",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 2,
+     "d": 10,
+     "a": {
+      "x": 24,
+      "y": 7
+     },
+     "b": {
+      "x": 16,
+      "y": 34
+     },
+     "aDeliver": 7,
+     "bDeliver": 6,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "313.82257514278865",
+     "bMeter": "313.82257514278865",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 3,
+     "d": 11,
+     "a": {
+      "x": 47,
+      "y": 53
+     },
+     "b": {
+      "x": 17,
+      "y": 26
+     },
+     "aDeliver": 6,
+     "bDeliver": 7,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "312.2376126420675",
+     "bMeter": "312.2376126420675",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 4,
+     "d": 12,
+     "a": {
+      "x": 51,
+      "y": 61
+     },
+     "b": {
+      "x": 61,
+      "y": 22
+     },
+     "aDeliver": 6,
+     "bDeliver": 7,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "312.2376126420675",
+     "bMeter": "310.6526501413464",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 5,
+     "d": 13,
+     "a": {
+      "x": 14,
+      "y": 52
+     },
+     "b": {
+      "x": 46,
+      "y": 19
+     },
+     "aDeliver": 6,
+     "bDeliver": 7,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "309.06768764062525",
+     "bMeter": "309.06768764062525",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 6,
+     "d": 14,
+     "a": {
+      "x": 28,
+      "y": 51
+     },
+     "b": {
+      "x": 25,
+      "y": 27
+     },
+     "aDeliver": 7,
+     "bDeliver": 7,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "307.4827251399041",
+     "bMeter": "307.4827251399041",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 7,
+     "d": 15,
+     "a": {
+      "x": 27,
+      "y": 16
+     },
+     "b": {
+      "x": 6,
+      "y": 45
+     },
+     "aDeliver": 9,
+     "bDeliver": 8,
+     "pairDeliver": 9,
+     "bridgeTick": 1,
+     "aMeter": "305.897762639183",
+     "bMeter": "305.897762639183",
+     "aFinalD": 63,
+     "bFinalD": 63
+    }
+   ],
+   "off": [
+    {
+     "pairId": 0,
+     "d": 8,
+     "a": {
+      "x": 39,
+      "y": 61
+     },
+     "b": {
+      "x": 39,
+      "y": 31
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 8,
+     "bFinalD": 8
+    },
+    {
+     "pairId": 1,
+     "d": 9,
+     "a": {
+      "x": 48,
+      "y": 8
+     },
+     "b": {
+      "x": 9,
+      "y": 12
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 9,
+     "bFinalD": 9
+    },
+    {
+     "pairId": 2,
+     "d": 10,
+     "a": {
+      "x": 24,
+      "y": 7
+     },
+     "b": {
+      "x": 16,
+      "y": 34
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 10,
+     "bFinalD": 10
+    },
+    {
+     "pairId": 3,
+     "d": 11,
+     "a": {
+      "x": 47,
+      "y": 53
+     },
+     "b": {
+      "x": 17,
+      "y": 26
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 11,
+     "bFinalD": 11
+    },
+    {
+     "pairId": 4,
+     "d": 12,
+     "a": {
+      "x": 51,
+      "y": 61
+     },
+     "b": {
+      "x": 61,
+      "y": 22
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 12,
+     "bFinalD": 12
+    },
+    {
+     "pairId": 5,
+     "d": 13,
+     "a": {
+      "x": 14,
+      "y": 52
+     },
+     "b": {
+      "x": 46,
+      "y": 19
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 13,
+     "bFinalD": 13
+    },
+    {
+     "pairId": 6,
+     "d": 14,
+     "a": {
+      "x": 28,
+      "y": 51
+     },
+     "b": {
+      "x": 25,
+      "y": 27
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 14,
+     "bFinalD": 14
+    },
+    {
+     "pairId": 7,
+     "d": 15,
+     "a": {
+      "x": 27,
+      "y": 16
+     },
+     "b": {
+      "x": 6,
+      "y": 45
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 15,
+     "bFinalD": 15
+    }
+   ],
+   "onDelivered": 8,
+   "offDelivered": 0,
+   "onEvents": 3144,
+   "offEvents": 0,
+   "detOk": true,
+   "controlEqual": true,
+   "somaticAt": 50,
+   "hashesOn": [
+    "b77f5cf8073a2902d265e447df00d7034dd4547971aef65cf699e5c7ca292e6b",
+    "0f831ca0e1cb7e5dd9b69716a366277c08960ea6ee552581c9589b4867673028",
+    "201574f4e55c549efc6c6ddab9d19e0a35bcb60cca1331f5f53e8a1eb800b0b7",
+    "4a14a76478022bad56c7720515c8b28d169fa577d82fd8d156b3b6cd6c109282",
+    "56ad80f705e105c03e19da8882d1d6df25fa644b13bd46b1b6a839a31cdd7ee1"
+   ],
+   "hashesOff": [
+    "b77f5cf8073a2902d265e447df00d7034dd4547971aef65cf699e5c7ca292e6b",
+    "02b37f6cfc32e9b8329a0dee771dc944740eb0eef77d2ae2e271efe3c20fa5fa",
+    "fd4923a22a3309c0620d677e628b372d32b1b05d7a10655fb4e5637ce43499a7",
+    "df28c6417a77c3dec1e68e6d4e001e3667850a02d9e708d71ca235e74cba4a4a",
+    "dad6d68376ad9facec1d7940e934ac1ef97a5786b7ffd1616c50ffedfd80ee44"
+   ]
+  },
+  {
+   "seed": 33014,
+   "on": [
+    {
+     "pairId": 0,
+     "d": 8,
+     "a": {
+      "x": 47,
+      "y": 31
+     },
+     "b": {
+      "x": 19,
+      "y": 2
+     },
+     "aDeliver": 6,
+     "bDeliver": 7,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "316.9925001442309",
+     "bMeter": "315.4075376435098",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 1,
+     "d": 9,
+     "a": {
+      "x": 33,
+      "y": 59
+     },
+     "b": {
+      "x": 61,
+      "y": 34
+     },
+     "aDeliver": 6,
+     "bDeliver": 7,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "315.4075376435098",
+     "bMeter": "315.4075376435098",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 2,
+     "d": 10,
+     "a": {
+      "x": 33,
+      "y": 25
+     },
+     "b": {
+      "x": 58,
+      "y": 52
+     },
+     "aDeliver": 7,
+     "bDeliver": 6,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "313.82257514278865",
+     "bMeter": "313.82257514278865",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 3,
+     "d": 11,
+     "a": {
+      "x": 47,
+      "y": 58
+     },
+     "b": {
+      "x": 9,
+      "y": 62
+     },
+     "aDeliver": 7,
+     "bDeliver": 6,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "312.2376126420675",
+     "bMeter": "312.2376126420675",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 4,
+     "d": 12,
+     "a": {
+      "x": 46,
+      "y": 20
+     },
+     "b": {
+      "x": 38,
+      "y": 46
+     },
+     "aDeliver": 7,
+     "bDeliver": 6,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "310.6526501413464",
+     "bMeter": "310.6526501413464",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 5,
+     "d": 13,
+     "a": {
+      "x": 19,
+      "y": 27
+     },
+     "b": {
+      "x": 21,
+      "y": 54
+     },
+     "aDeliver": 7,
+     "bDeliver": 6,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "309.06768764062525",
+     "bMeter": "309.06768764062525",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 6,
+     "d": 14,
+     "a": {
+      "x": 63,
+      "y": 62
+     },
+     "b": {
+      "x": 38,
+      "y": 15
+     },
+     "aDeliver": 7,
+     "bDeliver": 7,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "309.06768764062525",
+     "bMeter": "307.4827251399041",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 7,
+     "d": 15,
+     "a": {
+      "x": 49,
+      "y": 12
+     },
+     "b": {
+      "x": 52,
+      "y": 44
+     },
+     "aDeliver": 9,
+     "bDeliver": 8,
+     "pairDeliver": 9,
+     "bridgeTick": 1,
+     "aMeter": "305.897762639183",
+     "bMeter": "305.897762639183",
+     "aFinalD": 63,
+     "bFinalD": 63
+    }
+   ],
+   "off": [
+    {
+     "pairId": 0,
+     "d": 8,
+     "a": {
+      "x": 47,
+      "y": 31
+     },
+     "b": {
+      "x": 19,
+      "y": 2
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 8,
+     "bFinalD": 8
+    },
+    {
+     "pairId": 1,
+     "d": 9,
+     "a": {
+      "x": 33,
+      "y": 59
+     },
+     "b": {
+      "x": 61,
+      "y": 34
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 9,
+     "bFinalD": 9
+    },
+    {
+     "pairId": 2,
+     "d": 10,
+     "a": {
+      "x": 33,
+      "y": 25
+     },
+     "b": {
+      "x": 58,
+      "y": 52
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 10,
+     "bFinalD": 10
+    },
+    {
+     "pairId": 3,
+     "d": 11,
+     "a": {
+      "x": 47,
+      "y": 58
+     },
+     "b": {
+      "x": 9,
+      "y": 62
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 11,
+     "bFinalD": 11
+    },
+    {
+     "pairId": 4,
+     "d": 12,
+     "a": {
+      "x": 46,
+      "y": 20
+     },
+     "b": {
+      "x": 38,
+      "y": 46
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 12,
+     "bFinalD": 12
+    },
+    {
+     "pairId": 5,
+     "d": 13,
+     "a": {
+      "x": 19,
+      "y": 27
+     },
+     "b": {
+      "x": 21,
+      "y": 54
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 13,
+     "bFinalD": 13
+    },
+    {
+     "pairId": 6,
+     "d": 14,
+     "a": {
+      "x": 63,
+      "y": 62
+     },
+     "b": {
+      "x": 38,
+      "y": 15
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 14,
+     "bFinalD": 14
+    },
+    {
+     "pairId": 7,
+     "d": 15,
+     "a": {
+      "x": 49,
+      "y": 12
+     },
+     "b": {
+      "x": 52,
+      "y": 44
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 15,
+     "bFinalD": 15
+    }
+   ],
+   "onDelivered": 8,
+   "offDelivered": 0,
+   "onEvents": 3144,
+   "offEvents": 0,
+   "detOk": true,
+   "controlEqual": true,
+   "somaticAt": 50,
+   "hashesOn": [
+    "de74038b4cf43b637527c8229ca0ff5a289b81666800390a8955ef39e6884ee6",
+    "7cb04c5ebe9a67d240876930d6e1e59861daccd24e7a0ced5f4921de279f4824",
+    "30c2fd9bafb16510b3701e45fc7d3def0075b06b5002dc0bbb42c0b9f6753b78",
+    "b4126fa6cb9b07b21ceb851d830e04e96ed7407ddecfd059b74cefcac5be4171",
+    "ed64fed0830ce22130d9c81e4e2a6fe42e1c5e8026be552af0b095f2bad1ed23"
+   ],
+   "hashesOff": [
+    "de74038b4cf43b637527c8229ca0ff5a289b81666800390a8955ef39e6884ee6",
+    "8499f6bda75d560d0be9b5a8320d915cc22ca1189fa035ce600f51c1947a0103",
+    "49032ceb6a5d23e04f0ba7457a3e432a997eca659959b54ef7fe990eb6499972",
+    "745a4bf41b074d6d47026e2cd5b74218278c32c4794ecc18ed03df0f6455bcd0",
+    "9018d503fe73c55a1397facccddb9a57aaf1ae033a59b5daf4e28bc62cb6b212"
+   ]
+  },
+  {
+   "seed": 33015,
+   "on": [
+    {
+     "pairId": 0,
+     "d": 8,
+     "a": {
+      "x": 37,
+      "y": 47
+     },
+     "b": {
+      "x": 27,
+      "y": 18
+     },
+     "aDeliver": 6,
+     "bDeliver": 7,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "316.9925001442309",
+     "bMeter": "315.4075376435098",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 1,
+     "d": 9,
+     "a": {
+      "x": 27,
+      "y": 43
+     },
+     "b": {
+      "x": 45,
+      "y": 9
+     },
+     "aDeliver": 6,
+     "bDeliver": 7,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "315.4075376435098",
+     "bMeter": "315.4075376435098",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 2,
+     "d": 10,
+     "a": {
+      "x": 19,
+      "y": 19
+     },
+     "b": {
+      "x": 58,
+      "y": 33
+     },
+     "aDeliver": 7,
+     "bDeliver": 6,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "313.82257514278865",
+     "bMeter": "313.82257514278865",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 3,
+     "d": 11,
+     "a": {
+      "x": 23,
+      "y": 30
+     },
+     "b": {
+      "x": 52,
+      "y": 20
+     },
+     "aDeliver": 6,
+     "bDeliver": 7,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "312.2376126420675",
+     "bMeter": "312.2376126420675",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 4,
+     "d": 12,
+     "a": {
+      "x": 8,
+      "y": 33
+     },
+     "b": {
+      "x": 5,
+      "y": 60
+     },
+     "aDeliver": 7,
+     "bDeliver": 6,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "310.6526501413464",
+     "bMeter": "312.2376126420675",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 5,
+     "d": 13,
+     "a": {
+      "x": 16,
+      "y": 1
+     },
+     "b": {
+      "x": 32,
+      "y": 34
+     },
+     "aDeliver": 7,
+     "bDeliver": 6,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "309.06768764062525",
+     "bMeter": "309.06768764062525",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 6,
+     "d": 14,
+     "a": {
+      "x": 16,
+      "y": 57
+     },
+     "b": {
+      "x": 5,
+      "y": 21
+     },
+     "aDeliver": 7,
+     "bDeliver": 7,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "307.4827251399041",
+     "bMeter": "307.4827251399041",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 7,
+     "d": 15,
+     "a": {
+      "x": 3,
+      "y": 44
+     },
+     "b": {
+      "x": 0,
+      "y": 5
+     },
+     "aDeliver": 8,
+     "bDeliver": 9,
+     "pairDeliver": 9,
+     "bridgeTick": 1,
+     "aMeter": "305.897762639183",
+     "bMeter": "305.897762639183",
+     "aFinalD": 63,
+     "bFinalD": 63
+    }
+   ],
+   "off": [
+    {
+     "pairId": 0,
+     "d": 8,
+     "a": {
+      "x": 37,
+      "y": 47
+     },
+     "b": {
+      "x": 27,
+      "y": 18
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 8,
+     "bFinalD": 8
+    },
+    {
+     "pairId": 1,
+     "d": 9,
+     "a": {
+      "x": 27,
+      "y": 43
+     },
+     "b": {
+      "x": 45,
+      "y": 9
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 9,
+     "bFinalD": 9
+    },
+    {
+     "pairId": 2,
+     "d": 10,
+     "a": {
+      "x": 19,
+      "y": 19
+     },
+     "b": {
+      "x": 58,
+      "y": 33
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 10,
+     "bFinalD": 10
+    },
+    {
+     "pairId": 3,
+     "d": 11,
+     "a": {
+      "x": 23,
+      "y": 30
+     },
+     "b": {
+      "x": 52,
+      "y": 20
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 11,
+     "bFinalD": 11
+    },
+    {
+     "pairId": 4,
+     "d": 12,
+     "a": {
+      "x": 8,
+      "y": 33
+     },
+     "b": {
+      "x": 5,
+      "y": 60
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 12,
+     "bFinalD": 12
+    },
+    {
+     "pairId": 5,
+     "d": 13,
+     "a": {
+      "x": 16,
+      "y": 1
+     },
+     "b": {
+      "x": 32,
+      "y": 34
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 13,
+     "bFinalD": 13
+    },
+    {
+     "pairId": 6,
+     "d": 14,
+     "a": {
+      "x": 16,
+      "y": 57
+     },
+     "b": {
+      "x": 5,
+      "y": 21
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 14,
+     "bFinalD": 14
+    },
+    {
+     "pairId": 7,
+     "d": 15,
+     "a": {
+      "x": 3,
+      "y": 44
+     },
+     "b": {
+      "x": 0,
+      "y": 5
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 15,
+     "bFinalD": 15
+    }
+   ],
+   "onDelivered": 8,
+   "offDelivered": 0,
+   "onEvents": 3144,
+   "offEvents": 0,
+   "detOk": true,
+   "controlEqual": true,
+   "somaticAt": 50,
+   "hashesOn": [
+    "11bcc83585a777c93017b7094d9880c84dd5eef113d7c4f15bc93f8589497443",
+    "d752eaa2ae77823f5ce732c2a1a9ee60fddabdc7087d14ea8a8c71172993d083",
+    "c06d7d66755a03c52e42e4b2bd8dfe3ed5c5d979211e01b42cec4e4fe37e932d",
+    "46fff0a46941bc2aa95199715c89bcd5892fb9b915f05319082ed9ed4e7b9e19",
+    "1217d32c4ed4abdaf42e3f63aa2b5e43e76fb191632425345f14eede8f872feb"
+   ],
+   "hashesOff": [
+    "11bcc83585a777c93017b7094d9880c84dd5eef113d7c4f15bc93f8589497443",
+    "a44fce88424a2a7e4ed9d4090736d773f799b885cb403965285b77ca891860cc",
+    "dc13943706edf548016e76f55fbf174d65dee5a88ca6fec9a81befd17998e496",
+    "91b57330b49cebfd444bd2946887d1491993065bb7c59f8212aa4d3ad160449b",
+    "442bb010deb6137d2b6a0538b057cabf94c6411efde294b9a6d3442a6c9998a2"
+   ]
+  },
+  {
+   "seed": 33016,
+   "on": [
+    {
+     "pairId": 0,
+     "d": 8,
+     "a": {
+      "x": 61,
+      "y": 13
+     },
+     "b": {
+      "x": 19,
+      "y": 49
+     },
+     "aDeliver": 7,
+     "bDeliver": 6,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "315.4075376435098",
+     "bMeter": "316.9925001442309",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 1,
+     "d": 9,
+     "a": {
+      "x": 1,
+      "y": 42
+     },
+     "b": {
+      "x": 32,
+      "y": 28
+     },
+     "aDeliver": 6,
+     "bDeliver": 7,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "315.4075376435098",
+     "bMeter": "315.4075376435098",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 2,
+     "d": 10,
+     "a": {
+      "x": 14,
+      "y": 62
+     },
+     "b": {
+      "x": 51,
+      "y": 7
+     },
+     "aDeliver": 6,
+     "bDeliver": 7,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "315.4075376435098",
+     "bMeter": "313.82257514278865",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 3,
+     "d": 11,
+     "a": {
+      "x": 42,
+      "y": 57
+     },
+     "b": {
+      "x": 8,
+      "y": 19
+     },
+     "aDeliver": 6,
+     "bDeliver": 7,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "312.2376126420675",
+     "bMeter": "312.2376126420675",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 4,
+     "d": 12,
+     "a": {
+      "x": 32,
+      "y": 19
+     },
+     "b": {
+      "x": 6,
+      "y": 7
+     },
+     "aDeliver": 6,
+     "bDeliver": 7,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "310.6526501413464",
+     "bMeter": "310.6526501413464",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 5,
+     "d": 13,
+     "a": {
+      "x": 9,
+      "y": 35
+     },
+     "b": {
+      "x": 40,
+      "y": 21
+     },
+     "aDeliver": 6,
+     "bDeliver": 7,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "309.06768764062525",
+     "bMeter": "309.06768764062525",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 6,
+     "d": 14,
+     "a": {
+      "x": 46,
+      "y": 40
+     },
+     "b": {
+      "x": 20,
+      "y": 13
+     },
+     "aDeliver": 7,
+     "bDeliver": 7,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "307.4827251399041",
+     "bMeter": "307.4827251399041",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 7,
+     "d": 15,
+     "a": {
+      "x": 54,
+      "y": 42
+     },
+     "b": {
+      "x": 27,
+      "y": 42
+     },
+     "aDeliver": 8,
+     "bDeliver": 8,
+     "pairDeliver": 8,
+     "bridgeTick": 1,
+     "aMeter": "305.897762639183",
+     "bMeter": "305.897762639183",
+     "aFinalD": 63,
+     "bFinalD": 63
+    }
+   ],
+   "off": [
+    {
+     "pairId": 0,
+     "d": 8,
+     "a": {
+      "x": 61,
+      "y": 13
+     },
+     "b": {
+      "x": 19,
+      "y": 49
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 8,
+     "bFinalD": 8
+    },
+    {
+     "pairId": 1,
+     "d": 9,
+     "a": {
+      "x": 1,
+      "y": 42
+     },
+     "b": {
+      "x": 32,
+      "y": 28
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 9,
+     "bFinalD": 9
+    },
+    {
+     "pairId": 2,
+     "d": 10,
+     "a": {
+      "x": 14,
+      "y": 62
+     },
+     "b": {
+      "x": 51,
+      "y": 7
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 10,
+     "bFinalD": 10
+    },
+    {
+     "pairId": 3,
+     "d": 11,
+     "a": {
+      "x": 42,
+      "y": 57
+     },
+     "b": {
+      "x": 8,
+      "y": 19
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 11,
+     "bFinalD": 11
+    },
+    {
+     "pairId": 4,
+     "d": 12,
+     "a": {
+      "x": 32,
+      "y": 19
+     },
+     "b": {
+      "x": 6,
+      "y": 7
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 12,
+     "bFinalD": 12
+    },
+    {
+     "pairId": 5,
+     "d": 13,
+     "a": {
+      "x": 9,
+      "y": 35
+     },
+     "b": {
+      "x": 40,
+      "y": 21
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 13,
+     "bFinalD": 13
+    },
+    {
+     "pairId": 6,
+     "d": 14,
+     "a": {
+      "x": 46,
+      "y": 40
+     },
+     "b": {
+      "x": 20,
+      "y": 13
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 14,
+     "bFinalD": 14
+    },
+    {
+     "pairId": 7,
+     "d": 15,
+     "a": {
+      "x": 54,
+      "y": 42
+     },
+     "b": {
+      "x": 27,
+      "y": 42
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 15,
+     "bFinalD": 15
+    }
+   ],
+   "onDelivered": 8,
+   "offDelivered": 0,
+   "onEvents": 3144,
+   "offEvents": 0,
+   "detOk": true,
+   "controlEqual": true,
+   "somaticAt": 50,
+   "hashesOn": [
+    "1d345d055d8258ed3e8a0b9e0fb55247ba4a9eddfa60891fdc7dcaec40a6a3d5",
+    "8bc9830c7f4c374e5b4e3380ccb66383bc73d738b091f068596566bb6dfac535",
+    "4c9e1323f00e4aef3eaee29ccd5352f158ea874f53507e3244dc7d1c4725dc5b",
+    "b46b4c3cf7b43b163529f553b79b1b4ee8112285c1597a7e36352483fd427890",
+    "ac209fa4e5b3cdc64946ef4c1241a54f68ebdff00b9f422d95146c335e8beaad"
+   ],
+   "hashesOff": [
+    "1d345d055d8258ed3e8a0b9e0fb55247ba4a9eddfa60891fdc7dcaec40a6a3d5",
+    "279f1b4092ad8046f52f6ab927c69fa9737127ceea1f458b920c4bf69a45f9c4",
+    "3a738b82b977cd36526ede5a0aa492f8864cc4bac7b2fd90a7c24739eca694d7",
+    "5a13955aa76caba95bba71202abcef0eb6ebffda4c802b6fe0dd491bd4690829",
+    "90389de1c37204c217c7834378d79c9443d95e9d028b656d1280a13e0c9cd4d7"
+   ]
+  },
+  {
+   "seed": 33017,
+   "on": [
+    {
+     "pairId": 0,
+     "d": 8,
+     "a": {
+      "x": 2,
+      "y": 43
+     },
+     "b": {
+      "x": 39,
+      "y": 31
+     },
+     "aDeliver": 6,
+     "bDeliver": 7,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "316.9925001442309",
+     "bMeter": "315.4075376435098",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 1,
+     "d": 9,
+     "a": {
+      "x": 54,
+      "y": 61
+     },
+     "b": {
+      "x": 20,
+      "y": 53
+     },
+     "aDeliver": 6,
+     "bDeliver": 7,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "315.4075376435098",
+     "bMeter": "315.4075376435098",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 2,
+     "d": 10,
+     "a": {
+      "x": 21,
+      "y": 17
+     },
+     "b": {
+      "x": 38,
+      "y": 41
+     },
+     "aDeliver": 7,
+     "bDeliver": 6,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "313.82257514278865",
+     "bMeter": "313.82257514278865",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 3,
+     "d": 11,
+     "a": {
+      "x": 63,
+      "y": 14
+     },
+     "b": {
+      "x": 46,
+      "y": 52
+     },
+     "aDeliver": 7,
+     "bDeliver": 6,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "312.2376126420675",
+     "bMeter": "312.2376126420675",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 4,
+     "d": 12,
+     "a": {
+      "x": 37,
+      "y": 14
+     },
+     "b": {
+      "x": 7,
+      "y": 63
+     },
+     "aDeliver": 7,
+     "bDeliver": 6,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "310.6526501413464",
+     "bMeter": "312.2376126420675",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 5,
+     "d": 13,
+     "a": {
+      "x": 29,
+      "y": 1
+     },
+     "b": {
+      "x": 15,
+      "y": 29
+     },
+     "aDeliver": 7,
+     "bDeliver": 6,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "309.06768764062525",
+     "bMeter": "309.06768764062525",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 6,
+     "d": 14,
+     "a": {
+      "x": 55,
+      "y": 49
+     },
+     "b": {
+      "x": 7,
+      "y": 18
+     },
+     "aDeliver": 7,
+     "bDeliver": 7,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "307.4827251399041",
+     "bMeter": "307.4827251399041",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 7,
+     "d": 15,
+     "a": {
+      "x": 13,
+      "y": 10
+     },
+     "b": {
+      "x": 10,
+      "y": 41
+     },
+     "aDeliver": 9,
+     "bDeliver": 8,
+     "pairDeliver": 9,
+     "bridgeTick": 1,
+     "aMeter": "305.897762639183",
+     "bMeter": "305.897762639183",
+     "aFinalD": 63,
+     "bFinalD": 63
+    }
+   ],
+   "off": [
+    {
+     "pairId": 0,
+     "d": 8,
+     "a": {
+      "x": 2,
+      "y": 43
+     },
+     "b": {
+      "x": 39,
+      "y": 31
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 8,
+     "bFinalD": 8
+    },
+    {
+     "pairId": 1,
+     "d": 9,
+     "a": {
+      "x": 54,
+      "y": 61
+     },
+     "b": {
+      "x": 20,
+      "y": 53
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 9,
+     "bFinalD": 9
+    },
+    {
+     "pairId": 2,
+     "d": 10,
+     "a": {
+      "x": 21,
+      "y": 17
+     },
+     "b": {
+      "x": 38,
+      "y": 41
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 10,
+     "bFinalD": 10
+    },
+    {
+     "pairId": 3,
+     "d": 11,
+     "a": {
+      "x": 63,
+      "y": 14
+     },
+     "b": {
+      "x": 46,
+      "y": 52
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 11,
+     "bFinalD": 11
+    },
+    {
+     "pairId": 4,
+     "d": 12,
+     "a": {
+      "x": 37,
+      "y": 14
+     },
+     "b": {
+      "x": 7,
+      "y": 63
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 12,
+     "bFinalD": 12
+    },
+    {
+     "pairId": 5,
+     "d": 13,
+     "a": {
+      "x": 29,
+      "y": 1
+     },
+     "b": {
+      "x": 15,
+      "y": 29
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 13,
+     "bFinalD": 13
+    },
+    {
+     "pairId": 6,
+     "d": 14,
+     "a": {
+      "x": 55,
+      "y": 49
+     },
+     "b": {
+      "x": 7,
+      "y": 18
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 14,
+     "bFinalD": 14
+    },
+    {
+     "pairId": 7,
+     "d": 15,
+     "a": {
+      "x": 13,
+      "y": 10
+     },
+     "b": {
+      "x": 10,
+      "y": 41
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 15,
+     "bFinalD": 15
+    }
+   ],
+   "onDelivered": 8,
+   "offDelivered": 0,
+   "onEvents": 3144,
+   "offEvents": 0,
+   "detOk": true,
+   "controlEqual": true,
+   "somaticAt": 50,
+   "hashesOn": [
+    "e690b308f3d96dc33a6edb7156d6b7e1c8c2bd72a61b7960b107953ecb3304b6",
+    "37b326351ef9bc7a3ace05bd87c4f1cb53d5b8e2b6787f9fc9f902b96cc253ed",
+    "eb8497e132b6a774491f2f2c7f0a5fe674d345bb0b9e22ff5822aec84a1a2606",
+    "9e6de4a66651023e6c4e6940fdec6e84714165d2eb73fdc65143a26c29c84fa7",
+    "9e076c8934e9b99df84cbbd496865156dcd5372c36d1a54066cb232ed427c4d1"
+   ],
+   "hashesOff": [
+    "e690b308f3d96dc33a6edb7156d6b7e1c8c2bd72a61b7960b107953ecb3304b6",
+    "ca99d291f27e0aa6a482026b850bac1a3b170cb0374a924c63b78c510f73841f",
+    "b9be46bce8764787dd1bfa3554ec86a83ab0a3a057de6fbce686da4de2515830",
+    "d7c5f8c92e4abb4d95bd2345bd924f4f3c263fc5dce687120b253d8185d7811b",
+    "19c1050f9e21101636bd684b84a8b5d96193c5ace111e09817d37f776e0e7d34"
+   ]
+  },
+  {
+   "seed": 33018,
+   "on": [
+    {
+     "pairId": 0,
+     "d": 8,
+     "a": {
+      "x": 44,
+      "y": 59
+     },
+     "b": {
+      "x": 20,
+      "y": 58
+     },
+     "aDeliver": 6,
+     "bDeliver": 7,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "316.9925001442309",
+     "bMeter": "315.4075376435098",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 1,
+     "d": 9,
+     "a": {
+      "x": 61,
+      "y": 27
+     },
+     "b": {
+      "x": 8,
+      "y": 57
+     },
+     "aDeliver": 7,
+     "bDeliver": 6,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "315.4075376435098",
+     "bMeter": "315.4075376435098",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 2,
+     "d": 10,
+     "a": {
+      "x": 19,
+      "y": 13
+     },
+     "b": {
+      "x": 47,
+      "y": 33
+     },
+     "aDeliver": 7,
+     "bDeliver": 6,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "313.82257514278865",
+     "bMeter": "313.82257514278865",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 3,
+     "d": 11,
+     "a": {
+      "x": 52,
+      "y": 46
+     },
+     "b": {
+      "x": 23,
+      "y": 45
+     },
+     "aDeliver": 6,
+     "bDeliver": 7,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "312.2376126420675",
+     "bMeter": "312.2376126420675",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 4,
+     "d": 12,
+     "a": {
+      "x": 40,
+      "y": 4
+     },
+     "b": {
+      "x": 35,
+      "y": 38
+     },
+     "aDeliver": 7,
+     "bDeliver": 6,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "310.6526501413464",
+     "bMeter": "310.6526501413464",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 5,
+     "d": 13,
+     "a": {
+      "x": 48,
+      "y": 20
+     },
+     "b": {
+      "x": 16,
+      "y": 24
+     },
+     "aDeliver": 7,
+     "bDeliver": 6,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "309.06768764062525",
+     "bMeter": "309.06768764062525",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 6,
+     "d": 14,
+     "a": {
+      "x": 52,
+      "y": 61
+     },
+     "b": {
+      "x": 22,
+      "y": 34
+     },
+     "aDeliver": 7,
+     "bDeliver": 7,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "309.06768764062525",
+     "bMeter": "307.4827251399041",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 7,
+     "d": 15,
+     "a": {
+      "x": 35,
+      "y": 55
+     },
+     "b": {
+      "x": 3,
+      "y": 44
+     },
+     "aDeliver": 8,
+     "bDeliver": 8,
+     "pairDeliver": 8,
+     "bridgeTick": 1,
+     "aMeter": "305.897762639183",
+     "bMeter": "305.897762639183",
+     "aFinalD": 63,
+     "bFinalD": 63
+    }
+   ],
+   "off": [
+    {
+     "pairId": 0,
+     "d": 8,
+     "a": {
+      "x": 44,
+      "y": 59
+     },
+     "b": {
+      "x": 20,
+      "y": 58
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 8,
+     "bFinalD": 8
+    },
+    {
+     "pairId": 1,
+     "d": 9,
+     "a": {
+      "x": 61,
+      "y": 27
+     },
+     "b": {
+      "x": 8,
+      "y": 57
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 9,
+     "bFinalD": 9
+    },
+    {
+     "pairId": 2,
+     "d": 10,
+     "a": {
+      "x": 19,
+      "y": 13
+     },
+     "b": {
+      "x": 47,
+      "y": 33
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 10,
+     "bFinalD": 10
+    },
+    {
+     "pairId": 3,
+     "d": 11,
+     "a": {
+      "x": 52,
+      "y": 46
+     },
+     "b": {
+      "x": 23,
+      "y": 45
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 11,
+     "bFinalD": 11
+    },
+    {
+     "pairId": 4,
+     "d": 12,
+     "a": {
+      "x": 40,
+      "y": 4
+     },
+     "b": {
+      "x": 35,
+      "y": 38
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 12,
+     "bFinalD": 12
+    },
+    {
+     "pairId": 5,
+     "d": 13,
+     "a": {
+      "x": 48,
+      "y": 20
+     },
+     "b": {
+      "x": 16,
+      "y": 24
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 13,
+     "bFinalD": 13
+    },
+    {
+     "pairId": 6,
+     "d": 14,
+     "a": {
+      "x": 52,
+      "y": 61
+     },
+     "b": {
+      "x": 22,
+      "y": 34
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 14,
+     "bFinalD": 14
+    },
+    {
+     "pairId": 7,
+     "d": 15,
+     "a": {
+      "x": 35,
+      "y": 55
+     },
+     "b": {
+      "x": 3,
+      "y": 44
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 15,
+     "bFinalD": 15
+    }
+   ],
+   "onDelivered": 8,
+   "offDelivered": 0,
+   "onEvents": 3144,
+   "offEvents": 0,
+   "detOk": true,
+   "controlEqual": true,
+   "somaticAt": 50,
+   "hashesOn": [
+    "f2fe255a39aeecf7b44df8d86a5f97a00993da8b74576c79d50037acce48fe55",
+    "9ce76295d9d604db02d07c59a57b20f5d45176a71da59838f90f8be9b3a2888d",
+    "98538fe3b8ea5376b44b2bdec51e76751ddf6ab4da9afc3ea49b11f4227f7155",
+    "3d6686789297254c845ef083055106a648189c84d1f23da005c3ad4126e173e4",
+    "737f93717cfc87c98fb638212190b811b017ac2d4b48f4f88b328b27329a79a1"
+   ],
+   "hashesOff": [
+    "f2fe255a39aeecf7b44df8d86a5f97a00993da8b74576c79d50037acce48fe55",
+    "86df6180590ca45b0a5c46ff1a431647dfd06d3c8a1679aeeedef7ff713b8779",
+    "3d2c7fbaff3ffa8bac486a9d9a2d3d43f8dd2519c4efcfe9709af5aa6086ae2a",
+    "addcd792adfad2db94e917edb85e96c31003648b97a8571d27cbe1a93a3bb578",
+    "f39547f83e7b149bd8bf7564cca37f9b9d68a79d4fe74604f966adbb25d12f3a"
+   ]
+  },
+  {
+   "seed": 33019,
+   "on": [
+    {
+     "pairId": 0,
+     "d": 8,
+     "a": {
+      "x": 56,
+      "y": 12
+     },
+     "b": {
+      "x": 30,
+      "y": 12
+     },
+     "aDeliver": 6,
+     "bDeliver": 7,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "316.9925001442309",
+     "bMeter": "315.4075376435098",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 1,
+     "d": 9,
+     "a": {
+      "x": 19,
+      "y": 30
+     },
+     "b": {
+      "x": 36,
+      "y": 1
+     },
+     "aDeliver": 6,
+     "bDeliver": 7,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "315.4075376435098",
+     "bMeter": "315.4075376435098",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 2,
+     "d": 10,
+     "a": {
+      "x": 39,
+      "y": 42
+     },
+     "b": {
+      "x": 6,
+      "y": 23
+     },
+     "aDeliver": 6,
+     "bDeliver": 7,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "313.82257514278865",
+     "bMeter": "313.82257514278865",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 3,
+     "d": 11,
+     "a": {
+      "x": 63,
+      "y": 56
+     },
+     "b": {
+      "x": 25,
+      "y": 21
+     },
+     "aDeliver": 6,
+     "bDeliver": 7,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "313.82257514278865",
+     "bMeter": "312.2376126420675",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 4,
+     "d": 12,
+     "a": {
+      "x": 5,
+      "y": 34
+     },
+     "b": {
+      "x": 34,
+      "y": 22
+     },
+     "aDeliver": 6,
+     "bDeliver": 7,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "310.6526501413464",
+     "bMeter": "310.6526501413464",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 5,
+     "d": 13,
+     "a": {
+      "x": 50,
+      "y": 32
+     },
+     "b": {
+      "x": 8,
+      "y": 1
+     },
+     "aDeliver": 6,
+     "bDeliver": 7,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "309.06768764062525",
+     "bMeter": "309.06768764062525",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 6,
+     "d": 14,
+     "a": {
+      "x": 51,
+      "y": 55
+     },
+     "b": {
+      "x": 20,
+      "y": 54
+     },
+     "aDeliver": 7,
+     "bDeliver": 7,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "307.4827251399041",
+     "bMeter": "307.4827251399041",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 7,
+     "d": 15,
+     "a": {
+      "x": 13,
+      "y": 46
+     },
+     "b": {
+      "x": 44,
+      "y": 20
+     },
+     "aDeliver": 8,
+     "bDeliver": 9,
+     "pairDeliver": 9,
+     "bridgeTick": 1,
+     "aMeter": "305.897762639183",
+     "bMeter": "305.897762639183",
+     "aFinalD": 63,
+     "bFinalD": 63
+    }
+   ],
+   "off": [
+    {
+     "pairId": 0,
+     "d": 8,
+     "a": {
+      "x": 56,
+      "y": 12
+     },
+     "b": {
+      "x": 30,
+      "y": 12
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 8,
+     "bFinalD": 8
+    },
+    {
+     "pairId": 1,
+     "d": 9,
+     "a": {
+      "x": 19,
+      "y": 30
+     },
+     "b": {
+      "x": 36,
+      "y": 1
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 9,
+     "bFinalD": 9
+    },
+    {
+     "pairId": 2,
+     "d": 10,
+     "a": {
+      "x": 39,
+      "y": 42
+     },
+     "b": {
+      "x": 6,
+      "y": 23
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 10,
+     "bFinalD": 10
+    },
+    {
+     "pairId": 3,
+     "d": 11,
+     "a": {
+      "x": 63,
+      "y": 56
+     },
+     "b": {
+      "x": 25,
+      "y": 21
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 11,
+     "bFinalD": 11
+    },
+    {
+     "pairId": 4,
+     "d": 12,
+     "a": {
+      "x": 5,
+      "y": 34
+     },
+     "b": {
+      "x": 34,
+      "y": 22
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 12,
+     "bFinalD": 12
+    },
+    {
+     "pairId": 5,
+     "d": 13,
+     "a": {
+      "x": 50,
+      "y": 32
+     },
+     "b": {
+      "x": 8,
+      "y": 1
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 13,
+     "bFinalD": 13
+    },
+    {
+     "pairId": 6,
+     "d": 14,
+     "a": {
+      "x": 51,
+      "y": 55
+     },
+     "b": {
+      "x": 20,
+      "y": 54
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 14,
+     "bFinalD": 14
+    },
+    {
+     "pairId": 7,
+     "d": 15,
+     "a": {
+      "x": 13,
+      "y": 46
+     },
+     "b": {
+      "x": 44,
+      "y": 20
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 15,
+     "bFinalD": 15
+    }
+   ],
+   "onDelivered": 8,
+   "offDelivered": 0,
+   "onEvents": 3144,
+   "offEvents": 0,
+   "detOk": true,
+   "controlEqual": true,
+   "somaticAt": 50,
+   "hashesOn": [
+    "ecd0e30aae5946b4a449a8b74911538500a7699fe2d0ea1454cb60c3c67cc278",
+    "69e133cb92210b0e021a7501d6591a52ff23189c900eac7504172f5a6c0c4ca7",
+    "468e41ee0b7298bc4ea7342021d517d2d9016918f7660782da8506a955e58d53",
+    "bf4f6209ed866e37718659d7f436be019a6d3bccd983c0a67c8490b3fa8c643e",
+    "572d34d7696764cf03fb5ff5c97abe9881c8d752b0ee34b075be45d9eb75cfb3"
+   ],
+   "hashesOff": [
+    "ecd0e30aae5946b4a449a8b74911538500a7699fe2d0ea1454cb60c3c67cc278",
+    "826e4ac04fb8fd5d259db03ec28180958f41058d73b283159bd2c29f4ad669cc",
+    "b85ec3a7de4bc6b06f3d84e07a46eef3678b58c66e028589b16cc0c8076ffbf2",
+    "4213aa81272bde59291d1d9151dfa9f43b7de9319771583c8f65c5e7f742790d",
+    "aefc7cb4d386cf40998ba91f1df3b1ff1894f7edc67602701f33fa7c0e41c0ca"
+   ]
+  },
+  {
+   "seed": 33020,
+   "on": [
+    {
+     "pairId": 0,
+     "d": 8,
+     "a": {
+      "x": 40,
+      "y": 55
+     },
+     "b": {
+      "x": 39,
+      "y": 20
+     },
+     "aDeliver": 6,
+     "bDeliver": 7,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "316.9925001442309",
+     "bMeter": "315.4075376435098",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 1,
+     "d": 9,
+     "a": {
+      "x": 27,
+      "y": 43
+     },
+     "b": {
+      "x": 48,
+      "y": 13
+     },
+     "aDeliver": 6,
+     "bDeliver": 7,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "315.4075376435098",
+     "bMeter": "315.4075376435098",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 2,
+     "d": 10,
+     "a": {
+      "x": 24,
+      "y": 8
+     },
+     "b": {
+      "x": 59,
+      "y": 45
+     },
+     "aDeliver": 7,
+     "bDeliver": 6,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "313.82257514278865",
+     "bMeter": "313.82257514278865",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 3,
+     "d": 11,
+     "a": {
+      "x": 51,
+      "y": 21
+     },
+     "b": {
+      "x": 28,
+      "y": 56
+     },
+     "aDeliver": 7,
+     "bDeliver": 6,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "312.2376126420675",
+     "bMeter": "313.82257514278865",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 4,
+     "d": 12,
+     "a": {
+      "x": 60,
+      "y": 20
+     },
+     "b": {
+      "x": 31,
+      "y": 0
+     },
+     "aDeliver": 6,
+     "bDeliver": 7,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "310.6526501413464",
+     "bMeter": "310.6526501413464",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 5,
+     "d": 13,
+     "a": {
+      "x": 3,
+      "y": 3
+     },
+     "b": {
+      "x": 63,
+      "y": 33
+     },
+     "aDeliver": 7,
+     "bDeliver": 6,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "309.06768764062525",
+     "bMeter": "309.06768764062525",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 6,
+     "d": 14,
+     "a": {
+      "x": 9,
+      "y": 18
+     },
+     "b": {
+      "x": 49,
+      "y": 48
+     },
+     "aDeliver": 7,
+     "bDeliver": 7,
+     "pairDeliver": 7,
+     "bridgeTick": 1,
+     "aMeter": "307.4827251399041",
+     "bMeter": "307.4827251399041",
+     "aFinalD": 63,
+     "bFinalD": 63
+    },
+    {
+     "pairId": 7,
+     "d": 15,
+     "a": {
+      "x": 38,
+      "y": 39
+     },
+     "b": {
+      "x": 63,
+      "y": 54
+     },
+     "aDeliver": 8,
+     "bDeliver": 8,
+     "pairDeliver": 8,
+     "bridgeTick": 1,
+     "aMeter": "305.897762639183",
+     "bMeter": "305.897762639183",
+     "aFinalD": 63,
+     "bFinalD": 63
+    }
+   ],
+   "off": [
+    {
+     "pairId": 0,
+     "d": 8,
+     "a": {
+      "x": 40,
+      "y": 55
+     },
+     "b": {
+      "x": 39,
+      "y": 20
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 8,
+     "bFinalD": 8
+    },
+    {
+     "pairId": 1,
+     "d": 9,
+     "a": {
+      "x": 27,
+      "y": 43
+     },
+     "b": {
+      "x": 48,
+      "y": 13
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 9,
+     "bFinalD": 9
+    },
+    {
+     "pairId": 2,
+     "d": 10,
+     "a": {
+      "x": 24,
+      "y": 8
+     },
+     "b": {
+      "x": 59,
+      "y": 45
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 10,
+     "bFinalD": 10
+    },
+    {
+     "pairId": 3,
+     "d": 11,
+     "a": {
+      "x": 51,
+      "y": 21
+     },
+     "b": {
+      "x": 28,
+      "y": 56
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 11,
+     "bFinalD": 11
+    },
+    {
+     "pairId": 4,
+     "d": 12,
+     "a": {
+      "x": 60,
+      "y": 20
+     },
+     "b": {
+      "x": 31,
+      "y": 0
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 12,
+     "bFinalD": 12
+    },
+    {
+     "pairId": 5,
+     "d": 13,
+     "a": {
+      "x": 3,
+      "y": 3
+     },
+     "b": {
+      "x": 63,
+      "y": 33
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 13,
+     "bFinalD": 13
+    },
+    {
+     "pairId": 6,
+     "d": 14,
+     "a": {
+      "x": 9,
+      "y": 18
+     },
+     "b": {
+      "x": 49,
+      "y": 48
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 14,
+     "bFinalD": 14
+    },
+    {
+     "pairId": 7,
+     "d": 15,
+     "a": {
+      "x": 38,
+      "y": 39
+     },
+     "b": {
+      "x": 63,
+      "y": 54
+     },
+     "aDeliver": null,
+     "bDeliver": null,
+     "pairDeliver": null,
+     "bridgeTick": null,
+     "aMeter": 0,
+     "bMeter": 0,
+     "aFinalD": 15,
+     "bFinalD": 15
+    }
+   ],
+   "onDelivered": 8,
+   "offDelivered": 0,
+   "onEvents": 3144,
+   "offEvents": 0,
+   "detOk": true,
+   "controlEqual": true,
+   "somaticAt": 50,
+   "hashesOn": [
+    "984393ddfcdcedfd5c6ae9eb826a87e4fb67bd54375e89c263d7eddb7576f366",
+    "d6dcb5b913598c92079bd65d9c898a297ca4752ef3dfbf3106f5344fdb586c50",
+    "aedf4751fd128d1f8db769ac3e5b28bb0d7abd7d06e9183a91f45e16adb83447",
+    "791580cf3cbf2075dc9fc90d80f1a2525bc05ee9d4bcbe2569ae713a6bc20243",
+    "d1973826ea0eec36394831f4487452b5ac777b35326d33b33eadd2e0dc7b12c1"
+   ],
+   "hashesOff": [
+    "984393ddfcdcedfd5c6ae9eb826a87e4fb67bd54375e89c263d7eddb7576f366",
+    "57c3268a7973f12106a698d6125389a33c93ec4587bae2ba75299899ff784dd5",
+    "7fa20b55fa15323bd3839a379ca4561a626d29b25f1f81aac8e397dfec304103",
+    "28ee9450ab590767d3c6c87f7e6df75d4b39a6cda71ab2ec5c41e359d4f84b57",
+    "d97536673b02aa10c06a0e2f6faa7ce48546ac693e4a334a6958765c79b39036"
+   ]
+  }
+ ],
+ "aggregates": {
+  "onDelivered": [
+   8,
+   8,
+   8,
+   8,
+   8,
+   8,
+   8,
+   8,
+   8,
+   8,
+   8,
+   8,
+   8,
+   8,
+   8,
+   8,
+   8,
+   8,
+   8,
+   8
+  ],
+  "offDelivered": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "onMedian": 8,
+  "offAnyDelivery": false,
+  "allDet": true,
+  "allControl": true,
+  "verdict": "C2 LIVES"
+ }
+}
