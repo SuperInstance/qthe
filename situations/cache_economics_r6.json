@@ -1,0 +1,27 @@
+{
+ "wave": "34-keeper",
+ "round": 6,
+ "artifact": "situations/cache_economics_r6.json",
+ "sealed_at": "2026-09-27T07:41:51Z",
+ "prefix_sha256": "777938e243d34ef4667c1d52a89ee3fe30e41529804746c7b71deccbc0866e39",
+ "prefix_chars": 5025,
+ "calls_made": 4,
+ "cold_calls": 1,
+ "totals": {
+  "prompt_tokens": 6168,
+  "prompt_cache_hit_tokens": 4096,
+  "prompt_cache_miss_tokens": 2072,
+  "completion_tokens": 3789
+ },
+ "cache_hit_ratio": 0.6640726329442282,
+ "price_basis": {
+  "input_cache_hit_per_1m": 0.006,
+  "input_cache_miss_per_1m": 0.3,
+  "output_per_1m": 1.2
+ },
+ "usd": {
+  "with_cache": 0.005192975999999999,
+  "if_no_cache": 0.006397199999999999
+ },
+ "savings_ratio": 0.18824235603076345
+}
