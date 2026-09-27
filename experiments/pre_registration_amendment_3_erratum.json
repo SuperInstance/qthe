@@ -1,0 +1,10 @@
+{
+ "law": "ERRATUM to pre_registration_amendment_3.json — committed BEFORE ANY RUN of E-Q7 (no E-Q7 run has been executed at commit time; the registration commit 1c93029 is untouched and remains verbatim in git history). This erratum adds ONE control arm so the frozen EQ7-P3 rule is computable exactly as written. The guest's floors EQ7-P1/P2, the situation-9 conditional EQ7-P3, the determinism floor EQ7-D1, the adjudication rule EQ7-A1, and the plane audit rule EQ7-R8 are UNTOUCHED. No floor is edited post-run — there has been no run.",
+ "what_was_missing": "Amendment 3's arms list omitted the wormhole-OFF paired nu control that its own frozen rules require: EQ7-P3 compares the REGIMES of A_2_3 (ON) and A_2_3_OFF (OFF), and EQ7-A1 defines an arm's regime flip-ATTRIBUTABLY (alpha vs its nu control at the same wormhole state) so the board's natural seam/shore stripe weather is subtracted by construction. Without an OFF nu, the OFF arm's regime would have to be measured against an ON nu — mixing wormhole states and breaking the frozen definition. This is a harness-planning defect in the amendment, found by self-review BEFORE the run, repaired by ADDITION only.",
+ "N_2_3_OFF_added": "NEW control arm (addition, no substitution): situation 9 nu board (NO flip — cell (64,32) stays Attract), wormholes OFF (opts.wormholes=false: Abstain cells never touch the table), T=256, frozen window 64, identical seed/geometry to A_2_3_OFF. The OFF regime is then computed exactly as frozen: Delta-field = A_2_3_OFF vs N_2_3_OFF per tick, radius from (64,32) toroidal Chebyshev excluding the flip site, inversion fractions at 128/256, REGIME by the frozen priority (SUBSTRATE-WIDE > CASCADE > DEAD-LOCAL > UNRESOLVED). P3 then fires iff regime(A_2_3) === regime(A_2_3_OFF) exactly as amendment 3 sealed.",
+ "cost_note": "one extra 128x64 x 256-tick run x2 reruns x2 kernels (determinism floor applies to every arm) — within the amendment's own cost envelope; no new primitives, no new code paths beyond the existing runner.",
+ "task_id": "36-a",
+ "agent": "qthe-smith (lane)",
+ "wave": 36,
+ "registered_before_run": "YES — still PRE-RUN; git history is the witness."
+}
