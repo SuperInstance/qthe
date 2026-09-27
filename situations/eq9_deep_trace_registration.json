@@ -1,0 +1,88 @@
+{
+ "receipt": "E-Q9-DT REGISTRATION + PREDICTIONS — moth-ordered deep-trace of the 1,134 rat-D dyadic families (task 42-b, wave 42, lane moth-smith). Sealed BEFORE any moth job of this lane (zero jobs spent at seal time) and BEFORE any deep-trace kernel tick (the only kernel contact this wave is read-only reuse of the E-Q9 runner machinery). Pricing-first law: this file and the runner were committed together PRE-RUN; git history is the witness.",
+ "name_law": "Registered id: E-Q9-DT (deep-trace follow-up to E-Q9, run by the same house that executed E-Q9's sweep). NOT E-Q10: the E-Q* lever numbering belongs to the tavern guest (E-Q9 was the guest's round-8 registered lever; the r9 prefix asset names no E-Q10 and this lane does not claim the next number). The wave-41 cross-analysis used 'E-Q10-seed ordering' informally; that nickname dies here.",
+ "experiment": "MOTH AS THE FLEET'S STANDING SEED/ORDERING INSTRUMENT, first registered use. (a) One fresh mothquantum graph-v1 job (emu, 8 qubits, 1024 shots) generates raw bits, receipted AS RUN (job_id, backend, latency, raw bits sha256 — never the key). (b) The raw bits are WHITENED by the exact two-step recipe below (wave-41 law: graph-v1 emu is NOT a QRNG — balance 0.6288 and top-20 truncation confirmed live on job 5517f11b). (c) The whitened stream ORDER-selects N=16 of the 1,134 rat-D dyadic families — the T2 class E-Q9 priced and swept (E5: byte-identical at the family point) but never FULL-TRACED — without human choice: Fisher-Yates over the whole pool, first 16 in moth-shuffle order. (d) The 16 are deep-traced on the E-Q9 board machinery: full trajectory dump (all 17 plane hashes, event tuples, terms-by-tick, per-tick dA/dB) float kernel (qthe.mjs) vs fixed kernel (fixedpoint/qthe_fixed.mjs R8), arms rat + irrNear + irrFar, x2 fresh constructions per (family, arm, kernel), plus a no-twin control (A->Ground) per family. (e) Budget: MAX 2 moth jobs this lane; fail-closed — an unreachable or failed API receipts an honest FAIL and stops.",
+ "why_these_families": "The rat-D class is where E-Q9's falsifier literal reading fired: fixed HOLDS at the 1,134 dyadic family points (T2: fixed hold <=> dd dyadic, 0 violations in the 306,773-fraction census). E-Q9 swept them one-row-per-family; nothing full-traced their trajectories, and the class was never moth-ordered. They are also the cleanest standing-instrument test bed: every family's outcome at the family point is pinned by census arithmetic, so the pipeline's honesty is checkable per family.",
+ "open_variables_closed_here": {
+  "pool": "stable && rat.cls==D over the E-Q9 census bounds (n<=252, dd<=253, gcd=1) — 1,134 families, registered census order (dd asc, n asc). Pool composition (census arithmetic, pre-run): dd=1: 252 families; dd in {2,4,8,16,32,64,128}: 126 each (252+126*7=1,134, all dyadic as T2 demands).",
+  "near_arm_split_of_the_pool": "irrNear = double(n/dd + SQRT2*2^-52): 379 of the 1,134 are F-INV (fixed BLIND — Q32.32 door cannot see the sqrt2*2^-20 S-unit step — while float sees the ~1-ulp step and moves); 755 are degenerate (sigma >= 4: the irrational step rounds back below half-ulp; near run == rat run); 0 non-degenerate D. The F-INV membership of each family is census-determined, so post-selection the expected near class per selected family is pinned BEFORE any kernel run.",
+  "float_direction_in_finv": "Pre-run arithmetic over all 379 pool F-INV cells: float pressure sign +1 (UP) in 379/379, -1 (DOWN) in 0, 0 in 0. The float move is dd*sigma2 - n >= dd*SQRT2*2^-52 > 0 after the sum's rounding — UP always in this pool.",
+  "far_arm_directions": "irrFar = sqrt2: both planes move together (byte-identical, E-Q9 E6); direction DOWN -1 iff sigma = n/dd > sqrt2. Pre-run arithmetic: 953 of the 1,134 pool families have sigma > sqrt2 (expected DOWN count in 16 moth-chosen families: 16*953/1134 = 13.45). These are B-class both-move events, NOT the artifact: no fixed-hold is involved.",
+  "moth_budget": "MAX 2 jobs (lane-tight, tighter than the client's E-X5 module cap of 4). Job 1 primary at shots=1024. Reserve job 2 spent ONLY if job 1's von Neumann output < 256 bits (the selection needs ~118 bits = log2 C(1134,16); 256 is margin); then VN runs over the CONCATENATED raw streams in order. If job 1 fails: receipt the FAIL, spend job 2 once, else stop. Unreachable/failed API => honest FAIL verdict file, zero deep trace, everything committed AS RUN.",
+  "key_and_archive_law": "MOTH_KEY only ever read at runtime by the client (moth_client.mjs, VERBATIM copy of pt-exoj/experiments/moth_bits.mjs with a provenance header — the live-job-proven wave-41 client); never printed, logged, or committed. Raw bits, VN bits, and the whitened seed block are archived OUTSIDE the repo at /home/z/my-project/scripts/42b-moth-bits/ (key-free) and enter the repo ONLY as sha256 pins. no_leak_scan runs on every file the receipt touches before it is written."
+ },
+ "whitener": {
+  "input": "raw_bits: the job's canonical measurement expansion (distinct 8-bit outcomes sorted ascending, each expanded by its count, MSB-first; moth_client.mjs extractBits — receipted E-D3 shape). Top-20 truncation is carried, not hidden: captured bits < shots*8, receipted as bits_len.",
+  "step_1_von_neumann": "consecutive PAIRS (b0,b1): (0,1)->emit 0; (1,0)->emit 1; (0,0),(1,1)->emit nothing. Removes the 0.63/0.37 balance bias; output rate ~2p(1-p) ~= 0.47 of pairs.",
+  "step_2_byte_pack": "vn_bits MSB-first into bytes; trailing pad bits (0..7) are ZERO and pad_len is receipted.",
+  "step_3_counter_stream": "block_c = SHA-256( u32be(c) || vn_bytes ) for c = 0,1,2,...; the whitened stream is block_0 || block_1 || ... consumed MSB-first. The 256-bit SEED is block_0; whitened_seed_sha256 = SHA-256(block_0). Entropy honesty: the stream beyond the VN output (~1,000 bits expected) is a deterministic SHA-256 PRF EXTENSION of the moth entropy — entropy-bounded by the VN output, receipted as such, replayable byte-exact from the archived raw bits (--bits-from-file).",
+  "step_4_fisher_yates": "over the 1,134-family pool in registered census order: for i = 1133 down to 1: r = next 16 stream bits, rejection-sampled against floor(65536/(i+1))*(i+1); j = r mod (i+1); swap(a[i],a[j]). SELECTED = a[0..15] IN MOTH SHUFFLE ORDER (rank 1..16 receipted); the deep trace runs in that order. No human choice anywhere: the pool order is the registered census order, the permutation is pure moth bits."
+ },
+ "predictions": {
+  "dt_a_near_finv_count": {
+   "claim": "How many of the 16 moth-chosen families show F-INV at near-sigma (fixed BLIND/holds while float moves) vs stay D (both hold): the count follows the pool mixture — hypergeometric(N=1134, K=379, n=16). This is the honest distribution registered BEFORE the job decides which 16.",
+   "hypergeometric_pmf": [0.001412557, 0.011575334, 0.044286197, 0.105005637, 0.17270106, 0.208912573, 0.192274346, 0.137338818, 0.076942832, 0.033922508, 0.011730213, 0.003147963, 0.000642727, 0.000096514, 0.000010052, 6.49e-7, 2e-8],
+   "expected": 5.3474, "modal_k": 5, "p_modal": 0.208912573,
+   "scoring": "full-pmf Brier: sum over k of (p_k - 1[k_observed])^2. Post-selection the census pins each family's expected near class; the runner asserts the registered pmf equals the census-recomputed pmf BEFORE any tick (drift = LOUD abort)."
+  },
+  "dt_b_rat_hold": {
+   "claim": "ALL 16 families at the family point (rat arm): the planes are byte-identical across float/fixed at every tick 0..16 and B stays d=20 every tick. (Writer A may move, but only IDENTICALLY on both planes — dyadic pressures are exactly representable in both kernels; that identity is what byte-identity asserts, E-Q9 E5 precedent.) The dispatcher's headline question: the 7/10-style fixed-DOWN -1 move CANNOT appear here — dyadic dd | 2^32 makes the fixed B pressure exactly zero (T2), so the answer registered is 16 hold / 0 fixed-DOWN -1.",
+   "p": 0.97,
+   "note": "E-Q9 E5 already swept all 1,134 (byte-identical); this deep trace upgrades rows to full trajectories — residual 3% is board-engineering/kernel-drift risk, not arithmetic doubt."
+  },
+  "dt_c_fixed_never_moves": {
+   "claim": "The fixed kernel's B response never moves at rat AND near across all 16 families x 16 ticks (fixed dB === 20 in every per-tick row; every audit cell on those arms has the fixed plane held). Writer A may move identically on both planes — that is not an artifact event and byte-identity covers it. The fixed-DOWN -1 class (the 7/10-style B response) belongs to NON-dyadic A families (17,042 of the 38,911 sweep set); its count in this dyadic deep trace is registered 0.",
+   "p": 0.97
+  },
+  "dt_d_finv_shape": {
+   "claim": "Every census-pinned near-F-INV family: first divergence at tick 1, exactly ONE cell at B (6,2), |dd|=1, fixed held & float moved, pre-tick planes byte-identical, tau preserved — DIV1-FINV under the E-Q9 taxonomy.",
+   "p": 0.93
+  },
+  "dt_e_float_direction": {
+   "claim": "Every F-INV float move is UP +1 (float d 20->21), matching the pre-run arithmetic 379/379 positive-sign cells.",
+   "p": 0.90
+  },
+  "dt_f_degenerate_match": {
+   "claim": "Every census-pinned near-degenerate family (sigma >= 4): the near run is byte-identical to its rat run on BOTH kernels (17/17 plane hashes) — the float plane literally cannot see the irrational step there.",
+   "p": 0.95
+  },
+  "dt_g_far_arm": {
+   "claim": "Far arm (sqrt2): plane hashes byte-identical across kernels at every tick for all 16, both planes move every tick, and the shared d-response direction is DOWN -1 exactly for the selected families with sigma > sqrt2 (pre-run pool arithmetic: 953/1,134) — B-class both-move, zero fixed-hold, zero UNEXPLAINED.",
+   "p": 0.90
+  },
+  "dt_h_d1": {
+   "claim": "Determinism (EQ9-D1 at deep-trace scale): every (family x arm x kernel) run twice from fresh construction — byte-identical plane-hash sequences, event-seq hashes, snapshot hashes, compact per-tick strings.",
+   "p": 0.99
+  },
+  "dt_i_zero_unexplained": {
+   "claim": "Zero UNEXPLAINED cells under the E-Q9 extended taxonomy (SIGMA-REPRESENTATION / FIXED-BLIND-INVERSION / QUANTIZATION-BLINDNESS; everything else UNEXPLAINED) across all 48 family-arm audits.",
+   "p": 0.90
+  },
+  "dt_j_control_inert": {
+   "claim": "No-twin control (A -> Ground) at the rat arm for each of the 16: sigmaInert — float and fixed control planes byte-identical, equal event-seq and snapshot hashes (E-Q8/E-Q9 control precedent).",
+   "p": 0.95
+  },
+  "dt_k_drift_guard": {
+   "claim": "Kernel-drift guard BEFORE any deep-trace tick: the E-Q8 6x3 board rebuilt for 2/3 and 8/5 reproduces the RECEIPTED E-Q8 plane hashes byte-for-byte (17/17 ticks, float and fixed, from e_q8_results.json on disk).",
+   "p": 0.99
+  }
+ },
+ "brier_scoreable_events": "DT-A (full-pmf) + DT-B..DT-K (binary, (p-o)^2 each; mean reported over the 10 binary events). All scored AS RUN in situations/eq9_deep_trace_moth.md; nothing edited post-run.",
+ "falsifier": {
+  "statement": "Any of: a fixed-kernel move at rat or near (DT-C), a fixed hold while float holds NOWHERE expected / float hold while fixed moves at a family point (T2 violation), a census-pin mismatch of any kind, a D1 failure, or any UNEXPLAINED cell — recorded AS RUN and the verdict ships the honest FAIL standing.",
+  "commitment": "predictions p's and the pmf above are frozen now; the verdict may add explanations but may not edit a prediction, a p, or the whitener recipe."
+ },
+ "quality_bar": "zero UNEXPLAINED cells; every prediction scored; holes listed if any exist — a FAIL ships honestly.",
+ "standing_offer_skeleton": "If the pipeline lands (registered events pass, zero holes), the verdict file carries the fleet offer: moth = registered randomness/ordering instrument for fleet experiments, whitening recipe attached (this file's 'whitener' block), one graph-v1 job ~4s and ~1,000 VN bits at shots=1024, budget-priced with fail-closed behavior.",
+ "receipts_cited": {
+  "moth_client": "experiments/moth_client.mjs — VERBATIM copy of pt-exoj/experiments/moth_bits.mjs (E-X5), live-job-proven wave 41 (job 5517f11b-b87b-4b75-ad47-908601e4fbca, receipt in playtest-wave41/ports-and-moth.md), provenance quilt-dba/dba/mothqrc.mjs (E-D3) <- quilt-murmur/murmur/moth.mjs",
+  "not_a_qrng": "wave-41 live receipt: balance 0.6288, top-20 truncation (4,432/8,192 bits) -> WHITEN BEFORE USE (this file's whitener block is that law operationalized)",
+  "e_q9_machinery": "experiments/e_q9_sweep.mjs (8e8578e registration, e7634ef run+verdict): census recompute + sha 552d171c… assert, board geometry, runOnce, auditPair, EQ8 drift guard — all VERBATIM here",
+  "census": "experiments/eq9_family_census.mjs -> outputs/eq9_census.json (306,773 fractions, ZERO kernel runs; T2: 0 violations)"
+ },
+ "task_id": "42-b",
+ "agent": "moth-smith (lane)",
+ "wave": 42,
+ "repo": "SuperInstance/qthe",
+ "registered_before_run": "YES — zero moth jobs spent and zero deep-trace kernel ticks executed at seal time; the seed receipt (experiments/outputs/eq9dt_seed_receipt.json) did not exist. Git history is the witness."
+}

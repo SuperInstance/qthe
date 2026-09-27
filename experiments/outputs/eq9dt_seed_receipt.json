@@ -1,0 +1,204 @@
+{
+ "receipt": "E-Q9-DT seed receipt (task 42-b, wave 42, lane moth-smith) — AS RUN. Whitener + selection exactly as registered in situations/eq9_deep_trace_registration.json (PRE-RUN). No key material anywhere in this file.",
+ "mode": "live",
+ "ok": true,
+ "verdict": "SEED_OK",
+ "moth": {
+  "engine": "graph-v1",
+  "shots": 1024,
+  "jobs": [
+   {
+    "seq": 0,
+    "engine": "graph-v1",
+    "job_id": "2caa822b-7c46-4f65-a0c9-152c46272e19",
+    "backend": "aer",
+    "shots": 1024,
+    "mode": "emu",
+    "live": true,
+    "mock": false,
+    "submitted_at": "2026-09-27T19:55:42.195Z",
+    "completed_at": "2026-09-27T19:55:48.294Z",
+    "latency_ms": 4138,
+    "ok": true,
+    "why": null,
+    "bits_len": 4848,
+    "ones": 2666,
+    "balance": 0.5499,
+    "distinct_outcomes": 20,
+    "bits_sha256": "ebc8a43d90be5c0b01788f7cc63021ab0b0dac1a0294756e73a2882360b5e9b9"
+   }
+  ],
+  "budget": {
+   "jobs_used": 1,
+   "max_jobs": 2
+  }
+ },
+ "raw_bits": {
+  "len": 4848,
+  "sha256": "ebc8a43d90be5c0b01788f7cc63021ab0b0dac1a0294756e73a2882360b5e9b9",
+  "archive": "/home/z/my-project/scripts/42b-moth-bits/raw_bits_2caa822b-7c46-4f65-a0c9-152c46272e19.txt",
+  "note": "archived OUTSIDE the repo (key-free); sha-pinned here"
+ },
+ "whitening": {
+  "recipe": "STEP1 von Neumann debias (pairs 01->0, 10->1, 00/11 discard) -> STEP2 MSB-first byte pack (trailing zero pad, pad_len receipted) -> STEP3 SHA-256 counter stream block_c = SHA256(u32be(c) || vn_bytes), consumed MSB-first -> STEP4 Fisher-Yates over the 1,134-family pool (registered census order dd asc, n asc), 16-bit rejection-sampled draws, selected = first 16 IN MOTH SHUFFLE ORDER",
+  "vn_bits_len": 1254,
+  "vn_pair_stats": {
+   "pairs": 2424,
+   "emit0": 1015,
+   "emit1": 239,
+   "discard00": 464,
+   "discard11": 706
+  },
+  "vn_bits_sha256": "679460013c0f38d381ba51cd0ba0de8c06a00384e92a6db040f30b05a2b09189",
+  "vn_bytes_len": 157,
+  "vn_pad_len": 2,
+  "vn_bytes_sha256": "4477ebbfe3069445ee65a4d20a582de6527cac811f6072366064b97566eea179",
+  "whitened_seed_block0_sha256": "836985ec99d5e5e69cef6445ce5bf33b3b232c2ce0733ca72f9b88d244e8ddeb",
+  "whitened_seed_block0_hex_archive": "/home/z/my-project/scripts/42b-moth-bits/whitened_seed_block0_2caa822b-7c46-4f65-a0c9-152c46272e19.hex"
+ },
+ "selection": {
+  "pool_size": 1134,
+  "pool_def": "stable && rat.cls==D (E-Q9 census, sha asserted in-run), census order",
+  "n_deep_traced": 16,
+  "entropy_note": "selection needs ~118 bits (log2 C(1134,16)); stream beyond the VN output is a deterministic SHA-256 PRF extension of the moth entropy — receipted honestly, replayable from the archived raw bits"
+ },
+ "selected_moth_order": [
+  {
+   "rank": 1,
+   "pool_idx": 191,
+   "n": 192,
+   "dd": 1,
+   "sigmaKey": "192/1",
+   "dd_dyadic": true
+  },
+  {
+   "rank": 2,
+   "pool_idx": 560,
+   "n": 113,
+   "dd": 8,
+   "sigmaKey": "113/8",
+   "dd_dyadic": true
+  },
+  {
+   "rank": 3,
+   "pool_idx": 613,
+   "n": 219,
+   "dd": 8,
+   "sigmaKey": "219/8",
+   "dd_dyadic": true
+  },
+  {
+   "rank": 4,
+   "pool_idx": 600,
+   "n": 193,
+   "dd": 8,
+   "sigmaKey": "193/8",
+   "dd_dyadic": true
+  },
+  {
+   "rank": 5,
+   "pool_idx": 93,
+   "n": 94,
+   "dd": 1,
+   "sigmaKey": "94/1",
+   "dd_dyadic": true
+  },
+  {
+   "rank": 6,
+   "pool_idx": 378,
+   "n": 1,
+   "dd": 4,
+   "sigmaKey": "1/4",
+   "dd_dyadic": true
+  },
+  {
+   "rank": 7,
+   "pool_idx": 373,
+   "n": 243,
+   "dd": 2,
+   "sigmaKey": "243/2",
+   "dd_dyadic": true
+  },
+  {
+   "rank": 8,
+   "pool_idx": 319,
+   "n": 135,
+   "dd": 2,
+   "sigmaKey": "135/2",
+   "dd_dyadic": true
+  },
+  {
+   "rank": 9,
+   "pool_idx": 247,
+   "n": 248,
+   "dd": 1,
+   "sigmaKey": "248/1",
+   "dd_dyadic": true
+  },
+  {
+   "rank": 10,
+   "pool_idx": 118,
+   "n": 119,
+   "dd": 1,
+   "sigmaKey": "119/1",
+   "dd_dyadic": true
+  },
+  {
+   "rank": 11,
+   "pool_idx": 540,
+   "n": 73,
+   "dd": 8,
+   "sigmaKey": "73/8",
+   "dd_dyadic": true
+  },
+  {
+   "rank": 12,
+   "pool_idx": 231,
+   "n": 232,
+   "dd": 1,
+   "sigmaKey": "232/1",
+   "dd_dyadic": true
+  },
+  {
+   "rank": 13,
+   "pool_idx": 1027,
+   "n": 39,
+   "dd": 128,
+   "sigmaKey": "39/128",
+   "dd_dyadic": true
+  },
+  {
+   "rank": 14,
+   "pool_idx": 804,
+   "n": 97,
+   "dd": 32,
+   "sigmaKey": "97/32",
+   "dd_dyadic": true
+  },
+  {
+   "rank": 15,
+   "pool_idx": 130,
+   "n": 131,
+   "dd": 1,
+   "sigmaKey": "131/1",
+   "dd_dyadic": true
+  },
+  {
+   "rank": 16,
+   "pool_idx": 668,
+   "n": 77,
+   "dd": 16,
+   "sigmaKey": "77/16",
+   "dd_dyadic": true
+  }
+ ],
+ "no_leak_scan": {
+  "filesScanned": 3,
+  "keyMatches": [],
+  "patternMatches": [],
+  "clean": true,
+  "receipt_self_scan": "CLEAN"
+ },
+ "submitted_at": "2026-09-27T19:55:42.194Z",
+ "ended_at": "2026-09-27T19:55:49.556Z"
+}
