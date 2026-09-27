@@ -1,0 +1,91 @@
+{
+  "wave": "33-c",
+  "selected_call_n": [
+    8,
+    9,
+    12
+  ],
+  "criteria": "CR1: floor must be quantitative and falsifiable from the trace alone (pre-registerable without re-reading the prose). CR2: must price an OPEN claim (C2/C4/C5) or a review finding (R1/R3) — no situation that only decorates. CR3: must run on the reference kernel AS SPECDED (wormhole table + Moore-8 + timbre table) with no new primitives.",
+  "decided_by": "situation-smith lane (post-hoc selection pass over WRAPPER fields only — DeepSeek content untouched)",
+  "decided_at": "2026-09-27T06:11:47Z",
+  "basis": "criteria receipted beside the selection; the three marked rows are the RECOMMENDED feed for E-Q6",
+  "criteria_named": {
+    "CR1": "floor must be quantitative and falsifiable from the trace alone",
+    "CR2": "must price an OPEN claim (C2/C4/C5) or a review finding (R1/R3)",
+    "CR3": "must run on the reference kernel as-specded (no new primitives)"
+  },
+  "scoring": [
+    {
+      "call_n": 8,
+      "name": "armor-ring-portal-pincer",
+      "CR1": "median ticks-to-reseal <= 12 AND heal ratio >= 0.90 with OFF-arm >= 25% slower — two-sided falsifier",
+      "CR2": "prices C5 (the founder-named armor-ring scenario) with C2/C3/C4 arms adjacent",
+      "CR3": "deterministic adversarial portal injections, kernel-only",
+      "verdict": "SELECTED (coverage: C5)"
+    },
+    {
+      "call_n": 9,
+      "name": "knife-edge-checkerboard-cascade",
+      "CR1": "per-seed bands: ON >= 90% inversion <= 128 ticks in 4/5 seeds; OFF < 50% in 4/5 — both arms falsifiable",
+      "CR2": "prices C4 (theta threshold) AND C2 on one substrate with a single-byte input",
+      "CR3": "checkerboard + seam + planted Abstain, kernel-only",
+      "verdict": "SELECTED (coverage: C4)"
+    },
+    {
+      "call_n": 12,
+      "name": "slot-collision-cooker",
+      "CR1": "EXACT predicted value: distinct twin-resonance firers == 0 under 64-way LWW contention — the strongest pre-registration shape possible (a point prediction)",
+      "CR2": "physicalizes R3, this lane's own CRITICAL review finding (LWW under-specified write order) — reviewer-output-to-experiment closure",
+      "CR3": "64x1 substrate, cheapest possible E-Q6 run, kernel-only",
+      "verdict": "SELECTED (coverage: R3/M4, near-zero compute)"
+    },
+    {
+      "call_n": 10,
+      "name": "moore-handed-race-c2",
+      "CR1": "ON <= 40 ticks AND ON < OFF/2 in 3/3 seeds — excellent",
+      "CR2": "cleanest C2 design of the nine",
+      "CR3": "kernel-only",
+      "verdict": "runner-up: why_interesting field lost to the guest's schema slip in the raw JSON (first-object parse drops trailing content; raw sealed verbatim in guest_rows.jsonl call 10) — E-Q6 can promote it after a re-ask"
+    },
+    {
+      "call_n": 7,
+      "name": "abstain-slot-contention-storm",
+      "CR1": "R <= 0.35 + writers/slot >= 32",
+      "CR2": "C2 under adversarial load",
+      "CR3": "kernel-only",
+      "verdict": "runner-up (overlaps 12 for collision physics)"
+    },
+    {
+      "call_n": 11,
+      "name": "channel-shear-r2-crossing",
+      "CR1": "byte-identical-traces prediction (Hamming 0.0000) — decisive either way",
+      "CR2": "prices R2 (commutation) — recommended to the REVIEW lane rather than E-Q6",
+      "CR3": "kernel-only",
+      "verdict": "runner-up (re-route: review lane)"
+    },
+    {
+      "call_n": 6,
+      "name": "wormhole-chain-baton",
+      "CR1": "arm A >= 0.99, arm B <= 0.01",
+      "CR2": "M4 collisions as routing hazard",
+      "CR3": "kernel-only",
+      "verdict": "runner-up; RAW JSON MALFORMED (guest omitted substrate_spec closing brace): the declared brace-close repair nests task/metric/floor/why_interesting inside substrate_spec — content preserved AS SAID, structure marked, not fabricated"
+    },
+    {
+      "call_n": 13,
+      "name": "saturation-front-twin-at-the-rails",
+      "CR1": ">= 1 bridge by tick 40, ON > OFF by 200",
+      "CR2": "C2 at the A2 bounds",
+      "CR3": "kernel-only",
+      "verdict": "runner-up (overlaps 7/12)"
+    },
+    {
+      "call_n": 14,
+      "name": "abstain-echo-chamber-trilemma",
+      "CR1": "3/4 cells same class, modal != saturating + period band",
+      "CR2": "C3/C4 via R1 physics",
+      "CR3": "kernel-only",
+      "verdict": "runner-up (oscillator classification needs a classifier spec before it is pre-registerable)"
+    }
+  ]
+}
