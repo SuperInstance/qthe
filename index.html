@@ -1,0 +1,58 @@
+<!doctype html>
+<!-- qthe A2UI live mirror — the SPEC LAYER 1 item 7 telemetry: pixel = cell,
+     6-bit value = intensity, direct buffer-to-canvas, no log files.
+     ZERO dependencies, no build, no CDN. The SAME ../qthe.mjs kernel the
+     tests seal runs here, unmodified, via <script type="module">.
+     NOTE: ES modules need http(s) in some browsers — if file:// refuses,
+     serve this dir:  python3 -m http.server 8080  →  localhost:8080 -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>qthe — the Looking Glass, live</title>
+<style>
+  :root { color-scheme: dark; }
+  body { margin: 0; background: #0b0b10; color: #c9c9d4;
+         font: 13px/1.45 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+  main { max-width: 640px; margin: 2rem auto; padding: 0 1rem; }
+  h1 { font-size: 15px; font-weight: 600; color: #e8e8f2; margin: 0 0 2px; }
+  h1 span { color: #a86ae8; }                       /* the Abstain purple */
+  p.sub { margin: 0 0 12px; color: #6f6f80; }
+  canvas { display: block; width: 100%; image-rendering: pixelated;
+           border: 1px solid #23232e; background: #0b0b10; }
+  #hud { margin: 8px 0; padding: 6px 8px; background: #12121a;
+         border: 1px solid #23232e; white-space: nowrap; overflow: hidden;
+         text-overflow: ellipsis; }
+  #hud b { color: #7fdc87; font-weight: 600; }      /* the live trace hash */
+  #hud .off { color: #e07a7a; }
+  .row { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; }
+  button { background: #16161f; color: #c9c9d4; border: 1px solid #2c2c3a;
+           padding: 5px 10px; font: inherit; cursor: pointer; }
+  button:hover { border-color: #4a4a5e; color: #ffffff; }
+  button.on { border-color: #a86ae8; color: #d9b8ff; }
+  .legend { margin-top: 10px; color: #6f6f80; }
+  .legend i { font-style: normal; }
+  .g { color: #4fd45f; } .r { color: #e05a5a; } .k { color: #55555f; }
+  .p { color: #b06ae8; }
+</style>
+</head>
+<body>
+<main>
+  <h1>qthe <span>· the Looking Glass, live</span></h1>
+  <p class="sub">one byte = 6-bit amplitude d + 2-bit timbre τ · the same kernel tests/run_tests.mjs seals</p>
+  <canvas id="sub" width="96" height="64"></canvas>
+  <div id="hud">booting…</div>
+  <div class="row">
+    <button id="b-ring">Seed: armor ring</button>
+    <button id="b-rand">Seed: random</button>
+    <button id="b-worms">Seed: twin worms</button>
+    <button id="b-pause">Pause</button>
+    <button id="b-wh" class="on">wormholes ON</button>
+  </div>
+  <p class="legend">τ=1 <i class="g">Attract ▮ green</i> · τ=2 <i class="r">Repel ▮ red</i> ·
+     τ=0 <i class="k">Ground ▮ gray</i> · τ=3 <i class="p">Abstain ▮ purple</i> —
+     it blinks when the wormhole table answers (twin resonance)</p>
+</main>
+<script type="module" src="demo/a2ui.mjs"></script>
+</body>
+</html>
