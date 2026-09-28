@@ -1,0 +1,45 @@
+{
+  "receipt": "E-Q11 REGISTRATION — the guest's PARKED LEVER discharged (task 46-c, wave 46, lane eq11-discharger). Sealed BEFORE any evaluation run against the committed result sets, BEFORE any LLM call of this lane, and BEFORE any new compute beyond the registered derivation-subset QA (disclosed below). Zero kernel ticks exist in this lane. Pricing-first law: this file, situations/eq11_predictions.json and experiments/e_q11_collapse_predicate.mjs were committed together PRE-RUN; git history is the witness.",
+
+  "name_law": "Registered id: E-Q11 — the GUEST-OWNED parked lever of the E-Q series, named by E-Q10's verdict as the natural next seed. The lane DISCHARGES the lever; it does not rename it (the E-Q* numbering belongs to the tavern guest per situations/eq9_deep_trace_registration.json name_law, kept standing). Source: the guest's round-9 q1 next_lever (situations/guest_rows_r9_keyed.jsonl, call_id r9-q1-scoreboard-move), parked — not executed — at E-Q10 because the E-Q10 seat was q2 by sealed prompt.",
+
+  "lever_as_said": {
+    "title": "Closed-form sigma predicate for the A+D float-collapse set",
+    "why_verbatim": "E-Q9 established the artifact is family-specific (A+D = 90.67%, fails on B∪C) but characterized it by family membership on a swept grid. A closed-form predicate — e.g. a rational-arithmetic condition on sigma_q and the reader/writer acc-resonance pair that decides membership without enumeration — would convert the 90.67% from a measured fraction into a proven set, and would let the fleet predict collapse-set membership for sigma values",
+    "truncation_disclosure": "The registered row is one of E-Q10's five max_tokens-truncated completions (1000 tokens, scored FAIL in E-Q10 Q1 AS RUN): the why_verbatim text above ENDS mid-sentence at 'for sigma values'. The sealed receipt is the law as far as it goes; this lane does not invent the guest's missing words. The natural completion ('...outside the swept grid') is treated as UNREGISTERED intent and is honored only as the disclosure that out-of-grid prediction is a GOAL, not a claim: no kernel ground truth exists beyond the stable box (the board physically cannot host acc beyond the 252 Repel-mass cap), so out-of-grid behavior is reported as ARITHMETIC-ONLY extension (Q6), never as a kernel-verified result.",
+    "residual_risk_it_answers": "guest q1 residual_risks[0]: 'The 90.67% A+D collapse-set fraction is measured on the swept family grid; whether it holds for arbitrary rational sigma outside the 38,911 stable exact-zero families is not yet receipted — the boundary of the collapse set is characterized by family membership, not by a closed-form sigma predicate.'"
+  },
+
+  "the_predicate": {
+    "module": "experiments/e_q11_collapse_predicate.mjs",
+    "formulation": "For a k=1 uncoupled exact-zero family sigma = n/dd (lowest terms) with reader acc = −n, writer resonance r = dd, writer acc = −(dd−1) (the registered family law, eq9_family_census.mjs): true t=1 twin pressure on the reader is −n + dd·(n/dd) = 0 exactly; the kernels diverge ONLY through representation. E(n,dd) := R53(dd · R53(n/dd)) == n where R53 is the IEEE-754 double64 round-to-nearest-even map (bit-exact BigInt implementation, no native float in the decision path). THE COLLAPSE SET A+D := { (n,dd) : E(n,dd) }. X(n,dd) := dd·round(R53(n/dd)·2^32) == n·2^32 (the fixed kernel's R8 law; X ⟺ dd dyadic given gcd=1 — the T2 theorem). class := E∧X→D | E∧¬X→A | ¬E∧X→F-INV | ¬E∧same-sign→B | else C. The predicate is O(1) in (n,dd), consumes exactly the guest's named quantities (sigma_q through X; the reader/writer acc-resonance pair through n and dd), and decides membership WITHOUT enumeration of the grid and WITHOUT running either kernel — the same closed-arithmetic status as the repo's own sigmaToFixed door (round(sigma·2^32)).",
+    "why_this_is_the_lever": "E-Q9's census classifier (classify() in e_q9_sweep.mjs) already embodied this arithmetic, but it was never REGISTERED as a standalone closed-form artifact, never isolated from the sweep harness, never implemented without native floats, and never tested against the kernel-OBSERVED row taxonomy as a named claim. E-Q11 makes the formulation itself the deliverable and seals its reproduction claims before the evaluation run.",
+    "provenance_and_derivation_law": "The FORM was derived from committed artifacts only: qthe.mjs tick() (term = hit.resonance*sigma; pressure = acc + term; nextD consumes sign only), fixedpoint/qthe_fixed.mjs R8 (pressure = acc*S + resonance*sigmaQ; sigmaToFixed = Math.round(sigma*2^32)), the committed guest-named families (2/3: float term '2' vs fixed 2S+1; 8/5: '8' vs 8S+2; 7/10: '7' vs 7S−2), and the committed census/DT receipts. PRE-SEAL IMPLEMENTATION QA (disclosed, registered HERE before the seal): the BigInt R53/sigmaQ/classifier were bit-checked against native IEEE-754 on the DERIVATION SUBSET dd ≤ 32, n ≤ 504, gcd=1 (10,010 pairs; 0 disagreements of any kind). The full-space cross-check (all 306,773 census-box fractions) is sealed prediction Q5 — genuinely unrun at seal time.",
+    "circularity_mediation": "Matching the committed census LABELS alone would be near-tautological (the census classifier is arithmetic). The sealed tests therefore bind the predicate to: (i) the kernel-OBSERVED row taxonomy (obs/fd/nc/bi/cls/dds fields of eq9_sweep_rows.jsonl — what the boards actually did over 17 ticks, E1-receipted equal to the census at sweep time), (ii) an independent no-native-float implementation (Q5), (iii) byte-level primary/DT term values (Q7), (iv) the E-Q10 sigma-inertness structure (Q8). An independent LLM derivation seat runs POST-seal as a cross-check only — it cannot have edited the sealed predicate (Q9)."
+  },
+
+  "domain_and_honest_remappings": {
+    "domain": "The predicate's domain is the rat arm (the family point, sigma = n/dd exactly): 38,911 stable runnable families (n ≤ 252, dd ≤ 253, gcd=1) plus the full registered census box (n ≤ 504, dd ≤ 1000, gcd=1 — 306,773 fractions) for the extension claims. The near/far arms are OUT of domain (irrational sigmas; their committed classes are reported as out-of-domain facts, never scored).",
+    "template_remapping_disclosed": "The dispatch brief's template claim 'P2: it VOIDs exactly the committed VOID set (byte-identical)' is honestly N/A and is remapped: the inherited E-Q5/E-Q10 per-trial VOID clause is CARVE-GEOMETRY arithmetic (60 ≤ carved ≤ 120 AND post-damage integrity < 0.95; seeds 55001..55020 through mulberry32 cut angles — experiments/e_q10_armor_injector.mjs verbatim), NOT family/sigma arithmetic. The armor ring hosts no Abstain cell, so no sigma ever enters and the collapse predicate has NO VOID hook there. The byte-identity form of the template claim is honored where it has a real referent: the predicate's non-collapse set must equal the committed B∪C key set BYTE-IDENTICALLY (sealed Q4). firstZeroTick=105 is claimed as the committed arithmetic it is (50 + 55; Q8), not as a sigma effect.",
+    "out_of_scope": "Multi-tick drift (e.g. the E-Q9-DT dt_b letter-fire: B drifts −1/tick IDENTICALLY on both kernels at late ticks from ring-erosion acc drift) is a t≥2 DYNAMICS fact; the predicate is the t=1 twin-pressure sign law plus the kernel-receipted 16-tick identity law (E3/E5). The predicate makes no trajectory claim — that letter-fire stays retired AS RUN, not relabeled."
+  },
+
+  "falsifier": "ANY of: (1) a committed rat-arm row (all 38,911) whose committed cq or obs taxonomy the sealed predicate misclassifies (Q1/Q2/Q3 mismatch); (2) the predicate's non-collapse set differing from the committed B∪C key set by even one key (Q4); (3) a single BigInt-vs-native classification disagreement anywhere in the 306,773-fraction census box (Q5); (4) any committed census aggregate, primary term value, or DT family contradicting the predicate's arithmetic (Q6/Q7); (5) the E-Q10 hook claims failing on the committed results (Q8). Any one kills the closed-form claim AS STATED; the lever goes back PARKED with this receipt and the honest FAIL standing.",
+
+  "budget_law": {
+    "llm_calls": "≤ 2 wire requests planned (≤ 4 allowed), deepseek-chat derivation cross-check, max_tokens 4000, raw bodies receipted AS SAID; the VERDICT is arithmetic only — the LLM seat cannot move any Q1..Q8 outcome.",
+    "kernel_compute": "ZERO new kernel runs registered (the lever is a formulation lever; the committed result sets are the test bed). Moth jobs 0 (no sampling needed). Network: only the registered deepseek calls."
+  },
+
+  "artifacts_sealed_with_this_file": {
+    "predictions": "situations/eq11_predictions.json",
+    "predicate_module": "experiments/e_q11_collapse_predicate.mjs",
+    "sealed_at": "2026-09-28T00:52:42Z",
+    "predicate_sha256_at_seal": "d4c3e54b6b80fac422dad8d24dabd8db618f04505b5ba6f8c33f317c62fb7fdd"
+  },
+
+  "task_id": "46-c",
+  "agent": "eq11-discharger (lane)",
+  "wave": 46,
+  "repo": "qthe @ 0f5be9d (reused clone /home/z/my-project/pt45b-q, fetched+rebased before work; disclosed reuse per dispatch brief option (a))"
+}

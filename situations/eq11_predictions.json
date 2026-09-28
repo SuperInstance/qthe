@@ -1,0 +1,96 @@
+{
+  "receipt": "E-Q11 PREDICTIONS — the guest's parked closed-form A+D collapse-set predicate (task 46-c, wave 46, lane eq11-discharger). Sealed BEFORE any evaluation run against the committed result sets, BEFORE any deepseek wire request of this lane, and BEFORE any full-space compute. The only compute executed at seal time is the REGISTERED derivation-subset QA (dd ≤ 32, n ≤ 504, gcd=1 — 10,010 native bit-level checks, 0 disagreements; disclosed in eq11_lever_registration.json). Zero kernel ticks exist in this lane. Pricing-first law: this file and the predicate module were committed together PRE-RUN; git history is the witness.",
+
+  "name_law": "E-Q11 = the guest's r9-q1 parked lever, discharged not renamed (see eq11_lever_registration.json). The registered row is max_tokens-truncated mid-sentence; the truncation is part of the receipt and no missing words are invented.",
+
+  "what_runs": {
+    "experiment": "CLOSED-FORM PREDICATE EVALUATION — no kernel runs, no board, no ticks. experiments/e_q11_eval.mjs evaluates the sealed predicate module (experiments/e_q11_collapse_predicate.mjs, sha256 d4c3e54b6b80fac422dad8d24dabd8db618f04505b5ba6f8c33f317c62fb7fdd at seal) against the COMMITTED result sets: eq9_sweep_rows.jsonl sha 9ae74556… (116,733 rows; the 38,911 rat-arm rows are the test bed), eq9_census.json sha dc30540c… (committed aggregates), eq9_sweep_results.json sha b6bde5f0… (primary term receipts), eq9dt_results.json sha 9cca85cf… (16 moth-ordered dyadic families), e_q10_results.json sha 33b9c99d… (byte-identical to the committed E-Q10 receipt) + the committed E-Q10 runner text. Plus ONE post-seal deepseek derivation cross-check (Q9), raw bodies receipted AS SAID.",
+    "llm_seat": "deepseek-chat derivation cross-check, max_tokens 4000, temperature 1.0, ≤ 2 wire requests (≤ 4 allowed), key from env only, raw bodies under situations/raw_eq11/. Runs AFTER this seal — it cannot have edited the sealed predicate; scored as a cross-check receipt, never as arithmetic.",
+    "provenance_floor": "every committed input sha listed above is re-asserted from disk at eval time; a drift is a LOUD abort before any scoring."
+  },
+
+  "predictions": [
+    {
+      "id": "Q1",
+      "claim": "COLLAPSE MEMBERSHIP (the lever's core): the sealed predicate E(n,dd) = R53(dd·R53(n/dd))==n reproduces the committed A+D float-collapse-set membership on ALL 38,911 committed rat-arm rows — collapse == (cq ∈ {A,D}) with ZERO mismatches.",
+      "p": 0.93,
+      "failMeans": "any single row where predicate membership != committed A+D membership"
+    },
+    {
+      "id": "Q2",
+      "claim": "FOUR-CLASS PARTITION: the sealed classifier reproduces the committed census class of every rat row (cls == cq 38,911/38,911) and the committed stable counts exactly: A 34,144 / B 1,729 / C 1,904 / D 1,134 / F-INV 0.",
+      "p": 0.9,
+      "failMeans": "any row-level class mismatch or any count off by even 1"
+    },
+    {
+      "id": "Q3",
+      "claim": "OBSERVED-TAXONOMY BYTE REPRODUCTION: from (n,dd) alone the predicate predicts the committed kernel-observed row fields — obs, fd, nc, bi, cls (cell classes), dds — matching all 38,911 committed rat rows on ALL six fields (mapping: A→DIV1-A/1/1/false/[SIGMA-REPRESENTATION]/[fxSign]; B→IDENTICAL-MOVE/−1/0/true/[]/[]; C→DIV1-C/1/1/false/[QUANTIZATION-BLINDNESS]/[2·fxSign]; D→IDENTICAL-HOLD/−1/0/true/[]/[]).",
+      "p": 0.85,
+      "failMeans": "any row where any predicted field differs from the committed row"
+    },
+    {
+      "id": "Q4",
+      "claim": "COMPLEMENT BYTE-IDENTITY (the brief's VOID-claim remapping, the honest referent): the predicate's non-collapse key set (¬E) equals the committed B∪C key set (3,633 keys) BYTE-IDENTICALLY as sorted lists; zero committed B∪C key inside E, zero committed A∪D key outside E. The original E-Q5/E-Q10 VOID clause itself is carve-geometry arithmetic with no sigma hook — honestly N/A for a sigma predicate (disclosed in the registration).",
+      "p": 0.93,
+      "failMeans": "any difference between the two sorted key lists"
+    },
+    {
+      "id": "Q5",
+      "claim": "IMPLEMENTATION INDEPENDENCE (full space, the only genuinely unrun arithmetic at seal time): over ALL gcd pairs (n ≤ 504, dd ≤ 1000) of the registered census box, the BigInt-only R53/sigmaQ/classifier agree exactly with the native IEEE-754 mirror (R53 bit-equal to n/dd; classification equal term-by-term); pair count == 306,773 (committed census total).",
+      "p": 0.82,
+      "failMeans": "any bit or class disagreement in the box, or pair count != 306,773"
+    },
+    {
+      "id": "Q6",
+      "claim": "BOUNDARY EXTENSION (the 90.67% becomes a proven set): the enumeration reproduces the committed region sizes exactly (306,773 total / 38,911 stable / 116,176 kernel-reachable-not-stable / 151,686 out-of-engineering-space); D_full = 2,772 (closed-form: 504 + 9·252 dyadic families, dd ∈ {1,…,512}); F-INV_full = 0 (T2 theorem-level: fixed-hold forces dyadic, dyadic forces E); dyadic ⟹ collapse with 0 violations across the whole box; stable-box collapse fraction == 35,278/38,911 = 0.90661… (the committed 90.67% prose is this fraction rounded). A_full, B_full, C_full on the full box are REGISTERED AS NEW NUMBERS computed at run time (no pre-registered value — honest; they are the predicate's out-of-stable-space predictions and carry NO kernel ground truth, per the truncation disclosure).",
+      "p": 0.95,
+      "failMeans": "any region size, D_full, F-INV_full, or the stable fraction mismatching the committed aggregates"
+    },
+    {
+      "id": "Q7",
+      "claim": "PRIMARY + DT BYTE VALUES: sigmaQFixed(2,3)=2863311531, sigmaQFixed(8,5)=6871947674, sigmaQFixed(7,10)=3006477107; fxPressure = +1/+2/−2; float term exactly 2/8/7 (== n, float holds); classes A/A/A — all equal to the committed guest-named-family receipt (eq9_census.json) and the committed primary term strings (eq9_sweep_results.json termsByTick t=1: '2','8','7'); all 16 committed DT families (192/1, 113/8, 219/8, 193/8, 94/1, 1/4, 243/2, 135/2, 248/1, 119/1, 73/8, 232/1, 39/128, 97/32, 131/1, 77/16) classify D at the rat arm (dyadic), consistent with the DT receipt's byte-identity/zero-kernel-disagreement finding (the dt_b letter about B's t≥2 drift stays retired AS RUN — the predicate makes no trajectory claim).",
+      "p": 0.97,
+      "failMeans": "any sigmaQ, pressure, term, class, or DT classification mismatch"
+    },
+    {
+      "id": "Q8",
+      "claim": "E-Q10 HOOK (sigma-inertness, why the predicate is correctly SILENT there): the committed E-Q10 runner's seedFn packs only tau ∈ {0,1,2} (Ground/Attract/Repel — asserted by scanning the committed source at eval time: zero packByte(3,…) Abstain cells), so tick()'s wormhole path never fires, sigma never enters, and the collapse predicate's domain is empty on the armor ring — the committed C8 fixed==float identity is exactly that receipt; all 17 committed admissible trials carry a2.firstZeroTick == 105 == 50 + 55 (the ring erosion arithmetic, sigma-independent).",
+      "p": 0.99,
+      "failMeans": "any Abstain cell in the committed harness source, any firstZeroTick != 105, or any C8 break in the committed results"
+    },
+    {
+      "id": "Q9",
+      "claim": "INDEPENDENT DERIVATION CROSS-CHECK (post-seal, AS SAID): the deepseek seat returns a parseable response containing an explicit float-hold condition; substantive agreement/disagreement with the sealed predicate is scored honestly at run time and receipted AS SAID — the verdict's arithmetic claims (Q1..Q8) are INDEPENDENT of this event.",
+      "p": 0.6,
+      "failMeans": "unparseable/truncated response, or a derivation that contradicts the sealed form with no self-correction"
+    }
+  ],
+
+  "scoring": {
+    "law": "Brier per event on the registered p, scored AS RUN; mean reported. Honest FAILs stay in the ledger; no p, predicate, or claim is edited post-run (the reasoner slot-3 register: retire the literal, preserve the receipt, re-register the surviving mechanism).",
+    "quality_bar": "the lever DISCHARGES only if Q1..Q8 all land TRUE (Q9 informational); any Q1..Q8 FAIL re-parks the lever with the receipt (the falsifier fired)."
+  },
+
+  "falsifier": "as registered in eq11_lever_registration.json (verbatim): any Q1..Q8 FAIL kills the closed-form claim AS STATED.",
+
+  "registered_before_run": {
+    "sealed_at_utc": "2026-09-28T00:53:30Z",
+    "predicate_sha256_at_seal": "d4c3e54b6b80fac422dad8d24dabd8db618f04505b5ba6f8c33f317c62fb7fdd",
+    "commit_witness": "this file + eq11_lever_registration.json + the predicate module land in the PRE-RUN commit; the eval module, LLM receipts, results, chain and verdict land in the run commit",
+    "mtime_law": "the file mtimes at commit time are the honest witness; no post-run edit of this file"
+  },
+
+  "receipts_cited": [
+    "situations/guest_rows_r9_keyed.jsonl (the parked lever AS SAID, truncated)",
+    "situations/eq10_verdict.md (parked-lever list + C5' resolution)",
+    "situations/eq9_verdict.md (A+D 90.67%, B∪C, T2, primary rows)",
+    "experiments/outputs/eq9_sweep_rows.jsonl / eq9_census.json / eq9_sweep_results.json / eq9dt_results.json",
+    "experiments/outputs/e_q10_results.json + experiments/e_q10_armor_injector.mjs (VOID clause, firstZeroTick, no-Abstain structure)",
+    "qthe.mjs / fixedpoint/qthe_fixed.mjs (the two representation laws the predicate separates)"
+  ],
+
+  "task_id": "46-c",
+  "agent": "eq11-discharger (lane)",
+  "wave": 46,
+  "repo": "qthe @ 0f5be9d"
+}
