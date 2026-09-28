@@ -1,0 +1,15 @@
+Let \( n,d \) be positive coprime integers.  
+Write \( d = 2^a m \) with \( m \) odd.  
+The condition is:
+
+\[
+m \mid n \quad\text{and}\quad a \le 53+\nu_2(n),
+\]
+
+equivalently, since \(\gcd(n,d)=1\),
+
+\[
+\boxed{d \text{ is a power of }2 \text{ and } \nu_2(d)\le 53+\nu_2(n)}.
+\]
+
+Mechanism: \(n/d\) is rounded to a double, so its relative error is at most \(2^{-53}\). Multiplying by \(d\) can recover \(n\) exactly only if the rounding error in \(n/d\) is small enough that the final product rounds back to \(n\). If \(d\) has any odd factor \(>1\), then \(n/d\) has a nonterminating binary expansion, and the roundoff cannot be canceled by multiplication by \(d\). If \(d=2^a\), then \(n/d\) is just \(n\) shifted by \(a\) binary places, so it is exact whenever \(n\) has enough trailing zero bits to absorb the shift within the 53-bit significand. Thus the only possible exact cases are powers of two, and the exponent must not exceed \(53+\nu_2(n)\).

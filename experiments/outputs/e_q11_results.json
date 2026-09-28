@@ -1,0 +1,64 @@
+{
+  "experiment": "E-Q11 — closed-form A+D collapse-set predicate, evaluated against committed result sets",
+  "registration": "situations/eq11_predictions.json",
+  "predicateSha256": "d4c3e54b6b80fac422dad8d24dabd8db618f04505b5ba6f8c33f317c62fb7fdd",
+  "claimsEvaluated": [
+    "Q1",
+    "Q2",
+    "Q3",
+    "Q4",
+    "Q5",
+    "Q6",
+    "Q7",
+    "Q8"
+  ],
+  "passed": 8,
+  "failed": 0,
+  "q9": "deepseek derivation cross-check — run separately by keeper, receipted AS SAID, informational only",
+  "leverDischarged": true,
+  "results": {
+    "pins": {
+      "experiments/e_q11_collapse_predicate.mjs": "d4c3e54b6b80fac422dad8d24dabd8db618f04505b5ba6f8c33f317c62fb7fdd",
+      "experiments/outputs/eq9_sweep_rows.jsonl": "9ae7455693dea9d3d66feb6f0ea775e390b8ba128d57ea1500198bfe1f9b0a04",
+      "experiments/outputs/eq9_census.json": "dc30540ccbdea2f3229a47860844139073abe349a2bdf4a7c3a3e22c0445ea1b",
+      "experiments/outputs/eq9_sweep_results.json": "b6bde5f0187d6ebef346bfbdf384007c4e6938225de738aeea89f2eb79df7928",
+      "experiments/outputs/eq9dt_results.json": "9cca85cfc3dc88fb8337a7130eb7bccb52b555c67c8518789862097e2b62dff5",
+      "experiments/outputs/e_q10_results.json": "33b9c99d0d786e004d0208681a2f3f533482ee228c07b7166fcd5b597dda211c"
+    },
+    "claims": {
+      "Q1": {
+        "pass": true,
+        "detail": "collapse membership over 38,911 rat rows: 38911/38911 match, 0 mismatches"
+      },
+      "Q2": {
+        "pass": true,
+        "detail": "row-level class mismatches: 0; counts {\"A\":34144,\"B\":1729,\"C\":1904,\"D\":1134,\"F-INV\":0} vs committed {\"A\":34144,\"B\":1729,\"C\":1904,\"D\":1134,\"F-INV\":0}: EXACT"
+      },
+      "Q3": {
+        "pass": true,
+        "detail": "six-field byte reproduction over 38,911 rows: 38911 match, 0 differ"
+      },
+      "Q4": {
+        "pass": true,
+        "detail": "¬E keys 3633 vs B∪C keys 3633 (registered 3,633): byte-identical=true"
+      },
+      "Q5": {
+        "pass": true,
+        "detail": "box pairs 306773 (registered 306,773: EXACT); BigInt-vs-native disagreements: 0"
+      },
+      "Q6": {
+        "pass": true,
+        "detail": "regions stable/reachable/out 38911/116176/151686 (registered 38,911/116,176/151,686: EXACT); D_full 2772 (closed form 504+9·252 = 2772: EXACT); F-INV_full 0; dyadic⟹collapse violations 0; stable collapse fraction 0.90663 (= 35,278/38,911, the committed 90.67%)"
+      },
+      "Q7": {
+        "pass": true,
+        "detail": "sigmaQ 2/3=2863311531 8/5=6871947674 7/10=3006477107; fxPressure +1/+2/−2: 1/2/-2; float term == n all three: true; classes A/A/A; DT dyadic families checked 0, bad 0"
+      },
+      "Q8": {
+        "pass": true,
+        "detail": "packByte(3,...) occurrences in committed runner: 0 (registered 0); seedFn tau set: [1,2] (registered within {0,1,2}); admissibleTrials count 17 == 17, trials checked 17, firstZeroTick==105 in all: true (ring erosion 50+55, sigma-independent)"
+      }
+    }
+  },
+  "runAt": "2026-09-28T01:07:36.361Z"
+}
