@@ -1,0 +1,124 @@
+# Scaled float-only artifacts in a ternary kernel
+
+## Setup
+
+Let \( \sigma = n/dd \) with \( \gcd(n,dd)=1 \), \( n,dd \) positive integers. Define
+
+\[
+r \;=\; \mathrm{fl}\!\left(\frac{n}{dd}\right),
+\qquad
+A \;=\; \mathrm{fl}(dd\cdot r),
+\qquad
+A_k \;=\; \mathrm{fl}(k\,dd \cdot r).
+\]
+
+The unscaled artifact exists when \( A \neq n \); the scaled artifact exists when \( A_k \neq k n \).
+
+The key point is that \( A_k \) is **not** generally equal to \( \mathrm{fl}(k A) \). The multiplication \( k\,dd \cdot r \) is a single rounding of the exact product \( (k\,dd)\,r \), whereas \( \mathrm{fl}(kA) \) would round twice. So scaling can change the rounding behavior in a way that is not simply “multiply the unscaled error by \( k \).”
+
+---
+
+## 1. Exact error of the reciprocal rounding
+
+Write
+
+\[
+r = \frac{n}{dd}(1+\delta), \qquad |\delta| \le u = 2^{-53}.
+\]
+
+Then the exact product is
+
+\[
+dd\cdot r = n(1+\delta),
+\]
+
+so the unscaled discrepancy is
+
+\[
+A - n = \mathrm{fl}(n(1+\delta)) - n.
+\]
+
+Since \( n \) is an integer and \( |\delta| \le u \), the quantity \( n(1+\delta) \) lies within \( n u \) of \( n \). For the artifact to occur, this perturbation must be large enough to cross a rounding boundary of the floating-point grid near \( n \).
+
+For \( n \) in the binade \( [2^e, 2^{e+1}) \), the spacing of doubles is \( 2^{e-52} \). Thus the artifact requires roughly
+
+\[
+n u \gtrsim \tfrac12 \cdot 2^{e-52}.
+\]
+
+Since \( n \ge 2^e \), this becomes
+
+\[
+2^e \cdot 2^{-53} \gtrsim 2^{e-53},
+\]
+
+which is exactly the same order as the half-spacing. So the artifact is a borderline phenomenon: it occurs only when \( n(1+\delta) \) falls on the wrong side of the midpoint between \( n \) and its neighbor.
+
+Equivalently, the artifact occurs iff the exact value \( n/dd \) is close enough to a floating-point number \( r \) that \( dd\cdot r \) rounds away from \( n \). This is a condition on the continued-fraction approximation of \( n/dd \) by \( r \).
+
+---
+
+## 2. What changes under scaling by \( k \)
+
+Now consider
+
+\[
+k\,dd \cdot r = k n (1+\delta).
+\]
+
+The exact product is \( k n (1+\delta) \), and we round it to a double. The question is whether
+
+\[
+\mathrm{fl}(k n (1+\delta)) = k n.
+\]
+
+The perturbation is now \( k n \delta \), which is \( k \) times larger in absolute terms. But the spacing of doubles near \( k n \) is also larger: if \( k n \) lies in binade \( [2^{e'}, 2^{e'+1}) \), the spacing is \( 2^{e'-52} \).
+
+The ratio of perturbation to spacing is
+
+\[
+\frac{k n |\delta|}{2^{e'-52}}.
+\]
+
+If \( k n \) is in the same binade as \( n \) (i.e. \( k \) is small enough that \( k n < 2^{e+1} \)), then \( e' = e \), and the ratio becomes
+
+\[
+\frac{k n |\delta|}{2^{e-52}} = k \cdot \frac{n |\delta|}{2^{e-52}}.
+\]
+
+So the perturbation-to-spacing ratio is multiplied by \( k \). This means:
+
+- If the unscaled case was **just barely** on the safe side (ratio slightly below \( 1/2 \)), then scaling by \( k \ge 3 \) can push it over the midpoint, **creating** an artifact.
+- If the unscaled case was **just barely** on the artifact side (ratio slightly above \( 1/2 \)), scaling by \( k \) pushes it further over, so the artifact **persists** (it does not get destroyed by this mechanism alone).
+
+But there is a second effect: when \( k n \) crosses into a higher binade, the spacing doubles, which can **destroy** the artifact. Specifically, if \( k n \ge 2^{e+1} \), then \( e' \ge e+1 \), and the spacing is at least \( 2^{e+1-52} = 2 \cdot 2^{e-52} \). The perturbation is \( k n |\delta| \), which is at most \( k \cdot 2^{e+1} \cdot u \) (since \( n < 2^{e+1} \)). The ratio becomes
+
+\[
+\frac{k n |\delta|}{2^{e'-52}} \le \frac{k \cdot 2^{e+1} \cdot 2^{-53}}{2^{e+1-52}} = \frac{k \cdot 2^{e-52}}{2^{e-51}} = \frac{k}{2}.
+\]
+
+Wait, let’s be more careful. If \( k n \) is in binade \( e' \), then \( 2^{e'} \le k n < 2^{e'+1} \), and spacing is \( 2^{e'-52} \). The perturbation is \( k n |\delta| \le k n \cdot 2^{-53} \). The ratio is at most
+
+\[
+\frac{k n \cdot 2^{-53}}{2^{e'-52}} = \frac{k n}{2^{e'}} \cdot 2^{-1}.
+\]
+
+Since \( k n < 2^{e'+1} \), we have \( k n / 2^{e'} < 2 \), so the ratio is \( < 1 \). It can still exceed \( 1/2 \) if \( k n / 2^{e'} > 1 \), i.e. if \( k n \) is in the upper half of its binade. So crossing a binade does not automatically destroy the artifact; it depends on where \( k n \) falls within the new binade.
+
+---
+
+## 3. The crucial parity/oddness condition
+
+The question asks specifically about **odd** \( k \ge 3 \). Why does oddness matter?
+
+The artifact condition \( \mathrm{fl}(dd \cdot r) \neq n \) means that \( dd \cdot r \) rounds to a neighbor of \( n \). Since \( r = \mathrm{fl}(n/dd) \), the exact value \( dd \cdot r \) is \( n(1+\delta) \). The sign of \( \delta \) determines whether \( dd \cdot r \) is slightly above or below \( n \).
+
+Now, \( r \) is the nearest double to \( n/dd \). The error \( \delta \) has the same sign as the error of the nearest-double approximation. For a reduced fraction \( n/dd \), the sign of \( \delta \) is determined by whether \( n/dd \) is above or below \( r \).
+
+When we scale by \( k \), the exact product becomes \( k n (1+\delta) \). The perturbation \( k n \delta \) has the **same sign** as \( \delta \). So scaling by \( k \) does not change the direction of the error; it only amplifies it.
+
+But the rounding of \( k n (1+\delta) \) to a double depends on the position of \( k n \) relative to the midpoint between \( k n \) and its neighbor. If \( k n \) is exactly representable (which it is, since \( k \) and \( n \) are integers and \( k n \) is an integer), then the neighbors of \( k n \) in the double grid are \( k n \pm \text{spacing} \). The midpoint is \( k n \pm \text{spacing}/2 \).
+
+The artifact occurs if \( k n (1+\delta) \) is on the wrong side of the midpoint. Since \( \delta \) is tiny, this requires \( k n |\delta| > \text{spacing}/2 \).
+
+Now, here is the key: for **odd** \( k \), the product \( k n \) has the same parity as \( n \) (since odd times anything preserves parity). But more importantly, the spacing of doubles near \( k n \) depends on the binade of \( k n \). If \( k n \) is in the same binade as \( n \), the spacing is the same, and the condition becomes \( k n |\delta| > \text{spacing}/2 \), i.e. \( k \cdot (n |\delta|) > \text{spacing}/2 \). So if the unscaled case had \( n |\delta| \) just below \( \text{spacing}/2 \), then for \( k

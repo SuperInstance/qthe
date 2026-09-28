@@ -1,0 +1,81 @@
+{
+  "experiment": "E-Q12 — k-family closed-form extension of the A+D collapse predicate (odd-k flips + theorems T-K2/K3/K4)",
+  "registration": "situations/eq12_predictions.json",
+  "claimsEvaluated": [
+    "P1",
+    "P2",
+    "P3",
+    "P4",
+    "P5",
+    "P6",
+    "P7",
+    "P8",
+    "P9",
+    "P10"
+  ],
+  "triplesEnumerated": 254520,
+  "passed": 10,
+  "failed": 0,
+  "cascadeHalf": "RE-PARKED with committed-byte receipt (P10)",
+  "p11": "deepseek derivation cross-check — keeper-run, AS SAID, informational only",
+  "leverDischarged": true,
+  "results": {
+    "pins": {
+      "situations/eq12_predictions.json": "dea662693ccd5bca7b4dc9a3b756f755910d69bc1885d38af01c474df707c002",
+      "experiments/e_q12_kfamily_predicate.mjs": "f9be255c2e64361d1e43a80cfa962ad3656b63a73f33abedab3ef3c94676529a",
+      "experiments/outputs/e_q12_preseal_qa.json": "68ef1f11dd031b38d64648ee927ef909a7697eb6f812abe889b27cbc6528aba5",
+      "experiments/outputs/eq9_sweep_rows.jsonl": "9ae7455693dea9d3d66feb6f0ea775e390b8ba128d57ea1500198bfe1f9b0a04",
+      "experiments/outputs/eq9_census.json": "dc30540ccbdea2f3229a47860844139073abe349a2bdf4a7c3a3e22c0445ea1b",
+      "experiments/outputs/eq9_sweep_results.json": "b6bde5f0187d6ebef346bfbdf384007c4e6938225de738aeea89f2eb79df7928",
+      "experiments/outputs/eq9dt_rows.jsonl": "45b103c455119425a60b568b609e86186b8493e35157bf8990d8e89a0c23a058",
+      "experiments/outputs/eq9dt_results.json": "9cca85cfc3dc88fb8337a7130eb7bccb52b555c67c8518789862097e2b62dff5",
+      "experiments/outputs/e_q7_results.json": "c9dede60c5df27718f67c796a618e2e369816f2742a6188c03ab39ef9339ae87",
+      "experiments/outputs/e_q8_results.json": "f05a474c29e6c7362e65610dfdaa629936f67fd2dca1c1cf542151cddbe14c69",
+      "experiments/outputs/e_q11_results.json": "b3a089c29768a27dd816928df6276abc2c983c0f4e18d57fde333db096fa3d5a",
+      "situations/eq11_lever_registration.json": "888110df0b259978c438711b22d0654d3021cb341a1c07c69f0f2718542a49c3"
+    },
+    "claims": {
+      "P1": {
+        "pass": true,
+        "detail": "k=1 equivalence mismatches: 0 (306,773 pairs); counts {\"A\":34144,\"B\":1729,\"C\":1904,\"D\":1134,\"F-INV\":0} vs committed EXACT; |R_1|=155087 stable=38911 reachable-not-stable=116176 (registered 155,087/38,911/116,176: EXACT)"
+      },
+      "P2": {
+        "pass": true,
+        "detail": "T-K2 fixed k-invariance over 254520 reachable triples: 0 violations (pressure == k*pressure_1, fxHold <=> dyadic, fxSign invariance)"
+      },
+      "P3": {
+        "pass": true,
+        "detail": "T-K3 2-adic reduction: 0 violations (class and E at k == class and E at oddPart(k))"
+      },
+      "P4": {
+        "pass": true,
+        "detail": "T-K4 F-INV empty at every k: 0 occurrences"
+      },
+      "P5": {
+        "pass": true,
+        "detail": "flip registry NONEMPTY: 3546 odd-k flips (pre-seal QA subset had 477); registry written to experiments/outputs/e_q12_flip_registry.json"
+      },
+      "P6": {
+        "pass": true,
+        "detail": "both directions present: LOST 2462 (A -> B/C), GAINED 1084 (B/C -> A)"
+      },
+      "P7": {
+        "pass": true,
+        "detail": "2/3 (k<=168) never flips: true; 8/5 (k<=63) never flips: true; 7/10 (k<=50) flips A->B exactly at k in {9,17,18,33,34,35,36}: [9,17,18,33,34,35,36]"
+      },
+      "P8": {
+        "pass": true,
+        "detail": "(a) row artifacts carry no readerAcc/resonance payloads: true (116733+64 rows); (b) e_q8 families 2/3 {m=2,r=3,accA=-2} + 8/5 {m=8,r=5,accA=-4,|n| payload 8 present: true} on k=1 lines (resonances == dd): true; e_q7 k=1-line cells present: true; (c) 8/5 slot20Occupant resonance 9 (|acc|+1, twin direction, same k=1 tuning): true; (d) zero k>=2 scaled family tunings in any committed payload"
+      },
+      "P9": {
+        "pass": true,
+        "detail": "D_k closed form == direct enumeration for all k in 1..504: 504/504 EXACT; k=1 census-box corollary D_full = 2772 (registered 2772)"
+      },
+      "P10": {
+        "pass": true,
+        "detail": "all four committed CASCADE pairs: A_2_3 vs N_2_3: radius@256=64, inv@256=0/4064, delta 64/128/256=1631/97/97 -> OK | A_2_3_OFF vs N_2_3_OFF: radius@256=64, inv@256=0/4064, delta 64/128/256=1631/97/97 -> OK | A_8_5 vs N_8_5: radius@256=64, inv@256=0/4064, delta 64/128/256=1631/97/97 -> OK | A_7_10 vs N_7_10: radius@256=64, inv@256=0/4064, delta 64/128/256=1631/97/97 -> OK — terminal state STABLE RECEDING REMNANT (1631 -> 97 -> 97); cascade half stays RE-PARKED"
+      }
+    }
+  },
+  "runAt": "2026-09-28T01:50:10.549Z"
+}
