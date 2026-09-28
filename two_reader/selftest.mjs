@@ -29,7 +29,13 @@ import { fileURLToPath } from 'node:url';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const MY_PROJECT = resolve(HERE, '..', '..');
-const CRAB = process.env.CRAB_TRAPS_PATH || resolve(HERE, '..', '..', 'crab-traps');
+// CRAB resolution (wave 52): env override > bundled fixtures (package context)
+// > repo sibling (two_reader/ inside the qthe repo). The probe checks a known
+// row directory so a partially-present tree is never silently used.
+const CRAB_CANDIDATES = [join(HERE, 'fixtures', 'crab-traps'), resolve(HERE, '..', '..', 'crab-traps')];
+const CRAB = process.env.CRAB_TRAPS_PATH ||
+  CRAB_CANDIDATES.find((p) => { try { statSync(join(p, 'worker', 'src')); return true; } catch { return false; } }) ||
+  CRAB_CANDIDATES[1];
 const PINS = join(HERE, 'registration.json');
 const READER = join(HERE, 'reader.mjs');
 const OUTDIR = join(HERE, 'run_receipts');
