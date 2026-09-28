@@ -1,0 +1,422 @@
+{
+ "receipt": "E-Q12 PRE-SEAL IMPLEMENTATION QA (disclosed subset n≤32,dd≤32 all reachable k; guest families k≤9)",
+ "subset": "n<=32, dd<=32, gcd=1, k in 1..min(504/n,505/dd)",
+ "checked": 19228,
+ "nativeDisagreements": 0,
+ "k1IdentityDisagreements": 0,
+ "fxInvarianceViolations": 0,
+ "fxInvViolations": 0,
+ "twoAdicViolations": 0,
+ "flipCount": 477,
+ "flipDirections": {
+  "LOST": 389,
+  "GAINED": 88
+ },
+ "flipsFirst20": [
+  {
+   "n": 7,
+   "dd": 3,
+   "k": 9,
+   "cls1": "A",
+   "clsK": "C",
+   "dir": "LOST"
+  },
+  {
+   "n": 7,
+   "dd": 3,
+   "k": 17,
+   "cls1": "A",
+   "clsK": "C",
+   "dir": "LOST"
+  },
+  {
+   "n": 7,
+   "dd": 3,
+   "k": 33,
+   "cls1": "A",
+   "clsK": "C",
+   "dir": "LOST"
+  },
+  {
+   "n": 7,
+   "dd": 3,
+   "k": 35,
+   "cls1": "A",
+   "clsK": "C",
+   "dir": "LOST"
+  },
+  {
+   "n": 7,
+   "dd": 3,
+   "k": 65,
+   "cls1": "A",
+   "clsK": "C",
+   "dir": "LOST"
+  },
+  {
+   "n": 7,
+   "dd": 3,
+   "k": 67,
+   "cls1": "A",
+   "clsK": "C",
+   "dir": "LOST"
+  },
+  {
+   "n": 7,
+   "dd": 3,
+   "k": 69,
+   "cls1": "A",
+   "clsK": "C",
+   "dir": "LOST"
+  },
+  {
+   "n": 7,
+   "dd": 3,
+   "k": 71,
+   "cls1": "A",
+   "clsK": "C",
+   "dir": "LOST"
+  },
+  {
+   "n": 13,
+   "dd": 3,
+   "k": 9,
+   "cls1": "A",
+   "clsK": "B",
+   "dir": "LOST"
+  },
+  {
+   "n": 13,
+   "dd": 3,
+   "k": 17,
+   "cls1": "A",
+   "clsK": "B",
+   "dir": "LOST"
+  },
+  {
+   "n": 13,
+   "dd": 3,
+   "k": 19,
+   "cls1": "A",
+   "clsK": "B",
+   "dir": "LOST"
+  },
+  {
+   "n": 13,
+   "dd": 3,
+   "k": 33,
+   "cls1": "A",
+   "clsK": "B",
+   "dir": "LOST"
+  },
+  {
+   "n": 13,
+   "dd": 3,
+   "k": 35,
+   "cls1": "A",
+   "clsK": "B",
+   "dir": "LOST"
+  },
+  {
+   "n": 13,
+   "dd": 3,
+   "k": 37,
+   "cls1": "A",
+   "clsK": "B",
+   "dir": "LOST"
+  },
+  {
+   "n": 14,
+   "dd": 3,
+   "k": 9,
+   "cls1": "A",
+   "clsK": "B",
+   "dir": "LOST"
+  },
+  {
+   "n": 14,
+   "dd": 3,
+   "k": 17,
+   "cls1": "A",
+   "clsK": "B",
+   "dir": "LOST"
+  },
+  {
+   "n": 14,
+   "dd": 3,
+   "k": 33,
+   "cls1": "A",
+   "clsK": "B",
+   "dir": "LOST"
+  },
+  {
+   "n": 14,
+   "dd": 3,
+   "k": 35,
+   "cls1": "A",
+   "clsK": "B",
+   "dir": "LOST"
+  },
+  {
+   "n": 25,
+   "dd": 3,
+   "k": 5,
+   "cls1": "A",
+   "clsK": "C",
+   "dir": "LOST"
+  },
+  {
+   "n": 25,
+   "dd": 3,
+   "k": 9,
+   "cls1": "A",
+   "clsK": "C",
+   "dir": "LOST"
+  }
+ ],
+ "guestRows": [
+  {
+   "family": "2/3",
+   "k": 1,
+   "cls": "A",
+   "fColl": true,
+   "fxHold": false,
+   "fSign": 0,
+   "fxSign": 1
+  },
+  {
+   "family": "2/3",
+   "k": 2,
+   "cls": "A",
+   "fColl": true,
+   "fxHold": false,
+   "fSign": 0,
+   "fxSign": 1
+  },
+  {
+   "family": "2/3",
+   "k": 3,
+   "cls": "A",
+   "fColl": true,
+   "fxHold": false,
+   "fSign": 0,
+   "fxSign": 1
+  },
+  {
+   "family": "2/3",
+   "k": 4,
+   "cls": "A",
+   "fColl": true,
+   "fxHold": false,
+   "fSign": 0,
+   "fxSign": 1
+  },
+  {
+   "family": "2/3",
+   "k": 5,
+   "cls": "A",
+   "fColl": true,
+   "fxHold": false,
+   "fSign": 0,
+   "fxSign": 1
+  },
+  {
+   "family": "2/3",
+   "k": 6,
+   "cls": "A",
+   "fColl": true,
+   "fxHold": false,
+   "fSign": 0,
+   "fxSign": 1
+  },
+  {
+   "family": "2/3",
+   "k": 7,
+   "cls": "A",
+   "fColl": true,
+   "fxHold": false,
+   "fSign": 0,
+   "fxSign": 1
+  },
+  {
+   "family": "2/3",
+   "k": 8,
+   "cls": "A",
+   "fColl": true,
+   "fxHold": false,
+   "fSign": 0,
+   "fxSign": 1
+  },
+  {
+   "family": "2/3",
+   "k": 9,
+   "cls": "A",
+   "fColl": true,
+   "fxHold": false,
+   "fSign": 0,
+   "fxSign": 1
+  },
+  {
+   "family": "8/5",
+   "k": 1,
+   "cls": "A",
+   "fColl": true,
+   "fxHold": false,
+   "fSign": 0,
+   "fxSign": 1
+  },
+  {
+   "family": "8/5",
+   "k": 2,
+   "cls": "A",
+   "fColl": true,
+   "fxHold": false,
+   "fSign": 0,
+   "fxSign": 1
+  },
+  {
+   "family": "8/5",
+   "k": 3,
+   "cls": "A",
+   "fColl": true,
+   "fxHold": false,
+   "fSign": 0,
+   "fxSign": 1
+  },
+  {
+   "family": "8/5",
+   "k": 4,
+   "cls": "A",
+   "fColl": true,
+   "fxHold": false,
+   "fSign": 0,
+   "fxSign": 1
+  },
+  {
+   "family": "8/5",
+   "k": 5,
+   "cls": "A",
+   "fColl": true,
+   "fxHold": false,
+   "fSign": 0,
+   "fxSign": 1
+  },
+  {
+   "family": "8/5",
+   "k": 6,
+   "cls": "A",
+   "fColl": true,
+   "fxHold": false,
+   "fSign": 0,
+   "fxSign": 1
+  },
+  {
+   "family": "8/5",
+   "k": 7,
+   "cls": "A",
+   "fColl": true,
+   "fxHold": false,
+   "fSign": 0,
+   "fxSign": 1
+  },
+  {
+   "family": "8/5",
+   "k": 8,
+   "cls": "A",
+   "fColl": true,
+   "fxHold": false,
+   "fSign": 0,
+   "fxSign": 1
+  },
+  {
+   "family": "8/5",
+   "k": 9,
+   "cls": "A",
+   "fColl": true,
+   "fxHold": false,
+   "fSign": 0,
+   "fxSign": 1
+  },
+  {
+   "family": "7/10",
+   "k": 1,
+   "cls": "A",
+   "fColl": true,
+   "fxHold": false,
+   "fSign": 0,
+   "fxSign": -1
+  },
+  {
+   "family": "7/10",
+   "k": 2,
+   "cls": "A",
+   "fColl": true,
+   "fxHold": false,
+   "fSign": 0,
+   "fxSign": -1
+  },
+  {
+   "family": "7/10",
+   "k": 3,
+   "cls": "A",
+   "fColl": true,
+   "fxHold": false,
+   "fSign": 0,
+   "fxSign": -1
+  },
+  {
+   "family": "7/10",
+   "k": 4,
+   "cls": "A",
+   "fColl": true,
+   "fxHold": false,
+   "fSign": 0,
+   "fxSign": -1
+  },
+  {
+   "family": "7/10",
+   "k": 5,
+   "cls": "A",
+   "fColl": true,
+   "fxHold": false,
+   "fSign": 0,
+   "fxSign": -1
+  },
+  {
+   "family": "7/10",
+   "k": 6,
+   "cls": "A",
+   "fColl": true,
+   "fxHold": false,
+   "fSign": 0,
+   "fxSign": -1
+  },
+  {
+   "family": "7/10",
+   "k": 7,
+   "cls": "A",
+   "fColl": true,
+   "fxHold": false,
+   "fSign": 0,
+   "fxSign": -1
+  },
+  {
+   "family": "7/10",
+   "k": 8,
+   "cls": "A",
+   "fColl": true,
+   "fxHold": false,
+   "fSign": 0,
+   "fxSign": -1
+  },
+  {
+   "family": "7/10",
+   "k": 9,
+   "cls": "B",
+   "fColl": false,
+   "fxHold": false,
+   "fSign": -1,
+   "fxSign": -1
+  }
+ ]
+}

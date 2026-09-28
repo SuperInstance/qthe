@@ -1,0 +1,72 @@
+{
+  "receipt": "E-Q12 REGISTRATION — the guest's SECOND parked lever, k-half discharged / cascade-half re-parked with receipt (task 47-a, wave 47, lane eq12-discharger). Sealed BEFORE the registered evaluation run, BEFORE the one sanctioned deepseek call of this lane, and BEFORE any new compute beyond the disclosed pre-seal implementation QA (E-Q11 precedent, receipted below). Zero kernel runs exist in this lane. Pricing-first law: this file, situations/eq12_predictions.json and experiments/e_q12_kfamily_predicate.mjs were committed together PRE-RUN; git history is the witness.",
+
+  "name_law": "Registered id: E-Q12 — named by the committed aftermath of E-Q11 (situations/eq11_verdict.md, sha 875adee5…: 'E-Q12 seeds (parked): cascade terminal semantics (the guest's second lever), and the A-class closed form's behavior under k != 1 coupled families'). The E-Q* lever numbering belongs to the tavern guest per situations/eq9_deep_trace_registration.json name_law (kept standing); this lane DISCHARGES the named lever halves; it does not rename them.",
+
+  "lever_as_said": {
+    "source_rows": "situations/guest_rows_r9_keyed.jsonl (sha 1a7d8fdf…, 6 rows AS SAID): the guest's r9-q2 named the cascade terminal semantics as the next lever IF E-Q10 resolved quickly ('it will need a new observable beyond spread-by-tick-64 and inversion-0-at-256'); E-Q10 resolved (its verdict, 9/9 kernel claims); E-Q11's aftermath then parked BOTH halves as the E-Q12 seeds.",
+    "the_two_halves_verbatim": "cascade terminal semantics (the guest's second lever), and the A-class closed form's behavior under k != 1 coupled families. [situations/eq11_verdict.md aftermath, verbatim]",
+    "half_selection_law": "The repo's own text is law. HALF (b) — the A-class closed form under k != 1 — is WELL-POSED from committed artifacts alone and is REGISTERED here: k is defined by the repo itself (situations/eq9_predictions.json: 'k >= 2 family lines (scaled tunings of the same sigma) are OUT OF SCOPE by registration: the round-8 lever names k=1 lines and E-Q8 ran k=1' — E-Q12 discharges exactly that parked out-of-scope space), the k=1 family law is committed (experiments/eq9_family_census.mjs, sha 5d40305a…), the kernel laws are committed via the sealed E-Q11 module header, and the test bed is the committed census/rows. HALF (a) — cascade terminal semantics — is NOT well-posed for an arithmetic-only lane by the guest's OWN committed pricing (new observable + new rig = new kernel runs, outside this lane's budget law): it is RE-PARKED WITH RECEIPT as registered claim P10, which converts the re-park into checkable committed-byte arithmetic on the E-Q7 terminal checkpoints rather than prose."
+  },
+
+  "the_predicates": {
+    "module": "experiments/e_q12_kfamily_predicate.mjs",
+    "k_family_law": "sigma = n/dd (lowest terms, unchanged); reader acc = -k*n, writer resonance r = k*dd, writer acc = -(k*dd-1); true twin pressure -k*n + k*dd*(n/dd) = 0 exactly (k-invariant truth). Reachable: k*n <= 504 (kernel |acc| ceiling) and k*dd <= 505 (resonance = |acc|+1 <= 505); stable: k*n <= 252 and k*dd <= 253 (the k=1 stable caps scaled). At k=1 the law reproduces the committed regions |R_1| = 155,087 = 38,911 + 116,176 exactly.",
+    "formulation": "E_k(n,dd) := R53(k*dd * R53(n/dd)) == k*n  [FLOAT-HOLD at the k-scaled tuning; R53 is the sealed E-Q11 BigInt round-to-nearest-even, IMPORTED not forked]. X_k := k*(dd*sigmaQ - n*S) == 0 [FIXED-HOLD at k; sigmaQ = round(sigma*2^32) is the kernel's ONE float door and is k-invariant by construction]. class_k := E_k AND X_k -> D | E_k AND NOT X_k -> A | NOT E_k AND X_k -> F-INV | NOT E_k AND fSign_k == fxSign_k -> B | else C.",
+    "theorem_objects": {
+      "T-K2_fixed_k_invariance": "fxHold_k <=> dd dyadic; fxSign_k = fxSign_1; fxPressure_k == k*fxPressure_1 (exact BigInt) — the fixed plane is EXACTLY k-invariant (registered P2).",
+      "T-K3_two_adic_reduction": "E_{2^j*m}(n,dd) <=> E_m(n,dd) for odd m — R53 commutes with exact x2^j scaling in the normal range; powers of two are INVISIBLE to the collapse predicate (registered P3).",
+      "T-K4_finv_empty": "dyadic dd => fl(n/dd) exact => E_k true for every k — F-INV empty at every scaling (registered P4).",
+      "the_open_question_P5": "Is E_k == E_1 for ODD k >= 3? The A-class is a half-ulp tie law (error k*dd*eps vs half-ulp(k*n), both linear in k; only the binade alignment of k*n differs). Flips are possible in both directions a priori; the eval enumerates the ENTIRE reachable k-space and seals the flip registry either way. A nonempty registry discharges with the non-invariance theorem; an empty registry discharges with the stronger exact k-invariance theorem."
+    },
+    "provenance_and_derivation_law": "The FORM was derived from committed artifacts only: situations/eq9_predictions.json (the k>=2 out-of-scope registration, verbatim), experiments/eq9_family_census.mjs (the k=1 family law + stable-cap justification), the sealed experiments/e_q11_collapse_predicate.mjs (R53/cmpValueToInt/sigmaQFixed/isDyadic IMPORTED; its header cites qthe.mjs tick() term = hit.resonance*sigma with resonance = |acc|+1, and fixedpoint/qthe_fixed.mjs R8 pressure = acc*S + resonance*sigmaQ with sigmaToFixed = round(sigma*2^32)), and the committed census/rows/E-Q7 receipts. PRE-SEAL IMPLEMENTATION QA (disclosed, registered HERE before the seal): the BigInt k-classifier was bit-checked against the native IEEE-754 mirror on the DERIVATION SUBSET n<=32, dd<=32 (coprime), ALL reachable k per pair — 19,228 triples — plus the three guest-named families at k=1..9: 0 disagreements of every kind; 477 odd-k flips (389 LOST / 88 GAINED) already inside the subset. One runner bug was caught and fixed PRE-seal (inverted T-K2 violation boolean; caught by cross-invariant asymmetry, re-run clean) — receipted in the predictions file. The FULL-space cross-checks (all reachable (n,dd,k), ~10^5 triples) are sealed predictions P2/P3/P5 — genuinely unrun at seal time."
+  },
+
+  "domain_and_honest_remappings": {
+    "domain": "k in 1..504; per-k reachable coprime (n,dd) with k*n <= 504, k*dd <= 505 (stable subset k*n <= 252, k*dd <= 253). All classes compared against the k=1 census-box classification of the SAME (n,dd) (the k=1 box n<=504, dd<=1000 strictly contains every scaled-reachable pair).",
+    "arithmetic_only_extension_disclosed": "ZERO committed kernel runs exist at k != 1 (E-Q9 left k>=2 out of scope by registration; P8 scans the committed record and seals this). Every k>=2 result in this lane is CLOSED-FORM ARITHMETIC over the committed kernel laws — the same status E-Q11's Q6 full-box extension held — never a kernel-verified result. A k-scaled kernel probe is the natural follow-up and is NOT registered as a claim here.",
+    "coupled_word_disclosure": "The aftermath word 'coupled' is read through the repo's own committed definitions: the k-lines are coupled scalings of the (reader acc, writer resonance) pair = (-k*n, k*dd) — the acc-resonance pair the guest's r9-q3 named as the twin-pressure product ('the kernel's twin pressure is UNCOUPLED (reader-acc x writer-resonance)'). If the guest meant a different coupled regime, this registration is bounded by the committed k-line definition and says so — the best-posed refinement supported by committed artifacts, per the dispatch law.",
+    "field_name_collision": "The committed eq9_sweep_rows.jsonl / eq9dt_rows.jsonl carry a field literally named 'k' holding the SIGMA KEY 'n/dd' — unrelated to this lane's scaling integer k; the eval keeps them strictly apart and discloses the collision here.",
+    "cascade_half_status": "RE-PARKED WITH RECEIPT (registered claim P10): the committed E-Q7 terminal checkpoints (radius@256 == 64, inversion@256 == 0, deltaCount 1631 -> 97 -> 97 across t=64/128/256, stable across all four CASCADE pairs) are the receipted observable state; discharging the half needs the new observable + new rig the guest's own text requires — new kernel runs, outside this lane's arithmetic-only budget law. The re-park receipt is checkable arithmetic, not prose."
+  },
+
+  "falsifier": "ANY of P1, P2, P3, P4, P6, P7, P8, P9, P10 FAIL (a single mismatched committed row, one k-invariance violation, one missed F-INV, one wrong closed form, one committed payload off its claimed line, one wrong guest-family flip set, one wrong E-Q7 terminal checkpoint) kills the k-extension AS STATED; the lever goes back PARKED with this receipt and the honest FAIL standing. P5 carries a different honest branch structure (nonempty registry -> non-invariance theorem; empty registry -> stronger exact k-invariance theorem; both discharge, the registered event is scored on its p). P11 is informational AS SAID and cannot move the lever verdict.",
+
+  "budget_law": {
+    "llm_calls": "exactly 1 wire request planned and allowed (deepseek-chat derivation cross-check, max_tokens 2000, temperature 0), run POST-seal, raw body receipted AS SAID at experiments/outputs/e_q12_q9_raw.json (+ .sha256 + content); the VERDICT is arithmetic only.",
+    "kernel_compute": "ZERO new kernel runs registered. Moth jobs 0 (no sampling needed). Network: only the one registered deepseek call. Zero writes outside situations/eq12_*.{json,md}, experiments/e_q12_*, experiments/outputs/e_q12_*, and this lane's worklog entry."
+  },
+
+  "artifacts_sealed_with_this_file": {
+    "predictions": "situations/eq12_predictions.json",
+    "predictions_sha256_at_seal": "dea662693ccd5bca7b4dc9a3b756f755910d69bc1885d38af01c474df707c002",
+    "predictions_mtime_at_seal": "2026-09-28T01:38:05.923Z",
+    "predicate_module": "experiments/e_q12_kfamily_predicate.mjs",
+    "predicate_module_sha256_at_seal": "f9be255c2e64361d1e43a80cfa962ad3656b63a73f33abedab3ef3c94676529a",
+    "preseal_qa_receipt": "experiments/outputs/e_q12_preseal_qa.json",
+    "preseal_qa_receipt_sha256": "68ef1f11dd031b38d64648ee927ef909a7697eb6f812abe889b27cbc6528aba5",
+    "predicate_module_imports": "experiments/e_q11_collapse_predicate.mjs — sealed sha d4c3e54b6b80fac422dad8d24dabd8db618f04505b5ba6f8c33f317c62fb7fdd, imported NOT forked (no-reimplementation doctrine)",
+    "sealed_at": "2026-09-28T01:40:00Z"
+  },
+
+  "committed_artifact_pins_consumed_by_the_eval": {
+    "experiments/e_q11_collapse_predicate.mjs": "d4c3e54b6b80fac422dad8d24dabd8db618f04505b5ba6f8c33f317c62fb7fdd (FULL)",
+    "experiments/outputs/eq9_sweep_rows.jsonl": "9ae7455693dea9d3d66feb6f0ea775e390b8ba128d57ea1500198bfe1f9b0a04",
+    "experiments/outputs/eq9_census.json": "dc30540ccbdea2f3229a47860844139073abe349a2bdf4a7c3a3e22c0445ea1b",
+    "experiments/outputs/eq9_sweep_results.json": "b6bde5f0187d6ebef346bfbdf384007c4e6938225de738aeea89f2eb79df7928",
+    "experiments/outputs/eq9dt_rows.jsonl": "45b103c455119425a60b568b609e86186b8493e35157bf8990d8e89a0c23a058",
+    "experiments/outputs/eq9dt_results.json": "9cca85cfc3dc88fb8337a7130eb7bccb52b555c67c8518789862097e2b62dff5",
+    "experiments/outputs/e_q7_results.json": "c9dede60c5df27718f67c796a618e2e369816f2742a6188c03ab39ef9339ae87",
+    "experiments/outputs/e_q8_results.json": "f05a474c29e6c7362e65610dfdaa629936f67fd2dca1c1cf542151cddbe14c69",
+    "experiments/outputs/e_q11_results.json": "b3a089c29768a27dd816928df6276abc2c983c0f4e18d57fde333db096fa3d5a",
+    "situations/eq9_predictions.json": "69443199456fdd86bfde936f8ae74c95437b16f4fa36d46936fd6c3beaa51da8 (the k-half's source text)",
+    "situations/eq11_verdict.md": "875adee52e83aaefa59b9fcb3a3d668c7d494737a9b57dfd84d60b2fd89356e4 (the E-Q12 naming text)",
+    "situations/eq11_lever_registration.json": "888110df0b259978c438711b22d0654d3021cb341a1c07c69f0f2718542a49c3",
+    "situations/guest_rows_r9_keyed.jsonl": "1a7d8fdfde4fe29c97b26903de74f1dd78c590f33d1459a68971d1a20013119b (the guest's second-lever pricing)"
+  },
+
+  "task_id": "47-a",
+  "agent": "eq12-discharger (lane)",
+  "wave": 47,
+  "repo": "qthe @ 151cb10 (fresh clone /home/z/my-project/pt47a-q, fetched at lane start)"
+}
