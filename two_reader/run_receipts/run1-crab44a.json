@@ -1,0 +1,98 @@
+{
+ "tool": "qthe two_reader/reader.mjs (installment 2 — the qthe side reads crab-traps)",
+ "lane": "wave 48 lane 48-b",
+ "run_at": "2026-09-28T04:11:13.139Z",
+ "law": "stone-v1: rows linked by sha256 over exact bytes, chain folded from genesis, fail closed at precise row",
+ "args": {
+  "repo": "/home/z/my-project/crab-traps",
+  "pins": "/home/z/my-project/qthe/two_reader/registration.json",
+  "pins_rel_to_repo": "../qthe/two_reader/registration.json",
+  "chain": "crab44a",
+  "expect_tip_source": "registration",
+  "moth_fixture": null
+ },
+ "seal_verified": true,
+ "chain": {
+  "id": "crab44a",
+  "label": "44-a GAN-half (forge-bred lures) chain",
+  "pinned_commit": "fed1e98502dfcedbd3669652bbe3d713e1156d78",
+  "rows_registered": 4,
+  "rows_walked": 4,
+  "tip": "0886f81d016c7ee1ca23fd2cbdaea663d43ff7cd4c7bfb687cf0e37a3c5709e4",
+  "expect_tip": "0886f81d016c7ee1ca23fd2cbdaea663d43ff7cd4c7bfb687cf0e37a3c5709e4",
+  "tip_ok": true,
+  "rows": [
+   {
+    "index": 1,
+    "id": "predictions",
+    "checks": [
+     {
+      "type": "bytes_pin",
+      "ok": true
+     }
+    ],
+    "bytes_sha256": "76e5ef055f74c4d3b59d2021f1cfb59c994c44ad6119fedae6db5950b0b3ece7"
+   },
+   {
+    "index": 2,
+    "id": "gan-lures",
+    "checks": [
+     {
+      "type": "bytes_pin",
+      "ok": true
+     }
+    ],
+    "bytes_sha256": "bc2ef70014b09ba7a473b2cd33b3bc2186d5465c4b4e9bc22a8988ce87c5673f"
+   },
+   {
+    "index": 3,
+    "id": "results",
+    "checks": [
+     {
+      "type": "bytes_pin",
+      "ok": true
+     },
+     {
+      "type": "digest_equals_row_field",
+      "field": "pre_registration.sha256",
+      "ok": true
+     },
+     {
+      "type": "field_constant",
+      "field": "forge_receipt.chain_ok",
+      "ok": true
+     },
+     {
+      "type": "field_constant",
+      "field": "verdict.D",
+      "ok": true
+     },
+     {
+      "type": "field_constant",
+      "field": "verdict.survived",
+      "ok": true
+     }
+    ],
+    "bytes_sha256": "6d7db23ec86e2ffb79d8dcae65b9972fd87bd6f012ecc33d596fb7ebe47a0d78"
+   },
+   {
+    "index": 4,
+    "id": "verdict-md",
+    "checks": [
+     {
+      "type": "bytes_pin",
+      "ok": true
+     },
+     {
+      "type": "content_contains",
+      "ok": true
+     }
+    ],
+    "bytes_sha256": "2c7387dcec6084182971c5631d709e20cbfcf4e39a75e9e2c149c9121ab24554"
+   }
+  ],
+  "optional_bindings": []
+ },
+ "ok": true,
+ "first_failure": null
+}

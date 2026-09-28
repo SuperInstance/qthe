@@ -1,0 +1,92 @@
+{
+ "tool": "qthe two_reader/run.mjs (official runner, installment 2)",
+ "lane": "wave 48 lane 48-b",
+ "run_at": "2026-09-28T04:11:13.077Z",
+ "repo_under_verification": "/home/z/my-project/crab-traps",
+ "pins_sealed": true,
+ "api_spend_usd": 0,
+ "moth_key_used": false,
+ "chains": [
+  "crab45c",
+  "crab44a",
+  "crab46a"
+ ],
+ "p1": {
+  "all_ok": true,
+  "first_failure": null,
+  "tips": {
+   "crab45c": {
+    "computed": "f3ed1b63fbce6f8691353d43941746675d6202039c958ac3abb131f3118244aa",
+    "expect": "f3ed1b63fbce6f8691353d43941746675d6202039c958ac3abb131f3118244aa",
+    "rows_walked": 19,
+    "rows_registered": 19,
+    "optional_bindings": [
+     {
+      "type": "fixture_sha_len",
+      "status": "PASS",
+      "detail": "fixture sha256 ebc8a43d90be5c0b01788f7cc63021ab0b0dac1a0294756e73a2882360b5e9b9 (len 4848); expected ebc8a43d90be5c0b01788f7cc63021ab0b0dac1a0294756e73a2882360b5e9b9 (len 4848)"
+     }
+    ]
+   },
+   "crab44a": {
+    "computed": "0886f81d016c7ee1ca23fd2cbdaea663d43ff7cd4c7bfb687cf0e37a3c5709e4",
+    "expect": "0886f81d016c7ee1ca23fd2cbdaea663d43ff7cd4c7bfb687cf0e37a3c5709e4",
+    "rows_walked": 4,
+    "rows_registered": 4,
+    "optional_bindings": []
+   },
+   "crab46a": {
+    "computed": "45812cffd99d9f8566789b71330b8784c0fa25c1a049e0090f82c6262ccb2b50",
+    "expect": "45812cffd99d9f8566789b71330b8784c0fa25c1a049e0090f82c6262ccb2b50",
+    "rows_walked": 26,
+    "rows_registered": 26,
+    "optional_bindings": []
+   }
+  }
+ },
+ "p3": {
+  "method": "sha256 of receipt bytes after normalizing receipt.run_at to a fixed value; raw byte-equality also recorded (run_at is the ONLY expected difference)",
+  "pass": true,
+  "detail": {
+   "crab45c": {
+    "run1_sha256": "3a8bf34bb863f9061558bd1776729e1e13ac3eaa98aa4ee7d7a8e49e19eec418",
+    "run2_sha256": "742028319c711e83e829ae7219349b995ad0363be957aa643b327017d59451b8",
+    "raw_byte_equal": false,
+    "normalized_equal": true,
+    "differing_lines": [
+     4
+    ]
+   },
+   "crab44a": {
+    "run1_sha256": "0cd2a42d0a4edd0fc0641270f552598774bfbca436b0d9d1adb6326c5ccd9b63",
+    "run2_sha256": "e4ff09c534cd0a2c3336820ab7438d0901b2da77e8102eb28db0bd8ebb1f3a51",
+    "raw_byte_equal": false,
+    "normalized_equal": true,
+    "differing_lines": [
+     4
+    ]
+   },
+   "crab46a": {
+    "run1_sha256": "c690f056692ac4e2d08a9fa27846760de66369440b6eed9e2a0b37205f3aae51",
+    "run2_sha256": "01910d1e517b868af814614ebea842392e6eca9df6d0693df13ca027d31400a9",
+    "raw_byte_equal": false,
+    "normalized_equal": true,
+    "differing_lines": [
+     4
+    ]
+   }
+  }
+ },
+ "p5": {
+  "method": "static import scan of two_reader/reader.mjs + forbidden-symbol scan (no installment-1 walker, fleet walker, or stone module references)",
+  "pass": true,
+  "imports_found": [
+   "node:crypto",
+   "node:fs",
+   "node:path"
+  ],
+  "bad_imports": [],
+  "forbidden_symbols_found": []
+ },
+ "ok": true
+}

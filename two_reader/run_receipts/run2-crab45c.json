@@ -1,0 +1,323 @@
+{
+ "tool": "qthe two_reader/reader.mjs (installment 2 — the qthe side reads crab-traps)",
+ "lane": "wave 48 lane 48-b",
+ "run_at": "2026-09-28T04:11:13.207Z",
+ "law": "stone-v1: rows linked by sha256 over exact bytes, chain folded from genesis, fail closed at precise row",
+ "args": {
+  "repo": "/home/z/my-project/crab-traps",
+  "pins": "/home/z/my-project/qthe/two_reader/registration.json",
+  "pins_rel_to_repo": "../qthe/two_reader/registration.json",
+  "chain": "crab45c",
+  "expect_tip_source": "registration",
+  "moth_fixture": "/home/z/my-project/fleet-seeds/tools/fixtures/moth-42b-raw-bits-2caa822b-7c46-4f65-a0c9-152c46272e19.txt"
+ },
+ "seal_verified": true,
+ "chain": {
+  "id": "crab45c",
+  "label": "45-c live-reasoner registration/receipts chain",
+  "pinned_commit": "e6f5ce3342e12280d7ef70d982ec4c6d709540e9",
+  "rows_registered": 19,
+  "rows_walked": 19,
+  "tip": "f3ed1b63fbce6f8691353d43941746675d6202039c958ac3abb131f3118244aa",
+  "expect_tip": "f3ed1b63fbce6f8691353d43941746675d6202039c958ac3abb131f3118244aa",
+  "tip_ok": true,
+  "rows": [
+   {
+    "index": 1,
+    "id": "predictions",
+    "checks": [
+     {
+      "type": "bytes_pin",
+      "ok": true
+     }
+    ],
+    "bytes_sha256": "76bf72511c5507d0997eb7a2dc4d152090a8f7a0860f42b8159248fc21beac2a"
+   },
+   {
+    "index": 2,
+    "id": "moth-fetch-attempt1-fail",
+    "checks": [
+     {
+      "type": "bytes_pin",
+      "ok": true
+     }
+    ],
+    "bytes_sha256": "3190f715deb4b07e70feb942a707b22e31e49350e138dd0e3b980f33b87d7803"
+   },
+   {
+    "index": 3,
+    "id": "moth-fetch-receipt",
+    "checks": [
+     {
+      "type": "bytes_pin",
+      "ok": true
+     }
+    ],
+    "bytes_sha256": "21ecf300b6b32828c8e65f4b552ba95fb3f764aa6969b1e7468d8ab387b8acca"
+   },
+   {
+    "index": 4,
+    "id": "moth-raw-bits-local-sample",
+    "checks": [
+     {
+      "type": "bytes_pin",
+      "ok": true
+     }
+    ],
+    "bytes_sha256": "20036581c31cb2aa2a313ef5a2be445539f567a9f779d0b794b412a27ac2e710"
+   },
+   {
+    "index": 5,
+    "id": "whitening-receipt",
+    "checks": [
+     {
+      "type": "bytes_pin",
+      "ok": true
+     },
+     {
+      "type": "field_constant",
+      "field": "input.len",
+      "ok": true
+     },
+     {
+      "type": "field_constant",
+      "field": "input.sha256",
+      "ok": true
+     },
+     {
+      "type": "array_permutation",
+      "field": "step4_fisherYates.selected",
+      "ok": true
+     }
+    ],
+    "bytes_sha256": "f7faba2c28ff006a6f4daf59e4b604eb5df1d9f8476fe722d853e6b0257aa780"
+   },
+   {
+    "index": 2,
+    "id": "call-01-request",
+    "checks": [
+     {
+      "type": "bytes_pin",
+      "ok": true
+     },
+     {
+      "type": "field_constant",
+      "field": "call_no",
+      "ok": true
+     }
+    ],
+    "bytes_sha256": "f8883ad628dcdd728f6eaae5a73c2de298d5d8d891b9dbfd1c68ecbe8afae55a"
+   },
+   {
+    "index": 3,
+    "id": "call-01-response",
+    "checks": [
+     {
+      "type": "bytes_pin",
+      "ok": true
+     }
+    ],
+    "bytes_sha256": "ed12021fe8e7295fa8dc20f77532f15a2f2143614f709316cbc8f33249961a29"
+   },
+   {
+    "index": 4,
+    "id": "call-02-request",
+    "checks": [
+     {
+      "type": "bytes_pin",
+      "ok": true
+     },
+     {
+      "type": "field_constant",
+      "field": "call_no",
+      "ok": true
+     }
+    ],
+    "bytes_sha256": "47bd9ecdd23af10cbaf0fbaa24ecd9d08e5d413e64a1cbf90802d9462f016524"
+   },
+   {
+    "index": 5,
+    "id": "call-02-response",
+    "checks": [
+     {
+      "type": "bytes_pin",
+      "ok": true
+     }
+    ],
+    "bytes_sha256": "28ea2b6688ca519efa09e09742dddecde3f066b7a2d852f8afc60f9b5490baec"
+   },
+   {
+    "index": 6,
+    "id": "call-03-request",
+    "checks": [
+     {
+      "type": "bytes_pin",
+      "ok": true
+     },
+     {
+      "type": "field_constant",
+      "field": "call_no",
+      "ok": true
+     }
+    ],
+    "bytes_sha256": "c4382b7e3ead8bf33c8642f51f11bc7b87b9e2d3720163294762437d12636ed5"
+   },
+   {
+    "index": 7,
+    "id": "call-03-response",
+    "checks": [
+     {
+      "type": "bytes_pin",
+      "ok": true
+     }
+    ],
+    "bytes_sha256": "99c0f3e2748a1e4ffe914faeab7d416fd333327aac819ce5f0a7641c545e512b"
+   },
+   {
+    "index": 8,
+    "id": "call-04-request",
+    "checks": [
+     {
+      "type": "bytes_pin",
+      "ok": true
+     },
+     {
+      "type": "field_constant",
+      "field": "call_no",
+      "ok": true
+     }
+    ],
+    "bytes_sha256": "3244f3b6baf90213df9d714dfbacfe7b90ab6fd7535cc2b5d334d0854bb9d551"
+   },
+   {
+    "index": 9,
+    "id": "call-04-response",
+    "checks": [
+     {
+      "type": "bytes_pin",
+      "ok": true
+     }
+    ],
+    "bytes_sha256": "d1311ba4d11e559321779407f1e3a2bc8f76d3e0d3a68adddcc1137011ba4b0c"
+   },
+   {
+    "index": 10,
+    "id": "call-05-request",
+    "checks": [
+     {
+      "type": "bytes_pin",
+      "ok": true
+     },
+     {
+      "type": "field_constant",
+      "field": "call_no",
+      "ok": true
+     }
+    ],
+    "bytes_sha256": "9a004667ef4236d74ae89ecbd3dac9397235921222408b45fc5bf45422963c4d"
+   },
+   {
+    "index": 11,
+    "id": "call-05-response",
+    "checks": [
+     {
+      "type": "bytes_pin",
+      "ok": true
+     }
+    ],
+    "bytes_sha256": "6c35b0db1bb5fa5648bcf94f6963d55534ecef2270bc648ecd56048fc1e4c54e"
+   },
+   {
+    "index": 16,
+    "id": "resume-ingested",
+    "checks": [
+     {
+      "type": "bytes_pin",
+      "ok": true
+     },
+     {
+      "type": "field_constant",
+      "field": "ingested",
+      "ok": true
+     }
+    ],
+    "bytes_sha256": "0309e529af5bbd8df8aa31a1c45c3fdcf8bcaebf14742722c53400bd4269994c"
+   },
+   {
+    "index": 17,
+    "id": "usage-jsonl",
+    "checks": [
+     {
+      "type": "bytes_pin",
+      "ok": true
+     },
+     {
+      "type": "usage_rows_match_calls",
+      "ok": true
+     }
+    ],
+    "bytes_sha256": "7fed06bc2c6f56ad6ada9d98962ef21e3be2fcf0bfe74243215597fcb63a75bb"
+   },
+   {
+    "index": 18,
+    "id": "results",
+    "checks": [
+     {
+      "type": "bytes_pin",
+      "ok": true
+     },
+     {
+      "type": "digest_equals_row_field",
+      "field": "pre_registration.sha256",
+      "ok": true
+     },
+     {
+      "type": "order_sha_of_array",
+      "field": "whitening.order_sha256",
+      "ok": true
+     },
+     {
+      "type": "array_equal_constant",
+      "field": "whitening.order_first12",
+      "ok": true
+     },
+     {
+      "type": "field_constant",
+      "field": "verdict.D",
+      "ok": true
+     },
+     {
+      "type": "field_constant",
+      "field": "verdict.survived",
+      "ok": true
+     }
+    ],
+    "bytes_sha256": "818e66834edb5ed1d21f1a2070eeb860d6cc8dd291546deaa59ea3fb61bc2184"
+   },
+   {
+    "index": 19,
+    "id": "verdict-md",
+    "checks": [
+     {
+      "type": "bytes_pin",
+      "ok": true
+     },
+     {
+      "type": "content_contains",
+      "ok": true
+     }
+    ],
+    "bytes_sha256": "ea799dff96a4d3acbf751946cd6db89f615a546a91b573400f3541045a6adb66"
+   }
+  ],
+  "optional_bindings": [
+   {
+    "type": "fixture_sha_len",
+    "status": "PASS",
+    "detail": "fixture sha256 ebc8a43d90be5c0b01788f7cc63021ab0b0dac1a0294756e73a2882360b5e9b9 (len 4848); expected ebc8a43d90be5c0b01788f7cc63021ab0b0dac1a0294756e73a2882360b5e9b9 (len 4848)"
+   }
+  ]
+ },
+ "ok": true,
+ "first_failure": null
+}
