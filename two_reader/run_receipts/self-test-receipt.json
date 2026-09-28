@@ -1,7 +1,8 @@
 {
- "tool": "qthe two_reader/selftest.mjs (negative controls, installment 2)",
+ "tool": "qthe two_reader/selftest.mjs (negative controls, installment 2; wave-52 mode-aware)",
+ "mode": "strict (pins mtime matches seal.mtime_local; mtime binds)",
  "lane": "wave 48 lane 48-b",
- "run_at": "2026-09-28T04:11:18.101Z",
+ "run_at": "2026-09-28T16:35:10.301Z",
  "cases_total": 54,
  "cases_passed": 54,
  "escapes": 0,
@@ -912,7 +913,7 @@
    "chain": "crab45c",
    "detected": true,
    "pass": true,
-   "stderr_excerpt": "reader: pin table seal MISMATCH: masked sha 3105ec77c969b2f045c9fac2dca46e704fb5790e4de75fb24ffff6be56e8f48b != sealed 0ea815a06ee0aaa90461c30b020a686432c0c31c2cd893d225e25b13dd144a07 — the pin table "
+   "stderr_excerpt": "reader: pin table seal MISMATCH: masked sha 1cf4167da14250410fc9bd5b7d896b14c288ac1d0f52b5cfd19fb0b927f793ff != sealed 7efea995e661dc2dd138ef78ed84cd9eb92452aab50e4d2afa3c2ee4ed90e30c — the pin table "
   }
  ]
 }

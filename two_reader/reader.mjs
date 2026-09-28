@@ -76,11 +76,23 @@ const maskedSha = sha256Hex(maskedBytes);
 if (maskedSha !== seal.self_sha256_masked) {
   fail2(`pin table seal MISMATCH: masked sha ${maskedSha} != sealed ${seal.self_sha256_masked} — the pin table was mutated after sealing; refusing to walk (fail closed)`);
 }
-// mtime binding: recorded mtime must still be on the file (utimes-restored at seal time)
+// mtime binding: recorded mtime must still be on the file (utimes-restored at seal time).
+// Wave-52 registered evolution (fleet law A4): under the EXPLICIT --mtime-witness flag the
+// mtime is demoted to a local WITNESS — a mismatch is receipted but does not refuse the walk.
+// Rationale (receipted): npm install normalizes extracted mtimes to the 1985-10-26T08:15Z
+// epoch (499162500000 ms), so distribution consumers cannot carry the sealed local mtime.
+// Strict binding remains the DEFAULT; bytes (masked-self-sha + per-row pins) always bind.
+const MTIME_WITNESS = args['mtime-witness'] === true || args['mtime-witness'] === '';
 const sealStat = statSync(PINS_PATH);
 const sealMs = Date.parse(seal.mtime_local);
 if (!Number.isFinite(sealMs) || Math.abs(sealStat.mtimeMs - sealMs) > 2) {
-  fail2(`pin table mtime does not match seal.mtime_local (${sealStat.mtimeMs} vs ${sealMs}) — refusing to walk (fail closed)`);
+  const msg = `pin table mtime does not match seal.mtime_local (${sealStat.mtimeMs} vs ${sealMs})`;
+  if (MTIME_WITNESS) {
+    console.error(`reader: mtime WITNESS mismatch (not refusing, --mtime-witness): ${msg}`);
+    globalThis.__MTIME_WITNESS_MISMATCH = true;
+  } else {
+    fail2(`${msg} — refusing to walk (fail closed); distribution consumers: pass --mtime-witness (fleet law A4)`);
+  }
 }
 
 // ---------- chain selection ----------
@@ -320,6 +332,9 @@ const receipt = {
     moth_fixture: args['moth-fixture'] ? resolve(String(args['moth-fixture'])) : null,
   },
   seal_verified: true,
+  mtime_binding: MTIME_WITNESS
+    ? (globalThis.__MTIME_WITNESS_MISMATCH ? 'witness-mismatch-receipted' : 'witness-ok')
+    : 'strict-ok',
   chain: {
     id: chainDef.id,
     label: chainDef.label,

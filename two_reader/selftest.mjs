@@ -22,7 +22,7 @@
 // case was DETECTED and (where applicable) localized to the correct row.
 
 import { spawnSync } from 'node:child_process';
-import { readFileSync, writeFileSync, mkdirSync, rmSync, cpSync, mkdtempSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync, rmSync, cpSync, mkdtempSync, statSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
 import { tmpdir } from 'node:os';
 import { fileURLToPath } from 'node:url';
@@ -53,8 +53,22 @@ function scratchTree(chainId) {
   return { root, chain };
 }
 
+// ---------- mode detection (wave 52, fleet law A4) ----------
+// Strict mtime binding requires the pins file to still carry its sealed mtime.
+// Distribution installers (npm) normalize mtimes (receipted epoch 499162500000),
+// so in that context the selftest runs with --mtime-witness and receipts the mode.
+const sealJson = JSON.parse(readFileSync(PINS, 'utf8'));
+const sealedMtimeMs = Date.parse(sealJson.seal?.mtime_local || '');
+const pinsStatMtimeMs = statSync(PINS).mtimeMs;
+const DISTRIBUTION_CONTEXT = Number.isFinite(sealedMtimeMs) &&
+  Math.abs(pinsStatMtimeMs - sealedMtimeMs) > 2;
+const MODE_FLAG = DISTRIBUTION_CONTEXT ? ['--mtime-witness'] : [];
+const MODE_LABEL = DISTRIBUTION_CONTEXT
+  ? 'mtime-witness (distribution context: pins mtime normalized by installer; strict suite would self-refuse — fleet law A4)'
+  : 'strict (pins mtime matches seal.mtime_local; mtime binds)';
+
 function runReader(repo, chainId, extra = []) {
-  const r = spawnSync('node', [READER, '--repo', repo, '--pins', PINS, '--chain', chainId, ...extra], { encoding: 'utf8' });
+  const r = spawnSync('node', [READER, '--repo', repo, '--pins', PINS, '--chain', chainId, ...MODE_FLAG, ...extra], { encoding: 'utf8' });
   let rec = null;
   try { rec = JSON.parse(r.stdout || '{}'); } catch { /* non-JSON output (usage error) */ }
   return { exit: r.status, rec, stderr: r.stderr || '' };
@@ -156,7 +170,8 @@ for (const chain of chains) {
 const total = results.length;
 const passed = results.filter((r) => r.pass).length;
 const receipt = {
-  tool: 'qthe two_reader/selftest.mjs (negative controls, installment 2)',
+  tool: 'qthe two_reader/selftest.mjs (negative controls, installment 2; wave-52 mode-aware)',
+  mode: MODE_LABEL,
   lane: 'wave 48 lane 48-b',
   run_at: RUN_AT,
   cases_total: total,

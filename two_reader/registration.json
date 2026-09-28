@@ -1,759 +1,761 @@
 {
- "registration": {
-  "task": "48-b two-reader installment 2 — an independent chain reader LIVING IN qthe that verifies the crab-traps repo's own receipt chains",
-  "direction": "REVERSED relative to installment 1 (crab-traps 47-b walked 8 fleet chains): now the qthe side reads crab-traps. Zero code shared with the installment-1 walker, fleet-seeds walkers, or crab-traps sources — this reader is written from the stone-v1 law itself (hash-chain of rows; every link is a sha256 over exact bytes; fail closed on any tamper at a precise row index).",
-  "lane": "wave 48 lane 48-b (qthe-side second reader)",
-  "written_at_repo": "SuperInstance/qthe @ main 0c36dd2",
-  "target_repo": "SuperInstance/crab-traps @ working tree main 37c34bb; each chain additionally pinned to the commit that produced it",
-  "reader_module": "two_reader/reader.mjs (stdlib-only Node: node:crypto, node:fs, node:path, node:process — zero imports from any other repo)",
-  "seal_discipline": "THIS file was sealed BEFORE the first official run: seal.self_sha256_masked is the sha256 of these exact bytes with the seal.self_sha256_masked field replaced by 64 '0's (fixed-position mask, byte length unchanged); seal.mtime_local is forced back onto the file with utimes AFTER the last write so the recorded mtime binds the sealed bytes and PREDATES every run receipt in two_reader/run_receipts/. Zero API spend; MOTH_KEY unused (all choices deterministic).",
-  "law": {
-   "genesis": "h_0 = sha256('CRAB-GENESIS-1') (ascii, lowercase hex)",
-   "fold": "h_i = sha256( hex(h_{i-1}) + ':' + bytes_sha256(row_i) + ':' + row_id_i ) over rows in registered order; tip = h_N",
-   "row_digest": "bytes_sha256(row) = sha256 of the file's raw bytes at worker/-relative path inside the crab-traps working tree",
-   "fail_closed": "exit 0 requires: every row file present, every row digest equal to its pin, every check true, tip equal to expect_tip; ANY failure exits non-zero and reports first_failure at a precise chain/row/check",
-   "chain_shape_honesty": "crab-traps does NOT keep stone-v1 parent-link row chains natively. Its receipts form a PRE-REGISTRATION BINDING CHAIN (predictions sealed before any call -> results embedding pre_registration.sha256 -> verdict; receipts bound by byte digests and cross-field bindings). The two-reader enforces the stone-v1 LAW over that shape: the walker's rolling fold turns the row sequence into a real hash chain whose tip pins order AND content, so any single-byte tamper in any row breaks the chain at that row."
-  },
-  "claims": [
-   {
-    "id": "P1",
-    "text": "All 49 rows of the three crab-traps receipt chains (crab45c: 19 rows, crab44a: 4 rows, crab46a: 26 rows) re-hash to their pinned bytes_sha256 from genesis, every registered binding check holds (embedded pre_registration digests, whitening order sha over the actual selected array, permutation 0..95, usage-row-to-call-receipt bindings, verdict content constants), and each chain's rolling fold tip equals its pinned expect_tip (crab45c f3ed1b63…, crab44a 0886f81d…, crab46a 45812cff…).",
-    "verdict_rule": "PASS iff the official run's reader receipts show ok=true for all three chains with tips equal to the pinned values and zero failed checks; else FAIL naming the first failing row/check"
-   },
-   {
-    "id": "P2",
-    "text": "Tampering ANY single byte in ANY row of ANY chain is detected fail-closed and localized: the reader exits non-zero with first_failure.row_index equal to the tampered row (every row carries its own bytes pin, so localization is at the tampered row itself, not downstream).",
-    "verdict_rule": "PASS iff the self-test's full tamper sweep (one byte flipped in each of the 49 rows) yields exit!=0 AND row_index==tampered row for all 49, plus controls: missing row file fails with that row's index, wrong --expect-tip on good bytes fails at tip, tampered usage ROW inside usage.jsonl is detected at the usage row's index; else FAIL naming the escape"
-   },
-   {
-    "id": "P3",
-    "text": "Verification is byte-identical across two runs: the two official run receipts differ ONLY in the declared run_at wall-clock field; every computed digest, check result, tip and verdict byte is identical.",
-    "verdict_rule": "PASS iff run1/run2 receipts are byte-equal after normalizing receipt.run_at to a fixed value; else FAIL with the first differing path"
-   },
-   {
-    "id": "P4",
-    "text": "Absence fails closed: a chain whose row file is missing (or a chain id that does not exist) exits non-zero with a precise error; a wrong expected tip on good bytes also fails closed.",
-    "verdict_rule": "PASS iff all absence/wrong-tip controls exit non-zero with the failing row or tip named; else FAIL naming the false-accept"
-   },
-   {
-    "id": "P5",
-    "text": "The reader is code-independent of the installment-1 walker and of all fleet/crab verifier code: two_reader/reader.mjs imports ONLY node: builtins (plus reads registration.json as DATA), shares no code with crab-traps' arena-scenarios-003-two-reader-walker.mjs or fleet-seeds walkers; pins are DATA reused verbatim from the fleet wave-46 rollout where the fleet pinned them, the rest resolved by disclosed reconnaissance.",
-    "verdict_rule": "PASS iff the static import scan of two_reader/*.mjs shows zero non-node: specifiers outside two_reader/ and zero string references to crab-traps or fleet-seeds code modules; else FAIL with the offending import"
-   }
-  ],
-  "pin_resolution_disclosure": "Fleet-pinned digests (45c predictions/results, 44a predictions/results, moth fixture ebc8a43d…) are reused VERBATIM from fleet-seeds wave-46 claims.json (cfaf425b…) and re-verified byte-equal against the local crab-traps working tree @ 37c34bb AND against the pinned commits via git blob ids (all stable). All other row digests and the three tips were resolved by pre-registration reconnaissance over the local clone (git blob at pinned commit == working-tree bytes for every row; verified before sealing) and are pinned here BEFORE the official run, exactly the 46-e disclosed-reconnaissance pattern.",
-  "chains": [
-   {
-    "id": "crab45c",
-    "label": "45-c live-reasoner registration/receipts chain",
-    "pinned_commit": "e6f5ce3342e12280d7ef70d982ec4c6d709540e9",
-    "rows": [
-     {
-      "index": 1,
-      "id": "predictions",
-      "path": "worker/src/arena-scenarios-003-live-reasoner-predictions.json",
-      "bytes_sha256": "76bf72511c5507d0997eb7a2dc4d152090a8f7a0860f42b8159248fc21beac2a",
-      "pinned_by": "fleet wave-46 witness rollout claims.json (cfaf425b42ac2824b91c9190a0d89d34be9158657815399e12e0513d4ca0118a, fleet-seeds @ 9c46c34253c18ae3f94f764470ccb6e837768255); re-verified against working tree @ crab-traps 37c34bb by lane 48-b recon",
-      "note": "genesis row: pre-registered BEFORE any live call (commit a6ada5a)"
-     },
-     {
-      "index": 2,
-      "id": "moth-fetch-attempt1-fail",
-      "path": "worker/src/receipts/45c/moth-fetch-receipt.attempt1-fail.json",
-      "bytes_sha256": "3190f715deb4b07e70feb942a707b22e31e49350e138dd0e3b980f33b87d7803",
-      "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern"
-     },
-     {
-      "index": 3,
-      "id": "moth-fetch-receipt",
-      "path": "worker/src/receipts/45c/moth-fetch-receipt.json",
-      "bytes_sha256": "21ecf300b6b32828c8e65f4b552ba95fb3f764aa6969b1e7468d8ab387b8acca",
-      "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern",
-      "note": "fresh QPU entropy fetch FAILED (error: no usable output.random.hex); whitening therefore reused the archived 42-b fixture, receipted as fixture-reuse"
-     },
-     {
-      "index": 4,
-      "id": "moth-raw-bits-local-sample",
-      "path": "worker/src/receipts/45c/moth-raw-bits.txt",
-      "bytes_sha256": "20036581c31cb2aa2a313ef5a2be445539f567a9f779d0b794b412a27ac2e710",
-      "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern",
-      "note": "HONEST FINDING at recon: 257-byte leftover sample of the FAILED fresh fetch; it is NOT the whitening input (input binds the 4848-byte archived fixture ebc8a43d… via the moth-fixture cross-check)"
-     },
-     {
-      "index": 5,
-      "id": "whitening-receipt",
-      "path": "worker/src/receipts/45c/whitening-receipt.json",
-      "bytes_sha256": "f7faba2c28ff006a6f4daf59e4b604eb5df1d9f8476fe722d853e6b0257aa780",
-      "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern",
-      "checks": [
-       {
-        "type": "field_constant",
-        "field": "input.len",
-        "value": 4848
-       },
-       {
-        "type": "field_constant",
-        "field": "input.sha256",
-        "value": "ebc8a43d90be5c0b01788f7cc63021ab0b0dac1a0294756e73a2882360b5e9b9",
-        "pinned_by": "fleet wave-46 fixture manifest (moth-42b-raw-bits-2caa822b…txt); byte-verified against fleet-seeds fixture copy when --moth-fixture is provided"
-       },
-       {
-        "type": "array_permutation",
-        "field": "step4_fisherYates.selected",
-        "n": 96
-       }
-      ]
-     },
-     {
-      "index": 2,
-      "id": "call-01-request",
-      "path": "worker/src/receipts/45c/45c-call-01-request.json",
-      "bytes_sha256": "f8883ad628dcdd728f6eaae5a73c2de298d5d8d891b9dbfd1c68ecbe8afae55a",
-      "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern",
-      "checks": [
-       {
-        "type": "field_constant",
-        "field": "call_no",
-        "value": 1
-       }
-      ]
-     },
-     {
-      "index": 3,
-      "id": "call-01-response",
-      "path": "worker/src/receipts/45c/45c-call-01-response.json",
-      "bytes_sha256": "ed12021fe8e7295fa8dc20f77532f15a2f2143614f709316cbc8f33249961a29",
-      "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern"
-     },
-     {
-      "index": 4,
-      "id": "call-02-request",
-      "path": "worker/src/receipts/45c/45c-call-02-request.json",
-      "bytes_sha256": "47bd9ecdd23af10cbaf0fbaa24ecd9d08e5d413e64a1cbf90802d9462f016524",
-      "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern",
-      "checks": [
-       {
-        "type": "field_constant",
-        "field": "call_no",
-        "value": 2
-       }
-      ]
-     },
-     {
-      "index": 5,
-      "id": "call-02-response",
-      "path": "worker/src/receipts/45c/45c-call-02-response.json",
-      "bytes_sha256": "28ea2b6688ca519efa09e09742dddecde3f066b7a2d852f8afc60f9b5490baec",
-      "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern"
-     },
-     {
-      "index": 6,
-      "id": "call-03-request",
-      "path": "worker/src/receipts/45c/45c-call-03-request.json",
-      "bytes_sha256": "c4382b7e3ead8bf33c8642f51f11bc7b87b9e2d3720163294762437d12636ed5",
-      "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern",
-      "checks": [
-       {
-        "type": "field_constant",
-        "field": "call_no",
-        "value": 3
-       }
-      ]
-     },
-     {
-      "index": 7,
-      "id": "call-03-response",
-      "path": "worker/src/receipts/45c/45c-call-03-response.json",
-      "bytes_sha256": "99c0f3e2748a1e4ffe914faeab7d416fd333327aac819ce5f0a7641c545e512b",
-      "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern"
-     },
-     {
-      "index": 8,
-      "id": "call-04-request",
-      "path": "worker/src/receipts/45c/45c-call-04-request.json",
-      "bytes_sha256": "3244f3b6baf90213df9d714dfbacfe7b90ab6fd7535cc2b5d334d0854bb9d551",
-      "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern",
-      "checks": [
-       {
-        "type": "field_constant",
-        "field": "call_no",
-        "value": 4
-       }
-      ]
-     },
-     {
-      "index": 9,
-      "id": "call-04-response",
-      "path": "worker/src/receipts/45c/45c-call-04-response.json",
-      "bytes_sha256": "d1311ba4d11e559321779407f1e3a2bc8f76d3e0d3a68adddcc1137011ba4b0c",
-      "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern"
-     },
-     {
-      "index": 10,
-      "id": "call-05-request",
-      "path": "worker/src/receipts/45c/45c-call-05-request.json",
-      "bytes_sha256": "9a004667ef4236d74ae89ecbd3dac9397235921222408b45fc5bf45422963c4d",
-      "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern",
-      "checks": [
-       {
-        "type": "field_constant",
-        "field": "call_no",
-        "value": 5
-       }
-      ]
-     },
-     {
-      "index": 11,
-      "id": "call-05-response",
-      "path": "worker/src/receipts/45c/45c-call-05-response.json",
-      "bytes_sha256": "6c35b0db1bb5fa5648bcf94f6963d55534ecef2270bc648ecd56048fc1e4c54e",
-      "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern"
-     },
-     {
-      "index": 16,
-      "id": "resume-ingested",
-      "path": "worker/src/receipts/45c/resume-ingested.json",
-      "bytes_sha256": "0309e529af5bbd8df8aa31a1c45c3fdcf8bcaebf14742722c53400bd4269994c",
-      "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern",
-      "checks": [
-       {
-        "type": "field_constant",
-        "field": "ingested",
-        "value": [
-         "45c-call-01-response.json",
-         "45c-call-02-response.json",
-         "45c-call-03-response.json",
-         "45c-call-04-response.json",
-         "45c-call-05-response.json"
-        ]
-       }
-      ]
-     },
-     {
-      "index": 17,
-      "id": "usage-jsonl",
-      "path": "worker/src/receipts/45c/usage.jsonl",
-      "bytes_sha256": "7fed06bc2c6f56ad6ada9d98962ef21e3be2fcf0bfe74243215597fcb63a75bb",
-      "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern",
-      "checks": [
-       {
-        "type": "usage_rows_match_calls",
-        "count": 5,
-        "request_pattern": "worker/src/receipts/45c/45c-call-{call}-request.json",
-        "response_pattern": "worker/src/receipts/45c/45c-call-{call}-response.json",
-        "call_start": 1
-       }
-      ]
-     },
-     {
-      "index": 18,
-      "id": "results",
-      "path": "worker/src/arena-scenarios-003-live-reasoner-results.json",
-      "bytes_sha256": "818e66834edb5ed1d21f1a2070eeb860d6cc8dd291546deaa59ea3fb61bc2184",
-      "pinned_by": "fleet wave-46 witness rollout claims.json (cfaf425b42ac2824b91c9190a0d89d34be9158657815399e12e0513d4ca0118a, fleet-seeds @ 9c46c34253c18ae3f94f764470ccb6e837768255); re-verified against working tree @ crab-traps 37c34bb by lane 48-b recon",
-      "checks": [
-       {
-        "type": "digest_equals_row_field",
-        "row": 1,
-        "field": "pre_registration.sha256"
-       },
-       {
-        "type": "order_sha_of_array",
-        "field": "whitening.order_sha256",
-        "source_row": 5,
-        "source_array_field": "step4_fisherYates.selected"
-       },
-       {
-        "type": "array_equal_constant",
-        "field": "whitening.order_first12",
-        "value": [
-         27,
-         85,
-         44,
-         46,
-         32,
-         63,
-         20,
-         64,
-         62,
-         66,
-         23,
-         19
-        ]
-       },
-       {
-        "type": "field_constant",
-        "field": "verdict.D",
-        "value": 0
-       },
-       {
-        "type": "field_constant",
-        "field": "verdict.survived",
-        "value": false
-       }
-      ]
-     },
-     {
-      "index": 19,
-      "id": "verdict-md",
-      "path": "worker/src/arena-scenarios-003-live-reasoner-verdict.md",
-      "bytes_sha256": "ea799dff96a4d3acbf751946cd6db89f615a546a91b573400f3541045a6adb66",
-      "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern",
-      "checks": [
-       {
-        "type": "content_contains",
-        "values": [
-         "D = 0.0000",
-         "KILL",
-         "76bf72511c55"
-        ]
-       }
-      ]
-     }
+  "registration": {
+    "task": "48-b two-reader installment 2 — an independent chain reader LIVING IN qthe that verifies the crab-traps repo's own receipt chains",
+    "direction": "REVERSED relative to installment 1 (crab-traps 47-b walked 8 fleet chains): now the qthe side reads crab-traps. Zero code shared with the installment-1 walker, fleet-seeds walkers, or crab-traps sources — this reader is written from the stone-v1 law itself (hash-chain of rows; every link is a sha256 over exact bytes; fail closed on any tamper at a precise row index).",
+    "lane": "wave 48 lane 48-b (qthe-side second reader)",
+    "written_at_repo": "SuperInstance/qthe @ main 0c36dd2",
+    "target_repo": "SuperInstance/crab-traps @ working tree main 37c34bb; each chain additionally pinned to the commit that produced it",
+    "reader_module": "two_reader/reader.mjs (stdlib-only Node: node:crypto, node:fs, node:path, node:process — zero imports from any other repo)",
+    "seal_discipline": "THIS file was sealed BEFORE the first official run: seal.self_sha256_masked is the sha256 of these exact bytes with the seal.self_sha256_masked field replaced by 64 '0's (fixed-position mask, byte length unchanged); seal.mtime_local is forced back onto the file with utimes AFTER the last write so the recorded mtime binds the sealed bytes and PREDATES every run receipt in two_reader/run_receipts/. Zero API spend; MOTH_KEY unused (all choices deterministic).",
+    "law": {
+      "genesis": "h_0 = sha256('CRAB-GENESIS-1') (ascii, lowercase hex)",
+      "fold": "h_i = sha256( hex(h_{i-1}) + ':' + bytes_sha256(row_i) + ':' + row_id_i ) over rows in registered order; tip = h_N",
+      "row_digest": "bytes_sha256(row) = sha256 of the file's raw bytes at worker/-relative path inside the crab-traps working tree",
+      "fail_closed": "exit 0 requires: every row file present, every row digest equal to its pin, every check true, tip equal to expect_tip; ANY failure exits non-zero and reports first_failure at a precise chain/row/check",
+      "chain_shape_honesty": "crab-traps does NOT keep stone-v1 parent-link row chains natively. Its receipts form a PRE-REGISTRATION BINDING CHAIN (predictions sealed before any call -> results embedding pre_registration.sha256 -> verdict; receipts bound by byte digests and cross-field bindings). The two-reader enforces the stone-v1 LAW over that shape: the walker's rolling fold turns the row sequence into a real hash chain whose tip pins order AND content, so any single-byte tamper in any row breaks the chain at that row."
+    },
+    "claims": [
+      {
+        "id": "P1",
+        "text": "All 49 rows of the three crab-traps receipt chains (crab45c: 19 rows, crab44a: 4 rows, crab46a: 26 rows) re-hash to their pinned bytes_sha256 from genesis, every registered binding check holds (embedded pre_registration digests, whitening order sha over the actual selected array, permutation 0..95, usage-row-to-call-receipt bindings, verdict content constants), and each chain's rolling fold tip equals its pinned expect_tip (crab45c f3ed1b63…, crab44a 0886f81d…, crab46a 45812cff…).",
+        "verdict_rule": "PASS iff the official run's reader receipts show ok=true for all three chains with tips equal to the pinned values and zero failed checks; else FAIL naming the first failing row/check"
+      },
+      {
+        "id": "P2",
+        "text": "Tampering ANY single byte in ANY row of ANY chain is detected fail-closed and localized: the reader exits non-zero with first_failure.row_index equal to the tampered row (every row carries its own bytes pin, so localization is at the tampered row itself, not downstream).",
+        "verdict_rule": "PASS iff the self-test's full tamper sweep (one byte flipped in each of the 49 rows) yields exit!=0 AND row_index==tampered row for all 49, plus controls: missing row file fails with that row's index, wrong --expect-tip on good bytes fails at tip, tampered usage ROW inside usage.jsonl is detected at the usage row's index; else FAIL naming the escape"
+      },
+      {
+        "id": "P3",
+        "text": "Verification is byte-identical across two runs: the two official run receipts differ ONLY in the declared run_at wall-clock field; every computed digest, check result, tip and verdict byte is identical.",
+        "verdict_rule": "PASS iff run1/run2 receipts are byte-equal after normalizing receipt.run_at to a fixed value; else FAIL with the first differing path"
+      },
+      {
+        "id": "P4",
+        "text": "Absence fails closed: a chain whose row file is missing (or a chain id that does not exist) exits non-zero with a precise error; a wrong expected tip on good bytes also fails closed.",
+        "verdict_rule": "PASS iff all absence/wrong-tip controls exit non-zero with the failing row or tip named; else FAIL naming the false-accept"
+      },
+      {
+        "id": "P5",
+        "text": "The reader is code-independent of the installment-1 walker and of all fleet/crab verifier code: two_reader/reader.mjs imports ONLY node: builtins (plus reads registration.json as DATA), shares no code with crab-traps' arena-scenarios-003-two-reader-walker.mjs or fleet-seeds walkers; pins are DATA reused verbatim from the fleet wave-46 rollout where the fleet pinned them, the rest resolved by disclosed reconnaissance.",
+        "verdict_rule": "PASS iff the static import scan of two_reader/*.mjs shows zero non-node: specifiers outside two_reader/ and zero string references to crab-traps or fleet-seeds code modules; else FAIL with the offending import"
+      }
     ],
-    "expect_tip": "f3ed1b63fbce6f8691353d43941746675d6202039c958ac3abb131f3118244aa",
-    "optional_bindings": [
-     {
-      "type": "fixture_sha_len",
-      "row": 5,
-      "flag": "moth-fixture",
-      "expect_sha": "ebc8a43d90be5c0b01788f7cc63021ab0b0dac1a0294756e73a2882360b5e9b9",
-      "expect_len": 4848
-     }
+    "pin_resolution_disclosure": "Fleet-pinned digests (45c predictions/results, 44a predictions/results, moth fixture ebc8a43d…) are reused VERBATIM from fleet-seeds wave-46 claims.json (cfaf425b…) and re-verified byte-equal against the local crab-traps working tree @ 37c34bb AND against the pinned commits via git blob ids (all stable). All other row digests and the three tips were resolved by pre-registration reconnaissance over the local clone (git blob at pinned commit == working-tree bytes for every row; verified before sealing) and are pinned here BEFORE the official run, exactly the 46-e disclosed-reconnaissance pattern.",
+    "chains": [
+      {
+        "id": "crab45c",
+        "label": "45-c live-reasoner registration/receipts chain",
+        "pinned_commit": "e6f5ce3342e12280d7ef70d982ec4c6d709540e9",
+        "rows": [
+          {
+            "index": 1,
+            "id": "predictions",
+            "path": "worker/src/arena-scenarios-003-live-reasoner-predictions.json",
+            "bytes_sha256": "76bf72511c5507d0997eb7a2dc4d152090a8f7a0860f42b8159248fc21beac2a",
+            "pinned_by": "fleet wave-46 witness rollout claims.json (cfaf425b42ac2824b91c9190a0d89d34be9158657815399e12e0513d4ca0118a, fleet-seeds @ 9c46c34253c18ae3f94f764470ccb6e837768255); re-verified against working tree @ crab-traps 37c34bb by lane 48-b recon",
+            "note": "genesis row: pre-registered BEFORE any live call (commit a6ada5a)"
+          },
+          {
+            "index": 2,
+            "id": "moth-fetch-attempt1-fail",
+            "path": "worker/src/receipts/45c/moth-fetch-receipt.attempt1-fail.json",
+            "bytes_sha256": "3190f715deb4b07e70feb942a707b22e31e49350e138dd0e3b980f33b87d7803",
+            "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern"
+          },
+          {
+            "index": 3,
+            "id": "moth-fetch-receipt",
+            "path": "worker/src/receipts/45c/moth-fetch-receipt.json",
+            "bytes_sha256": "21ecf300b6b32828c8e65f4b552ba95fb3f764aa6969b1e7468d8ab387b8acca",
+            "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern",
+            "note": "fresh QPU entropy fetch FAILED (error: no usable output.random.hex); whitening therefore reused the archived 42-b fixture, receipted as fixture-reuse"
+          },
+          {
+            "index": 4,
+            "id": "moth-raw-bits-local-sample",
+            "path": "worker/src/receipts/45c/moth-raw-bits.txt",
+            "bytes_sha256": "20036581c31cb2aa2a313ef5a2be445539f567a9f779d0b794b412a27ac2e710",
+            "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern",
+            "note": "HONEST FINDING at recon: 257-byte leftover sample of the FAILED fresh fetch; it is NOT the whitening input (input binds the 4848-byte archived fixture ebc8a43d… via the moth-fixture cross-check)"
+          },
+          {
+            "index": 5,
+            "id": "whitening-receipt",
+            "path": "worker/src/receipts/45c/whitening-receipt.json",
+            "bytes_sha256": "f7faba2c28ff006a6f4daf59e4b604eb5df1d9f8476fe722d853e6b0257aa780",
+            "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern",
+            "checks": [
+              {
+                "type": "field_constant",
+                "field": "input.len",
+                "value": 4848
+              },
+              {
+                "type": "field_constant",
+                "field": "input.sha256",
+                "value": "ebc8a43d90be5c0b01788f7cc63021ab0b0dac1a0294756e73a2882360b5e9b9",
+                "pinned_by": "fleet wave-46 fixture manifest (moth-42b-raw-bits-2caa822b…txt); byte-verified against fleet-seeds fixture copy when --moth-fixture is provided"
+              },
+              {
+                "type": "array_permutation",
+                "field": "step4_fisherYates.selected",
+                "n": 96
+              }
+            ]
+          },
+          {
+            "index": 2,
+            "id": "call-01-request",
+            "path": "worker/src/receipts/45c/45c-call-01-request.json",
+            "bytes_sha256": "f8883ad628dcdd728f6eaae5a73c2de298d5d8d891b9dbfd1c68ecbe8afae55a",
+            "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern",
+            "checks": [
+              {
+                "type": "field_constant",
+                "field": "call_no",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "index": 3,
+            "id": "call-01-response",
+            "path": "worker/src/receipts/45c/45c-call-01-response.json",
+            "bytes_sha256": "ed12021fe8e7295fa8dc20f77532f15a2f2143614f709316cbc8f33249961a29",
+            "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern"
+          },
+          {
+            "index": 4,
+            "id": "call-02-request",
+            "path": "worker/src/receipts/45c/45c-call-02-request.json",
+            "bytes_sha256": "47bd9ecdd23af10cbaf0fbaa24ecd9d08e5d413e64a1cbf90802d9462f016524",
+            "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern",
+            "checks": [
+              {
+                "type": "field_constant",
+                "field": "call_no",
+                "value": 2
+              }
+            ]
+          },
+          {
+            "index": 5,
+            "id": "call-02-response",
+            "path": "worker/src/receipts/45c/45c-call-02-response.json",
+            "bytes_sha256": "28ea2b6688ca519efa09e09742dddecde3f066b7a2d852f8afc60f9b5490baec",
+            "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern"
+          },
+          {
+            "index": 6,
+            "id": "call-03-request",
+            "path": "worker/src/receipts/45c/45c-call-03-request.json",
+            "bytes_sha256": "c4382b7e3ead8bf33c8642f51f11bc7b87b9e2d3720163294762437d12636ed5",
+            "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern",
+            "checks": [
+              {
+                "type": "field_constant",
+                "field": "call_no",
+                "value": 3
+              }
+            ]
+          },
+          {
+            "index": 7,
+            "id": "call-03-response",
+            "path": "worker/src/receipts/45c/45c-call-03-response.json",
+            "bytes_sha256": "99c0f3e2748a1e4ffe914faeab7d416fd333327aac819ce5f0a7641c545e512b",
+            "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern"
+          },
+          {
+            "index": 8,
+            "id": "call-04-request",
+            "path": "worker/src/receipts/45c/45c-call-04-request.json",
+            "bytes_sha256": "3244f3b6baf90213df9d714dfbacfe7b90ab6fd7535cc2b5d334d0854bb9d551",
+            "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern",
+            "checks": [
+              {
+                "type": "field_constant",
+                "field": "call_no",
+                "value": 4
+              }
+            ]
+          },
+          {
+            "index": 9,
+            "id": "call-04-response",
+            "path": "worker/src/receipts/45c/45c-call-04-response.json",
+            "bytes_sha256": "d1311ba4d11e559321779407f1e3a2bc8f76d3e0d3a68adddcc1137011ba4b0c",
+            "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern"
+          },
+          {
+            "index": 10,
+            "id": "call-05-request",
+            "path": "worker/src/receipts/45c/45c-call-05-request.json",
+            "bytes_sha256": "9a004667ef4236d74ae89ecbd3dac9397235921222408b45fc5bf45422963c4d",
+            "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern",
+            "checks": [
+              {
+                "type": "field_constant",
+                "field": "call_no",
+                "value": 5
+              }
+            ]
+          },
+          {
+            "index": 11,
+            "id": "call-05-response",
+            "path": "worker/src/receipts/45c/45c-call-05-response.json",
+            "bytes_sha256": "6c35b0db1bb5fa5648bcf94f6963d55534ecef2270bc648ecd56048fc1e4c54e",
+            "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern"
+          },
+          {
+            "index": 16,
+            "id": "resume-ingested",
+            "path": "worker/src/receipts/45c/resume-ingested.json",
+            "bytes_sha256": "0309e529af5bbd8df8aa31a1c45c3fdcf8bcaebf14742722c53400bd4269994c",
+            "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern",
+            "checks": [
+              {
+                "type": "field_constant",
+                "field": "ingested",
+                "value": [
+                  "45c-call-01-response.json",
+                  "45c-call-02-response.json",
+                  "45c-call-03-response.json",
+                  "45c-call-04-response.json",
+                  "45c-call-05-response.json"
+                ]
+              }
+            ]
+          },
+          {
+            "index": 17,
+            "id": "usage-jsonl",
+            "path": "worker/src/receipts/45c/usage.jsonl",
+            "bytes_sha256": "7fed06bc2c6f56ad6ada9d98962ef21e3be2fcf0bfe74243215597fcb63a75bb",
+            "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern",
+            "checks": [
+              {
+                "type": "usage_rows_match_calls",
+                "count": 5,
+                "request_pattern": "worker/src/receipts/45c/45c-call-{call}-request.json",
+                "response_pattern": "worker/src/receipts/45c/45c-call-{call}-response.json",
+                "call_start": 1
+              }
+            ]
+          },
+          {
+            "index": 18,
+            "id": "results",
+            "path": "worker/src/arena-scenarios-003-live-reasoner-results.json",
+            "bytes_sha256": "818e66834edb5ed1d21f1a2070eeb860d6cc8dd291546deaa59ea3fb61bc2184",
+            "pinned_by": "fleet wave-46 witness rollout claims.json (cfaf425b42ac2824b91c9190a0d89d34be9158657815399e12e0513d4ca0118a, fleet-seeds @ 9c46c34253c18ae3f94f764470ccb6e837768255); re-verified against working tree @ crab-traps 37c34bb by lane 48-b recon",
+            "checks": [
+              {
+                "type": "digest_equals_row_field",
+                "row": 1,
+                "field": "pre_registration.sha256"
+              },
+              {
+                "type": "order_sha_of_array",
+                "field": "whitening.order_sha256",
+                "source_row": 5,
+                "source_array_field": "step4_fisherYates.selected"
+              },
+              {
+                "type": "array_equal_constant",
+                "field": "whitening.order_first12",
+                "value": [
+                  27,
+                  85,
+                  44,
+                  46,
+                  32,
+                  63,
+                  20,
+                  64,
+                  62,
+                  66,
+                  23,
+                  19
+                ]
+              },
+              {
+                "type": "field_constant",
+                "field": "verdict.D",
+                "value": 0
+              },
+              {
+                "type": "field_constant",
+                "field": "verdict.survived",
+                "value": false
+              }
+            ]
+          },
+          {
+            "index": 19,
+            "id": "verdict-md",
+            "path": "worker/src/arena-scenarios-003-live-reasoner-verdict.md",
+            "bytes_sha256": "ea799dff96a4d3acbf751946cd6db89f615a546a91b573400f3541045a6adb66",
+            "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern",
+            "checks": [
+              {
+                "type": "content_contains",
+                "values": [
+                  "D = 0.0000",
+                  "KILL",
+                  "76bf72511c55"
+                ]
+              }
+            ]
+          }
+        ],
+        "expect_tip": "f3ed1b63fbce6f8691353d43941746675d6202039c958ac3abb131f3118244aa",
+        "optional_bindings": [
+          {
+            "type": "fixture_sha_len",
+            "row": 5,
+            "flag": "moth-fixture",
+            "expect_sha": "ebc8a43d90be5c0b01788f7cc63021ab0b0dac1a0294756e73a2882360b5e9b9",
+            "expect_len": 4848
+          }
+        ]
+      },
+      {
+        "id": "crab44a",
+        "label": "44-a GAN-half (forge-bred lures) chain",
+        "pinned_commit": "fed1e98502dfcedbd3669652bbe3d713e1156d78",
+        "rows": [
+          {
+            "index": 1,
+            "id": "predictions",
+            "path": "worker/src/arena-scenarios-003-gan-predictions.json",
+            "bytes_sha256": "76e5ef055f74c4d3b59d2021f1cfb59c994c44ad6119fedae6db5950b0b3ece7",
+            "pinned_by": "fleet wave-46 witness rollout claims.json (cfaf425b42ac2824b91c9190a0d89d34be9158657815399e12e0513d4ca0118a, fleet-seeds @ 9c46c34253c18ae3f94f764470ccb6e837768255); re-verified against working tree @ crab-traps 37c34bb by lane 48-b recon",
+            "note": "genesis row: registered verbatim before the run (commit fed1e98)"
+          },
+          {
+            "index": 2,
+            "id": "gan-lures",
+            "path": "worker/src/arena-scenarios-003-gan-lures.json",
+            "bytes_sha256": "bc2ef70014b09ba7a473b2cd33b3bc2186d5465c4b4e9bc22a8988ce87c5673f",
+            "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern",
+            "note": "96 forge-bred bred claims input (loom-core archive, seed 44)"
+          },
+          {
+            "index": 3,
+            "id": "results",
+            "path": "worker/src/arena-scenarios-003-gan-results.json",
+            "bytes_sha256": "6d7db23ec86e2ffb79d8dcae65b9972fd87bd6f012ecc33d596fb7ebe47a0d78",
+            "pinned_by": "fleet wave-46 witness rollout claims.json (cfaf425b42ac2824b91c9190a0d89d34be9158657815399e12e0513d4ca0118a, fleet-seeds @ 9c46c34253c18ae3f94f764470ccb6e837768255); re-verified against working tree @ crab-traps 37c34bb by lane 48-b recon",
+            "checks": [
+              {
+                "type": "digest_equals_row_field",
+                "row": 1,
+                "field": "pre_registration.sha256"
+              },
+              {
+                "type": "field_constant",
+                "field": "forge_receipt.chain_ok",
+                "value": true
+              },
+              {
+                "type": "field_constant",
+                "field": "verdict.D",
+                "value": 0.9792
+              },
+              {
+                "type": "field_constant",
+                "field": "verdict.survived",
+                "value": true
+              }
+            ]
+          },
+          {
+            "index": 4,
+            "id": "verdict-md",
+            "path": "worker/src/arena-scenarios-003-gan-verdict.md",
+            "bytes_sha256": "2c7387dcec6084182971c5631d709e20cbfcf4e39a75e9e2c149c9121ab24554",
+            "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern",
+            "checks": [
+              {
+                "type": "content_contains",
+                "values": [
+                  "SURVIVE",
+                  "76e5ef05"
+                ]
+              }
+            ]
+          }
+        ],
+        "expect_tip": "0886f81d016c7ee1ca23fd2cbdaea663d43ff7cd4c7bfb687cf0e37a3c5709e4",
+        "optional_bindings": []
+      },
+      {
+        "id": "crab46a",
+        "label": "46-a live-chat seat-swap chain (interlocks crab45c via the whitened order)",
+        "pinned_commit": "6bcc757926cc8e86f106e925780cc4ef579a98ae",
+        "rows": [
+          {
+            "index": 1,
+            "id": "predictions",
+            "path": "worker/src/arena-scenarios-003-live-chat-predictions.json",
+            "bytes_sha256": "e7796d2966802ea08b50f2f9531371d328c9c520db8f11a61980ff5a805b7d2f",
+            "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern",
+            "note": "genesis row; sha bound by 46a-registration-receipt (row 2) captured BEFORE any live call, and re-bound by results (row 25)"
+          },
+          {
+            "index": 2,
+            "id": "registration-receipt",
+            "path": "worker/src/receipts/46a/46a-registration-receipt.json",
+            "bytes_sha256": "f1c0007970962b0183a948040fffe6185077eb87bc9bac705b1233eebfa9c903",
+            "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern",
+            "checks": [
+              {
+                "type": "digest_equals_row_field",
+                "row": 1,
+                "field": "sha256"
+              },
+              {
+                "type": "field_equals_row_len",
+                "field": "bytes",
+                "row": 1
+              }
+            ]
+          },
+          {
+            "index": 3,
+            "id": "order-reuse-receipt",
+            "path": "worker/src/receipts/46a/order-reuse-receipt.json",
+            "bytes_sha256": "29efe5e8631eb6167b6618a7c89acd5a9483f7cdfee265503c4aa710f334b855",
+            "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern",
+            "checks": [
+              {
+                "type": "field_constant",
+                "field": "order_sha256",
+                "value": "5f86bcd34f281a7758d46b239603a685e1136708f66d9582a9d8bfda2b95c390",
+                "pinned_by": "cross-chain binding: equals crab45c row 18 whitening.order_sha256 == sha256(JSON.stringify(45c whitening selected))"
+              },
+              {
+                "type": "field_constant",
+                "field": "expected_sha256_45c",
+                "value": "5f86bcd34f281a7758d46b239603a685e1136708f66d9582a9d8bfda2b95c390"
+              },
+              {
+                "type": "array_equal_constant",
+                "field": "order_first12",
+                "value": [
+                  27,
+                  85,
+                  44,
+                  46,
+                  32,
+                  63,
+                  20,
+                  64,
+                  62,
+                  66,
+                  23,
+                  19
+                ]
+              }
+            ]
+          },
+          {
+            "index": 4,
+            "id": "call-01-request",
+            "path": "worker/src/receipts/46a/46a-call-01-request.json",
+            "bytes_sha256": "e373435361d5cc13ef04c5dd283e9e7873b09cde1fa8de80e14744afab5fb4c0",
+            "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern",
+            "checks": [
+              {
+                "type": "field_constant",
+                "field": "call_no",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "index": 5,
+            "id": "call-01-response",
+            "path": "worker/src/receipts/46a/46a-call-01-response.json",
+            "bytes_sha256": "bdc20d05fc22c4cfaa675e8b320d9c9973acab1089dd21954603cb5df2a3ea4d",
+            "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern"
+          },
+          {
+            "index": 6,
+            "id": "call-02-request",
+            "path": "worker/src/receipts/46a/46a-call-02-request.json",
+            "bytes_sha256": "bb739de936fe9a61137dae61e02150affe551abda82682e9efee6506177b6be8",
+            "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern",
+            "checks": [
+              {
+                "type": "field_constant",
+                "field": "call_no",
+                "value": 2
+              }
+            ]
+          },
+          {
+            "index": 7,
+            "id": "call-02-response",
+            "path": "worker/src/receipts/46a/46a-call-02-response.json",
+            "bytes_sha256": "aa84c87cc5c0d8cd725ed61a4fee5713542c516e50d01b34d4b07185e859bc7c",
+            "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern"
+          },
+          {
+            "index": 8,
+            "id": "call-03-request",
+            "path": "worker/src/receipts/46a/46a-call-03-request.json",
+            "bytes_sha256": "d312f01d0e110bb123c62f8bdafe096f4954c8eae01801407ff3eedb54adb8f1",
+            "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern",
+            "checks": [
+              {
+                "type": "field_constant",
+                "field": "call_no",
+                "value": 3
+              }
+            ]
+          },
+          {
+            "index": 9,
+            "id": "call-03-response",
+            "path": "worker/src/receipts/46a/46a-call-03-response.json",
+            "bytes_sha256": "c24dcc81569cd0475b14375848426f1e159dae76586e75a2bfd779dd205615a1",
+            "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern"
+          },
+          {
+            "index": 10,
+            "id": "call-04-request",
+            "path": "worker/src/receipts/46a/46a-call-04-request.json",
+            "bytes_sha256": "d08e2b432cf1ce471475fdda6cb84281d5c968ce0131976f92a9b67b7a829552",
+            "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern",
+            "checks": [
+              {
+                "type": "field_constant",
+                "field": "call_no",
+                "value": 4
+              }
+            ]
+          },
+          {
+            "index": 11,
+            "id": "call-04-response",
+            "path": "worker/src/receipts/46a/46a-call-04-response.json",
+            "bytes_sha256": "962bc6e4187575693a9ccdd8ee532d4ea5576e66e044ec9320e574b5ae654e3c",
+            "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern"
+          },
+          {
+            "index": 12,
+            "id": "call-05-request",
+            "path": "worker/src/receipts/46a/46a-call-05-request.json",
+            "bytes_sha256": "c72002930485ec2b3da4c0fdea0376ccc4b3a017fd4201b1998a430231acb5bb",
+            "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern",
+            "checks": [
+              {
+                "type": "field_constant",
+                "field": "call_no",
+                "value": 5
+              }
+            ]
+          },
+          {
+            "index": 13,
+            "id": "call-05-response",
+            "path": "worker/src/receipts/46a/46a-call-05-response.json",
+            "bytes_sha256": "bb2e2e1adcaa37f18e0800cbec93183e45f95b7fac62f438a32097c27301e4d3",
+            "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern"
+          },
+          {
+            "index": 14,
+            "id": "call-06-request",
+            "path": "worker/src/receipts/46a/46a-call-06-request.json",
+            "bytes_sha256": "4697279822d327cce3de3a1ea0f3fd8c0f09cd7d246a2446740e989781a01be0",
+            "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern",
+            "checks": [
+              {
+                "type": "field_constant",
+                "field": "call_no",
+                "value": 6
+              }
+            ]
+          },
+          {
+            "index": 15,
+            "id": "call-06-response",
+            "path": "worker/src/receipts/46a/46a-call-06-response.json",
+            "bytes_sha256": "e20d7c0cc6d4cce96f963bd1b1251e00292c3192b4d78ed7e5c3db3345018357",
+            "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern"
+          },
+          {
+            "index": 16,
+            "id": "call-07-request",
+            "path": "worker/src/receipts/46a/46a-call-07-request.json",
+            "bytes_sha256": "fd6ae63f9314d11fa27bd8ea57a28f4ecd3db8dc0fafef284375789d54199571",
+            "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern",
+            "checks": [
+              {
+                "type": "field_constant",
+                "field": "call_no",
+                "value": 7
+              }
+            ]
+          },
+          {
+            "index": 17,
+            "id": "call-07-response",
+            "path": "worker/src/receipts/46a/46a-call-07-response.json",
+            "bytes_sha256": "f3c1bf08debd3927819521fcb0a7ca580144ead5a1a7071405f0b7259592033d",
+            "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern"
+          },
+          {
+            "index": 18,
+            "id": "call-08-request",
+            "path": "worker/src/receipts/46a/46a-call-08-request.json",
+            "bytes_sha256": "acf5d4ae24f030509601b0c5cf91e9e52a93a501290d9e3959a099d070e206c2",
+            "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern",
+            "checks": [
+              {
+                "type": "field_constant",
+                "field": "call_no",
+                "value": 8
+              }
+            ]
+          },
+          {
+            "index": 19,
+            "id": "call-08-response",
+            "path": "worker/src/receipts/46a/46a-call-08-response.json",
+            "bytes_sha256": "ee6dedb550acb607a6836ded3e4a36341ed6dcb80c42f40da838af703768d503",
+            "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern"
+          },
+          {
+            "index": 20,
+            "id": "call-09-request",
+            "path": "worker/src/receipts/46a/46a-call-09-request.json",
+            "bytes_sha256": "135604ab447ff553846f858a64c8f1e429a4da87fcf591b25ad079d9c72267bd",
+            "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern",
+            "checks": [
+              {
+                "type": "field_constant",
+                "field": "call_no",
+                "value": 9
+              }
+            ]
+          },
+          {
+            "index": 21,
+            "id": "call-09-response",
+            "path": "worker/src/receipts/46a/46a-call-09-response.json",
+            "bytes_sha256": "e75a1a5eab43dc18facd4722bae2e276da7bc0b97346491acc20572eaeba3efb",
+            "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern"
+          },
+          {
+            "index": 22,
+            "id": "call-10-request",
+            "path": "worker/src/receipts/46a/46a-call-10-request.json",
+            "bytes_sha256": "1d2ff933c95a4a64e976b1c99ee1d583a91bfd5752d10221c9bfa1b8b6ba6dff",
+            "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern",
+            "checks": [
+              {
+                "type": "field_constant",
+                "field": "call_no",
+                "value": 10
+              }
+            ]
+          },
+          {
+            "index": 23,
+            "id": "call-10-response",
+            "path": "worker/src/receipts/46a/46a-call-10-response.json",
+            "bytes_sha256": "768440181b41b315a8c1a3ea4b27f8dcb1daabcc247481d3fc53fd0c63588afc",
+            "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern"
+          },
+          {
+            "index": 24,
+            "id": "usage-jsonl",
+            "path": "worker/src/receipts/46a/usage.jsonl",
+            "bytes_sha256": "8adb63334dd72944c9f9a0467ae16c60ff564477d9953e87c6a2b1594f8f8069",
+            "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern",
+            "checks": [
+              {
+                "type": "usage_rows_match_calls",
+                "count": 10,
+                "request_pattern": "worker/src/receipts/46a/46a-call-{call}-request.json",
+                "response_pattern": "worker/src/receipts/46a/46a-call-{call}-response.json",
+                "call_start": 1
+              }
+            ]
+          },
+          {
+            "index": 25,
+            "id": "results",
+            "path": "worker/src/arena-scenarios-003-live-chat-results.json",
+            "bytes_sha256": "8df2a4e2aaae34082ef52ef42ce6a20a050d926e46736949c8a3967be923cc1a",
+            "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern",
+            "checks": [
+              {
+                "type": "digest_equals_row_field",
+                "row": 1,
+                "field": "pre_registration.sha256"
+              },
+              {
+                "type": "field_constant",
+                "field": "order_reuse.order_sha256",
+                "value": "5f86bcd34f281a7758d46b239603a685e1136708f66d9582a9d8bfda2b95c390",
+                "pinned_by": "cross-chain binding to crab45c whitened order"
+              },
+              {
+                "type": "field_constant",
+                "field": "verdict.D",
+                "value": 0.9787
+              },
+              {
+                "type": "field_constant",
+                "field": "verdict.survived",
+                "value": true
+              }
+            ]
+          },
+          {
+            "index": 26,
+            "id": "verdict-md",
+            "path": "worker/src/arena-scenarios-003-live-chat-verdict.md",
+            "bytes_sha256": "e31922e5c6f3300dcd072fcc119b67f2b2a624e8f7da8ad682df33a857c1db7b",
+            "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern",
+            "checks": [
+              {
+                "type": "content_contains",
+                "values": [
+                  "SURVIVE",
+                  "0.9787",
+                  "e7796d29"
+                ]
+              }
+            ]
+          }
+        ],
+        "expect_tip": "45812cffd99d9f8566789b71330b8784c0fa25c1a049e0090f82c6262ccb2b50",
+        "optional_bindings": []
+      }
+    ],
+    "reseal_history": [
+      {
+        "n": 1,
+        "reason": "pre-run QA smoke (not an official run) caught a row-numbering defect in crab46a: call-01-request was registered with index 3, colliding with order-reuse-receipt, and row 23 was missing (cross-row JSON caches keyed by index mis-bound). Indices are bookkeeping only — NO pin digest, tip, claim, or check changed; tips recomputed and byte-identical (fold is index-independent: h_i = sha256(h_{i-1} ':' digest ':' row_id)). Fixed and re-sealed; seal #2 predates the official runs.",
+        "fixed_by": "lane 48-b"
+      }
     ]
-   },
-   {
-    "id": "crab44a",
-    "label": "44-a GAN-half (forge-bred lures) chain",
-    "pinned_commit": "fed1e98502dfcedbd3669652bbe3d713e1156d78",
-    "rows": [
-     {
-      "index": 1,
-      "id": "predictions",
-      "path": "worker/src/arena-scenarios-003-gan-predictions.json",
-      "bytes_sha256": "76e5ef055f74c4d3b59d2021f1cfb59c994c44ad6119fedae6db5950b0b3ece7",
-      "pinned_by": "fleet wave-46 witness rollout claims.json (cfaf425b42ac2824b91c9190a0d89d34be9158657815399e12e0513d4ca0118a, fleet-seeds @ 9c46c34253c18ae3f94f764470ccb6e837768255); re-verified against working tree @ crab-traps 37c34bb by lane 48-b recon",
-      "note": "genesis row: registered verbatim before the run (commit fed1e98)"
-     },
-     {
-      "index": 2,
-      "id": "gan-lures",
-      "path": "worker/src/arena-scenarios-003-gan-lures.json",
-      "bytes_sha256": "bc2ef70014b09ba7a473b2cd33b3bc2186d5465c4b4e9bc22a8988ce87c5673f",
-      "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern",
-      "note": "96 forge-bred bred claims input (loom-core archive, seed 44)"
-     },
-     {
-      "index": 3,
-      "id": "results",
-      "path": "worker/src/arena-scenarios-003-gan-results.json",
-      "bytes_sha256": "6d7db23ec86e2ffb79d8dcae65b9972fd87bd6f012ecc33d596fb7ebe47a0d78",
-      "pinned_by": "fleet wave-46 witness rollout claims.json (cfaf425b42ac2824b91c9190a0d89d34be9158657815399e12e0513d4ca0118a, fleet-seeds @ 9c46c34253c18ae3f94f764470ccb6e837768255); re-verified against working tree @ crab-traps 37c34bb by lane 48-b recon",
-      "checks": [
-       {
-        "type": "digest_equals_row_field",
-        "row": 1,
-        "field": "pre_registration.sha256"
-       },
-       {
-        "type": "field_constant",
-        "field": "forge_receipt.chain_ok",
-        "value": true
-       },
-       {
-        "type": "field_constant",
-        "field": "verdict.D",
-        "value": 0.9792
-       },
-       {
-        "type": "field_constant",
-        "field": "verdict.survived",
-        "value": true
-       }
-      ]
-     },
-     {
-      "index": 4,
-      "id": "verdict-md",
-      "path": "worker/src/arena-scenarios-003-gan-verdict.md",
-      "bytes_sha256": "2c7387dcec6084182971c5631d709e20cbfcf4e39a75e9e2c149c9121ab24554",
-      "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern",
-      "checks": [
-       {
-        "type": "content_contains",
-        "values": [
-         "SURVIVE",
-         "76e5ef05"
-        ]
-       }
-      ]
-     }
-    ],
-    "expect_tip": "0886f81d016c7ee1ca23fd2cbdaea663d43ff7cd4c7bfb687cf0e37a3c5709e4",
-    "optional_bindings": []
-   },
-   {
-    "id": "crab46a",
-    "label": "46-a live-chat seat-swap chain (interlocks crab45c via the whitened order)",
-    "pinned_commit": "6bcc757926cc8e86f106e925780cc4ef579a98ae",
-    "rows": [
-     {
-      "index": 1,
-      "id": "predictions",
-      "path": "worker/src/arena-scenarios-003-live-chat-predictions.json",
-      "bytes_sha256": "e7796d2966802ea08b50f2f9531371d328c9c520db8f11a61980ff5a805b7d2f",
-      "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern",
-      "note": "genesis row; sha bound by 46a-registration-receipt (row 2) captured BEFORE any live call, and re-bound by results (row 25)"
-     },
-     {
-      "index": 2,
-      "id": "registration-receipt",
-      "path": "worker/src/receipts/46a/46a-registration-receipt.json",
-      "bytes_sha256": "f1c0007970962b0183a948040fffe6185077eb87bc9bac705b1233eebfa9c903",
-      "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern",
-      "checks": [
-       {
-        "type": "digest_equals_row_field",
-        "row": 1,
-        "field": "sha256"
-       },
-       {
-        "type": "field_equals_row_len",
-        "field": "bytes",
-        "row": 1
-       }
-      ]
-     },
-     {
-      "index": 3,
-      "id": "order-reuse-receipt",
-      "path": "worker/src/receipts/46a/order-reuse-receipt.json",
-      "bytes_sha256": "29efe5e8631eb6167b6618a7c89acd5a9483f7cdfee265503c4aa710f334b855",
-      "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern",
-      "checks": [
-       {
-        "type": "field_constant",
-        "field": "order_sha256",
-        "value": "5f86bcd34f281a7758d46b239603a685e1136708f66d9582a9d8bfda2b95c390",
-        "pinned_by": "cross-chain binding: equals crab45c row 18 whitening.order_sha256 == sha256(JSON.stringify(45c whitening selected))"
-       },
-       {
-        "type": "field_constant",
-        "field": "expected_sha256_45c",
-        "value": "5f86bcd34f281a7758d46b239603a685e1136708f66d9582a9d8bfda2b95c390"
-       },
-       {
-        "type": "array_equal_constant",
-        "field": "order_first12",
-        "value": [
-         27,
-         85,
-         44,
-         46,
-         32,
-         63,
-         20,
-         64,
-         62,
-         66,
-         23,
-         19
-        ]
-       }
-      ]
-     },
-     {
-      "index": 4,
-      "id": "call-01-request",
-      "path": "worker/src/receipts/46a/46a-call-01-request.json",
-      "bytes_sha256": "e373435361d5cc13ef04c5dd283e9e7873b09cde1fa8de80e14744afab5fb4c0",
-      "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern",
-      "checks": [
-       {
-        "type": "field_constant",
-        "field": "call_no",
-        "value": 1
-       }
-      ]
-     },
-     {
-      "index": 5,
-      "id": "call-01-response",
-      "path": "worker/src/receipts/46a/46a-call-01-response.json",
-      "bytes_sha256": "bdc20d05fc22c4cfaa675e8b320d9c9973acab1089dd21954603cb5df2a3ea4d",
-      "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern"
-     },
-     {
-      "index": 6,
-      "id": "call-02-request",
-      "path": "worker/src/receipts/46a/46a-call-02-request.json",
-      "bytes_sha256": "bb739de936fe9a61137dae61e02150affe551abda82682e9efee6506177b6be8",
-      "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern",
-      "checks": [
-       {
-        "type": "field_constant",
-        "field": "call_no",
-        "value": 2
-       }
-      ]
-     },
-     {
-      "index": 7,
-      "id": "call-02-response",
-      "path": "worker/src/receipts/46a/46a-call-02-response.json",
-      "bytes_sha256": "aa84c87cc5c0d8cd725ed61a4fee5713542c516e50d01b34d4b07185e859bc7c",
-      "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern"
-     },
-     {
-      "index": 8,
-      "id": "call-03-request",
-      "path": "worker/src/receipts/46a/46a-call-03-request.json",
-      "bytes_sha256": "d312f01d0e110bb123c62f8bdafe096f4954c8eae01801407ff3eedb54adb8f1",
-      "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern",
-      "checks": [
-       {
-        "type": "field_constant",
-        "field": "call_no",
-        "value": 3
-       }
-      ]
-     },
-     {
-      "index": 9,
-      "id": "call-03-response",
-      "path": "worker/src/receipts/46a/46a-call-03-response.json",
-      "bytes_sha256": "c24dcc81569cd0475b14375848426f1e159dae76586e75a2bfd779dd205615a1",
-      "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern"
-     },
-     {
-      "index": 10,
-      "id": "call-04-request",
-      "path": "worker/src/receipts/46a/46a-call-04-request.json",
-      "bytes_sha256": "d08e2b432cf1ce471475fdda6cb84281d5c968ce0131976f92a9b67b7a829552",
-      "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern",
-      "checks": [
-       {
-        "type": "field_constant",
-        "field": "call_no",
-        "value": 4
-       }
-      ]
-     },
-     {
-      "index": 11,
-      "id": "call-04-response",
-      "path": "worker/src/receipts/46a/46a-call-04-response.json",
-      "bytes_sha256": "962bc6e4187575693a9ccdd8ee532d4ea5576e66e044ec9320e574b5ae654e3c",
-      "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern"
-     },
-     {
-      "index": 12,
-      "id": "call-05-request",
-      "path": "worker/src/receipts/46a/46a-call-05-request.json",
-      "bytes_sha256": "c72002930485ec2b3da4c0fdea0376ccc4b3a017fd4201b1998a430231acb5bb",
-      "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern",
-      "checks": [
-       {
-        "type": "field_constant",
-        "field": "call_no",
-        "value": 5
-       }
-      ]
-     },
-     {
-      "index": 13,
-      "id": "call-05-response",
-      "path": "worker/src/receipts/46a/46a-call-05-response.json",
-      "bytes_sha256": "bb2e2e1adcaa37f18e0800cbec93183e45f95b7fac62f438a32097c27301e4d3",
-      "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern"
-     },
-     {
-      "index": 14,
-      "id": "call-06-request",
-      "path": "worker/src/receipts/46a/46a-call-06-request.json",
-      "bytes_sha256": "4697279822d327cce3de3a1ea0f3fd8c0f09cd7d246a2446740e989781a01be0",
-      "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern",
-      "checks": [
-       {
-        "type": "field_constant",
-        "field": "call_no",
-        "value": 6
-       }
-      ]
-     },
-     {
-      "index": 15,
-      "id": "call-06-response",
-      "path": "worker/src/receipts/46a/46a-call-06-response.json",
-      "bytes_sha256": "e20d7c0cc6d4cce96f963bd1b1251e00292c3192b4d78ed7e5c3db3345018357",
-      "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern"
-     },
-     {
-      "index": 16,
-      "id": "call-07-request",
-      "path": "worker/src/receipts/46a/46a-call-07-request.json",
-      "bytes_sha256": "fd6ae63f9314d11fa27bd8ea57a28f4ecd3db8dc0fafef284375789d54199571",
-      "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern",
-      "checks": [
-       {
-        "type": "field_constant",
-        "field": "call_no",
-        "value": 7
-       }
-      ]
-     },
-     {
-      "index": 17,
-      "id": "call-07-response",
-      "path": "worker/src/receipts/46a/46a-call-07-response.json",
-      "bytes_sha256": "f3c1bf08debd3927819521fcb0a7ca580144ead5a1a7071405f0b7259592033d",
-      "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern"
-     },
-     {
-      "index": 18,
-      "id": "call-08-request",
-      "path": "worker/src/receipts/46a/46a-call-08-request.json",
-      "bytes_sha256": "acf5d4ae24f030509601b0c5cf91e9e52a93a501290d9e3959a099d070e206c2",
-      "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern",
-      "checks": [
-       {
-        "type": "field_constant",
-        "field": "call_no",
-        "value": 8
-       }
-      ]
-     },
-     {
-      "index": 19,
-      "id": "call-08-response",
-      "path": "worker/src/receipts/46a/46a-call-08-response.json",
-      "bytes_sha256": "ee6dedb550acb607a6836ded3e4a36341ed6dcb80c42f40da838af703768d503",
-      "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern"
-     },
-     {
-      "index": 20,
-      "id": "call-09-request",
-      "path": "worker/src/receipts/46a/46a-call-09-request.json",
-      "bytes_sha256": "135604ab447ff553846f858a64c8f1e429a4da87fcf591b25ad079d9c72267bd",
-      "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern",
-      "checks": [
-       {
-        "type": "field_constant",
-        "field": "call_no",
-        "value": 9
-       }
-      ]
-     },
-     {
-      "index": 21,
-      "id": "call-09-response",
-      "path": "worker/src/receipts/46a/46a-call-09-response.json",
-      "bytes_sha256": "e75a1a5eab43dc18facd4722bae2e276da7bc0b97346491acc20572eaeba3efb",
-      "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern"
-     },
-     {
-      "index": 22,
-      "id": "call-10-request",
-      "path": "worker/src/receipts/46a/46a-call-10-request.json",
-      "bytes_sha256": "1d2ff933c95a4a64e976b1c99ee1d583a91bfd5752d10221c9bfa1b8b6ba6dff",
-      "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern",
-      "checks": [
-       {
-        "type": "field_constant",
-        "field": "call_no",
-        "value": 10
-       }
-      ]
-     },
-     {
-      "index": 23,
-      "id": "call-10-response",
-      "path": "worker/src/receipts/46a/46a-call-10-response.json",
-      "bytes_sha256": "768440181b41b315a8c1a3ea4b27f8dcb1daabcc247481d3fc53fd0c63588afc",
-      "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern"
-     },
-     {
-      "index": 24,
-      "id": "usage-jsonl",
-      "path": "worker/src/receipts/46a/usage.jsonl",
-      "bytes_sha256": "8adb63334dd72944c9f9a0467ae16c60ff564477d9953e87c6a2b1594f8f8069",
-      "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern",
-      "checks": [
-       {
-        "type": "usage_rows_match_calls",
-        "count": 10,
-        "request_pattern": "worker/src/receipts/46a/46a-call-{call}-request.json",
-        "response_pattern": "worker/src/receipts/46a/46a-call-{call}-response.json",
-        "call_start": 1
-       }
-      ]
-     },
-     {
-      "index": 25,
-      "id": "results",
-      "path": "worker/src/arena-scenarios-003-live-chat-results.json",
-      "bytes_sha256": "8df2a4e2aaae34082ef52ef42ce6a20a050d926e46736949c8a3967be923cc1a",
-      "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern",
-      "checks": [
-       {
-        "type": "digest_equals_row_field",
-        "row": 1,
-        "field": "pre_registration.sha256"
-       },
-       {
-        "type": "field_constant",
-        "field": "order_reuse.order_sha256",
-        "value": "5f86bcd34f281a7758d46b239603a685e1136708f66d9582a9d8bfda2b95c390",
-        "pinned_by": "cross-chain binding to crab45c whitened order"
-       },
-       {
-        "type": "field_constant",
-        "field": "verdict.D",
-        "value": 0.9787
-       },
-       {
-        "type": "field_constant",
-        "field": "verdict.survived",
-        "value": true
-       }
-      ]
-     },
-     {
-      "index": 26,
-      "id": "verdict-md",
-      "path": "worker/src/arena-scenarios-003-live-chat-verdict.md",
-      "bytes_sha256": "e31922e5c6f3300dcd072fcc119b67f2b2a624e8f7da8ad682df33a857c1db7b",
-      "pinned_by": "resolved by lane 48-b pre-registration reconnaissance over the local clone @ 37c34bb (git blob at pinned commit == working-tree bytes, verified 2026-09-28); disclosed per the 46-e pin_resolution_disclosure pattern",
-      "checks": [
-       {
-        "type": "content_contains",
-        "values": [
-         "SURVIVE",
-         "0.9787",
-         "e7796d29"
-        ]
-       }
-      ]
-     }
-    ],
-    "expect_tip": "45812cffd99d9f8566789b71330b8784c0fa25c1a049e0090f82c6262ccb2b50",
-    "optional_bindings": []
-   }
-  ],
-  "reseal_history": [
-   {
-    "n": 1,
-    "reason": "pre-run QA smoke (not an official run) caught a row-numbering defect in crab46a: call-01-request was registered with index 3, colliding with order-reuse-receipt, and row 23 was missing (cross-row JSON caches keyed by index mis-bound). Indices are bookkeeping only — NO pin digest, tip, claim, or check changed; tips recomputed and byte-identical (fold is index-independent: h_i = sha256(h_{i-1} ':' digest ':' row_id)). Fixed and re-sealed; seal #2 predates the official runs.",
-    "fixed_by": "lane 48-b"
-   }
-  ]
- },
- "seal": {
-  "self_sha256_masked": "0ea815a06ee0aaa90461c30b020a686432c0c31c2cd893d225e25b13dd144a07",
-  "mask_field": "seal.self_sha256_masked",
-  "mask_value": "0000000000000000000000000000000000000000000000000000000000000000",
-  "mtime_local": "2026-09-28T04:05:39.331Z",
-  "mtime_is_binding": true,
-  "method": "masked-self-sha + utimes-restored mtime; verify: replace seal.self_sha256_masked with 64 zeros, sha256 the exact file bytes, compare; stat mtime must equal mtime_local (ms) and predate all run receipts"
- }
+  },
+  "seal": {
+    "self_sha256_masked": "7efea995e661dc2dd138ef78ed84cd9eb92452aab50e4d2afa3c2ee4ed90e30c",
+    "mask_field": "seal.self_sha256_masked",
+    "mask_value": "0000000000000000000000000000000000000000000000000000000000000000",
+    "mtime_local": "2026-09-28T16:35:10.268Z",
+    "mtime_is_binding": true,
+    "method": "masked-self-sha + utimes-restored mtime; mtime demoted to witness under explicit --mtime-witness flag (fleet law A4); verify: replace seal.self_sha256_masked with 64 zeros, sha256 must match; mtime must match seal.mtime_local within 2ms unless the reader runs with --mtime-witness",
+    "mtime_is_binding_strict_default": true,
+    "mtime_witness_flag": "--mtime-witness (distribution contexts: npm install normalizes mtimes to the 1985-10-26T08:15:00.000Z epoch 499162500000 — receipted wave 52 codespace attempts 5-7)"
+  }
 }
