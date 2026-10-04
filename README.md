@@ -16,3 +16,14 @@ where an honest null is a crown jewel.
 
 House: stone-v1 receipt chains; determinism or it didn't happen; the tavern
 hosts DeepSeek as a cache-gamed live guest. 已落地 — live as we work.
+
+## Documentation
+
+Wave-69 docs layer (added; nothing above was changed). Route by audience:
+
+- Zero-shot agent entry point: [docs/ONBOARDING.md](docs/ONBOARDING.md)
+- End users of the kernel / mirror / experiments: [docs/USER-GUIDE.md](docs/USER-GUIDE.md)
+- Developers extending the code: [docs/DEVELOPER-GUIDE.md](docs/DEVELOPER-GUIDE.md)
+- Engineers operating / reviewing the system: [docs/ENGINEERING-NOTES.md](docs/ENGINEERING-NOTES.md)
+- Executives deciding investment: [docs/CTO-BRIEF.md](docs/CTO-BRIEF.md)
+- Index of all deeper knowledge: [docs/KNOWLEDGE-MAP.md](docs/KNOWLEDGE-MAP.md)

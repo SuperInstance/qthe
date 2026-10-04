@@ -1,8 +1,8 @@
 {
  "tool": "qthe two_reader/selftest.mjs (negative controls, installment 2; wave-52 mode-aware)",
- "mode": "strict (pins mtime matches seal.mtime_local; mtime binds)",
+ "mode": "mtime-witness (distribution context: pins mtime normalized by installer; strict suite would self-refuse — fleet law A4)",
  "lane": "wave 48 lane 48-b",
- "run_at": "2026-09-28T18:10:18.846Z",
+ "run_at": "2026-10-04T20:10:11.038Z",
  "cases_total": 54,
  "cases_passed": 54,
  "escapes": 0,
