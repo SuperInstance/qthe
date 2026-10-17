@@ -1,0 +1,25 @@
+{
+  "wave": "ORCH-R11",
+  "artifact": "situations/adjudications_r10.json",
+  "law": "the grounding law, made machine-readable: judgments are sealed AS SAID and never edited; ADJUDICATION is the repo-verified outcome sitting BESIDE them. Origin: arena-r11 mimov26f F2 + dsv41f F4 (the sealed Jev rows carry 4/4 verified_new on qwen3635b's invented mechanism; the law existed only as prose until this file).",
+  "source_of_truth": "the orchestrator's repo verification, receipted in situations/arena_r10_verdict.md (every finding was checked against the repository itself)",
+  "judgment_file": "situations/jev_judgments_r10.jsonl",
+  "adjudications": {
+    "r10-judge-seed20mini": { "repo_verified_new": 0, "jev_verified_new": 1, "verdict": "5/5 already-admitted (one borderline: Jev counted the license fix as verified_new; the briefing conceded the gap, so the orchestrator scores admitted)", "hallucination_caught_by_repo": 0 },
+    "r10-judge-mimov26f": { "repo_verified_new": 6, "jev_verified_new": 4, "verdict": "strongest seat; Jev's 2 already_admitted scores were boundary calls, not errors", "hallucination_caught_by_repo": 0 },
+    "r10-judge-dsv41f": { "repo_verified_new": 5, "jev_verified_new": 6, "verdict": "Jev promoted one plausible-unverified (harness-contamination) that repo analysis closed clean — the closure is receipted in DEVELOPER-GUIDE", "hallucination_caught_by_repo": 0 },
+    "r10-judge-qwen3635b": { "repo_verified_new": 0, "jev_verified_new": 4, "verdict": "THE GROUNDING-GAP RECEIPT: qwen's cache-eviction 'determinism-breaking' mechanism is invented (M6 determinism is arithmetic, not memory placement); Jev rated it 4/4 verified_new because the briefing cannot falsify mechanism claims — only the repository can", "hallucination_caught_by_repo": 1 },
+    "r10-judge-musegl30b": { "repo_verified_new": 0, "jev_verified_new": 2, "verdict": "invented CLI flags (probe_gate --experiment, verify_all_chains --list) passed as verified_new; same class as qwen's", "hallucination_caught_by_repo": 1 },
+    "r10-judge-hy4p": { "repo_verified_new": 5, "jev_verified_new": 2, "verdict": "hy4's falsifier PREDICTED the registry-drift class (partial credit receipted); Jev demoted its strongest findings to already_admitted — leniency, not error", "hallucination_caught_by_repo": 0 },
+    "r10-judge-nemotron35sv": { "repo_verified_new": 3, "jev_verified_new": 4, "verdict": "boundary call on the license finding (admitted vs new); otherwise aligned", "hallucination_caught_by_repo": 0 }
+  },
+  "totals": {
+    "findings_judged": 40,
+    "repo_verified_new": 19,
+    "jev_verified_new": 23,
+    "hallucinations_jev_flagged": 0,
+    "hallucinations_repo_caught": 2,
+    "agreement_on_hallucination": "ZERO — the judge layer cannot see the repository; this file is why that gap is priced, not hidden"
+  },
+  "standing_law": "judges draft, the repo decides. Any future consumer of jev_judgments_*.jsonl MUST read this adjudication file (or run fresh repo verification) before acting on a judgment. Jev's severity/actionability triage is trusted; its artifact-existence and mechanism claims are not."
+}

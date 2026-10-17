@@ -180,16 +180,19 @@ The gate is fail-loud (exit 1) and appends its own sealed row per run —
 `scripts/verify_all_chains.mjs` audits the full chain-of-chains including
 the gate's own chain.
 
-**Chain registration law (ORCH-R10 refinement, now enforced):** the commit
-that seals a chain registers it — same commit, always — by adding one entry
-to `scripts/chain_registry.mjs`, the single source of truth consumed by
-verify_all_chains, probe_gate, emit_fleet_seeds, falsification_budget, and
-the dashboard builder. PG1 fails on any chain-shaped file on disk that the
-registry does not know: an unregistered seal can no longer pass silently.
-This law was prose-only until arena round 10's verification found
-chain-registry drift (defect #7: the E-Q15/E-Q16 run commits sealed chains
-without registering; the auditors had drifted to 11–15 of 16 chains —
-registration is addition, never subtraction).
+**Chain registration law (ORCH-R10 refinement; ENFORCED AT SEAL TIME since
+ORCH-R11):** the commit that seals a chain registers it — same commit,
+always — by adding one entry to `scripts/chain_registry.mjs`, the single
+source of truth consumed by verify_all_chains, probe_gate, emit_fleet_seeds,
+falsification_budget, and the dashboard builder. Two enforcement layers:
+PG1 fails on any chain-shaped file on disk the registry does not know, and
+**`appendAndVerify` itself (experiments/_harness.mjs) REFUSES to seal into
+an unregistered chain file** — an unregistered seal cannot happen at all
+now (arena-r11 dsv41f finding: the R10 law was prose enforced only at
+gate-run time; the seal path is the class-kill). The registry's own sha256
+is pinned in the fleet-seeds entry and drift-checked by the dashboard
+builder (arena-r11 hy4p self-critique: the single source of truth is itself
+a verified artifact).
 
 **PG6 (built, ORCH-2b):** the gates prove INTEGRITY (hashes re-verify, tamper
 refused), not SOUNDNESS (verdicts recompute from their sealed traces).
@@ -209,3 +212,24 @@ aggregate had compared q()-stringified numbers lexicographically
 "CONTENTION NOT MONOTONE" while the sealed data 353.57 → 1387.5 → 5874.11
 is strictly monotone; erratum row appended to the e_q16 chain, both runners
 hardened to parse-before-compare, defect banked in the falsification budget.
+
+**PG6 coverage law (ORCH-R11 growth, the arena-r11 consensus finding — all
+four seats independently):** the curated claims table is a hand-maintained
+list, the same class as defect #7's chain-list drift. The growth is now
+ENFORCED, not remembered: every registered chain must carry ≥ 1 curated
+claim or an explicit exclusion with a reason (`EXCLUDED` in
+`verdict_recompute.mjs`); a newly sealed+registered experiment FAILS PG6
+until its headline arithmetic is curated. Current state: 20 claims over
+16/16 chains (12 covered, 4 excluded: G0-G6, crossimpl-py, crossimpl-c,
+probe_gate — each with its reason). The coverage check's first run caught
+e_q10 uncovered and demanded its claim in the same breath.
+
+**Erratum-reading law (ORCH-R11, mimov26f F4 / dsv41f F3, verified):**
+append-only chains keep superseded rows standing (that is the law). Any
+consumer reading verdict rows from a chain MUST resolve errata (rows of
+kind `erratum.*` / `correction.*`) before quoting a verdict —
+`verdict_recompute.mjs` is the reference pattern (the E-Q16-contention
+claim REQUIRES the erratum row to exist whenever the sealed aggregate
+disagrees with the data). Grep-receipted: no current consumer reads
+verdict rows raw besides verdict_recompute; the law exists so that stays
+true by design, not by luck.

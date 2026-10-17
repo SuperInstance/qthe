@@ -3,8 +3,11 @@
 > Living document (update every round). What the house has PAID to learn
 > about each seat: latency, budget needs, output-contract reliability,
 > strengths, failure modes, and the role each seat has EARNED. Priced from
-> sealed rounds (r10 economics: `situations/cache_economics_r10.json`;
-> judgments: `situations/jev_judgments_r10.jsonl`).
+> sealed rounds — receipts: `situations/cache_economics_r10.json`,
+> `situations/cache_economics_r11.json`, `situations/arena_rows_r10.jsonl`
+> (call ids cited inline), `situations/arena_rows_r11.jsonl`, adjudications
+> `situations/adjudications_r10.json`. (Receipt pointers added ORCH-R11 per
+> seed20mini's missed-attack: the table's claims cite their telemetry.)
 
 ## The seats, round-10 priced
 
@@ -46,3 +49,16 @@
 6. **Amendment law for guests:** a seat that fails its output contract gets
    ONE declared amendment at a higher budget (row carries `amendment_of` +
    note; both rows stand). Two failures = priced out of the round.
+7. **r11 additions:** the two-turn structure works — turn-2 self-critique
+   cashes the prefix cache (MiMo turn 2: 1,952 cached tokens, $0.000715;
+   Hy4 turn 2: 1,792 cached; Seed and DeepSeek-V4.1 turn 2 drew no hit —
+   provider-side, receipted in `cache_economics_r11.json`, honest telemetry).
+   Seed under ATTACK-briefing produced 4 sharp findings + honest
+   self-critique (its weakest-finding admission was correct) — the
+   devil's-advocate framing is now the confirmed briefing for it. Harness
+   lesson: never `.format()` a prompt containing literal JSON braces —
+   `.replace()` only (r11 in-run fix, disclosed).
+8. **Budget/latency table update (r11, n=2 rounds):** turn-1 attack runs
+   came in 1.8–6.7k tokens at 8k budgets (Seed 6,712 — closest to cap;
+   give it 10k+ for attack rounds), latencies 31–92 s; DeepSeek-V4.1-Flash
+   remains the fastest quality seat (31 s / 1.8k out).

@@ -128,6 +128,10 @@ const defectList = budgetSection('Defects the discipline caught (none reached a 
 
 // ── 5. cross-checks (fail-loud; the dashboard never lies about its inputs) ─
 sha256('qthe.mjs') === fleet.kernel_sha256 || die('fleet-seeds kernel sha does NOT match qthe.mjs on disk — re-run scripts/emit_fleet_seeds.mjs');
+// ORCH-R11 (hy4p self-critique, adopted): the registry is the single source of
+// truth — pin its own sha so a registry edit that legalizes a forged chain
+// fails HERE until fleet seeds are re-emitted in the open.
+fleet.chain_registry_sha256 === sha256('scripts/chain_registry.mjs') || die('chain_registry.mjs sha does NOT match the fleet-seeds pin — a registry edit landed without re-emitting fleet seeds (re-run scripts/emit_fleet_seeds.mjs)');
 chainFiles.length === Object.keys(fleet.chain_tips).length || die(`fleet-seeds pins ${Object.keys(fleet.chain_tips).length} chains but the emit script maps ${chainFiles.length}`);
 let pinnedRows = 0;
 for (const [name, path] of chainFiles) {

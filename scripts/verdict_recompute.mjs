@@ -31,6 +31,7 @@
 import { readFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
+import { STONE_CHAINS as REGISTRY } from './chain_registry.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 
@@ -398,7 +399,131 @@ const CLAIMS = [
       return { recomputed: `${xms}/${fms} ms = ${ratio.toFixed(5)} → ${c.ratioFixedOverFloat} (per-seed medians → per-run median → ratio; chain row cost_benchmark.ORCH6 agrees)` };
     },
   },
+  {
+    // ORCH-R11 coverage growth: the five claims the arena seats demanded.
+    id: 'C5/E-Q5-no-self-repair',
+    source: 'experiments/outputs/e_q5_results.json',
+    cite: 'receipts/e_q5_chain.jsonl · verdict rows · docs/CLAIM-VERDICTS.md §C5',
+    expected: 'repairTick null in every trial of both repair arms; pristine half-erosion 28, injected 25; repairedWithoutInjection false',
+    run() {
+      const c = readJson(this.source);
+      const n = (c.aggregates.a1RepairTicks ?? []).length;
+      if ((c.aggregates.a1RepairTicks ?? []).some((v) => v !== null) || (c.aggregates.a2RepairTicks ?? []).some((v) => v !== null)) throw new Error('some repairTick is not null — self-repair observed?');
+      const a0 = c.aggregates.a0HalfErosion;
+      const a2 = c.aggregates.a2HalfErosion;
+      if (!a0.every((v) => v === 28) || !a2.every((v) => v === 25)) throw new Error(`half-erosion arrays not uniform 28/25: a0=${a0[0]} a2=${a2[0]}`);
+      if (c.aggregates.repairedWithoutInjection !== false) throw new Error('repairedWithoutInjection not false');
+      return { recomputed: `repairTick null ${n}/${n} per arm; halfErosion a0=${a0[0]} a2=${a2[0]}; repairedWithoutInjection=false (ring self-dissolves; C5 DIES stands)` };
+    },
+  },
+  {
+    id: 'E-Q6-total-collision-survival',
+    source: 'experiments/outputs/e_q6_results.json',
+    cite: 'receipts/e_q6_chain.jsonl · docs/BOUNDARY-MAP.md total-collision row',
+    expected: 'cook arm: survivalRate 0.984375, distinctFirers 64 (LWW survival under total collision)',
+    run() {
+      const c = readJson(this.source);
+      const cook = c.arms.cook;
+      if (Math.abs(cook.survivalRate - 0.984375) > 1e-9) throw new Error(`cook survivalRate ${cook.survivalRate} != 0.984375`);
+      if (cook.distinctFirers !== 64) throw new Error(`cook distinctFirers ${cook.distinctFirers} != 64`);
+      return { recomputed: `survivalRate=${cook.survivalRate}, distinctFirers=${cook.distinctFirers}/64 (every writer heard under LWW)` };
+    },
+  },
+  {
+    id: 'C4/E-Q7-nu-firings',
+    source: 'experiments/outputs/e_q7_results.json',
+    cite: 'receipts/e_q7_chain.jsonl · docs/CLAIM-VERDICTS.md §C4',
+    expected: 'totalFirings256 = 991 on the N and A 2/3 boards (the ON-vs-OFF nu asymmetry that did not buy terminal inversion)',
+    run() {
+      const c = readJson(this.source);
+      const n = c.board['N_2_3'].totalFirings256;
+      const a = c.board['A_2_3'].totalFirings256;
+      if (n !== 991 || a !== 991) throw new Error(`totalFirings256 N=${n} A=${a} != 991/991`);
+      return { recomputed: `N_2_3=${n}, A_2_3=${a} (nu channel fires, terminal inversion never arrives; C4 DIES stands)` };
+    },
+  },
+  {
+    id: 'E-Q15-reweighting-null',
+    source: 'experiments/outputs/e_q15_results.json',
+    cite: 'receipts/e_q15_chain.jsonl · verdict row · docs/BOUNDARY-MAP.md',
+    expected: 'winRate 0, medianDelta -6 (the honest null: max-of-accepted dominates)',
+    run() {
+      const c = readJson(this.source);
+      if (c.aggregates.winRate !== 0) throw new Error(`winRate ${c.aggregates.winRate} != 0`);
+      if (c.aggregates.medianDelta !== -6) throw new Error(`medianDelta ${c.aggregates.medianDelta} != -6`);
+      return { recomputed: `winRate=${c.aggregates.winRate}, medianDelta=${c.aggregates.medianDelta} (rejection sampling dominates quality-correlated oracles; the null stands)` };
+    },
+  },
+  {
+    id: 'C5p/E-Q10-injector-reproduce',
+    source: 'experiments/outputs/e_q10_results.json',
+    cite: 'receipts/e_q10_chain.jsonl · verdict row · docs/CLAIM-VERDICTS.md §C5-prime',
+    expected: 'C5-prime as stated stands: all 9 predicates true over 17 admissible trials, falsifier NOT fired, injector restores integrity to 1.0 then re-erodes monotonically to zero with no substrate self-repair (repairTick null)',
+    run() {
+      const c = readJson(this.source);
+      const need = ['C1','C2','C3','C4','C5','C6','C7','C8','C9'];
+      for (const k of need) if (c.aggregates[k] !== true) throw new Error(`predicate ${k} not true`);
+      if (c.aggregates.falsifierFired !== false) throw new Error('falsifier fired — C5-prime as stated does not stand');
+      if (c.aggregates.admissible !== 17) throw new Error(`admissible ${c.aggregates.admissible} != 17`);
+      for (const t of c.trials) {
+        if (t.detOk !== true || t.fixedMatch !== true) throw new Error(`trial seed ${t.seed}: det/fixed match failed`);
+        if (t.a1.repairTick !== null) throw new Error('self-repair observed in the no-injector arm — repairTick not null');
+        if (t.a2.postInjectIntegrity !== 1) throw new Error(`trial seed ${t.seed}: injector did not restore to 1.0`);
+        if (t.a2.reErosionMonotone !== true) throw new Error(`trial seed ${t.seed}: re-erosion not monotone`);
+      }
+      return { recomputed: `9/9 predicates true, 17/17 admissible, falsifier not fired, inject restores 1.0 + monotone re-erosion, repairTick null (C5-prime STANDS as stated)` };
+    },
+  },
+  {
+    id: 'E-Q8-sigma-inert-controls',
+    source: 'experiments/outputs/e_q8_results.json',
+    cite: 'receipts/e_q8_chain.jsonl · docs/BOUNDARY-MAP.md adversarial-sigma row',
+    expected: 'sigma-inert controls hold at both artifact scales: control[2/3].sigmaInert and control[8/5].sigmaInert both true',
+    run() {
+      const c = readJson(this.source);
+      const a = c.control?.['2/3']?.sigmaInert;
+      const b = c.control?.['8/5']?.sigmaInert;
+      if (a !== true || b !== true) throw new Error(`controls not inert: 2/3=${a}, 8/5=${b}`);
+      return { recomputed: `sigmaInert 2/3=${a}, 8/5=${b} (the artifact sites' controls behave inertly — the float/fixed divergence is family-specific, not noise)` };
+    },
+  },
 ];
+
+// ── COVERAGE (ORCH-R11: the arena-r11 consensus finding, all four seats) ──
+// The curated table is a hand-maintained list — the same class as defect #7's
+// chain-list drift. The coverage law ties it to the registry: EVERY registered
+// chain must carry >= 1 curated claim OR an explicit exclusion with a reason.
+// A newly sealed+registered experiment therefore FAILS PG6 until its headline
+// arithmetic is curated (or honestly excluded) — the table's growth is
+// enforced, not remembered.
+const EXCLUDED = [
+  { gate: 'G0-G6', reason: 'gate counts, not numeric verdict arithmetic — recomputed by re-running tests/run_tests.mjs itself (the gate is its own checker)' },
+  { gate: 'crossimpl-py', reason: 'conformance verdicts are vector-equality counts re-verified by PG1 chain integrity + the crossimpl conformance runner itself' },
+  { gate: 'crossimpl-c', reason: 'same class as crossimpl-py: 19/19 byte-exactness is re-derived by the C conformance runner, not by arithmetic on a results file' },
+  { gate: 'probe_gate', reason: 'the gate seals its own runs; verdict-recomputing the gate with itself is circular — its integrity is PG1-PG3' },
+];
+
+function claimGate(claim) {
+  const m = claim.source.match(/e_q(\d+)_results\.json/);
+  if (m) return `e_q${m[1]}`;
+  if (claim.source.startsWith('fixedpoint/')) return 'fixedpoint';
+  return null;
+}
+
+function coverageReport() {
+  const coveredBy = new Map();
+  for (const c of CLAIMS) {
+    const g = claimGate(c);
+    if (g) coveredBy.set(g, (coveredBy.get(g) ?? 0) + 1);
+  }
+  const uncovered = [];
+  for (const r of REGISTRY) {
+    if (coveredBy.has(r.gate)) continue;
+    if (EXCLUDED.some((e) => e.gate === r.gate)) continue;
+    uncovered.push(r.gate);
+  }
+  return { covered: [...coveredBy.entries()], excluded: EXCLUDED.length, uncovered };
+}
 
 // ── runner ──────────────────────────────────────────────────────────────────
 // Prints one PASS/FAIL line per claim (recomputed vs expected), then a
@@ -419,9 +544,12 @@ export function runVerdictRecompute({ log = console.log } = {}) {
   }
   const passed = results.filter((r) => r.pass).length;
   const failures = results.filter((r) => !r.pass).map((r) => r.id);
+  const cov = coverageReport();
+  const covFail = cov.uncovered.length > 0;
   log('');
-  log(`verdict-recompute: ${passed === results.length ? 'ALL PASS' : 'FAIL'} :: ${passed}/${results.length} claims recomputed from the sealed record${failures.length ? ` :: failed: ${failures.join(', ')}` : ''}`);
-  return { claims: results, passed, failed: results.length - passed, failures };
+  log(`coverage: ${cov.covered.length} chains with curated claims (${cov.covered.map(([g, n]) => `${g}:${n}`).join(', ')}), ${cov.excluded} explicitly excluded (${EXCLUDED.map((e) => e.gate).join(', ')}), ${cov.uncovered.length} UNCOVERED${cov.uncovered.length ? ` :: ${cov.uncovered.join(', ')} — curate the headline arithmetic or add an honest exclusion (the table grows with every new experiment; ORCH-R11 law)` : ''}`);
+  log(`verdict-recompute: ${passed === results.length && !covFail ? 'ALL PASS' : 'FAIL'} :: ${passed}/${results.length} claims recomputed from the sealed record :: coverage ${REGISTRY.length - cov.uncovered.length}/${REGISTRY.length} chains${failures.length ? ` :: failed: ${failures.join(', ')}` : ''}`);
+  return { claims: results, passed, failed: results.length - passed + (covFail ? 1 : 0), failures: covFail ? [...failures, `uncovered-chains:${cov.uncovered.join(',')}`] : failures, coverage: cov };
 }
 
 // standalone entry (the probe gate imports runVerdictRecompute instead)

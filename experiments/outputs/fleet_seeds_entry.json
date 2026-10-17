@@ -3,6 +3,7 @@
  "repo": "SuperInstance/qthe",
  "emitted_by": "scripts/emit_fleet_seeds.mjs (ORCH-25)",
  "kernel_sha256": "ef9a3bba0511c78026f30706214e407d362e8972a86f5684d9b16a9e16e3f091",
+ "chain_registry_sha256": "667ef0c4e071ad33b0af7cb79fa7f6a1256eceb71651bcc38b2e724d5c99e4e4",
  "scoreboard": {
   "C1": "LIVES (E-Q13, 47.40%)",
   "C2": "LIVES (E-Q1, 8/8 vs 0/20)",
@@ -86,8 +87,8 @@
    "rows": 20
   },
   "probe_gate": {
-   "sha256": "a66a7d35be10b8e004337b25493ad1c8a8755ee11881250984847629344b0ba0",
-   "rows": 10
+   "sha256": "33e4f2d8f797692a7ec3f44e9aa5b859a7133da9881b0c384d508e64f84a148d",
+   "rows": 11
   }
  }
 }

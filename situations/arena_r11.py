@@ -94,11 +94,11 @@ TURN1 = (
 
 TURN2 = (
     "MODE self-critique. Here are your own turn-1 findings, quoted verbatim:\n{findings_json}\n\n"
-    "Now attack YOURSELF: {\"mode\":\"self-critique\",\"weakest_own_finding\":\"<id + why it would not survive repo verification>\","
-    "\"strongest_own_finding\":\"<id + the structural reason it survives>\","
-    "\"missed_attack\":\"<the best attack on the fixes that you did NOT name in turn 1 — be specific>\","
-    "\"fix_sketch_repair\":\"<which of your own fix_sketches would fail or backfire if actually implemented, and the corrected sketch>\"} — "
-    "STRICT JSON ONLY, no prose."
+    "Now attack YOURSELF with exactly this JSON shape (field names: mode, weakest_own_finding, "
+    "strongest_own_finding, missed_attack, fix_sketch_repair): a finding is weak if it would not "
+    "survive repo verification; the missed_attack is the best attack on the fixes you did NOT name "
+    "in turn 1; fix_sketch_repair names which of your own fix_sketches would fail or backfire if "
+    "actually implemented, and the corrected sketch. STRICT JSON ONLY, no prose."
 )
 
 
@@ -284,7 +284,7 @@ def cmd_run(only: str | None) -> None:
                 {"role": "system", "content": SYSTEM_PREFIX},
                 {"role": "user", "content": TURN1},
                 {"role": "assistant", "content": row1["content_raw"]},
-                {"role": "user", "content": TURN2.format(findings_json=json.dumps(row1.get("content_json") or {"unparsed": "see content_raw"}, ensure_ascii=False))},
+                {"role": "user", "content": TURN2.replace("{findings_json}", json.dumps(row1.get("content_json") or {"unparsed": "see content_raw"}, ensure_ascii=False))},
             ]
             t0 = time.time()
             r = call_model(mid, msgs)

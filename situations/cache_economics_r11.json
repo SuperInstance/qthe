@@ -1,0 +1,132 @@
+{
+ "wave": "ORCH-R11",
+ "round": "r11",
+ "artifact": "situations/cache_economics_r11.json",
+ "generated_at": "2026-10-17T19:20:28Z",
+ "endpoint": "https://api.deepinfra.com/v1/openai/chat/completions",
+ "experiment": "the fix audit: 4 endorsed seats x 2 turns (attack the post-R10 fixes, then self-critique); turn 2 cashes the prefix cache by construction",
+ "prefix": {
+  "sha256": "11258be6964d40dd41dac6221b92bed43802636c9fae6484db7dccbfeba42b88",
+  "chars": 7259
+ },
+ "totals": {
+  "calls": 8,
+  "sealed": 8,
+  "failed": 0,
+  "prompt": 27173,
+  "cached": 3744,
+  "completion": 29976,
+  "usd": 0.043969,
+  "usd_no_cache": 0.045657,
+  "hit_ratio_overall": 0.1378,
+  "usd_total": 0.043969,
+  "usd_if_no_cache": 0.045657
+ },
+ "seats": [
+  {
+   "call_id": "r11-mimov26f-attack",
+   "seat": "mimov26f",
+   "turn": 1,
+   "prompt_tokens": 1977,
+   "cached_tokens": 0,
+   "hit_ratio": 0.0,
+   "completion_tokens": 3874,
+   "parse_method": "direct",
+   "usd": 0.001361,
+   "elapsed_ms": 170687,
+   "error": null
+  },
+  {
+   "call_id": "r11-mimov26f-selfcritique",
+   "seat": "mimov26f",
+   "turn": 2,
+   "prompt_tokens": 4647,
+   "cached_tokens": 1952,
+   "hit_ratio": 0.4201,
+   "completion_tokens": 1187,
+   "parse_method": "direct",
+   "usd": 0.000715,
+   "elapsed_ms": 50171,
+   "error": null
+  },
+  {
+   "call_id": "r11-seed20mini-attack",
+   "seat": "seed20mini",
+   "turn": 1,
+   "prompt_tokens": 2063,
+   "cached_tokens": 0,
+   "hit_ratio": 0.0,
+   "completion_tokens": 6712,
+   "parse_method": "direct",
+   "usd": 0.002891,
+   "elapsed_ms": 47996,
+   "error": null
+  },
+  {
+   "call_id": "r11-seed20mini-selfcritique",
+   "seat": "seed20mini",
+   "turn": 2,
+   "prompt_tokens": 3522,
+   "cached_tokens": 0,
+   "hit_ratio": 0.0,
+   "completion_tokens": 3683,
+   "parse_method": "direct",
+   "usd": 0.001825,
+   "elapsed_ms": 27999,
+   "error": null
+  },
+  {
+   "call_id": "r11-dsv41f-attack",
+   "seat": "dsv41f",
+   "turn": 1,
+   "prompt_tokens": 1965,
+   "cached_tokens": 0,
+   "hit_ratio": 0.0,
+   "completion_tokens": 1816,
+   "parse_method": "direct",
+   "usd": 0.001483,
+   "elapsed_ms": 23924,
+   "error": null
+  },
+  {
+   "call_id": "r11-dsv41f-selfcritique",
+   "seat": "dsv41f",
+   "turn": 2,
+   "prompt_tokens": 5795,
+   "cached_tokens": 0,
+   "hit_ratio": 0.0,
+   "completion_tokens": 961,
+   "parse_method": "direct",
+   "usd": 0.001736,
+   "elapsed_ms": 13281,
+   "error": null
+  },
+  {
+   "call_id": "r11-hy4p-attack",
+   "seat": "hy4p",
+   "turn": 1,
+   "prompt_tokens": 1967,
+   "cached_tokens": 0,
+   "hit_ratio": 0.0,
+   "completion_tokens": 6338,
+   "parse_method": "direct",
+   "usd": 0.017492,
+   "elapsed_ms": 261755,
+   "error": null
+  },
+  {
+   "call_id": "r11-hy4p-selfcritique",
+   "seat": "hy4p",
+   "turn": 2,
+   "prompt_tokens": 5237,
+   "cached_tokens": 1792,
+   "hit_ratio": 0.3422,
+   "completion_tokens": 5405,
+   "parse_method": "direct",
+   "usd": 0.016466,
+   "elapsed_ms": 118565,
+   "error": null
+  }
+ ],
+ "reading": "Round 11 runs the founder-endorsed seats only (Hy4, DeepSeek-V4.1-Flash, MiMo for cache value; Seed-2.0-mini as the briefed devil's advocate). The two-turn structure makes turn 2 the cache-game receipt: its prompt = the full turn-1 conversation, so cached_tokens on turn-2 rows IS the discount materializing (r10 was structurally cold — one call per seat can never hit)."
+}

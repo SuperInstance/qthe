@@ -19,6 +19,10 @@ const FILES = [
   ['crossimpl/c/qthe_core.h', 'c/qthe_core.h', 'C99 port header (byte-exact, both planes)'],
   ['crossimpl/c/qthe_core.c', 'c/qthe_core.c', 'C99 port implementation'],
   ['crossimpl/py/qthe_layer0.py', 'py/qthe_layer0.py', 'python LAYER 0 re-derivation (strict)'],
+  // ORCH-R11 (hy4p's missed attack, adopted): a FRESH extraction must carry
+  // the grant — LICENSE is copied from the repo root, and the build REFUSES
+  // if the two copies ever disagree.
+  ['LICENSE', 'LICENSE', 'the MIT grant (copied from the repo root; the package carries its own)'],
 ];
 
 mkdirSync(join(CORE, 'kernel'), { recursive: true });

@@ -34,8 +34,31 @@ export function q(v) {
 // stone-v1 chain appender with verify-from-disk (refuse-if-broken).
 // rows: array of UNSEALED payload rows (kind + fields, no row_hash).
 // The header (stone.header) is created once as row 0 on first append.
+//
+// ORCH-R11 SEAL-TIME REGISTRATION LAW (arena-r11 dsv41f finding, verified):
+// appendAndVerify REFUSES to seal into any chain file not registered in
+// scripts/chain_registry.mjs. Until R11 the law was prose enforced only at
+// gate-run time (a seal-then-never-register commit could sit silently in
+// the window); now the sealing path itself refuses. Register the chain in
+// the SAME commit that seals it — addition, never subtraction.
 // ---------------------------------------------------------------------------
+import { STONE_CHAINS as _REGISTRY } from '../scripts/chain_registry.mjs';
+import { resolve as _resolve, dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const _ROOT = _resolve(dirname(fileURLToPath(import.meta.url)), '..');
+const _norm = (p) => _resolve(_ROOT, p).replace(/\\/g, '/');
+
 export async function appendAndVerify(stone, chainPath, rows, headerMeta) {
+  const registered = _REGISTRY.some((r) => _norm(r.path) === _norm(chainPath));
+  if (!registered) {
+    throw new Error(
+      `SEAL REFUSED: ${chainPath} is not in scripts/chain_registry.mjs. ` +
+      `The seal-time registration law (ORCH-R11) requires the sealing commit to ` +
+      `register the chain: add an entry to scripts/chain_registry.mjs in the SAME ` +
+      `commit. An unregistered seal cannot pass the probe gate silently.`
+    );
+  }
   const lines = [];
   if (existsSync(chainPath)) {
     const text = readFileSync(chainPath, 'utf8');
