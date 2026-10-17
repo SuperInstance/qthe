@@ -1,0 +1,40 @@
+{
+  "law": "REGISTRATION of E-Q13 — C1 gain-of-function: intra-cell timbre (1-byte QTHE) vs inter-cell porting (2-byte encoding). Committed BEFORE ANY RUN (pricing-first law: git history must show this commit before the results commit). Floors frozen; runs may confirm or falsify them; they may not edit them. Honest null = crown jewel.",
+  "task_id": "ORCH-1",
+  "agent": "qthe-orchestrator",
+  "wave": "69-post",
+  "repo": "SuperInstance/qthe",
+  "repo_at_registration": "37f616b",
+  "claim_verbatim": "C1: '25% gain of function' from intra-cell timbre vs inter-cell porting. SPEC test: paired arms: same task, 2-byte porting encoding vs 1-byte QTHE encoding; measure bytes-touched + ticks-to-task.",
+  "task_class": "E-Q1's canonical twin-delivery task, FRESH independent seeds: 64x64 toroidal, K=8 Abstain pairs with per-pair distinct d in 8..15, pair members toroidal-Chebyshev >= 24 apart, cross-pair >= 8, 3 weather cells (2x Attract d=40/41, 1x Repel d=30) >= 10 from every pair member, T=200, theta_del=8, trials=20, base seed 66001 (E-Q1 used 33001; this chain is independent). Delivery meter = amendment-1 meter verbatim: cumulative per-cell sum of twin-event terms; a member DELIVERS at first tick meter >= 8; PAIR delivers at max of members' first-delivery ticks; trial COMPLETION tick = max over pairs (null if any pair undelivered by T).",
+  "arm_Q": "1-byte QTHE encoding: the REAL kernel (qthe.mjs via _adapter.mjs), wormholes ON, sigma = kernel default log2(3).",
+  "arm_P": "2-byte ported encoding: an INDEPENDENT re-implementation of the published LAYER 1 update rule over two physical planes — P_tau (1 byte/cell, the timbre value 0..3) and P_d (1 byte/cell, the amplitude 0..63) — with the same toroidal Moore-8 gather from pre-tick snapshots, the same nextD rule table, the same live-read row-major LWW wormhole semantics, tau frozen, emitting the same twin events with term = resonance*sigma. This is a crossimpl-style re-derivation for the traffic study, NOT a kernel fork (qthe.mjs untouched).",
+  "traffic_model_frozen": {
+    "principle": "SEMANTIC byte-transfers only: what any faithful implementation of each ENCODING must move per logical tick. Implementation artifacts common to both encodings are excluded and receipted.",
+    "Q_per_cell_tick": "10 bytes = 9 reads (self + 8 neighbors, each 1 packed byte yields tau AND d) + 1 write (the updated packed byte)",
+    "P_per_cell_tick": "19 bytes = 18 reads (self tau + self d + 8 neighbors x (tau + d)) + 1 write (d-plane; tau-plane writes NEVER happen inside tick because tau is frozen — the port's optimistic best case, receipted)",
+    "Q_seeding": "4096 bytes (one packed plane)",
+    "P_seeding": "8192 bytes (both planes)",
+    "wormhole_table_traffic": "COMMON to both arms by construction (identical table ops on identical states) — CANCELLED, receipted here; table bytes are excluded from both arms' counts",
+    "double_buffer_exclusion": "the reference kernel's per-tick full-plane snapshot copy is an implementation artifact of synchronous update, not a property of either encoding — EXCLUDED from both arms, receipted here",
+    "bytesToTask(t)": "Q: 4096 + 4096*10*t; P: 8192 + 4096*19*t, where t = the trial's COMPLETION tick (both arms share t by F2); if completion is null, t = T = 200 with an incomplete-delivery receipt and the floor check still applies at t=200",
+    "integer_floor_check": "gain >= 25% is evaluated in EXACT integer arithmetic as 3*bytesP >= 4*bytesQ (no floats in any gate); the gain itself is reported as a receipted string only"
+  },
+  "floors": {
+    "EQ13_F0_determinism": "every arm of every trial is run TWICE from fresh construction; checkpoint plane-hash sequences must be byte-identical, 40/40 runs, else VOID.",
+    "EQ13_F1_port_dynamics_identity": "ARM-P's reconstructed packed plane ((P_tau<<6)|P_d) must equal ARM-Q's kernel plane BYTE-IDENTICALLY at checkpoints [0,50,100,150,200] in 20/20 trials. Any divergence = the port model is defective (the 2-byte encoding changed semantics) -> AUTOPSY, experiment VOID as a pricing of C1 until the port is repaired and re-registered.",
+    "EQ13_F2_ticks_parity": "ticks-to-completion IDENTICAL across arms in 20/20 trials (sealed expectation: the faithful synchronous port preserves the transition function, so this is a corollary of F1 checked independently on the delivery meter). Any tick difference = defect -> autopsy.",
+    "EQ13_F3_claim_floor": "C1 LIVES iff the integer floor 3*bytesP >= 4*bytesQ holds in 20/20 trials AND F1 and F2 hold. If it fails in any trial, C1 DIES on this task class as an honest null with a mechanism autopsy of where the bytes go.",
+    "EQ13_F4_footprint": "standing state bytes: Q = 4096, P = 8192 — the halving is EXACT arithmetic (definitional, receipted as such; it prices the storage dimension of the claim, not a dynamics dimension)."
+  },
+  "sealed_honest_expectations_before_runs": {
+    "E1": "gain_traffic(t) = 1 - (1+10t)/(2+19t), which lies in (9/19, 11/21] ~= (47.37%, 47.62%] for t >= 1 — arithmetic-bound, so the run's empirical content is (a) F1 port fidelity, (b) F2 tick parity, (c) the delivery distribution on fresh seeds, and (d) the sealed integer floor holding. The verdict must receipt this bound honestly (E-Q10 precedent: definitional components named as definitional).",
+    "E2": "ticks-to-completion: all 20 trials complete 8/8 delivery within T=200 (E-Q1's sealed 33001-family delivered 8/8 in 20/20; the 66001 family is expected to behave identically because the twin mechanism bridges at tick 1 structurally). If any trial fails to complete, that is a receipted finding, not a void.",
+    "E3": "the founder's 25% prices as DIRECTION-CONFIRMED and MAGNITUDE-UNDERSTATED on bytes-touched for the uncached portable port (both planes resident in the working set).",
+    "E4_cached_port_caveat": "the port's OPTIMISTIC bound is receipted: if the tau plane is held resident in cache/registers (possible only because tau is static after t=0), per-tick traffic reaches parity (10 vs 10) — but the price is 4096 bytes of standing SRAM residency for the tau plane on constrained targets, which IS the F4 footprint. The honest boundary of C1: the gain of function is the intra-cell packing getting the timbre coupling out of the memory system entirely."
+  },
+  "verdict_contract": "One sentence of the form: 'E-Q13 VERDICT: C1 {LIVES | DIES} — bytes-gain at completion {string}% vs the founder's 25% {understated | overstated | matched}; ticks-to-task {identical 20/20 | DIFFERED (autopsy)}; port model {faithful 20/20 | DEFECTIVE (autopsy)}; footprint halving {exact | broken}; cached-port caveat receipted.'",
+  "receipt_discipline": "one stone-v1 chain: receipts/e_q13_chain.jsonl (append-only, verify-from-disk, refuse-if-broken); raw per-trial data in experiments/outputs/e_q13_results.json; tip in experiments/outputs/e_q13_tip.txt; floats only as receipted strings (the gain percentage), never hashed, never in a gate.",
+  "kernel_contact_rules": "CR3 honored: ARM-Q uses tick(), makeSubstrate, WormholeTable, mulberry32 only. ARM-P re-implements the PUBLISHED rule table (SPEC LAYER 1 items 4-5 + kernel receipts R1/R2/R3/R4) in ported two-plane form inside the experiment file; qthe.mjs is untouched and imported READ-ONLY.",
+  "registered_before_run": "YES — no E-Q13 tick has executed at commit time; the only kernel contact was reading qthe.mjs, SPEC.md, the E-Q1 artifacts, and the sealed E-Q1 floors (all public on the record). Git history is the witness."
+}
