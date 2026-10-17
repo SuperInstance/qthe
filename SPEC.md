@@ -72,7 +72,7 @@ bit:   7  6  5 4 3 2 1 0
 |---|------------------------------|----------|--------|
 | C1 | "25% gain of function" from intra-cell timbre vs inter-cell porting | paired arms: same task, 2-byte porting encoding vs 1-byte QTHE encoding; measure bytes-touched + ticks-to-task | **LIVES — 47.40% bytes-gain (founder's 25% understated), ticks identical, footprint halved** (E-Q13, tip `d852e6ac…`) |
 | C2 | wormhole (Abstain) beats graph-traversal for non-local alignment | planted twin-resonance tasks; arms = wormhole table ON vs OFF; pre-registered floor on ticks-to-connect | **LIVES — 8/8 ON vs 0/20 OFF** (E-Q1, tip `addc22f9…`) |
-| C3 | σ = log₂(3) is the critical bridge scale | σ sweep {log2(3), 0.5, 1, 2, 4} on bridge-formation stability | **DIES (honest null) — full tie; σ monotone-inert on this class** (E-Q2, tip `67e849a5…`); the gifted "proof" was decorative as registered |
+| C3 | σ = log₂(3) is the critical bridge scale | σ sweep {log2(3), 0.5, 1, 2, 4} on bridge-formation stability | **DIES (honest null, formation-scoped) — full tie; σ monotone-inert on bridge formation** (E-Q2, tip `67e849a5…`); the gifted "proof" was decorative as registered. **Scope (ORCH-R10, three seats independently flagged it):** σ is not a global no-op — completion scales ~1/σ (E-Q16-B: 38→3 ticks over σ 0.25→4) |
 | C4 | phase threshold θ > π/4 triggers useful non-local transfer | threshold sweep on the same planted tasks | **DIES — falsified under the guest's own sealed rule; cascade real, no terminal inversion** (E-Q7, tip `befa0c33…`) |
 | C5 | the substrate self-repairs (the armor-ring scenario) | damage the ring adversarially; measure repair ticks vs pre-registered band | **DIES (honest null) — ring self-dissolves; no repair term exists in the kernel** (E-Q5, tip `4425545f…`) |
 | C5′ | repair via injector (one-pager spec) | restore-then-re-erode determinism | **STANDS — definitional, receipted as such** (E-Q10, tip `50ddf5f9…`) |
@@ -90,8 +90,14 @@ beside the body. A claim that lives gets a mechanism-level explanation.
   its own study.
 - **Determinism or it didn't happen**: any experiment whose re-run changes a
   byte is void.
-- **The tavern**: DeepSeek joins as a live guest (cache-gamed: long stable
-  system prefix = the whole spec; short varying suffixes = cheap turns),
-  generating adversarial situations and reviewing the algebra. Outputs sealed
-  with provenance (model, tokens, cache hit/miss — the provider returns the
-  telemetry natively).
+- **The tavern, round 10+**: eight competing guests on DeepInfra
+  (Nemotron-3.5-Super-VL, MiMo-V2.6-Flash, DeepSeek-V4.1-Flash,
+  Qwen3.6-35B-A3B, Seed-2.0-mini, Ling-3.1-flash, Muse-Glimmer-30B,
+  Hy4-preview) — one immutable briefing prefix (cache-gamed; per-seat
+  discounts receipted), identical tasks, outputs sealed verbatim with
+  provenance and native cache telemetry. Nothing a guest says counts until
+  the orchestrator verifies it against the repository — round 10 was the
+  eight-seat audit of the completed corpus (`situations/arena_r10_verdict.md`:
+  40 findings, 19 verified new, 2 hallucination classes priced, 1 gate
+  extension adopted). A TypeSafe/Jev judge seat is delivered key-pending
+  (`situations/jev_judge.py`).

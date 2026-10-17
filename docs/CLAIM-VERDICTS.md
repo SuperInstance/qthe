@@ -12,7 +12,7 @@
 |---|----------------------|---------|-----------|----------------------|
 | C1 | "25% gain of function" intra-cell timbre vs inter-cell porting | **LIVES** — measured 47.40% bytes-gain, founder's 25% understated | E-Q13 (ORCH-1) | `d852e6ac…` (25 links) |
 | C2 | wormhole (Abstain) beats graph-traversal for non-local alignment | **LIVES** — 8/8 ON vs 0/20 OFF | E-Q1 | `addc22f9…` (25 links) |
-| C3 | σ = log₂(3) is the critical bridge scale | **DIES** (honest null on this class) — full tie, σ monotone-inert | E-Q2 | `67e849a5…` (14 links) |
+| C3 | σ = log₂(3) is the critical bridge scale | **DIES** (honest null, formation-scoped) — full tie on bridge formation; σ is not a global no-op (completion ~1/σ, E-Q16-B) | E-Q2 | `67e849a5…` (14 links) |
 | C4 | phase threshold θ > π/4 triggers useful non-local transfer | **DIES** — falsified under the guest's own sealed rule | E-Q7 | `befa0c33…` (36 links) |
 | C5 | the substrate self-repairs (armor-ring) | **DIES** (honest null) — ring self-dissolves; no repair term exists | E-Q5 | `4425545f…` (25 links) |
 | C5′ | repair via injector (one-pager) | **STANDS** — definitional, receipted as such | E-Q10 | `50ddf5f9…` (24 links) |
@@ -58,6 +58,14 @@ system entirely; that removal, not any dynamics advantage, is the gain of
 function. The founder's 25% was direction-right and magnitude-understated
 for the portable (uncached) port, which is the port any stranger gets for
 free.
+
+**ORCH-R10 byte-budget note (mimov26f F3 / hy4p F3, verified):** any
+comparison must name which bytes it counts. The sealed 47.40% is the
+*traffic* gain (bytes-to-task, both arms fully resident); the
+*standing-storage* comparison is 4,096 vs 8,192 B of seed planes, and the
+port's parity path additionally requires the τ-plane residency priced
+above. A footprint claim that mixes traffic with standing storage, or
+omits the cached-port caveat, is not quoting this receipt.
 
 **Receipts:** registration `pre_registration_e_q13.json` (commit `d19d933`,
 pre-run), results `experiments/outputs/e_q13_results.json`, chain
@@ -126,6 +134,13 @@ false`).
 scale). It does not kill σ as a useful knob: σ sets delivery latency and,
 per E-Q8/E-Q9, encodes the exact-zero family structure in float vs fixed.
 What died is the numerology, cleanly and cheaply.
+
+**ORCH-R10 scope note (three seats independently flagged the misreading
+risk — mimov26f F2, dsv41f F4, nemotron35sv F2, all verified):** the null
+is *bridge-formation-scoped*. E-Q16 family B later sealed the complementary
+fact: completion ticks scale ~1/σ (38 → 3 over σ 0.25 → 4) on the dense
+phase table. "σ monotone-inert" must never be quoted without its scope —
+σ is a gain knob the formation metric cannot see, not a dead parameter.
 
 **Receipts:** `receipts/e_q2_chain.jsonl` tip `67e849a5…` 14 links;
 `experiments/outputs/e_q2_results.json`.
