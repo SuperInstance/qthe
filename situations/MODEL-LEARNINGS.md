@@ -62,3 +62,43 @@
    came in 1.8–6.7k tokens at 8k budgets (Seed 6,712 — closest to cap;
    give it 10k+ for attack rounds), latencies 31–92 s; DeepSeek-V4.1-Flash
    remains the fastest quality seat (31 s / 1.8k out).
+
+## r12: the standing triage layer (ORCH-R12)
+
+9. **The r12 standing law (T3-c shipped):** every arena round r12+ runs
+   `python3 situations/jev_triage.py triage <rows.jsonl>` — three stages.
+   Judges DRAFT (stage 1, the jev_judge batched pattern: severity /
+   actionability / noul — what the judge is good at, r10-priced). The
+   EARNED LOOP VERIFIES (stage 2, the T3-a killer experiment's arm B:
+   mechanical anchor checks in code first — invented files / shas /
+   row-ids / numbers / CLI flags die with ZERO Jev spend — then ONE
+   grounded Choice over the located section, confidence < 0.8 →
+   human_flag). The ADJUDICATION ARTIFACT lands beside every judgment
+   file (stage 3, the adjudications_r10 pattern, automated). Humans get
+   the human_flags. Receipt: `situations/jev_triage.py` +
+   `situations/adjudications_r10_grounded.json` — the r10 demo: Qwen's
+   invented mechanism → human_flag at grounded fabricated-suspicion 0.79
+   (was: sealed 4/4 verified_new); Muse's invented CLI flags caught
+   mechanically at $0 Jev.
+10. **Grounding converts the judge's confidence into a routing signal**
+    (T3-a, the killer experiment): briefing-only confidence does not
+    separate true from false claims (0.598 vs 0.571); grounded-state
+    confidence does (0.894 correct-fabrication vs 0.403 wrong-direction,
+    max 0.70) — the 0.8 gate sits inside that gap. Full findings and the
+    arm-A/arm-B scoreboard: `docs/research/TYPESAFE-PLAYGROUND.md`,
+    `situations/grounding_loop/verdict.md`.
+11. **r12 seat notes (T3-b consult):** Seed-2.0-mini on a design-attack
+    brief (pre-registration JSON payload, 10k max_tokens, temp 0.3):
+    9,472 completion tokens in 70.8 s, direct strict-JSON parse, finish
+    stop — the r11 "10k+ for attack rounds" learning held with ~500
+    tokens to spare; 10k is adequate, not generous, for JSON-heavy
+    attack payloads. Severity labels ran hot: both its "critical"
+    attacks were the same population-vs-density confusion, refuted; the
+    accepted attack was a "major". Price seat severities as triage, not
+    verdict — the Jev grounding law, generalized to seats.
+12. **Re-adjudication is drift detection** (T3-c demo caveat): triaging an
+    OLD round against the CURRENT tree routes since-fixed findings away
+    from verified (the r10 no-LICENSE findings are the worked example —
+    LICENSE landed in the R11 fix batch). Standing rounds audit the tree
+    they ran on; the artifact carries the caveat so nobody reads drift as
+    a hallucination charge.

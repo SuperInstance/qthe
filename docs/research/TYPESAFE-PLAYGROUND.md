@@ -96,6 +96,35 @@ L2 = practical/economics claim (priced from receipts).
   rows_canary.jsonl / rows_arm_a.jsonl / rows_arm_b.jsonl · verified-by:
   orchestrator (16,597 tokens / 13,063 chars = 1.2707 re-derived — ORCH-R12).
 
+## Entries (ORCH-R12 T3-c, orchestrator-verified)
+
+- [L1] 2026-10-18 · The invented_flag check — mechanical, code-only
+  fabrication detection for proposed CLI interfaces: `--flag` claims are
+  checked against the cited script's actual source; caught Muse's three
+  invented flags (`--experiment`, `--metric`, `--list`, `--audit`) with
+  ZERO Jev spend — the r10 penalty class, now free to enforce · receipt:
+  situations/adjudications_r10_grounded.json (musegl30b F1/F2/F5,
+  mechanical rows) · verified-by: orchestrator (re-derived: the flags
+  appear nowhere in probe_gate.mjs / verify_all_chains.mjs source).
+- [L1] 2026-10-18 · Grounded-locator fragility, supersession receipted:
+  stage-2 v1 (single rarest anchor) located arena findings on irrelevant
+  files; v2 (layered locator, header windows) AUTO-FABRICATED a true
+  finding at conf 0.82 — above the gate, wrong direction; v3
+  (coverage-scored anchor windows on evidence blocks + the results-file
+  convention) is the standing pass. Superseded rows stand in the ledger
+  as sealed receipts — the append-only law applied to tool versions ·
+  receipt: situations/jev_triage_r10.jsonl (row families ...-gnd- v1,
+  ...-g2- v2, ...-g3- v3) · verified-by: orchestrator (census: 7 stage-1
+  + 3 mechanical + 21 v1 + 14 v2 superseded + 14 v3 final = 59 rows).
+- [L1] 2026-10-18 · Grounded re-adjudication of an old round is DRIFT
+  detection: running the r10 rows against the current tree routes all 23
+  prior Jev verified_new ratings away (human_flag / fabricated /
+  mechanical) because the tree moved — LICENSE and the fix batches
+  landed between rounds. Artifact truth is tree-relative; the tool
+  caveats it instead of charging hallucination · receipt:
+  situations/adjudications_r10_grounded.json (re_adjudication_delta +
+  caveats) · verified-by: orchestrator.
+
 ## Pending (lane fragments, not yet promoted)
 
 (none yet — lanes append through the orchestrator)

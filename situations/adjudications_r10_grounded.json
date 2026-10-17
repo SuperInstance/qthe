@@ -1,0 +1,3086 @@
+{
+ "wave": "ORCH-R12",
+ "artifact": "/home/z/my-project/qthe/situations/adjudications_r10_grounded.json",
+ "law": "r12 standing law: judges draft (stage 1, the jev_judge pattern), the earned loop verifies (stage 2, the arm-B citation loop -- mechanical anchors in code, then grounded Choice over located sections, conf < 0.8 -> human_flag), the adjudication artifact lands beside every judgment file (stage 3). Humans get the human_flags.",
+ "tool": "situations/jev_triage.py triage situations/arena_rows_r10.jsonl --out situations/jev_triage_r10.jsonl --compare situations/jev_judgments_r10.jsonl --repo-truth situations/adjudications_r10.json",
+ "input": "situations/arena_rows_r10.jsonl",
+ "ledger": "situations/jev_triage_r10.jsonl",
+ "earned_loop_receipt": "situations/grounding_loop/verdict.md (arm B 6/7 vs arm A 4/7 on planted fabrications, true-flag 81.8%, zero auto-fabrications on true claims)",
+ "loop_version": 3,
+ "superseded_pass_note": "stage-2 v1 (two-question decomposition, call ids ...-gnd-) and v2 (layered locator, ...-g2-) are superseded by this pass (v3, ...-g3-): coverage-scored anchor windows, results-file convention sections, quoted-core criteria. Superseded rows stand in the ledger as sealed AS-SAID receipts and are excluded from this adjudication; spend_usd_est below includes them (it is the ledger total).",
+ "round": "r10",
+ "model_served": [
+  "jev-1.13.0"
+ ],
+ "spend_usd_est": 0.01649762,
+ "pricing_assumption": "$0.042/1M input + $0/1M output (jev_client declared pricing; usage from response)",
+ "human_flags": [
+  {
+   "seat": "dsv41f",
+   "finding_id": "F1",
+   "draft_class": "verified_new",
+   "grounded_choice": "yes_true",
+   "confidence": 0.43,
+   "why": "repo context: repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/ | E-Q13: results experiments/outputs/e_q13_results.json, experiments/outputs/e_q13_tip.txt; stone chain receipts/e_q13_chain.jsonl | chain registry (scripts/chain_registry.mjs, the single source of truth) registers 17 chains: _chain.jsonl, crossimpl/receipts/cimpl_chain.jsonl, crossimpl/receipts/crossimpl_chain.jsonl, fixedpoint/receipts/fixedpoint_chain.jsonl, receipts/e_q10_chain.jsonl, receipts/e_q13_chain.jsonl, receipts/e_q14_chain.jsonl, receipts/e_q15_chain.jsonl, receipts/e_q16_chain.jsonl, receipts/e_q17_chain.jsonl, receipts/e_q1_chain.jsonl, receipts/e_q2_chain.jsonl, receipts/e_q5_chain.jsonl, receipts/e_q6_chain.jsonl, receipts/e_q7_chain.jsonl, receipts/e_q8_chain.jsonl, receipts/probe_gate_chain.jsonl"
+  },
+  {
+   "seat": "dsv41f",
+   "finding_id": "F2",
+   "draft_class": "verified_new",
+   "grounded_choice": "yes_true",
+   "confidence": 0.53,
+   "why": "repo context: repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/ | E-Q14: results experiments/outputs/e_q14_results.json, experiments/outputs/e_q14_tip.txt; stone chain receipts/e_q14_chain.jsonl"
+  },
+  {
+   "seat": "dsv41f",
+   "finding_id": "F3",
+   "draft_class": "verified_new",
+   "grounded_choice": "cannot_settle",
+   "confidence": 0.18,
+   "why": "repo context: repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/ | E-Q16: results experiments/outputs/e_q16_results.json, experiments/outputs/e_q16_tip.txt; stone chain receipts/e_q16_chain.jsonl | chain registry (scripts/chain_registry.mjs, the single source of truth) registers 17 chains: _chain.jsonl, crossimpl/receipts/cimpl_chain.jsonl, crossimpl/receipts/crossimpl_chain.jsonl, fixedpoint/receipts/fixedpoint_chain.jsonl, receipts/e_q10_chain.jsonl, receipts/e_q13_chain.jsonl, receipts/e_q14_chain.jsonl, receipts/e_q15_chain.jsonl, receipts/e_q16_chain.jsonl, receipts/e_q17_chain.jsonl, receipts/e_q1_chain.jsonl, receipts/e_q2_chain.jsonl, receipts/e_q5_chain.jsonl, receipts/e_q6_chain.jsonl, receipts/e_q7_chain.jsonl, receipts/e_q8_chain.jsonl, receipts/probe_gate_chain.jsonl"
+  },
+  {
+   "seat": "dsv41f",
+   "finding_id": "F4",
+   "draft_class": "verified_new",
+   "grounded_choice": "fabricated_or_misstated",
+   "confidence": 0.14,
+   "why": "repo context: repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/ | E-Q2: results experiments/outputs/e_q2_results.json, experiments/outputs/e_q2_tip.txt; stone chain receipts/e_q2_chain.jsonl | E-Q16: results experiments/outputs/e_q16_results.json, experiments/outputs/e_q16_tip.txt; stone chain receipts/e_q16_chain.jsonl"
+  },
+  {
+   "seat": "dsv41f",
+   "finding_id": "F6",
+   "draft_class": "verified_new",
+   "grounded_choice": "fabricated_or_misstated",
+   "confidence": 0.48,
+   "why": "repo context: repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/ | E-Q15: results experiments/outputs/e_q15_results.json, experiments/outputs/e_q15_tip.txt; stone chain receipts/e_q15_chain.jsonl"
+  },
+  {
+   "seat": "dsv41f",
+   "finding_id": "F7",
+   "draft_class": "verified_new",
+   "grounded_choice": "yes_true",
+   "confidence": 0.48,
+   "why": "repo context: repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/ | E-Q10: results experiments/outputs/e_q10_results.json, experiments/outputs/e_q10_tip.txt; stone chain receipts/e_q10_chain.jsonl"
+  },
+  {
+   "seat": "hy4p",
+   "finding_id": "F1",
+   "draft_class": "already_admitted",
+   "grounded_choice": "fabricated_or_misstated",
+   "confidence": 0.3,
+   "why": "repo context: repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/ | E-Q14: results experiments/outputs/e_q14_results.json, experiments/outputs/e_q14_tip.txt; stone chain receipts/e_q14_chain.jsonl | E-Q16: results experiments/outputs/e_q16_results.json, experiments/outputs/e_q16_tip.txt; stone chain receipts/e_q16_chain.jsonl"
+  },
+  {
+   "seat": "hy4p",
+   "finding_id": "F2",
+   "draft_class": "verified_new",
+   "grounded_choice": "fabricated_or_misstated",
+   "confidence": 0.64,
+   "why": "repo context: repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/ | E-Q16: results experiments/outputs/e_q16_results.json, experiments/outputs/e_q16_tip.txt; stone chain receipts/e_q16_chain.jsonl"
+  },
+  {
+   "seat": "hy4p",
+   "finding_id": "F3",
+   "draft_class": "already_admitted",
+   "grounded_choice": "yes_true",
+   "confidence": 0.46,
+   "why": "repo context: repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/ | E-Q13: results experiments/outputs/e_q13_results.json, experiments/outputs/e_q13_tip.txt; stone chain receipts/e_q13_chain.jsonl"
+  },
+  {
+   "seat": "hy4p",
+   "finding_id": "F4",
+   "draft_class": "already_admitted",
+   "grounded_choice": "fabricated_or_misstated",
+   "confidence": 0.49,
+   "why": "repo context: repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/ | E-Q16: results experiments/outputs/e_q16_results.json, experiments/outputs/e_q16_tip.txt; stone chain receipts/e_q16_chain.jsonl | chain registry (scripts/chain_registry.mjs, the single source of truth) registers 17 chains: _chain.jsonl, crossimpl/receipts/cimpl_chain.jsonl, crossimpl/receipts/crossimpl_chain.jsonl, fixedpoint/receipts/fixedpoint_chain.jsonl, receipts/e_q10_chain.jsonl, receipts/e_q13_chain.jsonl, receipts/e_q14_chain.jsonl, receipts/e_q15_chain.jsonl, receipts/e_q16_chain.jsonl, receipts/e_q17_chain.jsonl, receipts/e_q1_chain.jsonl, receipts/e_q2_chain.jsonl, receipts/e_q5_chain.jsonl, receipts/e_q6_chain.jsonl, receipts/e_q7_chain.jsonl, receipts/e_q8_chain.jsonl, receipts/probe_gate_chain.jsonl"
+  },
+  {
+   "seat": "hy4p",
+   "finding_id": "F5",
+   "draft_class": "verified_new",
+   "grounded_choice": "fabricated_or_misstated",
+   "confidence": 0.34,
+   "why": "repo context: repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/ | directory scripts/ contains: append_eq14_autopsy.mjs, append_eq16_contention_erratum.mjs, append_eq16_erratum.mjs, build_dashboard.mjs, build_public_demo.mjs, build_qthe_core.mjs, chain_registry.mjs, emit_fleet_seeds.mjs, falsification_budget.mjs, probe_gate.mjs, repl.mjs, replay.mjs, reseal-registration.mjs, seal_claim.mjs, two_reader_auto.mjs, verdict_recompute.mjs, verify_all_chains.mjs | E-Q9: results experiments/outputs/eq9_sweep_results.json, experiments/outputs/e_q11_q9_content.txt; NO stone-chain file under receipts/ for E-Q9 (naming-convention walk) | E-Q11: results experiments/outputs/e_q11_results.json, experiments/outputs/e_q11_q9_content.txt; NO stone-chain file under receipts/ for E-Q11 (naming-convention walk) | E-Q12: results experiments/outputs/e_q12_results.json, experiments/outputs/e_q12_flip_registry.json; NO stone-chain file under receipts/ for E-Q12 (naming-convention walk) | chain registry (scripts/chain_registry.mjs, the single source of truth) registers 17 chains: _chain.jsonl, crossimpl/receipts/cimpl_chain.jsonl, crossimpl/receipts/crossimpl_chain.jsonl, fixedpoint/receipts/fixedpoint_chain.jsonl, receipts/e_q10_chain.jsonl, receipts/e_q13_chain.jsonl, receipts/e_q14_chain.jsonl, receipts/e_q15_chain.jsonl, receipts/e_q16_chain.jsonl, receipts/e_q17_chain.jsonl, receipts/e_q1_chain.jsonl, receipts/e_q2_chain.jsonl, receipts/e_q5_chain.jsonl, receipts/e_q6_chain.jsonl, receipts/e_q7_chain.jsonl, receipts/e_q8_chain.jsonl, receipts/probe_gate_chain.jsonl"
+  },
+  {
+   "seat": "mimov26f",
+   "finding_id": "F1",
+   "draft_class": "verified_new",
+   "grounded_choice": "fabricated_or_misstated",
+   "confidence": 0.25,
+   "why": "repo context: repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/ | directory docs/ contains: ADOPTION-KIT.md, BOUNDARY-MAP.md, CLAIM-VERDICTS.md, CTO-BRIEF.md, DAY-1.md, DEVELOPER-GUIDE.md, ENGINEERING-NOTES.md, FALSIFICATION-BUDGET.md, FRONTIER-DECISION.md, HIERARCHICAL-WORMHOLES.md, HULL-DOCTRINE.md, KNOWLEDGE-MAP.md, MARINE-EDGE-WORKLOAD.md, ONBOARDING.md, PHASES-REPORT.md, PORTING.md, QTHE-AS-CELL.md, REPRESENTATION-LAW.md, RESEARCH-DECISION-MODELS.md, RESOURCE-PROFILE.md, TECHNICAL-NOTE.md, USER-GUIDE.md, dashboard.html, discussions/, research/ | E-Q14: results experiments/outputs/e_q14_results.json, experiments/outputs/e_q14_tip.txt; stone chain receipts/e_q14_chain.jsonl"
+  },
+  {
+   "seat": "mimov26f",
+   "finding_id": "F2",
+   "draft_class": "verified_new",
+   "grounded_choice": "yes_true",
+   "confidence": 0.3,
+   "why": "repo context: repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/ | E-Q2: results experiments/outputs/e_q2_results.json, experiments/outputs/e_q2_tip.txt; stone chain receipts/e_q2_chain.jsonl | E-Q16: results experiments/outputs/e_q16_results.json, experiments/outputs/e_q16_tip.txt; stone chain receipts/e_q16_chain.jsonl"
+  },
+  {
+   "seat": "mimov26f",
+   "finding_id": "F3",
+   "draft_class": "verified_new",
+   "grounded_choice": "fabricated_or_misstated",
+   "confidence": 0.28,
+   "why": "repo context: repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/ | E-Q13: results experiments/outputs/e_q13_results.json, experiments/outputs/e_q13_tip.txt; stone chain receipts/e_q13_chain.jsonl"
+  },
+  {
+   "seat": "mimov26f",
+   "finding_id": "F4",
+   "draft_class": "verified_new",
+   "grounded_choice": "fabricated_or_misstated",
+   "confidence": 0.16,
+   "why": "repo context: repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/ | E-Q9: results experiments/outputs/eq9_sweep_results.json, experiments/outputs/e_q11_q9_content.txt; NO stone-chain file under receipts/ for E-Q9 (naming-convention walk) | E-Q11: results experiments/outputs/e_q11_results.json, experiments/outputs/e_q11_q9_content.txt; NO stone-chain file under receipts/ for E-Q11 (naming-convention walk) | E-Q12: results experiments/outputs/e_q12_results.json, experiments/outputs/e_q12_flip_registry.json; NO stone-chain file under receipts/ for E-Q12 (naming-convention walk) | chain registry (scripts/chain_registry.mjs, the single source of truth) registers 17 chains: _chain.jsonl, crossimpl/receipts/cimpl_chain.jsonl, crossimpl/receipts/crossimpl_chain.jsonl, fixedpoint/receipts/fixedpoint_chain.jsonl, receipts/e_q10_chain.jsonl, receipts/e_q13_chain.jsonl, receipts/e_q14_chain.jsonl, receipts/e_q15_chain.jsonl, receipts/e_q16_chain.jsonl, receipts/e_q17_chain.jsonl, receipts/e_q1_chain.jsonl, receipts/e_q2_chain.jsonl, receipts/e_q5_chain.jsonl, receipts/e_q6_chain.jsonl, receipts/e_q7_chain.jsonl, receipts/e_q8_chain.jsonl, receipts/probe_gate_chain.jsonl"
+  },
+  {
+   "seat": "mimov26f",
+   "finding_id": "F5",
+   "draft_class": "already_admitted",
+   "grounded_choice": "yes_true",
+   "confidence": 0.33,
+   "why": "repo context: repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/ | E-Q16: results experiments/outputs/e_q16_results.json, experiments/outputs/e_q16_tip.txt; stone chain receipts/e_q16_chain.jsonl | chain registry (scripts/chain_registry.mjs, the single source of truth) registers 17 chains: _chain.jsonl, crossimpl/receipts/cimpl_chain.jsonl, crossimpl/receipts/crossimpl_chain.jsonl, fixedpoint/receipts/fixedpoint_chain.jsonl, receipts/e_q10_chain.jsonl, receipts/e_q13_chain.jsonl, receipts/e_q14_chain.jsonl, receipts/e_q15_chain.jsonl, receipts/e_q16_chain.jsonl, receipts/e_q17_chain.jsonl, receipts/e_q1_chain.jsonl, receipts/e_q2_chain.jsonl, receipts/e_q5_chain.jsonl, receipts/e_q6_chain.jsonl, receipts/e_q7_chain.jsonl, receipts/e_q8_chain.jsonl, receipts/probe_gate_chain.jsonl"
+  },
+  {
+   "seat": "musegl30b",
+   "finding_id": "F3",
+   "draft_class": "already_admitted",
+   "grounded_choice": "yes_true",
+   "confidence": 0.25,
+   "why": "repo context: repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/ | E-Q16: results experiments/outputs/e_q16_results.json, experiments/outputs/e_q16_tip.txt; stone chain receipts/e_q16_chain.jsonl"
+  },
+  {
+   "seat": "nemotron35sv",
+   "finding_id": "F1",
+   "draft_class": "verified_new",
+   "grounded_choice": "fabricated_or_misstated",
+   "confidence": 0.77,
+   "why": "repo context: repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/ | directory scripts/ contains: append_eq14_autopsy.mjs, append_eq16_contention_erratum.mjs, append_eq16_erratum.mjs, build_dashboard.mjs, build_public_demo.mjs, build_qthe_core.mjs, chain_registry.mjs, emit_fleet_seeds.mjs, falsification_budget.mjs, probe_gate.mjs, repl.mjs, replay.mjs, reseal-registration.mjs, seal_claim.mjs, two_reader_auto.mjs, verdict_recompute.mjs, verify_all_chains.mjs | E-Q16: results experiments/outputs/e_q16_results.json, experiments/outputs/e_q16_tip.txt; stone chain receipts/e_q16_chain.jsonl | chain registry (scripts/chain_registry.mjs, the single source of truth) registers 17 chains: _chain.jsonl, crossimpl/receipts/cimpl_chain.jsonl, crossimpl/receipts/crossimpl_chain.jsonl, fixedpoint/receipts/fixedpoint_chain.jsonl, receipts/e_q10_chain.jsonl, receipts/e_q13_chain.jsonl, receipts/e_q14_chain.jsonl, receipts/e_q15_chain.jsonl, receipts/e_q16_chain.jsonl, receipts/e_q17_chain.jsonl, receipts/e_q1_chain.jsonl, receipts/e_q2_chain.jsonl, receipts/e_q5_chain.jsonl, receipts/e_q6_chain.jsonl, receipts/e_q7_chain.jsonl, receipts/e_q8_chain.jsonl, receipts/probe_gate_chain.jsonl"
+  },
+  {
+   "seat": "nemotron35sv",
+   "finding_id": "F2",
+   "draft_class": "verified_new",
+   "grounded_choice": "fabricated_or_misstated",
+   "confidence": 0.37,
+   "why": "repo context: repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/ | E-Q2: results experiments/outputs/e_q2_results.json, experiments/outputs/e_q2_tip.txt; stone chain receipts/e_q2_chain.jsonl | E-Q16: results experiments/outputs/e_q16_results.json, experiments/outputs/e_q16_tip.txt; stone chain receipts/e_q16_chain.jsonl"
+  },
+  {
+   "seat": "nemotron35sv",
+   "finding_id": "F3",
+   "draft_class": "verified_new",
+   "grounded_choice": "fabricated_or_misstated",
+   "confidence": 0.33,
+   "why": "repo context: repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/ | E-Q14: results experiments/outputs/e_q14_results.json, experiments/outputs/e_q14_tip.txt; stone chain receipts/e_q14_chain.jsonl"
+  },
+  {
+   "seat": "nemotron35sv",
+   "finding_id": "F4",
+   "draft_class": "verified_new",
+   "grounded_choice": "fabricated_or_misstated",
+   "confidence": 0.22,
+   "why": "repo context: repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/ | E-Q9: results experiments/outputs/eq9_sweep_results.json, experiments/outputs/e_q11_q9_content.txt; NO stone-chain file under receipts/ for E-Q9 (naming-convention walk) | E-Q11: results experiments/outputs/e_q11_results.json, experiments/outputs/e_q11_q9_content.txt; NO stone-chain file under receipts/ for E-Q11 (naming-convention walk) | E-Q12: results experiments/outputs/e_q12_results.json, experiments/outputs/e_q12_flip_registry.json; NO stone-chain file under receipts/ for E-Q12 (naming-convention walk) | chain registry (scripts/chain_registry.mjs, the single source of truth) registers 17 chains: _chain.jsonl, crossimpl/receipts/cimpl_chain.jsonl, crossimpl/receipts/crossimpl_chain.jsonl, fixedpoint/receipts/fixedpoint_chain.jsonl, receipts/e_q10_chain.jsonl, receipts/e_q13_chain.jsonl, receipts/e_q14_chain.jsonl, receipts/e_q15_chain.jsonl, receipts/e_q16_chain.jsonl, receipts/e_q17_chain.jsonl, receipts/e_q1_chain.jsonl, receipts/e_q2_chain.jsonl, receipts/e_q5_chain.jsonl, receipts/e_q6_chain.jsonl, receipts/e_q7_chain.jsonl, receipts/e_q8_chain.jsonl, receipts/probe_gate_chain.jsonl"
+  },
+  {
+   "seat": "nemotron35sv",
+   "finding_id": "F5",
+   "draft_class": "verified_new",
+   "grounded_choice": "yes_true",
+   "confidence": 0.41,
+   "why": "repo context: repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/ | E-Q10: results experiments/outputs/e_q10_results.json, experiments/outputs/e_q10_tip.txt; stone chain receipts/e_q10_chain.jsonl"
+  },
+  {
+   "seat": "nemotron35sv",
+   "finding_id": "F6",
+   "draft_class": "already_admitted",
+   "grounded_choice": "yes_true",
+   "confidence": 0.66,
+   "why": "repo context: repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/ | E-Q13: results experiments/outputs/e_q13_results.json, experiments/outputs/e_q13_tip.txt; stone chain receipts/e_q13_chain.jsonl | chain registry (scripts/chain_registry.mjs, the single source of truth) registers 17 chains: _chain.jsonl, crossimpl/receipts/cimpl_chain.jsonl, crossimpl/receipts/crossimpl_chain.jsonl, fixedpoint/receipts/fixedpoint_chain.jsonl, receipts/e_q10_chain.jsonl, receipts/e_q13_chain.jsonl, receipts/e_q14_chain.jsonl, receipts/e_q15_chain.jsonl, receipts/e_q16_chain.jsonl, receipts/e_q17_chain.jsonl, receipts/e_q1_chain.jsonl, receipts/e_q2_chain.jsonl, receipts/e_q5_chain.jsonl, receipts/e_q6_chain.jsonl, receipts/e_q7_chain.jsonl, receipts/e_q8_chain.jsonl, receipts/probe_gate_chain.jsonl"
+  },
+  {
+   "seat": "qwen3635b",
+   "finding_id": "F1",
+   "draft_class": "verified_new",
+   "grounded_choice": "fabricated_or_misstated",
+   "confidence": 0.69,
+   "why": "repo context: repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/ | E-Q14: results experiments/outputs/e_q14_results.json, experiments/outputs/e_q14_tip.txt; stone chain receipts/e_q14_chain.jsonl"
+  },
+  {
+   "seat": "qwen3635b",
+   "finding_id": "F2",
+   "draft_class": "verified_new",
+   "grounded_choice": "fabricated_or_misstated",
+   "confidence": 0.58,
+   "why": "repo context: repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/"
+  },
+  {
+   "seat": "qwen3635b",
+   "finding_id": "F3",
+   "draft_class": "verified_new",
+   "grounded_choice": "fabricated_or_misstated",
+   "confidence": 0.43,
+   "why": "repo context: repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/"
+  },
+  {
+   "seat": "qwen3635b",
+   "finding_id": "F4",
+   "draft_class": "verified_new",
+   "grounded_choice": "cannot_settle",
+   "confidence": 0.13,
+   "why": "repo context: repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/ | E-Q15: results experiments/outputs/e_q15_results.json, experiments/outputs/e_q15_tip.txt; stone chain receipts/e_q15_chain.jsonl"
+  },
+  {
+   "seat": "seed20mini",
+   "finding_id": "F2",
+   "draft_class": "already_admitted",
+   "grounded_choice": "yes_true",
+   "confidence": 0.72,
+   "why": "repo context: repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/ | E-Q14: results experiments/outputs/e_q14_results.json, experiments/outputs/e_q14_tip.txt; stone chain receipts/e_q14_chain.jsonl"
+  },
+  {
+   "seat": "seed20mini",
+   "finding_id": "F3",
+   "draft_class": "already_admitted",
+   "grounded_choice": "fabricated_or_misstated",
+   "confidence": 0.72,
+   "why": "repo context: repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/ | directory crossimpl/c/ contains: REGISTRATION.md, conformance, conformance.c, esp32_demo.c, fixtures.txt, gen_fixtures.mjs, qthe_core.c, qthe_core.h, seal_cimpl.mjs"
+  },
+  {
+   "seat": "seed20mini",
+   "finding_id": "F4",
+   "draft_class": "already_admitted",
+   "grounded_choice": "yes_true",
+   "confidence": 0.43,
+   "why": "repo context: repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/ | E-Q15: results experiments/outputs/e_q15_results.json, experiments/outputs/e_q15_tip.txt; stone chain receipts/e_q15_chain.jsonl"
+  },
+  {
+   "seat": "seed20mini",
+   "finding_id": "F5",
+   "draft_class": "already_admitted",
+   "grounded_choice": "yes_true",
+   "confidence": 0.67,
+   "why": "repo context: repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/"
+  }
+ ],
+ "caveats": [
+  "Grounding is against the repository AS IT IS at run time. A finding true of an earlier repo state and since fixed reads as a misstatement of the current tree: the r10 no-LICENSE findings are the worked example (LICENSE landed in the ORCH-R11 fix batch; the current root listing contradicts the r10-era claims, visible in each finding's repo_context_facts). This is drift detection, not a hallucination charge.",
+  "verified_new vs already_admitted is a briefing-relative distinction; the grounded loop decides artifact truth only. A finding whose artifacts verify stands at its stage-1 draft class even if the round briefing had conceded the gap -- re-classing admissions is the orchestrator's call, not the loop's.",
+  "human_flag is the loop's escalation, not a verdict: confidence below the 0.8 gate or a missing answer routes to a human (the T3-a receipt: wrong-direction fabricated confidence on TRUE claims maxed at 0.70, so the gate holds the false-verdict boundary).",
+  "The mechanical pass checks the finding's FULL sealed text (claim + cheapest_falsifier + fix_sketch): an invented interface proposed as a falsifier fails the finding mechanically (Muse's r10 CLI flags), matching the r10 orchestrator's penalty class."
+ ],
+ "seats": {
+  "dsv41f": {
+   "findings": [
+    {
+     "seat": "dsv41f",
+     "finding_id": "F1",
+     "jev_triage": {
+      "class": "verified_new",
+      "class_confidence": 0.76,
+      "class_probabilities": {
+       "verified_new": 0.8099999999999999,
+       "already_admitted": 0.13,
+       "plausible_unverified": 0.03,
+       "hallucinated": 0.02,
+       "noise": 0.01
+      },
+      "actionable_noul": 0.84,
+      "severity_score": 1.86,
+      "severity_confidence": 0.79
+     },
+     "grounded_verdict": {
+      "decision_pass": "human_flag",
+      "evidence": [
+       "located sections: cited experiment E-Q13; anchor 'bytes-gain' at offset 13001, window chars 12301-13307 || results-file convention: window on the sealed verdict block (offset 12979) || cited experiment E-Q13; anchor 'bytes-gain' at offset 10334, window chars 9634-10780 || claim C2 -> stone-chain header -> E-Q1; anchor 'control' at offset 5779, window chars 5079-8679 || results-file convention: window on the sealed verdict block (offset 124527)",
+       "verdict: yes_true (conf 0.43, probabilities {\"yes_true\": 0.62, \"fabricated_or_misstated\": 0.25, \"cannot_settle\": 0.13})",
+       "confidence below the 0.8 gate -- escalated to a human (the earned loop's law)",
+       "mechanical facts: number 47.40 found repo-wide in: SPEC.md, docs/TECHNICAL-NOTE.md, docs/KNOWLEDGE-MAP.md, docs/DAY-1.md",
+       "repo context: repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/ | E-Q13: results experiments/outputs/e_q13_results.json, experiments/outputs/e_q13_tip.txt; stone chain receipts/e_q13_chain.jsonl | chain registry (scripts/chain_registry.mjs, the single source of truth) registers 17 chains: _chain.jsonl, crossimpl/receipts/cimpl_chain.jsonl, crossimpl/receipts/crossimpl_chain.jsonl, fixedpoint/receipts/fixedpoint_chain.jsonl, receipts/e_q10_chain.jsonl, receipts/e_q13_chain.jsonl, receipts/e_q14_chain.jsonl, receipts/e_q15_chain.jsonl, receipts/e_q16_chain.jsonl, receipts/e_q17_chain.jsonl, receipts/e_q1_chain.jsonl, receipts/e_q2_chain.jsonl, receipts/e_q5_chain.jsonl, receipts/e_q6_chain.jsonl, receipts/e_q7_chain.jsonl, receipts/e_q8_chain.jsonl, receipts/probe_gate_chain.jsonl"
+      ],
+      "confidence": 0.43,
+      "grounded_choice": "yes_true"
+     },
+     "repo_truth": {
+      "code_verified": {
+       "mechanical_failures": [],
+       "mechanical_facts": [
+        "number 47.40 found repo-wide in: SPEC.md, docs/TECHNICAL-NOTE.md, docs/KNOWLEDGE-MAP.md, docs/DAY-1.md"
+       ],
+       "repo_context_facts": [
+        "repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/",
+        "E-Q13: results experiments/outputs/e_q13_results.json, experiments/outputs/e_q13_tip.txt; stone chain receipts/e_q13_chain.jsonl",
+        "chain registry (scripts/chain_registry.mjs, the single source of truth) registers 17 chains: _chain.jsonl, crossimpl/receipts/cimpl_chain.jsonl, crossimpl/receipts/crossimpl_chain.jsonl, fixedpoint/receipts/fixedpoint_chain.jsonl, receipts/e_q10_chain.jsonl, receipts/e_q13_chain.jsonl, receipts/e_q14_chain.jsonl, receipts/e_q15_chain.jsonl, receipts/e_q16_chain.jsonl, receipts/e_q17_chain.jsonl, receipts/e_q1_chain.jsonl, receipts/e_q2_chain.jsonl, receipts/e_q5_chain.jsonl, receipts/e_q6_chain.jsonl, receipts/e_q7_chain.jsonl, receipts/e_q8_chain.jsonl, receipts/probe_gate_chain.jsonl"
+       ],
+       "located_files": [
+        "experiments/outputs/e_q13_results.json",
+        "experiments/outputs/e_q13_results.json",
+        "receipts/e_q13_chain.jsonl",
+        "experiments/outputs/e_q1_results.json",
+        "experiments/outputs/e_q1_results.json"
+       ],
+       "located_anchors": [
+        "bytes-gain",
+        "verdict",
+        "bytes-gain",
+        "control",
+        "verdict"
+       ]
+      },
+      "note": "what the repository itself says, as decided by code (anchors, existence, counts, listings); orchestrator re-verification remains the load-bearing wall"
+     },
+     "final_class": "human_flag",
+     "prior_jev_class": "verified_new",
+     "changed_vs_prior_jev": true,
+     "decided_by_call": "r12-triage-r10-g3-eq13resultsjson",
+     "model_served": "jev-1.13.0",
+     "usage": {
+      "input_tokens": 8550,
+      "output_tokens": 285
+     }
+    },
+    {
+     "seat": "dsv41f",
+     "finding_id": "F2",
+     "jev_triage": {
+      "class": "verified_new",
+      "class_confidence": 0.71,
+      "class_probabilities": {
+       "verified_new": 0.77,
+       "already_admitted": 0.12,
+       "plausible_unverified": 0.08,
+       "hallucinated": 0.02,
+       "noise": 0.01
+      },
+      "actionable_noul": 0.84,
+      "severity_score": 1.85,
+      "severity_confidence": 0.78
+     },
+     "grounded_verdict": {
+      "decision_pass": "human_flag",
+      "evidence": [
+       "located sections: cited experiment E-Q14; anchor 'fraction' at offset 131954, window chars 131254-132298 || results-file convention: window on the sealed verdict block (offset 131805) || cited experiment E-Q14; anchor 'autopsy' at offset 20686, window chars 19986-22555",
+       "verdict: yes_true (conf 0.53, probabilities {\"yes_true\": 0.69, \"fabricated_or_misstated\": 0.16, \"cannot_settle\": 0.15})",
+       "confidence below the 0.8 gate -- escalated to a human (the earned loop's law)",
+       "mechanical facts: number 0.94 found repo-wide in: docs/TECHNICAL-NOTE.md, docs/ADOPTION-KIT.md, docs/BOUNDARY-MAP.md, experiments/pre_registration_e_q17.json | number 256 found repo-wide in: SPEC.md, public-demo.html, two_reader/verdict.md, two_reader/reader.mjs",
+       "repo context: repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/ | E-Q14: results experiments/outputs/e_q14_results.json, experiments/outputs/e_q14_tip.txt; stone chain receipts/e_q14_chain.jsonl"
+      ],
+      "confidence": 0.53,
+      "grounded_choice": "yes_true"
+     },
+     "repo_truth": {
+      "code_verified": {
+       "mechanical_failures": [],
+       "mechanical_facts": [
+        "number 0.94 found repo-wide in: docs/TECHNICAL-NOTE.md, docs/ADOPTION-KIT.md, docs/BOUNDARY-MAP.md, experiments/pre_registration_e_q17.json",
+        "number 256 found repo-wide in: SPEC.md, public-demo.html, two_reader/verdict.md, two_reader/reader.mjs"
+       ],
+       "repo_context_facts": [
+        "repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/",
+        "E-Q14: results experiments/outputs/e_q14_results.json, experiments/outputs/e_q14_tip.txt; stone chain receipts/e_q14_chain.jsonl"
+       ],
+       "located_files": [
+        "experiments/outputs/e_q14_results.json",
+        "experiments/outputs/e_q14_results.json",
+        "receipts/e_q14_chain.jsonl"
+       ],
+       "located_anchors": [
+        "fraction",
+        "verdict",
+        "autopsy"
+       ]
+      },
+      "note": "what the repository itself says, as decided by code (anchors, existence, counts, listings); orchestrator re-verification remains the load-bearing wall"
+     },
+     "final_class": "human_flag",
+     "prior_jev_class": "verified_new",
+     "changed_vs_prior_jev": true,
+     "decided_by_call": "r12-triage-r10-g3-eq14resultsjson",
+     "model_served": "jev-1.13.0",
+     "usage": {
+      "input_tokens": 15397,
+      "output_tokens": 288
+     }
+    },
+    {
+     "seat": "dsv41f",
+     "finding_id": "F3",
+     "jev_triage": {
+      "class": "verified_new",
+      "class_confidence": 0.44,
+      "class_probabilities": {
+       "verified_new": 0.55,
+       "already_admitted": 0.33,
+       "plausible_unverified": 0.09,
+       "hallucinated": 0.02,
+       "noise": 0.01
+      },
+      "actionable_noul": 0.85,
+      "severity_score": 1.85,
+      "severity_confidence": 0.79
+     },
+     "grounded_verdict": {
+      "decision_pass": "human_flag",
+      "evidence": [
+       "located sections: cited experiment E-Q16; whole file (3610 chars) || cited experiment E-Q16; anchor 'closures' at offset 8263, window chars 7563-11029",
+       "verdict: cannot_settle (conf 0.18, probabilities {\"yes_true\": 0.36, \"fabricated_or_misstated\": 0.19, \"cannot_settle\": 0.45})",
+       "confidence below the 0.8 gate -- escalated to a human (the earned loop's law)",
+       "mechanical facts: number 100 found repo-wide in: public-demo.html, index.html, demo/sha256.mjs, demo/a2ui.mjs | number 000 found repo-wide in: public-demo.html, index.html, two_reader/reader.mjs, two_reader/selftest.mjs",
+       "repo context: repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/ | E-Q16: results experiments/outputs/e_q16_results.json, experiments/outputs/e_q16_tip.txt; stone chain receipts/e_q16_chain.jsonl | chain registry (scripts/chain_registry.mjs, the single source of truth) registers 17 chains: _chain.jsonl, crossimpl/receipts/cimpl_chain.jsonl, crossimpl/receipts/crossimpl_chain.jsonl, fixedpoint/receipts/fixedpoint_chain.jsonl, receipts/e_q10_chain.jsonl, receipts/e_q13_chain.jsonl, receipts/e_q14_chain.jsonl, receipts/e_q15_chain.jsonl, receipts/e_q16_chain.jsonl, receipts/e_q17_chain.jsonl, receipts/e_q1_chain.jsonl, receipts/e_q2_chain.jsonl, receipts/e_q5_chain.jsonl, receipts/e_q6_chain.jsonl, receipts/e_q7_chain.jsonl, receipts/e_q8_chain.jsonl, receipts/probe_gate_chain.jsonl"
+      ],
+      "confidence": 0.18,
+      "grounded_choice": "cannot_settle"
+     },
+     "repo_truth": {
+      "code_verified": {
+       "mechanical_failures": [],
+       "mechanical_facts": [
+        "number 100 found repo-wide in: public-demo.html, index.html, demo/sha256.mjs, demo/a2ui.mjs",
+        "number 000 found repo-wide in: public-demo.html, index.html, two_reader/reader.mjs, two_reader/selftest.mjs"
+       ],
+       "repo_context_facts": [
+        "repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/",
+        "E-Q16: results experiments/outputs/e_q16_results.json, experiments/outputs/e_q16_tip.txt; stone chain receipts/e_q16_chain.jsonl",
+        "chain registry (scripts/chain_registry.mjs, the single source of truth) registers 17 chains: _chain.jsonl, crossimpl/receipts/cimpl_chain.jsonl, crossimpl/receipts/crossimpl_chain.jsonl, fixedpoint/receipts/fixedpoint_chain.jsonl, receipts/e_q10_chain.jsonl, receipts/e_q13_chain.jsonl, receipts/e_q14_chain.jsonl, receipts/e_q15_chain.jsonl, receipts/e_q16_chain.jsonl, receipts/e_q17_chain.jsonl, receipts/e_q1_chain.jsonl, receipts/e_q2_chain.jsonl, receipts/e_q5_chain.jsonl, receipts/e_q6_chain.jsonl, receipts/e_q7_chain.jsonl, receipts/e_q8_chain.jsonl, receipts/probe_gate_chain.jsonl"
+       ],
+       "located_files": [
+        "experiments/outputs/e_q16_results.json",
+        "receipts/e_q16_chain.jsonl"
+       ],
+       "located_anchors": [
+        "-",
+        "closures"
+       ]
+      },
+      "note": "what the repository itself says, as decided by code (anchors, existence, counts, listings); orchestrator re-verification remains the load-bearing wall"
+     },
+     "final_class": "human_flag",
+     "prior_jev_class": "verified_new",
+     "changed_vs_prior_jev": true,
+     "decided_by_call": "r12-triage-r10-g3-eq16resultsjson",
+     "model_served": "jev-1.13.0",
+     "usage": {
+      "input_tokens": 12407,
+      "output_tokens": 227
+     }
+    },
+    {
+     "seat": "dsv41f",
+     "finding_id": "F4",
+     "jev_triage": {
+      "class": "verified_new",
+      "class_confidence": 0.5,
+      "class_probabilities": {
+       "verified_new": 0.6,
+       "already_admitted": 0.3,
+       "plausible_unverified": 0.07,
+       "hallucinated": 0.02,
+       "noise": 0.01
+      },
+      "actionable_noul": 0.84,
+      "severity_score": 1.86,
+      "severity_confidence": 0.79
+     },
+     "grounded_verdict": {
+      "decision_pass": "human_flag",
+      "evidence": [
+       "located sections: cited experiment E-Q2; anchor 'monotone-inert' at offset 4590, window chars 3890-7490 || results-file convention: window on the sealed verdict block (offset 4802) || cited experiment E-Q2; whole file (5997 chars) || cited experiment E-Q16; whole file (3610 chars) || cited experiment E-Q16; anchor 'measurement-wave' at offset 184, window chars 0-3600",
+       "verdict: fabricated_or_misstated (conf 0.14, probabilities {\"yes_true\": 0.37, \"fabricated_or_misstated\": 0.43, \"cannot_settle\": 0.2})",
+       "confidence below the 0.8 gate -- escalated to a human (the earned loop's law)",
+       "mechanical facts: number 0.25 found repo-wide in: SPEC.md, docs/TECHNICAL-NOTE.md, docs/CLAIM-VERDICTS.md, docs/FRONTIER-DECISION.md",
+       "repo context: repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/ | E-Q2: results experiments/outputs/e_q2_results.json, experiments/outputs/e_q2_tip.txt; stone chain receipts/e_q2_chain.jsonl | E-Q16: results experiments/outputs/e_q16_results.json, experiments/outputs/e_q16_tip.txt; stone chain receipts/e_q16_chain.jsonl"
+      ],
+      "confidence": 0.14,
+      "grounded_choice": "fabricated_or_misstated"
+     },
+     "repo_truth": {
+      "code_verified": {
+       "mechanical_failures": [],
+       "mechanical_facts": [
+        "number 0.25 found repo-wide in: SPEC.md, docs/TECHNICAL-NOTE.md, docs/CLAIM-VERDICTS.md, docs/FRONTIER-DECISION.md"
+       ],
+       "repo_context_facts": [
+        "repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/",
+        "E-Q2: results experiments/outputs/e_q2_results.json, experiments/outputs/e_q2_tip.txt; stone chain receipts/e_q2_chain.jsonl",
+        "E-Q16: results experiments/outputs/e_q16_results.json, experiments/outputs/e_q16_tip.txt; stone chain receipts/e_q16_chain.jsonl"
+       ],
+       "located_files": [
+        "experiments/outputs/e_q2_results.json",
+        "experiments/outputs/e_q2_results.json",
+        "receipts/e_q2_chain.jsonl",
+        "experiments/outputs/e_q16_results.json",
+        "receipts/e_q16_chain.jsonl"
+       ],
+       "located_anchors": [
+        "monotone-inert",
+        "verdict",
+        "-",
+        "-",
+        "measurement-wave"
+       ]
+      },
+      "note": "what the repository itself says, as decided by code (anchors, existence, counts, listings); orchestrator re-verification remains the load-bearing wall"
+     },
+     "final_class": "human_flag",
+     "prior_jev_class": "verified_new",
+     "changed_vs_prior_jev": true,
+     "decided_by_call": "r12-triage-r10-g3-eq2resultsjson",
+     "model_served": "jev-1.13.0",
+     "usage": {
+      "input_tokens": 17933,
+      "output_tokens": 230
+     }
+    },
+    {
+     "seat": "dsv41f",
+     "finding_id": "F5",
+     "jev_triage": {
+      "class": "already_admitted",
+      "class_confidence": 0.7,
+      "class_probabilities": {
+       "verified_new": 0.16,
+       "already_admitted": 0.76,
+       "plausible_unverified": 0.07,
+       "hallucinated": 0.01,
+       "noise": 0.0
+      },
+      "actionable_noul": 0.84,
+      "severity_score": 1.84,
+      "severity_confidence": 0.78
+     },
+     "grounded_verdict": {
+      "decision_pass": "jev",
+      "evidence": [
+       "located sections: bare name 'ADOPTION-KIT.md' (unique tree match); anchor 'blocker' at offset 7639, window chars 6939-10539 || cited directory qthe-core/ registration/readme; whole file (988 chars)",
+       "verdict: fabricated_or_misstated (conf 0.95, probabilities {\"yes_true\": 0.01, \"fabricated_or_misstated\": 0.97, \"cannot_settle\": 0.02})",
+       "mechanical facts: cited paths: qthe-core/PROVENANCE.txt (exists)",
+       "repo context: repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/ | directory qthe-core/ contains: LICENSE, LICENSE-NOTE.md, PROVENANCE.txt, README.md, c/, kernel/, package.json, py/, selfcheck.mjs | chain registry (scripts/chain_registry.mjs, the single source of truth) registers 17 chains: _chain.jsonl, crossimpl/receipts/cimpl_chain.jsonl, crossimpl/receipts/crossimpl_chain.jsonl, fixedpoint/receipts/fixedpoint_chain.jsonl, receipts/e_q10_chain.jsonl, receipts/e_q13_chain.jsonl, receipts/e_q14_chain.jsonl, receipts/e_q15_chain.jsonl, receipts/e_q16_chain.jsonl, receipts/e_q17_chain.jsonl, receipts/e_q1_chain.jsonl, receipts/e_q2_chain.jsonl, receipts/e_q5_chain.jsonl, receipts/e_q6_chain.jsonl, receipts/e_q7_chain.jsonl, receipts/e_q8_chain.jsonl, receipts/probe_gate_chain.jsonl"
+      ],
+      "confidence": 0.95,
+      "grounded_choice": "fabricated_or_misstated"
+     },
+     "repo_truth": {
+      "code_verified": {
+       "mechanical_failures": [],
+       "mechanical_facts": [
+        "cited paths: qthe-core/PROVENANCE.txt (exists)"
+       ],
+       "repo_context_facts": [
+        "repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/",
+        "directory qthe-core/ contains: LICENSE, LICENSE-NOTE.md, PROVENANCE.txt, README.md, c/, kernel/, package.json, py/, selfcheck.mjs",
+        "chain registry (scripts/chain_registry.mjs, the single source of truth) registers 17 chains: _chain.jsonl, crossimpl/receipts/cimpl_chain.jsonl, crossimpl/receipts/crossimpl_chain.jsonl, fixedpoint/receipts/fixedpoint_chain.jsonl, receipts/e_q10_chain.jsonl, receipts/e_q13_chain.jsonl, receipts/e_q14_chain.jsonl, receipts/e_q15_chain.jsonl, receipts/e_q16_chain.jsonl, receipts/e_q17_chain.jsonl, receipts/e_q1_chain.jsonl, receipts/e_q2_chain.jsonl, receipts/e_q5_chain.jsonl, receipts/e_q6_chain.jsonl, receipts/e_q7_chain.jsonl, receipts/e_q8_chain.jsonl, receipts/probe_gate_chain.jsonl"
+       ],
+       "located_files": [
+        "docs/ADOPTION-KIT.md",
+        "qthe-core/PROVENANCE.txt"
+       ],
+       "located_anchors": [
+        "blocker",
+        "-"
+       ]
+      },
+      "note": "what the repository itself says, as decided by code (anchors, existence, counts, listings); orchestrator re-verification remains the load-bearing wall"
+     },
+     "final_class": "fabricated_or_misstated",
+     "prior_jev_class": "already_admitted",
+     "changed_vs_prior_jev": false,
+     "decided_by_call": "r12-triage-r10-g3-adoptionkitmd",
+     "model_served": "jev-1.13.0",
+     "usage": {
+      "input_tokens": 9425,
+      "output_tokens": 239
+     }
+    },
+    {
+     "seat": "dsv41f",
+     "finding_id": "F6",
+     "jev_triage": {
+      "class": "verified_new",
+      "class_confidence": 0.55,
+      "class_probabilities": {
+       "verified_new": 0.64,
+       "already_admitted": 0.31,
+       "plausible_unverified": 0.03,
+       "hallucinated": 0.01,
+       "noise": 0.01
+      },
+      "actionable_noul": 0.84,
+      "severity_score": 1.85,
+      "severity_confidence": 0.78
+     },
+     "grounded_verdict": {
+      "decision_pass": "human_flag",
+      "evidence": [
+       "located sections: cited experiment E-Q15; anchor 'win-rate' at offset 24736, window chars 24036-24808 || results-file convention: window on the sealed verdict block (offset 24684) || cited experiment E-Q15; anchor 'max-of-accepted' at offset 16466, window chars 15766-16563",
+       "verdict: fabricated_or_misstated (conf 0.48, probabilities {\"yes_true\": 0.3, \"fabricated_or_misstated\": 0.65, \"cannot_settle\": 0.05})",
+       "confidence below the 0.8 gate -- escalated to a human (the earned loop's law)",
+       "mechanical facts: number 0.00 found repo-wide in: two_reader/verdict.md, two_reader/registration.json, docs/USER-GUIDE.md, docs/KNOWLEDGE-MAP.md",
+       "repo context: repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/ | E-Q15: results experiments/outputs/e_q15_results.json, experiments/outputs/e_q15_tip.txt; stone chain receipts/e_q15_chain.jsonl"
+      ],
+      "confidence": 0.48,
+      "grounded_choice": "fabricated_or_misstated"
+     },
+     "repo_truth": {
+      "code_verified": {
+       "mechanical_failures": [],
+       "mechanical_facts": [
+        "number 0.00 found repo-wide in: two_reader/verdict.md, two_reader/registration.json, docs/USER-GUIDE.md, docs/KNOWLEDGE-MAP.md"
+       ],
+       "repo_context_facts": [
+        "repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/",
+        "E-Q15: results experiments/outputs/e_q15_results.json, experiments/outputs/e_q15_tip.txt; stone chain receipts/e_q15_chain.jsonl"
+       ],
+       "located_files": [
+        "experiments/outputs/e_q15_results.json",
+        "experiments/outputs/e_q15_results.json",
+        "receipts/e_q15_chain.jsonl"
+       ],
+       "located_anchors": [
+        "win-rate",
+        "verdict",
+        "max-of-accepted"
+       ]
+      },
+      "note": "what the repository itself says, as decided by code (anchors, existence, counts, listings); orchestrator re-verification remains the load-bearing wall"
+     },
+     "final_class": "human_flag",
+     "prior_jev_class": "verified_new",
+     "changed_vs_prior_jev": true,
+     "decided_by_call": "r12-triage-r10-g3-eq15resultsjson",
+     "model_served": "jev-1.13.0",
+     "usage": {
+      "input_tokens": 6036,
+      "output_tokens": 172
+     }
+    },
+    {
+     "seat": "dsv41f",
+     "finding_id": "F7",
+     "jev_triage": {
+      "class": "verified_new",
+      "class_confidence": 0.5,
+      "class_probabilities": {
+       "verified_new": 0.6,
+       "already_admitted": 0.32,
+       "plausible_unverified": 0.05,
+       "hallucinated": 0.02,
+       "noise": 0.01
+      },
+      "actionable_noul": 0.85,
+      "severity_score": 1.85,
+      "severity_confidence": 0.79
+     },
+     "grounded_verdict": {
+      "decision_pass": "human_flag",
+      "evidence": [
+       "located sections: cited experiment E-Q10; anchor 'substrate' at offset 10383, window chars 9683-10552 || results-file convention: window on the sealed verdict block (offset 10239) || cited experiment E-Q10; anchor 'substrate' at offset 10224, window chars 9524-10468",
+       "verdict: yes_true (conf 0.48, probabilities {\"yes_true\": 0.65, \"fabricated_or_misstated\": 0.15, \"cannot_settle\": 0.2})",
+       "confidence below the 0.8 gate -- escalated to a human (the earned loop's law)",
+       "repo context: repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/ | E-Q10: results experiments/outputs/e_q10_results.json, experiments/outputs/e_q10_tip.txt; stone chain receipts/e_q10_chain.jsonl"
+      ],
+      "confidence": 0.48,
+      "grounded_choice": "yes_true"
+     },
+     "repo_truth": {
+      "code_verified": {
+       "mechanical_failures": [],
+       "mechanical_facts": [],
+       "repo_context_facts": [
+        "repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/",
+        "E-Q10: results experiments/outputs/e_q10_results.json, experiments/outputs/e_q10_tip.txt; stone chain receipts/e_q10_chain.jsonl"
+       ],
+       "located_files": [
+        "experiments/outputs/e_q10_results.json",
+        "experiments/outputs/e_q10_results.json",
+        "receipts/e_q10_chain.jsonl"
+       ],
+       "located_anchors": [
+        "substrate",
+        "verdict",
+        "substrate"
+       ]
+      },
+      "note": "what the repository itself says, as decided by code (anchors, existence, counts, listings); orchestrator re-verification remains the load-bearing wall"
+     },
+     "final_class": "human_flag",
+     "prior_jev_class": "verified_new",
+     "changed_vs_prior_jev": true,
+     "decided_by_call": "r12-triage-r10-g3-eq10resultsjson",
+     "model_served": "jev-1.13.0",
+     "usage": {
+      "input_tokens": 3767,
+      "output_tokens": 112
+     }
+    }
+   ],
+   "final_class_counts": {
+    "human_flag": 6,
+    "fabricated_or_misstated": 1
+   },
+   "prior_repo_truth": {
+    "repo_verified_new": 5,
+    "jev_verified_new": 6,
+    "verdict": "Jev promoted one plausible-unverified (harness-contamination) that repo analysis closed clean — the closure is receipted in DEVELOPER-GUIDE",
+    "hallucination_caught_by_repo": 0
+   }
+  },
+  "hy4p": {
+   "findings": [
+    {
+     "seat": "hy4p",
+     "finding_id": "F1",
+     "jev_triage": {
+      "class": "already_admitted",
+      "class_confidence": 0.4,
+      "class_probabilities": {
+       "verified_new": 0.42,
+       "already_admitted": 0.52,
+       "plausible_unverified": 0.03,
+       "hallucinated": 0.02,
+       "noise": 0.01
+      },
+      "actionable_noul": 0.84,
+      "severity_score": 1.91,
+      "severity_confidence": 0.88
+     },
+     "grounded_verdict": {
+      "decision_pass": "human_flag",
+      "evidence": [
+       "located sections: cited experiment E-Q14; anchor 'content-addressed' at offset 132102, window chars 131402-132298 || results-file convention: window on the sealed verdict block (offset 131805) || cited experiment E-Q14; anchor 'content-addressed' at offset 20406, window chars 19706-22555 || cited experiment E-Q16; whole file (3610 chars) || cited experiment E-Q16; anchor 'Abstain' at offset 3621, window chars 2921-6521",
+       "verdict: fabricated_or_misstated (conf 0.3, probabilities {\"yes_true\": 0.2, \"fabricated_or_misstated\": 0.53, \"cannot_settle\": 0.27})",
+       "confidence below the 0.8 gate -- escalated to a human (the earned loop's law)",
+       "mechanical facts: number 6553 found repo-wide in: experiments/pre_registration_e_q17.json, experiments/eq9_deep_trace_moth.mjs, experiments/outputs/eq9dt_rows.jsonl, experiments/outputs/e_q5_results.json | number 353 found repo-wide in: two_reader/verdict.md, two_reader/registration.json, docs/DEVELOPER-GUIDE.md, docs/PHASES-REPORT.md | number 5874 found repo-wide in: docs/DEVELOPER-GUIDE.md, docs/PHASES-REPORT.md, docs/BOUNDARY-MAP.md, docs/FALSIFICATION-BUDGET.md",
+       "repo context: repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/ | E-Q14: results experiments/outputs/e_q14_results.json, experiments/outputs/e_q14_tip.txt; stone chain receipts/e_q14_chain.jsonl | E-Q16: results experiments/outputs/e_q16_results.json, experiments/outputs/e_q16_tip.txt; stone chain receipts/e_q16_chain.jsonl"
+      ],
+      "confidence": 0.3,
+      "grounded_choice": "fabricated_or_misstated"
+     },
+     "repo_truth": {
+      "code_verified": {
+       "mechanical_failures": [],
+       "mechanical_facts": [
+        "number 6553 found repo-wide in: experiments/pre_registration_e_q17.json, experiments/eq9_deep_trace_moth.mjs, experiments/outputs/eq9dt_rows.jsonl, experiments/outputs/e_q5_results.json",
+        "number 353 found repo-wide in: two_reader/verdict.md, two_reader/registration.json, docs/DEVELOPER-GUIDE.md, docs/PHASES-REPORT.md",
+        "number 5874 found repo-wide in: docs/DEVELOPER-GUIDE.md, docs/PHASES-REPORT.md, docs/BOUNDARY-MAP.md, docs/FALSIFICATION-BUDGET.md"
+       ],
+       "repo_context_facts": [
+        "repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/",
+        "E-Q14: results experiments/outputs/e_q14_results.json, experiments/outputs/e_q14_tip.txt; stone chain receipts/e_q14_chain.jsonl",
+        "E-Q16: results experiments/outputs/e_q16_results.json, experiments/outputs/e_q16_tip.txt; stone chain receipts/e_q16_chain.jsonl"
+       ],
+       "located_files": [
+        "experiments/outputs/e_q14_results.json",
+        "experiments/outputs/e_q14_results.json",
+        "receipts/e_q14_chain.jsonl",
+        "experiments/outputs/e_q16_results.json",
+        "receipts/e_q16_chain.jsonl"
+       ],
+       "located_anchors": [
+        "content-addressed",
+        "verdict",
+        "content-addressed",
+        "-",
+        "Abstain"
+       ]
+      },
+      "note": "what the repository itself says, as decided by code (anchors, existence, counts, listings); orchestrator re-verification remains the load-bearing wall"
+     },
+     "final_class": "human_flag",
+     "prior_jev_class": "already_admitted",
+     "changed_vs_prior_jev": false,
+     "decided_by_call": "r12-triage-r10-g3-eq14resultsjson",
+     "model_served": "jev-1.13.0",
+     "usage": {
+      "input_tokens": 15397,
+      "output_tokens": 288
+     }
+    },
+    {
+     "seat": "hy4p",
+     "finding_id": "F2",
+     "jev_triage": {
+      "class": "verified_new",
+      "class_confidence": 0.37,
+      "class_probabilities": {
+       "verified_new": 0.5,
+       "already_admitted": 0.46,
+       "plausible_unverified": 0.02,
+       "hallucinated": 0.01,
+       "noise": 0.01
+      },
+      "actionable_noul": 0.84,
+      "severity_score": 1.89,
+      "severity_confidence": 0.83
+     },
+     "grounded_verdict": {
+      "decision_pass": "human_flag",
+      "evidence": [
+       "located sections: cited experiment E-Q16; whole file (3610 chars) || cited experiment E-Q16; anchor 'scaling' at offset 2915, window chars 2215-5815 || claim C2 -> stone-chain header -> E-Q1; head (no in-file anchor; first 3600 chars) || results-file convention: window on the sealed verdict block (offset 124527) || claim C2 -> stone-chain header -> E-Q1; anchor 'Moore-8' at offset 1021, window chars 321-3921",
+       "verdict: fabricated_or_misstated (conf 0.64, probabilities {\"yes_true\": 0.09, \"fabricated_or_misstated\": 0.76, \"cannot_settle\": 0.15})",
+       "confidence below the 0.8 gate -- escalated to a human (the earned loop's law)",
+       "mechanical facts: number 5874 found repo-wide in: docs/DEVELOPER-GUIDE.md, docs/PHASES-REPORT.md, docs/BOUNDARY-MAP.md, docs/FALSIFICATION-BUDGET.md",
+       "repo context: repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/ | E-Q16: results experiments/outputs/e_q16_results.json, experiments/outputs/e_q16_tip.txt; stone chain receipts/e_q16_chain.jsonl"
+      ],
+      "confidence": 0.64,
+      "grounded_choice": "fabricated_or_misstated"
+     },
+     "repo_truth": {
+      "code_verified": {
+       "mechanical_failures": [],
+       "mechanical_facts": [
+        "number 5874 found repo-wide in: docs/DEVELOPER-GUIDE.md, docs/PHASES-REPORT.md, docs/BOUNDARY-MAP.md, docs/FALSIFICATION-BUDGET.md"
+       ],
+       "repo_context_facts": [
+        "repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/",
+        "E-Q16: results experiments/outputs/e_q16_results.json, experiments/outputs/e_q16_tip.txt; stone chain receipts/e_q16_chain.jsonl"
+       ],
+       "located_files": [
+        "experiments/outputs/e_q16_results.json",
+        "receipts/e_q16_chain.jsonl",
+        "experiments/outputs/e_q1_results.json",
+        "experiments/outputs/e_q1_results.json",
+        "receipts/e_q1_chain.jsonl"
+       ],
+       "located_anchors": [
+        "-",
+        "scaling",
+        "-",
+        "verdict",
+        "Moore-8"
+       ]
+      },
+      "note": "what the repository itself says, as decided by code (anchors, existence, counts, listings); orchestrator re-verification remains the load-bearing wall"
+     },
+     "final_class": "human_flag",
+     "prior_jev_class": "already_admitted",
+     "changed_vs_prior_jev": false,
+     "decided_by_call": "r12-triage-r10-g3-eq16resultsjson",
+     "model_served": "jev-1.13.0",
+     "usage": {
+      "input_tokens": 12407,
+      "output_tokens": 227
+     }
+    },
+    {
+     "seat": "hy4p",
+     "finding_id": "F3",
+     "jev_triage": {
+      "class": "already_admitted",
+      "class_confidence": 0.55,
+      "class_probabilities": {
+       "verified_new": 0.31,
+       "already_admitted": 0.64,
+       "plausible_unverified": 0.02,
+       "hallucinated": 0.02,
+       "noise": 0.01
+      },
+      "actionable_noul": 0.84,
+      "severity_score": 1.92,
+      "severity_confidence": 0.9
+     },
+     "grounded_verdict": {
+      "decision_pass": "human_flag",
+      "evidence": [
+       "located sections: cited experiment E-Q13; anchor 'bytes-gain' at offset 13001, window chars 12301-13307 || results-file convention: window on the sealed verdict block (offset 12979) || cited experiment E-Q13; anchor 'bytes-gain' at offset 10334, window chars 9634-10780",
+       "verdict: yes_true (conf 0.46, probabilities {\"yes_true\": 0.64, \"fabricated_or_misstated\": 0.19, \"cannot_settle\": 0.17})",
+       "confidence below the 0.8 gate -- escalated to a human (the earned loop's law)",
+       "mechanical facts: number 47.40 found repo-wide in: SPEC.md, docs/TECHNICAL-NOTE.md, docs/KNOWLEDGE-MAP.md, docs/DAY-1.md | number 4096 found repo-wide in: experiments/pre_registration_e_q17.json, experiments/pre_registration_e_q8.json, experiments/e_q7_checkerboard_cascade.mjs, experiments/pre_registration_e_q13.json | number 8192 found repo-wide in: experiments/pre_registration_e_q13.json, experiments/moth_client.mjs, experiments/e_q13_c1_gain_of_function.mjs, scripts/verdict_recompute.mjs",
+       "repo context: repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/ | E-Q13: results experiments/outputs/e_q13_results.json, experiments/outputs/e_q13_tip.txt; stone chain receipts/e_q13_chain.jsonl"
+      ],
+      "confidence": 0.46,
+      "grounded_choice": "yes_true"
+     },
+     "repo_truth": {
+      "code_verified": {
+       "mechanical_failures": [],
+       "mechanical_facts": [
+        "number 47.40 found repo-wide in: SPEC.md, docs/TECHNICAL-NOTE.md, docs/KNOWLEDGE-MAP.md, docs/DAY-1.md",
+        "number 4096 found repo-wide in: experiments/pre_registration_e_q17.json, experiments/pre_registration_e_q8.json, experiments/e_q7_checkerboard_cascade.mjs, experiments/pre_registration_e_q13.json",
+        "number 8192 found repo-wide in: experiments/pre_registration_e_q13.json, experiments/moth_client.mjs, experiments/e_q13_c1_gain_of_function.mjs, scripts/verdict_recompute.mjs"
+       ],
+       "repo_context_facts": [
+        "repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/",
+        "E-Q13: results experiments/outputs/e_q13_results.json, experiments/outputs/e_q13_tip.txt; stone chain receipts/e_q13_chain.jsonl"
+       ],
+       "located_files": [
+        "experiments/outputs/e_q13_results.json",
+        "experiments/outputs/e_q13_results.json",
+        "receipts/e_q13_chain.jsonl"
+       ],
+       "located_anchors": [
+        "bytes-gain",
+        "verdict",
+        "bytes-gain"
+       ]
+      },
+      "note": "what the repository itself says, as decided by code (anchors, existence, counts, listings); orchestrator re-verification remains the load-bearing wall"
+     },
+     "final_class": "human_flag",
+     "prior_jev_class": "already_admitted",
+     "changed_vs_prior_jev": false,
+     "decided_by_call": "r12-triage-r10-g3-eq13resultsjson",
+     "model_served": "jev-1.13.0",
+     "usage": {
+      "input_tokens": 8550,
+      "output_tokens": 285
+     }
+    },
+    {
+     "seat": "hy4p",
+     "finding_id": "F4",
+     "jev_triage": {
+      "class": "already_admitted",
+      "class_confidence": 0.64,
+      "class_probabilities": {
+       "verified_new": 0.24,
+       "already_admitted": 0.71,
+       "plausible_unverified": 0.02,
+       "hallucinated": 0.02,
+       "noise": 0.01
+      },
+      "actionable_noul": 0.83,
+      "severity_score": 1.92,
+      "severity_confidence": 0.88
+     },
+     "grounded_verdict": {
+      "decision_pass": "human_flag",
+      "evidence": [
+       "located sections: cited experiment E-Q16; whole file (3610 chars) || cited experiment E-Q16; anchor 'closures' at offset 8263, window chars 7563-11029",
+       "verdict: fabricated_or_misstated (conf 0.49, probabilities {\"yes_true\": 0.27, \"fabricated_or_misstated\": 0.66, \"cannot_settle\": 0.07})",
+       "confidence below the 0.8 gate -- escalated to a human (the earned loop's law)",
+       "mechanical facts: number 100 found repo-wide in: public-demo.html, index.html, demo/sha256.mjs, demo/a2ui.mjs | number 000 found repo-wide in: public-demo.html, index.html, two_reader/reader.mjs, two_reader/selftest.mjs | number 1000 found repo-wide in: public-demo.html, demo/sha256.mjs, demo/a2ui.mjs, docs/USER-GUIDE.md",
+       "repo context: repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/ | E-Q16: results experiments/outputs/e_q16_results.json, experiments/outputs/e_q16_tip.txt; stone chain receipts/e_q16_chain.jsonl | chain registry (scripts/chain_registry.mjs, the single source of truth) registers 17 chains: _chain.jsonl, crossimpl/receipts/cimpl_chain.jsonl, crossimpl/receipts/crossimpl_chain.jsonl, fixedpoint/receipts/fixedpoint_chain.jsonl, receipts/e_q10_chain.jsonl, receipts/e_q13_chain.jsonl, receipts/e_q14_chain.jsonl, receipts/e_q15_chain.jsonl, receipts/e_q16_chain.jsonl, receipts/e_q17_chain.jsonl, receipts/e_q1_chain.jsonl, receipts/e_q2_chain.jsonl, receipts/e_q5_chain.jsonl, receipts/e_q6_chain.jsonl, receipts/e_q7_chain.jsonl, receipts/e_q8_chain.jsonl, receipts/probe_gate_chain.jsonl"
+      ],
+      "confidence": 0.49,
+      "grounded_choice": "fabricated_or_misstated"
+     },
+     "repo_truth": {
+      "code_verified": {
+       "mechanical_failures": [],
+       "mechanical_facts": [
+        "number 100 found repo-wide in: public-demo.html, index.html, demo/sha256.mjs, demo/a2ui.mjs",
+        "number 000 found repo-wide in: public-demo.html, index.html, two_reader/reader.mjs, two_reader/selftest.mjs",
+        "number 1000 found repo-wide in: public-demo.html, demo/sha256.mjs, demo/a2ui.mjs, docs/USER-GUIDE.md"
+       ],
+       "repo_context_facts": [
+        "repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/",
+        "E-Q16: results experiments/outputs/e_q16_results.json, experiments/outputs/e_q16_tip.txt; stone chain receipts/e_q16_chain.jsonl",
+        "chain registry (scripts/chain_registry.mjs, the single source of truth) registers 17 chains: _chain.jsonl, crossimpl/receipts/cimpl_chain.jsonl, crossimpl/receipts/crossimpl_chain.jsonl, fixedpoint/receipts/fixedpoint_chain.jsonl, receipts/e_q10_chain.jsonl, receipts/e_q13_chain.jsonl, receipts/e_q14_chain.jsonl, receipts/e_q15_chain.jsonl, receipts/e_q16_chain.jsonl, receipts/e_q17_chain.jsonl, receipts/e_q1_chain.jsonl, receipts/e_q2_chain.jsonl, receipts/e_q5_chain.jsonl, receipts/e_q6_chain.jsonl, receipts/e_q7_chain.jsonl, receipts/e_q8_chain.jsonl, receipts/probe_gate_chain.jsonl"
+       ],
+       "located_files": [
+        "experiments/outputs/e_q16_results.json",
+        "receipts/e_q16_chain.jsonl"
+       ],
+       "located_anchors": [
+        "-",
+        "closures"
+       ]
+      },
+      "note": "what the repository itself says, as decided by code (anchors, existence, counts, listings); orchestrator re-verification remains the load-bearing wall"
+     },
+     "final_class": "human_flag",
+     "prior_jev_class": "already_admitted",
+     "changed_vs_prior_jev": false,
+     "decided_by_call": "r12-triage-r10-g3-eq16resultsjson",
+     "model_served": "jev-1.13.0",
+     "usage": {
+      "input_tokens": 12407,
+      "output_tokens": 227
+     }
+    },
+    {
+     "seat": "hy4p",
+     "finding_id": "F5",
+     "jev_triage": {
+      "class": "verified_new",
+      "class_confidence": 0.36,
+      "class_probabilities": {
+       "verified_new": 0.49,
+       "already_admitted": 0.46,
+       "plausible_unverified": 0.02,
+       "hallucinated": 0.02,
+       "noise": 0.01
+      },
+      "actionable_noul": 0.84,
+      "severity_score": 1.91,
+      "severity_confidence": 0.88
+     },
+     "grounded_verdict": {
+      "decision_pass": "human_flag",
+      "evidence": [
+       "located sections: explicitly cited file; whole file (3093 chars) || cited experiment E-Q9; anchor 'predictions' at offset 119, window chars 0-3600 || cited experiment E-Q9; anchor 'silently' at offset 5972, window chars 5272-8872 || cited experiment E-Q11; whole file (2985 chars) || cited experiment E-Q11; head (no in-file anchor; first 3600 chars)",
+       "verdict: fabricated_or_misstated (conf 0.34, probabilities {\"yes_true\": 0.3, \"fabricated_or_misstated\": 0.56, \"cannot_settle\": 0.14})",
+       "confidence below the 0.8 gate -- escalated to a human (the earned loop's law)",
+       "mechanical facts: cited paths: scripts/verify_all_chains.mjs (exists) | number 400 found repo-wide in: two_reader/registration.json, two_reader/run.mjs, docs/TECHNICAL-NOTE.md, docs/RESOURCE-PROFILE.md",
+       "repo context: repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/ | directory scripts/ contains: append_eq14_autopsy.mjs, append_eq16_contention_erratum.mjs, append_eq16_erratum.mjs, build_dashboard.mjs, build_public_demo.mjs, build_qthe_core.mjs, chain_registry.mjs, emit_fleet_seeds.mjs, falsification_budget.mjs, probe_gate.mjs, repl.mjs, replay.mjs, reseal-registration.mjs, seal_claim.mjs, two_reader_auto.mjs, verdict_recompute.mjs, verify_all_chains.mjs | E-Q9: results experiments/outputs/eq9_sweep_results.json, experiments/outputs/e_q11_q9_content.txt; NO stone-chain file under receipts/ for E-Q9 (naming-convention walk) | E-Q11: results experiments/outputs/e_q11_results.json, experiments/outputs/e_q11_q9_content.txt; NO stone-chain file under receipts/ for E-Q11 (naming-convention walk) | E-Q12: results experiments/outputs/e_q12_results.json, experiments/outputs/e_q12_flip_registry.json; NO stone-chain file under receipts/ for E-Q12 (naming-convention walk) | chain registry (scripts/chain_registry.mjs, the single source of truth) registers 17 chains: _chain.jsonl, crossimpl/receipts/cimpl_chain.jsonl, crossimpl/receipts/crossimpl_chain.jsonl, fixedpoint/receipts/fixedpoint_chain.jsonl, receipts/e_q10_chain.jsonl, receipts/e_q13_chain.jsonl, receipts/e_q14_chain.jsonl, receipts/e_q15_chain.jsonl, receipts/e_q16_chain.jsonl, receipts/e_q17_chain.jsonl, receipts/e_q1_chain.jsonl, receipts/e_q2_chain.jsonl, receipts/e_q5_chain.jsonl, receipts/e_q6_chain.jsonl, receipts/e_q7_chain.jsonl, receipts/e_q8_chain.jsonl, receipts/probe_gate_chain.jsonl"
+      ],
+      "confidence": 0.34,
+      "grounded_choice": "fabricated_or_misstated"
+     },
+     "repo_truth": {
+      "code_verified": {
+       "mechanical_failures": [],
+       "mechanical_facts": [
+        "cited paths: scripts/verify_all_chains.mjs (exists)",
+        "number 400 found repo-wide in: two_reader/registration.json, two_reader/run.mjs, docs/TECHNICAL-NOTE.md, docs/RESOURCE-PROFILE.md"
+       ],
+       "repo_context_facts": [
+        "repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/",
+        "directory scripts/ contains: append_eq14_autopsy.mjs, append_eq16_contention_erratum.mjs, append_eq16_erratum.mjs, build_dashboard.mjs, build_public_demo.mjs, build_qthe_core.mjs, chain_registry.mjs, emit_fleet_seeds.mjs, falsification_budget.mjs, probe_gate.mjs, repl.mjs, replay.mjs, reseal-registration.mjs, seal_claim.mjs, two_reader_auto.mjs, verdict_recompute.mjs, verify_all_chains.mjs",
+        "E-Q9: results experiments/outputs/eq9_sweep_results.json, experiments/outputs/e_q11_q9_content.txt; NO stone-chain file under receipts/ for E-Q9 (naming-convention walk)",
+        "E-Q11: results experiments/outputs/e_q11_results.json, experiments/outputs/e_q11_q9_content.txt; NO stone-chain file under receipts/ for E-Q11 (naming-convention walk)",
+        "E-Q12: results experiments/outputs/e_q12_results.json, experiments/outputs/e_q12_flip_registry.json; NO stone-chain file under receipts/ for E-Q12 (naming-convention walk)",
+        "chain registry (scripts/chain_registry.mjs, the single source of truth) registers 17 chains: _chain.jsonl, crossimpl/receipts/cimpl_chain.jsonl, crossimpl/receipts/crossimpl_chain.jsonl, fixedpoint/receipts/fixedpoint_chain.jsonl, receipts/e_q10_chain.jsonl, receipts/e_q13_chain.jsonl, receipts/e_q14_chain.jsonl, receipts/e_q15_chain.jsonl, receipts/e_q16_chain.jsonl, receipts/e_q17_chain.jsonl, receipts/e_q1_chain.jsonl, receipts/e_q2_chain.jsonl, receipts/e_q5_chain.jsonl, receipts/e_q6_chain.jsonl, receipts/e_q7_chain.jsonl, receipts/e_q8_chain.jsonl, receipts/probe_gate_chain.jsonl"
+       ],
+       "located_files": [
+        "scripts/verify_all_chains.mjs",
+        "experiments/outputs/eq9_sweep_results.json",
+        "experiments/e_q9_sweep.mjs",
+        "experiments/outputs/e_q11_results.json",
+        "experiments/e_q11_collapse_predicate.mjs"
+       ],
+       "located_anchors": [
+        "-",
+        "predictions",
+        "silently",
+        "-",
+        "-"
+       ]
+      },
+      "note": "what the repository itself says, as decided by code (anchors, existence, counts, listings); orchestrator re-verification remains the load-bearing wall"
+     },
+     "final_class": "human_flag",
+     "prior_jev_class": "verified_new",
+     "changed_vs_prior_jev": true,
+     "decided_by_call": "r12-triage-r10-g3-verifyallchainsmjs",
+     "model_served": "jev-1.13.0",
+     "usage": {
+      "input_tokens": 12464,
+      "output_tokens": 115
+     }
+    },
+    {
+     "seat": "hy4p",
+     "finding_id": "F6",
+     "jev_triage": {
+      "class": "already_admitted",
+      "class_confidence": 0.33,
+      "class_probabilities": {
+       "verified_new": 0.43,
+       "already_admitted": 0.46,
+       "plausible_unverified": 0.07,
+       "hallucinated": 0.03,
+       "noise": 0.01
+      },
+      "actionable_noul": 0.83,
+      "severity_score": 1.91,
+      "severity_confidence": 0.88
+     },
+     "grounded_verdict": {
+      "decision_pass": "jev",
+      "evidence": [
+       "located sections: bare name 'ADOPTION-KIT.md' (unique tree match); anchor 'adoption' at offset 11, window chars 0-3600 || bare name 'PROVENANCE.txt' (unique tree match); whole file (988 chars) || cited directory crossimpl/c/ registration/readme; whole file (3806 chars)",
+       "verdict: fabricated_or_misstated (conf 0.92, probabilities {\"yes_true\": 0.02, \"fabricated_or_misstated\": 0.95, \"cannot_settle\": 0.03})",
+       "mechanical facts: cited paths: qthe-core/PROVENANCE.txt (exists)",
+       "repo context: repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/ | directory qthe-core/ contains: LICENSE, LICENSE-NOTE.md, PROVENANCE.txt, README.md, c/, kernel/, package.json, py/, selfcheck.mjs | directory crossimpl/c/ contains: REGISTRATION.md, conformance, conformance.c, esp32_demo.c, fixtures.txt, gen_fixtures.mjs, qthe_core.c, qthe_core.h, seal_cimpl.mjs"
+      ],
+      "confidence": 0.92,
+      "grounded_choice": "fabricated_or_misstated"
+     },
+     "repo_truth": {
+      "code_verified": {
+       "mechanical_failures": [],
+       "mechanical_facts": [
+        "cited paths: qthe-core/PROVENANCE.txt (exists)"
+       ],
+       "repo_context_facts": [
+        "repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/",
+        "directory qthe-core/ contains: LICENSE, LICENSE-NOTE.md, PROVENANCE.txt, README.md, c/, kernel/, package.json, py/, selfcheck.mjs",
+        "directory crossimpl/c/ contains: REGISTRATION.md, conformance, conformance.c, esp32_demo.c, fixtures.txt, gen_fixtures.mjs, qthe_core.c, qthe_core.h, seal_cimpl.mjs"
+       ],
+       "located_files": [
+        "docs/ADOPTION-KIT.md",
+        "qthe-core/PROVENANCE.txt",
+        "crossimpl/c/REGISTRATION.md"
+       ],
+       "located_anchors": [
+        "adoption",
+        "-",
+        "-"
+       ]
+      },
+      "note": "what the repository itself says, as decided by code (anchors, existence, counts, listings); orchestrator re-verification remains the load-bearing wall"
+     },
+     "final_class": "fabricated_or_misstated",
+     "prior_jev_class": "verified_new",
+     "changed_vs_prior_jev": true,
+     "decided_by_call": "r12-triage-r10-g3-adoptionkitmd",
+     "model_served": "jev-1.13.0",
+     "usage": {
+      "input_tokens": 9425,
+      "output_tokens": 239
+     }
+    }
+   ],
+   "final_class_counts": {
+    "human_flag": 5,
+    "fabricated_or_misstated": 1
+   },
+   "prior_repo_truth": {
+    "repo_verified_new": 5,
+    "jev_verified_new": 2,
+    "verdict": "hy4's falsifier PREDICTED the registry-drift class (partial credit receipted); Jev demoted its strongest findings to already_admitted — leniency, not error",
+    "hallucination_caught_by_repo": 0
+   }
+  },
+  "mimov26f": {
+   "findings": [
+    {
+     "seat": "mimov26f",
+     "finding_id": "F1",
+     "jev_triage": {
+      "class": "verified_new",
+      "class_confidence": 0.4,
+      "class_probabilities": {
+       "verified_new": 0.52,
+       "already_admitted": 0.4,
+       "plausible_unverified": 0.04,
+       "hallucinated": 0.03,
+       "noise": 0.01
+      },
+      "actionable_noul": 0.86,
+      "severity_score": 1.89,
+      "severity_confidence": 0.82
+     },
+     "grounded_verdict": {
+      "decision_pass": "human_flag",
+      "evidence": [
+       "located sections: explicitly cited file; whole file (3885 chars) || cited experiment E-Q14; anchor 'fraction' at offset 131954, window chars 131254-132298 || results-file convention: window on the sealed verdict block (offset 131805) || cited experiment E-Q14; anchor 'mechanism' at offset 20964, window chars 20264-22555",
+       "verdict: fabricated_or_misstated (conf 0.25, probabilities {\"yes_true\": 0.43, \"fabricated_or_misstated\": 0.5, \"cannot_settle\": 0.07})",
+       "confidence below the 0.8 gate -- escalated to a human (the earned loop's law)",
+       "mechanical facts: cited paths: docs/FALSIFICATION-BUDGET.md (exists) | number 0.94 found repo-wide in: docs/TECHNICAL-NOTE.md, docs/ADOPTION-KIT.md, docs/BOUNDARY-MAP.md, experiments/pre_registration_e_q17.json | number 0.01 found repo-wide in: docs/REPRESENTATION-LAW.md, fixedpoint/pre_registration.json, experiments/pre_registration_e_q8.json, experiments/pre_registration_amendment_2.json | number 256 found repo-wide in: SPEC.md, public-demo.html, two_reader/verdict.md, two_reader/reader.mjs",
+       "repo context: repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/ | directory docs/ contains: ADOPTION-KIT.md, BOUNDARY-MAP.md, CLAIM-VERDICTS.md, CTO-BRIEF.md, DAY-1.md, DEVELOPER-GUIDE.md, ENGINEERING-NOTES.md, FALSIFICATION-BUDGET.md, FRONTIER-DECISION.md, HIERARCHICAL-WORMHOLES.md, HULL-DOCTRINE.md, KNOWLEDGE-MAP.md, MARINE-EDGE-WORKLOAD.md, ONBOARDING.md, PHASES-REPORT.md, PORTING.md, QTHE-AS-CELL.md, REPRESENTATION-LAW.md, RESEARCH-DECISION-MODELS.md, RESOURCE-PROFILE.md, TECHNICAL-NOTE.md, USER-GUIDE.md, dashboard.html, discussions/, research/ | E-Q14: results experiments/outputs/e_q14_results.json, experiments/outputs/e_q14_tip.txt; stone chain receipts/e_q14_chain.jsonl"
+      ],
+      "confidence": 0.25,
+      "grounded_choice": "fabricated_or_misstated"
+     },
+     "repo_truth": {
+      "code_verified": {
+       "mechanical_failures": [],
+       "mechanical_facts": [
+        "cited paths: docs/FALSIFICATION-BUDGET.md (exists)",
+        "number 0.94 found repo-wide in: docs/TECHNICAL-NOTE.md, docs/ADOPTION-KIT.md, docs/BOUNDARY-MAP.md, experiments/pre_registration_e_q17.json",
+        "number 0.01 found repo-wide in: docs/REPRESENTATION-LAW.md, fixedpoint/pre_registration.json, experiments/pre_registration_e_q8.json, experiments/pre_registration_amendment_2.json",
+        "number 256 found repo-wide in: SPEC.md, public-demo.html, two_reader/verdict.md, two_reader/reader.mjs"
+       ],
+       "repo_context_facts": [
+        "repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/",
+        "directory docs/ contains: ADOPTION-KIT.md, BOUNDARY-MAP.md, CLAIM-VERDICTS.md, CTO-BRIEF.md, DAY-1.md, DEVELOPER-GUIDE.md, ENGINEERING-NOTES.md, FALSIFICATION-BUDGET.md, FRONTIER-DECISION.md, HIERARCHICAL-WORMHOLES.md, HULL-DOCTRINE.md, KNOWLEDGE-MAP.md, MARINE-EDGE-WORKLOAD.md, ONBOARDING.md, PHASES-REPORT.md, PORTING.md, QTHE-AS-CELL.md, REPRESENTATION-LAW.md, RESEARCH-DECISION-MODELS.md, RESOURCE-PROFILE.md, TECHNICAL-NOTE.md, USER-GUIDE.md, dashboard.html, discussions/, research/",
+        "E-Q14: results experiments/outputs/e_q14_results.json, experiments/outputs/e_q14_tip.txt; stone chain receipts/e_q14_chain.jsonl"
+       ],
+       "located_files": [
+        "docs/FALSIFICATION-BUDGET.md",
+        "experiments/outputs/e_q14_results.json",
+        "experiments/outputs/e_q14_results.json",
+        "receipts/e_q14_chain.jsonl"
+       ],
+       "located_anchors": [
+        "-",
+        "fraction",
+        "verdict",
+        "mechanism"
+       ]
+      },
+      "note": "what the repository itself says, as decided by code (anchors, existence, counts, listings); orchestrator re-verification remains the load-bearing wall"
+     },
+     "final_class": "human_flag",
+     "prior_jev_class": "verified_new",
+     "changed_vs_prior_jev": true,
+     "decided_by_call": "r12-triage-r10-g3-falsificationbudgetmd",
+     "model_served": "jev-1.13.0",
+     "usage": {
+      "input_tokens": 4660,
+      "output_tokens": 63
+     }
+    },
+    {
+     "seat": "mimov26f",
+     "finding_id": "F2",
+     "jev_triage": {
+      "class": "verified_new",
+      "class_confidence": 0.39,
+      "class_probabilities": {
+       "verified_new": 0.51,
+       "already_admitted": 0.4,
+       "plausible_unverified": 0.06,
+       "hallucinated": 0.02,
+       "noise": 0.01
+      },
+      "actionable_noul": 0.86,
+      "severity_score": 1.85,
+      "severity_confidence": 0.78
+     },
+     "grounded_verdict": {
+      "decision_pass": "human_flag",
+      "evidence": [
+       "located sections: cited experiment E-Q2; anchor 'monotone-inert' at offset 4590, window chars 3890-7490 || results-file convention: window on the sealed verdict block (offset 4802) || cited experiment E-Q2; whole file (5997 chars) || cited experiment E-Q16; whole file (3610 chars) || cited experiment E-Q16; anchor 'completion' at offset 4205, window chars 3505-7105",
+       "verdict: yes_true (conf 0.3, probabilities {\"yes_true\": 0.53, \"fabricated_or_misstated\": 0.29, \"cannot_settle\": 0.18})",
+       "confidence below the 0.8 gate -- escalated to a human (the earned loop's law)",
+       "mechanical facts: number 0.25 found repo-wide in: SPEC.md, docs/TECHNICAL-NOTE.md, docs/CLAIM-VERDICTS.md, docs/FRONTIER-DECISION.md",
+       "repo context: repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/ | E-Q2: results experiments/outputs/e_q2_results.json, experiments/outputs/e_q2_tip.txt; stone chain receipts/e_q2_chain.jsonl | E-Q16: results experiments/outputs/e_q16_results.json, experiments/outputs/e_q16_tip.txt; stone chain receipts/e_q16_chain.jsonl"
+      ],
+      "confidence": 0.3,
+      "grounded_choice": "yes_true"
+     },
+     "repo_truth": {
+      "code_verified": {
+       "mechanical_failures": [],
+       "mechanical_facts": [
+        "number 0.25 found repo-wide in: SPEC.md, docs/TECHNICAL-NOTE.md, docs/CLAIM-VERDICTS.md, docs/FRONTIER-DECISION.md"
+       ],
+       "repo_context_facts": [
+        "repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/",
+        "E-Q2: results experiments/outputs/e_q2_results.json, experiments/outputs/e_q2_tip.txt; stone chain receipts/e_q2_chain.jsonl",
+        "E-Q16: results experiments/outputs/e_q16_results.json, experiments/outputs/e_q16_tip.txt; stone chain receipts/e_q16_chain.jsonl"
+       ],
+       "located_files": [
+        "experiments/outputs/e_q2_results.json",
+        "experiments/outputs/e_q2_results.json",
+        "receipts/e_q2_chain.jsonl",
+        "experiments/outputs/e_q16_results.json",
+        "receipts/e_q16_chain.jsonl"
+       ],
+       "located_anchors": [
+        "monotone-inert",
+        "verdict",
+        "-",
+        "-",
+        "completion"
+       ]
+      },
+      "note": "what the repository itself says, as decided by code (anchors, existence, counts, listings); orchestrator re-verification remains the load-bearing wall"
+     },
+     "final_class": "human_flag",
+     "prior_jev_class": "verified_new",
+     "changed_vs_prior_jev": true,
+     "decided_by_call": "r12-triage-r10-g3-eq2resultsjson",
+     "model_served": "jev-1.13.0",
+     "usage": {
+      "input_tokens": 17933,
+      "output_tokens": 230
+     }
+    },
+    {
+     "seat": "mimov26f",
+     "finding_id": "F3",
+     "jev_triage": {
+      "class": "verified_new",
+      "class_confidence": 0.52,
+      "class_probabilities": {
+       "verified_new": 0.62,
+       "already_admitted": 0.31,
+       "plausible_unverified": 0.04,
+       "hallucinated": 0.02,
+       "noise": 0.01
+      },
+      "actionable_noul": 0.86,
+      "severity_score": 1.87,
+      "severity_confidence": 0.8
+     },
+     "grounded_verdict": {
+      "decision_pass": "human_flag",
+      "evidence": [
+       "located sections: cited experiment E-Q13; anchor 'bytes-gain' at offset 13001, window chars 12301-13307 || results-file convention: window on the sealed verdict block (offset 12979) || cited experiment E-Q13; anchor 'bytes-gain' at offset 10334, window chars 9634-10780",
+       "verdict: fabricated_or_misstated (conf 0.28, probabilities {\"yes_true\": 0.24, \"fabricated_or_misstated\": 0.52, \"cannot_settle\": 0.24})",
+       "confidence below the 0.8 gate -- escalated to a human (the earned loop's law)",
+       "mechanical facts: number 47.40 found repo-wide in: SPEC.md, docs/TECHNICAL-NOTE.md, docs/KNOWLEDGE-MAP.md, docs/DAY-1.md | number 4096 found repo-wide in: experiments/pre_registration_e_q17.json, experiments/pre_registration_e_q8.json, experiments/e_q7_checkerboard_cascade.mjs, experiments/pre_registration_e_q13.json | number 8192 found repo-wide in: experiments/pre_registration_e_q13.json, experiments/moth_client.mjs, experiments/e_q13_c1_gain_of_function.mjs, scripts/verdict_recompute.mjs",
+       "repo context: repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/ | E-Q13: results experiments/outputs/e_q13_results.json, experiments/outputs/e_q13_tip.txt; stone chain receipts/e_q13_chain.jsonl"
+      ],
+      "confidence": 0.28,
+      "grounded_choice": "fabricated_or_misstated"
+     },
+     "repo_truth": {
+      "code_verified": {
+       "mechanical_failures": [],
+       "mechanical_facts": [
+        "number 47.40 found repo-wide in: SPEC.md, docs/TECHNICAL-NOTE.md, docs/KNOWLEDGE-MAP.md, docs/DAY-1.md",
+        "number 4096 found repo-wide in: experiments/pre_registration_e_q17.json, experiments/pre_registration_e_q8.json, experiments/e_q7_checkerboard_cascade.mjs, experiments/pre_registration_e_q13.json",
+        "number 8192 found repo-wide in: experiments/pre_registration_e_q13.json, experiments/moth_client.mjs, experiments/e_q13_c1_gain_of_function.mjs, scripts/verdict_recompute.mjs"
+       ],
+       "repo_context_facts": [
+        "repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/",
+        "E-Q13: results experiments/outputs/e_q13_results.json, experiments/outputs/e_q13_tip.txt; stone chain receipts/e_q13_chain.jsonl"
+       ],
+       "located_files": [
+        "experiments/outputs/e_q13_results.json",
+        "experiments/outputs/e_q13_results.json",
+        "receipts/e_q13_chain.jsonl"
+       ],
+       "located_anchors": [
+        "bytes-gain",
+        "verdict",
+        "bytes-gain"
+       ]
+      },
+      "note": "what the repository itself says, as decided by code (anchors, existence, counts, listings); orchestrator re-verification remains the load-bearing wall"
+     },
+     "final_class": "human_flag",
+     "prior_jev_class": "verified_new",
+     "changed_vs_prior_jev": true,
+     "decided_by_call": "r12-triage-r10-g3-eq13resultsjson",
+     "model_served": "jev-1.13.0",
+     "usage": {
+      "input_tokens": 8550,
+      "output_tokens": 285
+     }
+    },
+    {
+     "seat": "mimov26f",
+     "finding_id": "F4",
+     "jev_triage": {
+      "class": "verified_new",
+      "class_confidence": 0.54,
+      "class_probabilities": {
+       "verified_new": 0.63,
+       "already_admitted": 0.27,
+       "plausible_unverified": 0.08,
+       "hallucinated": 0.01,
+       "noise": 0.01
+      },
+      "actionable_noul": 0.85,
+      "severity_score": 1.88,
+      "severity_confidence": 0.82
+     },
+     "grounded_verdict": {
+      "decision_pass": "human_flag",
+      "evidence": [
+       "located sections: cited experiment E-Q9; anchor 'predictions' at offset 119, window chars 0-3600 || cited experiment E-Q9; anchor 'outside' at offset 8297, window chars 7597-11197 || cited experiment E-Q11; whole file (2985 chars) || cited experiment E-Q11; anchor 'decision' at offset 1887, window chars 1187-4787 || cited experiment E-Q12; whole file (4520 chars)",
+       "verdict: fabricated_or_misstated (conf 0.16, probabilities {\"yes_true\": 0.32, \"fabricated_or_misstated\": 0.44, \"cannot_settle\": 0.24})",
+       "confidence below the 0.8 gate -- escalated to a human (the earned loop's law)",
+       "mechanical facts: cited paths: scripts/verify_all_chains.mjs (exists)",
+       "repo context: repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/ | E-Q9: results experiments/outputs/eq9_sweep_results.json, experiments/outputs/e_q11_q9_content.txt; NO stone-chain file under receipts/ for E-Q9 (naming-convention walk) | E-Q11: results experiments/outputs/e_q11_results.json, experiments/outputs/e_q11_q9_content.txt; NO stone-chain file under receipts/ for E-Q11 (naming-convention walk) | E-Q12: results experiments/outputs/e_q12_results.json, experiments/outputs/e_q12_flip_registry.json; NO stone-chain file under receipts/ for E-Q12 (naming-convention walk) | chain registry (scripts/chain_registry.mjs, the single source of truth) registers 17 chains: _chain.jsonl, crossimpl/receipts/cimpl_chain.jsonl, crossimpl/receipts/crossimpl_chain.jsonl, fixedpoint/receipts/fixedpoint_chain.jsonl, receipts/e_q10_chain.jsonl, receipts/e_q13_chain.jsonl, receipts/e_q14_chain.jsonl, receipts/e_q15_chain.jsonl, receipts/e_q16_chain.jsonl, receipts/e_q17_chain.jsonl, receipts/e_q1_chain.jsonl, receipts/e_q2_chain.jsonl, receipts/e_q5_chain.jsonl, receipts/e_q6_chain.jsonl, receipts/e_q7_chain.jsonl, receipts/e_q8_chain.jsonl, receipts/probe_gate_chain.jsonl"
+      ],
+      "confidence": 0.16,
+      "grounded_choice": "fabricated_or_misstated"
+     },
+     "repo_truth": {
+      "code_verified": {
+       "mechanical_failures": [],
+       "mechanical_facts": [
+        "cited paths: scripts/verify_all_chains.mjs (exists)"
+       ],
+       "repo_context_facts": [
+        "repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/",
+        "E-Q9: results experiments/outputs/eq9_sweep_results.json, experiments/outputs/e_q11_q9_content.txt; NO stone-chain file under receipts/ for E-Q9 (naming-convention walk)",
+        "E-Q11: results experiments/outputs/e_q11_results.json, experiments/outputs/e_q11_q9_content.txt; NO stone-chain file under receipts/ for E-Q11 (naming-convention walk)",
+        "E-Q12: results experiments/outputs/e_q12_results.json, experiments/outputs/e_q12_flip_registry.json; NO stone-chain file under receipts/ for E-Q12 (naming-convention walk)",
+        "chain registry (scripts/chain_registry.mjs, the single source of truth) registers 17 chains: _chain.jsonl, crossimpl/receipts/cimpl_chain.jsonl, crossimpl/receipts/crossimpl_chain.jsonl, fixedpoint/receipts/fixedpoint_chain.jsonl, receipts/e_q10_chain.jsonl, receipts/e_q13_chain.jsonl, receipts/e_q14_chain.jsonl, receipts/e_q15_chain.jsonl, receipts/e_q16_chain.jsonl, receipts/e_q17_chain.jsonl, receipts/e_q1_chain.jsonl, receipts/e_q2_chain.jsonl, receipts/e_q5_chain.jsonl, receipts/e_q6_chain.jsonl, receipts/e_q7_chain.jsonl, receipts/e_q8_chain.jsonl, receipts/probe_gate_chain.jsonl"
+       ],
+       "located_files": [
+        "experiments/outputs/eq9_sweep_results.json",
+        "experiments/e_q9_sweep.mjs",
+        "experiments/outputs/e_q11_results.json",
+        "experiments/e_q11_collapse_predicate.mjs",
+        "experiments/outputs/e_q12_results.json"
+       ],
+       "located_anchors": [
+        "predictions",
+        "outside",
+        "-",
+        "decision",
+        "-"
+       ]
+      },
+      "note": "what the repository itself says, as decided by code (anchors, existence, counts, listings); orchestrator re-verification remains the load-bearing wall"
+     },
+     "final_class": "human_flag",
+     "prior_jev_class": "verified_new",
+     "changed_vs_prior_jev": true,
+     "decided_by_call": "r12-triage-r10-g3-eq9sweepresultsjson",
+     "model_served": "jev-1.13.0",
+     "usage": {
+      "input_tokens": 11882,
+      "output_tokens": 123
+     }
+    },
+    {
+     "seat": "mimov26f",
+     "finding_id": "F5",
+     "jev_triage": {
+      "class": "already_admitted",
+      "class_confidence": 0.35,
+      "class_probabilities": {
+       "verified_new": 0.47,
+       "already_admitted": 0.48,
+       "plausible_unverified": 0.03,
+       "hallucinated": 0.01,
+       "noise": 0.01
+      },
+      "actionable_noul": 0.86,
+      "severity_score": 1.88,
+      "severity_confidence": 0.82
+     },
+     "grounded_verdict": {
+      "decision_pass": "human_flag",
+      "evidence": [
+       "located sections: bare name 'verify_all_chains.mjs' (unique tree match); whole file (3093 chars) || cited experiment E-Q16; whole file (3610 chars) || cited experiment E-Q16; anchor 'closure' at offset 8263, window chars 7563-11029",
+       "verdict: yes_true (conf 0.33, probabilities {\"yes_true\": 0.55, \"fabricated_or_misstated\": 0.39, \"cannot_settle\": 0.06})",
+       "confidence below the 0.8 gate -- escalated to a human (the earned loop's law)",
+       "mechanical facts: number 100 found repo-wide in: public-demo.html, index.html, demo/sha256.mjs, demo/a2ui.mjs | number 000 found repo-wide in: public-demo.html, index.html, two_reader/reader.mjs, two_reader/selftest.mjs",
+       "repo context: repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/ | E-Q16: results experiments/outputs/e_q16_results.json, experiments/outputs/e_q16_tip.txt; stone chain receipts/e_q16_chain.jsonl | chain registry (scripts/chain_registry.mjs, the single source of truth) registers 17 chains: _chain.jsonl, crossimpl/receipts/cimpl_chain.jsonl, crossimpl/receipts/crossimpl_chain.jsonl, fixedpoint/receipts/fixedpoint_chain.jsonl, receipts/e_q10_chain.jsonl, receipts/e_q13_chain.jsonl, receipts/e_q14_chain.jsonl, receipts/e_q15_chain.jsonl, receipts/e_q16_chain.jsonl, receipts/e_q17_chain.jsonl, receipts/e_q1_chain.jsonl, receipts/e_q2_chain.jsonl, receipts/e_q5_chain.jsonl, receipts/e_q6_chain.jsonl, receipts/e_q7_chain.jsonl, receipts/e_q8_chain.jsonl, receipts/probe_gate_chain.jsonl"
+      ],
+      "confidence": 0.33,
+      "grounded_choice": "yes_true"
+     },
+     "repo_truth": {
+      "code_verified": {
+       "mechanical_failures": [],
+       "mechanical_facts": [
+        "number 100 found repo-wide in: public-demo.html, index.html, demo/sha256.mjs, demo/a2ui.mjs",
+        "number 000 found repo-wide in: public-demo.html, index.html, two_reader/reader.mjs, two_reader/selftest.mjs"
+       ],
+       "repo_context_facts": [
+        "repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/",
+        "E-Q16: results experiments/outputs/e_q16_results.json, experiments/outputs/e_q16_tip.txt; stone chain receipts/e_q16_chain.jsonl",
+        "chain registry (scripts/chain_registry.mjs, the single source of truth) registers 17 chains: _chain.jsonl, crossimpl/receipts/cimpl_chain.jsonl, crossimpl/receipts/crossimpl_chain.jsonl, fixedpoint/receipts/fixedpoint_chain.jsonl, receipts/e_q10_chain.jsonl, receipts/e_q13_chain.jsonl, receipts/e_q14_chain.jsonl, receipts/e_q15_chain.jsonl, receipts/e_q16_chain.jsonl, receipts/e_q17_chain.jsonl, receipts/e_q1_chain.jsonl, receipts/e_q2_chain.jsonl, receipts/e_q5_chain.jsonl, receipts/e_q6_chain.jsonl, receipts/e_q7_chain.jsonl, receipts/e_q8_chain.jsonl, receipts/probe_gate_chain.jsonl"
+       ],
+       "located_files": [
+        "scripts/verify_all_chains.mjs",
+        "experiments/outputs/e_q16_results.json",
+        "receipts/e_q16_chain.jsonl"
+       ],
+       "located_anchors": [
+        "-",
+        "-",
+        "closure"
+       ]
+      },
+      "note": "what the repository itself says, as decided by code (anchors, existence, counts, listings); orchestrator re-verification remains the load-bearing wall"
+     },
+     "final_class": "human_flag",
+     "prior_jev_class": "already_admitted",
+     "changed_vs_prior_jev": false,
+     "decided_by_call": "r12-triage-r10-g3-verifyallchainsmjs",
+     "model_served": "jev-1.13.0",
+     "usage": {
+      "input_tokens": 12464,
+      "output_tokens": 115
+     }
+    },
+    {
+     "seat": "mimov26f",
+     "finding_id": "F6",
+     "jev_triage": {
+      "class": "already_admitted",
+      "class_confidence": 0.54,
+      "class_probabilities": {
+       "verified_new": 0.33,
+       "already_admitted": 0.63,
+       "plausible_unverified": 0.02,
+       "hallucinated": 0.01,
+       "noise": 0.01
+      },
+      "actionable_noul": 0.86,
+      "severity_score": 1.88,
+      "severity_confidence": 0.82
+     },
+     "grounded_verdict": {
+      "decision_pass": "jev",
+      "evidence": [
+       "located sections: explicitly cited file; anchor 'verification' at offset 5874, window chars 5174-8774 || bare name 'PROVENANCE.txt' (unique tree match); whole file (988 chars)",
+       "verdict: fabricated_or_misstated (conf 0.95, probabilities {\"yes_true\": 0.01, \"fabricated_or_misstated\": 0.97, \"cannot_settle\": 0.02})",
+       "mechanical facts: cited paths: docs/ADOPTION-KIT.md (exists)",
+       "repo context: repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/ | directory qthe-core/ contains: LICENSE, LICENSE-NOTE.md, PROVENANCE.txt, README.md, c/, kernel/, package.json, py/, selfcheck.mjs | directory docs/ contains: ADOPTION-KIT.md, BOUNDARY-MAP.md, CLAIM-VERDICTS.md, CTO-BRIEF.md, DAY-1.md, DEVELOPER-GUIDE.md, ENGINEERING-NOTES.md, FALSIFICATION-BUDGET.md, FRONTIER-DECISION.md, HIERARCHICAL-WORMHOLES.md, HULL-DOCTRINE.md, KNOWLEDGE-MAP.md, MARINE-EDGE-WORKLOAD.md, ONBOARDING.md, PHASES-REPORT.md, PORTING.md, QTHE-AS-CELL.md, REPRESENTATION-LAW.md, RESEARCH-DECISION-MODELS.md, RESOURCE-PROFILE.md, TECHNICAL-NOTE.md, USER-GUIDE.md, dashboard.html, discussions/, research/"
+      ],
+      "confidence": 0.95,
+      "grounded_choice": "fabricated_or_misstated"
+     },
+     "repo_truth": {
+      "code_verified": {
+       "mechanical_failures": [],
+       "mechanical_facts": [
+        "cited paths: docs/ADOPTION-KIT.md (exists)"
+       ],
+       "repo_context_facts": [
+        "repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/",
+        "directory qthe-core/ contains: LICENSE, LICENSE-NOTE.md, PROVENANCE.txt, README.md, c/, kernel/, package.json, py/, selfcheck.mjs",
+        "directory docs/ contains: ADOPTION-KIT.md, BOUNDARY-MAP.md, CLAIM-VERDICTS.md, CTO-BRIEF.md, DAY-1.md, DEVELOPER-GUIDE.md, ENGINEERING-NOTES.md, FALSIFICATION-BUDGET.md, FRONTIER-DECISION.md, HIERARCHICAL-WORMHOLES.md, HULL-DOCTRINE.md, KNOWLEDGE-MAP.md, MARINE-EDGE-WORKLOAD.md, ONBOARDING.md, PHASES-REPORT.md, PORTING.md, QTHE-AS-CELL.md, REPRESENTATION-LAW.md, RESEARCH-DECISION-MODELS.md, RESOURCE-PROFILE.md, TECHNICAL-NOTE.md, USER-GUIDE.md, dashboard.html, discussions/, research/"
+       ],
+       "located_files": [
+        "docs/ADOPTION-KIT.md",
+        "qthe-core/PROVENANCE.txt"
+       ],
+       "located_anchors": [
+        "verification",
+        "-"
+       ]
+      },
+      "note": "what the repository itself says, as decided by code (anchors, existence, counts, listings); orchestrator re-verification remains the load-bearing wall"
+     },
+     "final_class": "fabricated_or_misstated",
+     "prior_jev_class": "already_admitted",
+     "changed_vs_prior_jev": false,
+     "decided_by_call": "r12-triage-r10-g3-adoptionkitmd",
+     "model_served": "jev-1.13.0",
+     "usage": {
+      "input_tokens": 9425,
+      "output_tokens": 239
+     }
+    }
+   ],
+   "final_class_counts": {
+    "human_flag": 5,
+    "fabricated_or_misstated": 1
+   },
+   "prior_repo_truth": {
+    "repo_verified_new": 6,
+    "jev_verified_new": 4,
+    "verdict": "strongest seat; Jev's 2 already_admitted scores were boundary calls, not errors",
+    "hallucination_caught_by_repo": 0
+   }
+  },
+  "musegl30b": {
+   "findings": [
+    {
+     "seat": "musegl30b",
+     "finding_id": "F1",
+     "jev_triage": {
+      "class": "verified_new",
+      "class_confidence": 0.46,
+      "class_probabilities": {
+       "verified_new": 0.57,
+       "already_admitted": 0.2,
+       "plausible_unverified": 0.16,
+       "hallucinated": 0.05,
+       "noise": 0.02
+      },
+      "actionable_noul": 0.82,
+      "severity_score": 1.95,
+      "severity_confidence": 0.91
+     },
+     "grounded_verdict": {
+      "decision_pass": "mechanical",
+      "evidence": [
+       "invented_flag: falsifier proposes '--experiment' against scripts/probe_gate.mjs; that flag appears nowhere in the script's source (repo walk) -- an invented interface",
+       "invented_flag: falsifier proposes '--metric' against scripts/probe_gate.mjs; that flag appears nowhere in the script's source (repo walk) -- an invented interface",
+       "invented_flag: falsifier proposes '--arm' against scripts/probe_gate.mjs; that flag appears nowhere in the script's source (repo walk) -- an invented interface"
+      ],
+      "confidence": 1.0,
+      "grounded_choice": "fabricated_or_misstated"
+     },
+     "repo_truth": {
+      "code_verified": {
+       "mechanical_failures": [
+        {
+         "class": "invented_flag",
+         "detail": "falsifier proposes '--experiment' against scripts/probe_gate.mjs; that flag appears nowhere in the script's source (repo walk) -- an invented interface"
+        },
+        {
+         "class": "invented_flag",
+         "detail": "falsifier proposes '--metric' against scripts/probe_gate.mjs; that flag appears nowhere in the script's source (repo walk) -- an invented interface"
+        },
+        {
+         "class": "invented_flag",
+         "detail": "falsifier proposes '--arm' against scripts/probe_gate.mjs; that flag appears nowhere in the script's source (repo walk) -- an invented interface"
+        }
+       ],
+       "mechanical_facts": [
+        "cited paths: scripts/probe_gate.mjs (exists)",
+        "number 0.94 found repo-wide in: docs/TECHNICAL-NOTE.md, docs/ADOPTION-KIT.md, docs/BOUNDARY-MAP.md, experiments/pre_registration_e_q17.json",
+        "flag --experiment NOT FOUND in cited script scripts/probe_gate.mjs",
+        "flag --metric NOT FOUND in cited script scripts/probe_gate.mjs",
+        "flag --arm NOT FOUND in cited script scripts/probe_gate.mjs"
+       ],
+       "repo_context_facts": [
+        "repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/",
+        "E-Q14: results experiments/outputs/e_q14_results.json, experiments/outputs/e_q14_tip.txt; stone chain receipts/e_q14_chain.jsonl"
+       ],
+       "located_files": null,
+       "located_anchors": null
+      },
+      "note": "what the repository itself says, as decided by code (anchors, existence, counts, listings); orchestrator re-verification remains the load-bearing wall"
+     },
+     "final_class": "fabricated_or_misstated",
+     "prior_jev_class": "verified_new",
+     "changed_vs_prior_jev": true,
+     "decided_by_call": "r12-triage-r10-mech-musegl30b-F1",
+     "model_served": null,
+     "usage": {
+      "input_tokens": 0,
+      "output_tokens": 0
+     }
+    },
+    {
+     "seat": "musegl30b",
+     "finding_id": "F2",
+     "jev_triage": {
+      "class": "verified_new",
+      "class_confidence": 0.36,
+      "class_probabilities": {
+       "verified_new": 0.49,
+       "already_admitted": 0.37,
+       "plausible_unverified": 0.11,
+       "hallucinated": 0.02,
+       "noise": 0.01
+      },
+      "actionable_noul": 0.83,
+      "severity_score": 1.95,
+      "severity_confidence": 0.91
+     },
+     "grounded_verdict": {
+      "decision_pass": "mechanical",
+      "evidence": [
+       "invented_flag: falsifier proposes '--list' against scripts/verify_all_chains.mjs; that flag appears nowhere in the script's source (repo walk) -- an invented interface"
+      ],
+      "confidence": 1.0,
+      "grounded_choice": "fabricated_or_misstated"
+     },
+     "repo_truth": {
+      "code_verified": {
+       "mechanical_failures": [
+        {
+         "class": "invented_flag",
+         "detail": "falsifier proposes '--list' against scripts/verify_all_chains.mjs; that flag appears nowhere in the script's source (repo walk) -- an invented interface"
+        }
+       ],
+       "mechanical_facts": [
+        "cited paths: scripts/verify_all_chains.mjs (exists)",
+        "flag --list NOT FOUND in cited script scripts/verify_all_chains.mjs"
+       ],
+       "repo_context_facts": [
+        "repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/",
+        "E-Q9: results experiments/outputs/eq9_sweep_results.json, experiments/outputs/e_q11_q9_content.txt; NO stone-chain file under receipts/ for E-Q9 (naming-convention walk)",
+        "E-Q11: results experiments/outputs/e_q11_results.json, experiments/outputs/e_q11_q9_content.txt; NO stone-chain file under receipts/ for E-Q11 (naming-convention walk)",
+        "E-Q12: results experiments/outputs/e_q12_results.json, experiments/outputs/e_q12_flip_registry.json; NO stone-chain file under receipts/ for E-Q12 (naming-convention walk)",
+        "chain registry (scripts/chain_registry.mjs, the single source of truth) registers 17 chains: _chain.jsonl, crossimpl/receipts/cimpl_chain.jsonl, crossimpl/receipts/crossimpl_chain.jsonl, fixedpoint/receipts/fixedpoint_chain.jsonl, receipts/e_q10_chain.jsonl, receipts/e_q13_chain.jsonl, receipts/e_q14_chain.jsonl, receipts/e_q15_chain.jsonl, receipts/e_q16_chain.jsonl, receipts/e_q17_chain.jsonl, receipts/e_q1_chain.jsonl, receipts/e_q2_chain.jsonl, receipts/e_q5_chain.jsonl, receipts/e_q6_chain.jsonl, receipts/e_q7_chain.jsonl, receipts/e_q8_chain.jsonl, receipts/probe_gate_chain.jsonl"
+       ],
+       "located_files": null,
+       "located_anchors": null
+      },
+      "note": "what the repository itself says, as decided by code (anchors, existence, counts, listings); orchestrator re-verification remains the load-bearing wall"
+     },
+     "final_class": "fabricated_or_misstated",
+     "prior_jev_class": "verified_new",
+     "changed_vs_prior_jev": true,
+     "decided_by_call": "r12-triage-r10-mech-musegl30b-F2",
+     "model_served": null,
+     "usage": {
+      "input_tokens": 0,
+      "output_tokens": 0
+     }
+    },
+    {
+     "seat": "musegl30b",
+     "finding_id": "F3",
+     "jev_triage": {
+      "class": "already_admitted",
+      "class_confidence": 0.51,
+      "class_probabilities": {
+       "verified_new": 0.31,
+       "already_admitted": 0.61,
+       "plausible_unverified": 0.06,
+       "hallucinated": 0.01,
+       "noise": 0.01
+      },
+      "actionable_noul": 0.82,
+      "severity_score": 1.95,
+      "severity_confidence": 0.91
+     },
+     "grounded_verdict": {
+      "decision_pass": "human_flag",
+      "evidence": [
+       "located sections: cited experiment E-Q16; whole file (3610 chars) || cited experiment E-Q16; anchor 'closure' at offset 8263, window chars 7563-11029",
+       "verdict: yes_true (conf 0.25, probabilities {\"yes_true\": 0.5, \"fabricated_or_misstated\": 0.46, \"cannot_settle\": 0.04})",
+       "confidence below the 0.8 gate -- escalated to a human (the earned loop's law)",
+       "repo context: repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/ | E-Q16: results experiments/outputs/e_q16_results.json, experiments/outputs/e_q16_tip.txt; stone chain receipts/e_q16_chain.jsonl"
+      ],
+      "confidence": 0.25,
+      "grounded_choice": "yes_true"
+     },
+     "repo_truth": {
+      "code_verified": {
+       "mechanical_failures": [],
+       "mechanical_facts": [],
+       "repo_context_facts": [
+        "repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/",
+        "E-Q16: results experiments/outputs/e_q16_results.json, experiments/outputs/e_q16_tip.txt; stone chain receipts/e_q16_chain.jsonl"
+       ],
+       "located_files": [
+        "experiments/outputs/e_q16_results.json",
+        "receipts/e_q16_chain.jsonl"
+       ],
+       "located_anchors": [
+        "-",
+        "closure"
+       ]
+      },
+      "note": "what the repository itself says, as decided by code (anchors, existence, counts, listings); orchestrator re-verification remains the load-bearing wall"
+     },
+     "final_class": "human_flag",
+     "prior_jev_class": "already_admitted",
+     "changed_vs_prior_jev": false,
+     "decided_by_call": "r12-triage-r10-g3-eq16resultsjson",
+     "model_served": "jev-1.13.0",
+     "usage": {
+      "input_tokens": 12407,
+      "output_tokens": 227
+     }
+    },
+    {
+     "seat": "musegl30b",
+     "finding_id": "F4",
+     "jev_triage": {
+      "class": "already_admitted",
+      "class_confidence": 0.8,
+      "class_probabilities": {
+       "verified_new": 0.12,
+       "already_admitted": 0.84,
+       "plausible_unverified": 0.03,
+       "hallucinated": 0.01,
+       "noise": 0.0
+      },
+      "actionable_noul": 0.82,
+      "severity_score": 1.95,
+      "severity_confidence": 0.91
+     },
+     "grounded_verdict": {
+      "decision_pass": "jev",
+      "evidence": [
+       "located sections: cited directory qthe-core/ registration/readme; whole file (988 chars) || rare-token retrieval (5 distinct rare tokens); anchor 'package' at offset 7796, window chars 7096-10696",
+       "verdict: fabricated_or_misstated (conf 0.98, probabilities {\"yes_true\": 0.0, \"fabricated_or_misstated\": 0.99, \"cannot_settle\": 0.01})",
+       "mechanical facts: cited paths: qthe-core/PROVENANCE.txt (exists)",
+       "repo context: repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/ | directory qthe-core/ contains: LICENSE, LICENSE-NOTE.md, PROVENANCE.txt, README.md, c/, kernel/, package.json, py/, selfcheck.mjs"
+      ],
+      "confidence": 0.98,
+      "grounded_choice": "fabricated_or_misstated"
+     },
+     "repo_truth": {
+      "code_verified": {
+       "mechanical_failures": [],
+       "mechanical_facts": [
+        "cited paths: qthe-core/PROVENANCE.txt (exists)"
+       ],
+       "repo_context_facts": [
+        "repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/",
+        "directory qthe-core/ contains: LICENSE, LICENSE-NOTE.md, PROVENANCE.txt, README.md, c/, kernel/, package.json, py/, selfcheck.mjs"
+       ],
+       "located_files": [
+        "qthe-core/PROVENANCE.txt",
+        "docs/ADOPTION-KIT.md"
+       ],
+       "located_anchors": [
+        "-",
+        "package"
+       ]
+      },
+      "note": "what the repository itself says, as decided by code (anchors, existence, counts, listings); orchestrator re-verification remains the load-bearing wall"
+     },
+     "final_class": "fabricated_or_misstated",
+     "prior_jev_class": "already_admitted",
+     "changed_vs_prior_jev": false,
+     "decided_by_call": "r12-triage-r10-g3-provenancetxt",
+     "model_served": "jev-1.13.0",
+     "usage": {
+      "input_tokens": 4068,
+      "output_tokens": 121
+     }
+    },
+    {
+     "seat": "musegl30b",
+     "finding_id": "F5",
+     "jev_triage": {
+      "class": "already_admitted",
+      "class_confidence": 0.65,
+      "class_probabilities": {
+       "verified_new": 0.23,
+       "already_admitted": 0.72,
+       "plausible_unverified": 0.03,
+       "hallucinated": 0.01,
+       "noise": 0.01
+      },
+      "actionable_noul": 0.82,
+      "severity_score": 1.96,
+      "severity_confidence": 0.95
+     },
+     "grounded_verdict": {
+      "decision_pass": "mechanical",
+      "evidence": [
+       "invented_flag: falsifier proposes '--audit' against scripts/verify_all_chains.mjs; that flag appears nowhere in the script's source (repo walk) -- an invented interface"
+      ],
+      "confidence": 1.0,
+      "grounded_choice": "fabricated_or_misstated"
+     },
+     "repo_truth": {
+      "code_verified": {
+       "mechanical_failures": [
+        {
+         "class": "invented_flag",
+         "detail": "falsifier proposes '--audit' against scripts/verify_all_chains.mjs; that flag appears nowhere in the script's source (repo walk) -- an invented interface"
+        }
+       ],
+       "mechanical_facts": [
+        "cited paths: scripts/verify_all_chains.mjs (exists)",
+        "flag --audit NOT FOUND in cited script scripts/verify_all_chains.mjs"
+       ],
+       "repo_context_facts": [
+        "repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/",
+        "chain registry (scripts/chain_registry.mjs, the single source of truth) registers 17 chains: _chain.jsonl, crossimpl/receipts/cimpl_chain.jsonl, crossimpl/receipts/crossimpl_chain.jsonl, fixedpoint/receipts/fixedpoint_chain.jsonl, receipts/e_q10_chain.jsonl, receipts/e_q13_chain.jsonl, receipts/e_q14_chain.jsonl, receipts/e_q15_chain.jsonl, receipts/e_q16_chain.jsonl, receipts/e_q17_chain.jsonl, receipts/e_q1_chain.jsonl, receipts/e_q2_chain.jsonl, receipts/e_q5_chain.jsonl, receipts/e_q6_chain.jsonl, receipts/e_q7_chain.jsonl, receipts/e_q8_chain.jsonl, receipts/probe_gate_chain.jsonl"
+       ],
+       "located_files": null,
+       "located_anchors": null
+      },
+      "note": "what the repository itself says, as decided by code (anchors, existence, counts, listings); orchestrator re-verification remains the load-bearing wall"
+     },
+     "final_class": "fabricated_or_misstated",
+     "prior_jev_class": "already_admitted",
+     "changed_vs_prior_jev": false,
+     "decided_by_call": "r12-triage-r10-mech-musegl30b-F5",
+     "model_served": null,
+     "usage": {
+      "input_tokens": 0,
+      "output_tokens": 0
+     }
+    }
+   ],
+   "final_class_counts": {
+    "fabricated_or_misstated": 4,
+    "human_flag": 1
+   },
+   "prior_repo_truth": {
+    "repo_verified_new": 0,
+    "jev_verified_new": 2,
+    "verdict": "invented CLI flags (probe_gate --experiment, verify_all_chains --list) passed as verified_new; same class as qwen's",
+    "hallucination_caught_by_repo": 1
+   }
+  },
+  "nemotron35sv": {
+   "findings": [
+    {
+     "seat": "nemotron35sv",
+     "finding_id": "F1",
+     "jev_triage": {
+      "class": "verified_new",
+      "class_confidence": 0.37,
+      "class_probabilities": {
+       "verified_new": 0.5,
+       "already_admitted": 0.34,
+       "plausible_unverified": 0.1,
+       "hallucinated": 0.05,
+       "noise": 0.01
+      },
+      "actionable_noul": 0.83,
+      "severity_score": 1.89,
+      "severity_confidence": 0.83
+     },
+     "grounded_verdict": {
+      "decision_pass": "human_flag",
+      "evidence": [
+       "located sections: explicitly cited file; anchor 'standing' at offset 911, window chars 211-3811 || cited experiment E-Q16; whole file (3610 chars) || cited experiment E-Q16; anchor 'closures' at offset 8263, window chars 7563-11029",
+       "verdict: fabricated_or_misstated (conf 0.77, probabilities {\"yes_true\": 0.12, \"fabricated_or_misstated\": 0.85, \"cannot_settle\": 0.03})",
+       "confidence below the 0.8 gate -- escalated to a human (the earned loop's law)",
+       "mechanical facts: cited paths: scripts/probe_gate.mjs (exists) | number 100 found repo-wide in: public-demo.html, index.html, demo/sha256.mjs, demo/a2ui.mjs | number 000 found repo-wide in: public-demo.html, index.html, two_reader/reader.mjs, two_reader/selftest.mjs",
+       "repo context: repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/ | directory scripts/ contains: append_eq14_autopsy.mjs, append_eq16_contention_erratum.mjs, append_eq16_erratum.mjs, build_dashboard.mjs, build_public_demo.mjs, build_qthe_core.mjs, chain_registry.mjs, emit_fleet_seeds.mjs, falsification_budget.mjs, probe_gate.mjs, repl.mjs, replay.mjs, reseal-registration.mjs, seal_claim.mjs, two_reader_auto.mjs, verdict_recompute.mjs, verify_all_chains.mjs | E-Q16: results experiments/outputs/e_q16_results.json, experiments/outputs/e_q16_tip.txt; stone chain receipts/e_q16_chain.jsonl | chain registry (scripts/chain_registry.mjs, the single source of truth) registers 17 chains: _chain.jsonl, crossimpl/receipts/cimpl_chain.jsonl, crossimpl/receipts/crossimpl_chain.jsonl, fixedpoint/receipts/fixedpoint_chain.jsonl, receipts/e_q10_chain.jsonl, receipts/e_q13_chain.jsonl, receipts/e_q14_chain.jsonl, receipts/e_q15_chain.jsonl, receipts/e_q16_chain.jsonl, receipts/e_q17_chain.jsonl, receipts/e_q1_chain.jsonl, receipts/e_q2_chain.jsonl, receipts/e_q5_chain.jsonl, receipts/e_q6_chain.jsonl, receipts/e_q7_chain.jsonl, receipts/e_q8_chain.jsonl, receipts/probe_gate_chain.jsonl"
+      ],
+      "confidence": 0.77,
+      "grounded_choice": "fabricated_or_misstated"
+     },
+     "repo_truth": {
+      "code_verified": {
+       "mechanical_failures": [],
+       "mechanical_facts": [
+        "cited paths: scripts/probe_gate.mjs (exists)",
+        "number 100 found repo-wide in: public-demo.html, index.html, demo/sha256.mjs, demo/a2ui.mjs",
+        "number 000 found repo-wide in: public-demo.html, index.html, two_reader/reader.mjs, two_reader/selftest.mjs"
+       ],
+       "repo_context_facts": [
+        "repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/",
+        "directory scripts/ contains: append_eq14_autopsy.mjs, append_eq16_contention_erratum.mjs, append_eq16_erratum.mjs, build_dashboard.mjs, build_public_demo.mjs, build_qthe_core.mjs, chain_registry.mjs, emit_fleet_seeds.mjs, falsification_budget.mjs, probe_gate.mjs, repl.mjs, replay.mjs, reseal-registration.mjs, seal_claim.mjs, two_reader_auto.mjs, verdict_recompute.mjs, verify_all_chains.mjs",
+        "E-Q16: results experiments/outputs/e_q16_results.json, experiments/outputs/e_q16_tip.txt; stone chain receipts/e_q16_chain.jsonl",
+        "chain registry (scripts/chain_registry.mjs, the single source of truth) registers 17 chains: _chain.jsonl, crossimpl/receipts/cimpl_chain.jsonl, crossimpl/receipts/crossimpl_chain.jsonl, fixedpoint/receipts/fixedpoint_chain.jsonl, receipts/e_q10_chain.jsonl, receipts/e_q13_chain.jsonl, receipts/e_q14_chain.jsonl, receipts/e_q15_chain.jsonl, receipts/e_q16_chain.jsonl, receipts/e_q17_chain.jsonl, receipts/e_q1_chain.jsonl, receipts/e_q2_chain.jsonl, receipts/e_q5_chain.jsonl, receipts/e_q6_chain.jsonl, receipts/e_q7_chain.jsonl, receipts/e_q8_chain.jsonl, receipts/probe_gate_chain.jsonl"
+       ],
+       "located_files": [
+        "scripts/probe_gate.mjs",
+        "experiments/outputs/e_q16_results.json",
+        "receipts/e_q16_chain.jsonl"
+       ],
+       "located_anchors": [
+        "standing",
+        "-",
+        "closures"
+       ]
+      },
+      "note": "what the repository itself says, as decided by code (anchors, existence, counts, listings); orchestrator re-verification remains the load-bearing wall"
+     },
+     "final_class": "human_flag",
+     "prior_jev_class": "already_admitted",
+     "changed_vs_prior_jev": false,
+     "decided_by_call": "r12-triage-r10-g3-probegatemjs",
+     "model_served": "jev-1.13.0",
+     "usage": {
+      "input_tokens": 5632,
+      "output_tokens": 63
+     }
+    },
+    {
+     "seat": "nemotron35sv",
+     "finding_id": "F2",
+     "jev_triage": {
+      "class": "verified_new",
+      "class_confidence": 0.65,
+      "class_probabilities": {
+       "verified_new": 0.72,
+       "already_admitted": 0.12,
+       "plausible_unverified": 0.09,
+       "hallucinated": 0.06,
+       "noise": 0.01
+      },
+      "actionable_noul": 0.82,
+      "severity_score": 1.88,
+      "severity_confidence": 0.83
+     },
+     "grounded_verdict": {
+      "decision_pass": "human_flag",
+      "evidence": [
+       "located sections: cited experiment E-Q2; anchor 'monotone-inert' at offset 4590, window chars 3890-7490 || results-file convention: window on the sealed verdict block (offset 4802) || cited experiment E-Q2; whole file (5997 chars) || cited experiment E-Q16; whole file (3610 chars) || cited experiment E-Q16; anchor 'different' at offset 8341, window chars 7641-11029",
+       "verdict: fabricated_or_misstated (conf 0.37, probabilities {\"yes_true\": 0.21, \"fabricated_or_misstated\": 0.58, \"cannot_settle\": 0.21})",
+       "confidence below the 0.8 gate -- escalated to a human (the earned loop's law)",
+       "mechanical facts: number 0.25 found repo-wide in: SPEC.md, docs/TECHNICAL-NOTE.md, docs/CLAIM-VERDICTS.md, docs/FRONTIER-DECISION.md",
+       "repo context: repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/ | E-Q2: results experiments/outputs/e_q2_results.json, experiments/outputs/e_q2_tip.txt; stone chain receipts/e_q2_chain.jsonl | E-Q16: results experiments/outputs/e_q16_results.json, experiments/outputs/e_q16_tip.txt; stone chain receipts/e_q16_chain.jsonl"
+      ],
+      "confidence": 0.37,
+      "grounded_choice": "fabricated_or_misstated"
+     },
+     "repo_truth": {
+      "code_verified": {
+       "mechanical_failures": [],
+       "mechanical_facts": [
+        "number 0.25 found repo-wide in: SPEC.md, docs/TECHNICAL-NOTE.md, docs/CLAIM-VERDICTS.md, docs/FRONTIER-DECISION.md"
+       ],
+       "repo_context_facts": [
+        "repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/",
+        "E-Q2: results experiments/outputs/e_q2_results.json, experiments/outputs/e_q2_tip.txt; stone chain receipts/e_q2_chain.jsonl",
+        "E-Q16: results experiments/outputs/e_q16_results.json, experiments/outputs/e_q16_tip.txt; stone chain receipts/e_q16_chain.jsonl"
+       ],
+       "located_files": [
+        "experiments/outputs/e_q2_results.json",
+        "experiments/outputs/e_q2_results.json",
+        "receipts/e_q2_chain.jsonl",
+        "experiments/outputs/e_q16_results.json",
+        "receipts/e_q16_chain.jsonl"
+       ],
+       "located_anchors": [
+        "monotone-inert",
+        "verdict",
+        "-",
+        "-",
+        "different"
+       ]
+      },
+      "note": "what the repository itself says, as decided by code (anchors, existence, counts, listings); orchestrator re-verification remains the load-bearing wall"
+     },
+     "final_class": "human_flag",
+     "prior_jev_class": "verified_new",
+     "changed_vs_prior_jev": true,
+     "decided_by_call": "r12-triage-r10-g3-eq2resultsjson",
+     "model_served": "jev-1.13.0",
+     "usage": {
+      "input_tokens": 17933,
+      "output_tokens": 230
+     }
+    },
+    {
+     "seat": "nemotron35sv",
+     "finding_id": "F3",
+     "jev_triage": {
+      "class": "verified_new",
+      "class_confidence": 0.44,
+      "class_probabilities": {
+       "verified_new": 0.55,
+       "already_admitted": 0.32,
+       "plausible_unverified": 0.08,
+       "hallucinated": 0.04,
+       "noise": 0.01
+      },
+      "actionable_noul": 0.82,
+      "severity_score": 1.88,
+      "severity_confidence": 0.82
+     },
+     "grounded_verdict": {
+      "decision_pass": "human_flag",
+      "evidence": [
+       "located sections: cited experiment E-Q14; anchor 'fraction' at offset 131954, window chars 131254-132298 || results-file convention: window on the sealed verdict block (offset 131805) || cited experiment E-Q14; anchor 'content-addressed' at offset 20406, window chars 19706-22555",
+       "verdict: fabricated_or_misstated (conf 0.33, probabilities {\"yes_true\": 0.3, \"fabricated_or_misstated\": 0.55, \"cannot_settle\": 0.15})",
+       "confidence below the 0.8 gate -- escalated to a human (the earned loop's law)",
+       "mechanical facts: number 0.94 found repo-wide in: docs/TECHNICAL-NOTE.md, docs/ADOPTION-KIT.md, docs/BOUNDARY-MAP.md, experiments/pre_registration_e_q17.json",
+       "repo context: repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/ | E-Q14: results experiments/outputs/e_q14_results.json, experiments/outputs/e_q14_tip.txt; stone chain receipts/e_q14_chain.jsonl"
+      ],
+      "confidence": 0.33,
+      "grounded_choice": "fabricated_or_misstated"
+     },
+     "repo_truth": {
+      "code_verified": {
+       "mechanical_failures": [],
+       "mechanical_facts": [
+        "number 0.94 found repo-wide in: docs/TECHNICAL-NOTE.md, docs/ADOPTION-KIT.md, docs/BOUNDARY-MAP.md, experiments/pre_registration_e_q17.json"
+       ],
+       "repo_context_facts": [
+        "repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/",
+        "E-Q14: results experiments/outputs/e_q14_results.json, experiments/outputs/e_q14_tip.txt; stone chain receipts/e_q14_chain.jsonl"
+       ],
+       "located_files": [
+        "experiments/outputs/e_q14_results.json",
+        "experiments/outputs/e_q14_results.json",
+        "receipts/e_q14_chain.jsonl"
+       ],
+       "located_anchors": [
+        "fraction",
+        "verdict",
+        "content-addressed"
+       ]
+      },
+      "note": "what the repository itself says, as decided by code (anchors, existence, counts, listings); orchestrator re-verification remains the load-bearing wall"
+     },
+     "final_class": "human_flag",
+     "prior_jev_class": "verified_new",
+     "changed_vs_prior_jev": true,
+     "decided_by_call": "r12-triage-r10-g3-eq14resultsjson",
+     "model_served": "jev-1.13.0",
+     "usage": {
+      "input_tokens": 15397,
+      "output_tokens": 288
+     }
+    },
+    {
+     "seat": "nemotron35sv",
+     "finding_id": "F4",
+     "jev_triage": {
+      "class": "verified_new",
+      "class_confidence": 0.35,
+      "class_probabilities": {
+       "verified_new": 0.48,
+       "already_admitted": 0.43,
+       "plausible_unverified": 0.06,
+       "hallucinated": 0.02,
+       "noise": 0.01
+      },
+      "actionable_noul": 0.82,
+      "severity_score": 1.89,
+      "severity_confidence": 0.82
+     },
+     "grounded_verdict": {
+      "decision_pass": "human_flag",
+      "evidence": [
+       "located sections: cited experiment E-Q9; anchor 'predictions' at offset 119, window chars 0-3600 || cited experiment E-Q9; anchor 'outside' at offset 8297, window chars 7597-11197 || cited experiment E-Q11; whole file (2985 chars) || cited experiment E-Q11; head (no in-file anchor; first 3600 chars) || cited experiment E-Q12; whole file (4520 chars)",
+       "verdict: fabricated_or_misstated (conf 0.22, probabilities {\"yes_true\": 0.32, \"fabricated_or_misstated\": 0.48, \"cannot_settle\": 0.2})",
+       "confidence below the 0.8 gate -- escalated to a human (the earned loop's law)",
+       "mechanical facts: number 400 found repo-wide in: two_reader/registration.json, two_reader/run.mjs, docs/TECHNICAL-NOTE.md, docs/RESOURCE-PROFILE.md",
+       "repo context: repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/ | E-Q9: results experiments/outputs/eq9_sweep_results.json, experiments/outputs/e_q11_q9_content.txt; NO stone-chain file under receipts/ for E-Q9 (naming-convention walk) | E-Q11: results experiments/outputs/e_q11_results.json, experiments/outputs/e_q11_q9_content.txt; NO stone-chain file under receipts/ for E-Q11 (naming-convention walk) | E-Q12: results experiments/outputs/e_q12_results.json, experiments/outputs/e_q12_flip_registry.json; NO stone-chain file under receipts/ for E-Q12 (naming-convention walk) | chain registry (scripts/chain_registry.mjs, the single source of truth) registers 17 chains: _chain.jsonl, crossimpl/receipts/cimpl_chain.jsonl, crossimpl/receipts/crossimpl_chain.jsonl, fixedpoint/receipts/fixedpoint_chain.jsonl, receipts/e_q10_chain.jsonl, receipts/e_q13_chain.jsonl, receipts/e_q14_chain.jsonl, receipts/e_q15_chain.jsonl, receipts/e_q16_chain.jsonl, receipts/e_q17_chain.jsonl, receipts/e_q1_chain.jsonl, receipts/e_q2_chain.jsonl, receipts/e_q5_chain.jsonl, receipts/e_q6_chain.jsonl, receipts/e_q7_chain.jsonl, receipts/e_q8_chain.jsonl, receipts/probe_gate_chain.jsonl"
+      ],
+      "confidence": 0.22,
+      "grounded_choice": "fabricated_or_misstated"
+     },
+     "repo_truth": {
+      "code_verified": {
+       "mechanical_failures": [],
+       "mechanical_facts": [
+        "number 400 found repo-wide in: two_reader/registration.json, two_reader/run.mjs, docs/TECHNICAL-NOTE.md, docs/RESOURCE-PROFILE.md"
+       ],
+       "repo_context_facts": [
+        "repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/",
+        "E-Q9: results experiments/outputs/eq9_sweep_results.json, experiments/outputs/e_q11_q9_content.txt; NO stone-chain file under receipts/ for E-Q9 (naming-convention walk)",
+        "E-Q11: results experiments/outputs/e_q11_results.json, experiments/outputs/e_q11_q9_content.txt; NO stone-chain file under receipts/ for E-Q11 (naming-convention walk)",
+        "E-Q12: results experiments/outputs/e_q12_results.json, experiments/outputs/e_q12_flip_registry.json; NO stone-chain file under receipts/ for E-Q12 (naming-convention walk)",
+        "chain registry (scripts/chain_registry.mjs, the single source of truth) registers 17 chains: _chain.jsonl, crossimpl/receipts/cimpl_chain.jsonl, crossimpl/receipts/crossimpl_chain.jsonl, fixedpoint/receipts/fixedpoint_chain.jsonl, receipts/e_q10_chain.jsonl, receipts/e_q13_chain.jsonl, receipts/e_q14_chain.jsonl, receipts/e_q15_chain.jsonl, receipts/e_q16_chain.jsonl, receipts/e_q17_chain.jsonl, receipts/e_q1_chain.jsonl, receipts/e_q2_chain.jsonl, receipts/e_q5_chain.jsonl, receipts/e_q6_chain.jsonl, receipts/e_q7_chain.jsonl, receipts/e_q8_chain.jsonl, receipts/probe_gate_chain.jsonl"
+       ],
+       "located_files": [
+        "experiments/outputs/eq9_sweep_results.json",
+        "experiments/e_q9_sweep.mjs",
+        "experiments/outputs/e_q11_results.json",
+        "experiments/e_q11_collapse_predicate.mjs",
+        "experiments/outputs/e_q12_results.json"
+       ],
+       "located_anchors": [
+        "predictions",
+        "outside",
+        "-",
+        "-",
+        "-"
+       ]
+      },
+      "note": "what the repository itself says, as decided by code (anchors, existence, counts, listings); orchestrator re-verification remains the load-bearing wall"
+     },
+     "final_class": "human_flag",
+     "prior_jev_class": "verified_new",
+     "changed_vs_prior_jev": true,
+     "decided_by_call": "r12-triage-r10-g3-eq9sweepresultsjson",
+     "model_served": "jev-1.13.0",
+     "usage": {
+      "input_tokens": 11882,
+      "output_tokens": 123
+     }
+    },
+    {
+     "seat": "nemotron35sv",
+     "finding_id": "F5",
+     "jev_triage": {
+      "class": "verified_new",
+      "class_confidence": 0.4,
+      "class_probabilities": {
+       "verified_new": 0.52,
+       "already_admitted": 0.4,
+       "plausible_unverified": 0.04,
+       "hallucinated": 0.02,
+       "noise": 0.02
+      },
+      "actionable_noul": 0.82,
+      "severity_score": 1.88,
+      "severity_confidence": 0.82
+     },
+     "grounded_verdict": {
+      "decision_pass": "human_flag",
+      "evidence": [
+       "located sections: cited experiment E-Q10; anchor 'definitional' at offset 10431, window chars 9731-10552 || results-file convention: window on the sealed verdict block (offset 10239) || cited experiment E-Q10; anchor 'definitional' at offset 10272, window chars 9572-10468",
+       "verdict: yes_true (conf 0.41, probabilities {\"yes_true\": 0.61, \"fabricated_or_misstated\": 0.25, \"cannot_settle\": 0.14})",
+       "confidence below the 0.8 gate -- escalated to a human (the earned loop's law)",
+       "repo context: repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/ | E-Q10: results experiments/outputs/e_q10_results.json, experiments/outputs/e_q10_tip.txt; stone chain receipts/e_q10_chain.jsonl"
+      ],
+      "confidence": 0.41,
+      "grounded_choice": "yes_true"
+     },
+     "repo_truth": {
+      "code_verified": {
+       "mechanical_failures": [],
+       "mechanical_facts": [],
+       "repo_context_facts": [
+        "repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/",
+        "E-Q10: results experiments/outputs/e_q10_results.json, experiments/outputs/e_q10_tip.txt; stone chain receipts/e_q10_chain.jsonl"
+       ],
+       "located_files": [
+        "experiments/outputs/e_q10_results.json",
+        "experiments/outputs/e_q10_results.json",
+        "receipts/e_q10_chain.jsonl"
+       ],
+       "located_anchors": [
+        "definitional",
+        "verdict",
+        "definitional"
+       ]
+      },
+      "note": "what the repository itself says, as decided by code (anchors, existence, counts, listings); orchestrator re-verification remains the load-bearing wall"
+     },
+     "final_class": "human_flag",
+     "prior_jev_class": "verified_new",
+     "changed_vs_prior_jev": true,
+     "decided_by_call": "r12-triage-r10-g3-eq10resultsjson",
+     "model_served": "jev-1.13.0",
+     "usage": {
+      "input_tokens": 3767,
+      "output_tokens": 112
+     }
+    },
+    {
+     "seat": "nemotron35sv",
+     "finding_id": "F6",
+     "jev_triage": {
+      "class": "already_admitted",
+      "class_confidence": 0.46,
+      "class_probabilities": {
+       "verified_new": 0.34,
+       "already_admitted": 0.57,
+       "plausible_unverified": 0.06,
+       "hallucinated": 0.02,
+       "noise": 0.01
+      },
+      "actionable_noul": 0.82,
+      "severity_score": 1.88,
+      "severity_confidence": 0.82
+     },
+     "grounded_verdict": {
+      "decision_pass": "human_flag",
+      "evidence": [
+       "located sections: cited experiment E-Q13; anchor 'bytes-gain' at offset 13001, window chars 12301-13307 || results-file convention: window on the sealed verdict block (offset 12979) || cited experiment E-Q13; anchor 'bytes-gain' at offset 10334, window chars 9634-10780",
+       "verdict: yes_true (conf 0.66, probabilities {\"yes_true\": 0.77, \"fabricated_or_misstated\": 0.12, \"cannot_settle\": 0.11})",
+       "confidence below the 0.8 gate -- escalated to a human (the earned loop's law)",
+       "mechanical facts: number 47.40 found repo-wide in: SPEC.md, docs/TECHNICAL-NOTE.md, docs/KNOWLEDGE-MAP.md, docs/DAY-1.md | number 4096 found repo-wide in: experiments/pre_registration_e_q17.json, experiments/pre_registration_e_q8.json, experiments/e_q7_checkerboard_cascade.mjs, experiments/pre_registration_e_q13.json | number 8192 found repo-wide in: experiments/pre_registration_e_q13.json, experiments/moth_client.mjs, experiments/e_q13_c1_gain_of_function.mjs, scripts/verdict_recompute.mjs",
+       "repo context: repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/ | E-Q13: results experiments/outputs/e_q13_results.json, experiments/outputs/e_q13_tip.txt; stone chain receipts/e_q13_chain.jsonl | chain registry (scripts/chain_registry.mjs, the single source of truth) registers 17 chains: _chain.jsonl, crossimpl/receipts/cimpl_chain.jsonl, crossimpl/receipts/crossimpl_chain.jsonl, fixedpoint/receipts/fixedpoint_chain.jsonl, receipts/e_q10_chain.jsonl, receipts/e_q13_chain.jsonl, receipts/e_q14_chain.jsonl, receipts/e_q15_chain.jsonl, receipts/e_q16_chain.jsonl, receipts/e_q17_chain.jsonl, receipts/e_q1_chain.jsonl, receipts/e_q2_chain.jsonl, receipts/e_q5_chain.jsonl, receipts/e_q6_chain.jsonl, receipts/e_q7_chain.jsonl, receipts/e_q8_chain.jsonl, receipts/probe_gate_chain.jsonl"
+      ],
+      "confidence": 0.66,
+      "grounded_choice": "yes_true"
+     },
+     "repo_truth": {
+      "code_verified": {
+       "mechanical_failures": [],
+       "mechanical_facts": [
+        "number 47.40 found repo-wide in: SPEC.md, docs/TECHNICAL-NOTE.md, docs/KNOWLEDGE-MAP.md, docs/DAY-1.md",
+        "number 4096 found repo-wide in: experiments/pre_registration_e_q17.json, experiments/pre_registration_e_q8.json, experiments/e_q7_checkerboard_cascade.mjs, experiments/pre_registration_e_q13.json",
+        "number 8192 found repo-wide in: experiments/pre_registration_e_q13.json, experiments/moth_client.mjs, experiments/e_q13_c1_gain_of_function.mjs, scripts/verdict_recompute.mjs"
+       ],
+       "repo_context_facts": [
+        "repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/",
+        "E-Q13: results experiments/outputs/e_q13_results.json, experiments/outputs/e_q13_tip.txt; stone chain receipts/e_q13_chain.jsonl",
+        "chain registry (scripts/chain_registry.mjs, the single source of truth) registers 17 chains: _chain.jsonl, crossimpl/receipts/cimpl_chain.jsonl, crossimpl/receipts/crossimpl_chain.jsonl, fixedpoint/receipts/fixedpoint_chain.jsonl, receipts/e_q10_chain.jsonl, receipts/e_q13_chain.jsonl, receipts/e_q14_chain.jsonl, receipts/e_q15_chain.jsonl, receipts/e_q16_chain.jsonl, receipts/e_q17_chain.jsonl, receipts/e_q1_chain.jsonl, receipts/e_q2_chain.jsonl, receipts/e_q5_chain.jsonl, receipts/e_q6_chain.jsonl, receipts/e_q7_chain.jsonl, receipts/e_q8_chain.jsonl, receipts/probe_gate_chain.jsonl"
+       ],
+       "located_files": [
+        "experiments/outputs/e_q13_results.json",
+        "experiments/outputs/e_q13_results.json",
+        "receipts/e_q13_chain.jsonl"
+       ],
+       "located_anchors": [
+        "bytes-gain",
+        "verdict",
+        "bytes-gain"
+       ]
+      },
+      "note": "what the repository itself says, as decided by code (anchors, existence, counts, listings); orchestrator re-verification remains the load-bearing wall"
+     },
+     "final_class": "human_flag",
+     "prior_jev_class": "already_admitted",
+     "changed_vs_prior_jev": false,
+     "decided_by_call": "r12-triage-r10-g3-eq13resultsjson",
+     "model_served": "jev-1.13.0",
+     "usage": {
+      "input_tokens": 8550,
+      "output_tokens": 285
+     }
+    },
+    {
+     "seat": "nemotron35sv",
+     "finding_id": "F7",
+     "jev_triage": {
+      "class": "already_admitted",
+      "class_confidence": 0.91,
+      "class_probabilities": {
+       "verified_new": 0.05,
+       "already_admitted": 0.93,
+       "plausible_unverified": 0.01,
+       "hallucinated": 0.01,
+       "noise": 0.0
+      },
+      "actionable_noul": 0.81,
+      "severity_score": 1.9,
+      "severity_confidence": 0.83
+     },
+     "grounded_verdict": {
+      "decision_pass": "jev",
+      "evidence": [
+       "located sections: bare name 'ADOPTION-KIT.md' (unique tree match); anchor 'blocker' at offset 7639, window chars 6939-10539 || bare name 'DAY-1.md' (unique tree match); whole file (4046 chars) || cited directory qthe-core/ registration/readme; whole file (988 chars)",
+       "verdict: fabricated_or_misstated (conf 1.0, probabilities {\"yes_true\": 0.0, \"fabricated_or_misstated\": 1.0, \"cannot_settle\": 0.0})",
+       "repo context: repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/ | directory qthe-core/ contains: LICENSE, LICENSE-NOTE.md, PROVENANCE.txt, README.md, c/, kernel/, package.json, py/, selfcheck.mjs"
+      ],
+      "confidence": 1.0,
+      "grounded_choice": "fabricated_or_misstated"
+     },
+     "repo_truth": {
+      "code_verified": {
+       "mechanical_failures": [],
+       "mechanical_facts": [],
+       "repo_context_facts": [
+        "repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/",
+        "directory qthe-core/ contains: LICENSE, LICENSE-NOTE.md, PROVENANCE.txt, README.md, c/, kernel/, package.json, py/, selfcheck.mjs"
+       ],
+       "located_files": [
+        "docs/ADOPTION-KIT.md",
+        "docs/DAY-1.md",
+        "qthe-core/PROVENANCE.txt"
+       ],
+       "located_anchors": [
+        "blocker",
+        "-",
+        "-"
+       ]
+      },
+      "note": "what the repository itself says, as decided by code (anchors, existence, counts, listings); orchestrator re-verification remains the load-bearing wall"
+     },
+     "final_class": "fabricated_or_misstated",
+     "prior_jev_class": "already_admitted",
+     "changed_vs_prior_jev": false,
+     "decided_by_call": "r12-triage-r10-g3-adoptionkitmd",
+     "model_served": "jev-1.13.0",
+     "usage": {
+      "input_tokens": 9425,
+      "output_tokens": 239
+     }
+    }
+   ],
+   "final_class_counts": {
+    "human_flag": 6,
+    "fabricated_or_misstated": 1
+   },
+   "prior_repo_truth": {
+    "repo_verified_new": 3,
+    "jev_verified_new": 4,
+    "verdict": "boundary call on the license finding (admitted vs new); otherwise aligned",
+    "hallucination_caught_by_repo": 0
+   }
+  },
+  "qwen3635b": {
+   "findings": [
+    {
+     "seat": "qwen3635b",
+     "finding_id": "F1",
+     "jev_triage": {
+      "class": "verified_new",
+      "class_confidence": 0.29,
+      "class_probabilities": {
+       "verified_new": 0.43,
+       "already_admitted": 0.07,
+       "plausible_unverified": 0.41,
+       "hallucinated": 0.07,
+       "noise": 0.02
+      },
+      "actionable_noul": 0.79,
+      "severity_score": 1.89,
+      "severity_confidence": 0.82
+     },
+     "grounded_verdict": {
+      "decision_pass": "human_flag",
+      "evidence": [
+       "located sections: cited experiment E-Q14; anchor 'adversarial' at offset 37, window chars 0-3600 || results-file convention: window on the sealed verdict block (offset 131805) || cited experiment E-Q14; anchor 'becomes' at offset 21506, window chars 20806-22555",
+       "verdict: fabricated_or_misstated (conf 0.69, probabilities {\"yes_true\": 0.01, \"fabricated_or_misstated\": 0.79, \"cannot_settle\": 0.2})",
+       "confidence below the 0.8 gate -- escalated to a human (the earned loop's law)",
+       "mechanical facts: cited paths: scripts/probe_gate.mjs (exists)",
+       "repo context: repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/ | E-Q14: results experiments/outputs/e_q14_results.json, experiments/outputs/e_q14_tip.txt; stone chain receipts/e_q14_chain.jsonl"
+      ],
+      "confidence": 0.69,
+      "grounded_choice": "fabricated_or_misstated"
+     },
+     "repo_truth": {
+      "code_verified": {
+       "mechanical_failures": [],
+       "mechanical_facts": [
+        "cited paths: scripts/probe_gate.mjs (exists)"
+       ],
+       "repo_context_facts": [
+        "repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/",
+        "E-Q14: results experiments/outputs/e_q14_results.json, experiments/outputs/e_q14_tip.txt; stone chain receipts/e_q14_chain.jsonl"
+       ],
+       "located_files": [
+        "experiments/outputs/e_q14_results.json",
+        "experiments/outputs/e_q14_results.json",
+        "receipts/e_q14_chain.jsonl"
+       ],
+       "located_anchors": [
+        "adversarial",
+        "verdict",
+        "becomes"
+       ]
+      },
+      "note": "what the repository itself says, as decided by code (anchors, existence, counts, listings); orchestrator re-verification remains the load-bearing wall"
+     },
+     "final_class": "human_flag",
+     "prior_jev_class": "verified_new",
+     "changed_vs_prior_jev": true,
+     "decided_by_call": "r12-triage-r10-g3-eq14resultsjson",
+     "model_served": "jev-1.13.0",
+     "usage": {
+      "input_tokens": 15397,
+      "output_tokens": 288
+     }
+    },
+    {
+     "seat": "qwen3635b",
+     "finding_id": "F2",
+     "jev_triage": {
+      "class": "verified_new",
+      "class_confidence": 0.5,
+      "class_probabilities": {
+       "verified_new": 0.6,
+       "already_admitted": 0.11,
+       "plausible_unverified": 0.24,
+       "hallucinated": 0.03,
+       "noise": 0.02
+      },
+      "actionable_noul": 0.81,
+      "severity_score": 1.89,
+      "severity_confidence": 0.85
+     },
+     "grounded_verdict": {
+      "decision_pass": "human_flag",
+      "evidence": [
+       "located sections: bare name 'RESOURCE-PROFILE.md' (unique tree match); whole file (1493 chars) || rare-token retrieval (3 distinct rare tokens); anchor 'claimed' at offset 9771, window chars 9071-12671",
+       "verdict: fabricated_or_misstated (conf 0.58, probabilities {\"yes_true\": 0.1, \"fabricated_or_misstated\": 0.72, \"cannot_settle\": 0.18})",
+       "confidence below the 0.8 gate -- escalated to a human (the earned loop's law)",
+       "mechanical facts: cited paths: scripts/verify_all_chains.mjs (exists) | number 1000 found repo-wide in: public-demo.html, demo/sha256.mjs, demo/a2ui.mjs, docs/USER-GUIDE.md",
+       "repo context: repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/"
+      ],
+      "confidence": 0.58,
+      "grounded_choice": "fabricated_or_misstated"
+     },
+     "repo_truth": {
+      "code_verified": {
+       "mechanical_failures": [],
+       "mechanical_facts": [
+        "cited paths: scripts/verify_all_chains.mjs (exists)",
+        "number 1000 found repo-wide in: public-demo.html, demo/sha256.mjs, demo/a2ui.mjs, docs/USER-GUIDE.md"
+       ],
+       "repo_context_facts": [
+        "repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/"
+       ],
+       "located_files": [
+        "docs/RESOURCE-PROFILE.md",
+        "docs/CLAIM-VERDICTS.md"
+       ],
+       "located_anchors": [
+        "-",
+        "claimed"
+       ]
+      },
+      "note": "what the repository itself says, as decided by code (anchors, existence, counts, listings); orchestrator re-verification remains the load-bearing wall"
+     },
+     "final_class": "human_flag",
+     "prior_jev_class": "verified_new",
+     "changed_vs_prior_jev": true,
+     "decided_by_call": "r12-triage-r10-g3-resourceprofilemd",
+     "model_served": "jev-1.13.0",
+     "usage": {
+      "input_tokens": 2640,
+      "output_tokens": 64
+     }
+    },
+    {
+     "seat": "qwen3635b",
+     "finding_id": "F3",
+     "jev_triage": {
+      "class": "verified_new",
+      "class_confidence": 0.36,
+      "class_probabilities": {
+       "verified_new": 0.49,
+       "already_admitted": 0.24,
+       "plausible_unverified": 0.21,
+       "hallucinated": 0.04,
+       "noise": 0.02
+      },
+      "actionable_noul": 0.8,
+      "severity_score": 1.87,
+      "severity_confidence": 0.8
+     },
+     "grounded_verdict": {
+      "decision_pass": "human_flag",
+      "evidence": [
+       "located sections: claim C1 -> stone-chain header -> E-Q13; anchor 'bytes-gain' at offset 13001, window chars 12301-13307 || results-file convention: window on the sealed verdict block (offset 12979) || claim C1 -> stone-chain header -> E-Q13; anchor 'bytes-gain' at offset 10334, window chars 9634-10780",
+       "verdict: fabricated_or_misstated (conf 0.43, probabilities {\"yes_true\": 0.1, \"fabricated_or_misstated\": 0.62, \"cannot_settle\": 0.28})",
+       "confidence below the 0.8 gate -- escalated to a human (the earned loop's law)",
+       "mechanical facts: number 47.40 found repo-wide in: SPEC.md, docs/TECHNICAL-NOTE.md, docs/KNOWLEDGE-MAP.md, docs/DAY-1.md",
+       "repo context: repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/"
+      ],
+      "confidence": 0.43,
+      "grounded_choice": "fabricated_or_misstated"
+     },
+     "repo_truth": {
+      "code_verified": {
+       "mechanical_failures": [],
+       "mechanical_facts": [
+        "number 47.40 found repo-wide in: SPEC.md, docs/TECHNICAL-NOTE.md, docs/KNOWLEDGE-MAP.md, docs/DAY-1.md"
+       ],
+       "repo_context_facts": [
+        "repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/"
+       ],
+       "located_files": [
+        "experiments/outputs/e_q13_results.json",
+        "experiments/outputs/e_q13_results.json",
+        "receipts/e_q13_chain.jsonl"
+       ],
+       "located_anchors": [
+        "bytes-gain",
+        "verdict",
+        "bytes-gain"
+       ]
+      },
+      "note": "what the repository itself says, as decided by code (anchors, existence, counts, listings); orchestrator re-verification remains the load-bearing wall"
+     },
+     "final_class": "human_flag",
+     "prior_jev_class": "verified_new",
+     "changed_vs_prior_jev": true,
+     "decided_by_call": "r12-triage-r10-g3-eq13resultsjson",
+     "model_served": "jev-1.13.0",
+     "usage": {
+      "input_tokens": 8550,
+      "output_tokens": 285
+     }
+    },
+    {
+     "seat": "qwen3635b",
+     "finding_id": "F4",
+     "jev_triage": {
+      "class": "verified_new",
+      "class_confidence": 0.33,
+      "class_probabilities": {
+       "verified_new": 0.46,
+       "already_admitted": 0.42,
+       "plausible_unverified": 0.09,
+       "hallucinated": 0.02,
+       "noise": 0.01
+      },
+      "actionable_noul": 0.79,
+      "severity_score": 1.88,
+      "severity_confidence": 0.8
+     },
+     "grounded_verdict": {
+      "decision_pass": "human_flag",
+      "evidence": [
+       "located sections: cited experiment E-Q15; anchor 'reweighting' at offset 52, window chars 0-3600 || results-file convention: window on the sealed verdict block (offset 24684) || cited experiment E-Q15; anchor 'max-of-accepted' at offset 16466, window chars 15766-16563",
+       "verdict: cannot_settle (conf 0.13, probabilities {\"yes_true\": 0.3, \"fabricated_or_misstated\": 0.28, \"cannot_settle\": 0.42})",
+       "confidence below the 0.8 gate -- escalated to a human (the earned loop's law)",
+       "repo context: repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/ | E-Q15: results experiments/outputs/e_q15_results.json, experiments/outputs/e_q15_tip.txt; stone chain receipts/e_q15_chain.jsonl"
+      ],
+      "confidence": 0.13,
+      "grounded_choice": "cannot_settle"
+     },
+     "repo_truth": {
+      "code_verified": {
+       "mechanical_failures": [],
+       "mechanical_facts": [],
+       "repo_context_facts": [
+        "repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/",
+        "E-Q15: results experiments/outputs/e_q15_results.json, experiments/outputs/e_q15_tip.txt; stone chain receipts/e_q15_chain.jsonl"
+       ],
+       "located_files": [
+        "experiments/outputs/e_q15_results.json",
+        "experiments/outputs/e_q15_results.json",
+        "receipts/e_q15_chain.jsonl"
+       ],
+       "located_anchors": [
+        "reweighting",
+        "verdict",
+        "max-of-accepted"
+       ]
+      },
+      "note": "what the repository itself says, as decided by code (anchors, existence, counts, listings); orchestrator re-verification remains the load-bearing wall"
+     },
+     "final_class": "human_flag",
+     "prior_jev_class": "verified_new",
+     "changed_vs_prior_jev": true,
+     "decided_by_call": "r12-triage-r10-g3-eq15resultsjson",
+     "model_served": "jev-1.13.0",
+     "usage": {
+      "input_tokens": 6036,
+      "output_tokens": 172
+     }
+    }
+   ],
+   "final_class_counts": {
+    "human_flag": 4
+   },
+   "prior_repo_truth": {
+    "repo_verified_new": 0,
+    "jev_verified_new": 4,
+    "verdict": "THE GROUNDING-GAP RECEIPT: qwen's cache-eviction 'determinism-breaking' mechanism is invented (M6 determinism is arithmetic, not memory placement); Jev rated it 4/4 verified_new because the briefing cannot falsify mechanism claims — only the repository can",
+    "hallucination_caught_by_repo": 1
+   }
+  },
+  "seed20mini": {
+   "findings": [
+    {
+     "seat": "seed20mini",
+     "finding_id": "F1",
+     "jev_triage": {
+      "class": "verified_new",
+      "class_confidence": 0.31,
+      "class_probabilities": {
+       "verified_new": 0.45,
+       "already_admitted": 0.28,
+       "plausible_unverified": 0.22,
+       "hallucinated": 0.03,
+       "noise": 0.02
+      },
+      "actionable_noul": 0.66,
+      "severity_score": 1.71,
+      "severity_confidence": 0.56
+     },
+     "grounded_verdict": {
+      "decision_pass": "jev",
+      "evidence": [
+       "located sections: cited directory qthe-core/ registration/readme; whole file (988 chars) || rare-token retrieval (6 distinct rare tokens); anchor 'external' at offset 6728, window chars 6028-9090",
+       "verdict: fabricated_or_misstated (conf 1.0, probabilities {\"yes_true\": 0.0, \"fabricated_or_misstated\": 1.0, \"cannot_settle\": 0.0})",
+       "repo context: repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/ | directory qthe-core/ contains: LICENSE, LICENSE-NOTE.md, PROVENANCE.txt, README.md, c/, kernel/, package.json, py/, selfcheck.mjs"
+      ],
+      "confidence": 1.0,
+      "grounded_choice": "fabricated_or_misstated"
+     },
+     "repo_truth": {
+      "code_verified": {
+       "mechanical_failures": [],
+       "mechanical_facts": [],
+       "repo_context_facts": [
+        "repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/",
+        "directory qthe-core/ contains: LICENSE, LICENSE-NOTE.md, PROVENANCE.txt, README.md, c/, kernel/, package.json, py/, selfcheck.mjs"
+       ],
+       "located_files": [
+        "qthe-core/PROVENANCE.txt",
+        "docs/PHASES-REPORT.md"
+       ],
+       "located_anchors": [
+        "-",
+        "external"
+       ]
+      },
+      "note": "what the repository itself says, as decided by code (anchors, existence, counts, listings); orchestrator re-verification remains the load-bearing wall"
+     },
+     "final_class": "fabricated_or_misstated",
+     "prior_jev_class": "verified_new",
+     "changed_vs_prior_jev": true,
+     "decided_by_call": "r12-triage-r10-g3-provenancetxt",
+     "model_served": "jev-1.13.0",
+     "usage": {
+      "input_tokens": 4068,
+      "output_tokens": 121
+     }
+    },
+    {
+     "seat": "seed20mini",
+     "finding_id": "F2",
+     "jev_triage": {
+      "class": "already_admitted",
+      "class_confidence": 0.34,
+      "class_probabilities": {
+       "verified_new": 0.43,
+       "already_admitted": 0.47000000000000003,
+       "plausible_unverified": 0.07,
+       "hallucinated": 0.02,
+       "noise": 0.01
+      },
+      "actionable_noul": 0.66,
+      "severity_score": 1.74,
+      "severity_confidence": 0.61
+     },
+     "grounded_verdict": {
+      "decision_pass": "human_flag",
+      "evidence": [
+       "located sections: cited experiment E-Q14; anchor 'adversarial' at offset 37, window chars 0-3600 || results-file convention: window on the sealed verdict block (offset 131805) || cited experiment E-Q14; anchor 'adversarial' at offset 184, window chars 0-3600",
+       "verdict: yes_true (conf 0.72, probabilities {\"yes_true\": 0.81, \"fabricated_or_misstated\": 0.06, \"cannot_settle\": 0.13})",
+       "confidence below the 0.8 gate -- escalated to a human (the earned loop's law)",
+       "repo context: repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/ | E-Q14: results experiments/outputs/e_q14_results.json, experiments/outputs/e_q14_tip.txt; stone chain receipts/e_q14_chain.jsonl"
+      ],
+      "confidence": 0.72,
+      "grounded_choice": "yes_true"
+     },
+     "repo_truth": {
+      "code_verified": {
+       "mechanical_failures": [],
+       "mechanical_facts": [],
+       "repo_context_facts": [
+        "repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/",
+        "E-Q14: results experiments/outputs/e_q14_results.json, experiments/outputs/e_q14_tip.txt; stone chain receipts/e_q14_chain.jsonl"
+       ],
+       "located_files": [
+        "experiments/outputs/e_q14_results.json",
+        "experiments/outputs/e_q14_results.json",
+        "receipts/e_q14_chain.jsonl"
+       ],
+       "located_anchors": [
+        "adversarial",
+        "verdict",
+        "adversarial"
+       ]
+      },
+      "note": "what the repository itself says, as decided by code (anchors, existence, counts, listings); orchestrator re-verification remains the load-bearing wall"
+     },
+     "final_class": "human_flag",
+     "prior_jev_class": "already_admitted",
+     "changed_vs_prior_jev": false,
+     "decided_by_call": "r12-triage-r10-g3-eq14resultsjson",
+     "model_served": "jev-1.13.0",
+     "usage": {
+      "input_tokens": 15397,
+      "output_tokens": 288
+     }
+    },
+    {
+     "seat": "seed20mini",
+     "finding_id": "F3",
+     "jev_triage": {
+      "class": "already_admitted",
+      "class_confidence": 0.77,
+      "class_probabilities": {
+       "verified_new": 0.13,
+       "already_admitted": 0.82,
+       "plausible_unverified": 0.03,
+       "hallucinated": 0.01,
+       "noise": 0.01
+      },
+      "actionable_noul": 0.65,
+      "severity_score": 1.72,
+      "severity_confidence": 0.58
+     },
+     "grounded_verdict": {
+      "decision_pass": "human_flag",
+      "evidence": [
+       "located sections: cited directory crossimpl/c/ registration/readme; whole file (3806 chars) || rare-token retrieval (3 distinct rare tokens); anchor 'initial' at offset 11831, window chars 11131-12926",
+       "verdict: fabricated_or_misstated (conf 0.72, probabilities {\"yes_true\": 0.0, \"fabricated_or_misstated\": 0.81, \"cannot_settle\": 0.19})",
+       "confidence below the 0.8 gate -- escalated to a human (the earned loop's law)",
+       "mechanical facts: cited paths: scripts/verify_all_chains.mjs (exists)",
+       "repo context: repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/ | directory crossimpl/c/ contains: REGISTRATION.md, conformance, conformance.c, esp32_demo.c, fixtures.txt, gen_fixtures.mjs, qthe_core.c, qthe_core.h, seal_cimpl.mjs"
+      ],
+      "confidence": 0.72,
+      "grounded_choice": "fabricated_or_misstated"
+     },
+     "repo_truth": {
+      "code_verified": {
+       "mechanical_failures": [],
+       "mechanical_facts": [
+        "cited paths: scripts/verify_all_chains.mjs (exists)"
+       ],
+       "repo_context_facts": [
+        "repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/",
+        "directory crossimpl/c/ contains: REGISTRATION.md, conformance, conformance.c, esp32_demo.c, fixtures.txt, gen_fixtures.mjs, qthe_core.c, qthe_core.h, seal_cimpl.mjs"
+       ],
+       "located_files": [
+        "crossimpl/c/REGISTRATION.md",
+        "experiments/e_q16_measurement_wave.mjs"
+       ],
+       "located_anchors": [
+        "-",
+        "initial"
+       ]
+      },
+      "note": "what the repository itself says, as decided by code (anchors, existence, counts, listings); orchestrator re-verification remains the load-bearing wall"
+     },
+     "final_class": "human_flag",
+     "prior_jev_class": "already_admitted",
+     "changed_vs_prior_jev": false,
+     "decided_by_call": "r12-triage-r10-g3-registrationmd",
+     "model_served": "jev-1.13.0",
+     "usage": {
+      "input_tokens": 2732,
+      "output_tokens": 61
+     }
+    },
+    {
+     "seat": "seed20mini",
+     "finding_id": "F4",
+     "jev_triage": {
+      "class": "already_admitted",
+      "class_confidence": 0.51,
+      "class_probabilities": {
+       "verified_new": 0.32,
+       "already_admitted": 0.61,
+       "plausible_unverified": 0.04,
+       "hallucinated": 0.02,
+       "noise": 0.01
+      },
+      "actionable_noul": 0.67,
+      "severity_score": 1.75,
+      "severity_confidence": 0.62
+     },
+     "grounded_verdict": {
+      "decision_pass": "human_flag",
+      "evidence": [
+       "located sections: cited experiment E-Q15; anchor 'reweighting' at offset 52, window chars 0-3600 || results-file convention: window on the sealed verdict block (offset 24684) || cited experiment E-Q15; anchor 'max-of-accepted' at offset 16466, window chars 15766-16563",
+       "verdict: yes_true (conf 0.43, probabilities {\"yes_true\": 0.62, \"fabricated_or_misstated\": 0.3, \"cannot_settle\": 0.08})",
+       "confidence below the 0.8 gate -- escalated to a human (the earned loop's law)",
+       "mechanical facts: cited paths: docs/CLAIM-VERDICTS.md (exists) | number 0.00 found repo-wide in: two_reader/verdict.md, two_reader/registration.json, docs/USER-GUIDE.md, docs/KNOWLEDGE-MAP.md",
+       "repo context: repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/ | E-Q15: results experiments/outputs/e_q15_results.json, experiments/outputs/e_q15_tip.txt; stone chain receipts/e_q15_chain.jsonl"
+      ],
+      "confidence": 0.43,
+      "grounded_choice": "yes_true"
+     },
+     "repo_truth": {
+      "code_verified": {
+       "mechanical_failures": [],
+       "mechanical_facts": [
+        "cited paths: docs/CLAIM-VERDICTS.md (exists)",
+        "number 0.00 found repo-wide in: two_reader/verdict.md, two_reader/registration.json, docs/USER-GUIDE.md, docs/KNOWLEDGE-MAP.md"
+       ],
+       "repo_context_facts": [
+        "repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/",
+        "E-Q15: results experiments/outputs/e_q15_results.json, experiments/outputs/e_q15_tip.txt; stone chain receipts/e_q15_chain.jsonl"
+       ],
+       "located_files": [
+        "experiments/outputs/e_q15_results.json",
+        "experiments/outputs/e_q15_results.json",
+        "receipts/e_q15_chain.jsonl"
+       ],
+       "located_anchors": [
+        "reweighting",
+        "verdict",
+        "max-of-accepted"
+       ]
+      },
+      "note": "what the repository itself says, as decided by code (anchors, existence, counts, listings); orchestrator re-verification remains the load-bearing wall"
+     },
+     "final_class": "human_flag",
+     "prior_jev_class": "already_admitted",
+     "changed_vs_prior_jev": false,
+     "decided_by_call": "r12-triage-r10-g3-eq15resultsjson",
+     "model_served": "jev-1.13.0",
+     "usage": {
+      "input_tokens": 6036,
+      "output_tokens": 172
+     }
+    },
+    {
+     "seat": "seed20mini",
+     "finding_id": "F5",
+     "jev_triage": {
+      "class": "already_admitted",
+      "class_confidence": 0.89,
+      "class_probabilities": {
+       "verified_new": 0.06,
+       "already_admitted": 0.91,
+       "plausible_unverified": 0.01,
+       "hallucinated": 0.01,
+       "noise": 0.01
+      },
+      "actionable_noul": 0.66,
+      "severity_score": 1.72,
+      "severity_confidence": 0.58
+     },
+     "grounded_verdict": {
+      "decision_pass": "human_flag",
+      "evidence": [
+       "located sections: claim C3 -> stone-chain header -> E-Q2; anchor 'critical' at offset 4813, window chars 4113-7713 || results-file convention: window on the sealed verdict block (offset 4802) || claim C3 -> stone-chain header -> E-Q2; whole file (5997 chars)",
+       "verdict: yes_true (conf 0.67, probabilities {\"yes_true\": 0.78, \"fabricated_or_misstated\": 0.09, \"cannot_settle\": 0.13})",
+       "confidence below the 0.8 gate -- escalated to a human (the earned loop's law)",
+       "repo context: repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/"
+      ],
+      "confidence": 0.67,
+      "grounded_choice": "yes_true"
+     },
+     "repo_truth": {
+      "code_verified": {
+       "mechanical_failures": [],
+       "mechanical_facts": [],
+       "repo_context_facts": [
+        "repository root contains: .git/, .gitignore, LICENSE, README.md, SPEC.md, crossimpl/, demo/, demos/, docs/, experiments/, fixedpoint/, index.html, public-demo.html, qthe-core/, qthe.mjs, receipts/, scripts/, situations/, tests/, two_reader/"
+       ],
+       "located_files": [
+        "experiments/outputs/e_q2_results.json",
+        "experiments/outputs/e_q2_results.json",
+        "receipts/e_q2_chain.jsonl"
+       ],
+       "located_anchors": [
+        "critical",
+        "verdict",
+        "-"
+       ]
+      },
+      "note": "what the repository itself says, as decided by code (anchors, existence, counts, listings); orchestrator re-verification remains the load-bearing wall"
+     },
+     "final_class": "human_flag",
+     "prior_jev_class": "already_admitted",
+     "changed_vs_prior_jev": false,
+     "decided_by_call": "r12-triage-r10-g3-eq2resultsjson",
+     "model_served": "jev-1.13.0",
+     "usage": {
+      "input_tokens": 17933,
+      "output_tokens": 230
+     }
+    }
+   ],
+   "final_class_counts": {
+    "fabricated_or_misstated": 1,
+    "human_flag": 4
+   },
+   "prior_repo_truth": {
+    "repo_verified_new": 0,
+    "jev_verified_new": 1,
+    "verdict": "5/5 already-admitted (one borderline: Jev counted the license fix as verified_new; the briefing conceded the gap, so the orchestrator scores admitted)",
+    "hallucination_caught_by_repo": 0
+   }
+  }
+ },
+ "skipped_rows": [
+  {
+   "seat": "ling31f",
+   "call_id": "r10-ling31f-audit",
+   "why": "unparseable content_json (contract failure, sealed in the arena ledger)"
+  },
+  {
+   "seat": "ling31f",
+   "call_id": "r10-ling31f-a2-audit",
+   "why": "unparseable content_json (contract failure, sealed in the arena ledger)"
+  }
+ ],
+ "re_adjudication_delta": {
+  "prior_jev_verified_new": 23,
+  "surviving_verified_new": 0,
+  "changed": [
+   {
+    "finding_id": "F1",
+    "seat": "dsv41f",
+    "was": "verified_new",
+    "now": "human_flag",
+    "route": "human_flag",
+    "confidence": 0.43
+   },
+   {
+    "finding_id": "F2",
+    "seat": "dsv41f",
+    "was": "verified_new",
+    "now": "human_flag",
+    "route": "human_flag",
+    "confidence": 0.53
+   },
+   {
+    "finding_id": "F3",
+    "seat": "dsv41f",
+    "was": "verified_new",
+    "now": "human_flag",
+    "route": "human_flag",
+    "confidence": 0.18
+   },
+   {
+    "finding_id": "F4",
+    "seat": "dsv41f",
+    "was": "verified_new",
+    "now": "human_flag",
+    "route": "human_flag",
+    "confidence": 0.14
+   },
+   {
+    "finding_id": "F6",
+    "seat": "dsv41f",
+    "was": "verified_new",
+    "now": "human_flag",
+    "route": "human_flag",
+    "confidence": 0.48
+   },
+   {
+    "finding_id": "F7",
+    "seat": "dsv41f",
+    "was": "verified_new",
+    "now": "human_flag",
+    "route": "human_flag",
+    "confidence": 0.48
+   },
+   {
+    "finding_id": "F5",
+    "seat": "hy4p",
+    "was": "verified_new",
+    "now": "human_flag",
+    "route": "human_flag",
+    "confidence": 0.34
+   },
+   {
+    "finding_id": "F6",
+    "seat": "hy4p",
+    "was": "verified_new",
+    "now": "fabricated_or_misstated",
+    "route": "jev",
+    "confidence": 0.92
+   },
+   {
+    "finding_id": "F1",
+    "seat": "mimov26f",
+    "was": "verified_new",
+    "now": "human_flag",
+    "route": "human_flag",
+    "confidence": 0.25
+   },
+   {
+    "finding_id": "F2",
+    "seat": "mimov26f",
+    "was": "verified_new",
+    "now": "human_flag",
+    "route": "human_flag",
+    "confidence": 0.3
+   },
+   {
+    "finding_id": "F3",
+    "seat": "mimov26f",
+    "was": "verified_new",
+    "now": "human_flag",
+    "route": "human_flag",
+    "confidence": 0.28
+   },
+   {
+    "finding_id": "F4",
+    "seat": "mimov26f",
+    "was": "verified_new",
+    "now": "human_flag",
+    "route": "human_flag",
+    "confidence": 0.16
+   },
+   {
+    "finding_id": "F1",
+    "seat": "musegl30b",
+    "was": "verified_new",
+    "now": "fabricated_or_misstated",
+    "route": "mechanical",
+    "confidence": 1.0
+   },
+   {
+    "finding_id": "F2",
+    "seat": "musegl30b",
+    "was": "verified_new",
+    "now": "fabricated_or_misstated",
+    "route": "mechanical",
+    "confidence": 1.0
+   },
+   {
+    "finding_id": "F2",
+    "seat": "nemotron35sv",
+    "was": "verified_new",
+    "now": "human_flag",
+    "route": "human_flag",
+    "confidence": 0.37
+   },
+   {
+    "finding_id": "F3",
+    "seat": "nemotron35sv",
+    "was": "verified_new",
+    "now": "human_flag",
+    "route": "human_flag",
+    "confidence": 0.33
+   },
+   {
+    "finding_id": "F4",
+    "seat": "nemotron35sv",
+    "was": "verified_new",
+    "now": "human_flag",
+    "route": "human_flag",
+    "confidence": 0.22
+   },
+   {
+    "finding_id": "F5",
+    "seat": "nemotron35sv",
+    "was": "verified_new",
+    "now": "human_flag",
+    "route": "human_flag",
+    "confidence": 0.41
+   },
+   {
+    "finding_id": "F1",
+    "seat": "qwen3635b",
+    "was": "verified_new",
+    "now": "human_flag",
+    "route": "human_flag",
+    "confidence": 0.69
+   },
+   {
+    "finding_id": "F2",
+    "seat": "qwen3635b",
+    "was": "verified_new",
+    "now": "human_flag",
+    "route": "human_flag",
+    "confidence": 0.58
+   },
+   {
+    "finding_id": "F3",
+    "seat": "qwen3635b",
+    "was": "verified_new",
+    "now": "human_flag",
+    "route": "human_flag",
+    "confidence": 0.43
+   },
+   {
+    "finding_id": "F4",
+    "seat": "qwen3635b",
+    "was": "verified_new",
+    "now": "human_flag",
+    "route": "human_flag",
+    "confidence": 0.13
+   },
+   {
+    "finding_id": "F1",
+    "seat": "seed20mini",
+    "was": "verified_new",
+    "now": "fabricated_or_misstated",
+    "route": "jev",
+    "confidence": 1.0
+   }
+  ],
+  "price_tag": "of 23 findings the prior judge rated verified_new, 23 do not survive grounded re-adjudication"
+ }
+}
