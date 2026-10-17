@@ -134,3 +134,26 @@ contract still shipped the best meta-finding — the ledger keeps both facts.
   proposals; the harness sweep is CLOSED by finding 5; hardware remains
   gap #2; E-Q17-provenance is a candidate for the next registration, priced
   against HIERARCHICAL-WORMHOLES' second-consumer trigger.
+
+## Postscript (same round, key unblocked): the Jev judgment layer, priced
+
+The TypeSafe key returned mid-round; `situations/jev_judge.py judge` ran
+Jev 1.13.0 over all seven parseable seats (batched parallel-questions
+pattern: ~230 ms and one call per seat, judgments sealed in
+`situations/jev_judgments_r10.jsonl` with responses verbatim).
+
+**The finding that matters: the grounding gap.** Jev's classifications
+track the orchestrator's verified verdict on severity and actionability
+(tight, consistent rubric scores ~1.8–1.9 across seats) — but Jev flagged
+**zero hallucinations in 40 findings**, including Qwen's invented
+cache-eviction mechanism (Jev: 4/4 verified_new; repo-verified truth: 0/4)
+and Muse's invented CLI flags (Jev: 2 verified_new). A briefing-only judge
+cannot see the repository; plausible-looking prose passes. This is Xing's
+closed-room critique — latent judgment without generative re-grounding —
+observed live inside the tavern, at 230 ms and $0.00 per seat.
+
+**Disposition:** the judge layer is adopted as FIRST-PASS TRIAGE (severity,
+actionability, noul-routed review), never as the verdict. Verification
+against the repository remains the load-bearing wall. This law is now in
+`situations/MODEL-LEARNINGS.md` §5 and prices every future round: judges
+draft, the repo decides.
