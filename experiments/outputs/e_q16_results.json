@@ -1,0 +1,193 @@
+{
+ "experiment": "E-Q16",
+ "claim": "measurement wave (stability/phase/scaling/census)",
+ "kernel": {
+  "kernelKind": "real",
+  "kernelPath": "qthe/qthe.mjs"
+ },
+ "stonePath": "../../quilt-stone/stone.mjs",
+ "preRegSha": "ea05815ef75692c8b107f9f308767d47bf701688ae61cb3f143002e50e15f71a",
+ "stability": [
+  {
+   "kind": "result.A1",
+   "experiment": "E-Q16",
+   "family": "A",
+   "T": 10000,
+   "checkpoints": 11,
+   "determinism": true,
+   "boundsOk": true,
+   "dRange": [
+    0,
+    63
+   ],
+   "eventWindows": [
+    15944,
+    16000,
+    16000,
+    16000,
+    16000,
+    16000,
+    16000,
+    16000,
+    16000,
+    16000
+   ],
+   "finalHash": "2880a8273f4819b860004e6d32cb2ee186f42d89ba4ee42a358b47b72e716de4"
+  },
+  {
+   "kind": "result.A2",
+   "experiment": "E-Q16",
+   "family": "A",
+   "T": 100000,
+   "checkpoints": 11,
+   "determinism": true,
+   "boundsOk": true,
+   "dRange": [
+    0,
+    63
+   ],
+   "eventWindows": [
+    309916,
+    310000,
+    310000,
+    310000,
+    310000,
+    310000,
+    310000,
+    310000,
+    310000,
+    310000
+   ],
+   "finalHash": "a54b182ed2b00db6dd8e8247b34bbdc1de1be36e43902ae42bd8c07fe817f3d5",
+   "note": "16x16 grid scaled for wall-clock honesty in this environment; physical edge-hardware long-horizon stays pending"
+  }
+ ],
+ "phaseTable": [
+  {
+   "sigma": "0.25",
+   "bridgeAll": true,
+   "medianFirstBridge": 1,
+   "medianCompletion": 38
+  },
+  {
+   "sigma": "0.5",
+   "bridgeAll": true,
+   "medianFirstBridge": 1,
+   "medianCompletion": 20
+  },
+  {
+   "sigma": "0.75",
+   "bridgeAll": true,
+   "medianFirstBridge": 1,
+   "medianCompletion": 14
+  },
+  {
+   "sigma": 1,
+   "bridgeAll": true,
+   "medianFirstBridge": 1,
+   "medianCompletion": 11
+  },
+  {
+   "sigma": "1.25",
+   "bridgeAll": true,
+   "medianFirstBridge": 1,
+   "medianCompletion": 10
+  },
+  {
+   "sigma": "1.584962500721156",
+   "bridgeAll": true,
+   "medianFirstBridge": 1,
+   "medianCompletion": 9
+  },
+  {
+   "sigma": "1.75",
+   "bridgeAll": true,
+   "medianFirstBridge": 1,
+   "medianCompletion": 7
+  },
+  {
+   "sigma": 2,
+   "bridgeAll": true,
+   "medianFirstBridge": 1,
+   "medianCompletion": 6
+  },
+  {
+   "sigma": "2.5",
+   "bridgeAll": true,
+   "medianFirstBridge": 1,
+   "medianCompletion": 6
+  },
+  {
+   "sigma": 3,
+   "bridgeAll": true,
+   "medianFirstBridge": 1,
+   "medianCompletion": 5
+  },
+  {
+   "sigma": "3.5",
+   "bridgeAll": true,
+   "medianFirstBridge": 1,
+   "medianCompletion": 5
+  },
+  {
+   "sigma": 4,
+   "bridgeAll": true,
+   "medianFirstBridge": 1,
+   "medianCompletion": 3
+  }
+ ],
+ "scaling": [
+  {
+   "grid": "64x64",
+   "abstains": 410,
+   "determinism": true,
+   "occupancy": 56,
+   "firings": 19744,
+   "firingsPerTickPerCell": "0.0964",
+   "distinctFirers": 396,
+   "contentionWritesPerSlot": "353.57",
+   "localityRatioVs64": 1
+  },
+  {
+   "grid": "128x128",
+   "abstains": 1638,
+   "determinism": true,
+   "occupancy": 56,
+   "firings": 77644,
+   "firingsPerTickPerCell": "0.0948",
+   "distinctFirers": 1554,
+   "contentionWritesPerSlot": "1387.5",
+   "localityRatioVs64": "0.983"
+  },
+  {
+   "grid": "256x256",
+   "abstains": 6554,
+   "determinism": true,
+   "occupancy": 56,
+   "firings": 328894,
+   "firingsPerTickPerCell": "0.1004",
+   "distinctFirers": 6579,
+   "contentionWritesPerSlot": "5874.11",
+   "localityRatioVs64": "1.041"
+  }
+ ],
+ "census": {
+  "STATIC": 0,
+  "SATURATED": 93,
+  "CASCADE": 7,
+  "WORMHOLE-ACTIVE": 0,
+  "MIXED": 0
+ },
+ "aggregates": {
+  "bridgeInvariant": true,
+  "contentionMonotone": false,
+  "localityBreaks": [],
+  "census": {
+   "STATIC": 0,
+   "SATURATED": 93,
+   "CASCADE": 7,
+   "WORMHOLE-ACTIVE": 0,
+   "MIXED": 0
+  }
+ }
+}
