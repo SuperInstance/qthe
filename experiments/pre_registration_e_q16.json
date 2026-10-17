@@ -1,0 +1,39 @@
+{
+  "law": "REGISTRATION of E-Q16 — the measurement wave (roadmap phases 19, 36, 37, 41, 46 in one priced run): multi-tick stability + long-horizon, dense sigma phase diagram, grid scaling with the fixed 64-slot table, and the probe-family census. Committed BEFORE ANY RUN (pricing-first). Honest null = crown jewel.",
+  "task_id": "ORCH-16",
+  "agent": "qthe-orchestrator",
+  "wave": "69-post",
+  "repo": "SuperInstance/qthe",
+  "repo_at_registration": "d24d17f",
+  "families": {
+    "A_stability_longhorizon": {
+      "design": "A1: 64x64 twin-delivery substrate (seed 33001 planting), T=10,000, checkpoints every 1,000 — plane hashes, twin-event rate per 1,000-tick window, tau census stability, d-distribution drift. A2 (long-horizon, scaled grid receipted honestly): 16x16 random substrate (seed 552001, ~25% Abstain), T=100,000 — the honest proxy for days-of-ticks on edge hardware in this environment (no physical device); same checkpoint discipline.",
+      "floors": {
+        "EQ16_A1_determinism": "both runs twice from fresh construction — byte-identical checkpoint hash sequences, else VOID.",
+        "EQ16_A2_bounds": "d never leaves [0,63], tau census constant after t=1 (tau frozen in tick) — a violation is a kernel defect finding."
+      }
+    },
+    "B_dense_sigma_phase": {
+      "design": "E-Q1 twin-delivery class (K=8 pairs, 5 seeds 33001..33005), T=100, sigma arms = {0.25, 0.5, 0.75, 1.0, 1.25, log2(3), 1.75, 2.0, 2.5, 3.0, 3.5, 4.0} (12 arms incl. the gift's number): bridge rate, median first-bridge tick, median completion tick. Output: the phase table (the phase diagram in text).",
+      "floors": {
+        "EQ16_B_phase": "per the sealed E-Q2 record: bridge occurrence/timing sigma-INVARIANT (same values all arms); completion tick non-increasing in sigma (delivery ~ 1/sigma). Any bridge-metric dependence on sigma CONTRADICTS the sealed record -> escalation row, not a quiet overwrite."
+      }
+    },
+    "C_grid_scaling": {
+      "design": "fixed 64-slot table; grids 64x64, 128x128, 256x256; random ~10% Abstain, d in [8,55] seeded (seed 664001), T=50; wormholes ON. Measures: occupancy at T, firings/tick/cell, writes per occupied slot (contention), distinct firers ratio, plane evolution.",
+      "floors": {
+        "EQ16_C_occupancy": "occupancy <= 64 always (kernel invariant).",
+        "EQ16_C_contention": "contention (writes per occupied slot over the run) is NON-DECREASING in grid size — more writers, same slots. LOCALITY BREAKS at the first grid where firings/tick/cell < 50% of the 64x64 value; if none breaks by 256x256, receipt 'locality holds to 256x256 at 10% Abstain' — honest either way."
+      }
+    },
+    "D_probe_family_census": {
+      "design": "100 seeded random situations (16x16, seed 801001..801100, tau mix ~55% Ground / 15% each A/R/Abstain, d uniform), T=20, wormholes ON. Deterministic family predicates: STATIC (no cell changes), CASCADE (>30% cells change), WORMHOLE-ACTIVE (>=1 twin event), SATURATED (>=25% cells at d in {0,63} rails), MIXED (else). Census table + one example seed per family.",
+      "floors": {
+        "EQ16_D_census": "families partition (every situation classified exactly once — predicates are priority-ordered STATIC > SATURATED > CASCADE > WORMHOLE-ACTIVE > MIXED, receipted); counts sum to 100."
+      }
+    }
+  },
+  "cross_family_floors": { "EQ16_F0_determinism": "EVERY arm runs TWICE fresh — byte-identical checkpoint sequences, else VOID." },
+  "receipt_discipline": "one stone-v1 chain receipts/e_q16_chain.jsonl; outputs experiments/outputs/e_q16_results.json + tip; floats as receipted strings only.",
+  "registered_before_run": "YES. Git history is the witness."
+}
