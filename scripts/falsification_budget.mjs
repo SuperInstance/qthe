@@ -4,18 +4,16 @@
 // record from disk (chains + results + findings), prints the ledger, and
 // writes docs/FALSIFICATION-BUDGET.md. The budget is an asset: every banked
 // null is a mistake downstream systems will never make.
-import { readFileSync, writeFileSync, readdirSync } from 'node:fs';
+import { readFileSync, writeFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { STONE_CHAINS as REGISTRY } from './chain_registry.mjs';
 const ROOT = dirname(fileURLToPath(import.meta.url)) + '/..';
 
-const scanChains = (dir) => readdirSync(dir).filter((f) => f.endsWith('_chain.jsonl'))
-  .map((f) => ({ name: f.replace('_chain.jsonl', ''), rows: readFileSync(join(dir, f), 'utf8').split('\n').filter((l) => l.trim()).length }));
-const chains = [
-  ...scanChains(join(ROOT, 'receipts')),
-  ...scanChains(join(ROOT, 'crossimpl', 'receipts')),
-  ...scanChains(join(ROOT, 'fixedpoint', 'receipts')),
-];
+// ORCH-R10: counted from the single registry (chain_registry.mjs). The old
+// directory glob missed tests/receipts.jsonl — pattern mismatch, the fourth
+// instance of chain-registry drift (defect #7).
+const chains = REGISTRY.map((r) => ({ name: r.gate, rows: readFileSync(join(ROOT, r.path), 'utf8').split('\n').filter((l) => l.trim()).length }));
 const totalRows = chains.reduce((s, c) => s + c.rows, 0);
 
 // The banked nulls and fired floors, from the sealed record (each cited):
@@ -35,6 +33,7 @@ const caughtDefects = [
   ['E-Q9 primaries comparison-shape defect (caught in-run; full re-run byte-identical)', 'wave 40-c'],
   ['two_reader keeper naive re-hash with wrong canonicalization (corrected by the house verifier)', 'wave 48-b'],
   ['seal_cimpl substring-count bug: summary literal "0 FAIL" sealed a wrong verdict (caught by ORCH-D citation audit; correction row appended, script fixed)', 'ORCH-D'],
+  ['chain-registry drift: verify_all_chains audited 11/16 stone chains, probe_gate 13/16, fleet-seeds pinned 14/16, budget glob missed the gates chain — E-Q15/E-Q16 run commits sealed chains without registering (found by arena-R10 verification; fixed by scripts/chain_registry.mjs single source of truth + PG1 stray-detection)', 'ORCH-R10'],
 ];
 const surviving = [
   ['C1 — 47.40% bytes-gain, port-identity held 20/20', 'E-Q13', 'receipts/e_q13_chain.jsonl'],

@@ -90,4 +90,4 @@ grep -n "qthe" /home/z/my-project/worklog.md | head -40
 - New docs: CLAIM-VERDICTS, DAY-1, REPRESENTATION-LAW, HULL-DOCTRINE, COST-OF-EXACTNESS (fixedpoint/), PORTING, RESOURCE-PROFILE, MARINE-EDGE-WORKLOAD, QTHE-AS-CELL, HIERARCHICAL-WORMHOLES, FRONTIER-DECISION, FALSIFICATION-BUDGET, TECHNICAL-NOTE, ADOPTION-KIT, BOUNDARY-MAP, dashboard.html, PHASES-REPORT.
 - Third language: `crossimpl/c/` C99 port — byte-exact 19/19 both planes (chain `03cf0800…` incl. the substring-count correction row).
 - Standalone: `qthe-core/` (byte-exact extraction, selfcheck ALL PASS) + `public-demo.html` (single file) + `demos/` (coordination, cascade) + `tests/determinism_attacks.mjs` (6/6 HELD) + `tests/layer0_verifier.mjs` (PROVED).
-- Fleet: `emit_fleet_seeds` ledger entry (14 chain pins); jev-garden wiring contract-delivered (QTHE-AS-CELL); crab-traps counterpart workspace present-but-partial (receipted).
+- Fleet: `emit_fleet_seeds` ledger entry (16 chain pins, registry-driven since ORCH-R10); jev-garden wiring contract-delivered (QTHE-AS-CELL); crab-traps counterpart workspace present-but-partial (receipted).

@@ -127,7 +127,7 @@
   </div>
 
   <div class="panel" id="chains">
-    <h2>chain of chains &middot; 14 stone-v1 receipts pinned by fleet-seeds (311 rows)</h2>
+    <h2>chain of chains &middot; 16 stone-v1 receipts pinned by fleet-seeds (387 rows)</h2>
     <table>
       <thead><tr><th>chain</th><th>rows</th><th>tip (sha256 of chain file)</th><th>probe gate</th></tr></thead>
       <tbody>
@@ -210,15 +210,27 @@
         <td class="dim">PG1 &middot; stone &check;</td>
       </tr>
       <tr>
+        <td class="claim"><b>e_q15_reweighting</b> <span class="dim">receipts/e_q15_chain.jsonl</span></td>
+        <td class="num">54</td>
+        <td class="tip" title="sha256 of the chain file — full 317e66a4c3228c91ad09e3d314f8c8e3fff52cf0eae14736ba25cf268c326a03">317e66a4c3228c91</td>
+        <td class="dim">PG1 &middot; stone &check;</td>
+      </tr>
+      <tr>
+        <td class="claim"><b>e_q16_measurement</b> <span class="dim">receipts/e_q16_chain.jsonl</span></td>
+        <td class="num">19</td>
+        <td class="tip" title="sha256 of the chain file — full e43e4d1239b0c443b243d0a8bbd676073cfbc17e352706eae0519a71e10c77f3">e43e4d1239b0c443</td>
+        <td class="dim">PG1 &middot; stone &check;</td>
+      </tr>
+      <tr>
         <td class="claim"><b>probe_gate</b> <span class="dim">receipts/probe_gate_chain.jsonl</span></td>
-        <td class="num">3</td>
-        <td class="tip" title="sha256 of the chain file — full 9044f582c33669f9912e54270343fd1ca02bc3a6a2668b66e30d4849c900ec1c">9044f582c33669f9</td>
+        <td class="num">6</td>
+        <td class="tip" title="sha256 of the chain file — full 23c66d72eca3248528d216980c9c37ce8df284511a7a2ddd03e34a1be82edadf">23c66d72eca32485</td>
         <td class="dim">self — the gate&rsquo;s own receipt</td>
       </tr>
       </tbody>
     </table>
-    <p class="note">verified by the probe gate — sealed run: <b>PROBE-GATE PASS</b> (scope=all, 0 failed) &middot; PG1 stone 13/13 verified from disk &middot; PG2 tip-pin 15 checked &middot; PG3 tamper control refused the flipped byte &middot; PG4 1000-tick twin probe byte-identical &middot; PG5 113ms / 65MB within 10000ms/512MB.<br>
-    gate scope today: 13 stone chains + 2 content-hash tips (the sealed run covered 13 stone chains — the scope has grown since; rerun the gate to re-seal it). every pin above was recomputed from disk at build time.</p>
+    <p class="note">verified by the probe gate — sealed run: <b>PROBE-GATE PASS</b> (scope=all, 0 failed) &middot; PG1 stone 16/16 verified from disk &middot; PG2 tip-pin 18 checked &middot; PG3 tamper control refused the flipped byte &middot; PG4 1000-tick twin probe byte-identical &middot; PG5 112ms / 64MB within 10000ms/512MB.<br>
+    gate scope today: 16 stone chains + 2 content-hash tips (the sealed run covered 16 stone chains — the scope has grown since; rerun the gate to re-seal it). every pin above was recomputed from disk at build time.</p>
   </div>
 
   <div class="panel" id="budget">
@@ -226,7 +238,7 @@
     <div class="counts">
       <div class="count"><b>7</b><span>nulls / falsifications banked</span></div>
       <div class="count"><b>3</b><span>claims surviving</span></div>
-      <div class="count"><b>6</b><span>defects caught by the discipline itself</span></div>
+      <div class="count"><b>7</b><span>defects caught by the discipline itself</span></div>
       <div class="count p"><b>0</b><span>silent failures</span></div>
     </div>
     <h3>crown jewels &middot; banked nulls (mistakes downstream systems will never make)</h3>
@@ -239,12 +251,12 @@
       <li><b>G4 — hand-computed literal wrong, kernel right (preserved standing)</b> — priced by gates <span class="dim">(tests/receipts.jsonl)</span></li>
       <li><b>E-Q7 lane expectation — ON/OFF same-regime falsified by own run (nu channel not sign-impotent)</b> — priced by E-Q7 <span class="dim">(commit 55ddced)</span></li>
     </ul>
-    <p class="note">the reading: 7 banked nulls and 6 caught defects against zero silent failures — every cost converted into a boundary the next system inherits for free. source: docs/FALSIFICATION-BUDGET.md (13 <code>*_chain.jsonl</code> files, 300 rows on disk; the fleet-seeds pin adds the gates chain &rarr; 14 chains, 311 rows).</p>
+    <p class="note">the reading: 7 banked nulls and 7 caught defects against zero silent failures — every cost converted into a boundary the next system inherits for free. source: docs/FALSIFICATION-BUDGET.md (16 <code>*_chain.jsonl</code> files, 387 rows on disk; the fleet-seeds pin adds the gates chain &rarr; 16 chains, 387 rows).</p>
   </div>
 
   <div class="panel" id="verify">
     <h2>how to verify this page</h2>
-    <p class="note">every number above was parsed from the sealed record and cross-checked at build time (kernel sha &check; qthe.mjs &middot; 6/6 verdicts &check; fleet-seeds scoreboard &middot; 6/6 tips &check; pinned tip files &middot; 14/14 chain pins recomputed from disk &middot; budget accounts &check; their lists). re-derive it yourself, from a fresh clone:</p>
+    <p class="note">every number above was parsed from the sealed record and cross-checked at build time (kernel sha &check; qthe.mjs &middot; 6/6 verdicts &check; fleet-seeds scoreboard &middot; 6/6 tips &check; pinned tip files &middot; 16/16 chain pins recomputed from disk &middot; budget accounts &check; their lists). re-derive it yourself, from a fresh clone:</p>
     <pre><span class="cmd">node scripts/verify_all_chains.mjs</span>     <span class="c"># every stone-v1 chain re-verified from disk (fail-loud)</span>
 <span class="cmd">node scripts/probe_gate.mjs</span>              <span class="c"># PG1-PG5 harness integrity gate (tamper + determinism + bounds)</span>
 <span class="cmd">node scripts/falsification_budget.mjs</span>    <span class="c"># regenerate the falsification-budget ledger from the sealed record</span></pre>

@@ -96,16 +96,13 @@ for (const f of readdirSync(join(ROOT, 'experiments', 'outputs')).filter((f) => 
 const fleet = JSON.parse(read('experiments/outputs/fleet_seeds_entry.json'));
 fleet.kind === 'fleet-seeds.entry' || die('fleet_seeds_entry.json is not a fleet-seeds entry');
 
-// chain name -> file mapping, parsed from the producer script (no duplication)
-const emitSrc = read('scripts/emit_fleet_seeds.mjs');
-const tipsLoop = emitSrc.match(/for \(const \[name, path\] of \[([\s\S]*?)\]\)/) ?? die('cannot parse the tips loop in scripts/emit_fleet_seeds.mjs');
-const chainFiles = [...tipsLoop[1].matchAll(/\[\s*["']([^"']+)["']\s*,\s*["']([^"']+)["']\s*\]/g)].map((m) => [m[1], m[2]]);
-
-// probe-gate scope, parsed from the gate script itself
-const gateSrc = read('scripts/probe_gate.mjs');
-const pairRe = /\[\s*["']([^"']+)["']\s*,\s*["']([^"']+)["']\s*\]/g;
-const gateStone = new Map([...(gateSrc.match(/const STONE_CHAINS = \[([\s\S]*?)\];/) ?? die('cannot parse STONE_CHAINS in scripts/probe_gate.mjs'))[1].matchAll(pairRe)].map((m) => [m[1], m[2]]));
-const gateContent = new Map([...(gateSrc.match(/const CONTENT_TIPS = \[([\s\S]*?)\];/) ?? die('cannot parse CONTENT_TIPS in scripts/probe_gate.mjs'))[1].matchAll(pairRe)].map((m) => [m[1], m[2]]));
+// chain pin/scope mapping — from the single registry (ORCH-R10: this builder
+// once regex-parsed the producer scripts' hand-maintained lists and inherited
+// every drift of what it parsed; defect #7's fifth instance, now impossible)
+import { STONE_CHAINS as REGISTRY, CONTENT_TIPS as TIP_REGISTRY } from './chain_registry.mjs';
+const chainFiles = REGISTRY.map((r) => [r.pin, r.path]);
+const gateStone = new Map(REGISTRY.map((r) => [r.path, r.gate]));
+const gateContent = new Map(TIP_REGISTRY.map((r) => [r.path, r.gate]));
 
 // the sealed probe-gate run (last run row of the gate's own chain)
 const gateRun = read('receipts/probe_gate_chain.jsonl').split('\n').filter((l) => l.trim()).map((l) => JSON.parse(l)).reverse().find((r) => r.kind === 'probe_gate.run') ?? die('no probe_gate.run row in receipts/probe_gate_chain.jsonl');

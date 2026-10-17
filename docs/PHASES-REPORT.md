@@ -72,6 +72,14 @@
 
 ## New chains this orchestration sealed
 
-e_q13 (25 links), e_q14 (70), e_q15 (54), e_q16 (18), probe_gate (3),
-cimpl (10, incl. correction), fixedpoint +2 rows, e_q14 autopsy row.
-Total corpus: 14 chains, 400+ rows, ALL CLEAN from disk.
+e_q13 (25 links), e_q14 (70, incl. autopsy row), e_q15 (54), e_q16 (19,
+incl. the ORCH-R10 erratum naming its superseded run-1 rows), probe_gate
+(6, incl. the ORCH-R10 re-seal), cimpl (10, incl. correction), fixedpoint
++2 rows. Total corpus: **16 stone chains + 2 content-hash tips (18 receipts
+of record), 387 rows, ALL CLEAN from disk at 16-chain scope.**
+(ORCH-R10 correction: this line first said "14 chains, 400+ rows" — the
+chain-registry drift logged as falsification-budget defect #7; four
+hand-maintained lists had drifted apart and the standing auditors were
+silent on chains the orchestration itself sealed. Fixed and made impossible
+to repeat: `scripts/chain_registry.mjs` is now the single source of truth
+for every consumer, and PG1 fails on any unregistered chain-shaped file.)

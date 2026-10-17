@@ -77,9 +77,17 @@
    "sha256": "15776ca262837deb885b88f6056e8fb7aadfedc5cc6a57de85f420cc6e4e5b85",
    "rows": 70
   },
+  "e_q15_reweighting": {
+   "sha256": "317e66a4c3228c91ad09e3d314f8c8e3fff52cf0eae14736ba25cf268c326a03",
+   "rows": 54
+  },
+  "e_q16_measurement": {
+   "sha256": "e43e4d1239b0c443b243d0a8bbd676073cfbc17e352706eae0519a71e10c77f3",
+   "rows": 19
+  },
   "probe_gate": {
-   "sha256": "9044f582c33669f9912e54270343fd1ca02bc3a6a2668b66e30d4849c900ec1c",
-   "rows": 3
+   "sha256": "23c66d72eca3248528d216980c9c37ce8df284511a7a2ddd03e34a1be82edadf",
+   "rows": 6
   }
  }
 }

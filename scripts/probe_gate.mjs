@@ -24,6 +24,7 @@
 import { linkStone } from '../experiments/_stone_link.mjs';
 import { appendAndVerify, planeHash } from '../experiments/_harness.mjs';
 import { loadKernel, makeSubstrate, tick, mulberry32, bytePlane } from '../experiments/_adapter.mjs';
+import { STONE_CHAINS as REGISTRY, CONTENT_TIPS as TIP_REGISTRY, strayChainFiles } from './chain_registry.mjs';
 import { existsSync, readFileSync, writeFileSync, mkdtempSync, rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join, dirname } from 'node:path';
@@ -34,21 +35,12 @@ const ROOT = join(HERE, '..');
 const CHAIN = join(ROOT, 'receipts', 'probe_gate_chain.jsonl');
 const scope = process.argv[2] ?? 'all';
 
-const STONE_CHAINS = [
-  ['tests/receipts.jsonl', 'G0-G6'],
-  ['crossimpl/receipts/crossimpl_chain.jsonl', 'crossimpl-py'],
-  ['crossimpl/receipts/cimpl_chain.jsonl', 'crossimpl-c'],
-  ['fixedpoint/receipts/fixedpoint_chain.jsonl', 'fixedpoint'],
-  ['receipts/e_q1_chain.jsonl', 'e_q1'], ['receipts/e_q2_chain.jsonl', 'e_q2'],
-  ['receipts/e_q5_chain.jsonl', 'e_q5'], ['receipts/e_q6_chain.jsonl', 'e_q6'],
-  ['receipts/e_q7_chain.jsonl', 'e_q7'], ['receipts/e_q8_chain.jsonl', 'e_q8'],
-  ['receipts/e_q10_chain.jsonl', 'e_q10'], ['receipts/e_q13_chain.jsonl', 'e_q13'],
-  ['receipts/e_q14_chain.jsonl', 'e_q14'],
-];
-const CONTENT_TIPS = [
-  ['experiments/outputs/e_q11_tip.txt', 'e_q11'],
-  ['experiments/outputs/e_q12_tip.txt', 'e_q12'],
-];
+// ORCH-R10: the chain list lives in scripts/chain_registry.mjs (the single
+// source of truth). This gate once kept its own list and had drifted to 13
+// of 16 chains when arena round 10's verification found it (defect #7);
+// PG1 now also fails on any unregistered chain-shaped file on disk.
+const STONE_CHAINS = REGISTRY.map((r) => [r.path, r.gate]);
+const CONTENT_TIPS = TIP_REGISTRY.map((r) => [r.path, r.gate]);
 
 const { stone, stonePath } = await linkStone();
 const { kernelKind } = await loadKernel();
@@ -67,6 +59,9 @@ const pass = (section, detail) => { results.sections[section] = { pass: true, ..
     const v = stone.verifyChainFile(join(ROOT, p));
     if (!v.ok) bad.push(`${p}: ${v.why}`); else verified++;
   }
+  // ORCH-R10 defect #7 enforcement: a chain sealed without being registered
+  // in scripts/chain_registry.mjs fails the gate. Corpus-level, always on.
+  for (const s of strayChainFiles(ROOT)) bad.push(`STRAY ${s}: chain-shaped file not in the registry (register it in the sealing commit)`);
   if (bad.length) fail('PG1_STONE', bad.join('; '));
   else pass('PG1_STONE', { chains: inScope.length, verified });
 }

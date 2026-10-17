@@ -168,14 +168,31 @@ Sections and what they protect:
 
 | section | protects against | method |
 |---------|------------------|--------|
-| PG1 STONE | silent chain rot | every stone-v1 chain re-verified from disk |
+| PG1 STONE | silent chain rot + unregistered seals | every registry chain re-verified from disk; chain-shaped files not in `chain_registry.mjs` are refused (ORCH-R10) |
 | PG2 TIP-PIN | tip-file drift | `outputs/<name>_tip.txt` recomputed vs chain tip |
 | PG3 NEGATIVE | a verifier that cannot say NO | tamper a COPY (flip one boolean in a mid-chain row) — `verifyChainFile` must refuse |
 | PG4 DETERMINISM | environment regressions | standing 1000-tick twin probe, run twice, byte-identical |
 | PG5 BOUNDS | runaway experiments | wall-clock + RSS ceilings on the standing probe (10 s / 512 MB) |
+| PG6 VERDICT-RECOMPUTE (registered, not yet built) | integrity without soundness | re-derive a sealed verdict's arithmetic from its sealed trace and diff (origin: ling31f's uncontracted arena-R10 reasoning) |
 
 The gate is fail-loud (exit 1) and appends its own sealed row per run —
 `scripts/verify_all_chains.mjs` audits the full chain-of-chains including
-the gate's own chain. New experiments add their chain to `STONE_CHAINS` in
-the gate script as part of the registration commit (addition, never
-subtraction).
+the gate's own chain.
+
+**Chain registration law (ORCH-R10 refinement, now enforced):** the commit
+that seals a chain registers it — same commit, always — by adding one entry
+to `scripts/chain_registry.mjs`, the single source of truth consumed by
+verify_all_chains, probe_gate, emit_fleet_seeds, falsification_budget, and
+the dashboard builder. PG1 fails on any chain-shaped file on disk that the
+registry does not know: an unregistered seal can no longer pass silently.
+This law was prose-only until arena round 10's verification found
+chain-registry drift (defect #7: the E-Q15/E-Q16 run commits sealed chains
+without registering; the auditors had drifted to 11–15 of 16 chains —
+registration is addition, never subtraction).
+
+**PG6 (registered next extension):** the gates prove INTEGRITY (hashes
+re-verify, tamper refused), not SOUNDNESS (verdicts recompute from their
+sealed traces). PG6 will re-derive a verdict's arithmetic from the sealed
+trace hash and diff it against the sealed verdict string. Origin: ling31f's
+uncontracted round-10 reasoning — the auditor that failed the output
+contract supplied the gate's next arm; both facts stand in the ledger.

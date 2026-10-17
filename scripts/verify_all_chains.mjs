@@ -11,28 +11,14 @@
 import { createHash } from 'node:crypto';
 import { linkStone } from '../experiments/_stone_link.mjs';
 import { existsSync, readFileSync } from 'node:fs';
+import { STONE_CHAINS as REGISTRY, CONTENT_TIPS as TIP_REGISTRY, strayChainFiles } from './chain_registry.mjs';
 
-const CHAINS = [
-  ['tests/receipts.jsonl', 'kernel gates G0–G6'],
-  ['crossimpl/receipts/crossimpl_chain.jsonl', 'python LAYER 0 crossimpl'],
-  ['crossimpl/receipts/cimpl_chain.jsonl', 'c LAYER 0+1 crossimpl (ORCH-7)'],
-  ['fixedpoint/receipts/fixedpoint_chain.jsonl', 'no-floats plane R8'],
-  ['receipts/e_q1_chain.jsonl', 'E-Q1 · C2 wormhole'],
-  ['receipts/e_q2_chain.jsonl', 'E-Q2 · C3 sigma sweep'],
-  ['receipts/e_q5_chain.jsonl', 'E-Q5 · C5 armor ring'],
-  ['receipts/e_q6_chain.jsonl', 'E-Q6 · slot collision'],
-  ['receipts/e_q7_chain.jsonl', 'E-Q7 · C4 checkerboard cascade'],
-  ['receipts/e_q8_chain.jsonl', 'E-Q8 · float-only artifact probe'],
-  ['receipts/e_q10_chain.jsonl', "E-Q10 · C5' injector one-pager"],
-];
-
-// Content-hash receipts that are deliberately NOT stone chains (E-Q9
-// precedent: "stone chain not bound by the E-Q9 registration, decision on
-// the record"). Audited as present-and-recomputable instead.
-const CONTENT_TIPS = [
-  ['experiments/outputs/e_q11_tip.txt', 'experiments/outputs/e_q11_results.json', 'E-Q11 · collapse predicate (content-hash receipt)'],
-  ['experiments/outputs/e_q12_tip.txt', 'experiments/outputs/e_q12_results.json', 'E-Q12 · k-family predicate (content-hash receipt)'],
-];
+// ORCH-R10: the chain list lives in ONE place — scripts/chain_registry.mjs.
+// This auditor once kept its own hand-maintained list and had drifted to
+// 11 of 16 chains when arena round 10's verification found it (falsification
+// budget defect #7). The registry is the source; strays fail loudly below.
+const CHAINS = REGISTRY.map((r) => [r.path, r.label]);
+const CONTENT_TIPS = TIP_REGISTRY.map((r) => [r.path, `experiments/outputs/${r.gate}_results.json`, r.label]);
 
 const { stone, stonePath } = await linkStone();
 console.log(`stone module: ${stonePath}`);
@@ -58,6 +44,11 @@ for (const [tipPath, resPath, label] of CONTENT_TIPS) {
   console.log(`${ok ? 'TIP-PIN ' : 'MISSING '} ${tipPath} :: ${label} :: tip=${tip}`);
   if (!ok) bad++;
 }
+
+// Strays: chain-shaped files on disk the registry does not know about
+// (defect #7's enforcement — a chain sealed without registering cannot pass
+// this auditor silently; the sealing commit registers, always).
+for (const s of strayChainFiles('.')) { console.log(`STRAY    ${s} :: chain-shaped file not in scripts/chain_registry.mjs — register it in the sealing commit`); bad++; }
 
 const total = CHAINS.length + CONTENT_TIPS.length;
 console.log(`\nverify_all_chains: ${bad === 0 ? 'ALL CLEAN' : bad + ' BROKEN'} :: ${total - bad}/${total} receipts of record verified from disk`);

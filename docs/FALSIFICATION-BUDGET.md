@@ -9,11 +9,11 @@
 
 | account | count |
 |---------|-------|
-| stone-v1 chains on disk | 13 (300 rows total) |
+| stone-v1 chains on disk | 16 (387 rows total) |
 | claims priced (LAYER 2 complete) | 6 of 6 (C1, C2, C3, C4, C5, C5') |
 | claims surviving | 3 |
 | honest nulls / falsifications banked | 7 |
-| defects caught by the discipline itself | 6 |
+| defects caught by the discipline itself | 7 |
 
 ## Banked nulls (the crown jewels)
 
@@ -39,10 +39,11 @@
 - E-Q9 primaries comparison-shape defect (caught in-run; full re-run byte-identical) — wave 40-c
 - two_reader keeper naive re-hash with wrong canonicalization (corrected by the house verifier) — wave 48-b
 - seal_cimpl substring-count bug: summary literal "0 FAIL" sealed a wrong verdict (caught by ORCH-D citation audit; correction row appended, script fixed) — ORCH-D
+- chain-registry drift: verify_all_chains audited 11/16 stone chains, probe_gate 13/16, fleet-seeds pinned 14/16, budget glob missed the gates chain — E-Q15/E-Q16 run commits sealed chains without registering (found by arena-R10 verification; fixed by scripts/chain_registry.mjs single source of truth + PG1 stray-detection) — ORCH-R10
 
 ## The reading
 
-The ratio that matters: 7 banked nulls and 6 caught defects
+The ratio that matters: 7 banked nulls and 7 caught defects
 against zero silent failures. The house's laws (pre-registration, determinism
 or it didn't happen, refuse-if-broken chains, honest FAILs standing) have
 cost real predictions — and every one of those costs converted into a

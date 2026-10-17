@@ -131,7 +131,7 @@ recipes; the four that matter to this fleet):
   against the r10 economics table (MiMo 50× cache discount makes it the
   drafting seat; Hy4 at 2.501/1M output is the adjudicator, not the
   draftsman).
-- *Memory system for the corpus*: 14 chains, 400+ rows — which verdicts
+- *Memory system for the corpus*: 16 stone chains, 387 rows — which verdicts
   deserve KNOWLEDGE-MAP pointers is currently a human call; a Jev filter
   with noul-routed review would make it a priced call.
 
