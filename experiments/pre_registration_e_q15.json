@@ -1,0 +1,24 @@
+{
+  "law": "REGISTRATION of E-Q15 — the preference reweighting probe (roadmap phase 13): a QTHE split-channel probe vs plain rejection sampling at IDENTICAL oracle budget. Committed BEFORE ANY RUN (pricing-first). Floors frozen; honest null = crown jewel.",
+  "task_id": "ORCH-13",
+  "agent": "qthe-orchestrator",
+  "wave": "69-post",
+  "repo": "SuperInstance/qthe",
+  "repo_at_registration": "206bdad",
+  "claim_rw": "A QTHE-byte preference memory (tau = stance, d = accumulated evidence, split-channel readout) picks a HIGHER-quality item than plain rejection sampling (best accepted so far) from the SAME oracle stream at the SAME budget.",
+  "design": {
+    "task": "32 items, latent quality q_i in 1..63 (seeded). Oracle stream: B=120 proposals; each proposal picks item i (seeded uniform) and flips a seeded coin with P(accept) = q_i/63. BOTH arms consume the IDENTICAL stream (paired by construction — same mulberry32 draws, byte-for-byte).",
+    "arm_baseline": "rejection sampling: track the max-q accepted item (classic best-of-accepted; if none accepted, item 0).",
+    "arm_probe": "QTHE bytes: per item tau (3=uncertain start, 1=shortlist on accept, 2 stays unused), d=8 start (evidence amplitude). On accept: tau=1, d=min(63,d+4). On reject: uncertain item d=max(0,d-2); shortlisted item d=max(0,d-1) (soft demotion — no tau demotion: committed evidence is sticky). Final pick: argmax d among tau=1 items (the re channel carries the signed evidence; im channel = sum d over tau=3 = uncertainty mass, REPORTED, and if NO item ever accepted the probe falls back to argmax d overall — receipted as fallback, same as baseline's).",
+    "trials": 50 (seeds 100001..100050), T effective = B proposals per trial.",
+    "determinism": "D1: every arm run twice from fresh construction; identical picks and identical probe byte-planes at end (hash), else VOID."
+  },
+  "floors": {
+    "EQ15_F0_determinism": "run-twice byte-identical (picks + final probe plane hashes), 100/100 runs, else VOID.",
+    "EQ15_F1_claim_floor": "the probe WINS iff median(q_probe - q_baseline) >= +1 across 50 trials AND win-rate (strict q_probe > q_baseline) >= 55%. Anything less: RW DIES as an honest null with a mechanism autopsy (where the evidence compounding lost to max-of-accepted).",
+    "EQ15_F2_pairing_check": "the two arms consume byte-identical oracle streams (assert: same accept sequence length + same accepted-item multiset), else VOID (pairing broken)."
+  },
+  "sealed_honest_expectation": "uncertain. The probe's edge: d COMPOUNDS across repeated accepts (evidence accumulation) and sticky shortlisting resists late noise; the baseline's edge: max-of-accepted is a hard lower bound that already exploits acceptance-correlated quality, and d-compounding can promote a repeatedly-accepted mediocre item over a once-accepted excellent one. Both failure modes are one sentence each; the run decides.",
+  "receipt_discipline": "one stone-v1 chain receipts/e_q15_chain.jsonl; outputs experiments/outputs/e_q15_results.json + tip file; floats (the accept probability) only as receipted strings — all metrics are integers (q values, counts).",
+  "registered_before_run": "YES — no E-Q15 tick has executed at commit time. Git history is the witness."
+}
