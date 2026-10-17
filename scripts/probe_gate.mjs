@@ -37,6 +37,7 @@ const scope = process.argv[2] ?? 'all';
 const STONE_CHAINS = [
   ['tests/receipts.jsonl', 'G0-G6'],
   ['crossimpl/receipts/crossimpl_chain.jsonl', 'crossimpl-py'],
+  ['crossimpl/receipts/cimpl_chain.jsonl', 'crossimpl-c'],
   ['fixedpoint/receipts/fixedpoint_chain.jsonl', 'fixedpoint'],
   ['receipts/e_q1_chain.jsonl', 'e_q1'], ['receipts/e_q2_chain.jsonl', 'e_q2'],
   ['receipts/e_q5_chain.jsonl', 'e_q5'], ['receipts/e_q6_chain.jsonl', 'e_q6'],

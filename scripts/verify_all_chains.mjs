@@ -15,6 +15,7 @@ import { existsSync, readFileSync } from 'node:fs';
 const CHAINS = [
   ['tests/receipts.jsonl', 'kernel gates G0–G6'],
   ['crossimpl/receipts/crossimpl_chain.jsonl', 'python LAYER 0 crossimpl'],
+  ['crossimpl/receipts/cimpl_chain.jsonl', 'c LAYER 0+1 crossimpl (ORCH-7)'],
   ['fixedpoint/receipts/fixedpoint_chain.jsonl', 'no-floats plane R8'],
   ['receipts/e_q1_chain.jsonl', 'E-Q1 · C2 wormhole'],
   ['receipts/e_q2_chain.jsonl', 'E-Q2 · C3 sigma sweep'],
