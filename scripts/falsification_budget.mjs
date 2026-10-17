@@ -34,6 +34,7 @@ const caughtDefects = [
   ['determinism_attacks A2 first draft asserted the wrong semantics (doctrine lesson: the table is hull)', 'ORCH-20'],
   ['E-Q9 primaries comparison-shape defect (caught in-run; full re-run byte-identical)', 'wave 40-c'],
   ['two_reader keeper naive re-hash with wrong canonicalization (corrected by the house verifier)', 'wave 48-b'],
+  ['seal_cimpl substring-count bug: summary literal "0 FAIL" sealed a wrong verdict (caught by ORCH-D citation audit; correction row appended, script fixed)', 'ORCH-D'],
 ];
 const surviving = [
   ['C1 — 47.40% bytes-gain, port-identity held 20/20', 'E-Q13', 'receipts/e_q13_chain.jsonl'],

@@ -9,11 +9,11 @@
 
 | account | count |
 |---------|-------|
-| stone-v1 chains on disk | 13 (295 rows total) |
+| stone-v1 chains on disk | 13 (300 rows total) |
 | claims priced (LAYER 2 complete) | 6 of 6 (C1, C2, C3, C4, C5, C5') |
 | claims surviving | 3 |
 | honest nulls / falsifications banked | 7 |
-| defects caught by the discipline itself | 5 |
+| defects caught by the discipline itself | 6 |
 
 ## Banked nulls (the crown jewels)
 
@@ -38,10 +38,11 @@
 - determinism_attacks A2 first draft asserted the wrong semantics (doctrine lesson: the table is hull) — ORCH-20
 - E-Q9 primaries comparison-shape defect (caught in-run; full re-run byte-identical) — wave 40-c
 - two_reader keeper naive re-hash with wrong canonicalization (corrected by the house verifier) — wave 48-b
+- seal_cimpl substring-count bug: summary literal "0 FAIL" sealed a wrong verdict (caught by ORCH-D citation audit; correction row appended, script fixed) — ORCH-D
 
 ## The reading
 
-The ratio that matters: 7 banked nulls and 5 caught defects
+The ratio that matters: 7 banked nulls and 6 caught defects
 against zero silent failures. The house's laws (pre-registration, determinism
 or it didn't happen, refuse-if-broken chains, honest FAILs standing) have
 cost real predictions — and every one of those costs converted into a

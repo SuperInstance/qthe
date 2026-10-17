@@ -18,12 +18,18 @@ const ccVersion = execSync('cc --version', { encoding: 'utf8' }).split('\n')[0].
 const out = execSync('./crossimpl/c/conformance crossimpl/c/fixtures.txt', { cwd: join(HERE, '..', '..'), encoding: 'utf8' });
 const lines = out.trim().split('\n');
 const summary = lines[lines.length - 1];
-const passed = (out.match(/ PASS/g) || []).length;
-const failed = (out.match(/ FAIL/g) || []).length;
+// count PER-LINE results only — never substrings (the ORCH-D defect: the
+// summary line's literal "0 FAIL" was counted as a failure by .match(/ FAIL/))
+const passed = lines.filter((l) => / (VEC|CASE) \S+ PASS$/.test(l)).length;
+const failed = lines.filter((l) => / (VEC|CASE) \S+ FAIL/.test(l)).length;
 console.log(lines.join('\n'));
 
 const fixturesSha = fileSha256(join(HERE, 'fixtures.txt'));
 const rows = [
+  { kind: 'correction.cimpl', experiment: 'cimpl',
+    defect: 'seal_cimpl.mjs run-1 counted the summary line literal "0 FAIL" via substring match, sealing verdict="C PORT NOT BYTE-EXACT — honest FAIL standing" (C1_ALL:false) for a run that was in fact 19/19 PASS',
+    evidence: 'per-line results all PASS (19 lines); fleet_seeds_entry.json; read-only re-run of the sealed binary by ORCH-D; the result row in THIS chain already recorded passed:19 failed:1 with the substring bug',
+    correction: 'verdict.cimpl row of run 1 is SUPERSEDED by this row: the C port is BYTE-EXACT 19/19 (float + fixed planes); the seal script now counts per-line results only; found by ORCH-D citation discipline, receipted here per append-only law (the wrong row stands beside this correction, never rewritten)' },
   { kind: 'rules.cimpl', frozen_by: 'crossimpl/c/REGISTRATION.md (ORCH-7, committed pre-run at 4861665)',
     floors: 'C1-ALL: every case byte-exact (hash + event tuples + term bits/integers), zero mismatches; C3: builds without -lm',
     battery: '4 vectorPass + 12 float substrate cases (twin ON/OFF, P-B3 random 2/3, checkerboard, sigma 0.5/4, cooker, E-Q8 boards 2/3+8/5, fresh twins, mixed) + 3 fixed-plane cases (2/3, default, E-Q8 fixed side)',

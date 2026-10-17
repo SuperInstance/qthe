@@ -1,0 +1,255 @@
+<!doctype html>
+<!-- qthe claim dashboard — docs/dashboard.html. GENERATED FILE: do not edit
+     by hand; regenerate with:  node scripts/build_dashboard.mjs  (ORCH-C).
+     Single self-contained page: inline CSS, no scripts, no network, no
+     wall-clock — "generated from the sealed record", byte-identical on rerun.
+     Every number below is parsed + cross-checked from the sealed record:
+     docs/CLAIM-VERDICTS.md · docs/FALSIFICATION-BUDGET.md ·
+     experiments/outputs/ (tips + fleet-seeds pins) · receipts/ (gate chain). -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Crect width='8' height='8' fill='%23a86ae8'/%3E%3C/svg%3E">
+<title>qthe — claim dashboard</title>
+<style>
+  :root { color-scheme: dark; }
+  body { margin: 0; background: #0b0b10; color: #c9c9d4;
+         font: 13px/1.5 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+  main { max-width: 1020px; margin: 2rem auto; padding: 0 1rem 3rem; }
+  h1 { font-size: 15px; font-weight: 600; color: #e8e8f2; margin: 0 0 2px; }
+  h1 span { color: #a86ae8; }                       /* the Abstain purple */
+  p.sub { margin: 0 0 18px; color: #6f6f80; }
+  p.sub .sha { color: #d9b8ff; }
+  p.sub .sha i { font-style: normal; color: #6f6f80; }
+  .panel { background: #12121a; border: 1px solid #23232e; padding: 10px 12px; margin-bottom: 14px; }
+  .panel h2 { font-size: 11px; font-weight: 600; color: #6f6f80; margin: 0 0 8px;
+              letter-spacing: .08em; text-transform: uppercase; }
+  .panel h3 { font-size: 11px; font-weight: 600; color: #6f6f80; margin: 12px 0 4px;
+              letter-spacing: .08em; text-transform: uppercase; }
+  table { width: 100%; border-collapse: collapse; }
+  th { text-align: left; font-size: 10px; font-weight: 600; color: #6f6f80;
+       text-transform: uppercase; letter-spacing: .06em; padding: 2px 10px 6px 0;
+       border-bottom: 1px solid #23232e; vertical-align: bottom; }
+  td { padding: 7px 10px 7px 0; border-bottom: 1px solid #1b1b25; vertical-align: top; }
+  tr:last-child td { border-bottom: none; }
+  td.claim b { color: #e8e8f2; font-weight: 600; }
+  td.dim, .dim { color: #6f6f80; }
+  td.mech { color: #9a9aac; min-width: 24ch; }
+  td.tip { color: #9a9aac; white-space: nowrap; }
+  td.num { color: #9a9aac; white-space: nowrap; }
+  .v { font-weight: 600; white-space: nowrap; }
+  .v .q { color: #6f6f80; font-weight: 400; font-size: 11px; }
+  .v .d { display: block; color: #6f6f80; font-weight: 400; font-size: 11px;
+          margin-top: 2px; max-width: 26ch; }
+  .g { color: #4fd45f; } .r { color: #e05a5a; } .a { color: #e0a84f; }
+  .legend { margin: 8px 0 0; color: #6f6f80; font-size: 11px; }
+  .legend i { font-style: normal; }
+  p.note { margin: 8px 0 0; color: #6f6f80; font-size: 11.5px; }
+  p.note code, li code { color: #d9b8ff; }
+  .counts { display: flex; gap: 10px; flex-wrap: wrap; margin: 2px 0 4px; }
+  .count { flex: 1 1 170px; background: #0b0b10; border: 1px solid #23232e; padding: 8px 10px; }
+  .count b { display: block; font-size: 22px; font-weight: 600; color: #e8e8f2; }
+  .count.p b { color: #a86ae8; }
+  .count span { color: #6f6f80; font-size: 11px; }
+  ul.jewels { margin: 4px 0 0; padding-left: 18px; color: #9a9aac; }
+  ul.jewels li { margin: 3px 0; }
+  ul.jewels b { color: #c9c9d4; }
+  pre { background: #0b0b10; border: 1px solid #23232e; padding: 8px 10px;
+        margin: 8px 0 0; overflow-x: auto; font-size: 12px; }
+  pre .cmd { color: #d9b8ff; }
+  pre .c { color: #55555f; }
+</style>
+</head>
+<body>
+<main>
+  <h1>qthe <span>&middot; claim dashboard</span></h1>
+  <p class="sub">kernel sha256 <span class="sha">ef9a3bba0511c780<i>26f30706214e407d362e8972a86f5684d9b16a9e16e3f091</i></span> (qthe.mjs, recomputed from disk at build)<br>
+     generated from the sealed record by <span class="sha">scripts/build_dashboard.mjs</span> (ORCH-C &middot; roadmap phase 34) &middot; deterministic rebuild, no wall-clock inside &middot; zero deps beyond node: builtins</p>
+
+  <div class="panel" id="scoreboard">
+    <h2>scoreboard &middot; LAYER 2 claims priced (6 of 6)</h2>
+    <table>
+      <thead><tr><th>claim (gifted corpus)</th><th>verdict</th><th>mechanism &middot; one line, re-derivable from the kernel</th><th>priced by</th><th>chain tip</th><th>links</th></tr></thead>
+      <tbody>
+      <tr>
+        <td class="claim"><b>C1</b> &quot;25% gain of function&quot; intra-cell timbre vs inter-cell porting</td>
+        <td class="v g">LIVES<span class="d">measured 47.40% bytes-gain, founder's 25% understated</span></td>
+        <td class="mech">one packed-byte read yields both the operator (τ = c&gt;&gt;6) and the operand (d = c&amp;63) — the Moore-8 gather in tick() costs 9 reads + 1 write per cell per tick.</td>
+        <td class="dim">E-Q13 (ORCH-1)</td>
+        <td class="tip" title="stone-v1 chain tip — full d852e6ac37f6d46f190d23e662cf682a5192756ff78f17c31ab570ed603546b3">d852e6ac37f6d46f</td>
+        <td class="num">25</td>
+      </tr>
+      <tr>
+        <td class="claim"><b>C2</b> wormhole (Abstain) beats graph-traversal for non-local alignment</td>
+        <td class="v g">LIVES<span class="d">8/8 ON vs 0/20 OFF</span></td>
+        <td class="mech">under SPEC L1 s5, local influence cannot propagate through Ground cells — they contribute nothing to their neighbors' accumulators — so two distant Abstain cells are causally disconnected without the table.</td>
+        <td class="dim">E-Q1</td>
+        <td class="tip" title="stone-v1 chain tip — full addc22f9743904cf2382eb89a46bb82c738b5d38b622a0248b1c9fd70d3e7228">addc22f9743904cf</td>
+        <td class="num">25</td>
+      </tr>
+      <tr>
+        <td class="claim"><b>C3</b> σ = log₂(3) is the critical bridge scale</td>
+        <td class="v r">DIES<span class="q"> (honest null on this class)</span><span class="d">full tie, σ monotone-inert</span></td>
+        <td class="mech">on the planted task class the pair members' real accumulator is identically zero (weather cells ≥ 10 away, Ground forwards nothing), so pressure = 0 + resonance·σ has positive sign for every σ &gt; 0.</td>
+        <td class="dim">E-Q2</td>
+        <td class="tip" title="stone-v1 chain tip — full 67e849a585a75c26a9196ea09dcee54c3b9c755de3a67e513e838f6a5fb62120">67e849a585a75c26</td>
+        <td class="num">14</td>
+      </tr>
+      <tr>
+        <td class="claim"><b>C4</b> phase threshold θ &gt; π/4 triggers useful non-local transfer</td>
+        <td class="v r">DIES<span class="d">falsified under the guest's own sealed rule</span></td>
+        <td class="mech">the checkerboard's own Moore-8 physics dominates: every cell sits in a like-signed accumulator field, the flip perturbs its 8 neighbors by −64 net, and the deviation field spreads at the toroidal light-cone (radius 64 = full wrap by tick 64; firstSpreadTick 1) — a genuine cascade, regime CASCADE in all four α pairs including wormhole-OFF.</td>
+        <td class="dim">E-Q7</td>
+        <td class="tip" title="stone-v1 chain tip — full befa0c333c1649324f642fdc720c45787ff159b52f61e232960e6146108f3e68">befa0c333c164932</td>
+        <td class="num">36</td>
+      </tr>
+      <tr>
+        <td class="claim"><b>C5</b> the substrate self-repairs (armor-ring)</td>
+        <td class="v r">DIES<span class="q"> (honest null)</span><span class="d">ring self-dissolves; no repair term exists</span></td>
+        <td class="mech">a Repel ring cell is surrounded by like-timbre Repel neighbors; each subtracts d into its real accumulator (SPEC L1 s5), so pressure &lt; 0 every tick and nextD walks d toward 0 monotonically — one unit per tick, by the rule table.</td>
+        <td class="dim">E-Q5</td>
+        <td class="tip" title="stone-v1 chain tip — full 4425545f66b5e6508c97901943a9aab7839d4a46c96aa269e8ace81fcd386f4c">4425545f66b5e650</td>
+        <td class="num">25</td>
+      </tr>
+      <tr>
+        <td class="claim"><b>C5′</b> repair via injector (one-pager)</td>
+        <td class="v a">STANDS<span class="d">definitional, receipted as such</span></td>
+        <td class="mech">an external injector CAN restore d=55 and the substrate WILL re-erode it deterministically — the restore-then-re-erode curve is now a specified, receipted behavior any downstream system can depend on.</td>
+        <td class="dim">E-Q10</td>
+        <td class="tip" title="stone-v1 chain tip — full 50ddf5f9226d8c847948ea4916c54af6338775bd9f8d42b5bd314063317e6938">50ddf5f9226d8c84</td>
+        <td class="num">24</td>
+      </tr>
+      </tbody>
+    </table>
+    <p class="legend">LIVES <i class="g">priced and held</i> &middot; DIES <i class="r">falsified or honest null — the body is kept</i> &middot; STANDS <i class="a">definitional, receipted as such</i></p>
+    <p class="note">supporting mechanism verdicts (bound the claims, not LAYER 2): E-Q6 slot semantics = S3 live-read row-major LWW (<code>ab4ea196…</code>, 15 links); E-Q8 float-only artifact ESTABLISHED at the exact-zero families (<code>78646460…</code>, 17 links); E-Q9/E-Q11/E-Q12 artifact family-bound, closed-form predicates discharged (content-hash receipts <code>e146ed74…</code> / <code>3306f390…</code>, E-Q9 chainless by registered decision); fixed-point plane R8 conformance + P-B1 falsification (<code>a7f7a552…</code>, 24 links).</p>
+  </div>
+
+  <div class="panel" id="chains">
+    <h2>chain of chains &middot; 14 stone-v1 receipts pinned by fleet-seeds (305 rows)</h2>
+    <table>
+      <thead><tr><th>chain</th><th>rows</th><th>tip (sha256 of chain file)</th><th>probe gate</th></tr></thead>
+      <tbody>
+      <tr>
+        <td class="claim"><b>gates_G0_G6</b> <span class="dim">tests/receipts.jsonl</span></td>
+        <td class="num">10</td>
+        <td class="tip" title="sha256 of the chain file — full 1c92d26fb324d0502c6e422154eab336c37453cd2c2574df63a15b72207a2ed8">1c92d26fb324d050</td>
+        <td class="dim">PG1 &middot; stone &check;</td>
+      </tr>
+      <tr>
+        <td class="claim"><b>crossimpl_py</b> <span class="dim">crossimpl/receipts/crossimpl_chain.jsonl</span></td>
+        <td class="num">11</td>
+        <td class="tip" title="sha256 of the chain file — full f5bd95af2653f3a6b2f86c2d27aed6c97fd145cffc4368cb4f06b8c02e9729c7">f5bd95af2653f3a6</td>
+        <td class="dim">PG1 &middot; stone &check;</td>
+      </tr>
+      <tr>
+        <td class="claim"><b>crossimpl_c</b> <span class="dim">crossimpl/receipts/cimpl_chain.jsonl</span></td>
+        <td class="num">5</td>
+        <td class="tip" title="sha256 of the chain file — full 533a25ef8c2a8346f06d1a7f08d3abfccd4fcef25e87530ddced1db3caf834dd">533a25ef8c2a8346</td>
+        <td class="dim">PG1 &middot; stone &check;</td>
+      </tr>
+      <tr>
+        <td class="claim"><b>fixedpoint_R8</b> <span class="dim">fixedpoint/receipts/fixedpoint_chain.jsonl</span></td>
+        <td class="num">26</td>
+        <td class="tip" title="sha256 of the chain file — full 75987c01dcf8db3ca6f0a5c780a2c580a265775919ccf87f1d034991f1184f71">75987c01dcf8db3c</td>
+        <td class="dim">PG1 &middot; stone &check;</td>
+      </tr>
+      <tr>
+        <td class="claim"><b>e_q1_C2</b> <span class="dim">receipts/e_q1_chain.jsonl</span></td>
+        <td class="num">25</td>
+        <td class="tip" title="sha256 of the chain file — full 0ee2867527c256fda3b9ace441a5d8d7191aec85656b31b2330e9dca0147455e">0ee2867527c256fd</td>
+        <td class="dim">PG1 &middot; stone &check;</td>
+      </tr>
+      <tr>
+        <td class="claim"><b>e_q2_C3</b> <span class="dim">receipts/e_q2_chain.jsonl</span></td>
+        <td class="num">14</td>
+        <td class="tip" title="sha256 of the chain file — full 5576115c75da696b8a8f6789db6672ff175131eb47c9b17eb76cc3af524b4f98">5576115c75da696b</td>
+        <td class="dim">PG1 &middot; stone &check;</td>
+      </tr>
+      <tr>
+        <td class="claim"><b>e_q5_C5</b> <span class="dim">receipts/e_q5_chain.jsonl</span></td>
+        <td class="num">25</td>
+        <td class="tip" title="sha256 of the chain file — full 0bb9040254a871fa51a423bca71baab1afdeb357e7654e60ec0dcb3e344a88a4">0bb9040254a871fa</td>
+        <td class="dim">PG1 &middot; stone &check;</td>
+      </tr>
+      <tr>
+        <td class="claim"><b>e_q6_slots</b> <span class="dim">receipts/e_q6_chain.jsonl</span></td>
+        <td class="num">15</td>
+        <td class="tip" title="sha256 of the chain file — full 3340b0823aabcd7773172c15104397452fdfbef01e006f25ed330dacf98018cc">3340b0823aabcd77</td>
+        <td class="dim">PG1 &middot; stone &check;</td>
+      </tr>
+      <tr>
+        <td class="claim"><b>e_q7_C4</b> <span class="dim">receipts/e_q7_chain.jsonl</span></td>
+        <td class="num">36</td>
+        <td class="tip" title="sha256 of the chain file — full 6a42c3c984982dc89741476c3ed79415c776dff65a24e649f6445c4a9ac41c1d">6a42c3c984982dc8</td>
+        <td class="dim">PG1 &middot; stone &check;</td>
+      </tr>
+      <tr>
+        <td class="claim"><b>e_q8_float_artifact</b> <span class="dim">receipts/e_q8_chain.jsonl</span></td>
+        <td class="num">17</td>
+        <td class="tip" title="sha256 of the chain file — full a3c6a3562dcff7fe0a09230dbf1f604466f6e64108c42fb489c1229a9e75a62d">a3c6a3562dcff7fe</td>
+        <td class="dim">PG1 &middot; stone &check;</td>
+      </tr>
+      <tr>
+        <td class="claim"><b>e_q10_C5i</b> <span class="dim">receipts/e_q10_chain.jsonl</span></td>
+        <td class="num">24</td>
+        <td class="tip" title="sha256 of the chain file — full 6637ce7dfb2d68718cc0a09d13fbe6311d59f52d3a91c8e00264546911f1fc59">6637ce7dfb2d6871</td>
+        <td class="dim">PG1 &middot; stone &check;</td>
+      </tr>
+      <tr>
+        <td class="claim"><b>e_q13_C1</b> <span class="dim">receipts/e_q13_chain.jsonl</span></td>
+        <td class="num">25</td>
+        <td class="tip" title="sha256 of the chain file — full 66d2620314062e687b572955d367de3bd3a7aab8c4000b9cbb28499ae1b8da23">66d2620314062e68</td>
+        <td class="dim">PG1 &middot; stone &check;</td>
+      </tr>
+      <tr>
+        <td class="claim"><b>e_q14_adversarial</b> <span class="dim">receipts/e_q14_chain.jsonl</span></td>
+        <td class="num">70</td>
+        <td class="tip" title="sha256 of the chain file — full 15776ca262837deb885b88f6056e8fb7aadfedc5cc6a57de85f420cc6e4e5b85">15776ca262837deb</td>
+        <td class="dim">PG1 &middot; stone &check;</td>
+      </tr>
+      <tr>
+        <td class="claim"><b>probe_gate</b> <span class="dim">receipts/probe_gate_chain.jsonl</span></td>
+        <td class="num">2</td>
+        <td class="tip" title="sha256 of the chain file — full b617e33386d5a84479fabe295e8ebb57043aec7c1d164f090c7059237b15462c">b617e33386d5a844</td>
+        <td class="dim">self — the gate&rsquo;s own receipt</td>
+      </tr>
+      </tbody>
+    </table>
+    <p class="note">verified by the probe gate — sealed run: <b>PROBE-GATE PASS</b> (scope=all, 0 failed) &middot; PG1 stone 12/12 verified from disk &middot; PG2 tip-pin 14 checked &middot; PG3 tamper control refused the flipped byte &middot; PG4 1000-tick twin probe byte-identical &middot; PG5 112ms / 65MB within 10000ms/512MB.<br>
+    gate scope today: 13 stone chains + 2 content-hash tips (the sealed run covered 12 stone chains — the scope has grown since; rerun the gate to re-seal it). every pin above was recomputed from disk at build time.</p>
+  </div>
+
+  <div class="panel" id="budget">
+    <h2>falsification budget &middot; what the house paid to know</h2>
+    <div class="counts">
+      <div class="count"><b>7</b><span>nulls / falsifications banked</span></div>
+      <div class="count"><b>3</b><span>claims surviving</span></div>
+      <div class="count"><b>5</b><span>defects caught by the discipline itself</span></div>
+      <div class="count p"><b>0</b><span>silent failures</span></div>
+    </div>
+    <h3>crown jewels &middot; banked nulls (mistakes downstream systems will never make)</h3>
+    <ul class="jewels">
+      <li><b>C3 — no critical sigma scale (full tie, monotone-inert)</b> — priced by E-Q2 <span class="dim">(receipts/e_q2_chain.jsonl)</span></li>
+      <li><b>C4 — phase threshold falsified under the guest's own rule</b> — priced by E-Q7 <span class="dim">(receipts/e_q7_chain.jsonl)</span></li>
+      <li><b>C5 — no self-repair; ring self-dissolves (P1/P2/P3 confirmed)</b> — priced by E-Q5 <span class="dim">(receipts/e_q5_chain.jsonl)</span></li>
+      <li><b>P-B1 — fixed-point zero-divergence prediction falsified on 1.6/0.7</b> — priced by fixedpoint <span class="dim">(fixedpoint/findings.md)</span></li>
+      <li><b>E-Q14 B3 — zero-pollution cleanliness falsified (convoy + saturation rail)</b> — priced by E-Q14 <span class="dim">(receipts/e_q14_chain.jsonl)</span></li>
+      <li><b>G4 — hand-computed literal wrong, kernel right (preserved standing)</b> — priced by gates <span class="dim">(tests/receipts.jsonl)</span></li>
+      <li><b>E-Q7 lane expectation — ON/OFF same-regime falsified by own run (nu channel not sign-impotent)</b> — priced by E-Q7 <span class="dim">(commit 55ddced)</span></li>
+    </ul>
+    <p class="note">the reading: 7 banked nulls and 5 caught defects against zero silent failures — every cost converted into a boundary the next system inherits for free. source: docs/FALSIFICATION-BUDGET.md (13 <code>*_chain.jsonl</code> files, 295 rows on disk; the fleet-seeds pin adds the gates chain &rarr; 14 chains, 305 rows).</p>
+  </div>
+
+  <div class="panel" id="verify">
+    <h2>how to verify this page</h2>
+    <p class="note">every number above was parsed from the sealed record and cross-checked at build time (kernel sha &check; qthe.mjs &middot; 6/6 verdicts &check; fleet-seeds scoreboard &middot; 6/6 tips &check; pinned tip files &middot; 14/14 chain pins recomputed from disk &middot; budget accounts &check; their lists). re-derive it yourself, from a fresh clone:</p>
+    <pre><span class="cmd">node scripts/verify_all_chains.mjs</span>     <span class="c"># every stone-v1 chain re-verified from disk (fail-loud)</span>
+<span class="cmd">node scripts/probe_gate.mjs</span>              <span class="c"># PG1-PG5 harness integrity gate (tamper + determinism + bounds)</span>
+<span class="cmd">node scripts/falsification_budget.mjs</span>    <span class="c"># regenerate the falsification-budget ledger from the sealed record</span></pre>
+    <p class="note">then rebuild this page: <code>node scripts/build_dashboard.mjs</code> — deterministic, byte-identical on rerun.</p>
+  </div>
+</main>
+</body>
+</html>
