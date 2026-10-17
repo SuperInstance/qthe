@@ -33,6 +33,7 @@ const caughtDefects = [
   ['E-Q9 primaries comparison-shape defect (caught in-run; full re-run byte-identical)', 'wave 40-c'],
   ['two_reader keeper naive re-hash with wrong canonicalization (corrected by the house verifier)', 'wave 48-b'],
   ['seal_cimpl substring-count bug: summary literal "0 FAIL" sealed a wrong verdict (caught by ORCH-D citation audit; correction row appended, script fixed)', 'ORCH-D'],
+  ['arena-r11 harness: .format() on a prompt containing literal JSON braces -> KeyError mid-round (turn-1 rows stood; resume law made the fix free; disclosed in the run commit)', 'ORCH-R11'],
   ['chain-registry drift: verify_all_chains audited 11/16 stone chains, probe_gate 13/16, fleet-seeds pinned 14/16, budget glob missed the gates chain — E-Q15/E-Q16 run commits sealed chains without registering (found by arena-R10 verification; fixed by scripts/chain_registry.mjs single source of truth + PG1 stray-detection)', 'ORCH-R10'],
   ['E-Q16 contentionMonotone aggregate compared q()-stringified numbers lexicographically ("353.57" <= "1387.5" is false as strings, 3 > 1) — both sealed verdict rows read "CONTENTION NOT MONOTONE — autopsy" while the sealed scaling data 353.57 → 1387.5 → 5874.11 writes/slot is strictly monotone increasing; caught by PG6 verdict-recomputation on its FIRST run (erratum row erratum.EQ16_contention_string_compare appended to the e_q16 chain, both runners hardened to parse-before-compare)', 'PG6 (ORCH-2b)'],
 ];
