@@ -198,3 +198,113 @@ generated adversarial situations and derived candidates that the
 arithmetic lanes then priced (eq9…eq12 verdicts). Those lanes need
 operator API keys and are documented by their receipts, not re-runnable
 zero-shot.
+
+## Interactive REPL
+
+`scripts/repl.mjs` is a zero-dependency probe bench over the same kernel
+the gates run (loaded via `experiments/_adapter.mjs`, hashed with the
+field lane's canonical `planeHash` from `experiments/_harness.mjs` —
+`w x h@t=…:hex`, sha256). Use it by hand, or pipe commands at it from an
+agent; piped commands are echoed before their output so logs read like a
+session. The only randomness anywhere in the tool is `mulberry32` with an
+explicit seed; same seed → same hash, always (verified across processes).
+
+```bash
+node scripts/repl.mjs                                       # interactive, prompt "qthe> "
+echo -e "new 64 64 twins\nstep 5\nstats\nquit" | node scripts/repl.mjs   # agent mode
+```
+
+| command | what it does |
+|---|---|
+| `help` | list commands |
+| `new W H [pattern] [seed]` | create a substrate; patterns: `empty` (default), `twins` (Abstain d=20 at (8,8)/(W−8,H−8) + attract/repel weather), `checker` (Attract/Repel d=32 by (x+y)%2), `ring` (Repel d=55 at toroidal-Euclid r∈[30,34], Attract d=63 core r≤8; needs W,H ≥ 64), `random SEED` (~70% Ground/10% each other τ, d uniform); prints the t=0 plane hash |
+| `step [N]` | tick N times (default 1; wormholes ON, default σ = log2 3); prints tick count, plane hash, twin-event count (this step + cumulative) and up to 10 events `(t,x,y,slot,resonance,term)` with `term` as a 4-decimal string |
+| `show x y` | one cell: τ name, d, packed byte, row-major index; an Abstain cell also reads wormhole slot `d` via the table |
+| `stats` | dims, ticks, τ census, d min/mean(2dp)/max, table occupancy (n/64) and `totalWrites` |
+| `worm [slot]` | dump the wormhole table — all occupied slots as `(slot, x, y, resonance)`, or just one slot |
+| `events` | ALL twin events from the last tick (`sub.lastEvents`), same format as `step` |
+| `hash` | current plane hash (the canonical formula, so it matches the experiments' receipts) |
+| `save PATH` | write `{w,h,ticks,cells,wormholes,lastEvents}` JSON (the kernel's `traceView` shape; an empty table saves as `null`) |
+| `load PATH` | rebuild from a save — cells + dims, fresh tick counter 0, the table restored only if the save has one; prints before/after hashes and refuses on any plane mismatch |
+| `quit` | exit |
+
+Bad input fails loud (`new 0 64`, `show` out of bounds, `step` with no
+substrate, a seed on a non-`random` pattern, a corrupt save): the error is
+printed, the session stays alive, and the process exit code is 1 — a
+misbehaving piped run is visibly wrong.
+
+### Example: twins resonate
+
+```console
+$ echo -e "new 64 64 twins\nstep 5\nstats\nworm\nshow 8 8\nhash\nquit" | node scripts/repl.mjs
+[qthe repl] kernel=real (qthe/qthe.mjs) — 'help' lists commands
+qthe> new 64 64 twins
+new substrate 64x64 pattern=twins (Abstain d=20 twins at (8,8)/(W-8,H-8), Attract d=40 + Repel d=30 weather)
+plane hash (t=0): a4c8941f3a32b8071044f3384b7cb3b8c28fccb4ee3bf123598b6064939ca1a4
+qthe> step 5
+tick=5 hash=03417f1bb04a6c2090aed26051b76b9aafe233fd2b259d7b8ad7a12d3eeb6ca6
+twin events: 6 this step (6 cumulative)
+  (t=1,x=56,y=56,slot=20,resonance=1,term=1.5850)
+  (t=2,x=8,y=8,slot=20,resonance=1,term=1.5850)
+  (t=3,x=8,y=8,slot=21,resonance=1,term=1.5850)
+  (t=3,x=56,y=56,slot=21,resonance=1,term=1.5850)
+  (t=4,x=56,y=56,slot=22,resonance=1,term=1.5850)
+  (t=5,x=8,y=8,slot=22,resonance=1,term=1.5850)
+qthe> stats
+substrate: 64x64 ticks=5
+tau census: Ground=4092 Attract=1 Repel=1 Abstain=2
+d: min=0 mean=0.04 max=40
+wormhole table: 4/64 slots occupied, totalWrites=10
+qthe> worm
+wormhole table (sigma=1.584962500721156, 4/64 occupied, totalWrites=10):
+  slot 20: (x=8,y=8) resonance=1
+  slot 21: (x=56,y=56) resonance=1
+  slot 22: (x=8,y=8) resonance=1
+  slot 23: (x=56,y=56) resonance=1
+qthe> show 8 8
+cell (8,8) index=520 byte=0xd7 (215) tau=3 Abstain d=23
+wormhole slot 23: (x=56,y=56) resonance=1
+qthe> hash
+plane hash (t=5): 03417f1bb04a6c2090aed26051b76b9aafe233fd2b259d7b8ad7a12d3eeb6ca6
+qthe> quit
+```
+
+The twins lockstep through slots 20→21→22 as their `d` climbs 20→23,
+one imaginary `term = 1·log2(3)` per hit — the C2 mechanism, watchable
+by hand.
+
+### Example: save / load round-trip
+
+```console
+$ echo -e "new 32 32 checker\nstep 3\nstats\nsave /tmp/qthe_repl_test.json\nload /tmp/qthe_repl_test.json\nhash\nquit" | node scripts/repl.mjs
+[qthe repl] kernel=real (qthe/qthe.mjs) — 'help' lists commands
+qthe> new 32 32 checker
+new substrate 32x32 pattern=checker (Attract/Repel d=32 by (x+y)%2)
+plane hash (t=0): 3ef51c7d4677fe55d1a6a38b1a2ec00d31771965b3588c4c664aa761c3291b41
+qthe> step 3
+tick=3 hash=d07aeb9d4c65300a1e5080c807b4149b1f95c399d1f1305cc25d618fbdb8a29e
+twin events: 0 this step (0 cumulative)
+qthe> stats
+substrate: 32x32 ticks=3
+tau census: Ground=0 Attract=512 Repel=512 Abstain=0
+d: min=32 mean=32.00 max=32
+wormhole table: 0/64 slots occupied, totalWrites=0
+qthe> save /tmp/qthe_repl_test.json
+saved /tmp/qthe_repl_test.json (w=32 h=32 t=3 cells=1024 wormholeSlots=0 lastEvents=0 bytes=3652)
+qthe> load /tmp/qthe_repl_test.json
+loaded /tmp/qthe_repl_test.json (w=32 h=32 cells=1024 wormholeSlots=0 lastEvents=0)
+hash before rebuild (t=3): d07aeb9d4c65300a1e5080c807b4149b1f95c399d1f1305cc25d618fbdb8a29e
+hash after rebuild  (t=3): d07aeb9d4c65300a1e5080c807b4149b1f95c399d1f1305cc25d618fbdb8a29e
+plane byte-identity: CONFIRMED (ticks reset to 0)
+qthe> hash
+plane hash (t=0): 3ef51c7d4677fe55d1a6a38b1a2ec00d31771965b3588c4c664aa761c3291b41
+qthe> quit
+```
+
+Note the checkerboard is a fixed point — every cell sees four Attract and
+four Repel neighbors at d=32, net pressure zero — so the t=0 and t=3
+planes carry the same bytes (their hashes differ only in the `@t=` field,
+which is the canonical formula doing its job). A save from a substrate
+with an occupied wormhole table also round-trips: the table is rebuilt
+slot-by-slot from the snapshot and the twin schedule continues exactly
+where it left off.

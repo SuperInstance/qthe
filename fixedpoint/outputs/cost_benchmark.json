@@ -1,0 +1,62 @@
+{
+ "benchmark": "cost-of-exactness (ORCH-6)",
+ "workload": {
+  "w": 64,
+  "h": 64,
+  "T": 400,
+  "reps": 5,
+  "seeds": [
+   33001,
+   33002
+  ],
+  "task": "E-Q1 twin-delivery class, wormholes ON (default sigma path)"
+ },
+ "timing": {
+  "float": {
+   "perRunMs": "19.61",
+   "msPerTickPer1kCells": "0.012",
+   "medians": [
+    "19.05",
+    "19.61"
+   ]
+  },
+  "fixed": {
+   "perRunMs": "19.12",
+   "msPerTickPer1kCells": "0.0117",
+   "medians": [
+    "18.92",
+    "19.12"
+   ]
+  }
+ },
+ "ratioFixedOverFloat": "0.975",
+ "semanticReverification": {
+  "swept": [
+   {
+    "sigma": "0.5",
+    "planesIdentical": true
+   },
+   {
+    "sigma": "1",
+    "planesIdentical": true
+   },
+   {
+    "sigma": "log2(3)",
+    "planesIdentical": true
+   },
+   {
+    "sigma": "2",
+    "planesIdentical": true
+   },
+   {
+    "sigma": "4",
+    "planesIdentical": true
+   }
+  ],
+  "coupled23": {
+   "firstDivergenceTick": "null",
+   "expected": "diverges (the frozen coupled boundary)"
+  }
+ },
+ "note": "timings are wall-clock medians, receipted as strings; semantic checks are plane-hash booleans on this machine"
+}

@@ -1,0 +1,38 @@
+{
+ "addendum": "coupled-2/3 on P-B3-style random substrates",
+ "results": [
+  {
+   "seed": 34001,
+   "firstDiv": 3
+  },
+  {
+   "seed": 34002,
+   "firstDiv": 12
+  },
+  {
+   "seed": 34003,
+   "firstDiv": 2
+  },
+  {
+   "seed": 34004,
+   "firstDiv": 19
+  },
+  {
+   "seed": 34005,
+   "firstDiv": 10
+  },
+  {
+   "seed": 34006,
+   "firstDiv": 7
+  },
+  {
+   "seed": 34007,
+   "firstDiv": 10
+  },
+  {
+   "seed": 34008,
+   "firstDiv": 10
+  }
+ ],
+ "divergedOf": "8/8"
+}
