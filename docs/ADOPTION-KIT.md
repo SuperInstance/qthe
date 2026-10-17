@@ -177,9 +177,14 @@ mode:
 - the float plane under adversarial rational σ — the exact-zero families are
   where float holds cells its own scale says should move; use the fixed
   plane there (E-Q8, `fixedpoint/findings.md`);
-- a sealed scaling number for grids beyond the corpus's boards (largest
-  sealed: 128×64) with the fixed 64-slot table — pending the E-Q17 scaling
-  run; unmeasured regimes are never extrapolated (`docs/BOUNDARY-MAP.md`).
+- grid growth as a provenance risk — E-Q17 (ORCH-R12) sealed the ladder
+  64×64/128×128/256×256 with the fixed 64-slot table: provenance loss is
+  writer-population-indexed, not grid-indexed (clean-arm pf medians
+  0.9431/0.9078/0.8973 — a judgment-band drift, 6/10 seed sign test;
+  delivery 640/640; pollution arms saturated at pf 1.0 at every scale).
+  The flat table's WHO-loss is already complete at 64×64; what scales is
+  the writer population, which E-Q16's density regime prices
+  (`docs/BOUNDARY-MAP.md`, E-Q17 chain tip 0d9feae2…).
 
 The first move either way is `docs/DAY-1.md`: ten minutes, every command
 verified on a clean clone, ending at a sealed receipt you checked yourself.

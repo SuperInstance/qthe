@@ -127,7 +127,7 @@
   </div>
 
   <div class="panel" id="chains">
-    <h2>chain of chains &middot; 16 stone-v1 receipts pinned by fleet-seeds (393 rows)</h2>
+    <h2>chain of chains &middot; 17 stone-v1 receipts pinned by fleet-seeds (409 rows)</h2>
     <table>
       <thead><tr><th>chain</th><th>rows</th><th>tip (sha256 of chain file)</th><th>probe gate</th></tr></thead>
       <tbody>
@@ -222,15 +222,21 @@
         <td class="dim">PG1 &middot; stone &check;</td>
       </tr>
       <tr>
+        <td class="claim"><b>e_q17_provenance_scale</b> <span class="dim">receipts/e_q17_chain.jsonl</span></td>
+        <td class="num">13</td>
+        <td class="tip" title="sha256 of the chain file — full cb31dfc9227a926cebac71560cc7ad1d385573dcd8b1b16a702cbdede23acb7d">cb31dfc9227a926c</td>
+        <td class="dim">PG1 &middot; stone &check;</td>
+      </tr>
+      <tr>
         <td class="claim"><b>probe_gate</b> <span class="dim">receipts/probe_gate_chain.jsonl</span></td>
-        <td class="num">11</td>
-        <td class="tip" title="sha256 of the chain file — full 33e4f2d8f797692a7ec3f44e9aa5b859a7133da9881b0c384d508e64f84a148d">33e4f2d8f797692a</td>
+        <td class="num">14</td>
+        <td class="tip" title="sha256 of the chain file — full f13db5e69517483f3c8d37bca9dd01065db6fb3fe0940bf80d1fc301447e6f9e">f13db5e69517483f</td>
         <td class="dim">self — the gate&rsquo;s own receipt</td>
       </tr>
       </tbody>
     </table>
-    <p class="note">verified by the probe gate — sealed run: <b>PROBE-GATE PASS</b> (scope=all, 0 failed) &middot; PG1 stone 16/16 verified from disk &middot; PG2 tip-pin 18 checked &middot; PG3 tamper control refused the flipped byte &middot; PG4 1000-tick twin probe byte-identical &middot; PG5 113ms / 65MB within 10000ms/512MB &middot; PG6 verdict-recompute 14/14 claims re-derived from the sealed outputs.<br>
-    gate scope today: 16 stone chains + 2 content-hash tips (the sealed run covers the full current scope). every pin above was recomputed from disk at build time.</p>
+    <p class="note">verified by the probe gate — sealed run: <b>PROBE-GATE PASS</b> (scope=all, 0 failed) &middot; PG1 stone 17/17 verified from disk &middot; PG2 tip-pin 19 checked &middot; PG3 tamper control refused the flipped byte &middot; PG4 1000-tick twin probe byte-identical &middot; PG5 115ms / 66MB within 10000ms/512MB &middot; PG6 verdict-recompute 23/23 claims re-derived from the sealed outputs.<br>
+    gate scope today: 17 stone chains + 2 content-hash tips (the sealed run covers the full current scope). every pin above was recomputed from disk at build time.</p>
   </div>
 
   <div class="panel" id="budget">
@@ -238,7 +244,7 @@
     <div class="counts">
       <div class="count"><b>7</b><span>nulls / falsifications banked</span></div>
       <div class="count"><b>3</b><span>claims surviving</span></div>
-      <div class="count"><b>8</b><span>defects caught by the discipline itself</span></div>
+      <div class="count"><b>9</b><span>defects caught by the discipline itself</span></div>
       <div class="count p"><b>0</b><span>silent failures</span></div>
     </div>
     <h3>crown jewels &middot; banked nulls (mistakes downstream systems will never make)</h3>
@@ -251,12 +257,12 @@
       <li><b>G4 — hand-computed literal wrong, kernel right (preserved standing)</b> — priced by gates <span class="dim">(tests/receipts.jsonl)</span></li>
       <li><b>E-Q7 lane expectation — ON/OFF same-regime falsified by own run (nu channel not sign-impotent)</b> — priced by E-Q7 <span class="dim">(commit 55ddced)</span></li>
     </ul>
-    <p class="note">the reading: 7 banked nulls and 8 caught defects against zero silent failures — every cost converted into a boundary the next system inherits for free. source: docs/FALSIFICATION-BUDGET.md (16 chain files, 393 rows on disk; fleet-seeds pins 16 chains, 393 rows).</p>
+    <p class="note">the reading: 7 banked nulls and 9 caught defects against zero silent failures — every cost converted into a boundary the next system inherits for free. source: docs/FALSIFICATION-BUDGET.md (17 chain files, 409 rows on disk; fleet-seeds pins 17 chains, 409 rows).</p>
   </div>
 
   <div class="panel" id="verify">
     <h2>how to verify this page</h2>
-    <p class="note">every number above was parsed from the sealed record and cross-checked at build time (kernel sha &check; qthe.mjs &middot; 6/6 verdicts &check; fleet-seeds scoreboard &middot; 6/6 tips &check; pinned tip files &middot; 16/16 chain pins recomputed from disk &middot; budget accounts &check; their lists). re-derive it yourself, from a fresh clone:</p>
+    <p class="note">every number above was parsed from the sealed record and cross-checked at build time (kernel sha &check; qthe.mjs &middot; 6/6 verdicts &check; fleet-seeds scoreboard &middot; 6/6 tips &check; pinned tip files &middot; 17/17 chain pins recomputed from disk &middot; budget accounts &check; their lists). re-derive it yourself, from a fresh clone:</p>
     <pre><span class="cmd">node scripts/verify_all_chains.mjs</span>     <span class="c"># every stone-v1 chain re-verified from disk (fail-loud)</span>
 <span class="cmd">node scripts/probe_gate.mjs</span>              <span class="c"># PG1-PG6 harness integrity gate (tamper + determinism + bounds + verdict-recompute)</span>
 <span class="cmd">node scripts/falsification_budget.mjs</span>    <span class="c"># regenerate the falsification-budget ledger from the sealed record</span></pre>

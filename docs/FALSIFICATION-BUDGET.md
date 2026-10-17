@@ -9,7 +9,7 @@
 
 | account | count |
 |---------|-------|
-| stone-v1 chains on disk | 16 (394 rows total) |
+| stone-v1 chains on disk | 17 (409 rows total) |
 | claims priced (LAYER 2 complete) | 6 of 6 (C1, C2, C3, C4, C5, C5') |
 | claims surviving | 3 |
 | honest nulls / falsifications banked | 7 |

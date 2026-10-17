@@ -376,6 +376,140 @@ const CLAIMS = [
     },
   },
   {
+    id: 'E-Q17-pf-scale-table',
+    source: 'experiments/outputs/e_q17_results.json',
+    cite: 'receipts/e_q17_chain.jsonl · result.EQ17 rows + verdict.EQ17 (tip 0d9feae2…) · docs/BOUNDARY-MAP.md provenance-at-scale row',
+    expected: 'pf (E-Q14 pollutionFraction, upper-median of 10 seeds per scale x arm): clean 0.9431 -> 0.9078 -> 0.8973 at 64/128/256; density and fixed256 saturated at 1.0 at every scale; the 64x64 clean column reproduces E-Q14 family-B zero-pollution bit-exactly',
+    run() {
+      const d = readJson(this.source);
+      const CELLS = [['64x64', 'clean'], ['64x64', 'density'], ['64x64', 'fixed256'], ['128x128', 'clean'], ['128x128', 'density'], ['128x128', 'fixed256'], ['256x256', 'clean'], ['256x256', 'density'], ['256x256', 'fixed256']];
+      const meds = {};
+      for (const [g, a] of CELLS) {
+        // AM2 schema: each (grid, arm) cell aggregates its canonical config's 10
+        // distinct seeds — the 64x64 density/fixed256 coincidence shares ONE
+        // config (nPoll=256), counted once per cell, never pooled across arms.
+        const cfg = (d.configs ?? []).find((c) => c.grid === g && Array.isArray(c.arms) && c.arms.includes(a));
+        if (!cfg) throw new Error(`no canonical config for ${g}/${a}`);
+        const rs = d.runs.filter((r) => r.grid === g && r.nPoll === cfg.nPoll);
+        if (rs.length !== 10) throw new Error(`${g}/${a}: ${rs.length} runs for nPoll=${cfg.nPoll}, expected 10`);
+        for (const r of rs) {
+          if (r.partnerEvents + r.pollutedEvents !== r.pairEvents) throw new Error(`${g}/${a} seed=${r.seed}: partner+polluted != pairEvents (field semantics)`);
+          if (r.determinism !== true) throw new Error(`${g}/${a} seed=${r.seed}: determinism false`);
+        }
+        meds[`${g}|${a}`] = upperMedian(rs.map((r) => num(r.pollutionFraction, 'pollutionFraction')));
+        const sealed = num(d.aggregates[`${g}|${a}`].pfMed, `pfMed ${g}/${a}`);
+        if (Math.abs(sealed - meds[`${g}|${a}`]) > 1e-12) throw new Error(`${g}/${a}: pfMed recomputed ${meds[`${g}|${a}`]} != sealed ${sealed}`);
+      }
+      // the frozen bands' anchors
+      const EXPECT_CLEAN = [0.9431, 0.9078, 0.8973];
+      ['64x64', '128x128', '256x256'].forEach((g, i) => {
+        if (Math.abs(meds[`${g}|clean`] - EXPECT_CLEAN[i]) > 0.001) throw new Error(`${g} clean pfMed ${meds[`${g}|clean`]} outside ${EXPECT_CLEAN[i]}±0.001`);
+        if (meds[`${g}|density`] !== 1) throw new Error(`${g} density pfMed ${meds[`${g}|density`]} != 1 (saturation)`);
+        if (meds[`${g}|fixed256`] !== 1) throw new Error(`${g} fixed256 pfMed ${meds[`${g}|fixed256`]} != 1 (saturation)`);
+      });
+      // the calibration reproduction: 64x64 clean per-seed pf strings are
+      // BIT-IDENTICAL to E-Q14's sealed family-B zero-pollution arm
+      const e14 = readJson('experiments/outputs/e_q14_results.json');
+      const e14zero = e14.familyB.filter((b) => b.nPoll === 0);
+      const mine = d.runs.filter((r) => r.grid === '64x64' && r.nPoll === 0);
+      if (e14zero.length !== 10 || mine.length !== 10) throw new Error('reproduction arrays not 10/10');
+      e14zero.forEach((b, i) => {
+        if (b.seed !== mine[i].seed) throw new Error(`seed order mismatch at ${i}`);
+        if (String(b.pollutionFraction) !== String(mine[i].pollutionFraction)) throw new Error(`seed ${b.seed}: 64x64 clean pf ${mine[i].pollutionFraction} != E-Q14 sealed ${b.pollutionFraction}`);
+      });
+      // chain verdict row agreement (parse-before-compare, never string-compare numbers)
+      const row = lastChainRow('receipts/e_q17_chain.jsonl', (r) => r.kind === 'verdict.EQ17', 'verdict.EQ17');
+      for (const [map, arm] of [['pfMedClean', 'clean'], ['pfMedDensity', 'density'], ['pfMedFixed256', 'fixed256']]) {
+        for (const g of ['64x64', '128x128', '256x256']) {
+          if (Math.abs(num(row[map][g], `${map}[${g}]`) - meds[`${g}|${arm}`]) > 1e-12) throw new Error(`chain verdict ${map}[${g}] != recomputed ${meds[`${g}|${arm}`]}`);
+        }
+      }
+      return { recomputed: `clean ${meds['64x64|clean']} -> ${meds['128x128|clean']} -> ${meds['256x256|clean']} (medians recomputed per cell, exact); density/fixed256 = 1 everywhere; 64x64 clean reproduces E-Q14's sealed arm bit-exactly (10/10 per-seed pf strings identical; chain verdict row agrees)` };
+    },
+  },
+  {
+    id: 'E-Q17-floors-bands',
+    source: 'experiments/outputs/e_q17_results.json',
+    cite: 'receipts/e_q17_chain.jsonl · verdict.EQ17 · experiments/pre_registration_e_q17.json (frozen floors + bands)',
+    expected: 'delivery floor held 640/640 pair-trials; |pf(256,clean) - pf(64,clean)| = 0.0458 -> H0 falsified in the judgment band (0.02 < |Delta| <= 0.05, pollution DOWN = provenance up); FIRE band (verbatim) and MIRROR band both quiet -> hierarchical trigger does NOT fire; occupancy + determinism held',
+    run() {
+      const d = readJson(this.source);
+      const K = d.task.K;
+      if (K !== 8) throw new Error(`K=${K}, expected 8 (EQ17-AM3)`);
+      if (d.runs.length !== 80) throw new Error(`${d.runs.length} runs, expected 80 (8 configs x 10 seeds)`);
+      const deliveredTotal = d.runs.reduce((s, r) => s + r.delivered, 0);
+      const pairTrials = d.runs.length * K;
+      if (deliveredTotal !== 640 || pairTrials !== 640) throw new Error(`delivery ${deliveredTotal}/${pairTrials}, expected 640/640`);
+      if (!d.runs.every((r) => r.delivered === K)) throw new Error('some run delivered < K — floor broken');
+      if (d.floors.deliveryFloorOk !== true || d.floors.deliveredTotalAll !== 640) throw new Error('sealed delivery floor fields disagree');
+      const cell = (g, a) => {
+        const cfg = d.configs.find((c) => c.grid === g && c.arms.includes(a));
+        return upperMedian(d.runs.filter((r) => r.grid === g && r.nPoll === cfg.nPoll).map((r) => num(r.pollutionFraction, 'pf')));
+      };
+      const delta = cell('256x256', 'clean') - cell('64x64', 'clean');
+      if (Math.abs(delta - (-0.045802)) > 0.0005) throw new Error(`deltaClean recomputed ${delta}, expected -0.0458±0.0005`);
+      if (Math.abs(num(d.bands.deltaCleanPf, 'deltaCleanPf') - delta) > 1e-12) throw new Error('sealed deltaCleanPf != recomputed');
+      const H0 = Math.abs(delta) <= 0.02;
+      const fire = { clean: cell('256x256', 'clean') < cell('64x64', 'clean') - 0.05, density: cell('256x256', 'density') < cell('64x64', 'density') - 0.05 };
+      const mirror = { clean: cell('256x256', 'clean') > cell('64x64', 'clean') + 0.05, density: cell('256x256', 'density') > cell('64x64', 'density') + 0.05 };
+      if (H0 !== false) throw new Error(`H0 recomputed ${H0}, expected false (|delta|=${Math.abs(delta)})`);
+      if (fire.clean !== false || fire.density !== false) throw new Error('FIRE band recomputed as fired — expected quiet');
+      if (mirror.clean !== false || mirror.density !== false) throw new Error('MIRROR band recomputed as fired — expected quiet');
+      if (!(Math.abs(delta) > 0.02 && Math.abs(delta) <= 0.05)) throw new Error(`|delta| ${Math.abs(delta)} not in the judgment band (0.02, 0.05]`);
+      if (d.floors.F0 !== true || d.floors.occupancyCapOk !== true || d.floors.pfCalFloorOk !== true) throw new Error('a sealed floor flag is not true');
+      if (d.bands.triggerFires !== false || d.bands.triggerMirror !== false) throw new Error('sealed trigger flags disagree with recomputed bands');
+      if (d.bands.judgmentBand.clean !== true) throw new Error('judgment band clean not true');
+      const row = lastChainRow('receipts/e_q17_chain.jsonl', (r) => r.kind === 'verdict.EQ17', 'verdict.EQ17');
+      if (row.H0 !== false || row.triggerFires !== false || row.triggerMirror !== false) throw new Error('chain verdict band flags disagree');
+      if (row.deliveryFloorOk !== true || row.deliveredTotalAll !== 640 || row.pairTrialsAll !== 640) throw new Error('chain verdict delivery fields disagree');
+      if (Math.abs(num(row.deltaCleanPf, 'chain deltaCleanPf') - delta) > 1e-12) throw new Error('chain verdict deltaCleanPf != recomputed');
+      if (!String(row.verdict).includes('does NOT fire')) throw new Error('chain verdict string does not carry the trigger verdict');
+      if (!String(row.verdict).includes('640/640')) throw new Error('chain verdict string does not carry the delivery number');
+      return { recomputed: `delivery 640/640 (floor held); deltaClean = ${delta.toFixed(6)} -> H0 falsified INSIDE the judgment band (0.02 < |delta| <= 0.05, direction: pollution DOWN at scale); FIRE + MIRROR bands quiet -> trigger does NOT fire; F0/occupancy/calibration floors all held (chain verdict row agrees)` };
+    },
+  },
+  {
+    id: 'E-Q17-contention-population',
+    source: 'experiments/outputs/e_q17_results.json',
+    cite: 'receipts/e_q17_chain.jsonl · result.EQ17 telemetry fields · docs/BOUNDARY-MAP.md grid-scaling + provenance-at-scale rows',
+    expected: 'table load is POPULATION-indexed, not grid-indexed: writes/slot constant across scales at constant population (clean 57.14 with 3,200 writes; fixed256 971.43 with 54,400 writes at 64/128/256) while the density arm scales 971.43 -> 3714.29 -> 14685.71 (~4x per linear doubling)',
+    run() {
+      const d = readJson(this.source);
+      const wps = (g, a) => {
+        const cfg = d.configs.find((c) => c.grid === g && c.arms.includes(a));
+        const rs = d.runs.filter((r) => r.grid === g && r.nPoll === cfg.nPoll);
+        if (rs.length !== 10) throw new Error(`${g}/${a}: ${rs.length} runs`);
+        // per-run writes per occupied slot, the E-Q16 family-C semantics, 2dp rounding
+        return upperMedian(rs.map((r) => Math.round((r.totalWrites / Math.max(r.occupancyFinal, 1)) * 100) / 100));
+      };
+      const writes = (g, a) => {
+        const cfg = d.configs.find((c) => c.grid === g && c.arms.includes(a));
+        return upperMedian(d.runs.filter((r) => r.grid === g && r.nPoll === cfg.nPoll).map((r) => r.totalWrites));
+      };
+      for (const g of ['64x64', '128x128', '256x256']) {
+        for (const a of ['clean', 'density', 'fixed256']) {
+          const sealed = num(d.aggregates[`${g}|${a}`].writesPerOccupiedSlotMed, `wps ${g}/${a}`);
+          if (Math.abs(sealed - wps(g, a)) > 1e-9) throw new Error(`${g}/${a}: writes/slot recomputed ${wps(g, a)} != sealed ${sealed}`);
+          if (d.aggregates[`${g}|${a}`].totalWritesMed !== writes(g, a)) throw new Error(`${g}/${a}: totalWritesMed recomputed ${writes(g, a)} != sealed`);
+        }
+      }
+      // the separation: constant population -> constant load; density -> ~4x per doubling
+      if (!(wps('64x64', 'fixed256') === wps('128x128', 'fixed256') && wps('128x128', 'fixed256') === wps('256x256', 'fixed256'))) {
+        throw new Error(`fixed256 writes/slot not scale-constant: ${wps('64x64', 'fixed256')}/${wps('128x128', 'fixed256')}/${wps('256x256', 'fixed256')}`);
+      }
+      if (wps('64x64', 'clean') !== wps('256x256', 'clean')) throw new Error('clean writes/slot not scale-constant');
+      const dd = [wps('64x64', 'density'), wps('128x128', 'density'), wps('256x256', 'density')];
+      if (!(dd[0] < dd[1] && dd[1] < dd[2])) throw new Error(`density writes/slot not monotone: ${dd.join(' -> ')}`);
+      const ratios = [dd[1] / dd[0], dd[2] / dd[1]];
+      if (!ratios.every((r) => Math.abs(r - 4) < 0.35)) throw new Error(`density scaling not ~4x per doubling: ${ratios.join(', ')}`);
+      // population x T arithmetic: clean = 16 members x 200 ticks at EVERY scale
+      const implied = { '64x64': writes('64x64', 'clean'), '128x128': writes('128x128', 'clean'), '256x256': writes('256x256', 'clean') };
+      if (!Object.values(implied).every((w) => w === 16 * 200)) throw new Error(`clean totalWrites ${JSON.stringify(implied)} != population x T (16 x 200 = 3200)`);
+      if (writes('64x64', 'fixed256') !== 272 * 200 || writes('256x256', 'fixed256') !== 272 * 200) throw new Error('fixed256 totalWrites != 272 writers x 200 ticks');
+      return { recomputed: `writes/slot: clean ${wps('64x64', 'clean')} constant (3,200 writes = 16 members x 200 ticks at every scale); fixed256 ${wps('64x64', 'fixed256')} constant (54,400 = 272 writers x 200); density ${dd.join(' -> ')} (~${ratios.map((r) => r.toFixed(2)).join('x, ')}x per doubling) — the load variable is the writer POPULATION, not the grid` };
+    },
+  },
+  {
     id: 'FPX-cost-ratio',
     source: 'fixedpoint/outputs/cost_benchmark.json',
     cite: 'fixedpoint/receipts/fixedpoint_chain.jsonl · cost_benchmark.ORCH6 · fixedpoint/COST-OF-EXACTNESS.md',

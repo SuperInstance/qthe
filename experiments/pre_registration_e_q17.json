@@ -1,0 +1,96 @@
+{
+  "law": "REGISTRATION of E-Q17 — provenance-correct wormhole at scale (ORCH-R12 lane T3-b). Prices hy4's r10 proposal against HIERARCHICAL-WORMHOLES' second-consumer trigger: E-Q16 already sealed locality + contention at scale; E-Q17's new ground is PROVENANCE at scale — who delivered, not how much. Committed BEFORE ANY RUN (pricing-first); floors and bands frozen; honest null = crown jewel.",
+  "task_id": "ORCH-R12/T3-b",
+  "agent": "t3b-kernel-experimentalist (subagent lane)",
+  "wave": "ORCH-R12",
+  "repo": "SuperInstance/qthe",
+  "repo_at_registration": "08dcb8c",
+  "provenance_of_the_question": {
+    "registration_doc": "docs/discussions/2026-10-18-orch-r12-registration.md — Lane T3-b is the contract (design frozen there: grid ladder, arms, floors, primary null, hierarchical trigger).",
+    "hy4_r10_proposal_verbatim": "From the sealed situations/arena_rows_r10.jsonl row call_id=r10-hy4p-audit (seat hy4p, model tencent/Hy4-preview), field missing_experiment, sealed AS-SAID: {\"name\":\"E-Q17: provenance-correct wormhole at scale\",\"why\":\"Run 256x256/10% Abstain with identity-tagged wormhole writes and assert the rendezvous/non-local demo agrees with the planted twin, not an aliased slot-63/adjacent-d impostor. It prices whether C2's non-local advantage survives at scale and whether the 64-slot table is a hard adoption wall.\"}",
+    "hy4_r10_f1_context_verbatim_excerpt": "same row, finding F1: \"E-Q14's own zero-pollution arm fails its provenance floor (adjacent-d convoy + slot-63 saturation rail), yet C2 and the demos are receipted as working non-local alignment/rendezvous. At 256x256 with 10% Abstain there are ~6553 Abstain cells but only 64 slots (E-Q16 contention 353->5874 writes/slot), so last-writer-wins guarantees massive aliasing\"",
+    "hierarchical_trigger": "docs/HIERARCHICAL-WORMHOLES.md: \"The build trigger is a second live consumer needing provenance under load.\" H1 (registered there, priced here): provenance survives regional congestion (E-Q14's boundary: flat tables lose WHO under drift; region tags restore it at fixed call order).",
+    "prior_sealed_ground": "E-Q14 (receipts/e_q14_chain.jsonl, 70 rows): the twin-delivery task + the pf metric + zero-pollution pfMed 0.9431 at 64x64 (convoy + saturation-rail autopsy, row 70). E-Q16 family C (receipts/e_q16_chain.jsonl): the 64/128/256 ladder, occupancy 56/64 constant, contention 353.6 -> 1387.5 -> 5874.1 writes/slot at 10% Abstain density-scaling."
+  },
+  "design_frozen": {
+    "grid_ladder": ["64x64", "128x128", "256x256"],
+    "table": "the kernel's fixed flat 64-slot WormholeTable (content-addressed, LWW, live row-major reads), sigma = kernel default log2(3). qthe.mjs untouched; the harness passes its own instrumented read-logging wrapper via opts.table (the E-Q14 family-B instrumentation, verbatim semantics).",
+    "task": "E-Q14 family-B twin-delivery task at matched geometry: plantTwinPairs + plantWeather + polluters, theta_del=8, T=200, seeds 77001..77010 (10 trials per scale x arm), determinism rerun x2 from fresh construction.",
+    "pairs": "K=8 twin Abstain pairs HELD CONSTANT across all scales (AMENDED by EQ17-AM3 after the LOUD planting throw: the K=20 default and the pre-registered K=16 fallback are both weather-infeasible at 64x64; K=8 is the maximally E-Q14-matched option — see amendments). Planting is now E-Q14-VERBATIM: distinct d window [8,15] (the plantTwinPairs default), minPairSep=24, minCrossSep=8 (toroidal Chebyshev), weather 2x Attract (d=40,41) + 1x Repel (d=30) >=10 from every pair member, >=4 mutual. Feasibility verified pre-run: K=8 plants on 10/10 seeds at ALL three scales; K=12 fails on 10/10 seeds at 64x64 (the weather wall); K<=11 feasible at 64x64, K=8 chosen for exact E-Q14 calibration. No further fallback: if K=8 ever throws, the geometry itself is the finding and the experiment reports the infeasibility.",
+    "arms_per_scale": {
+      "clean": "0 polluters.",
+      "density": "E-Q14-matched area density = 256 polluters per 4096 cells (E-Q14's heaviest arm, where pf saturated to 1.0): 256 @ 64x64, 1024 @ 128x128, 4096 @ 256x256. Polluter semantics verbatim E-Q14: seeded positions >= 2 toroidal-Chebyshev from every pair member, each carrying one of the pair d values (seeded assignment), so polluters write the same slots the twins use.",
+      "fixed256": "256 polluters at EVERY scale (separates polluter DENSITY from polluter COUNT; at 256x256 this is 0.39% density ~ E-Q14's 16-polluter regime).",
+      "coincidence_receipt": "At 64x64 the density and fixed256 arms coincide (both = 256 polluters): the config runs ONCE and is reported under both arm labels, receipted in the results and chain rows."
+    }
+  },
+  "metric": {
+    "pf_definition": "pf = pollutionFraction = pollutedEvents / pairEvents, EXACTLY E-Q14's field and computation (the code's own `pf` variable): pair-member twin events are matched to the occupant of the slot they read by sequential slot+resonance matching against the tick's live-read log (first unused read in log order, occupant != event cell); occupant == partner -> partnerEvents, everything else INCLUDING null occupant -> pollutedEvents. Same field semantics, same instrumentation, qthe.mjs untouched.",
+    "pf_interpretation_receipt": "The r12 registration cites 'E-Q14 sealed pfMed 0.9431 at zero polluters' as the calibration for the 'provenance floor 0.90' — 0.9431 is E-Q14's pollutionFraction median, so the floor coheres ONLY with pf = pollutionFraction (the complementary provenance fraction at 64x64 clean is 0.0569, which would make the 0.90 floor stillborn). pf is therefore sealed as E-Q14's pollutionFraction. Because the registration's FIRE band reads as a provenance-degradation trigger while pf-as-pollution inverts that reading, BOTH bands are pre-registered (below) and BOTH verdicts reported; the primary null is |Delta| and is reading-independent.",
+    "provFrac_definition": "provFrac = partnerEvents / pairEvents per run (the provenance-CORRECT fraction; per-run complement of pf). Reported beside pf in every aggregate so the record is interpretation-proof.",
+    "median_convention": "pfMed/arm-scale = median over the 10 seeds, numeric sort, UPPER middle (index floor(n/2)) — the corpus convention (e_q13/e_q14/e_q16/verdict_recompute).",
+    "recovery_implementation": "Bucketed-by-(slot,resonance) matching, provably order-equivalent to E-Q14's linear scan (first-unused-in-log-order with occupant != event cell); the runner ASSERTS equivalence against the verbatim E-Q14 linear recovery on every clean arm (full run) and on the first 25 ticks of every polluter arm — any divergence is a LOUD throw, not a silent speedup."
+  },
+  "floors_frozen": {
+    "EQ17_delivery": "delivery floor 100% per arm: every run of every scale x arm delivers ALL 20 pairs (both members' meters >= 8 by T=200). E-Q14 sealed delivery at ceiling (80/80); if delivery ever breaks, that IS the finding, not a failure — escalation row, experiment stands.",
+    "EQ17_pf_calibration": "pf(64x64, clean) median >= 0.90 — reproduces E-Q14's sealed zero-pollution regime (0.9431 at K=8; the K=20 convoy is expected to compress provenance further, not less). Below 0.90 = calibration finding (the K=20 geometry diverges from E-Q14's K=8 regime), receipted as an escalation row; it does NOT void the scale-inert null, which is a within-experiment Delta.",
+    "EQ17_occupancy_cap": "occupiedCount() <= 64 at every checkpoint of every arm (kernel invariant; a violation is a kernel defect finding, experiment VOID).",
+    "EQ17_F0_determinism": "every (scale, arm, seed) runs TWICE from fresh construction — byte-identical checkpoint plane-hash sequences at ticks [0,50,100,150,200], else VOID."
+  },
+  "primary_null_and_bands": {
+    "H0_primary": "provenance is scale-inert: |pfMed(256x256, clean) - pfMed(64x64, clean)| <= 0.02. Reading-independent (the complement preserves |Delta|).",
+    "FIRE_band_verbatim": "the hierarchical trigger FIRES (H1 registered for build) if pfMed(256x256, arm) < pfMed(64x64, arm) - 0.05 on the clean OR density-matched arm — the r12 registration's band, applied verbatim to pf = pollutionFraction.",
+    "MIRROR_band_preregistered": "pfMed(256x256, arm) > pfMed(64x64, arm) + 0.05 on the clean or density-matched arm is the SAME verbatim band under the complementary reading (pf' = provFrac = 1 - pf: pf'(256) < pf'(64) - 0.05) — i.e. provenance DEGRADES at scale, the HIERARCHICAL-WORMHOLES 'flat tables lose WHO' direction. Pre-registered here as a judgment-band escalation: measured, documented, no silent build either way; the verdict names which reading fired which band.",
+    "judgment_band": "any |Delta| in (0.02, 0.05] on clean or density-matched arms: measured, documented, no build — the judgment call gets written down either way (the registration's own words)."
+  },
+  "endpoints": [
+    "pf and provFrac per (scale, arm): per-seed values + medians",
+    "delivery counts per run (delivered/20), full-20 count per cell, total pair-trials",
+    "table telemetry per (scale, arm): final + max occupancy, totalWrites, writesPerOccupiedSlot = totalWrites/finalOccupancy (E-Q16 family-C semantics)",
+    "event counts (pairEvents, partnerEvents, pollutedEvents) per run",
+    "determinism verdict per run; plane-hash checkpoints at [0,50,100,150,200]"
+  ],
+  "planned_analysis": "Per (scale, arm): medians + per-seed spread of pf and provFrac; the three scale Deltas on clean and density arms against the frozen bands; the fixed-256 arm read as the density-vs-count separation (its per-slot writer population is scale-constant by construction, so a scale-inert pf there + E-Q16's density-scaling contention together pin the load variable to WRITERS PER SLOT, not grid size); telemetry table; delivery floor check; H1 verdict for HIERARCHICAL-WORMHOLES (trigger fired / not fired / judgment band, per band definition).",
+  "consult_plan": {
+    "seat": "ByteDance/Seed-2.0-mini (the designated devil's advocate; ATTACK-briefed per the r11 Seed law — an audit-briefed Seed converges to the mean), max_tokens 10000 (r11 learning: Seed drew 6.7k at an 8k cap on attack rounds), temperature 0.3, ONE call, ceiling $0.03.",
+    "briefing": "the pre-registration JSON plus the strongest-attacks contract: metric validity, floor choices, seed/pair-count confounds, pollution-density matching, anything that could make the result uninterpretable.",
+    "seal": "situations/e_q17_design_attack.jsonl — AS-SAID (verbatim content_raw, declared parse_method, model served, usage with cached_tokens + cache field path, USD at provider prices, latency, call_id, resume-safe).",
+    "disposition_law": "every attack either CHANGES the design (receipted as an amendment in this file BEFORE the run) or is REFUTED (receipted in this file). No silent ignoring."
+  },
+  "receipt_discipline": "one stone-v1 chain receipts/e_q17_chain.jsonl (append-only, verify-from-disk, refuse-if-broken, seal-time registration law); raw data experiments/outputs/e_q17_results.json; tip experiments/outputs/e_q17_tip.txt; verdict experiments/outputs/e_q17_verdict.md; floats only as receipted strings (q()).",
+  "kernel_contact_rules": "CR3 honored: tick(), makeSubstrate, WormholeTable, mulberry32 only; instrumented read-wrapper via opts.table (write path untouched); seeded rng only, no wall-clock inside sealed outputs, no Math.random; fail-loud throws everywhere.",
+  "registered_before_run": "YES — no E-Q17 tick has executed at the time this file (plus its receipted amendments) lands. The r12 registration commit 08dcb8c froze this design in prose before the lane started; git history is the witness.",
+  "consult_outcome": {
+    "seat": "ByteDance/Seed-2.0-mini (tavern call r12-eq17-seed20mini-designattack, ATTACK-briefed per the r11 Seed law)",
+    "sealed_as_said": "situations/e_q17_design_attack.jsonl — 6 attacks (2 critical, 3 major, 1 minor), direct JSON parse, finish stop, 4,663 prompt / 9,472 completion tokens, $0.004255 at provider prices, 70.8 s latency, zero cache hit (single-call round, structurally cold — receipted).",
+    "pre_consult_sha256": "7f6a093463894d31a66c366d48b3059da534980dae2791d027a30075ec66d231 (this file's v1, before any amendment)",
+    "dispositions": {
+      "A1_critical_population_vs_density": "REFUTED — the attack assumes 10% Abstain density (the E-Q16-C regime); E-Q17's twin-delivery task plants K=20 pairs HELD CONSTANT across scales, so the clean arm's Abstain population (and writes/slot) is scale-constant — which is exactly A1's own prescribed fix ('fix total Abstain cell count across scales'), already the frozen design. The density arm scales polluters with area BY DESIGN to match E-Q14's heaviest per-area arm. H0 lives on the clean arm only.",
+      "A2_critical_fixed256_uninterpretable": "REFUTED — the fixed-256 arm's variation IS the pre-registered discriminator: its polluter COUNT (hence writers per pair-slot) is scale-constant, so a scale-inert pf there contrasts with E-Q16's density-scaled contention and pins the load variable to writers-per-slot, not grid size. A2's fix (density-match every arm) would destroy the density-vs-count separation the r12 registration froze this arm to make.",
+      "A3_major_d_window_violates_minPairSep": "REFUTED — minPairSep=24 is a SPATIAL constraint (toroidal Chebyshev distance between pair members' grid positions, enforced by plantTwinPairs which throws loudly), not a d-value separation; E-Q14's own 8 pairs used ADJACENT d values (8..15, differing by 1) and the adjacent-d convoy is the sealed B3-autopsy mechanism this experiment calibrates against. The K=20 baseline shift is exactly why the calibration floor is a lower bound (>= 0.90, not == 0.9431) and the primary null is the within-experiment Delta.",
+      "A4_major_delivery_floor_unachievable": "REFUTED — delivery is CONTENT-addressed (E-Q14 sealed 80/80 pair-trials delivered at 256 polluters with pf = 1.0, and family A sealed firers ratio 1.0 at phi = 1.0): more contention means MORE firing, not less — a pair member fires whenever any non-self resonant occupant is in its slot, and the live LWW read almost always finds one once the slot is warm. E-Q16's 5874 writes/slot was the 10%-density regime (6,554 Abstain cells), not this task's 40-cell clean arm. The 100% floor stays frozen; if it breaks, that IS the finding (the registration's words); relaxing a floor post-hoc is the forbidden move.",
+      "A5_major_bucketed_vs_linear_equivalence": "ACCEPTED IN PART — AMENDMENT 1 below strengthens the equivalence law beyond the original receipt: the verbatim E-Q14 linear recovery runs on ALL 64x64 and 128x128 arms (full runs), and on 256x256 the bucketed matcher must survive a per-seed 25-tick prefix equivalence assertion PLUS a full 200-tick cross-check on seed 77001, against the verbatim linear scan, every run. Any divergence is a LOUD throw and the run is void. This executes A5's own falsifier (overlapping slot+resonance events, bucketed vs linear) continuously at scale instead of once.",
+      "A6_minor_coincidence_duplicates_medians": "ACCEPTED AS SCHEMA CLARIFICATION — AMENDMENT 2 below: results are keyed by canonical (grid, nPoll) config with an arm_labels field (at 64x64 the 256-polluter config carries [density, fixed256]); pfMed/provMed are computed strictly per (scale, arm) over that cell's 10 distinct seeds and NEVER pooled across arms or configs, so no data point is counted twice anywhere. The arm coincidence at the base scale is a shared experimental condition, receipted, not a duplicated sample."
+    }
+  },
+  "amendments": [
+    {
+      "id": "EQ17-AM1",
+      "from": "consult attack A5 (Seed-2.0-mini design attack, r12)",
+      "change": "Recovery-equivalence law strengthened: the VERBATIM E-Q14 linear recoverProvenance (first-unused-in-log-order scan) is the recovery of record for every 64x64 and 128x128 run (all arms, full T=200). The 256x256 runs use the bucketed-by-(slot,resonance) matcher (order-equivalent by construction) ONLY behind two live assertions, re-executed every run: (a) per-seed, ticks 1..25: bucketed output must equal the verbatim linear output event-for-event; (b) seed 77001, full T=200: same equality over the whole run. Any divergence throws LOUD and voids the experiment (F0 class).",
+      "why": "A5 challenged whether bucketed matching is semantically identical to E-Q14's linear scan under overlapping slot+resonance traffic; the assertion makes the check continuous instead of a one-off, at zero interpretive cost."
+    },
+    {
+      "id": "EQ17-AM2",
+      "from": "consult attack A6 (Seed-2.0-mini design attack, r12)",
+      "change": "Results schema: per-run rows carry the canonical config (grid, nPoll, seed) plus an arm_labels array; at 64x64 the nPoll=256 config is labeled [density, fixed256] and executed once. Aggregates (pfMed, provMed, delivery, telemetry) are computed per (scale, arm) cell from that cell's 10 distinct seeds; no median or count pools across arms or configs.",
+      "why": "A6 flagged a hypothetical double-count if the coincident 64x64 arms were pooled; the schema makes the impossibility structural (single canonical config key, per-cell aggregation only)."
+    },
+    {
+      "id": "EQ17-AM3",
+      "from": "the LOUD planting throw (the house fail-loud law working as registered) — NOT a consult attack: the runner's pre-run feasibility probe",
+      "change": "K amended 20 -> 8, planting amended to E-Q14-VERBATIM (distinct d window [8,15], minPairSep=24, minCrossSep=8, weather 2x Attract d=40,41 + 1x Repel d=30 at awayFromPairs=10 / mutual=4), held constant across all scales. The original design_frozen.pairs text (K=20, d window [8,27], fallback K=16) is superseded by this amendment; the frozen elements it protects (pair count CONSTANT across scales, E-Q14-matched geometry, no partial mixing) are unchanged or strengthened.",
+      "why": "Measured infeasibility, not post-hoc choice: at 64x64, plantWeather's awayFromPairs=10 exclusion zones around the pair members saturate the torus as K grows — K=12 fails on 10/10 seeds (the first sampleFar/plantWeather budget exhaustion), so the pre-registered K=16 fallback and the brief's K=20 default are both geometrically impossible at the base scale with E-Q14-matched weather. K<=11 is feasible; K=8 is chosen because it is EXACTLY E-Q14's family-B geometry, which upgrades the 64x64 column from 'calibration-ish' to a controlled REPRODUCTION of the sealed E-Q14 arms (clean = E-Q14's zero-pollution arm, pfMed 0.9431; density = E-Q14's 256-polluter arm, pfMed 1.0, delivery 80/80) extended by the 128/256 ladder. Statistical power is not lost: E-Q14 sealed 3,144 pair-events per K=8 run (per-run pf SE ~ 0.004; median over 10 seeds)."
+    }
+  ]
+}

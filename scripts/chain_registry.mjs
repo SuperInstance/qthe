@@ -42,6 +42,7 @@ export const STONE_CHAINS = [
   { path: 'receipts/e_q14_chain.jsonl', gate: 'e_q14', label: 'E-Q14 · adversarial probes', pin: 'e_q14_adversarial' },
   { path: 'receipts/e_q15_chain.jsonl', gate: 'e_q15', label: 'E-Q15 · reweighting probe', pin: 'e_q15_reweighting' },
   { path: 'receipts/e_q16_chain.jsonl', gate: 'e_q16', label: 'E-Q16 · measurement wave', pin: 'e_q16_measurement' },
+  { path: 'receipts/e_q17_chain.jsonl', gate: 'e_q17', label: 'E-Q17 · provenance at scale (ORCH-R12/T3-b)', pin: 'e_q17_provenance_scale' },
   { path: 'receipts/probe_gate_chain.jsonl', gate: 'probe_gate', label: 'probe gate runs', pin: 'probe_gate' },
 ];
 
