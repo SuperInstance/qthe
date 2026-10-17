@@ -1,7 +1,7 @@
 {
  "tool": "qthe two_reader/run.mjs (official runner, installment 2)",
  "lane": "wave 48 lane 48-b",
- "run_at": "2026-09-28T04:11:13.077Z",
+ "run_at": "2026-10-17T17:16:55.996Z",
  "repo_under_verification": "/home/z/my-project/crab-traps",
  "pins_sealed": true,
  "api_spend_usd": 0,
@@ -12,8 +12,14 @@
   "crab46a"
  ],
  "p1": {
-  "all_ok": true,
-  "first_failure": null,
+  "all_ok": false,
+  "first_failure": {
+   "tag": "run1",
+   "chain": "crab45c",
+   "exit": 2,
+   "stderr": "reader: pin table mtime does not match seal.mtime_local (1792251508156.6885 vs 1790613310268) — refusing to walk (fail closed); distribution consumers: pass --mtime-witness (fleet law A4)\n",
+   "first_failure": null
+  },
   "tips": {
    "crab45c": {
     "computed": "f3ed1b63fbce6f8691353d43941746675d6202039c958ac3abb131f3118244aa",
@@ -88,5 +94,5 @@
   "bad_imports": [],
   "forbidden_symbols_found": []
  },
- "ok": true
+ "ok": false
 }
