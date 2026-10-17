@@ -269,7 +269,7 @@ def fetch_pricing() -> dict:
     return out
 
 
-def call_model(model_id: str, use_temperature: bool = True):
+def call_model(model_id: str, use_temperature: bool = True, max_tokens: int | None = None):
     """One chat completion. Returns (ok, response|error, temp_deviation)."""
     body = {
         "model": model_id,
@@ -277,7 +277,7 @@ def call_model(model_id: str, use_temperature: bool = True):
             {"role": "system", "content": SYSTEM_PREFIX},
             {"role": "user", "content": USER_TURN},
         ],
-        "max_tokens": MAX_TOKENS,
+        "max_tokens": max_tokens or MAX_TOKENS,
         "stream": False,
     }
     if use_temperature:
@@ -369,22 +369,24 @@ def cmd_pricing() -> None:
         print(f"{mid:44s} {i!s:>7s} {o!s:>7s} {c!s:>7s} {disc:>9s}")
 
 
-def cmd_run(only: str | None) -> None:
+def cmd_run(only: str | None, max_tokens: int | None = None, seat_suffix: str = "") -> None:
     print(f"prefix sha256: {PREFIX_SHA256}")
     print(f"prefix chars: {len(SYSTEM_PREFIX)} (~{len(SYSTEM_PREFIX)//4} tokens)")
+    if max_tokens:
+        print(f"amendment budget: max_tokens {max_tokens} (default {MAX_TOKENS})")
     pricing_table = fetch_pricing()
     done = load_done()
     for short, mid in MODELS:
         if only and mid != only:
             continue
-        call_id = f"{ROUND}-{short}-audit"
+        call_id = f"{ROUND}-{short}{seat_suffix}-audit"
         if call_id in done:
             print(f"skip {call_id} (already sealed)")
             continue
         pricing = pricing_table.get(mid, {}).get("pricing") or {}
         print(f"call {call_id} [{mid}] temp {TEMP} ...", flush=True)
         t0 = time.time()
-        r, err, temp_dropped = call_model(mid)
+        r, err, temp_dropped = call_model(mid, max_tokens=max_tokens)
         elapsed = int((time.time() - t0) * 1000)
         row = {
             "round": ROUND,
@@ -395,11 +397,18 @@ def cmd_run(only: str | None) -> None:
             "model_served": None,
             "temperature": TEMP,
             "temperature_effective": None if temp_dropped else TEMP,
-            "max_tokens": MAX_TOKENS,
+            "max_tokens": max_tokens or MAX_TOKENS,
             "prompt_hash": sha(USER_TURN),
             "prefix_sha256": PREFIX_SHA256,
             "sealed_at": now(),
         }
+        if seat_suffix:
+            row["amendment_of"] = f"{ROUND}-{short}-audit"
+            row["amendment_note"] = (
+                "original call exhausted the reasoning budget (parse failed at "
+                "max_tokens=6000); amendment reruns the identical task at a higher "
+                "budget; BOTH rows stand in the ledger"
+            )
         if r.get("ok"):
             j = r["j"]
             msg = (j.get("choices") or [{}])[0].get("message") or {}
@@ -560,20 +569,26 @@ def write_econ(pricing_table: dict | None = None) -> None:
 def main() -> None:
     args = sys.argv[1:]
     if not args:
-        print("usage: python3 arena_deepinfra.py pricing|run|econ [--model ID]")
+        print("usage: python3 arena_deepinfra.py pricing|run|econ [--model ID] [--max-tokens N] [--seat-suffix S]")
         sys.exit(1)
     cmd = args[0]
     only = None
+    max_tokens = None
+    seat_suffix = ""
     if "--model" in args:
         only = args[args.index("--model") + 1]
+    if "--max-tokens" in args:
+        max_tokens = int(args[args.index("--max-tokens") + 1])
+    if "--seat-suffix" in args:
+        seat_suffix = args[args.index("--seat-suffix") + 1]
     if cmd == "pricing":
         cmd_pricing()
     elif cmd == "run":
-        cmd_run(only)
+        cmd_run(only, max_tokens=max_tokens, seat_suffix=seat_suffix)
     elif cmd == "econ":
         write_econ()
     else:
-        print("usage: python3 arena_deepinfra.py pricing|run|econ [--model ID]")
+        print("usage: python3 arena_deepinfra.py pricing|run|econ [--model ID] [--max-tokens N] [--seat-suffix S]")
         sys.exit(1)
 
 
