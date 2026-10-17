@@ -140,7 +140,13 @@ for (const [w, h] of [[64, 64], [128, 128], [256, 256]]) {
     localityRatioVs64: q(Math.round((firingsPerCell / baseFiringsPerCell) * 1000) / 1000) });
   console.log(`  ${w}x${h}: det=${detOk} occ=${r1.occ}/64 firings=${r1.firings} firers=${r1.firers} contention=${contention.toFixed(1)} localityVs64=${(firingsPerCell / baseFiringsPerCell).toFixed(3)}`);
 }
-const contentionMonotone = scaleRows[0].contentionWritesPerSlot <= scaleRows[1].contentionWritesPerSlot && scaleRows[1].contentionWritesPerSlot <= scaleRows[2].contentionWritesPerSlot;
+// PG6 (ORCH-2b) fix: PARSE BEFORE COMPARING — contentionWritesPerSlot is
+// q()-stringified for chain safety and JS compares strings LEXICOGRAPHICALLY
+// ("353.57" <= "1387.5" is false as strings), which sealed a wrong
+// contentionMonotone:false on run 1 AND run 2. Erratum row:
+// erratum.EQ16_contention_string_compare (append-only); the data rows stand.
+const cNum = (r) => parseFloat(r.contentionWritesPerSlot);
+const contentionMonotone = cNum(scaleRows[0]) <= cNum(scaleRows[1]) && cNum(scaleRows[1]) <= cNum(scaleRows[2]);
 const localityBreaks = scaleRows.filter((r) => r.localityRatioVs64 < 0.5).map((r) => r.grid);
 rows.push({ kind: 'result.C', experiment: 'E-Q16', family: 'C', scaling: scaleRows, contentionMonotone, localityBreaks,
   verdict: localityBreaks.length ? `LOCALITY BREAKS at ${localityBreaks.join(', ')}` : 'locality holds to 256x256 at 10% Abstain (fixed 64 slots)' });

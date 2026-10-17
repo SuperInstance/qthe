@@ -269,8 +269,8 @@ ${scoreRows}
 ${chainRows}
       </tbody>
     </table>
-    <p class="note">verified by the probe gate — sealed run: <b>${esc(gateRun.verdict)}</b> (scope=${esc(gateRun.scope)}, ${gateRun.failed} failed) &middot; PG1 stone ${g.PG1_STONE.verified}/${g.PG1_STONE.chains} verified from disk &middot; PG2 tip-pin ${g.PG2_TIP_PIN.checked} checked &middot; PG3 tamper control ${g.PG3_NEGATIVE.refused ? 'refused the flipped byte' : 'ACCEPTED A TAMPERED CHAIN'} &middot; PG4 ${g.PG4_DETERMINISM.ticks}-tick twin probe byte-identical &middot; PG5 ${g.PG5_BOUNDS.elapsedMs}ms / ${g.PG5_BOUNDS.rssMb}MB within ${esc(g.PG5_BOUNDS.ceilings)}.<br>
-    gate scope today: ${gateStone.size} stone chains + ${gateContent.size} content-hash tips (the sealed run covered ${g.PG1_STONE.chains} stone chains — the scope has grown since; rerun the gate to re-seal it). every pin above was recomputed from disk at build time.</p>
+    <p class="note">verified by the probe gate — sealed run: <b>${esc(gateRun.verdict)}</b> (scope=${esc(gateRun.scope)}, ${gateRun.failed} failed) &middot; PG1 stone ${g.PG1_STONE.verified}/${g.PG1_STONE.chains} verified from disk &middot; PG2 tip-pin ${g.PG2_TIP_PIN.checked} checked &middot; PG3 tamper control ${g.PG3_NEGATIVE.refused ? 'refused the flipped byte' : 'ACCEPTED A TAMPERED CHAIN'} &middot; PG4 ${g.PG4_DETERMINISM.ticks}-tick twin probe byte-identical &middot; PG5 ${g.PG5_BOUNDS.elapsedMs}ms / ${g.PG5_BOUNDS.rssMb}MB within ${esc(g.PG5_BOUNDS.ceilings)}${g.PG6_VERDICT_RECOMPUTE ? ` &middot; PG6 verdict-recompute ${g.PG6_VERDICT_RECOMPUTE.passed}/${g.PG6_VERDICT_RECOMPUTE.claims} claims re-derived from the sealed outputs` : ' &middot; PG6 not in the sealed run — rerun the gate to seal it'}.<br>
+    gate scope today: ${gateStone.size} stone chains + ${gateContent.size} content-hash tips${gateStone.size === g.PG1_STONE.chains ? ' (the sealed run covers the full current scope)' : ` (the sealed run covered ${g.PG1_STONE.chains} stone chains — the scope has grown since; rerun the gate to re-seal it)`}. every pin above was recomputed from disk at build time.</p>
   </div>
 
   <div class="panel" id="budget">
@@ -285,14 +285,14 @@ ${chainRows}
     <ul class="jewels">
 ${jewelItems}
     </ul>
-    <p class="note">the reading: ${nullsBanked} banked nulls and ${defectsCaught} caught defects against zero silent failures — every cost converted into a boundary the next system inherits for free. source: docs/FALSIFICATION-BUDGET.md (${diskChains} <code>*_chain.jsonl</code> files, ${diskRows} rows on disk; the fleet-seeds pin adds the gates chain &rarr; ${nChains} chains, ${pinnedRows} rows).</p>
+    <p class="note">the reading: ${nullsBanked} banked nulls and ${defectsCaught} caught defects against zero silent failures — every cost converted into a boundary the next system inherits for free. source: docs/FALSIFICATION-BUDGET.md (${diskChains} chain files, ${diskRows} rows on disk; fleet-seeds pins ${nChains} chains, ${pinnedRows} rows${diskRows === pinnedRows ? '' : ' — regenerate both from the same disk state to reconcile'}).</p>
   </div>
 
   <div class="panel" id="verify">
     <h2>how to verify this page</h2>
     <p class="note">every number above was parsed from the sealed record and cross-checked at build time (kernel sha &check; qthe.mjs &middot; 6/6 verdicts &check; fleet-seeds scoreboard &middot; 6/6 tips &check; pinned tip files &middot; ${nChains}/${nChains} chain pins recomputed from disk &middot; budget accounts &check; their lists). re-derive it yourself, from a fresh clone:</p>
     <pre><span class="cmd">node scripts/verify_all_chains.mjs</span>     <span class="c"># every stone-v1 chain re-verified from disk (fail-loud)</span>
-<span class="cmd">node scripts/probe_gate.mjs</span>              <span class="c"># PG1-PG5 harness integrity gate (tamper + determinism + bounds)</span>
+<span class="cmd">node scripts/probe_gate.mjs</span>              <span class="c"># PG1-PG6 harness integrity gate (tamper + determinism + bounds + verdict-recompute)</span>
 <span class="cmd">node scripts/falsification_budget.mjs</span>    <span class="c"># regenerate the falsification-budget ledger from the sealed record</span></pre>
     <p class="note">then rebuild this page: <code>node scripts/build_dashboard.mjs</code> — deterministic, byte-identical on rerun.</p>
   </div>

@@ -171,7 +171,12 @@ for (const nPoll of [0, 16, 64, 256]) {
 }
 const bMed = (nPoll, f) => { const vs = B.filter((b) => b.nPoll === nPoll && b[f] !== null).map((b) => b[f]).sort((x, y) => x - y); return vs.length ? vs[Math.floor(vs.length / 2)] : null; };
 const pfMed = (nPoll) => bMed(nPoll, 'pollutionFraction');
-const B1 = (pfMed(0) ?? 0) <= (pfMed(16) ?? 0) && (pfMed(16) ?? 0) <= (pfMed(64) ?? 0) && (pfMed(64) ?? 0) <= (pfMed(256) ?? 0);
+// PG6 (ORCH-2b) hardening: PARSE BEFORE COMPARING — pfMed returns q()-stringified
+// floats and JS compares strings lexicographically. Benign at seal time only
+// because the digit patterns happened to sort correctly (the e_q16 contention
+// aggregate was NOT so lucky — see erratum.EQ16_contention_string_compare).
+const pfN = (n) => parseFloat(pfMed(n) ?? 0);
+const B1 = pfN(0) <= pfN(16) && pfN(16) <= pfN(64) && pfN(64) <= pfN(256);
 const B2delivered = B.filter((b) => b.nPoll === 256).reduce((s, b) => s + b.delivered, 0);
 const B2 = B.filter((b) => b.nPoll === 256).filter((b) => b.delivered === 8).length >= 8;
 const B3 = B.filter((b) => b.nPoll === 0).every((b) => b.pollutedEvents === 0)

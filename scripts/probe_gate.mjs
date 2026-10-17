@@ -18,6 +18,13 @@
 //                   byte-identical plane-hash sequence
 //   PG5 BOUNDS      resource bounds of the PG4 probe: wall-clock and peak
 //                   RSS within declared ceilings (10 s / 512 MB)
+//   PG6 VERDICT-    soundness (Ling's r10 gap, made operational): the corpus's
+//     RECOMPUTE     headline arithmetic is re-derived from the sealed results
+//                   files and diffed against the curated claims table in
+//                   scripts/verdict_recompute.mjs AND the sealed chain
+//                   verdict rows — integrity without soundness is a rumor
+//                   with a hash on it (first run caught the E-Q16
+//                   contentionMonotone string-compare defect)
 //
 // Usage: node scripts/probe_gate.mjs            (corpus-wide gate)
 //        node scripts/probe_gate.mjs e_q13      (single experiment scope)
@@ -25,6 +32,7 @@ import { linkStone } from '../experiments/_stone_link.mjs';
 import { appendAndVerify, planeHash } from '../experiments/_harness.mjs';
 import { loadKernel, makeSubstrate, tick, mulberry32, bytePlane } from '../experiments/_adapter.mjs';
 import { STONE_CHAINS as REGISTRY, CONTENT_TIPS as TIP_REGISTRY, strayChainFiles } from './chain_registry.mjs';
+import { runVerdictRecompute } from './verdict_recompute.mjs';
 import { existsSync, readFileSync, writeFileSync, mkdtempSync, rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join, dirname } from 'node:path';
@@ -142,6 +150,17 @@ const pass = (section, detail) => { results.sections[section] = { pass: true, ..
   else pass('PG4_DETERMINISM', { ticks: T, checkpoints: runA.length, finalHash: runA[runA.length - 1].slice(0, 16) + '…' });
   if (elapsedMs > 10000 || rss > 512 * 1024 * 1024) fail('PG5_BOUNDS', `elapsed=${elapsedMs}ms rss=${rss}`);
   else pass('PG5_BOUNDS', { elapsedMs, rssMb: Math.round(rss / 1048576), ceilings: '10000ms/512MB' });
+}
+
+// ── PG6 VERDICT-RECOMPUTE (soundness) ──────────────────────────────────────
+{
+  // ORCH-2b: the gates proved INTEGRITY (hashes re-verify, tamper refused),
+  // never SOUNDNESS (verdicts recompute from their sealed traces). The same
+  // curated claims table as the standalone checker — imported, never
+  // duplicated. Detail stays integer/string-only (no floats in chains).
+  const r = runVerdictRecompute();
+  if (r.failed > 0) fail('PG6_VERDICT_RECOMPUTE', `${r.failed}/${r.claims.length} claims failed recomputation: ${r.failures.join('; ')}`);
+  else pass('PG6_VERDICT_RECOMPUTE', { claims: r.claims.length, passed: r.passed });
 }
 
 // ── seal ───────────────────────────────────────────────────────────────────

@@ -17,6 +17,7 @@
 | `demo/` | `a2ui.mjs` (the mirror driver), `sha256.mjs` (pure-JS sha256, G0), `smoke/` (browser smoke checklist + screenshots + `verify-hud-sha.mjs`). |
 | `index.html` | The A2UI live mirror (zero deps, inline styles, inline favicon). |
 | `scripts/reseal-registration.mjs` | Registration reseal helper (mtime-bound seals). |
+| `scripts/verdict_recompute.mjs` | PG6 standalone: recomputes the corpus's headline arithmetic from the sealed results files and diffs it against the curated claims table + the sealed chain verdict rows (fail-loud, exit 1; imported by the probe gate — the table is never duplicated). |
 | `docs/` | Wave-69 documentation layer (this package). |
 
 ## Core concepts
@@ -173,7 +174,7 @@ Sections and what they protect:
 | PG3 NEGATIVE | a verifier that cannot say NO | tamper a COPY (flip one boolean in a mid-chain row) — `verifyChainFile` must refuse |
 | PG4 DETERMINISM | environment regressions | standing 1000-tick twin probe, run twice, byte-identical |
 | PG5 BOUNDS | runaway experiments | wall-clock + RSS ceilings on the standing probe (10 s / 512 MB) |
-| PG6 VERDICT-RECOMPUTE (registered, not yet built) | integrity without soundness | re-derive a sealed verdict's arithmetic from its sealed trace and diff (origin: ling31f's uncontracted arena-R10 reasoning) |
+| PG6 VERDICT-RECOMPUTE (built, ORCH-2b) | integrity without soundness | `scripts/verdict_recompute.mjs`: 14 curated claims re-derive the corpus's headline arithmetic from the sealed results files and diff against the sealed chain verdict rows (first run caught the E-Q16 contentionMonotone string-compare defect; origin: ling31f's uncontracted arena-R10 reasoning) |
 
 The gate is fail-loud (exit 1) and appends its own sealed row per run —
 `scripts/verify_all_chains.mjs` audits the full chain-of-chains including
@@ -190,9 +191,21 @@ chain-registry drift (defect #7: the E-Q15/E-Q16 run commits sealed chains
 without registering; the auditors had drifted to 11–15 of 16 chains —
 registration is addition, never subtraction).
 
-**PG6 (registered next extension):** the gates prove INTEGRITY (hashes
-re-verify, tamper refused), not SOUNDNESS (verdicts recompute from their
-sealed traces). PG6 will re-derive a verdict's arithmetic from the sealed
-trace hash and diff it against the sealed verdict string. Origin: ling31f's
-uncontracted round-10 reasoning — the auditor that failed the output
-contract supplied the gate's next arm; both facts stand in the ledger.
+**PG6 (built, ORCH-2b):** the gates prove INTEGRITY (hashes re-verify, tamper
+refused), not SOUNDNESS (verdicts recompute from their sealed traces).
+`scripts/verdict_recompute.mjs` closes the gap: a curated claims table (one
+row per headline number — claim id, source file, recompute function, expected
+value, tolerance, citation) re-derives the corpus's arithmetic from the sealed
+results files — the C1 bytes-gain and its traffic model, the C2 ON/OFF split,
+the C3 sigma tie, the E-Q14 aggregates, the E-Q16 scaling numbers, the
+fixed-point cost ratio — and diffs each against the sealed chain verdict
+rows; exit 1 on any mismatch. The probe gate imports the same table as its
+PG6 section, so no verdict is citable without its arithmetic surviving
+recomputation. Origin: ling31f's uncontracted round-10 reasoning — the
+auditor that failed the output contract supplied the gate's next arm; both
+facts stand in the ledger. First run's catch: the E-Q16 contentionMonotone
+aggregate had compared q()-stringified numbers lexicographically
+("353.57" <= "1387.5" is false as strings) — the sealed verdict row read
+"CONTENTION NOT MONOTONE" while the sealed data 353.57 → 1387.5 → 5874.11
+is strictly monotone; erratum row appended to the e_q16 chain, both runners
+hardened to parse-before-compare, defect banked in the falsification budget.
