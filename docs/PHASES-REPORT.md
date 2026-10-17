@@ -62,8 +62,11 @@
 
 ## The three honest gaps (never hidden)
 
-1. **No license.** The single blocker for external adoption — one commit
-   fixes it (named in `qthe-core/LICENSE-NOTE.md`).
+1. ~~**No license.**~~ **RESOLVED (ORCH-R10):** MIT at the repo root +
+   `qthe-core/LICENSE` inside the standalone package (the audit sharpened
+   the bite: the package needs the grant inside). Owner may swap to
+   MIT-0 / Apache-2.0 / BSD-2 with one commit — see
+   `qthe-core/LICENSE-NOTE.md`.
 2. **No physical edge hardware in this environment.** ESP32/Jetson
    measurements are code-delivered and pending (P16/P23/P35/P46 receipt the
    proxy methodology).

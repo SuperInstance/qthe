@@ -42,9 +42,9 @@ writeFileSync(join(CORE, 'package.json'), JSON.stringify({
     '.': './kernel/qthe.mjs',
     './fixed': './kernel/qthe_fixed.mjs',
   },
-  files: ['kernel/', 'c/', 'py/', 'README.md', 'PROVENANCE.txt', 'LICENSE-NOTE.md'],
+  files: ['kernel/', 'c/', 'py/', 'README.md', 'PROVENANCE.txt', 'LICENSE', 'LICENSE-NOTE.md'],
   keywords: ['cellular-automata', 'substrate', 'deterministic', 'ternary', 'wormhole-table', 'quilt'],
-  license: 'SEE LICENSE-NOTE.md',
+  license: 'MIT',
 }, null, 2) + '\n');
 
 console.log('qthe-core assembled:');

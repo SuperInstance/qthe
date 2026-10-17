@@ -236,14 +236,16 @@ the two (§4).
   provenance does not — keep d assignments separated if WHO matters (E-Q14 B).
 - The float plane is unfaithful at adversarial rational σ's exact-zero
   families; the fixed plane is the faithful one there (E-Q8, fixedpoint).
-- The slot table is fixed at 64; no scaling sweep is sealed beyond the
-  corpus's boards (largest: the 128×64 E-Q7 checkerboard) — pending the
-  E-Q17 scaling run.
+- The slot table is fixed at 64; grid scaling is sealed to 256×256 at 10%
+  Abstain (E-Q16-C: per-cell firing grid-invariant — firings/tick/cell
+  1.000/0.983/1.041 across 64/128/256 — while contention rises to ~5,874
+  writes/slot: the table is a capacity-bounded content-addressing structure,
+  not an identity-addressed one).
 - Runtime numbers are measured on one machine class (Node 24, x86_64); the
   C99 port is code-delivered and byte-exact but no physical ESP32/Jetson
   measurement exists (`demos/agent-coordination.mjs` verdict line).
-- The source repository carries no license file at extraction time:
-  source-available, all rights reserved (`qthe-core/LICENSE-NOTE.md`).
+- License: MIT (root `LICENSE`; `qthe-core/LICENSE` ships with the
+  standalone package).
 
 ## 8. Availability
 

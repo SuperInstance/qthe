@@ -14,6 +14,7 @@
     "py/",
     "README.md",
     "PROVENANCE.txt",
+    "LICENSE",
     "LICENSE-NOTE.md"
   ],
   "keywords": [
@@ -24,5 +25,5 @@
     "wormhole-table",
     "quilt"
   ],
-  "license": "SEE LICENSE-NOTE.md"
+  "license": "MIT"
 }

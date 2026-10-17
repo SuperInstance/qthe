@@ -135,12 +135,12 @@ mode:
 
 ## The honest blockers
 
-1. **NO LICENSE YET — the single blocking issue for external adoption.** The
-   source repo carries no license file at extraction time; treat qthe-core as
-   **source-available, all rights reserved**. One commit (add LICENSE)
-   unblocks all downstream adoption; MIT-0/MIT/Apache-2.0/BSD-2 are all
-   compatible with the zero-dependency posture
-   (`qthe-core/LICENSE-NOTE.md`).
+1. ~~**NO LICENSE YET**~~ **RESOLVED (ORCH-R10): MIT.** The repo root
+   carries `LICENSE`, and `qthe-core/LICENSE` ships inside the standalone
+   package (the round-10 audit sharpened that a distribution root needs the
+   grant inside, not only at the repo root). The owner may swap to
+   MIT-0 / Apache-2.0 / BSD-2 with one commit — `qthe-core/LICENSE-NOTE.md`
+   names the option; no receipt pins either file.
 2. **Hardware measurements pending.** The C99 port is code-delivered and
    byte-exact, and ESP32/Jetson-class hardware is the stated deployment
    target — but no physical device run exists in this environment; receipted
