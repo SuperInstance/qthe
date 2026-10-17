@@ -70,11 +70,15 @@ bit:   7  6  5 4 3 2 1 0
 
 | # | claim from the gifted corpus | our test | status |
 |---|------------------------------|----------|--------|
-| C1 | "25% gain of function" from intra-cell timbre vs inter-cell porting | paired arms: same task, 2-byte porting encoding vs 1-byte QTHE encoding; measure bytes-touched + ticks-to-task | **open** |
-| C2 | wormhole (Abstain) beats graph-traversal for non-local alignment | planted twin-resonance tasks; arms = wormhole table ON vs OFF; pre-registered floor on ticks-to-connect | **open** |
-| C3 | σ = log₂(3) is the critical bridge scale | σ sweep {log2(3), 0.5, 1, 2, 4} on bridge-formation stability | **open** — note: the gifted "proof" is decorative (the Gaussian integral yields σ√2π for ANY σ); only the sweep decides |
-| C4 | phase threshold θ > π/4 triggers useful non-local transfer | threshold sweep on the same planted tasks | **open** |
-| C5 | the substrate self-repairs (the armor-ring scenario) | damage the ring adversarially; measure repair ticks vs pre-registered band | **open** |
+| C1 | "25% gain of function" from intra-cell timbre vs inter-cell porting | paired arms: same task, 2-byte porting encoding vs 1-byte QTHE encoding; measure bytes-touched + ticks-to-task | **LIVES — 47.40% bytes-gain (founder's 25% understated), ticks identical, footprint halved** (E-Q13, tip `d852e6ac…`) |
+| C2 | wormhole (Abstain) beats graph-traversal for non-local alignment | planted twin-resonance tasks; arms = wormhole table ON vs OFF; pre-registered floor on ticks-to-connect | **LIVES — 8/8 ON vs 0/20 OFF** (E-Q1, tip `addc22f9…`) |
+| C3 | σ = log₂(3) is the critical bridge scale | σ sweep {log2(3), 0.5, 1, 2, 4} on bridge-formation stability | **DIES (honest null) — full tie; σ monotone-inert on this class** (E-Q2, tip `67e849a5…`); the gifted "proof" was decorative as registered |
+| C4 | phase threshold θ > π/4 triggers useful non-local transfer | threshold sweep on the same planted tasks | **DIES — falsified under the guest's own sealed rule; cascade real, no terminal inversion** (E-Q7, tip `befa0c33…`) |
+| C5 | the substrate self-repairs (the armor-ring scenario) | damage the ring adversarially; measure repair ticks vs pre-registered band | **DIES (honest null) — ring self-dissolves; no repair term exists in the kernel** (E-Q5, tip `4425545f…`) |
+| C5′ | repair via injector (one-pager spec) | restore-then-re-erode determinism | **STANDS — definitional, receipted as such** (E-Q10, tip `50ddf5f9…`) |
+
+Every LAYER 2 claim is now priced. Mechanism-level explanations for each
+verdict (re-derivable from the kernel alone): **docs/CLAIM-VERDICTS.md**.
 
 House law: a claim that dies, dies cheap and honest, with the receipt kept
 beside the body. A claim that lives gets a mechanism-level explanation.
