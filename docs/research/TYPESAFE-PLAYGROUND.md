@@ -43,6 +43,58 @@ L2 = practical/economics claim (priced from receipts).
   cache-discount seats and the devil's advocate · receipt: orchestra
   models-list snapshot (tavern seats cross-checked against
   situations/MODEL-LEARNINGS.md) · verified-by: orchestrator.
+- [L1] 2026-10-17 · Canary re-run live (closes this register's seeded
+  pending note): jev-1.13.0 served, 225 ms, usage {input_tokens 309,
+  output_tokens 20} · receipt: call_id r12-cc-canary
+  (situations/grounding_loop/rows_canary.jsonl) · verified-by: orchestrator
+  (row re-read: jev-1.13.0, usage 309/20 — ORCH-R12).
+- [L1] 2026-10-17 · Batching ceiling probed upward: 96 typed questions
+  (32 claims x choice/noul/score) in ONE systemone call succeeded first
+  try — 3/3 repeats, 312-326 ms, 16,597 input tokens, no error, no
+  bisection needed; new high-water mark above the 54-question
+  function-calling cookbook example; zero HTTP errors across all 58
+  systemone calls this lane (no 429/5xx at ~1 call/s) · receipt: call_ids
+  r12-cc-a-r{1,2,3} (situations/grounding_loop/rows_arm_a.jsonl) ·
+  verified-by: orchestrator (re-derived from the sealed rows:
+  question_counts [96,96,96], input_tokens [16597,16597,16597] — ORCH-R12).
+- [L1] 2026-10-17 · Answer-layer non-determinism with token-identical
+  inputs: the same state + question map across 3 repeats returned only
+  7-10 of 96 answers byte-identical, while usage.input_tokens was
+  identical every repeat (16,597) — the sampling wobble lives entirely
+  in the answer layer; labels mostly hold (3/32 claims changed choice at
+  least once across repeats) · receipt: r12-cc-a-r{1,2,3}
+  (rows_arm_a.jsonl, byte-compare of response_raw.answers) · verified-by:
+  orchestrator (re-derived, STRONGER: 2/96 answers identical even under
+  key-normalized comparison — the lane's raw byte-compare counted 7–10;
+  either way the wobble is real and label-level stability held — ORCH-R12).
+- [L1] 2026-10-17 · Confidence is a grounding signal, not a general
+  calibration signal: on the same 32-claim set, briefing-only
+  choice-confidence did NOT discriminate true from false claims (mean
+  0.598 vs 0.571); with grounded file-section states, fabricated-choice
+  confidence on FALSE claims averaged 0.894 while wrong-direction
+  fabricated-choice on TRUE claims averaged 0.403 (max 0.70) — a 0.8
+  auto-verdict gate sits inside that gap and converted every would-be
+  wrong auto-verdict into a human_flag (0 wrong auto-verdicts on true
+  claims in 3x28 grounded judgments) · receipt: r12-cc-b-r{1,2,3}-*
+  vs r12-cc-a-r{1,2,3} (rows_arm_b.jsonl / rows_arm_a.jsonl, T3-a
+  verdict.md) · verified-by: orchestrator (aggregates cross-checked
+  against the sealed row structure — 58 rows, grouped Jev calls, zero
+  wrong auto-verdicts on true claims confirmed; f01 conf 0.69–0.72 →
+  human_flag — ORCH-R12).
+- [L1] 2026-10-17 · Grounded states stabilize labels: 0/28 claims
+  changed choice across 3 repeats of the grounded citation-check calls
+  (per-claim max-probability std <= 0.025), vs 3/32 flipping under the
+  briefing-only state; noul answers repeated stable to ~2 decimals
+  (per-claim std mean 0.014, max 0.037) · receipt: r12-cc-b-r{1,2,3}-*
+  (rows_arm_b.jsonl) · verified-by: orchestrator (consistent with the
+  2/96 identity measure on the ungrounded arm — ORCH-R12).
+- [L1] 2026-10-17 · systemone usage/cost structure, measured: input
+  tokens ~ 1.27 x state chars (13,063-char state -> 16,597 tokens), output
+  ~ 33 tokens/answer; at the sde_cascade-quoted $0.042/1M input + $0/1M
+  output a document-dominated 96-question call costs ~$0.0007 and the
+  whole 58-call lane ~$0.0068 · receipt: usage fields of
+  rows_canary.jsonl / rows_arm_a.jsonl / rows_arm_b.jsonl · verified-by:
+  orchestrator (16,597 tokens / 13,063 chars = 1.2707 re-derived — ORCH-R12).
 
 ## Pending (lane fragments, not yet promoted)
 

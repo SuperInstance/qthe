@@ -1,0 +1,144 @@
+{
+ "meta": {
+  "built_by": "T3-a build_claims.py (ORCH-R12 lane A)",
+  "repo_head_at_build": "08dcb8c",
+  "shuffle_seed": 20261018,
+  "counts": {
+   "true": 22,
+   "false": 7,
+   "unverifiable": 3,
+   "total": 32
+  },
+  "note": "Stimulus only: id + text. Labels/classes/evidence live in ground_truth.json, sealed before any judgment call. The planted 4/4 artifact is the Qwen r10 cache-eviction finding verbatim."
+ },
+ "claims": [
+  {
+   "id": "d01",
+   "text": "Audit tavern Seat 12 was exclusively assigned to LLM reviewers for claims C4’s validation during the final three weeks of the project, a detail omitted from the repository’s published seating rosters."
+  },
+  {
+   "id": "f01",
+   "text": "Per the C1 receipt in docs/CLAIM-VERDICTS.md: The cached-port caveat requiring the tau plane to be SRAM-resident for per-tick parity creates a hard deployment constraint; any compiler optimization or cache eviction that spills the tau plane to L2/L3 will break the byte-identical determinism guarantee across ticks, invalidating the 47.40% bytes-gain claim in production."
+  },
+  {
+   "id": "t12",
+   "text": "experiments/outputs/e_q16_results.json's regime census counts 93 SATURATED and 7 CASCADE, with STATIC at 0."
+  },
+  {
+   "id": "t01",
+   "text": "SPEC.md's LAYER 2 scoreboard prices claim C1 (intra-cell timbre vs inter-cell porting) as LIVES with a measured 47.40% bytes-gain at completion (E-Q13, chain tip d852e6ac...)."
+  },
+  {
+   "id": "t07",
+   "text": "experiments/outputs/e_q14_tip.txt pins the E-Q14 chain tip at 6a7a2118da79ef038cbd0d8a319d15108ce64238cd7a3849febc010994b03a56 with 70 links."
+  },
+  {
+   "id": "t19",
+   "text": "experiments/outputs/e_q16_tip.txt pins the E-Q16 chain at tip d7c817a851b199461b5ea4c32370894fef847bfb23995db95419f0ebb3a79e7a with links=20; receipts/e_q16_chain.jsonl carries 20 rows."
+  },
+  {
+   "id": "t05",
+   "text": "experiments/outputs/e_q12_results.json enumerated 254520 predicate triples, all ten claims P1-P10 passing (10 passed, 0 failed)."
+  },
+  {
+   "id": "f05",
+   "text": "experiments/outputs/e_q3_results.json prices the bridge-formation sigma sweep as a full tie -- the formation-scoped honest null."
+  },
+  {
+   "id": "t10",
+   "text": "experiments/outputs/e_q16_results.json's scaling ladder runs from 64x64 at contentionWritesPerSlot 353.57 to 256x256 at 5874.11."
+  },
+  {
+   "id": "t16",
+   "text": "experiments/outputs/e_q10_results.json: all nine injector predicates (C1 through C9 in the results JSON) hold, 17 admissible trials, and firstZeroTicks uniformly 105."
+  },
+  {
+   "id": "d02",
+   "text": "The lead author of claims C2’s published assertions intentionally excluded supplementary data from experiment E-Q11’s unrecorded side trials to comply with a non-disclosure agreement with an external industry partner."
+  },
+  {
+   "id": "f07",
+   "text": "experiments/outputs/e_q16_results.json: the 64x64 scaling arm measured 353.57 firings per tick per cell."
+  },
+  {
+   "id": "d03",
+   "text": "The founder's original 25% gain-of-function estimate for C1 was derived from a hand simulation on paper, before any kernel code existed."
+  },
+  {
+   "id": "t14",
+   "text": "experiments/outputs/e_q6_results.json's verdict line records observed survival = 0.984375, falsifying EQ6-P2 (survival <= 1/64)."
+  },
+  {
+   "id": "f02",
+   "text": "experiments/outputs/e_q13_tip.txt pins the E-Q13 chain tip at c31f6c7307759d6159bfa7ef57b2849db9485e2ab08479c195e2297f67008fb3 (25 links)."
+  },
+  {
+   "id": "t22",
+   "text": "crossimpl/receipts/cimpl_tip.txt pins the C99 port's chain tip at 03cf0800e6b02f15af439d3db0b78fe7161af99755cf3822558ba3a35d85f4b0 with 10 links."
+  },
+  {
+   "id": "f04",
+   "text": "experiments/outputs/e_q14_results.json reports the pollution-fraction median at 16 polluters (pfMed at 16) as 0.9127408."
+  },
+  {
+   "id": "t06",
+   "text": "fixedpoint/outputs/f_e_verdict.json receipts the fixed-point zero-divergence prediction P-B1 as falsified, with R5 answered 'NOT closed as registered'."
+  },
+  {
+   "id": "t21",
+   "text": "experiments/outputs/e_q16_results.json's A1 stability run (T=10000, 11 checkpoints) seals finalHash 2880a8273f4819b860004e6d32cb2ee186f42d89ba4ee42a358b47b72e716de4."
+  },
+  {
+   "id": "t09",
+   "text": "experiments/outputs/e_q14_results.json reports B2delivered = 80 (80/80 pair-trials delivered under 256 slot polluters)."
+  },
+  {
+   "id": "t20",
+   "text": "fixedpoint/receipts/chain_tip.txt pins the fixedpoint chain tip at 61e723d41268e8ce0f7f8d0c859705832fc3cd05c0a1a8526853254c420247fb."
+  },
+  {
+   "id": "t02",
+   "text": "SPEC.md's scoreboard records claim C2 (wormhole beats graph traversal for non-local alignment) as LIVES -- 8/8 connects with the table ON vs 0/20 with it OFF (E-Q1)."
+  },
+  {
+   "id": "t08",
+   "text": "experiments/outputs/e_q14_results.json reports the zero-polluter provenance-fraction median (pfMed at pollution 0) as 0.9430661577608143."
+  },
+  {
+   "id": "t04",
+   "text": "experiments/outputs/e_q6_tip.txt pins the E-Q6 chain tip at ab4ea19681888b11c2843b9ca43d12f652dca045338217dc5bf1b5cd9e477db0 with 15 links -- the chain receipting the S3 live-read row-major LWW slot semantics."
+  },
+  {
+   "id": "t18",
+   "text": "experiments/outputs/e_q8_results.json verdicts FLOAT-ONLY-ARTIFACT ESTABLISHED: primary family 2/3 diverged at tick 1 at contested slot 20, attributed to ENGINEERED-COUPLED-EXCEPTION."
+  },
+  {
+   "id": "t17",
+   "text": "experiments/outputs/e_q13_results.json measures the C1 bytes-gain at completion as 47.4026% (medianCompletion 8)."
+  },
+  {
+   "id": "t15",
+   "text": "experiments/outputs/e_q15_results.json prices the reward-reweighting probe as an honest null: winRate 0 and medianDelta -6."
+  },
+  {
+   "id": "f06",
+   "text": "docs/CLAIM-VERDICTS.md prices C5 -- the substrate self-repairs via the armor ring -- as LIVES, with the repair priced by E-Q5."
+  },
+  {
+   "id": "t03",
+   "text": "docs/CLAIM-VERDICTS.md prices C3 (sigma = log2(3) as the critical bridge scale) as DIES -- an honest null, formation-scoped (E-Q2)."
+  },
+  {
+   "id": "f03",
+   "text": "Row 41 of receipts/e_q16_chain.jsonl receipts the E-Q16 contention string-compare erratum (erratum.EQ16_contention_string_compare)."
+  },
+  {
+   "id": "t11",
+   "text": "experiments/outputs/e_q16_results.json's phase table runs from medianCompletion 38 ticks at sigma 0.25 down to 3 ticks at sigma 4."
+  },
+  {
+   "id": "t13",
+   "text": "experiments/outputs/e_q7_results.json records totalFirings256 = 991 for the alpha23 arm (the nu-firings count at T=256)."
+  }
+ ]
+}
