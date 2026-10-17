@@ -152,3 +152,30 @@ record lives in `tests/receipt.json` even where stone is not installed.
   `scripts/reseal-registration.mjs` knowingly.
 - The tavern lanes in `situations/` contain raw guest payloads keyed for
   provenance; they are sealed artifacts, not prompts to re-send.
+
+## Mandatory probe gate (wave 69-post, ORCH-5)
+
+Every experiment verdict in this repo now requires a **probe-gate PASS row**
+in `receipts/probe_gate_chain.jsonl` sequenced with (or before citing) the
+verdict. Run it corpus-wide or scoped:
+
+```bash
+node scripts/probe_gate.mjs          # all chains + standing witness
+node scripts/probe_gate.mjs e_q13    # one experiment's scope
+```
+
+Sections and what they protect:
+
+| section | protects against | method |
+|---------|------------------|--------|
+| PG1 STONE | silent chain rot | every stone-v1 chain re-verified from disk |
+| PG2 TIP-PIN | tip-file drift | `outputs/<name>_tip.txt` recomputed vs chain tip |
+| PG3 NEGATIVE | a verifier that cannot say NO | tamper a COPY (flip one boolean in a mid-chain row) — `verifyChainFile` must refuse |
+| PG4 DETERMINISM | environment regressions | standing 1000-tick twin probe, run twice, byte-identical |
+| PG5 BOUNDS | runaway experiments | wall-clock + RSS ceilings on the standing probe (10 s / 512 MB) |
+
+The gate is fail-loud (exit 1) and appends its own sealed row per run —
+`scripts/verify_all_chains.mjs` audits the full chain-of-chains including
+the gate's own chain. New experiments add their chain to `STONE_CHAINS` in
+the gate script as part of the registration commit (addition, never
+subtraction).
