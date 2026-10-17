@@ -4,7 +4,11 @@
      ZERO dependencies, no build, no CDN. The SAME ../qthe.mjs kernel the
      tests seal runs here, unmodified, via <script type="module">.
      NOTE: ES modules need http(s) in some browsers — if file:// refuses,
-     serve this dir:  python3 -m http.server 8080  →  localhost:8080 -->
+     serve this dir:  python3 -m http.server 8080  →  localhost:8080
+     ORCH-9: first-class telemetry added BELOW the sealed HUD contract —
+     channel split (re/im masses), the looking-glass table strip (slot
+     occupancy + resonance heat), and the live wormhole event stream. The
+     HUD line format above is UNCHANGED (demo/smoke pins it). -->
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -36,6 +40,27 @@
   .legend i { font-style: normal; }
   .g { color: #4fd45f; } .r { color: #e05a5a; } .k { color: #55555f; }
   .p { color: #b06ae8; }
+  /* ── ORCH-9 telemetry panel ─────────────────────────────────────────── */
+  #tel { margin-top: 12px; display: grid; gap: 8px; }
+  #tel[hidden] { display: none; }
+  .panel { background: #12121a; border: 1px solid #23232e; padding: 8px 10px; }
+  .panel h2 { font-size: 11px; font-weight: 600; color: #6f6f80; margin: 0 0 6px;
+              letter-spacing: .08em; text-transform: uppercase; }
+  .bar { display: grid; grid-template-columns: 7.5em 1fr 6.5em; gap: 8px;
+         align-items: center; margin: 3px 0; color: #9a9aac; }
+  .bar .track { height: 8px; background: #0b0b10; border: 1px solid #23232e; }
+  .bar .fill { height: 100%; width: 0%; }
+  #re-fill { background: #4fd45f; }                  /* the real channel: Attract/Repel mass */
+  #im-fill { background: #b06ae8; }                  /* the imaginary channel: twin resonance */
+  .bar b { color: #c9c9d4; font-weight: 600; text-align: right; }
+  #whstrip { width: 100%; height: 18px; image-rendering: pixelated;
+             border: 1px solid #23232e; background: #0b0b10; display: block; }
+  #wh-cap { margin: 4px 0 0; color: #6f6f80; font-size: 11px; }
+  #evstream { margin: 0; padding: 0; list-style: none; color: #9a9aac;
+              font-size: 12px; min-height: 5.4em; }
+  #evstream li { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  #evstream .t { color: #b06ae8; }
+  #evstream .empty { color: #55555f; }
 </style>
 </head>
 <body>
@@ -50,10 +75,29 @@
     <button id="b-worms">Seed: twin worms</button>
     <button id="b-pause">Pause</button>
     <button id="b-wh" class="on">wormholes ON</button>
+    <button id="b-tel" class="on">telemetry ON</button>
   </div>
   <p class="legend">τ=1 <i class="g">Attract ▮ green</i> · τ=2 <i class="r">Repel ▮ red</i> ·
      τ=0 <i class="k">Ground ▮ gray</i> · τ=3 <i class="p">Abstain ▮ purple</i> —
      it blinks when the wormhole table answers (twin resonance)</p>
+
+  <div id="tel">
+    <div class="panel" id="p-split">
+      <h2>channel split · per tick</h2>
+      <div class="bar"><span>re · Σ|acc| Moore-8</span><span class="track"><span class="fill" id="re-fill"></span></span><b id="re-val">0</b></div>
+      <div class="bar"><span>im · Σ|term| twins</span><span class="track"><span class="fill" id="im-fill"></span></span><b id="im-val">0</b></div>
+      <div class="bar"><span>im · cumulative mass</span><span class="track"><span class="fill" id="imc-fill" style="background:#7a4fa8"></span></span><b id="imc-val">0</b></div>
+    </div>
+    <div class="panel" id="p-glass">
+      <h2>the looking glass · 64 slots</h2>
+      <canvas id="whstrip" width="64" height="8"></canvas>
+      <p id="wh-cap">slot d=0…63 · brightness = resonance |real_acc|+1 · occupancy <span id="wh-occ">0</span>/64 · max R <span id="wh-max">0</span></p>
+    </div>
+    <div class="panel" id="p-events">
+      <h2>wormhole event stream · last 5 twin resonances</h2>
+      <ul id="evstream"><li class="empty">waiting for the table to answer…</li></ul>
+    </div>
+  </div>
 </main>
 <script type="module" src="demo/a2ui.mjs"></script>
 </body>

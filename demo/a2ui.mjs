@@ -3,6 +3,16 @@
 // pixel = cell, direct buffer-to-canvas (SPEC item 7). The HUD trace hash is
 // demo/sha256.mjs — the implementation tests/run_tests.mjs G0 pins identical
 // to the stone's sha256Hex, so what you see live is receipt-grade hashing.
+//
+// ORCH-9 — FIRST-CLASS TELEMETRY (below the sealed HUD contract, which is
+// byte-identical to the pre-telemetry format the smoke suite pins):
+//   · channel split: re mass = Σ|acc| over Moore-8 (READ-ONLY re-derivation
+//     of the SPEC L1 s5 accumulator for display — the kernel stays the only
+//     writer); im mass = Σ|term| over this tick's twin events; im cumulative.
+//     Floats are DISPLAY-ONLY (strings, never hashed — house law).
+//   · the looking glass: the 64-slot table strip — slot d on x, resonance
+//     |real_acc|+1 as brightness (log-scaled), the table's live census.
+//   · event stream: the last 5 twin resonances verbatim.
 
 import { pack, tauOf, dOf, makeSubstrate, tick, traceView, mulberry32, WormholeTable } from '../qthe.mjs';
 import { sha256Bytes } from './sha256.mjs';
@@ -14,6 +24,21 @@ const canvas = document.getElementById('sub');
 const ctx = canvas.getContext('2d');
 const img = ctx.createImageData(W, H);            // direct buffer, one px per cell
 const hud = document.getElementById('hud');
+
+// telemetry handles (all optional-safe: the mirror still runs if absent)
+const tel = {
+  panel: document.getElementById('tel'),
+  reFill: document.getElementById('re-fill'), reVal: document.getElementById('re-val'),
+  imFill: document.getElementById('im-fill'), imVal: document.getElementById('im-val'),
+  imcFill: document.getElementById('imc-fill'), imcVal: document.getElementById('imc-val'),
+  strip: document.getElementById('whstrip'),
+  whOcc: document.getElementById('wh-occ'), whMax: document.getElementById('wh-max'),
+  evstream: document.getElementById('evstream'),
+};
+const stripCtx = tel.strip ? tel.strip.getContext('2d') : null;
+const stripImg = stripCtx ? stripCtx.createImageData(64, 8) : null;
+let telemetryOn = true, imCumulative = 0;
+const recentEvents = [];
 
 let sub, table, wormholes, paused, flash, twinsLast;
 const frameStats = { ticks: 0 };
@@ -57,6 +82,9 @@ function seed(name) {
   flash = new Float32Array(W * H);
   twinsLast = 0;
   frameStats.ticks = 0;
+  imCumulative = 0;
+  recentEvents.length = 0;
+  renderTelemetry(0, 0);                // zero the panels on reseed
   render();                              // first paint before the loop catches up
 }
 
@@ -92,14 +120,94 @@ function hudLine() {
     ` · full: <span style="color:#4a4a5e">${sha}</span>`;
 }
 
+// ── ORCH-9: telemetry renderers ───────────────────────────────────────────
+// Read-only re-derivation of the SPEC L1 s5 accumulator (display only).
+function reMass() {
+  let sum = 0;
+  for (let y = 0; y < H; y++) {
+    const yUp = (y + H - 1) % H, yDn = (y + 1) % H;
+    for (let x = 0; x < W; x++) {
+      const xL = (x + W - 1) % W, xR = (x + 1) % W;
+      let acc = 0;
+      const nb = [yUp * W + xL, yUp * W + x, yUp * W + xR, y * W + xL,
+                  y * W + xR, yDn * W + xL, yDn * W + x, yDn * W + xR];
+      for (const j of nb) {
+        const t = sub[j] >> 6;
+        if (t === TAU_A) acc += sub[j] & 63;
+        else if (t === TAU_R) acc -= sub[j] & 63;
+      }
+      sum += acc < 0 ? -acc : acc;
+    }
+  }
+  return sum;
+}
+
+function setBar(fill, val, v) {
+  if (!fill) return;
+  fill.style.width = Math.min(100, v).toFixed(2) + '%';
+  if (val) val.textContent = formatNum(v);
+}
+function formatNum(v) {
+  return v >= 1000 ? Math.round(v).toLocaleString('en-US')
+    : v >= 100 ? v.toFixed(0) : v.toFixed(2);
+}
+
+function renderTelemetry(reMassNow, imMassNow) {
+  if (!telemetryOn || !tel.panel) return;
+  // channel split, normalized against each other + a soft 99th-percentile cap
+  const scale = Math.max(reMassNow, imMassNow, 1);
+  setBar(tel.reFill, tel.reVal, (reMassNow / scale) * 100);
+  setBar(tel.imFill, tel.imVal, (imMassNow / scale) * 100);
+  setBar(tel.imcFill, tel.imcVal, Math.min(100, imCumulative / 50)); // 50 units = full bar
+  if (tel.imcVal) tel.imcVal.textContent = formatNum(imCumulative);
+  // the looking glass strip: 64 slots, brightness = log2(1+resonance)
+  if (stripCtx && stripImg) {
+    const px = stripImg.data;
+    let occ = 0, maxR = 0;
+    for (let s = 0; s < 64; s++) {
+      const hit = table.read(s);                    // read() is the public door
+      const res = hit ? hit.resonance : 0;
+      const o = s * 8 * 4;                     // 8 rows tall
+      for (let row = 0; row < 8; row++) {
+        const q = o + row * 4;
+        if (res > 0) {
+          occ++; if (row === 0) maxR = Math.max(maxR, res);
+          const b = Math.min(255, Math.round(255 * Math.log2(1 + res) / 12));
+          px[q] = Math.round(b * 0.66); px[q + 1] = b; px[q + 2] = Math.round(b * 0.92); px[q + 3] = 255;
+        } else { px[q] = 14; px[q + 1] = 14; px[q + 2] = 20; px[q + 3] = 255; }
+      }
+    }
+    stripCtx.putImageData(stripImg, 0, 0);
+    if (tel.whOcc) tel.whOcc.textContent = occ / 8;
+    if (tel.whMax) tel.whMax.textContent = maxR;
+  }
+  // event stream (last 5)
+  if (tel.evstream) {
+    if (recentEvents.length === 0) {
+      tel.evstream.innerHTML = '<li class="empty">waiting for the table to answer…</li>';
+    } else {
+      tel.evstream.innerHTML = recentEvents.slice(-5).map((e) =>
+        `<li><span class="t">t${String(e.t).padStart(5, '0')}</span> (${e.x},${e.y}) slot=${e.slot} res=${e.resonance} → term ${e.term.toFixed(3)}</li>`).join('');
+    }
+  }
+}
+
 // ── the loop: one kernel tick per animation frame (~60 ticks/s) ───────────
 function frame() {
   if (!paused) {
+    const reNow = telemetryOn ? reMass() : 0;    // pre-tick plane = what tick() reads
     const before = table.totalWrites;
     tick(sub, { wormholes, table });
     const ev = sub.lastEvents;
     twinsLast = ev.length;
-    for (const e of ev) flash[e.y * W + e.x] = 1;       // blink the receivers
+    let imNow = 0;
+    for (const e of ev) {
+      flash[e.y * W + e.x] = 1;                 // blink the receivers
+      imNow += Math.abs(e.term);
+      imCumulative += e.term;
+      recentEvents.push({ t: sub.ticks, x: e.x, y: e.y, slot: e.slot, resonance: e.resonance, term: e.term });
+      if (recentEvents.length > 32) recentEvents.shift();
+    }
     if (wormholes && table.totalWrites > before) {
       for (let s = 0; s < 64; s++) {
         const hit = table.read(s);                       // writers blink fainter
@@ -110,6 +218,7 @@ function frame() {
     frameStats.ticks = sub.ticks;
     render();
     hudLine();
+    renderTelemetry(reNow, imNow);
   }
   requestAnimationFrame(frame);
 }
@@ -126,6 +235,13 @@ bWh.onclick = () => {
   bWh.textContent = wormholes ? 'wormholes ON' : 'wormholes OFF';
   bWh.classList.toggle('on', wormholes);
   hudLine();                                            // trace hash unchanged: the toggle is telemetry-free until a slot moves
+};
+const bTel = document.getElementById('b-tel');
+if (bTel) bTel.onclick = () => {
+  telemetryOn = !telemetryOn;
+  bTel.textContent = telemetryOn ? 'telemetry ON' : 'telemetry OFF';
+  bTel.classList.toggle('on', telemetryOn);
+  if (tel.panel) tel.panel.hidden = !telemetryOn;
 };
 
 seed('ring');

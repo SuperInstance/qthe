@@ -1,0 +1,10 @@
+# qthe-core PROVENANCE
+
+Every file is a BYTE-EXACT copy of the canonical source in SuperInstance/qthe.
+Rebuild: `node scripts/build_qthe_core.mjs` from the repo root.
+
+- `kernel/qthe.mjs` = `qthe.mjs` (the reference kernel (float plane, LAYER 0+1)) :: sha256 `ef9a3bba0511c78026f30706214e407d362e8972a86f5684d9b16a9e16e3f091`
+- `kernel/qthe_fixed.mjs` = `fixedpoint/qthe_fixed.mjs` (the no-floats plane (R8, sigma_q int64)) :: sha256 `88b6d781e2dcec6814cde0f26f29cd77e1df9ca977972306358ab3caf366a4be`
+- `c/qthe_core.h` = `crossimpl/c/qthe_core.h` (C99 port header (byte-exact, both planes)) :: sha256 `9d5eb045c3e03eaafbf4d0a3adb7e02c74c1591886b2ed0b3432b2a5a43e6001`
+- `c/qthe_core.c` = `crossimpl/c/qthe_core.c` (C99 port implementation) :: sha256 `ccad0055e1e92b75ff8c8b0b76499888e98a76eddca2dbff3a5eca7219f23704`
+- `py/qthe_layer0.py` = `crossimpl/py/qthe_layer0.py` (python LAYER 0 re-derivation (strict)) :: sha256 `bd5c67786b33613562695a1ab29175eed740cfebd444d07a36013f512648c6de`

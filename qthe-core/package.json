@@ -1,0 +1,28 @@
+{
+  "name": "qthe-core",
+  "version": "0.1.0",
+  "description": "The qthe 8-bit substrate primitive: 2-bit timbre + 6-bit amplitude, 64-slot wormhole table, deterministic Moore-8 tick. Byte-exact JS (float + fixed planes), C99, and Python(L0).",
+  "type": "module",
+  "main": "kernel/qthe.mjs",
+  "exports": {
+    ".": "./kernel/qthe.mjs",
+    "./fixed": "./kernel/qthe_fixed.mjs"
+  },
+  "files": [
+    "kernel/",
+    "c/",
+    "py/",
+    "README.md",
+    "PROVENANCE.txt",
+    "LICENSE-NOTE.md"
+  ],
+  "keywords": [
+    "cellular-automata",
+    "substrate",
+    "deterministic",
+    "ternary",
+    "wormhole-table",
+    "quilt"
+  ],
+  "license": "SEE LICENSE-NOTE.md"
+}
