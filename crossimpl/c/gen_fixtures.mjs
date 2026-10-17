@@ -51,7 +51,7 @@ function runCase(id, w, h, seedFn, T, mode, wormholes, sigmaSpec) {
       if (sigmaSpec.kind === 'bits') opts.sigma = bitsToDouble(sigmaSpec.hex);
     } else {
       opts = { wormholes };
-      if (sigmaSpec.kind === 'q') opts.sigmaQ = BigInt('0x' + sigmaSpec.hex);
+      if (sigmaSpec.kind === 'q') opts.sigmaQ = parseInt(sigmaSpec.hex, 16);
     }
     sub = mode === 'float' ? FLOAT.tick(sub, opts) : FIXED.tick(sub, opts);
     for (const ev of sub.lastEvents ?? []) {
@@ -106,9 +106,11 @@ runCase('c9_eq8_85', 6, 3, eq8Board(), 16, 'float', true, { kind: 'bits', hex: E
 runCase('c12_mixed', 10, 10, mixedSeedFn(), 40, 'float', true, { kind: 'bits', hex: bits(1) });
 
 // ── fixed-plane battery (R8) ───────────────────────────────────────────────
-runCase('f1_rand23_fixed', 24, 16, randSeedFn(34001), 20, 'fixed', true, { kind: 'q', hex: '2863311531' });
-runCase('f2_rand_default_fixed', 24, 16, randSeedFn(34001), 20, 'fixed', true, { kind: 'q', hex: '6807362106' });
-runCase('f3_eq8_23_fixed', 6, 3, eq8Board(), 16, 'fixed', true, { kind: 'q', hex: '2863311531' });
+const SQ_23 = BigInt(2863311531).toString(16);       // round((2/3) * 2^32)
+const SQ_DEFAULT = BigInt(6807362106).toString(16);  // round(log2(3) * 2^32)
+runCase('f1_rand23_fixed', 24, 16, randSeedFn(34001), 20, 'fixed', true, { kind: 'q', hex: SQ_23 });
+runCase('f2_rand_default_fixed', 24, 16, randSeedFn(34001), 20, 'fixed', true, { kind: 'q', hex: SQ_DEFAULT });
+runCase('f3_eq8_23_fixed', 6, 3, eq8Board(), 16, 'fixed', true, { kind: 'q', hex: SQ_23 });
 
 function randSeedFn(seed) {
   const rng = rngOf(seed);

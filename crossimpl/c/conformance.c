@@ -75,6 +75,7 @@ static void run_substrate_case(const char *id, int w, int h, int T, int is_fixed
                                const int *ev_t, const int *ev_x, const int *ev_y,
                                const int *ev_slot, const int *ev_res, const char (*ev_term)[32],
                                int n_events_expected) {
+  (void)ev_t; /* tick order is implied by emission order; kept for signature clarity */
   qthe_substrate *s = qthe_make_substrate(w, h, init_plane);
   if (!s) { printf("CASE %s FAIL alloc\n", id); failures++; return; }
   qthe_event *events = malloc(sizeof(qthe_event) * MAX_EVENTS);

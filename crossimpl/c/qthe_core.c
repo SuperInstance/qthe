@@ -185,7 +185,8 @@ static int tick_impl(qthe_substrate *s, int wormholes, const double *sigma_ptr,
             int32_t hx = table->sx[d], hy = table->sy[d], res = table->sr[d];
             if (res != 0 && (hx != x || hy != y)) {
               uint64_t term = (uint64_t)res * sigma_q;
-              pressure = acc + (int64_t)term;
+              /* R8 scaled domain: pressure = acc*S + term (qthe_fixed.mjs:308) */
+              pressure = acc * 4294967296LL + (int64_t)term;
               if (events && nev < cap) { events[nev].tick = (int32_t)s->ticks + 1; events[nev].x = x; events[nev].y = y; events[nev].slot = d; events[nev].resonance = res; events[nev].term = 0.0; events[nev].term_q = term; nev++; }
             }
           }
