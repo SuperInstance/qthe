@@ -1,0 +1,8769 @@
+{
+ "experiment": "E-Q14",
+ "claim": "adversarial probe family (roadmap phase 3)",
+ "kernel": {
+  "kernelKind": "real",
+  "kernelPath": "qthe/qthe.mjs"
+ },
+ "stonePath": "../../quilt-stone/stone.mjs",
+ "preRegSha": "4508803c8d92ec91ede0f8047eff44b1daca415170b772f4f8e6bf99a1836c84",
+ "familyA": [
+  {
+   "phi": 0.25,
+   "seed": 88001,
+   "detOk": true,
+   "abstains": 1046,
+   "firersRatio": 1,
+   "occupancyCapOk": true,
+   "perTick": [
+    {
+     "t": 1,
+     "firings": 998,
+     "firers": 998,
+     "occupancy": 48
+    },
+    {
+     "t": 2,
+     "firings": 1045,
+     "firers": 1045,
+     "occupancy": 49
+    },
+    {
+     "t": 3,
+     "firings": 1045,
+     "firers": 1045,
+     "occupancy": 50
+    },
+    {
+     "t": 4,
+     "firings": 1045,
+     "firers": 1045,
+     "occupancy": 51
+    },
+    {
+     "t": 5,
+     "firings": 1045,
+     "firers": 1045,
+     "occupancy": 52
+    },
+    {
+     "t": 6,
+     "firings": 1045,
+     "firers": 1045,
+     "occupancy": 53
+    },
+    {
+     "t": 7,
+     "firings": 1045,
+     "firers": 1045,
+     "occupancy": 54
+    },
+    {
+     "t": 8,
+     "firings": 1045,
+     "firers": 1045,
+     "occupancy": 55
+    },
+    {
+     "t": 9,
+     "firings": 1045,
+     "firers": 1045,
+     "occupancy": 56
+    },
+    {
+     "t": 10,
+     "firings": 1046,
+     "firers": 1046,
+     "occupancy": 56
+    },
+    {
+     "t": 11,
+     "firings": 1046,
+     "firers": 1046,
+     "occupancy": 56
+    },
+    {
+     "t": 12,
+     "firings": 1046,
+     "firers": 1046,
+     "occupancy": 56
+    },
+    {
+     "t": 13,
+     "firings": 1046,
+     "firers": 1046,
+     "occupancy": 56
+    },
+    {
+     "t": 14,
+     "firings": 1046,
+     "firers": 1046,
+     "occupancy": 56
+    },
+    {
+     "t": 15,
+     "firings": 1046,
+     "firers": 1046,
+     "occupancy": 56
+    },
+    {
+     "t": 16,
+     "firings": 1046,
+     "firers": 1046,
+     "occupancy": 56
+    },
+    {
+     "t": 17,
+     "firings": 1046,
+     "firers": 1046,
+     "occupancy": 56
+    },
+    {
+     "t": 18,
+     "firings": 1046,
+     "firers": 1046,
+     "occupancy": 56
+    },
+    {
+     "t": 19,
+     "firings": 1046,
+     "firers": 1046,
+     "occupancy": 56
+    },
+    {
+     "t": 20,
+     "firings": 1046,
+     "firers": 1046,
+     "occupancy": 56
+    },
+    {
+     "t": 21,
+     "firings": 1046,
+     "firers": 1046,
+     "occupancy": 56
+    },
+    {
+     "t": 22,
+     "firings": 1046,
+     "firers": 1046,
+     "occupancy": 56
+    },
+    {
+     "t": 23,
+     "firings": 1046,
+     "firers": 1046,
+     "occupancy": 56
+    },
+    {
+     "t": 24,
+     "firings": 1046,
+     "firers": 1046,
+     "occupancy": 56
+    },
+    {
+     "t": 25,
+     "firings": 1046,
+     "firers": 1046,
+     "occupancy": 56
+    },
+    {
+     "t": 26,
+     "firings": 1046,
+     "firers": 1046,
+     "occupancy": 56
+    },
+    {
+     "t": 27,
+     "firings": 1046,
+     "firers": 1046,
+     "occupancy": 56
+    },
+    {
+     "t": 28,
+     "firings": 1046,
+     "firers": 1046,
+     "occupancy": 56
+    },
+    {
+     "t": 29,
+     "firings": 1046,
+     "firers": 1046,
+     "occupancy": 56
+    },
+    {
+     "t": 30,
+     "firings": 1046,
+     "firers": 1046,
+     "occupancy": 56
+    },
+    {
+     "t": 31,
+     "firings": 1046,
+     "firers": 1046,
+     "occupancy": 56
+    },
+    {
+     "t": 32,
+     "firings": 1046,
+     "firers": 1046,
+     "occupancy": 56
+    },
+    {
+     "t": 33,
+     "firings": 1046,
+     "firers": 1046,
+     "occupancy": 56
+    },
+    {
+     "t": 34,
+     "firings": 1046,
+     "firers": 1046,
+     "occupancy": 56
+    },
+    {
+     "t": 35,
+     "firings": 1046,
+     "firers": 1046,
+     "occupancy": 56
+    },
+    {
+     "t": 36,
+     "firings": 1046,
+     "firers": 1046,
+     "occupancy": 56
+    },
+    {
+     "t": 37,
+     "firings": 1046,
+     "firers": 1046,
+     "occupancy": 56
+    },
+    {
+     "t": 38,
+     "firings": 1046,
+     "firers": 1046,
+     "occupancy": 56
+    },
+    {
+     "t": 39,
+     "firings": 1046,
+     "firers": 1046,
+     "occupancy": 56
+    },
+    {
+     "t": 40,
+     "firings": 1046,
+     "firers": 1046,
+     "occupancy": 56
+    },
+    {
+     "t": 41,
+     "firings": 1046,
+     "firers": 1046,
+     "occupancy": 56
+    },
+    {
+     "t": 42,
+     "firings": 1046,
+     "firers": 1046,
+     "occupancy": 56
+    },
+    {
+     "t": 43,
+     "firings": 1046,
+     "firers": 1046,
+     "occupancy": 56
+    },
+    {
+     "t": 44,
+     "firings": 1046,
+     "firers": 1046,
+     "occupancy": 56
+    },
+    {
+     "t": 45,
+     "firings": 1046,
+     "firers": 1046,
+     "occupancy": 56
+    },
+    {
+     "t": 46,
+     "firings": 1046,
+     "firers": 1046,
+     "occupancy": 56
+    },
+    {
+     "t": 47,
+     "firings": 1046,
+     "firers": 1046,
+     "occupancy": 56
+    },
+    {
+     "t": 48,
+     "firings": 1046,
+     "firers": 1046,
+     "occupancy": 56
+    },
+    {
+     "t": 49,
+     "firings": 1046,
+     "firers": 1046,
+     "occupancy": 56
+    },
+    {
+     "t": 50,
+     "firings": 1046,
+     "firers": 1046,
+     "occupancy": 56
+    },
+    {
+     "t": 51,
+     "firings": 1046,
+     "firers": 1046,
+     "occupancy": 56
+    },
+    {
+     "t": 52,
+     "firings": 1046,
+     "firers": 1046,
+     "occupancy": 56
+    },
+    {
+     "t": 53,
+     "firings": 1046,
+     "firers": 1046,
+     "occupancy": 56
+    },
+    {
+     "t": 54,
+     "firings": 1046,
+     "firers": 1046,
+     "occupancy": 56
+    },
+    {
+     "t": 55,
+     "firings": 1046,
+     "firers": 1046,
+     "occupancy": 56
+    },
+    {
+     "t": 56,
+     "firings": 1046,
+     "firers": 1046,
+     "occupancy": 56
+    },
+    {
+     "t": 57,
+     "firings": 1046,
+     "firers": 1046,
+     "occupancy": 56
+    },
+    {
+     "t": 58,
+     "firings": 1046,
+     "firers": 1046,
+     "occupancy": 56
+    },
+    {
+     "t": 59,
+     "firings": 1046,
+     "firers": 1046,
+     "occupancy": 56
+    },
+    {
+     "t": 60,
+     "firings": 1046,
+     "firers": 1046,
+     "occupancy": 56
+    },
+    {
+     "t": 61,
+     "firings": 1046,
+     "firers": 1046,
+     "occupancy": 56
+    },
+    {
+     "t": 62,
+     "firings": 1046,
+     "firers": 1046,
+     "occupancy": 56
+    },
+    {
+     "t": 63,
+     "firings": 1046,
+     "firers": 1046,
+     "occupancy": 56
+    },
+    {
+     "t": 64,
+     "firings": 1046,
+     "firers": 1046,
+     "occupancy": 56
+    }
+   ]
+  },
+  {
+   "phi": 0.25,
+   "seed": 88002,
+   "detOk": true,
+   "abstains": 1003,
+   "firersRatio": 1,
+   "occupancyCapOk": true,
+   "perTick": [
+    {
+     "t": 1,
+     "firings": 955,
+     "firers": 955,
+     "occupancy": 48
+    },
+    {
+     "t": 2,
+     "firings": 1002,
+     "firers": 1002,
+     "occupancy": 49
+    },
+    {
+     "t": 3,
+     "firings": 1002,
+     "firers": 1002,
+     "occupancy": 50
+    },
+    {
+     "t": 4,
+     "firings": 1002,
+     "firers": 1002,
+     "occupancy": 51
+    },
+    {
+     "t": 5,
+     "firings": 1002,
+     "firers": 1002,
+     "occupancy": 52
+    },
+    {
+     "t": 6,
+     "firings": 1002,
+     "firers": 1002,
+     "occupancy": 53
+    },
+    {
+     "t": 7,
+     "firings": 1002,
+     "firers": 1002,
+     "occupancy": 54
+    },
+    {
+     "t": 8,
+     "firings": 1002,
+     "firers": 1002,
+     "occupancy": 55
+    },
+    {
+     "t": 9,
+     "firings": 1002,
+     "firers": 1002,
+     "occupancy": 56
+    },
+    {
+     "t": 10,
+     "firings": 1003,
+     "firers": 1003,
+     "occupancy": 56
+    },
+    {
+     "t": 11,
+     "firings": 1003,
+     "firers": 1003,
+     "occupancy": 56
+    },
+    {
+     "t": 12,
+     "firings": 1003,
+     "firers": 1003,
+     "occupancy": 56
+    },
+    {
+     "t": 13,
+     "firings": 1003,
+     "firers": 1003,
+     "occupancy": 56
+    },
+    {
+     "t": 14,
+     "firings": 1003,
+     "firers": 1003,
+     "occupancy": 56
+    },
+    {
+     "t": 15,
+     "firings": 1003,
+     "firers": 1003,
+     "occupancy": 56
+    },
+    {
+     "t": 16,
+     "firings": 1003,
+     "firers": 1003,
+     "occupancy": 56
+    },
+    {
+     "t": 17,
+     "firings": 1003,
+     "firers": 1003,
+     "occupancy": 56
+    },
+    {
+     "t": 18,
+     "firings": 1003,
+     "firers": 1003,
+     "occupancy": 56
+    },
+    {
+     "t": 19,
+     "firings": 1003,
+     "firers": 1003,
+     "occupancy": 56
+    },
+    {
+     "t": 20,
+     "firings": 1003,
+     "firers": 1003,
+     "occupancy": 56
+    },
+    {
+     "t": 21,
+     "firings": 1003,
+     "firers": 1003,
+     "occupancy": 56
+    },
+    {
+     "t": 22,
+     "firings": 1003,
+     "firers": 1003,
+     "occupancy": 56
+    },
+    {
+     "t": 23,
+     "firings": 1003,
+     "firers": 1003,
+     "occupancy": 56
+    },
+    {
+     "t": 24,
+     "firings": 1003,
+     "firers": 1003,
+     "occupancy": 56
+    },
+    {
+     "t": 25,
+     "firings": 1003,
+     "firers": 1003,
+     "occupancy": 56
+    },
+    {
+     "t": 26,
+     "firings": 1003,
+     "firers": 1003,
+     "occupancy": 56
+    },
+    {
+     "t": 27,
+     "firings": 1003,
+     "firers": 1003,
+     "occupancy": 56
+    },
+    {
+     "t": 28,
+     "firings": 1003,
+     "firers": 1003,
+     "occupancy": 56
+    },
+    {
+     "t": 29,
+     "firings": 1003,
+     "firers": 1003,
+     "occupancy": 56
+    },
+    {
+     "t": 30,
+     "firings": 1003,
+     "firers": 1003,
+     "occupancy": 56
+    },
+    {
+     "t": 31,
+     "firings": 1003,
+     "firers": 1003,
+     "occupancy": 56
+    },
+    {
+     "t": 32,
+     "firings": 1003,
+     "firers": 1003,
+     "occupancy": 56
+    },
+    {
+     "t": 33,
+     "firings": 1003,
+     "firers": 1003,
+     "occupancy": 56
+    },
+    {
+     "t": 34,
+     "firings": 1003,
+     "firers": 1003,
+     "occupancy": 56
+    },
+    {
+     "t": 35,
+     "firings": 1003,
+     "firers": 1003,
+     "occupancy": 56
+    },
+    {
+     "t": 36,
+     "firings": 1003,
+     "firers": 1003,
+     "occupancy": 56
+    },
+    {
+     "t": 37,
+     "firings": 1003,
+     "firers": 1003,
+     "occupancy": 56
+    },
+    {
+     "t": 38,
+     "firings": 1003,
+     "firers": 1003,
+     "occupancy": 56
+    },
+    {
+     "t": 39,
+     "firings": 1003,
+     "firers": 1003,
+     "occupancy": 56
+    },
+    {
+     "t": 40,
+     "firings": 1003,
+     "firers": 1003,
+     "occupancy": 56
+    },
+    {
+     "t": 41,
+     "firings": 1003,
+     "firers": 1003,
+     "occupancy": 56
+    },
+    {
+     "t": 42,
+     "firings": 1003,
+     "firers": 1003,
+     "occupancy": 56
+    },
+    {
+     "t": 43,
+     "firings": 1003,
+     "firers": 1003,
+     "occupancy": 56
+    },
+    {
+     "t": 44,
+     "firings": 1003,
+     "firers": 1003,
+     "occupancy": 56
+    },
+    {
+     "t": 45,
+     "firings": 1003,
+     "firers": 1003,
+     "occupancy": 56
+    },
+    {
+     "t": 46,
+     "firings": 1003,
+     "firers": 1003,
+     "occupancy": 56
+    },
+    {
+     "t": 47,
+     "firings": 1003,
+     "firers": 1003,
+     "occupancy": 56
+    },
+    {
+     "t": 48,
+     "firings": 1003,
+     "firers": 1003,
+     "occupancy": 56
+    },
+    {
+     "t": 49,
+     "firings": 1003,
+     "firers": 1003,
+     "occupancy": 56
+    },
+    {
+     "t": 50,
+     "firings": 1003,
+     "firers": 1003,
+     "occupancy": 56
+    },
+    {
+     "t": 51,
+     "firings": 1003,
+     "firers": 1003,
+     "occupancy": 56
+    },
+    {
+     "t": 52,
+     "firings": 1003,
+     "firers": 1003,
+     "occupancy": 56
+    },
+    {
+     "t": 53,
+     "firings": 1003,
+     "firers": 1003,
+     "occupancy": 56
+    },
+    {
+     "t": 54,
+     "firings": 1003,
+     "firers": 1003,
+     "occupancy": 56
+    },
+    {
+     "t": 55,
+     "firings": 1003,
+     "firers": 1003,
+     "occupancy": 56
+    },
+    {
+     "t": 56,
+     "firings": 1003,
+     "firers": 1003,
+     "occupancy": 56
+    },
+    {
+     "t": 57,
+     "firings": 1003,
+     "firers": 1003,
+     "occupancy": 56
+    },
+    {
+     "t": 58,
+     "firings": 1003,
+     "firers": 1003,
+     "occupancy": 56
+    },
+    {
+     "t": 59,
+     "firings": 1003,
+     "firers": 1003,
+     "occupancy": 56
+    },
+    {
+     "t": 60,
+     "firings": 1003,
+     "firers": 1003,
+     "occupancy": 56
+    },
+    {
+     "t": 61,
+     "firings": 1003,
+     "firers": 1003,
+     "occupancy": 56
+    },
+    {
+     "t": 62,
+     "firings": 1003,
+     "firers": 1003,
+     "occupancy": 56
+    },
+    {
+     "t": 63,
+     "firings": 1003,
+     "firers": 1003,
+     "occupancy": 56
+    },
+    {
+     "t": 64,
+     "firings": 1003,
+     "firers": 1003,
+     "occupancy": 56
+    }
+   ]
+  },
+  {
+   "phi": 0.25,
+   "seed": 88003,
+   "detOk": true,
+   "abstains": 1013,
+   "firersRatio": 1,
+   "occupancyCapOk": true,
+   "perTick": [
+    {
+     "t": 1,
+     "firings": 965,
+     "firers": 965,
+     "occupancy": 48
+    },
+    {
+     "t": 2,
+     "firings": 1012,
+     "firers": 1012,
+     "occupancy": 49
+    },
+    {
+     "t": 3,
+     "firings": 1012,
+     "firers": 1012,
+     "occupancy": 50
+    },
+    {
+     "t": 4,
+     "firings": 1012,
+     "firers": 1012,
+     "occupancy": 51
+    },
+    {
+     "t": 5,
+     "firings": 1012,
+     "firers": 1012,
+     "occupancy": 52
+    },
+    {
+     "t": 6,
+     "firings": 1012,
+     "firers": 1012,
+     "occupancy": 53
+    },
+    {
+     "t": 7,
+     "firings": 1012,
+     "firers": 1012,
+     "occupancy": 54
+    },
+    {
+     "t": 8,
+     "firings": 1012,
+     "firers": 1012,
+     "occupancy": 55
+    },
+    {
+     "t": 9,
+     "firings": 1012,
+     "firers": 1012,
+     "occupancy": 56
+    },
+    {
+     "t": 10,
+     "firings": 1013,
+     "firers": 1013,
+     "occupancy": 56
+    },
+    {
+     "t": 11,
+     "firings": 1013,
+     "firers": 1013,
+     "occupancy": 56
+    },
+    {
+     "t": 12,
+     "firings": 1013,
+     "firers": 1013,
+     "occupancy": 56
+    },
+    {
+     "t": 13,
+     "firings": 1013,
+     "firers": 1013,
+     "occupancy": 56
+    },
+    {
+     "t": 14,
+     "firings": 1013,
+     "firers": 1013,
+     "occupancy": 56
+    },
+    {
+     "t": 15,
+     "firings": 1013,
+     "firers": 1013,
+     "occupancy": 56
+    },
+    {
+     "t": 16,
+     "firings": 1013,
+     "firers": 1013,
+     "occupancy": 56
+    },
+    {
+     "t": 17,
+     "firings": 1013,
+     "firers": 1013,
+     "occupancy": 56
+    },
+    {
+     "t": 18,
+     "firings": 1013,
+     "firers": 1013,
+     "occupancy": 56
+    },
+    {
+     "t": 19,
+     "firings": 1013,
+     "firers": 1013,
+     "occupancy": 56
+    },
+    {
+     "t": 20,
+     "firings": 1013,
+     "firers": 1013,
+     "occupancy": 56
+    },
+    {
+     "t": 21,
+     "firings": 1013,
+     "firers": 1013,
+     "occupancy": 56
+    },
+    {
+     "t": 22,
+     "firings": 1013,
+     "firers": 1013,
+     "occupancy": 56
+    },
+    {
+     "t": 23,
+     "firings": 1013,
+     "firers": 1013,
+     "occupancy": 56
+    },
+    {
+     "t": 24,
+     "firings": 1013,
+     "firers": 1013,
+     "occupancy": 56
+    },
+    {
+     "t": 25,
+     "firings": 1013,
+     "firers": 1013,
+     "occupancy": 56
+    },
+    {
+     "t": 26,
+     "firings": 1013,
+     "firers": 1013,
+     "occupancy": 56
+    },
+    {
+     "t": 27,
+     "firings": 1013,
+     "firers": 1013,
+     "occupancy": 56
+    },
+    {
+     "t": 28,
+     "firings": 1013,
+     "firers": 1013,
+     "occupancy": 56
+    },
+    {
+     "t": 29,
+     "firings": 1013,
+     "firers": 1013,
+     "occupancy": 56
+    },
+    {
+     "t": 30,
+     "firings": 1013,
+     "firers": 1013,
+     "occupancy": 56
+    },
+    {
+     "t": 31,
+     "firings": 1013,
+     "firers": 1013,
+     "occupancy": 56
+    },
+    {
+     "t": 32,
+     "firings": 1013,
+     "firers": 1013,
+     "occupancy": 56
+    },
+    {
+     "t": 33,
+     "firings": 1013,
+     "firers": 1013,
+     "occupancy": 56
+    },
+    {
+     "t": 34,
+     "firings": 1013,
+     "firers": 1013,
+     "occupancy": 56
+    },
+    {
+     "t": 35,
+     "firings": 1013,
+     "firers": 1013,
+     "occupancy": 56
+    },
+    {
+     "t": 36,
+     "firings": 1013,
+     "firers": 1013,
+     "occupancy": 56
+    },
+    {
+     "t": 37,
+     "firings": 1013,
+     "firers": 1013,
+     "occupancy": 56
+    },
+    {
+     "t": 38,
+     "firings": 1013,
+     "firers": 1013,
+     "occupancy": 56
+    },
+    {
+     "t": 39,
+     "firings": 1013,
+     "firers": 1013,
+     "occupancy": 56
+    },
+    {
+     "t": 40,
+     "firings": 1013,
+     "firers": 1013,
+     "occupancy": 56
+    },
+    {
+     "t": 41,
+     "firings": 1013,
+     "firers": 1013,
+     "occupancy": 56
+    },
+    {
+     "t": 42,
+     "firings": 1013,
+     "firers": 1013,
+     "occupancy": 56
+    },
+    {
+     "t": 43,
+     "firings": 1013,
+     "firers": 1013,
+     "occupancy": 56
+    },
+    {
+     "t": 44,
+     "firings": 1013,
+     "firers": 1013,
+     "occupancy": 56
+    },
+    {
+     "t": 45,
+     "firings": 1013,
+     "firers": 1013,
+     "occupancy": 56
+    },
+    {
+     "t": 46,
+     "firings": 1013,
+     "firers": 1013,
+     "occupancy": 56
+    },
+    {
+     "t": 47,
+     "firings": 1013,
+     "firers": 1013,
+     "occupancy": 56
+    },
+    {
+     "t": 48,
+     "firings": 1013,
+     "firers": 1013,
+     "occupancy": 56
+    },
+    {
+     "t": 49,
+     "firings": 1013,
+     "firers": 1013,
+     "occupancy": 56
+    },
+    {
+     "t": 50,
+     "firings": 1013,
+     "firers": 1013,
+     "occupancy": 56
+    },
+    {
+     "t": 51,
+     "firings": 1013,
+     "firers": 1013,
+     "occupancy": 56
+    },
+    {
+     "t": 52,
+     "firings": 1013,
+     "firers": 1013,
+     "occupancy": 56
+    },
+    {
+     "t": 53,
+     "firings": 1013,
+     "firers": 1013,
+     "occupancy": 56
+    },
+    {
+     "t": 54,
+     "firings": 1013,
+     "firers": 1013,
+     "occupancy": 56
+    },
+    {
+     "t": 55,
+     "firings": 1013,
+     "firers": 1013,
+     "occupancy": 56
+    },
+    {
+     "t": 56,
+     "firings": 1013,
+     "firers": 1013,
+     "occupancy": 56
+    },
+    {
+     "t": 57,
+     "firings": 1013,
+     "firers": 1013,
+     "occupancy": 56
+    },
+    {
+     "t": 58,
+     "firings": 1013,
+     "firers": 1013,
+     "occupancy": 56
+    },
+    {
+     "t": 59,
+     "firings": 1013,
+     "firers": 1013,
+     "occupancy": 56
+    },
+    {
+     "t": 60,
+     "firings": 1013,
+     "firers": 1013,
+     "occupancy": 56
+    },
+    {
+     "t": 61,
+     "firings": 1013,
+     "firers": 1013,
+     "occupancy": 56
+    },
+    {
+     "t": 62,
+     "firings": 1013,
+     "firers": 1013,
+     "occupancy": 56
+    },
+    {
+     "t": 63,
+     "firings": 1013,
+     "firers": 1013,
+     "occupancy": 56
+    },
+    {
+     "t": 64,
+     "firings": 1013,
+     "firers": 1013,
+     "occupancy": 56
+    }
+   ]
+  },
+  {
+   "phi": 0.25,
+   "seed": 88004,
+   "detOk": true,
+   "abstains": 1011,
+   "firersRatio": 1,
+   "occupancyCapOk": true,
+   "perTick": [
+    {
+     "t": 1,
+     "firings": 963,
+     "firers": 963,
+     "occupancy": 48
+    },
+    {
+     "t": 2,
+     "firings": 1010,
+     "firers": 1010,
+     "occupancy": 49
+    },
+    {
+     "t": 3,
+     "firings": 1010,
+     "firers": 1010,
+     "occupancy": 50
+    },
+    {
+     "t": 4,
+     "firings": 1010,
+     "firers": 1010,
+     "occupancy": 51
+    },
+    {
+     "t": 5,
+     "firings": 1010,
+     "firers": 1010,
+     "occupancy": 52
+    },
+    {
+     "t": 6,
+     "firings": 1010,
+     "firers": 1010,
+     "occupancy": 53
+    },
+    {
+     "t": 7,
+     "firings": 1010,
+     "firers": 1010,
+     "occupancy": 54
+    },
+    {
+     "t": 8,
+     "firings": 1010,
+     "firers": 1010,
+     "occupancy": 55
+    },
+    {
+     "t": 9,
+     "firings": 1010,
+     "firers": 1010,
+     "occupancy": 56
+    },
+    {
+     "t": 10,
+     "firings": 1011,
+     "firers": 1011,
+     "occupancy": 56
+    },
+    {
+     "t": 11,
+     "firings": 1011,
+     "firers": 1011,
+     "occupancy": 56
+    },
+    {
+     "t": 12,
+     "firings": 1011,
+     "firers": 1011,
+     "occupancy": 56
+    },
+    {
+     "t": 13,
+     "firings": 1011,
+     "firers": 1011,
+     "occupancy": 56
+    },
+    {
+     "t": 14,
+     "firings": 1011,
+     "firers": 1011,
+     "occupancy": 56
+    },
+    {
+     "t": 15,
+     "firings": 1011,
+     "firers": 1011,
+     "occupancy": 56
+    },
+    {
+     "t": 16,
+     "firings": 1011,
+     "firers": 1011,
+     "occupancy": 56
+    },
+    {
+     "t": 17,
+     "firings": 1011,
+     "firers": 1011,
+     "occupancy": 56
+    },
+    {
+     "t": 18,
+     "firings": 1011,
+     "firers": 1011,
+     "occupancy": 56
+    },
+    {
+     "t": 19,
+     "firings": 1011,
+     "firers": 1011,
+     "occupancy": 56
+    },
+    {
+     "t": 20,
+     "firings": 1011,
+     "firers": 1011,
+     "occupancy": 56
+    },
+    {
+     "t": 21,
+     "firings": 1011,
+     "firers": 1011,
+     "occupancy": 56
+    },
+    {
+     "t": 22,
+     "firings": 1011,
+     "firers": 1011,
+     "occupancy": 56
+    },
+    {
+     "t": 23,
+     "firings": 1011,
+     "firers": 1011,
+     "occupancy": 56
+    },
+    {
+     "t": 24,
+     "firings": 1011,
+     "firers": 1011,
+     "occupancy": 56
+    },
+    {
+     "t": 25,
+     "firings": 1011,
+     "firers": 1011,
+     "occupancy": 56
+    },
+    {
+     "t": 26,
+     "firings": 1011,
+     "firers": 1011,
+     "occupancy": 56
+    },
+    {
+     "t": 27,
+     "firings": 1011,
+     "firers": 1011,
+     "occupancy": 56
+    },
+    {
+     "t": 28,
+     "firings": 1011,
+     "firers": 1011,
+     "occupancy": 56
+    },
+    {
+     "t": 29,
+     "firings": 1011,
+     "firers": 1011,
+     "occupancy": 56
+    },
+    {
+     "t": 30,
+     "firings": 1011,
+     "firers": 1011,
+     "occupancy": 56
+    },
+    {
+     "t": 31,
+     "firings": 1011,
+     "firers": 1011,
+     "occupancy": 56
+    },
+    {
+     "t": 32,
+     "firings": 1011,
+     "firers": 1011,
+     "occupancy": 56
+    },
+    {
+     "t": 33,
+     "firings": 1011,
+     "firers": 1011,
+     "occupancy": 56
+    },
+    {
+     "t": 34,
+     "firings": 1011,
+     "firers": 1011,
+     "occupancy": 56
+    },
+    {
+     "t": 35,
+     "firings": 1011,
+     "firers": 1011,
+     "occupancy": 56
+    },
+    {
+     "t": 36,
+     "firings": 1011,
+     "firers": 1011,
+     "occupancy": 56
+    },
+    {
+     "t": 37,
+     "firings": 1011,
+     "firers": 1011,
+     "occupancy": 56
+    },
+    {
+     "t": 38,
+     "firings": 1011,
+     "firers": 1011,
+     "occupancy": 56
+    },
+    {
+     "t": 39,
+     "firings": 1011,
+     "firers": 1011,
+     "occupancy": 56
+    },
+    {
+     "t": 40,
+     "firings": 1011,
+     "firers": 1011,
+     "occupancy": 56
+    },
+    {
+     "t": 41,
+     "firings": 1011,
+     "firers": 1011,
+     "occupancy": 56
+    },
+    {
+     "t": 42,
+     "firings": 1011,
+     "firers": 1011,
+     "occupancy": 56
+    },
+    {
+     "t": 43,
+     "firings": 1011,
+     "firers": 1011,
+     "occupancy": 56
+    },
+    {
+     "t": 44,
+     "firings": 1011,
+     "firers": 1011,
+     "occupancy": 56
+    },
+    {
+     "t": 45,
+     "firings": 1011,
+     "firers": 1011,
+     "occupancy": 56
+    },
+    {
+     "t": 46,
+     "firings": 1011,
+     "firers": 1011,
+     "occupancy": 56
+    },
+    {
+     "t": 47,
+     "firings": 1011,
+     "firers": 1011,
+     "occupancy": 56
+    },
+    {
+     "t": 48,
+     "firings": 1011,
+     "firers": 1011,
+     "occupancy": 56
+    },
+    {
+     "t": 49,
+     "firings": 1011,
+     "firers": 1011,
+     "occupancy": 56
+    },
+    {
+     "t": 50,
+     "firings": 1011,
+     "firers": 1011,
+     "occupancy": 56
+    },
+    {
+     "t": 51,
+     "firings": 1011,
+     "firers": 1011,
+     "occupancy": 56
+    },
+    {
+     "t": 52,
+     "firings": 1011,
+     "firers": 1011,
+     "occupancy": 56
+    },
+    {
+     "t": 53,
+     "firings": 1011,
+     "firers": 1011,
+     "occupancy": 56
+    },
+    {
+     "t": 54,
+     "firings": 1011,
+     "firers": 1011,
+     "occupancy": 56
+    },
+    {
+     "t": 55,
+     "firings": 1011,
+     "firers": 1011,
+     "occupancy": 56
+    },
+    {
+     "t": 56,
+     "firings": 1011,
+     "firers": 1011,
+     "occupancy": 56
+    },
+    {
+     "t": 57,
+     "firings": 1011,
+     "firers": 1011,
+     "occupancy": 56
+    },
+    {
+     "t": 58,
+     "firings": 1011,
+     "firers": 1011,
+     "occupancy": 56
+    },
+    {
+     "t": 59,
+     "firings": 1011,
+     "firers": 1011,
+     "occupancy": 56
+    },
+    {
+     "t": 60,
+     "firings": 1011,
+     "firers": 1011,
+     "occupancy": 56
+    },
+    {
+     "t": 61,
+     "firings": 1011,
+     "firers": 1011,
+     "occupancy": 56
+    },
+    {
+     "t": 62,
+     "firings": 1011,
+     "firers": 1011,
+     "occupancy": 56
+    },
+    {
+     "t": 63,
+     "firings": 1011,
+     "firers": 1011,
+     "occupancy": 56
+    },
+    {
+     "t": 64,
+     "firings": 1011,
+     "firers": 1011,
+     "occupancy": 56
+    }
+   ]
+  },
+  {
+   "phi": 0.25,
+   "seed": 88005,
+   "detOk": true,
+   "abstains": 1006,
+   "firersRatio": 1,
+   "occupancyCapOk": true,
+   "perTick": [
+    {
+     "t": 1,
+     "firings": 958,
+     "firers": 958,
+     "occupancy": 48
+    },
+    {
+     "t": 2,
+     "firings": 1005,
+     "firers": 1005,
+     "occupancy": 49
+    },
+    {
+     "t": 3,
+     "firings": 1005,
+     "firers": 1005,
+     "occupancy": 50
+    },
+    {
+     "t": 4,
+     "firings": 1005,
+     "firers": 1005,
+     "occupancy": 51
+    },
+    {
+     "t": 5,
+     "firings": 1005,
+     "firers": 1005,
+     "occupancy": 52
+    },
+    {
+     "t": 6,
+     "firings": 1005,
+     "firers": 1005,
+     "occupancy": 53
+    },
+    {
+     "t": 7,
+     "firings": 1005,
+     "firers": 1005,
+     "occupancy": 54
+    },
+    {
+     "t": 8,
+     "firings": 1005,
+     "firers": 1005,
+     "occupancy": 55
+    },
+    {
+     "t": 9,
+     "firings": 1005,
+     "firers": 1005,
+     "occupancy": 56
+    },
+    {
+     "t": 10,
+     "firings": 1006,
+     "firers": 1006,
+     "occupancy": 56
+    },
+    {
+     "t": 11,
+     "firings": 1006,
+     "firers": 1006,
+     "occupancy": 56
+    },
+    {
+     "t": 12,
+     "firings": 1006,
+     "firers": 1006,
+     "occupancy": 56
+    },
+    {
+     "t": 13,
+     "firings": 1006,
+     "firers": 1006,
+     "occupancy": 56
+    },
+    {
+     "t": 14,
+     "firings": 1006,
+     "firers": 1006,
+     "occupancy": 56
+    },
+    {
+     "t": 15,
+     "firings": 1006,
+     "firers": 1006,
+     "occupancy": 56
+    },
+    {
+     "t": 16,
+     "firings": 1006,
+     "firers": 1006,
+     "occupancy": 56
+    },
+    {
+     "t": 17,
+     "firings": 1006,
+     "firers": 1006,
+     "occupancy": 56
+    },
+    {
+     "t": 18,
+     "firings": 1006,
+     "firers": 1006,
+     "occupancy": 56
+    },
+    {
+     "t": 19,
+     "firings": 1006,
+     "firers": 1006,
+     "occupancy": 56
+    },
+    {
+     "t": 20,
+     "firings": 1006,
+     "firers": 1006,
+     "occupancy": 56
+    },
+    {
+     "t": 21,
+     "firings": 1006,
+     "firers": 1006,
+     "occupancy": 56
+    },
+    {
+     "t": 22,
+     "firings": 1006,
+     "firers": 1006,
+     "occupancy": 56
+    },
+    {
+     "t": 23,
+     "firings": 1006,
+     "firers": 1006,
+     "occupancy": 56
+    },
+    {
+     "t": 24,
+     "firings": 1006,
+     "firers": 1006,
+     "occupancy": 56
+    },
+    {
+     "t": 25,
+     "firings": 1006,
+     "firers": 1006,
+     "occupancy": 56
+    },
+    {
+     "t": 26,
+     "firings": 1006,
+     "firers": 1006,
+     "occupancy": 56
+    },
+    {
+     "t": 27,
+     "firings": 1006,
+     "firers": 1006,
+     "occupancy": 56
+    },
+    {
+     "t": 28,
+     "firings": 1006,
+     "firers": 1006,
+     "occupancy": 56
+    },
+    {
+     "t": 29,
+     "firings": 1006,
+     "firers": 1006,
+     "occupancy": 56
+    },
+    {
+     "t": 30,
+     "firings": 1006,
+     "firers": 1006,
+     "occupancy": 56
+    },
+    {
+     "t": 31,
+     "firings": 1006,
+     "firers": 1006,
+     "occupancy": 56
+    },
+    {
+     "t": 32,
+     "firings": 1006,
+     "firers": 1006,
+     "occupancy": 56
+    },
+    {
+     "t": 33,
+     "firings": 1006,
+     "firers": 1006,
+     "occupancy": 56
+    },
+    {
+     "t": 34,
+     "firings": 1006,
+     "firers": 1006,
+     "occupancy": 56
+    },
+    {
+     "t": 35,
+     "firings": 1006,
+     "firers": 1006,
+     "occupancy": 56
+    },
+    {
+     "t": 36,
+     "firings": 1006,
+     "firers": 1006,
+     "occupancy": 56
+    },
+    {
+     "t": 37,
+     "firings": 1006,
+     "firers": 1006,
+     "occupancy": 56
+    },
+    {
+     "t": 38,
+     "firings": 1006,
+     "firers": 1006,
+     "occupancy": 56
+    },
+    {
+     "t": 39,
+     "firings": 1006,
+     "firers": 1006,
+     "occupancy": 56
+    },
+    {
+     "t": 40,
+     "firings": 1006,
+     "firers": 1006,
+     "occupancy": 56
+    },
+    {
+     "t": 41,
+     "firings": 1006,
+     "firers": 1006,
+     "occupancy": 56
+    },
+    {
+     "t": 42,
+     "firings": 1006,
+     "firers": 1006,
+     "occupancy": 56
+    },
+    {
+     "t": 43,
+     "firings": 1006,
+     "firers": 1006,
+     "occupancy": 56
+    },
+    {
+     "t": 44,
+     "firings": 1006,
+     "firers": 1006,
+     "occupancy": 56
+    },
+    {
+     "t": 45,
+     "firings": 1006,
+     "firers": 1006,
+     "occupancy": 56
+    },
+    {
+     "t": 46,
+     "firings": 1006,
+     "firers": 1006,
+     "occupancy": 56
+    },
+    {
+     "t": 47,
+     "firings": 1006,
+     "firers": 1006,
+     "occupancy": 56
+    },
+    {
+     "t": 48,
+     "firings": 1006,
+     "firers": 1006,
+     "occupancy": 56
+    },
+    {
+     "t": 49,
+     "firings": 1006,
+     "firers": 1006,
+     "occupancy": 56
+    },
+    {
+     "t": 50,
+     "firings": 1006,
+     "firers": 1006,
+     "occupancy": 56
+    },
+    {
+     "t": 51,
+     "firings": 1006,
+     "firers": 1006,
+     "occupancy": 56
+    },
+    {
+     "t": 52,
+     "firings": 1006,
+     "firers": 1006,
+     "occupancy": 56
+    },
+    {
+     "t": 53,
+     "firings": 1006,
+     "firers": 1006,
+     "occupancy": 56
+    },
+    {
+     "t": 54,
+     "firings": 1006,
+     "firers": 1006,
+     "occupancy": 56
+    },
+    {
+     "t": 55,
+     "firings": 1006,
+     "firers": 1006,
+     "occupancy": 56
+    },
+    {
+     "t": 56,
+     "firings": 1006,
+     "firers": 1006,
+     "occupancy": 56
+    },
+    {
+     "t": 57,
+     "firings": 1006,
+     "firers": 1006,
+     "occupancy": 56
+    },
+    {
+     "t": 58,
+     "firings": 1006,
+     "firers": 1006,
+     "occupancy": 56
+    },
+    {
+     "t": 59,
+     "firings": 1006,
+     "firers": 1006,
+     "occupancy": 56
+    },
+    {
+     "t": 60,
+     "firings": 1006,
+     "firers": 1006,
+     "occupancy": 56
+    },
+    {
+     "t": 61,
+     "firings": 1006,
+     "firers": 1006,
+     "occupancy": 56
+    },
+    {
+     "t": 62,
+     "firings": 1006,
+     "firers": 1006,
+     "occupancy": 56
+    },
+    {
+     "t": 63,
+     "firings": 1006,
+     "firers": 1006,
+     "occupancy": 56
+    },
+    {
+     "t": 64,
+     "firings": 1006,
+     "firers": 1006,
+     "occupancy": 56
+    }
+   ]
+  },
+  {
+   "phi": 0.5,
+   "seed": 88001,
+   "detOk": true,
+   "abstains": 2036,
+   "firersRatio": 1,
+   "occupancyCapOk": true,
+   "perTick": [
+    {
+     "t": 1,
+     "firings": 1988,
+     "firers": 1988,
+     "occupancy": 48
+    },
+    {
+     "t": 2,
+     "firings": 2035,
+     "firers": 2035,
+     "occupancy": 49
+    },
+    {
+     "t": 3,
+     "firings": 2035,
+     "firers": 2035,
+     "occupancy": 50
+    },
+    {
+     "t": 4,
+     "firings": 2035,
+     "firers": 2035,
+     "occupancy": 51
+    },
+    {
+     "t": 5,
+     "firings": 2035,
+     "firers": 2035,
+     "occupancy": 52
+    },
+    {
+     "t": 6,
+     "firings": 2035,
+     "firers": 2035,
+     "occupancy": 53
+    },
+    {
+     "t": 7,
+     "firings": 2035,
+     "firers": 2035,
+     "occupancy": 54
+    },
+    {
+     "t": 8,
+     "firings": 2035,
+     "firers": 2035,
+     "occupancy": 55
+    },
+    {
+     "t": 9,
+     "firings": 2035,
+     "firers": 2035,
+     "occupancy": 56
+    },
+    {
+     "t": 10,
+     "firings": 2036,
+     "firers": 2036,
+     "occupancy": 56
+    },
+    {
+     "t": 11,
+     "firings": 2036,
+     "firers": 2036,
+     "occupancy": 56
+    },
+    {
+     "t": 12,
+     "firings": 2036,
+     "firers": 2036,
+     "occupancy": 56
+    },
+    {
+     "t": 13,
+     "firings": 2036,
+     "firers": 2036,
+     "occupancy": 56
+    },
+    {
+     "t": 14,
+     "firings": 2036,
+     "firers": 2036,
+     "occupancy": 56
+    },
+    {
+     "t": 15,
+     "firings": 2036,
+     "firers": 2036,
+     "occupancy": 56
+    },
+    {
+     "t": 16,
+     "firings": 2036,
+     "firers": 2036,
+     "occupancy": 56
+    },
+    {
+     "t": 17,
+     "firings": 2036,
+     "firers": 2036,
+     "occupancy": 56
+    },
+    {
+     "t": 18,
+     "firings": 2036,
+     "firers": 2036,
+     "occupancy": 56
+    },
+    {
+     "t": 19,
+     "firings": 2036,
+     "firers": 2036,
+     "occupancy": 56
+    },
+    {
+     "t": 20,
+     "firings": 2036,
+     "firers": 2036,
+     "occupancy": 56
+    },
+    {
+     "t": 21,
+     "firings": 2036,
+     "firers": 2036,
+     "occupancy": 56
+    },
+    {
+     "t": 22,
+     "firings": 2036,
+     "firers": 2036,
+     "occupancy": 56
+    },
+    {
+     "t": 23,
+     "firings": 2036,
+     "firers": 2036,
+     "occupancy": 56
+    },
+    {
+     "t": 24,
+     "firings": 2036,
+     "firers": 2036,
+     "occupancy": 56
+    },
+    {
+     "t": 25,
+     "firings": 2036,
+     "firers": 2036,
+     "occupancy": 56
+    },
+    {
+     "t": 26,
+     "firings": 2036,
+     "firers": 2036,
+     "occupancy": 56
+    },
+    {
+     "t": 27,
+     "firings": 2036,
+     "firers": 2036,
+     "occupancy": 56
+    },
+    {
+     "t": 28,
+     "firings": 2036,
+     "firers": 2036,
+     "occupancy": 56
+    },
+    {
+     "t": 29,
+     "firings": 2036,
+     "firers": 2036,
+     "occupancy": 56
+    },
+    {
+     "t": 30,
+     "firings": 2036,
+     "firers": 2036,
+     "occupancy": 56
+    },
+    {
+     "t": 31,
+     "firings": 2036,
+     "firers": 2036,
+     "occupancy": 56
+    },
+    {
+     "t": 32,
+     "firings": 2036,
+     "firers": 2036,
+     "occupancy": 56
+    },
+    {
+     "t": 33,
+     "firings": 2036,
+     "firers": 2036,
+     "occupancy": 56
+    },
+    {
+     "t": 34,
+     "firings": 2036,
+     "firers": 2036,
+     "occupancy": 56
+    },
+    {
+     "t": 35,
+     "firings": 2036,
+     "firers": 2036,
+     "occupancy": 56
+    },
+    {
+     "t": 36,
+     "firings": 2036,
+     "firers": 2036,
+     "occupancy": 56
+    },
+    {
+     "t": 37,
+     "firings": 2036,
+     "firers": 2036,
+     "occupancy": 56
+    },
+    {
+     "t": 38,
+     "firings": 2036,
+     "firers": 2036,
+     "occupancy": 56
+    },
+    {
+     "t": 39,
+     "firings": 2036,
+     "firers": 2036,
+     "occupancy": 56
+    },
+    {
+     "t": 40,
+     "firings": 2036,
+     "firers": 2036,
+     "occupancy": 56
+    },
+    {
+     "t": 41,
+     "firings": 2036,
+     "firers": 2036,
+     "occupancy": 56
+    },
+    {
+     "t": 42,
+     "firings": 2036,
+     "firers": 2036,
+     "occupancy": 56
+    },
+    {
+     "t": 43,
+     "firings": 2036,
+     "firers": 2036,
+     "occupancy": 56
+    },
+    {
+     "t": 44,
+     "firings": 2036,
+     "firers": 2036,
+     "occupancy": 56
+    },
+    {
+     "t": 45,
+     "firings": 2036,
+     "firers": 2036,
+     "occupancy": 56
+    },
+    {
+     "t": 46,
+     "firings": 2036,
+     "firers": 2036,
+     "occupancy": 56
+    },
+    {
+     "t": 47,
+     "firings": 2036,
+     "firers": 2036,
+     "occupancy": 56
+    },
+    {
+     "t": 48,
+     "firings": 2036,
+     "firers": 2036,
+     "occupancy": 56
+    },
+    {
+     "t": 49,
+     "firings": 2036,
+     "firers": 2036,
+     "occupancy": 56
+    },
+    {
+     "t": 50,
+     "firings": 2036,
+     "firers": 2036,
+     "occupancy": 56
+    },
+    {
+     "t": 51,
+     "firings": 2036,
+     "firers": 2036,
+     "occupancy": 56
+    },
+    {
+     "t": 52,
+     "firings": 2036,
+     "firers": 2036,
+     "occupancy": 56
+    },
+    {
+     "t": 53,
+     "firings": 2036,
+     "firers": 2036,
+     "occupancy": 56
+    },
+    {
+     "t": 54,
+     "firings": 2036,
+     "firers": 2036,
+     "occupancy": 56
+    },
+    {
+     "t": 55,
+     "firings": 2036,
+     "firers": 2036,
+     "occupancy": 56
+    },
+    {
+     "t": 56,
+     "firings": 2036,
+     "firers": 2036,
+     "occupancy": 56
+    },
+    {
+     "t": 57,
+     "firings": 2036,
+     "firers": 2036,
+     "occupancy": 56
+    },
+    {
+     "t": 58,
+     "firings": 2036,
+     "firers": 2036,
+     "occupancy": 56
+    },
+    {
+     "t": 59,
+     "firings": 2036,
+     "firers": 2036,
+     "occupancy": 56
+    },
+    {
+     "t": 60,
+     "firings": 2036,
+     "firers": 2036,
+     "occupancy": 56
+    },
+    {
+     "t": 61,
+     "firings": 2036,
+     "firers": 2036,
+     "occupancy": 56
+    },
+    {
+     "t": 62,
+     "firings": 2036,
+     "firers": 2036,
+     "occupancy": 56
+    },
+    {
+     "t": 63,
+     "firings": 2036,
+     "firers": 2036,
+     "occupancy": 56
+    },
+    {
+     "t": 64,
+     "firings": 2036,
+     "firers": 2036,
+     "occupancy": 56
+    }
+   ]
+  },
+  {
+   "phi": 0.5,
+   "seed": 88002,
+   "detOk": true,
+   "abstains": 2011,
+   "firersRatio": 1,
+   "occupancyCapOk": true,
+   "perTick": [
+    {
+     "t": 1,
+     "firings": 1963,
+     "firers": 1963,
+     "occupancy": 48
+    },
+    {
+     "t": 2,
+     "firings": 2010,
+     "firers": 2010,
+     "occupancy": 49
+    },
+    {
+     "t": 3,
+     "firings": 2010,
+     "firers": 2010,
+     "occupancy": 50
+    },
+    {
+     "t": 4,
+     "firings": 2010,
+     "firers": 2010,
+     "occupancy": 51
+    },
+    {
+     "t": 5,
+     "firings": 2010,
+     "firers": 2010,
+     "occupancy": 52
+    },
+    {
+     "t": 6,
+     "firings": 2010,
+     "firers": 2010,
+     "occupancy": 53
+    },
+    {
+     "t": 7,
+     "firings": 2010,
+     "firers": 2010,
+     "occupancy": 54
+    },
+    {
+     "t": 8,
+     "firings": 2010,
+     "firers": 2010,
+     "occupancy": 55
+    },
+    {
+     "t": 9,
+     "firings": 2010,
+     "firers": 2010,
+     "occupancy": 56
+    },
+    {
+     "t": 10,
+     "firings": 2011,
+     "firers": 2011,
+     "occupancy": 56
+    },
+    {
+     "t": 11,
+     "firings": 2011,
+     "firers": 2011,
+     "occupancy": 56
+    },
+    {
+     "t": 12,
+     "firings": 2011,
+     "firers": 2011,
+     "occupancy": 56
+    },
+    {
+     "t": 13,
+     "firings": 2011,
+     "firers": 2011,
+     "occupancy": 56
+    },
+    {
+     "t": 14,
+     "firings": 2011,
+     "firers": 2011,
+     "occupancy": 56
+    },
+    {
+     "t": 15,
+     "firings": 2011,
+     "firers": 2011,
+     "occupancy": 56
+    },
+    {
+     "t": 16,
+     "firings": 2011,
+     "firers": 2011,
+     "occupancy": 56
+    },
+    {
+     "t": 17,
+     "firings": 2011,
+     "firers": 2011,
+     "occupancy": 56
+    },
+    {
+     "t": 18,
+     "firings": 2011,
+     "firers": 2011,
+     "occupancy": 56
+    },
+    {
+     "t": 19,
+     "firings": 2011,
+     "firers": 2011,
+     "occupancy": 56
+    },
+    {
+     "t": 20,
+     "firings": 2011,
+     "firers": 2011,
+     "occupancy": 56
+    },
+    {
+     "t": 21,
+     "firings": 2011,
+     "firers": 2011,
+     "occupancy": 56
+    },
+    {
+     "t": 22,
+     "firings": 2011,
+     "firers": 2011,
+     "occupancy": 56
+    },
+    {
+     "t": 23,
+     "firings": 2011,
+     "firers": 2011,
+     "occupancy": 56
+    },
+    {
+     "t": 24,
+     "firings": 2011,
+     "firers": 2011,
+     "occupancy": 56
+    },
+    {
+     "t": 25,
+     "firings": 2011,
+     "firers": 2011,
+     "occupancy": 56
+    },
+    {
+     "t": 26,
+     "firings": 2011,
+     "firers": 2011,
+     "occupancy": 56
+    },
+    {
+     "t": 27,
+     "firings": 2011,
+     "firers": 2011,
+     "occupancy": 56
+    },
+    {
+     "t": 28,
+     "firings": 2011,
+     "firers": 2011,
+     "occupancy": 56
+    },
+    {
+     "t": 29,
+     "firings": 2011,
+     "firers": 2011,
+     "occupancy": 56
+    },
+    {
+     "t": 30,
+     "firings": 2011,
+     "firers": 2011,
+     "occupancy": 56
+    },
+    {
+     "t": 31,
+     "firings": 2011,
+     "firers": 2011,
+     "occupancy": 56
+    },
+    {
+     "t": 32,
+     "firings": 2011,
+     "firers": 2011,
+     "occupancy": 56
+    },
+    {
+     "t": 33,
+     "firings": 2011,
+     "firers": 2011,
+     "occupancy": 56
+    },
+    {
+     "t": 34,
+     "firings": 2011,
+     "firers": 2011,
+     "occupancy": 56
+    },
+    {
+     "t": 35,
+     "firings": 2011,
+     "firers": 2011,
+     "occupancy": 56
+    },
+    {
+     "t": 36,
+     "firings": 2011,
+     "firers": 2011,
+     "occupancy": 56
+    },
+    {
+     "t": 37,
+     "firings": 2011,
+     "firers": 2011,
+     "occupancy": 56
+    },
+    {
+     "t": 38,
+     "firings": 2011,
+     "firers": 2011,
+     "occupancy": 56
+    },
+    {
+     "t": 39,
+     "firings": 2011,
+     "firers": 2011,
+     "occupancy": 56
+    },
+    {
+     "t": 40,
+     "firings": 2011,
+     "firers": 2011,
+     "occupancy": 56
+    },
+    {
+     "t": 41,
+     "firings": 2011,
+     "firers": 2011,
+     "occupancy": 56
+    },
+    {
+     "t": 42,
+     "firings": 2011,
+     "firers": 2011,
+     "occupancy": 56
+    },
+    {
+     "t": 43,
+     "firings": 2011,
+     "firers": 2011,
+     "occupancy": 56
+    },
+    {
+     "t": 44,
+     "firings": 2011,
+     "firers": 2011,
+     "occupancy": 56
+    },
+    {
+     "t": 45,
+     "firings": 2011,
+     "firers": 2011,
+     "occupancy": 56
+    },
+    {
+     "t": 46,
+     "firings": 2011,
+     "firers": 2011,
+     "occupancy": 56
+    },
+    {
+     "t": 47,
+     "firings": 2011,
+     "firers": 2011,
+     "occupancy": 56
+    },
+    {
+     "t": 48,
+     "firings": 2011,
+     "firers": 2011,
+     "occupancy": 56
+    },
+    {
+     "t": 49,
+     "firings": 2011,
+     "firers": 2011,
+     "occupancy": 56
+    },
+    {
+     "t": 50,
+     "firings": 2011,
+     "firers": 2011,
+     "occupancy": 56
+    },
+    {
+     "t": 51,
+     "firings": 2011,
+     "firers": 2011,
+     "occupancy": 56
+    },
+    {
+     "t": 52,
+     "firings": 2011,
+     "firers": 2011,
+     "occupancy": 56
+    },
+    {
+     "t": 53,
+     "firings": 2011,
+     "firers": 2011,
+     "occupancy": 56
+    },
+    {
+     "t": 54,
+     "firings": 2011,
+     "firers": 2011,
+     "occupancy": 56
+    },
+    {
+     "t": 55,
+     "firings": 2011,
+     "firers": 2011,
+     "occupancy": 56
+    },
+    {
+     "t": 56,
+     "firings": 2011,
+     "firers": 2011,
+     "occupancy": 56
+    },
+    {
+     "t": 57,
+     "firings": 2011,
+     "firers": 2011,
+     "occupancy": 56
+    },
+    {
+     "t": 58,
+     "firings": 2011,
+     "firers": 2011,
+     "occupancy": 56
+    },
+    {
+     "t": 59,
+     "firings": 2011,
+     "firers": 2011,
+     "occupancy": 56
+    },
+    {
+     "t": 60,
+     "firings": 2011,
+     "firers": 2011,
+     "occupancy": 56
+    },
+    {
+     "t": 61,
+     "firings": 2011,
+     "firers": 2011,
+     "occupancy": 56
+    },
+    {
+     "t": 62,
+     "firings": 2011,
+     "firers": 2011,
+     "occupancy": 56
+    },
+    {
+     "t": 63,
+     "firings": 2011,
+     "firers": 2011,
+     "occupancy": 56
+    },
+    {
+     "t": 64,
+     "firings": 2011,
+     "firers": 2011,
+     "occupancy": 56
+    }
+   ]
+  },
+  {
+   "phi": 0.5,
+   "seed": 88003,
+   "detOk": true,
+   "abstains": 2086,
+   "firersRatio": 1,
+   "occupancyCapOk": true,
+   "perTick": [
+    {
+     "t": 1,
+     "firings": 2038,
+     "firers": 2038,
+     "occupancy": 48
+    },
+    {
+     "t": 2,
+     "firings": 2085,
+     "firers": 2085,
+     "occupancy": 49
+    },
+    {
+     "t": 3,
+     "firings": 2085,
+     "firers": 2085,
+     "occupancy": 50
+    },
+    {
+     "t": 4,
+     "firings": 2085,
+     "firers": 2085,
+     "occupancy": 51
+    },
+    {
+     "t": 5,
+     "firings": 2085,
+     "firers": 2085,
+     "occupancy": 52
+    },
+    {
+     "t": 6,
+     "firings": 2085,
+     "firers": 2085,
+     "occupancy": 53
+    },
+    {
+     "t": 7,
+     "firings": 2085,
+     "firers": 2085,
+     "occupancy": 54
+    },
+    {
+     "t": 8,
+     "firings": 2085,
+     "firers": 2085,
+     "occupancy": 55
+    },
+    {
+     "t": 9,
+     "firings": 2085,
+     "firers": 2085,
+     "occupancy": 56
+    },
+    {
+     "t": 10,
+     "firings": 2086,
+     "firers": 2086,
+     "occupancy": 56
+    },
+    {
+     "t": 11,
+     "firings": 2086,
+     "firers": 2086,
+     "occupancy": 56
+    },
+    {
+     "t": 12,
+     "firings": 2086,
+     "firers": 2086,
+     "occupancy": 56
+    },
+    {
+     "t": 13,
+     "firings": 2086,
+     "firers": 2086,
+     "occupancy": 56
+    },
+    {
+     "t": 14,
+     "firings": 2086,
+     "firers": 2086,
+     "occupancy": 56
+    },
+    {
+     "t": 15,
+     "firings": 2086,
+     "firers": 2086,
+     "occupancy": 56
+    },
+    {
+     "t": 16,
+     "firings": 2086,
+     "firers": 2086,
+     "occupancy": 56
+    },
+    {
+     "t": 17,
+     "firings": 2086,
+     "firers": 2086,
+     "occupancy": 56
+    },
+    {
+     "t": 18,
+     "firings": 2086,
+     "firers": 2086,
+     "occupancy": 56
+    },
+    {
+     "t": 19,
+     "firings": 2086,
+     "firers": 2086,
+     "occupancy": 56
+    },
+    {
+     "t": 20,
+     "firings": 2086,
+     "firers": 2086,
+     "occupancy": 56
+    },
+    {
+     "t": 21,
+     "firings": 2086,
+     "firers": 2086,
+     "occupancy": 56
+    },
+    {
+     "t": 22,
+     "firings": 2086,
+     "firers": 2086,
+     "occupancy": 56
+    },
+    {
+     "t": 23,
+     "firings": 2086,
+     "firers": 2086,
+     "occupancy": 56
+    },
+    {
+     "t": 24,
+     "firings": 2086,
+     "firers": 2086,
+     "occupancy": 56
+    },
+    {
+     "t": 25,
+     "firings": 2086,
+     "firers": 2086,
+     "occupancy": 56
+    },
+    {
+     "t": 26,
+     "firings": 2086,
+     "firers": 2086,
+     "occupancy": 56
+    },
+    {
+     "t": 27,
+     "firings": 2086,
+     "firers": 2086,
+     "occupancy": 56
+    },
+    {
+     "t": 28,
+     "firings": 2086,
+     "firers": 2086,
+     "occupancy": 56
+    },
+    {
+     "t": 29,
+     "firings": 2086,
+     "firers": 2086,
+     "occupancy": 56
+    },
+    {
+     "t": 30,
+     "firings": 2086,
+     "firers": 2086,
+     "occupancy": 56
+    },
+    {
+     "t": 31,
+     "firings": 2086,
+     "firers": 2086,
+     "occupancy": 56
+    },
+    {
+     "t": 32,
+     "firings": 2086,
+     "firers": 2086,
+     "occupancy": 56
+    },
+    {
+     "t": 33,
+     "firings": 2086,
+     "firers": 2086,
+     "occupancy": 56
+    },
+    {
+     "t": 34,
+     "firings": 2086,
+     "firers": 2086,
+     "occupancy": 56
+    },
+    {
+     "t": 35,
+     "firings": 2086,
+     "firers": 2086,
+     "occupancy": 56
+    },
+    {
+     "t": 36,
+     "firings": 2086,
+     "firers": 2086,
+     "occupancy": 56
+    },
+    {
+     "t": 37,
+     "firings": 2086,
+     "firers": 2086,
+     "occupancy": 56
+    },
+    {
+     "t": 38,
+     "firings": 2086,
+     "firers": 2086,
+     "occupancy": 56
+    },
+    {
+     "t": 39,
+     "firings": 2086,
+     "firers": 2086,
+     "occupancy": 56
+    },
+    {
+     "t": 40,
+     "firings": 2086,
+     "firers": 2086,
+     "occupancy": 56
+    },
+    {
+     "t": 41,
+     "firings": 2086,
+     "firers": 2086,
+     "occupancy": 56
+    },
+    {
+     "t": 42,
+     "firings": 2086,
+     "firers": 2086,
+     "occupancy": 56
+    },
+    {
+     "t": 43,
+     "firings": 2086,
+     "firers": 2086,
+     "occupancy": 56
+    },
+    {
+     "t": 44,
+     "firings": 2086,
+     "firers": 2086,
+     "occupancy": 56
+    },
+    {
+     "t": 45,
+     "firings": 2086,
+     "firers": 2086,
+     "occupancy": 56
+    },
+    {
+     "t": 46,
+     "firings": 2086,
+     "firers": 2086,
+     "occupancy": 56
+    },
+    {
+     "t": 47,
+     "firings": 2086,
+     "firers": 2086,
+     "occupancy": 56
+    },
+    {
+     "t": 48,
+     "firings": 2086,
+     "firers": 2086,
+     "occupancy": 56
+    },
+    {
+     "t": 49,
+     "firings": 2086,
+     "firers": 2086,
+     "occupancy": 56
+    },
+    {
+     "t": 50,
+     "firings": 2086,
+     "firers": 2086,
+     "occupancy": 56
+    },
+    {
+     "t": 51,
+     "firings": 2086,
+     "firers": 2086,
+     "occupancy": 56
+    },
+    {
+     "t": 52,
+     "firings": 2086,
+     "firers": 2086,
+     "occupancy": 56
+    },
+    {
+     "t": 53,
+     "firings": 2086,
+     "firers": 2086,
+     "occupancy": 56
+    },
+    {
+     "t": 54,
+     "firings": 2086,
+     "firers": 2086,
+     "occupancy": 56
+    },
+    {
+     "t": 55,
+     "firings": 2086,
+     "firers": 2086,
+     "occupancy": 56
+    },
+    {
+     "t": 56,
+     "firings": 2086,
+     "firers": 2086,
+     "occupancy": 56
+    },
+    {
+     "t": 57,
+     "firings": 2086,
+     "firers": 2086,
+     "occupancy": 56
+    },
+    {
+     "t": 58,
+     "firings": 2086,
+     "firers": 2086,
+     "occupancy": 56
+    },
+    {
+     "t": 59,
+     "firings": 2086,
+     "firers": 2086,
+     "occupancy": 56
+    },
+    {
+     "t": 60,
+     "firings": 2086,
+     "firers": 2086,
+     "occupancy": 56
+    },
+    {
+     "t": 61,
+     "firings": 2086,
+     "firers": 2086,
+     "occupancy": 56
+    },
+    {
+     "t": 62,
+     "firings": 2086,
+     "firers": 2086,
+     "occupancy": 56
+    },
+    {
+     "t": 63,
+     "firings": 2086,
+     "firers": 2086,
+     "occupancy": 56
+    },
+    {
+     "t": 64,
+     "firings": 2086,
+     "firers": 2086,
+     "occupancy": 56
+    }
+   ]
+  },
+  {
+   "phi": 0.5,
+   "seed": 88004,
+   "detOk": true,
+   "abstains": 2069,
+   "firersRatio": 1,
+   "occupancyCapOk": true,
+   "perTick": [
+    {
+     "t": 1,
+     "firings": 2021,
+     "firers": 2021,
+     "occupancy": 48
+    },
+    {
+     "t": 2,
+     "firings": 2068,
+     "firers": 2068,
+     "occupancy": 49
+    },
+    {
+     "t": 3,
+     "firings": 2068,
+     "firers": 2068,
+     "occupancy": 50
+    },
+    {
+     "t": 4,
+     "firings": 2068,
+     "firers": 2068,
+     "occupancy": 51
+    },
+    {
+     "t": 5,
+     "firings": 2068,
+     "firers": 2068,
+     "occupancy": 52
+    },
+    {
+     "t": 6,
+     "firings": 2068,
+     "firers": 2068,
+     "occupancy": 53
+    },
+    {
+     "t": 7,
+     "firings": 2068,
+     "firers": 2068,
+     "occupancy": 54
+    },
+    {
+     "t": 8,
+     "firings": 2068,
+     "firers": 2068,
+     "occupancy": 55
+    },
+    {
+     "t": 9,
+     "firings": 2068,
+     "firers": 2068,
+     "occupancy": 56
+    },
+    {
+     "t": 10,
+     "firings": 2069,
+     "firers": 2069,
+     "occupancy": 56
+    },
+    {
+     "t": 11,
+     "firings": 2069,
+     "firers": 2069,
+     "occupancy": 56
+    },
+    {
+     "t": 12,
+     "firings": 2069,
+     "firers": 2069,
+     "occupancy": 56
+    },
+    {
+     "t": 13,
+     "firings": 2069,
+     "firers": 2069,
+     "occupancy": 56
+    },
+    {
+     "t": 14,
+     "firings": 2069,
+     "firers": 2069,
+     "occupancy": 56
+    },
+    {
+     "t": 15,
+     "firings": 2069,
+     "firers": 2069,
+     "occupancy": 56
+    },
+    {
+     "t": 16,
+     "firings": 2069,
+     "firers": 2069,
+     "occupancy": 56
+    },
+    {
+     "t": 17,
+     "firings": 2069,
+     "firers": 2069,
+     "occupancy": 56
+    },
+    {
+     "t": 18,
+     "firings": 2069,
+     "firers": 2069,
+     "occupancy": 56
+    },
+    {
+     "t": 19,
+     "firings": 2069,
+     "firers": 2069,
+     "occupancy": 56
+    },
+    {
+     "t": 20,
+     "firings": 2069,
+     "firers": 2069,
+     "occupancy": 56
+    },
+    {
+     "t": 21,
+     "firings": 2069,
+     "firers": 2069,
+     "occupancy": 56
+    },
+    {
+     "t": 22,
+     "firings": 2069,
+     "firers": 2069,
+     "occupancy": 56
+    },
+    {
+     "t": 23,
+     "firings": 2069,
+     "firers": 2069,
+     "occupancy": 56
+    },
+    {
+     "t": 24,
+     "firings": 2069,
+     "firers": 2069,
+     "occupancy": 56
+    },
+    {
+     "t": 25,
+     "firings": 2069,
+     "firers": 2069,
+     "occupancy": 56
+    },
+    {
+     "t": 26,
+     "firings": 2069,
+     "firers": 2069,
+     "occupancy": 56
+    },
+    {
+     "t": 27,
+     "firings": 2069,
+     "firers": 2069,
+     "occupancy": 56
+    },
+    {
+     "t": 28,
+     "firings": 2069,
+     "firers": 2069,
+     "occupancy": 56
+    },
+    {
+     "t": 29,
+     "firings": 2069,
+     "firers": 2069,
+     "occupancy": 56
+    },
+    {
+     "t": 30,
+     "firings": 2069,
+     "firers": 2069,
+     "occupancy": 56
+    },
+    {
+     "t": 31,
+     "firings": 2069,
+     "firers": 2069,
+     "occupancy": 56
+    },
+    {
+     "t": 32,
+     "firings": 2069,
+     "firers": 2069,
+     "occupancy": 56
+    },
+    {
+     "t": 33,
+     "firings": 2069,
+     "firers": 2069,
+     "occupancy": 56
+    },
+    {
+     "t": 34,
+     "firings": 2069,
+     "firers": 2069,
+     "occupancy": 56
+    },
+    {
+     "t": 35,
+     "firings": 2069,
+     "firers": 2069,
+     "occupancy": 56
+    },
+    {
+     "t": 36,
+     "firings": 2069,
+     "firers": 2069,
+     "occupancy": 56
+    },
+    {
+     "t": 37,
+     "firings": 2069,
+     "firers": 2069,
+     "occupancy": 56
+    },
+    {
+     "t": 38,
+     "firings": 2069,
+     "firers": 2069,
+     "occupancy": 56
+    },
+    {
+     "t": 39,
+     "firings": 2069,
+     "firers": 2069,
+     "occupancy": 56
+    },
+    {
+     "t": 40,
+     "firings": 2069,
+     "firers": 2069,
+     "occupancy": 56
+    },
+    {
+     "t": 41,
+     "firings": 2069,
+     "firers": 2069,
+     "occupancy": 56
+    },
+    {
+     "t": 42,
+     "firings": 2069,
+     "firers": 2069,
+     "occupancy": 56
+    },
+    {
+     "t": 43,
+     "firings": 2069,
+     "firers": 2069,
+     "occupancy": 56
+    },
+    {
+     "t": 44,
+     "firings": 2069,
+     "firers": 2069,
+     "occupancy": 56
+    },
+    {
+     "t": 45,
+     "firings": 2069,
+     "firers": 2069,
+     "occupancy": 56
+    },
+    {
+     "t": 46,
+     "firings": 2069,
+     "firers": 2069,
+     "occupancy": 56
+    },
+    {
+     "t": 47,
+     "firings": 2069,
+     "firers": 2069,
+     "occupancy": 56
+    },
+    {
+     "t": 48,
+     "firings": 2069,
+     "firers": 2069,
+     "occupancy": 56
+    },
+    {
+     "t": 49,
+     "firings": 2069,
+     "firers": 2069,
+     "occupancy": 56
+    },
+    {
+     "t": 50,
+     "firings": 2069,
+     "firers": 2069,
+     "occupancy": 56
+    },
+    {
+     "t": 51,
+     "firings": 2069,
+     "firers": 2069,
+     "occupancy": 56
+    },
+    {
+     "t": 52,
+     "firings": 2069,
+     "firers": 2069,
+     "occupancy": 56
+    },
+    {
+     "t": 53,
+     "firings": 2069,
+     "firers": 2069,
+     "occupancy": 56
+    },
+    {
+     "t": 54,
+     "firings": 2069,
+     "firers": 2069,
+     "occupancy": 56
+    },
+    {
+     "t": 55,
+     "firings": 2069,
+     "firers": 2069,
+     "occupancy": 56
+    },
+    {
+     "t": 56,
+     "firings": 2069,
+     "firers": 2069,
+     "occupancy": 56
+    },
+    {
+     "t": 57,
+     "firings": 2069,
+     "firers": 2069,
+     "occupancy": 56
+    },
+    {
+     "t": 58,
+     "firings": 2069,
+     "firers": 2069,
+     "occupancy": 56
+    },
+    {
+     "t": 59,
+     "firings": 2069,
+     "firers": 2069,
+     "occupancy": 56
+    },
+    {
+     "t": 60,
+     "firings": 2069,
+     "firers": 2069,
+     "occupancy": 56
+    },
+    {
+     "t": 61,
+     "firings": 2069,
+     "firers": 2069,
+     "occupancy": 56
+    },
+    {
+     "t": 62,
+     "firings": 2069,
+     "firers": 2069,
+     "occupancy": 56
+    },
+    {
+     "t": 63,
+     "firings": 2069,
+     "firers": 2069,
+     "occupancy": 56
+    },
+    {
+     "t": 64,
+     "firings": 2069,
+     "firers": 2069,
+     "occupancy": 56
+    }
+   ]
+  },
+  {
+   "phi": 0.5,
+   "seed": 88005,
+   "detOk": true,
+   "abstains": 2063,
+   "firersRatio": 1,
+   "occupancyCapOk": true,
+   "perTick": [
+    {
+     "t": 1,
+     "firings": 2015,
+     "firers": 2015,
+     "occupancy": 48
+    },
+    {
+     "t": 2,
+     "firings": 2062,
+     "firers": 2062,
+     "occupancy": 49
+    },
+    {
+     "t": 3,
+     "firings": 2062,
+     "firers": 2062,
+     "occupancy": 50
+    },
+    {
+     "t": 4,
+     "firings": 2062,
+     "firers": 2062,
+     "occupancy": 51
+    },
+    {
+     "t": 5,
+     "firings": 2062,
+     "firers": 2062,
+     "occupancy": 52
+    },
+    {
+     "t": 6,
+     "firings": 2062,
+     "firers": 2062,
+     "occupancy": 53
+    },
+    {
+     "t": 7,
+     "firings": 2062,
+     "firers": 2062,
+     "occupancy": 54
+    },
+    {
+     "t": 8,
+     "firings": 2062,
+     "firers": 2062,
+     "occupancy": 55
+    },
+    {
+     "t": 9,
+     "firings": 2062,
+     "firers": 2062,
+     "occupancy": 56
+    },
+    {
+     "t": 10,
+     "firings": 2063,
+     "firers": 2063,
+     "occupancy": 56
+    },
+    {
+     "t": 11,
+     "firings": 2063,
+     "firers": 2063,
+     "occupancy": 56
+    },
+    {
+     "t": 12,
+     "firings": 2063,
+     "firers": 2063,
+     "occupancy": 56
+    },
+    {
+     "t": 13,
+     "firings": 2063,
+     "firers": 2063,
+     "occupancy": 56
+    },
+    {
+     "t": 14,
+     "firings": 2063,
+     "firers": 2063,
+     "occupancy": 56
+    },
+    {
+     "t": 15,
+     "firings": 2063,
+     "firers": 2063,
+     "occupancy": 56
+    },
+    {
+     "t": 16,
+     "firings": 2063,
+     "firers": 2063,
+     "occupancy": 56
+    },
+    {
+     "t": 17,
+     "firings": 2063,
+     "firers": 2063,
+     "occupancy": 56
+    },
+    {
+     "t": 18,
+     "firings": 2063,
+     "firers": 2063,
+     "occupancy": 56
+    },
+    {
+     "t": 19,
+     "firings": 2063,
+     "firers": 2063,
+     "occupancy": 56
+    },
+    {
+     "t": 20,
+     "firings": 2063,
+     "firers": 2063,
+     "occupancy": 56
+    },
+    {
+     "t": 21,
+     "firings": 2063,
+     "firers": 2063,
+     "occupancy": 56
+    },
+    {
+     "t": 22,
+     "firings": 2063,
+     "firers": 2063,
+     "occupancy": 56
+    },
+    {
+     "t": 23,
+     "firings": 2063,
+     "firers": 2063,
+     "occupancy": 56
+    },
+    {
+     "t": 24,
+     "firings": 2063,
+     "firers": 2063,
+     "occupancy": 56
+    },
+    {
+     "t": 25,
+     "firings": 2063,
+     "firers": 2063,
+     "occupancy": 56
+    },
+    {
+     "t": 26,
+     "firings": 2063,
+     "firers": 2063,
+     "occupancy": 56
+    },
+    {
+     "t": 27,
+     "firings": 2063,
+     "firers": 2063,
+     "occupancy": 56
+    },
+    {
+     "t": 28,
+     "firings": 2063,
+     "firers": 2063,
+     "occupancy": 56
+    },
+    {
+     "t": 29,
+     "firings": 2063,
+     "firers": 2063,
+     "occupancy": 56
+    },
+    {
+     "t": 30,
+     "firings": 2063,
+     "firers": 2063,
+     "occupancy": 56
+    },
+    {
+     "t": 31,
+     "firings": 2063,
+     "firers": 2063,
+     "occupancy": 56
+    },
+    {
+     "t": 32,
+     "firings": 2063,
+     "firers": 2063,
+     "occupancy": 56
+    },
+    {
+     "t": 33,
+     "firings": 2063,
+     "firers": 2063,
+     "occupancy": 56
+    },
+    {
+     "t": 34,
+     "firings": 2063,
+     "firers": 2063,
+     "occupancy": 56
+    },
+    {
+     "t": 35,
+     "firings": 2063,
+     "firers": 2063,
+     "occupancy": 56
+    },
+    {
+     "t": 36,
+     "firings": 2063,
+     "firers": 2063,
+     "occupancy": 56
+    },
+    {
+     "t": 37,
+     "firings": 2063,
+     "firers": 2063,
+     "occupancy": 56
+    },
+    {
+     "t": 38,
+     "firings": 2063,
+     "firers": 2063,
+     "occupancy": 56
+    },
+    {
+     "t": 39,
+     "firings": 2063,
+     "firers": 2063,
+     "occupancy": 56
+    },
+    {
+     "t": 40,
+     "firings": 2063,
+     "firers": 2063,
+     "occupancy": 56
+    },
+    {
+     "t": 41,
+     "firings": 2063,
+     "firers": 2063,
+     "occupancy": 56
+    },
+    {
+     "t": 42,
+     "firings": 2063,
+     "firers": 2063,
+     "occupancy": 56
+    },
+    {
+     "t": 43,
+     "firings": 2063,
+     "firers": 2063,
+     "occupancy": 56
+    },
+    {
+     "t": 44,
+     "firings": 2063,
+     "firers": 2063,
+     "occupancy": 56
+    },
+    {
+     "t": 45,
+     "firings": 2063,
+     "firers": 2063,
+     "occupancy": 56
+    },
+    {
+     "t": 46,
+     "firings": 2063,
+     "firers": 2063,
+     "occupancy": 56
+    },
+    {
+     "t": 47,
+     "firings": 2063,
+     "firers": 2063,
+     "occupancy": 56
+    },
+    {
+     "t": 48,
+     "firings": 2063,
+     "firers": 2063,
+     "occupancy": 56
+    },
+    {
+     "t": 49,
+     "firings": 2063,
+     "firers": 2063,
+     "occupancy": 56
+    },
+    {
+     "t": 50,
+     "firings": 2063,
+     "firers": 2063,
+     "occupancy": 56
+    },
+    {
+     "t": 51,
+     "firings": 2063,
+     "firers": 2063,
+     "occupancy": 56
+    },
+    {
+     "t": 52,
+     "firings": 2063,
+     "firers": 2063,
+     "occupancy": 56
+    },
+    {
+     "t": 53,
+     "firings": 2063,
+     "firers": 2063,
+     "occupancy": 56
+    },
+    {
+     "t": 54,
+     "firings": 2063,
+     "firers": 2063,
+     "occupancy": 56
+    },
+    {
+     "t": 55,
+     "firings": 2063,
+     "firers": 2063,
+     "occupancy": 56
+    },
+    {
+     "t": 56,
+     "firings": 2063,
+     "firers": 2063,
+     "occupancy": 56
+    },
+    {
+     "t": 57,
+     "firings": 2063,
+     "firers": 2063,
+     "occupancy": 56
+    },
+    {
+     "t": 58,
+     "firings": 2063,
+     "firers": 2063,
+     "occupancy": 56
+    },
+    {
+     "t": 59,
+     "firings": 2063,
+     "firers": 2063,
+     "occupancy": 56
+    },
+    {
+     "t": 60,
+     "firings": 2063,
+     "firers": 2063,
+     "occupancy": 56
+    },
+    {
+     "t": 61,
+     "firings": 2063,
+     "firers": 2063,
+     "occupancy": 56
+    },
+    {
+     "t": 62,
+     "firings": 2063,
+     "firers": 2063,
+     "occupancy": 56
+    },
+    {
+     "t": 63,
+     "firings": 2063,
+     "firers": 2063,
+     "occupancy": 56
+    },
+    {
+     "t": 64,
+     "firings": 2063,
+     "firers": 2063,
+     "occupancy": 56
+    }
+   ]
+  },
+  {
+   "phi": 0.75,
+   "seed": 88001,
+   "detOk": true,
+   "abstains": 3109,
+   "firersRatio": 1,
+   "occupancyCapOk": true,
+   "perTick": [
+    {
+     "t": 1,
+     "firings": 3061,
+     "firers": 3061,
+     "occupancy": 48
+    },
+    {
+     "t": 2,
+     "firings": 3108,
+     "firers": 3108,
+     "occupancy": 49
+    },
+    {
+     "t": 3,
+     "firings": 3108,
+     "firers": 3108,
+     "occupancy": 50
+    },
+    {
+     "t": 4,
+     "firings": 3108,
+     "firers": 3108,
+     "occupancy": 51
+    },
+    {
+     "t": 5,
+     "firings": 3108,
+     "firers": 3108,
+     "occupancy": 52
+    },
+    {
+     "t": 6,
+     "firings": 3108,
+     "firers": 3108,
+     "occupancy": 53
+    },
+    {
+     "t": 7,
+     "firings": 3108,
+     "firers": 3108,
+     "occupancy": 54
+    },
+    {
+     "t": 8,
+     "firings": 3108,
+     "firers": 3108,
+     "occupancy": 55
+    },
+    {
+     "t": 9,
+     "firings": 3108,
+     "firers": 3108,
+     "occupancy": 56
+    },
+    {
+     "t": 10,
+     "firings": 3109,
+     "firers": 3109,
+     "occupancy": 56
+    },
+    {
+     "t": 11,
+     "firings": 3109,
+     "firers": 3109,
+     "occupancy": 56
+    },
+    {
+     "t": 12,
+     "firings": 3109,
+     "firers": 3109,
+     "occupancy": 56
+    },
+    {
+     "t": 13,
+     "firings": 3109,
+     "firers": 3109,
+     "occupancy": 56
+    },
+    {
+     "t": 14,
+     "firings": 3109,
+     "firers": 3109,
+     "occupancy": 56
+    },
+    {
+     "t": 15,
+     "firings": 3109,
+     "firers": 3109,
+     "occupancy": 56
+    },
+    {
+     "t": 16,
+     "firings": 3109,
+     "firers": 3109,
+     "occupancy": 56
+    },
+    {
+     "t": 17,
+     "firings": 3109,
+     "firers": 3109,
+     "occupancy": 56
+    },
+    {
+     "t": 18,
+     "firings": 3109,
+     "firers": 3109,
+     "occupancy": 56
+    },
+    {
+     "t": 19,
+     "firings": 3109,
+     "firers": 3109,
+     "occupancy": 56
+    },
+    {
+     "t": 20,
+     "firings": 3109,
+     "firers": 3109,
+     "occupancy": 56
+    },
+    {
+     "t": 21,
+     "firings": 3109,
+     "firers": 3109,
+     "occupancy": 56
+    },
+    {
+     "t": 22,
+     "firings": 3109,
+     "firers": 3109,
+     "occupancy": 56
+    },
+    {
+     "t": 23,
+     "firings": 3109,
+     "firers": 3109,
+     "occupancy": 56
+    },
+    {
+     "t": 24,
+     "firings": 3109,
+     "firers": 3109,
+     "occupancy": 56
+    },
+    {
+     "t": 25,
+     "firings": 3109,
+     "firers": 3109,
+     "occupancy": 56
+    },
+    {
+     "t": 26,
+     "firings": 3109,
+     "firers": 3109,
+     "occupancy": 56
+    },
+    {
+     "t": 27,
+     "firings": 3109,
+     "firers": 3109,
+     "occupancy": 56
+    },
+    {
+     "t": 28,
+     "firings": 3109,
+     "firers": 3109,
+     "occupancy": 56
+    },
+    {
+     "t": 29,
+     "firings": 3109,
+     "firers": 3109,
+     "occupancy": 56
+    },
+    {
+     "t": 30,
+     "firings": 3109,
+     "firers": 3109,
+     "occupancy": 56
+    },
+    {
+     "t": 31,
+     "firings": 3109,
+     "firers": 3109,
+     "occupancy": 56
+    },
+    {
+     "t": 32,
+     "firings": 3109,
+     "firers": 3109,
+     "occupancy": 56
+    },
+    {
+     "t": 33,
+     "firings": 3109,
+     "firers": 3109,
+     "occupancy": 56
+    },
+    {
+     "t": 34,
+     "firings": 3109,
+     "firers": 3109,
+     "occupancy": 56
+    },
+    {
+     "t": 35,
+     "firings": 3109,
+     "firers": 3109,
+     "occupancy": 56
+    },
+    {
+     "t": 36,
+     "firings": 3109,
+     "firers": 3109,
+     "occupancy": 56
+    },
+    {
+     "t": 37,
+     "firings": 3109,
+     "firers": 3109,
+     "occupancy": 56
+    },
+    {
+     "t": 38,
+     "firings": 3109,
+     "firers": 3109,
+     "occupancy": 56
+    },
+    {
+     "t": 39,
+     "firings": 3109,
+     "firers": 3109,
+     "occupancy": 56
+    },
+    {
+     "t": 40,
+     "firings": 3109,
+     "firers": 3109,
+     "occupancy": 56
+    },
+    {
+     "t": 41,
+     "firings": 3109,
+     "firers": 3109,
+     "occupancy": 56
+    },
+    {
+     "t": 42,
+     "firings": 3109,
+     "firers": 3109,
+     "occupancy": 56
+    },
+    {
+     "t": 43,
+     "firings": 3109,
+     "firers": 3109,
+     "occupancy": 56
+    },
+    {
+     "t": 44,
+     "firings": 3109,
+     "firers": 3109,
+     "occupancy": 56
+    },
+    {
+     "t": 45,
+     "firings": 3109,
+     "firers": 3109,
+     "occupancy": 56
+    },
+    {
+     "t": 46,
+     "firings": 3109,
+     "firers": 3109,
+     "occupancy": 56
+    },
+    {
+     "t": 47,
+     "firings": 3109,
+     "firers": 3109,
+     "occupancy": 56
+    },
+    {
+     "t": 48,
+     "firings": 3109,
+     "firers": 3109,
+     "occupancy": 56
+    },
+    {
+     "t": 49,
+     "firings": 3109,
+     "firers": 3109,
+     "occupancy": 56
+    },
+    {
+     "t": 50,
+     "firings": 3109,
+     "firers": 3109,
+     "occupancy": 56
+    },
+    {
+     "t": 51,
+     "firings": 3109,
+     "firers": 3109,
+     "occupancy": 56
+    },
+    {
+     "t": 52,
+     "firings": 3109,
+     "firers": 3109,
+     "occupancy": 56
+    },
+    {
+     "t": 53,
+     "firings": 3109,
+     "firers": 3109,
+     "occupancy": 56
+    },
+    {
+     "t": 54,
+     "firings": 3109,
+     "firers": 3109,
+     "occupancy": 56
+    },
+    {
+     "t": 55,
+     "firings": 3109,
+     "firers": 3109,
+     "occupancy": 56
+    },
+    {
+     "t": 56,
+     "firings": 3109,
+     "firers": 3109,
+     "occupancy": 56
+    },
+    {
+     "t": 57,
+     "firings": 3109,
+     "firers": 3109,
+     "occupancy": 56
+    },
+    {
+     "t": 58,
+     "firings": 3109,
+     "firers": 3109,
+     "occupancy": 56
+    },
+    {
+     "t": 59,
+     "firings": 3109,
+     "firers": 3109,
+     "occupancy": 56
+    },
+    {
+     "t": 60,
+     "firings": 3109,
+     "firers": 3109,
+     "occupancy": 56
+    },
+    {
+     "t": 61,
+     "firings": 3109,
+     "firers": 3109,
+     "occupancy": 56
+    },
+    {
+     "t": 62,
+     "firings": 3109,
+     "firers": 3109,
+     "occupancy": 56
+    },
+    {
+     "t": 63,
+     "firings": 3109,
+     "firers": 3109,
+     "occupancy": 56
+    },
+    {
+     "t": 64,
+     "firings": 3109,
+     "firers": 3109,
+     "occupancy": 56
+    }
+   ]
+  },
+  {
+   "phi": 0.75,
+   "seed": 88002,
+   "detOk": true,
+   "abstains": 3060,
+   "firersRatio": 1,
+   "occupancyCapOk": true,
+   "perTick": [
+    {
+     "t": 1,
+     "firings": 3012,
+     "firers": 3012,
+     "occupancy": 48
+    },
+    {
+     "t": 2,
+     "firings": 3059,
+     "firers": 3059,
+     "occupancy": 49
+    },
+    {
+     "t": 3,
+     "firings": 3059,
+     "firers": 3059,
+     "occupancy": 50
+    },
+    {
+     "t": 4,
+     "firings": 3059,
+     "firers": 3059,
+     "occupancy": 51
+    },
+    {
+     "t": 5,
+     "firings": 3059,
+     "firers": 3059,
+     "occupancy": 52
+    },
+    {
+     "t": 6,
+     "firings": 3059,
+     "firers": 3059,
+     "occupancy": 53
+    },
+    {
+     "t": 7,
+     "firings": 3059,
+     "firers": 3059,
+     "occupancy": 54
+    },
+    {
+     "t": 8,
+     "firings": 3059,
+     "firers": 3059,
+     "occupancy": 55
+    },
+    {
+     "t": 9,
+     "firings": 3059,
+     "firers": 3059,
+     "occupancy": 56
+    },
+    {
+     "t": 10,
+     "firings": 3060,
+     "firers": 3060,
+     "occupancy": 56
+    },
+    {
+     "t": 11,
+     "firings": 3060,
+     "firers": 3060,
+     "occupancy": 56
+    },
+    {
+     "t": 12,
+     "firings": 3060,
+     "firers": 3060,
+     "occupancy": 56
+    },
+    {
+     "t": 13,
+     "firings": 3060,
+     "firers": 3060,
+     "occupancy": 56
+    },
+    {
+     "t": 14,
+     "firings": 3060,
+     "firers": 3060,
+     "occupancy": 56
+    },
+    {
+     "t": 15,
+     "firings": 3060,
+     "firers": 3060,
+     "occupancy": 56
+    },
+    {
+     "t": 16,
+     "firings": 3060,
+     "firers": 3060,
+     "occupancy": 56
+    },
+    {
+     "t": 17,
+     "firings": 3060,
+     "firers": 3060,
+     "occupancy": 56
+    },
+    {
+     "t": 18,
+     "firings": 3060,
+     "firers": 3060,
+     "occupancy": 56
+    },
+    {
+     "t": 19,
+     "firings": 3060,
+     "firers": 3060,
+     "occupancy": 56
+    },
+    {
+     "t": 20,
+     "firings": 3060,
+     "firers": 3060,
+     "occupancy": 56
+    },
+    {
+     "t": 21,
+     "firings": 3060,
+     "firers": 3060,
+     "occupancy": 56
+    },
+    {
+     "t": 22,
+     "firings": 3060,
+     "firers": 3060,
+     "occupancy": 56
+    },
+    {
+     "t": 23,
+     "firings": 3060,
+     "firers": 3060,
+     "occupancy": 56
+    },
+    {
+     "t": 24,
+     "firings": 3060,
+     "firers": 3060,
+     "occupancy": 56
+    },
+    {
+     "t": 25,
+     "firings": 3060,
+     "firers": 3060,
+     "occupancy": 56
+    },
+    {
+     "t": 26,
+     "firings": 3060,
+     "firers": 3060,
+     "occupancy": 56
+    },
+    {
+     "t": 27,
+     "firings": 3060,
+     "firers": 3060,
+     "occupancy": 56
+    },
+    {
+     "t": 28,
+     "firings": 3060,
+     "firers": 3060,
+     "occupancy": 56
+    },
+    {
+     "t": 29,
+     "firings": 3060,
+     "firers": 3060,
+     "occupancy": 56
+    },
+    {
+     "t": 30,
+     "firings": 3060,
+     "firers": 3060,
+     "occupancy": 56
+    },
+    {
+     "t": 31,
+     "firings": 3060,
+     "firers": 3060,
+     "occupancy": 56
+    },
+    {
+     "t": 32,
+     "firings": 3060,
+     "firers": 3060,
+     "occupancy": 56
+    },
+    {
+     "t": 33,
+     "firings": 3060,
+     "firers": 3060,
+     "occupancy": 56
+    },
+    {
+     "t": 34,
+     "firings": 3060,
+     "firers": 3060,
+     "occupancy": 56
+    },
+    {
+     "t": 35,
+     "firings": 3060,
+     "firers": 3060,
+     "occupancy": 56
+    },
+    {
+     "t": 36,
+     "firings": 3060,
+     "firers": 3060,
+     "occupancy": 56
+    },
+    {
+     "t": 37,
+     "firings": 3060,
+     "firers": 3060,
+     "occupancy": 56
+    },
+    {
+     "t": 38,
+     "firings": 3060,
+     "firers": 3060,
+     "occupancy": 56
+    },
+    {
+     "t": 39,
+     "firings": 3060,
+     "firers": 3060,
+     "occupancy": 56
+    },
+    {
+     "t": 40,
+     "firings": 3060,
+     "firers": 3060,
+     "occupancy": 56
+    },
+    {
+     "t": 41,
+     "firings": 3060,
+     "firers": 3060,
+     "occupancy": 56
+    },
+    {
+     "t": 42,
+     "firings": 3060,
+     "firers": 3060,
+     "occupancy": 56
+    },
+    {
+     "t": 43,
+     "firings": 3060,
+     "firers": 3060,
+     "occupancy": 56
+    },
+    {
+     "t": 44,
+     "firings": 3060,
+     "firers": 3060,
+     "occupancy": 56
+    },
+    {
+     "t": 45,
+     "firings": 3060,
+     "firers": 3060,
+     "occupancy": 56
+    },
+    {
+     "t": 46,
+     "firings": 3060,
+     "firers": 3060,
+     "occupancy": 56
+    },
+    {
+     "t": 47,
+     "firings": 3060,
+     "firers": 3060,
+     "occupancy": 56
+    },
+    {
+     "t": 48,
+     "firings": 3060,
+     "firers": 3060,
+     "occupancy": 56
+    },
+    {
+     "t": 49,
+     "firings": 3060,
+     "firers": 3060,
+     "occupancy": 56
+    },
+    {
+     "t": 50,
+     "firings": 3060,
+     "firers": 3060,
+     "occupancy": 56
+    },
+    {
+     "t": 51,
+     "firings": 3060,
+     "firers": 3060,
+     "occupancy": 56
+    },
+    {
+     "t": 52,
+     "firings": 3060,
+     "firers": 3060,
+     "occupancy": 56
+    },
+    {
+     "t": 53,
+     "firings": 3060,
+     "firers": 3060,
+     "occupancy": 56
+    },
+    {
+     "t": 54,
+     "firings": 3060,
+     "firers": 3060,
+     "occupancy": 56
+    },
+    {
+     "t": 55,
+     "firings": 3060,
+     "firers": 3060,
+     "occupancy": 56
+    },
+    {
+     "t": 56,
+     "firings": 3060,
+     "firers": 3060,
+     "occupancy": 56
+    },
+    {
+     "t": 57,
+     "firings": 3060,
+     "firers": 3060,
+     "occupancy": 56
+    },
+    {
+     "t": 58,
+     "firings": 3060,
+     "firers": 3060,
+     "occupancy": 56
+    },
+    {
+     "t": 59,
+     "firings": 3060,
+     "firers": 3060,
+     "occupancy": 56
+    },
+    {
+     "t": 60,
+     "firings": 3060,
+     "firers": 3060,
+     "occupancy": 56
+    },
+    {
+     "t": 61,
+     "firings": 3060,
+     "firers": 3060,
+     "occupancy": 56
+    },
+    {
+     "t": 62,
+     "firings": 3060,
+     "firers": 3060,
+     "occupancy": 56
+    },
+    {
+     "t": 63,
+     "firings": 3060,
+     "firers": 3060,
+     "occupancy": 56
+    },
+    {
+     "t": 64,
+     "firings": 3060,
+     "firers": 3060,
+     "occupancy": 56
+    }
+   ]
+  },
+  {
+   "phi": 0.75,
+   "seed": 88003,
+   "detOk": true,
+   "abstains": 3064,
+   "firersRatio": 1,
+   "occupancyCapOk": true,
+   "perTick": [
+    {
+     "t": 1,
+     "firings": 3016,
+     "firers": 3016,
+     "occupancy": 48
+    },
+    {
+     "t": 2,
+     "firings": 3063,
+     "firers": 3063,
+     "occupancy": 49
+    },
+    {
+     "t": 3,
+     "firings": 3063,
+     "firers": 3063,
+     "occupancy": 50
+    },
+    {
+     "t": 4,
+     "firings": 3063,
+     "firers": 3063,
+     "occupancy": 51
+    },
+    {
+     "t": 5,
+     "firings": 3063,
+     "firers": 3063,
+     "occupancy": 52
+    },
+    {
+     "t": 6,
+     "firings": 3063,
+     "firers": 3063,
+     "occupancy": 53
+    },
+    {
+     "t": 7,
+     "firings": 3063,
+     "firers": 3063,
+     "occupancy": 54
+    },
+    {
+     "t": 8,
+     "firings": 3063,
+     "firers": 3063,
+     "occupancy": 55
+    },
+    {
+     "t": 9,
+     "firings": 3063,
+     "firers": 3063,
+     "occupancy": 56
+    },
+    {
+     "t": 10,
+     "firings": 3064,
+     "firers": 3064,
+     "occupancy": 56
+    },
+    {
+     "t": 11,
+     "firings": 3064,
+     "firers": 3064,
+     "occupancy": 56
+    },
+    {
+     "t": 12,
+     "firings": 3064,
+     "firers": 3064,
+     "occupancy": 56
+    },
+    {
+     "t": 13,
+     "firings": 3064,
+     "firers": 3064,
+     "occupancy": 56
+    },
+    {
+     "t": 14,
+     "firings": 3064,
+     "firers": 3064,
+     "occupancy": 56
+    },
+    {
+     "t": 15,
+     "firings": 3064,
+     "firers": 3064,
+     "occupancy": 56
+    },
+    {
+     "t": 16,
+     "firings": 3064,
+     "firers": 3064,
+     "occupancy": 56
+    },
+    {
+     "t": 17,
+     "firings": 3064,
+     "firers": 3064,
+     "occupancy": 56
+    },
+    {
+     "t": 18,
+     "firings": 3064,
+     "firers": 3064,
+     "occupancy": 56
+    },
+    {
+     "t": 19,
+     "firings": 3064,
+     "firers": 3064,
+     "occupancy": 56
+    },
+    {
+     "t": 20,
+     "firings": 3064,
+     "firers": 3064,
+     "occupancy": 56
+    },
+    {
+     "t": 21,
+     "firings": 3064,
+     "firers": 3064,
+     "occupancy": 56
+    },
+    {
+     "t": 22,
+     "firings": 3064,
+     "firers": 3064,
+     "occupancy": 56
+    },
+    {
+     "t": 23,
+     "firings": 3064,
+     "firers": 3064,
+     "occupancy": 56
+    },
+    {
+     "t": 24,
+     "firings": 3064,
+     "firers": 3064,
+     "occupancy": 56
+    },
+    {
+     "t": 25,
+     "firings": 3064,
+     "firers": 3064,
+     "occupancy": 56
+    },
+    {
+     "t": 26,
+     "firings": 3064,
+     "firers": 3064,
+     "occupancy": 56
+    },
+    {
+     "t": 27,
+     "firings": 3064,
+     "firers": 3064,
+     "occupancy": 56
+    },
+    {
+     "t": 28,
+     "firings": 3064,
+     "firers": 3064,
+     "occupancy": 56
+    },
+    {
+     "t": 29,
+     "firings": 3064,
+     "firers": 3064,
+     "occupancy": 56
+    },
+    {
+     "t": 30,
+     "firings": 3064,
+     "firers": 3064,
+     "occupancy": 56
+    },
+    {
+     "t": 31,
+     "firings": 3064,
+     "firers": 3064,
+     "occupancy": 56
+    },
+    {
+     "t": 32,
+     "firings": 3064,
+     "firers": 3064,
+     "occupancy": 56
+    },
+    {
+     "t": 33,
+     "firings": 3064,
+     "firers": 3064,
+     "occupancy": 56
+    },
+    {
+     "t": 34,
+     "firings": 3064,
+     "firers": 3064,
+     "occupancy": 56
+    },
+    {
+     "t": 35,
+     "firings": 3064,
+     "firers": 3064,
+     "occupancy": 56
+    },
+    {
+     "t": 36,
+     "firings": 3064,
+     "firers": 3064,
+     "occupancy": 56
+    },
+    {
+     "t": 37,
+     "firings": 3064,
+     "firers": 3064,
+     "occupancy": 56
+    },
+    {
+     "t": 38,
+     "firings": 3064,
+     "firers": 3064,
+     "occupancy": 56
+    },
+    {
+     "t": 39,
+     "firings": 3064,
+     "firers": 3064,
+     "occupancy": 56
+    },
+    {
+     "t": 40,
+     "firings": 3064,
+     "firers": 3064,
+     "occupancy": 56
+    },
+    {
+     "t": 41,
+     "firings": 3064,
+     "firers": 3064,
+     "occupancy": 56
+    },
+    {
+     "t": 42,
+     "firings": 3064,
+     "firers": 3064,
+     "occupancy": 56
+    },
+    {
+     "t": 43,
+     "firings": 3064,
+     "firers": 3064,
+     "occupancy": 56
+    },
+    {
+     "t": 44,
+     "firings": 3064,
+     "firers": 3064,
+     "occupancy": 56
+    },
+    {
+     "t": 45,
+     "firings": 3064,
+     "firers": 3064,
+     "occupancy": 56
+    },
+    {
+     "t": 46,
+     "firings": 3064,
+     "firers": 3064,
+     "occupancy": 56
+    },
+    {
+     "t": 47,
+     "firings": 3064,
+     "firers": 3064,
+     "occupancy": 56
+    },
+    {
+     "t": 48,
+     "firings": 3064,
+     "firers": 3064,
+     "occupancy": 56
+    },
+    {
+     "t": 49,
+     "firings": 3064,
+     "firers": 3064,
+     "occupancy": 56
+    },
+    {
+     "t": 50,
+     "firings": 3064,
+     "firers": 3064,
+     "occupancy": 56
+    },
+    {
+     "t": 51,
+     "firings": 3064,
+     "firers": 3064,
+     "occupancy": 56
+    },
+    {
+     "t": 52,
+     "firings": 3064,
+     "firers": 3064,
+     "occupancy": 56
+    },
+    {
+     "t": 53,
+     "firings": 3064,
+     "firers": 3064,
+     "occupancy": 56
+    },
+    {
+     "t": 54,
+     "firings": 3064,
+     "firers": 3064,
+     "occupancy": 56
+    },
+    {
+     "t": 55,
+     "firings": 3064,
+     "firers": 3064,
+     "occupancy": 56
+    },
+    {
+     "t": 56,
+     "firings": 3064,
+     "firers": 3064,
+     "occupancy": 56
+    },
+    {
+     "t": 57,
+     "firings": 3064,
+     "firers": 3064,
+     "occupancy": 56
+    },
+    {
+     "t": 58,
+     "firings": 3064,
+     "firers": 3064,
+     "occupancy": 56
+    },
+    {
+     "t": 59,
+     "firings": 3064,
+     "firers": 3064,
+     "occupancy": 56
+    },
+    {
+     "t": 60,
+     "firings": 3064,
+     "firers": 3064,
+     "occupancy": 56
+    },
+    {
+     "t": 61,
+     "firings": 3064,
+     "firers": 3064,
+     "occupancy": 56
+    },
+    {
+     "t": 62,
+     "firings": 3064,
+     "firers": 3064,
+     "occupancy": 56
+    },
+    {
+     "t": 63,
+     "firings": 3064,
+     "firers": 3064,
+     "occupancy": 56
+    },
+    {
+     "t": 64,
+     "firings": 3064,
+     "firers": 3064,
+     "occupancy": 56
+    }
+   ]
+  },
+  {
+   "phi": 0.75,
+   "seed": 88004,
+   "detOk": true,
+   "abstains": 3071,
+   "firersRatio": 1,
+   "occupancyCapOk": true,
+   "perTick": [
+    {
+     "t": 1,
+     "firings": 3023,
+     "firers": 3023,
+     "occupancy": 48
+    },
+    {
+     "t": 2,
+     "firings": 3070,
+     "firers": 3070,
+     "occupancy": 49
+    },
+    {
+     "t": 3,
+     "firings": 3070,
+     "firers": 3070,
+     "occupancy": 50
+    },
+    {
+     "t": 4,
+     "firings": 3070,
+     "firers": 3070,
+     "occupancy": 51
+    },
+    {
+     "t": 5,
+     "firings": 3070,
+     "firers": 3070,
+     "occupancy": 52
+    },
+    {
+     "t": 6,
+     "firings": 3070,
+     "firers": 3070,
+     "occupancy": 53
+    },
+    {
+     "t": 7,
+     "firings": 3070,
+     "firers": 3070,
+     "occupancy": 54
+    },
+    {
+     "t": 8,
+     "firings": 3070,
+     "firers": 3070,
+     "occupancy": 55
+    },
+    {
+     "t": 9,
+     "firings": 3070,
+     "firers": 3070,
+     "occupancy": 56
+    },
+    {
+     "t": 10,
+     "firings": 3071,
+     "firers": 3071,
+     "occupancy": 56
+    },
+    {
+     "t": 11,
+     "firings": 3071,
+     "firers": 3071,
+     "occupancy": 56
+    },
+    {
+     "t": 12,
+     "firings": 3071,
+     "firers": 3071,
+     "occupancy": 56
+    },
+    {
+     "t": 13,
+     "firings": 3071,
+     "firers": 3071,
+     "occupancy": 56
+    },
+    {
+     "t": 14,
+     "firings": 3071,
+     "firers": 3071,
+     "occupancy": 56
+    },
+    {
+     "t": 15,
+     "firings": 3071,
+     "firers": 3071,
+     "occupancy": 56
+    },
+    {
+     "t": 16,
+     "firings": 3071,
+     "firers": 3071,
+     "occupancy": 56
+    },
+    {
+     "t": 17,
+     "firings": 3071,
+     "firers": 3071,
+     "occupancy": 56
+    },
+    {
+     "t": 18,
+     "firings": 3071,
+     "firers": 3071,
+     "occupancy": 56
+    },
+    {
+     "t": 19,
+     "firings": 3071,
+     "firers": 3071,
+     "occupancy": 56
+    },
+    {
+     "t": 20,
+     "firings": 3071,
+     "firers": 3071,
+     "occupancy": 56
+    },
+    {
+     "t": 21,
+     "firings": 3071,
+     "firers": 3071,
+     "occupancy": 56
+    },
+    {
+     "t": 22,
+     "firings": 3071,
+     "firers": 3071,
+     "occupancy": 56
+    },
+    {
+     "t": 23,
+     "firings": 3071,
+     "firers": 3071,
+     "occupancy": 56
+    },
+    {
+     "t": 24,
+     "firings": 3071,
+     "firers": 3071,
+     "occupancy": 56
+    },
+    {
+     "t": 25,
+     "firings": 3071,
+     "firers": 3071,
+     "occupancy": 56
+    },
+    {
+     "t": 26,
+     "firings": 3071,
+     "firers": 3071,
+     "occupancy": 56
+    },
+    {
+     "t": 27,
+     "firings": 3071,
+     "firers": 3071,
+     "occupancy": 56
+    },
+    {
+     "t": 28,
+     "firings": 3071,
+     "firers": 3071,
+     "occupancy": 56
+    },
+    {
+     "t": 29,
+     "firings": 3071,
+     "firers": 3071,
+     "occupancy": 56
+    },
+    {
+     "t": 30,
+     "firings": 3071,
+     "firers": 3071,
+     "occupancy": 56
+    },
+    {
+     "t": 31,
+     "firings": 3071,
+     "firers": 3071,
+     "occupancy": 56
+    },
+    {
+     "t": 32,
+     "firings": 3071,
+     "firers": 3071,
+     "occupancy": 56
+    },
+    {
+     "t": 33,
+     "firings": 3071,
+     "firers": 3071,
+     "occupancy": 56
+    },
+    {
+     "t": 34,
+     "firings": 3071,
+     "firers": 3071,
+     "occupancy": 56
+    },
+    {
+     "t": 35,
+     "firings": 3071,
+     "firers": 3071,
+     "occupancy": 56
+    },
+    {
+     "t": 36,
+     "firings": 3071,
+     "firers": 3071,
+     "occupancy": 56
+    },
+    {
+     "t": 37,
+     "firings": 3071,
+     "firers": 3071,
+     "occupancy": 56
+    },
+    {
+     "t": 38,
+     "firings": 3071,
+     "firers": 3071,
+     "occupancy": 56
+    },
+    {
+     "t": 39,
+     "firings": 3071,
+     "firers": 3071,
+     "occupancy": 56
+    },
+    {
+     "t": 40,
+     "firings": 3071,
+     "firers": 3071,
+     "occupancy": 56
+    },
+    {
+     "t": 41,
+     "firings": 3071,
+     "firers": 3071,
+     "occupancy": 56
+    },
+    {
+     "t": 42,
+     "firings": 3071,
+     "firers": 3071,
+     "occupancy": 56
+    },
+    {
+     "t": 43,
+     "firings": 3071,
+     "firers": 3071,
+     "occupancy": 56
+    },
+    {
+     "t": 44,
+     "firings": 3071,
+     "firers": 3071,
+     "occupancy": 56
+    },
+    {
+     "t": 45,
+     "firings": 3071,
+     "firers": 3071,
+     "occupancy": 56
+    },
+    {
+     "t": 46,
+     "firings": 3071,
+     "firers": 3071,
+     "occupancy": 56
+    },
+    {
+     "t": 47,
+     "firings": 3071,
+     "firers": 3071,
+     "occupancy": 56
+    },
+    {
+     "t": 48,
+     "firings": 3071,
+     "firers": 3071,
+     "occupancy": 56
+    },
+    {
+     "t": 49,
+     "firings": 3071,
+     "firers": 3071,
+     "occupancy": 56
+    },
+    {
+     "t": 50,
+     "firings": 3071,
+     "firers": 3071,
+     "occupancy": 56
+    },
+    {
+     "t": 51,
+     "firings": 3071,
+     "firers": 3071,
+     "occupancy": 56
+    },
+    {
+     "t": 52,
+     "firings": 3071,
+     "firers": 3071,
+     "occupancy": 56
+    },
+    {
+     "t": 53,
+     "firings": 3071,
+     "firers": 3071,
+     "occupancy": 56
+    },
+    {
+     "t": 54,
+     "firings": 3071,
+     "firers": 3071,
+     "occupancy": 56
+    },
+    {
+     "t": 55,
+     "firings": 3071,
+     "firers": 3071,
+     "occupancy": 56
+    },
+    {
+     "t": 56,
+     "firings": 3071,
+     "firers": 3071,
+     "occupancy": 56
+    },
+    {
+     "t": 57,
+     "firings": 3071,
+     "firers": 3071,
+     "occupancy": 56
+    },
+    {
+     "t": 58,
+     "firings": 3071,
+     "firers": 3071,
+     "occupancy": 56
+    },
+    {
+     "t": 59,
+     "firings": 3071,
+     "firers": 3071,
+     "occupancy": 56
+    },
+    {
+     "t": 60,
+     "firings": 3071,
+     "firers": 3071,
+     "occupancy": 56
+    },
+    {
+     "t": 61,
+     "firings": 3071,
+     "firers": 3071,
+     "occupancy": 56
+    },
+    {
+     "t": 62,
+     "firings": 3071,
+     "firers": 3071,
+     "occupancy": 56
+    },
+    {
+     "t": 63,
+     "firings": 3071,
+     "firers": 3071,
+     "occupancy": 56
+    },
+    {
+     "t": 64,
+     "firings": 3071,
+     "firers": 3071,
+     "occupancy": 56
+    }
+   ]
+  },
+  {
+   "phi": 0.75,
+   "seed": 88005,
+   "detOk": true,
+   "abstains": 3100,
+   "firersRatio": 1,
+   "occupancyCapOk": true,
+   "perTick": [
+    {
+     "t": 1,
+     "firings": 3052,
+     "firers": 3052,
+     "occupancy": 48
+    },
+    {
+     "t": 2,
+     "firings": 3099,
+     "firers": 3099,
+     "occupancy": 49
+    },
+    {
+     "t": 3,
+     "firings": 3099,
+     "firers": 3099,
+     "occupancy": 50
+    },
+    {
+     "t": 4,
+     "firings": 3099,
+     "firers": 3099,
+     "occupancy": 51
+    },
+    {
+     "t": 5,
+     "firings": 3099,
+     "firers": 3099,
+     "occupancy": 52
+    },
+    {
+     "t": 6,
+     "firings": 3099,
+     "firers": 3099,
+     "occupancy": 53
+    },
+    {
+     "t": 7,
+     "firings": 3099,
+     "firers": 3099,
+     "occupancy": 54
+    },
+    {
+     "t": 8,
+     "firings": 3099,
+     "firers": 3099,
+     "occupancy": 55
+    },
+    {
+     "t": 9,
+     "firings": 3099,
+     "firers": 3099,
+     "occupancy": 56
+    },
+    {
+     "t": 10,
+     "firings": 3100,
+     "firers": 3100,
+     "occupancy": 56
+    },
+    {
+     "t": 11,
+     "firings": 3100,
+     "firers": 3100,
+     "occupancy": 56
+    },
+    {
+     "t": 12,
+     "firings": 3100,
+     "firers": 3100,
+     "occupancy": 56
+    },
+    {
+     "t": 13,
+     "firings": 3100,
+     "firers": 3100,
+     "occupancy": 56
+    },
+    {
+     "t": 14,
+     "firings": 3100,
+     "firers": 3100,
+     "occupancy": 56
+    },
+    {
+     "t": 15,
+     "firings": 3100,
+     "firers": 3100,
+     "occupancy": 56
+    },
+    {
+     "t": 16,
+     "firings": 3100,
+     "firers": 3100,
+     "occupancy": 56
+    },
+    {
+     "t": 17,
+     "firings": 3100,
+     "firers": 3100,
+     "occupancy": 56
+    },
+    {
+     "t": 18,
+     "firings": 3100,
+     "firers": 3100,
+     "occupancy": 56
+    },
+    {
+     "t": 19,
+     "firings": 3100,
+     "firers": 3100,
+     "occupancy": 56
+    },
+    {
+     "t": 20,
+     "firings": 3100,
+     "firers": 3100,
+     "occupancy": 56
+    },
+    {
+     "t": 21,
+     "firings": 3100,
+     "firers": 3100,
+     "occupancy": 56
+    },
+    {
+     "t": 22,
+     "firings": 3100,
+     "firers": 3100,
+     "occupancy": 56
+    },
+    {
+     "t": 23,
+     "firings": 3100,
+     "firers": 3100,
+     "occupancy": 56
+    },
+    {
+     "t": 24,
+     "firings": 3100,
+     "firers": 3100,
+     "occupancy": 56
+    },
+    {
+     "t": 25,
+     "firings": 3100,
+     "firers": 3100,
+     "occupancy": 56
+    },
+    {
+     "t": 26,
+     "firings": 3100,
+     "firers": 3100,
+     "occupancy": 56
+    },
+    {
+     "t": 27,
+     "firings": 3100,
+     "firers": 3100,
+     "occupancy": 56
+    },
+    {
+     "t": 28,
+     "firings": 3100,
+     "firers": 3100,
+     "occupancy": 56
+    },
+    {
+     "t": 29,
+     "firings": 3100,
+     "firers": 3100,
+     "occupancy": 56
+    },
+    {
+     "t": 30,
+     "firings": 3100,
+     "firers": 3100,
+     "occupancy": 56
+    },
+    {
+     "t": 31,
+     "firings": 3100,
+     "firers": 3100,
+     "occupancy": 56
+    },
+    {
+     "t": 32,
+     "firings": 3100,
+     "firers": 3100,
+     "occupancy": 56
+    },
+    {
+     "t": 33,
+     "firings": 3100,
+     "firers": 3100,
+     "occupancy": 56
+    },
+    {
+     "t": 34,
+     "firings": 3100,
+     "firers": 3100,
+     "occupancy": 56
+    },
+    {
+     "t": 35,
+     "firings": 3100,
+     "firers": 3100,
+     "occupancy": 56
+    },
+    {
+     "t": 36,
+     "firings": 3100,
+     "firers": 3100,
+     "occupancy": 56
+    },
+    {
+     "t": 37,
+     "firings": 3100,
+     "firers": 3100,
+     "occupancy": 56
+    },
+    {
+     "t": 38,
+     "firings": 3100,
+     "firers": 3100,
+     "occupancy": 56
+    },
+    {
+     "t": 39,
+     "firings": 3100,
+     "firers": 3100,
+     "occupancy": 56
+    },
+    {
+     "t": 40,
+     "firings": 3100,
+     "firers": 3100,
+     "occupancy": 56
+    },
+    {
+     "t": 41,
+     "firings": 3100,
+     "firers": 3100,
+     "occupancy": 56
+    },
+    {
+     "t": 42,
+     "firings": 3100,
+     "firers": 3100,
+     "occupancy": 56
+    },
+    {
+     "t": 43,
+     "firings": 3100,
+     "firers": 3100,
+     "occupancy": 56
+    },
+    {
+     "t": 44,
+     "firings": 3100,
+     "firers": 3100,
+     "occupancy": 56
+    },
+    {
+     "t": 45,
+     "firings": 3100,
+     "firers": 3100,
+     "occupancy": 56
+    },
+    {
+     "t": 46,
+     "firings": 3100,
+     "firers": 3100,
+     "occupancy": 56
+    },
+    {
+     "t": 47,
+     "firings": 3100,
+     "firers": 3100,
+     "occupancy": 56
+    },
+    {
+     "t": 48,
+     "firings": 3100,
+     "firers": 3100,
+     "occupancy": 56
+    },
+    {
+     "t": 49,
+     "firings": 3100,
+     "firers": 3100,
+     "occupancy": 56
+    },
+    {
+     "t": 50,
+     "firings": 3100,
+     "firers": 3100,
+     "occupancy": 56
+    },
+    {
+     "t": 51,
+     "firings": 3100,
+     "firers": 3100,
+     "occupancy": 56
+    },
+    {
+     "t": 52,
+     "firings": 3100,
+     "firers": 3100,
+     "occupancy": 56
+    },
+    {
+     "t": 53,
+     "firings": 3100,
+     "firers": 3100,
+     "occupancy": 56
+    },
+    {
+     "t": 54,
+     "firings": 3100,
+     "firers": 3100,
+     "occupancy": 56
+    },
+    {
+     "t": 55,
+     "firings": 3100,
+     "firers": 3100,
+     "occupancy": 56
+    },
+    {
+     "t": 56,
+     "firings": 3100,
+     "firers": 3100,
+     "occupancy": 56
+    },
+    {
+     "t": 57,
+     "firings": 3100,
+     "firers": 3100,
+     "occupancy": 56
+    },
+    {
+     "t": 58,
+     "firings": 3100,
+     "firers": 3100,
+     "occupancy": 56
+    },
+    {
+     "t": 59,
+     "firings": 3100,
+     "firers": 3100,
+     "occupancy": 56
+    },
+    {
+     "t": 60,
+     "firings": 3100,
+     "firers": 3100,
+     "occupancy": 56
+    },
+    {
+     "t": 61,
+     "firings": 3100,
+     "firers": 3100,
+     "occupancy": 56
+    },
+    {
+     "t": 62,
+     "firings": 3100,
+     "firers": 3100,
+     "occupancy": 56
+    },
+    {
+     "t": 63,
+     "firings": 3100,
+     "firers": 3100,
+     "occupancy": 56
+    },
+    {
+     "t": 64,
+     "firings": 3100,
+     "firers": 3100,
+     "occupancy": 56
+    }
+   ]
+  },
+  {
+   "phi": 1,
+   "seed": 88001,
+   "detOk": true,
+   "abstains": 4096,
+   "firersRatio": 1,
+   "occupancyCapOk": true,
+   "perTick": [
+    {
+     "t": 1,
+     "firings": 4048,
+     "firers": 4048,
+     "occupancy": 48
+    },
+    {
+     "t": 2,
+     "firings": 4095,
+     "firers": 4095,
+     "occupancy": 49
+    },
+    {
+     "t": 3,
+     "firings": 4095,
+     "firers": 4095,
+     "occupancy": 50
+    },
+    {
+     "t": 4,
+     "firings": 4095,
+     "firers": 4095,
+     "occupancy": 51
+    },
+    {
+     "t": 5,
+     "firings": 4095,
+     "firers": 4095,
+     "occupancy": 52
+    },
+    {
+     "t": 6,
+     "firings": 4095,
+     "firers": 4095,
+     "occupancy": 53
+    },
+    {
+     "t": 7,
+     "firings": 4095,
+     "firers": 4095,
+     "occupancy": 54
+    },
+    {
+     "t": 8,
+     "firings": 4095,
+     "firers": 4095,
+     "occupancy": 55
+    },
+    {
+     "t": 9,
+     "firings": 4095,
+     "firers": 4095,
+     "occupancy": 56
+    },
+    {
+     "t": 10,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 11,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 12,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 13,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 14,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 15,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 16,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 17,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 18,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 19,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 20,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 21,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 22,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 23,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 24,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 25,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 26,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 27,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 28,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 29,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 30,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 31,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 32,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 33,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 34,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 35,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 36,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 37,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 38,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 39,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 40,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 41,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 42,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 43,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 44,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 45,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 46,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 47,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 48,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 49,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 50,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 51,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 52,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 53,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 54,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 55,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 56,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 57,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 58,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 59,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 60,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 61,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 62,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 63,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 64,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    }
+   ]
+  },
+  {
+   "phi": 1,
+   "seed": 88002,
+   "detOk": true,
+   "abstains": 4096,
+   "firersRatio": 1,
+   "occupancyCapOk": true,
+   "perTick": [
+    {
+     "t": 1,
+     "firings": 4048,
+     "firers": 4048,
+     "occupancy": 48
+    },
+    {
+     "t": 2,
+     "firings": 4095,
+     "firers": 4095,
+     "occupancy": 49
+    },
+    {
+     "t": 3,
+     "firings": 4095,
+     "firers": 4095,
+     "occupancy": 50
+    },
+    {
+     "t": 4,
+     "firings": 4095,
+     "firers": 4095,
+     "occupancy": 51
+    },
+    {
+     "t": 5,
+     "firings": 4095,
+     "firers": 4095,
+     "occupancy": 52
+    },
+    {
+     "t": 6,
+     "firings": 4095,
+     "firers": 4095,
+     "occupancy": 53
+    },
+    {
+     "t": 7,
+     "firings": 4095,
+     "firers": 4095,
+     "occupancy": 54
+    },
+    {
+     "t": 8,
+     "firings": 4095,
+     "firers": 4095,
+     "occupancy": 55
+    },
+    {
+     "t": 9,
+     "firings": 4095,
+     "firers": 4095,
+     "occupancy": 56
+    },
+    {
+     "t": 10,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 11,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 12,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 13,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 14,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 15,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 16,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 17,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 18,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 19,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 20,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 21,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 22,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 23,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 24,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 25,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 26,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 27,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 28,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 29,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 30,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 31,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 32,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 33,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 34,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 35,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 36,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 37,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 38,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 39,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 40,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 41,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 42,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 43,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 44,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 45,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 46,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 47,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 48,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 49,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 50,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 51,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 52,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 53,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 54,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 55,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 56,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 57,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 58,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 59,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 60,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 61,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 62,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 63,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 64,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    }
+   ]
+  },
+  {
+   "phi": 1,
+   "seed": 88003,
+   "detOk": true,
+   "abstains": 4096,
+   "firersRatio": 1,
+   "occupancyCapOk": true,
+   "perTick": [
+    {
+     "t": 1,
+     "firings": 4048,
+     "firers": 4048,
+     "occupancy": 48
+    },
+    {
+     "t": 2,
+     "firings": 4095,
+     "firers": 4095,
+     "occupancy": 49
+    },
+    {
+     "t": 3,
+     "firings": 4095,
+     "firers": 4095,
+     "occupancy": 50
+    },
+    {
+     "t": 4,
+     "firings": 4095,
+     "firers": 4095,
+     "occupancy": 51
+    },
+    {
+     "t": 5,
+     "firings": 4095,
+     "firers": 4095,
+     "occupancy": 52
+    },
+    {
+     "t": 6,
+     "firings": 4095,
+     "firers": 4095,
+     "occupancy": 53
+    },
+    {
+     "t": 7,
+     "firings": 4095,
+     "firers": 4095,
+     "occupancy": 54
+    },
+    {
+     "t": 8,
+     "firings": 4095,
+     "firers": 4095,
+     "occupancy": 55
+    },
+    {
+     "t": 9,
+     "firings": 4095,
+     "firers": 4095,
+     "occupancy": 56
+    },
+    {
+     "t": 10,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 11,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 12,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 13,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 14,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 15,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 16,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 17,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 18,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 19,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 20,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 21,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 22,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 23,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 24,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 25,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 26,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 27,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 28,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 29,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 30,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 31,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 32,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 33,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 34,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 35,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 36,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 37,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 38,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 39,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 40,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 41,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 42,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 43,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 44,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 45,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 46,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 47,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 48,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 49,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 50,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 51,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 52,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 53,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 54,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 55,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 56,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 57,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 58,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 59,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 60,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 61,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 62,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 63,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 64,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    }
+   ]
+  },
+  {
+   "phi": 1,
+   "seed": 88004,
+   "detOk": true,
+   "abstains": 4096,
+   "firersRatio": 1,
+   "occupancyCapOk": true,
+   "perTick": [
+    {
+     "t": 1,
+     "firings": 4048,
+     "firers": 4048,
+     "occupancy": 48
+    },
+    {
+     "t": 2,
+     "firings": 4095,
+     "firers": 4095,
+     "occupancy": 49
+    },
+    {
+     "t": 3,
+     "firings": 4095,
+     "firers": 4095,
+     "occupancy": 50
+    },
+    {
+     "t": 4,
+     "firings": 4095,
+     "firers": 4095,
+     "occupancy": 51
+    },
+    {
+     "t": 5,
+     "firings": 4095,
+     "firers": 4095,
+     "occupancy": 52
+    },
+    {
+     "t": 6,
+     "firings": 4095,
+     "firers": 4095,
+     "occupancy": 53
+    },
+    {
+     "t": 7,
+     "firings": 4095,
+     "firers": 4095,
+     "occupancy": 54
+    },
+    {
+     "t": 8,
+     "firings": 4095,
+     "firers": 4095,
+     "occupancy": 55
+    },
+    {
+     "t": 9,
+     "firings": 4095,
+     "firers": 4095,
+     "occupancy": 56
+    },
+    {
+     "t": 10,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 11,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 12,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 13,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 14,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 15,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 16,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 17,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 18,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 19,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 20,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 21,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 22,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 23,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 24,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 25,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 26,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 27,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 28,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 29,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 30,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 31,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 32,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 33,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 34,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 35,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 36,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 37,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 38,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 39,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 40,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 41,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 42,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 43,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 44,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 45,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 46,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 47,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 48,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 49,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 50,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 51,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 52,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 53,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 54,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 55,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 56,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 57,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 58,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 59,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 60,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 61,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 62,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 63,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 64,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    }
+   ]
+  },
+  {
+   "phi": 1,
+   "seed": 88005,
+   "detOk": true,
+   "abstains": 4096,
+   "firersRatio": 1,
+   "occupancyCapOk": true,
+   "perTick": [
+    {
+     "t": 1,
+     "firings": 4048,
+     "firers": 4048,
+     "occupancy": 48
+    },
+    {
+     "t": 2,
+     "firings": 4095,
+     "firers": 4095,
+     "occupancy": 49
+    },
+    {
+     "t": 3,
+     "firings": 4095,
+     "firers": 4095,
+     "occupancy": 50
+    },
+    {
+     "t": 4,
+     "firings": 4095,
+     "firers": 4095,
+     "occupancy": 51
+    },
+    {
+     "t": 5,
+     "firings": 4095,
+     "firers": 4095,
+     "occupancy": 52
+    },
+    {
+     "t": 6,
+     "firings": 4095,
+     "firers": 4095,
+     "occupancy": 53
+    },
+    {
+     "t": 7,
+     "firings": 4095,
+     "firers": 4095,
+     "occupancy": 54
+    },
+    {
+     "t": 8,
+     "firings": 4095,
+     "firers": 4095,
+     "occupancy": 55
+    },
+    {
+     "t": 9,
+     "firings": 4095,
+     "firers": 4095,
+     "occupancy": 56
+    },
+    {
+     "t": 10,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 11,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 12,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 13,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 14,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 15,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 16,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 17,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 18,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 19,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 20,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 21,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 22,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 23,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 24,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 25,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 26,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 27,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 28,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 29,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 30,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 31,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 32,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 33,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 34,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 35,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 36,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 37,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 38,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 39,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 40,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 41,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 42,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 43,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 44,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 45,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 46,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 47,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 48,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 49,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 50,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 51,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 52,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 53,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 54,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 55,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 56,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 57,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 58,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 59,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 60,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 61,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 62,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 63,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    },
+    {
+     "t": 64,
+     "firings": 4096,
+     "firers": 4096,
+     "occupancy": 56
+    }
+   ]
+  }
+ ],
+ "familyB": [
+  {
+   "nPoll": 0,
+   "seed": 77001,
+   "detOk": true,
+   "delivered": 8,
+   "pairDelivers": [
+    7,
+    7,
+    7,
+    7,
+    7,
+    7,
+    7,
+    8
+   ],
+   "pairEvents": 3144,
+   "partnerEvents": 179,
+   "pollutedEvents": 2965,
+   "pollutionFraction": "0.9430661577608143"
+  },
+  {
+   "nPoll": 0,
+   "seed": 77002,
+   "detOk": true,
+   "delivered": 8,
+   "pairDelivers": [
+    7,
+    7,
+    7,
+    7,
+    7,
+    7,
+    7,
+    9
+   ],
+   "pairEvents": 3144,
+   "partnerEvents": 661,
+   "pollutedEvents": 2483,
+   "pollutionFraction": "0.7897582697201018"
+  },
+  {
+   "nPoll": 0,
+   "seed": 77003,
+   "detOk": true,
+   "delivered": 8,
+   "pairDelivers": [
+    7,
+    7,
+    7,
+    7,
+    7,
+    7,
+    7,
+    9
+   ],
+   "pairEvents": 3144,
+   "partnerEvents": 356,
+   "pollutedEvents": 2788,
+   "pollutionFraction": "0.8867684478371501"
+  },
+  {
+   "nPoll": 0,
+   "seed": 77004,
+   "detOk": true,
+   "delivered": 8,
+   "pairDelivers": [
+    7,
+    7,
+    7,
+    7,
+    7,
+    7,
+    7,
+    9
+   ],
+   "pairEvents": 3144,
+   "partnerEvents": 151,
+   "pollutedEvents": 2993,
+   "pollutionFraction": "0.9519720101781171"
+  },
+  {
+   "nPoll": 0,
+   "seed": 77005,
+   "detOk": true,
+   "delivered": 8,
+   "pairDelivers": [
+    7,
+    7,
+    7,
+    7,
+    7,
+    7,
+    7,
+    9
+   ],
+   "pairEvents": 3144,
+   "partnerEvents": 318,
+   "pollutedEvents": 2826,
+   "pollutionFraction": "0.898854961832061"
+  },
+  {
+   "nPoll": 0,
+   "seed": 77006,
+   "detOk": true,
+   "delivered": 8,
+   "pairDelivers": [
+    7,
+    7,
+    7,
+    7,
+    7,
+    7,
+    7,
+    8
+   ],
+   "pairEvents": 3144,
+   "partnerEvents": 166,
+   "pollutedEvents": 2978,
+   "pollutionFraction": "0.9472010178117048"
+  },
+  {
+   "nPoll": 0,
+   "seed": 77007,
+   "detOk": true,
+   "delivered": 8,
+   "pairDelivers": [
+    7,
+    7,
+    7,
+    7,
+    7,
+    7,
+    7,
+    8
+   ],
+   "pairEvents": 3144,
+   "partnerEvents": 172,
+   "pollutedEvents": 2972,
+   "pollutionFraction": "0.94529262086514"
+  },
+  {
+   "nPoll": 0,
+   "seed": 77008,
+   "detOk": true,
+   "delivered": 8,
+   "pairDelivers": [
+    7,
+    7,
+    7,
+    7,
+    7,
+    7,
+    7,
+    9
+   ],
+   "pairEvents": 3144,
+   "partnerEvents": 321,
+   "pollutedEvents": 2823,
+   "pollutionFraction": "0.8979007633587787"
+  },
+  {
+   "nPoll": 0,
+   "seed": 77009,
+   "detOk": true,
+   "delivered": 8,
+   "pairDelivers": [
+    7,
+    7,
+    7,
+    7,
+    7,
+    7,
+    7,
+    8
+   ],
+   "pairEvents": 3144,
+   "partnerEvents": 166,
+   "pollutedEvents": 2978,
+   "pollutionFraction": "0.9472010178117048"
+  },
+  {
+   "nPoll": 0,
+   "seed": 77010,
+   "detOk": true,
+   "delivered": 8,
+   "pairDelivers": [
+    7,
+    7,
+    7,
+    7,
+    7,
+    7,
+    7,
+    8
+   ],
+   "pairEvents": 3144,
+   "partnerEvents": 228,
+   "pollutedEvents": 2916,
+   "pollutionFraction": "0.9274809160305344"
+  },
+  {
+   "nPoll": 16,
+   "seed": 77001,
+   "detOk": true,
+   "delivered": 8,
+   "pairDelivers": [
+    7,
+    6,
+    6,
+    7,
+    7,
+    6,
+    6,
+    7
+   ],
+   "pairEvents": 3177,
+   "partnerEvents": 99,
+   "pollutedEvents": 3078,
+   "pollutionFraction": "0.9688385269121813"
+  },
+  {
+   "nPoll": 16,
+   "seed": 77002,
+   "detOk": true,
+   "delivered": 8,
+   "pairDelivers": [
+    7,
+    7,
+    7,
+    6,
+    7,
+    6,
+    7,
+    8
+   ],
+   "pairEvents": 3167,
+   "partnerEvents": 241,
+   "pollutedEvents": 2926,
+   "pollutionFraction": "0.9239027470792548"
+  },
+  {
+   "nPoll": 16,
+   "seed": 77003,
+   "detOk": true,
+   "delivered": 8,
+   "pairDelivers": [
+    6,
+    7,
+    7,
+    7,
+    7,
+    6,
+    6,
+    7
+   ],
+   "pairEvents": 3175,
+   "partnerEvents": 260,
+   "pollutedEvents": 2915,
+   "pollutionFraction": "0.9181102362204724"
+  },
+  {
+   "nPoll": 16,
+   "seed": 77004,
+   "detOk": true,
+   "delivered": 8,
+   "pairDelivers": [
+    7,
+    7,
+    6,
+    7,
+    7,
+    6,
+    7,
+    8
+   ],
+   "pairEvents": 3171,
+   "partnerEvents": 8,
+   "pollutedEvents": 3163,
+   "pollutionFraction": "0.9974771365499843"
+  },
+  {
+   "nPoll": 16,
+   "seed": 77005,
+   "detOk": true,
+   "delivered": 8,
+   "pairDelivers": [
+    6,
+    7,
+    6,
+    6,
+    6,
+    6,
+    7,
+    8
+   ],
+   "pairEvents": 3169,
+   "partnerEvents": 122,
+   "pollutedEvents": 3047,
+   "pollutionFraction": "0.9615020511202272"
+  },
+  {
+   "nPoll": 16,
+   "seed": 77006,
+   "detOk": true,
+   "delivered": 8,
+   "pairDelivers": [
+    6,
+    7,
+    7,
+    7,
+    6,
+    7,
+    7,
+    8
+   ],
+   "pairEvents": 3165,
+   "partnerEvents": 37,
+   "pollutedEvents": 3128,
+   "pollutionFraction": "0.9883096366508689"
+  },
+  {
+   "nPoll": 16,
+   "seed": 77007,
+   "detOk": true,
+   "delivered": 8,
+   "pairDelivers": [
+    7,
+    7,
+    7,
+    7,
+    7,
+    7,
+    6,
+    7
+   ],
+   "pairEvents": 3170,
+   "partnerEvents": 132,
+   "pollutedEvents": 3038,
+   "pollutionFraction": "0.9583596214511041"
+  },
+  {
+   "nPoll": 16,
+   "seed": 77008,
+   "detOk": true,
+   "delivered": 8,
+   "pairDelivers": [
+    7,
+    7,
+    7,
+    7,
+    7,
+    6,
+    6,
+    8
+   ],
+   "pairEvents": 3170,
+   "partnerEvents": 257,
+   "pollutedEvents": 2913,
+   "pollutionFraction": "0.9189274447949527"
+  },
+  {
+   "nPoll": 16,
+   "seed": 77009,
+   "detOk": true,
+   "delivered": 8,
+   "pairDelivers": [
+    7,
+    7,
+    6,
+    6,
+    7,
+    6,
+    7,
+    8
+   ],
+   "pairEvents": 3170,
+   "partnerEvents": 103,
+   "pollutedEvents": 3067,
+   "pollutionFraction": "0.9675078864353313"
+  },
+  {
+   "nPoll": 16,
+   "seed": 77010,
+   "detOk": true,
+   "delivered": 8,
+   "pairDelivers": [
+    7,
+    7,
+    6,
+    6,
+    7,
+    6,
+    7,
+    8
+   ],
+   "pairEvents": 3163,
+   "partnerEvents": 136,
+   "pollutedEvents": 3027,
+   "pollutionFraction": "0.9570028453999367"
+  },
+  {
+   "nPoll": 64,
+   "seed": 77001,
+   "detOk": true,
+   "delivered": 8,
+   "pairDelivers": [
+    6,
+    6,
+    6,
+    6,
+    7,
+    6,
+    6,
+    6
+   ],
+   "pairEvents": 3194,
+   "partnerEvents": 79,
+   "pollutedEvents": 3115,
+   "pollutionFraction": "0.9752661239824671"
+  },
+  {
+   "nPoll": 64,
+   "seed": 77002,
+   "detOk": true,
+   "delivered": 8,
+   "pairDelivers": [
+    7,
+    7,
+    6,
+    6,
+    6,
+    6,
+    6,
+    7
+   ],
+   "pairEvents": 3188,
+   "partnerEvents": 46,
+   "pollutedEvents": 3142,
+   "pollutionFraction": "0.9855708908406524"
+  },
+  {
+   "nPoll": 64,
+   "seed": 77003,
+   "detOk": true,
+   "delivered": 8,
+   "pairDelivers": [
+    6,
+    6,
+    7,
+    6,
+    6,
+    6,
+    6,
+    7
+   ],
+   "pairEvents": 3192,
+   "partnerEvents": 135,
+   "pollutedEvents": 3057,
+   "pollutionFraction": "0.9577067669172933"
+  },
+  {
+   "nPoll": 64,
+   "seed": 77004,
+   "detOk": true,
+   "delivered": 8,
+   "pairDelivers": [
+    7,
+    7,
+    6,
+    6,
+    7,
+    6,
+    6,
+    7
+   ],
+   "pairEvents": 3187,
+   "partnerEvents": 0,
+   "pollutedEvents": 3187,
+   "pollutionFraction": 1
+  },
+  {
+   "nPoll": 64,
+   "seed": 77005,
+   "detOk": true,
+   "delivered": 8,
+   "pairDelivers": [
+    6,
+    7,
+    6,
+    6,
+    6,
+    6,
+    6,
+    7
+   ],
+   "pairEvents": 3187,
+   "partnerEvents": 7,
+   "pollutedEvents": 3180,
+   "pollutionFraction": "0.9978035770316912"
+  },
+  {
+   "nPoll": 64,
+   "seed": 77006,
+   "detOk": true,
+   "delivered": 8,
+   "pairDelivers": [
+    6,
+    7,
+    6,
+    6,
+    6,
+    6,
+    6,
+    7
+   ],
+   "pairEvents": 3184,
+   "partnerEvents": 3,
+   "pollutedEvents": 3181,
+   "pollutionFraction": "0.9990577889447236"
+  },
+  {
+   "nPoll": 64,
+   "seed": 77007,
+   "detOk": true,
+   "delivered": 8,
+   "pairDelivers": [
+    7,
+    6,
+    6,
+    6,
+    7,
+    7,
+    6,
+    7
+   ],
+   "pairEvents": 3191,
+   "partnerEvents": 0,
+   "pollutedEvents": 3191,
+   "pollutionFraction": 1
+  },
+  {
+   "nPoll": 64,
+   "seed": 77008,
+   "detOk": true,
+   "delivered": 8,
+   "pairDelivers": [
+    7,
+    6,
+    7,
+    7,
+    6,
+    6,
+    6,
+    7
+   ],
+   "pairEvents": 3192,
+   "partnerEvents": 257,
+   "pollutedEvents": 2935,
+   "pollutionFraction": "0.9194862155388471"
+  },
+  {
+   "nPoll": 64,
+   "seed": 77009,
+   "detOk": true,
+   "delivered": 8,
+   "pairDelivers": [
+    7,
+    7,
+    6,
+    6,
+    6,
+    6,
+    6,
+    7
+   ],
+   "pairEvents": 3191,
+   "partnerEvents": 0,
+   "pollutedEvents": 3191,
+   "pollutionFraction": 1
+  },
+  {
+   "nPoll": 64,
+   "seed": 77010,
+   "detOk": true,
+   "delivered": 8,
+   "pairDelivers": [
+    7,
+    6,
+    6,
+    6,
+    7,
+    6,
+    6,
+    7
+   ],
+   "pairEvents": 3186,
+   "partnerEvents": 18,
+   "pollutedEvents": 3168,
+   "pollutionFraction": "0.9943502824858758"
+  },
+  {
+   "nPoll": 256,
+   "seed": 77001,
+   "detOk": true,
+   "delivered": 8,
+   "pairDelivers": [
+    6,
+    6,
+    6,
+    6,
+    6,
+    6,
+    6,
+    6
+   ],
+   "pairEvents": 3198,
+   "partnerEvents": 0,
+   "pollutedEvents": 3198,
+   "pollutionFraction": 1
+  },
+  {
+   "nPoll": 256,
+   "seed": 77002,
+   "detOk": true,
+   "delivered": 8,
+   "pairDelivers": [
+    6,
+    6,
+    6,
+    6,
+    6,
+    6,
+    6,
+    7
+   ],
+   "pairEvents": 3195,
+   "partnerEvents": 0,
+   "pollutedEvents": 3195,
+   "pollutionFraction": 1
+  },
+  {
+   "nPoll": 256,
+   "seed": 77003,
+   "detOk": true,
+   "delivered": 8,
+   "pairDelivers": [
+    6,
+    6,
+    6,
+    6,
+    6,
+    6,
+    6,
+    6
+   ],
+   "pairEvents": 3197,
+   "partnerEvents": 50,
+   "pollutedEvents": 3147,
+   "pollutionFraction": "0.9843603378167032"
+  },
+  {
+   "nPoll": 256,
+   "seed": 77004,
+   "detOk": true,
+   "delivered": 8,
+   "pairDelivers": [
+    6,
+    6,
+    6,
+    6,
+    7,
+    6,
+    6,
+    6
+   ],
+   "pairEvents": 3197,
+   "partnerEvents": 0,
+   "pollutedEvents": 3197,
+   "pollutionFraction": 1
+  },
+  {
+   "nPoll": 256,
+   "seed": 77005,
+   "detOk": true,
+   "delivered": 8,
+   "pairDelivers": [
+    6,
+    6,
+    6,
+    6,
+    6,
+    6,
+    6,
+    6
+   ],
+   "pairEvents": 3198,
+   "partnerEvents": 0,
+   "pollutedEvents": 3198,
+   "pollutionFraction": 1
+  },
+  {
+   "nPoll": 256,
+   "seed": 77006,
+   "detOk": true,
+   "delivered": 8,
+   "pairDelivers": [
+    6,
+    6,
+    6,
+    6,
+    6,
+    6,
+    6,
+    6
+   ],
+   "pairEvents": 3196,
+   "partnerEvents": 0,
+   "pollutedEvents": 3196,
+   "pollutionFraction": 1
+  },
+  {
+   "nPoll": 256,
+   "seed": 77007,
+   "detOk": true,
+   "delivered": 8,
+   "pairDelivers": [
+    6,
+    6,
+    6,
+    6,
+    6,
+    6,
+    6,
+    6
+   ],
+   "pairEvents": 3198,
+   "partnerEvents": 0,
+   "pollutedEvents": 3198,
+   "pollutionFraction": 1
+  },
+  {
+   "nPoll": 256,
+   "seed": 77008,
+   "detOk": true,
+   "delivered": 8,
+   "pairDelivers": [
+    6,
+    6,
+    6,
+    6,
+    6,
+    6,
+    6,
+    7
+   ],
+   "pairEvents": 3196,
+   "partnerEvents": 54,
+   "pollutedEvents": 3142,
+   "pollutionFraction": "0.9831038798498123"
+  },
+  {
+   "nPoll": 256,
+   "seed": 77009,
+   "detOk": true,
+   "delivered": 8,
+   "pairDelivers": [
+    6,
+    6,
+    6,
+    6,
+    6,
+    6,
+    6,
+    6
+   ],
+   "pairEvents": 3198,
+   "partnerEvents": 0,
+   "pollutedEvents": 3198,
+   "pollutionFraction": 1
+  },
+  {
+   "nPoll": 256,
+   "seed": 77010,
+   "detOk": true,
+   "delivered": 8,
+   "pairDelivers": [
+    6,
+    6,
+    6,
+    6,
+    6,
+    6,
+    6,
+    6
+   ],
+   "pairEvents": 3198,
+   "partnerEvents": 50,
+   "pollutedEvents": 3148,
+   "pollutionFraction": "0.9843652282676673"
+  }
+ ],
+ "familyC": [
+  {
+   "seed": 99001,
+   "detOk": true,
+   "firstDivTick": 8,
+   "divCount": 1520,
+   "radius": 7,
+   "regime": "CASCADE",
+   "injections": 120
+  },
+  {
+   "seed": 99002,
+   "detOk": true,
+   "firstDivTick": 8,
+   "divCount": 1819,
+   "radius": 8,
+   "regime": "CASCADE",
+   "injections": 120
+  },
+  {
+   "seed": 99003,
+   "detOk": true,
+   "firstDivTick": 8,
+   "divCount": 1793,
+   "radius": 7,
+   "regime": "CASCADE",
+   "injections": 120
+  },
+  {
+   "seed": 99004,
+   "detOk": true,
+   "firstDivTick": 8,
+   "divCount": 2168,
+   "radius": 7,
+   "regime": "CASCADE",
+   "injections": 120
+  },
+  {
+   "seed": 99005,
+   "detOk": true,
+   "firstDivTick": 8,
+   "divCount": 2095,
+   "radius": 7,
+   "regime": "CASCADE",
+   "injections": 120
+  }
+ ],
+ "aggregates": {
+  "A1": true,
+  "A2": true,
+  "A2starves": false,
+  "A2medians": {
+   "1": 1,
+   "0.25": 1,
+   "0.5": 1,
+   "0.75": 1
+  },
+  "B1": true,
+  "B2": true,
+  "B2delivered": 80,
+  "B3": false,
+  "pfMed": {
+   "0": "0.9430661577608143",
+   "16": "0.9615020511202272",
+   "64": "0.9978035770316912",
+   "256": 1
+  },
+  "C1": true,
+  "C2": true,
+  "regimes": [
+   "CASCADE"
+  ],
+  "F0": true,
+  "verdict": "E-Q14 VERDICT: family A {A1 pass, A2 live-read-load median firers ratio phi=0.5:1 phi=0.75:1 phi=1.0:1 -> LOAD-HELD}; family B {pollution fractions medians 0:0.9430661577608143 16:0.9615020511202272 64:0.9978035770316912 256:1 monotone=true, delivery at 256 = 80/80 pair-trials full-8, content-addressed CONFIRMED, zero-pollution clean=false}; family C {regimes CASCADE 5 seeds, first-divergence 8,8,8,8,8 all <= 9 = true, regime-stable = true}; determinism ALL byte-identical"
+ }
+}
