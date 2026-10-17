@@ -1,0 +1,42 @@
+{
+  "law": "REGISTRATION of E-Q14 — the adversarial probe family: break the wormhole table under realistic load (roadmap phase 3). Committed BEFORE ANY RUN (pricing-first). Floors frozen; honest null = crown jewel. The family extends E-Q6 (64x1 total collision, d=0) and the E-Q10 armor injectors to 64x64 realistic load, provenance hijacking, and noise-perturbed cascades.",
+  "task_id": "ORCH-3",
+  "agent": "qthe-orchestrator",
+  "wave": "69-post",
+  "repo": "SuperInstance/qthe",
+  "repo_at_registration": "d0cab09",
+  "families": {
+    "A_high_density_abstain": {
+      "design": "64x64, seeded (mulberry32) uniform layout: each cell is Abstain with probability phi (else Ground); Abstain cells carry seeded uniform d in [8,55]; phi in {0.25, 0.50, 0.75, 1.00}; 5 seeds per phi; T=64; wormholes ON; sigma kernel default.",
+      "measures": ["table occupancy per tick (cap 64)", "twin firings per tick", "distinct firers per tick", "distinct occupied slots per tick", "d-movement of Abstain cells (firers vs non-firers)"],
+      "floors": {
+        "EQ14_A1_occupancy_cap": "occupiedCount() <= 64 at EVERY tick of EVERY arm — a violation is a kernel defect finding, experiment VOID.",
+        "EQ14_A2_live_read_load": "at phi >= 0.50: median distinct firers per tick >= 0.60 x (Abstain cell count) — the S3 live-read keeps most readers hearing someone under load. HONEST NULL: if median < 0.10 x Abstain count, the table STARVES under load (crown-jewel boundary for the wormhole-under-load story)."
+      }
+    },
+    "B_resonance_pollution": {
+      "design": "E-Q1's planted twin-delivery task (K=8 pairs, planting machinery verbatim, seeds 77001..77010, 10 trials) PLUS a pollution field: N_poll extra Abstain cells at seeded positions >= 2 toroidal-Chebyshev from every pair member, each polluter carrying d EQUAL TO ONE OF THE PAIR D VALUES (seeded assignment), so polluters write the SAME slots the twins use. N_poll in {0, 16, 64, 256}. T=200, theta_del=8. Instrumentation (receipted): the harness passes its OWN WormholeTable via opts.table with a read() wrapper that logs every live read's occupant — provenance is recovered by sequential slot+resonance matching against the event stream; qthe.mjs untouched.",
+      "measures": ["pair delivery rate and ticks", "provenance of pair-member twin events: partner vs polluter vs stranger", "pollution fraction = non-partner-occupant events / pair-member events"],
+      "floors": {
+        "EQ14_B1_pollution_rises": "pollution fraction is non-decreasing in N_poll on medians (0 < 16 < 64 < 256); a decrease anywhere = autopsy (mechanism model wrong).",
+        "EQ14_B2_delivery_survives": "at N_poll=256: pairs still deliver in >= 8/10 trials — the table is CONTENT-addressed (any occupant with resonance != 0 fires the reader); prediction: delivery survives provenance loss. HONEST NULL: if delivery dies with pollution, provenance is load-bearing — an even more valuable boundary.",
+        "EQ14_B3_zero_pollution_clean": "at N_poll=0: pollution fraction == 0 and delivery matches E-Q1-class behavior (8/8 in >= 9/10 trials) — the instrumentation itself must be invisible at zero pollution or the harness is defective."
+      }
+    },
+    "C_cascade_under_noise": {
+      "design": "64x64 checkerboard (Attract/Repel by (x+y)%2, d=32 everywhere) + center flip Attract->Repel at (32,32) + seeded NOISE INJECTORS: at ticks 8,16,...,120, exactly 8 seeded random cells get d perturbed by +-1 (tau PRESERVED — injector semantics, receipted; the schedule draws from mulberry32(seed) and is deterministic; tick() itself draws nothing). Arms: CLEAN (no noise) vs NOISE, 5 seeds, T=128.",
+      "measures": ["first plane-divergence tick (noise vs clean, same seed)", "divergent-cell Chebyshev radius from injection sites at t=64 (cascade spread)", "divergent cell count at t=64 and t=128", "regime classification at t=64: CASCADE (radius > 4) vs DEAD-LOCAL (absorbed)"],
+      "floors": {
+        "EQ14_C1_noise_perturbs": "planes diverge (first divergence tick <= 9 — the first injection round lands at tick 8 and Moore-8 pressure propagates one step per tick); if planes stay identical, the injectors are defective (autopsy), since +-1 on d changes neighbor pressure by exactly 1.",
+        "EQ14_C2_regime_stable": "regime classification is UNCHANGED by noise (both arms CASCADE, or both DEAD-LOCAL, per seed) AND radius at t=64 within +-2 of the clean arm — small noise perturbs trajectories, not the cascade character. HONEST NULL: if noise flips the regime classification for any seed, noise is regime-relevant — boundary-map entry, receipted."
+      }
+    }
+  },
+  "cross_family_floors": {
+    "EQ14_F0_determinism": "EVERY arm of EVERY family runs TWICE from fresh construction — byte-identical checkpoint plane-hash sequences (checkpoints [0,8,16,32,64] family A/C, [0,50,100,150,200] family B), else the whole experiment is VOID. Noise arms: the noise schedule is part of the run's deterministic state (same seed -> same schedule -> byte-identical reruns)."
+  },
+  "verdict_contract": "One paragraph: 'E-Q14 VERDICT: family A {A1 pass/fail, A2 live-read-load {median firers ratio} or STARVES-null}; family B {pollution fraction by N_poll, delivery survival {n}/10, content-addressed {confirmed|falsified}}; family C {regime stable {5/5|n/5}, radius delta {..}, first-divergence {..}}; determinism {40+40+20 runs byte-identical|VOID}.'",
+  "receipt_discipline": "one stone-v1 chain receipts/e_q14_chain.jsonl (append-only, verify-from-disk, refuse-if-broken); raw data experiments/outputs/e_q14_results.json; tip experiments/outputs/e_q14_tip.txt; floats only as receipted strings.",
+  "kernel_contact_rules": "CR3 honored: all arms use tick(), makeSubstrate, WormholeTable, mulberry32 only; family B passes an INSTRUMENTED table instance via opts.table (a wrapper the kernel's own API accepts — read() logging, write path untouched); noise injectors use the setCell adapter path between ticks (tau preserved); qthe.mjs untouched.",
+  "registered_before_run": "YES — no E-Q14 tick has executed at commit time. Git history is the witness."
+}
