@@ -1,0 +1,85 @@
+{
+ "kind": "fleet-seeds.entry",
+ "repo": "SuperInstance/qthe",
+ "emitted_by": "scripts/emit_fleet_seeds.mjs (ORCH-25)",
+ "kernel_sha256": "ef9a3bba0511c78026f30706214e407d362e8972a86f5684d9b16a9e16e3f091",
+ "scoreboard": {
+  "C1": "LIVES (E-Q13, 47.40%)",
+  "C2": "LIVES (E-Q1, 8/8 vs 0/20)",
+  "C3": "DIES honest-null (E-Q2)",
+  "C4": "DIES (E-Q7)",
+  "C5": "DIES honest-null (E-Q5)",
+  "C5'": "STANDS definitional (E-Q10)"
+ },
+ "cross_language": {
+  "js_float": "reference",
+  "js_fixed_R8": "byte-identical on swept sigma",
+  "c99": "BYTE-EXACT 19/19 both planes (cimpl chain)",
+  "python_L0": "10,272/10,272 (lane 34-e)"
+ },
+ "tooling": [
+  "scripts/probe_gate.mjs (mandatory PG1-PG5)",
+  "scripts/verify_all_chains.mjs",
+  "scripts/repl.mjs",
+  "scripts/replay.mjs",
+  "scripts/falsification_budget.mjs"
+ ],
+ "chain_tips": {
+  "gates_G0_G6": {
+   "sha256": "1c92d26fb324d0502c6e422154eab336c37453cd2c2574df63a15b72207a2ed8",
+   "rows": 10
+  },
+  "crossimpl_py": {
+   "sha256": "f5bd95af2653f3a6b2f86c2d27aed6c97fd145cffc4368cb4f06b8c02e9729c7",
+   "rows": 11
+  },
+  "crossimpl_c": {
+   "sha256": "533a25ef8c2a8346f06d1a7f08d3abfccd4fcef25e87530ddced1db3caf834dd",
+   "rows": 5
+  },
+  "fixedpoint_R8": {
+   "sha256": "75987c01dcf8db3ca6f0a5c780a2c580a265775919ccf87f1d034991f1184f71",
+   "rows": 26
+  },
+  "e_q1_C2": {
+   "sha256": "0ee2867527c256fda3b9ace441a5d8d7191aec85656b31b2330e9dca0147455e",
+   "rows": 25
+  },
+  "e_q2_C3": {
+   "sha256": "5576115c75da696b8a8f6789db6672ff175131eb47c9b17eb76cc3af524b4f98",
+   "rows": 14
+  },
+  "e_q5_C5": {
+   "sha256": "0bb9040254a871fa51a423bca71baab1afdeb357e7654e60ec0dcb3e344a88a4",
+   "rows": 25
+  },
+  "e_q6_slots": {
+   "sha256": "3340b0823aabcd7773172c15104397452fdfbef01e006f25ed330dacf98018cc",
+   "rows": 15
+  },
+  "e_q7_C4": {
+   "sha256": "6a42c3c984982dc89741476c3ed79415c776dff65a24e649f6445c4a9ac41c1d",
+   "rows": 36
+  },
+  "e_q8_float_artifact": {
+   "sha256": "a3c6a3562dcff7fe0a09230dbf1f604466f6e64108c42fb489c1229a9e75a62d",
+   "rows": 17
+  },
+  "e_q10_C5i": {
+   "sha256": "6637ce7dfb2d68718cc0a09d13fbe6311d59f52d3a91c8e00264546911f1fc59",
+   "rows": 24
+  },
+  "e_q13_C1": {
+   "sha256": "66d2620314062e687b572955d367de3bd3a7aab8c4000b9cbb28499ae1b8da23",
+   "rows": 25
+  },
+  "e_q14_adversarial": {
+   "sha256": "15776ca262837deb885b88f6056e8fb7aadfedc5cc6a57de85f420cc6e4e5b85",
+   "rows": 70
+  },
+  "probe_gate": {
+   "sha256": "b617e33386d5a84479fabe295e8ebb57043aec7c1d164f090c7059237b15462c",
+   "rows": 2
+  }
+ }
+}
