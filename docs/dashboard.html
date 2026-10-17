@@ -127,7 +127,7 @@
   </div>
 
   <div class="panel" id="chains">
-    <h2>chain of chains &middot; 16 stone-v1 receipts pinned by fleet-seeds (391 rows)</h2>
+    <h2>chain of chains &middot; 16 stone-v1 receipts pinned by fleet-seeds (392 rows)</h2>
     <table>
       <thead><tr><th>chain</th><th>rows</th><th>tip (sha256 of chain file)</th><th>probe gate</th></tr></thead>
       <tbody>
@@ -223,13 +223,13 @@
       </tr>
       <tr>
         <td class="claim"><b>probe_gate</b> <span class="dim">receipts/probe_gate_chain.jsonl</span></td>
-        <td class="num">9</td>
-        <td class="tip" title="sha256 of the chain file — full 5ca9dc1b5938267ee86973841b3373feec2ad78474ff58aaa57ea9a6aa924ea9">5ca9dc1b5938267e</td>
+        <td class="num">10</td>
+        <td class="tip" title="sha256 of the chain file — full a66a7d35be10b8e004337b25493ad1c8a8755ee11881250984847629344b0ba0">a66a7d35be10b8e0</td>
         <td class="dim">self — the gate&rsquo;s own receipt</td>
       </tr>
       </tbody>
     </table>
-    <p class="note">verified by the probe gate — sealed run: <b>PROBE-GATE PASS</b> (scope=all, 0 failed) &middot; PG1 stone 16/16 verified from disk &middot; PG2 tip-pin 18 checked &middot; PG3 tamper control refused the flipped byte &middot; PG4 1000-tick twin probe byte-identical &middot; PG5 110ms / 65MB within 10000ms/512MB &middot; PG6 verdict-recompute 14/14 claims re-derived from the sealed outputs.<br>
+    <p class="note">verified by the probe gate — sealed run: <b>PROBE-GATE PASS</b> (scope=all, 0 failed) &middot; PG1 stone 16/16 verified from disk &middot; PG2 tip-pin 18 checked &middot; PG3 tamper control refused the flipped byte &middot; PG4 1000-tick twin probe byte-identical &middot; PG5 114ms / 64MB within 10000ms/512MB &middot; PG6 verdict-recompute 14/14 claims re-derived from the sealed outputs.<br>
     gate scope today: 16 stone chains + 2 content-hash tips (the sealed run covers the full current scope). every pin above was recomputed from disk at build time.</p>
   </div>
 
@@ -251,7 +251,7 @@
       <li><b>G4 — hand-computed literal wrong, kernel right (preserved standing)</b> — priced by gates <span class="dim">(tests/receipts.jsonl)</span></li>
       <li><b>E-Q7 lane expectation — ON/OFF same-regime falsified by own run (nu channel not sign-impotent)</b> — priced by E-Q7 <span class="dim">(commit 55ddced)</span></li>
     </ul>
-    <p class="note">the reading: 7 banked nulls and 8 caught defects against zero silent failures — every cost converted into a boundary the next system inherits for free. source: docs/FALSIFICATION-BUDGET.md (16 chain files, 391 rows on disk; fleet-seeds pins 16 chains, 391 rows).</p>
+    <p class="note">the reading: 7 banked nulls and 8 caught defects against zero silent failures — every cost converted into a boundary the next system inherits for free. source: docs/FALSIFICATION-BUDGET.md (16 chain files, 392 rows on disk; fleet-seeds pins 16 chains, 392 rows).</p>
   </div>
 
   <div class="panel" id="verify">
