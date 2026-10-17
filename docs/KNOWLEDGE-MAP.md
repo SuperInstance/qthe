@@ -81,3 +81,13 @@ head -3 situations/cache_economics_r9.json situations/guest_rows_r9_keyed.jsonl
 # Journal history:
 grep -n "qthe" /home/z/my-project/worklog.md | head -40
 ```
+
+## Orchestrator wave 69-post (the 50-phase run, branch `orchestrator/50-phases`)
+
+- `docs/PHASES-REPORT.md` — the master status: all 50 phases with receipts.
+- New experiments: **E-Q13** (C1 LIVES, 47.40%, `d852e6ac…`), **E-Q14** (adversarial family + B3 autopsy, `6a7a2118…`), **E-Q15** (preference probe DIES honest null, `00494e2f…`), **E-Q16** (stability/phase/scaling/census, `1941c1f4…` — locality holds to 256×256, phase table dense-confirms E-Q2).
+- New tools: `scripts/probe_gate.mjs` (mandatory PG1–PG5), `verify_all_chains.mjs`, `repl.mjs`, `replay.mjs`, `falsification_budget.mjs`, `seal_claim.mjs`, `build_dashboard.mjs`, `build_qthe_core.mjs`, `build_public_demo.mjs`, `emit_fleet_seeds.mjs`, `two_reader_auto.mjs`.
+- New docs: CLAIM-VERDICTS, DAY-1, REPRESENTATION-LAW, HULL-DOCTRINE, COST-OF-EXACTNESS (fixedpoint/), PORTING, RESOURCE-PROFILE, MARINE-EDGE-WORKLOAD, QTHE-AS-CELL, HIERARCHICAL-WORMHOLES, FRONTIER-DECISION, FALSIFICATION-BUDGET, TECHNICAL-NOTE, ADOPTION-KIT, BOUNDARY-MAP, dashboard.html, PHASES-REPORT.
+- Third language: `crossimpl/c/` C99 port — byte-exact 19/19 both planes (chain `03cf0800…` incl. the substring-count correction row).
+- Standalone: `qthe-core/` (byte-exact extraction, selfcheck ALL PASS) + `public-demo.html` (single file) + `demos/` (coordination, cascade) + `tests/determinism_attacks.mjs` (6/6 HELD) + `tests/layer0_verifier.mjs` (PROVED).
+- Fleet: `emit_fleet_seeds` ledger entry (14 chain pins); jev-garden wiring contract-delivered (QTHE-AS-CELL); crab-traps counterpart workspace present-but-partial (receipted).

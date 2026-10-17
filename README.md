@@ -11,7 +11,8 @@ where an honest null is a crown jewel.
 
 - [`SPEC.md`](./SPEC.md) — the vision, split into Layer 0/1/2 by honesty law
 - `qthe.mjs` — the zero-dependency reference kernel (Lanes: core)
-- `experiments/` — E-Q1..E-Q5 priced claims (Lanes: field)
+- `experiments/` — E-Q1..E-Q16 priced claims (all six LAYER 2 claims CLOSED: C1 LIVES · C2 LIVES · C3/C4/C5 DIED honestly · C5′ STANDS — `docs/CLAIM-VERDICTS.md`)
+- `qthe-core/` — the standalone zero-dependency distribution (JS float+fixed, C99 byte-exact, Python L0)
 - `index.html` — the A2UI live mirror: pixel = cell, direct buffer-to-canvas
 
 House: stone-v1 receipt chains; determinism or it didn't happen; the tavern
@@ -27,3 +28,4 @@ Wave-69 docs layer (added; nothing above was changed). Route by audience:
 - Engineers operating / reviewing the system: [docs/ENGINEERING-NOTES.md](docs/ENGINEERING-NOTES.md)
 - Executives deciding investment: [docs/CTO-BRIEF.md](docs/CTO-BRIEF.md)
 - Index of all deeper knowledge: [docs/KNOWLEDGE-MAP.md](docs/KNOWLEDGE-MAP.md)
+- The 10-minute outsider path: [docs/DAY-1.md](docs/DAY-1.md) · all 50 roadmap phases: [docs/PHASES-REPORT.md](docs/PHASES-REPORT.md) · the live scoreboard: [docs/dashboard.html](docs/dashboard.html)
