@@ -543,3 +543,25 @@ closed with all batteries green.
   green. Next registered r25: tripwire axes (the battery's top pick),
   axis algebra (the cheapest), the prior-art-narrowed open questions
   Q3 (does the ternary zero do work?) and Q4 (question-budget curve).
+
+## The registered-candidates round (r25 — family algebra, the ternary zero, injection resistance)
+
+Three lanes from the r24 close-out's registered list, all sealed: **E-Q26
+axis algebra** (record-level C21 dies — but the AM2 third direction: ALL
+FIVE analogy compositions v(a)−v(b)+v(c) retrieved the target's FAMILY
+(5/5 vs null p95 4) — perfect family algebra, dead translation; composed
+vectors are free family probes), **E-Q27 the ternary zero** (C22 LIVES
+decisively: the middle level is worth five records per arm — 0.60 vs
+0.35/0.40 binary; the 4th level diverges by arm: ordinal saturates,
+calibrated climbs to 0.70; the best 16-bit practical code is the 4-level
+noul), **E-Q25 tripwire axes** (C23 dies-with-narrowing into the round's
+strongest receipt: the decoy floor is ~1% with 145/160 crossings, the
+decoys are dead wires — and the planted system-priority injection moved
+its targets by only 0.04–0.05: THE TYPED NOUL MAP IS SEMANTICALLY
+INJECTION-RESISTANT BY CONSTRUCTION, the readout grounds in the record
+and refuses the note; where jev-lattice needs syntactic comment-stripping,
+this defense is semantic and free; the drift monitor held: 20/20 within
+0.10 a round later). Two of the three lanes cost ZERO embed calls (pure
+arithmetic on sealed vectors + live arm-filtered queries). Chains
+`e_q26`/`e_q27`/`e_q25`; batteries green at close (41/41 claims, 30/30
+chains, 49/49 verified, guard PASS on 15 call-site files).

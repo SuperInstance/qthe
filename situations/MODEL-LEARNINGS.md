@@ -329,3 +329,27 @@ expansion ≠ factual grounding; verify before adopting. Receipt:
   (ternary QA-codes), and falsification instruments — never the broad
   gesture. Research-first rounds are cheaper than retraction-first
   ones.
+
+## ORCH-R25 additions (the registered-candidates round)
+
+- **Family algebra is perfect, record algebra is not.** v(a)−v(b)+v(c)
+  over noul vectors lands top-1 in the target's FAMILY 5/5 (null p95 4)
+  but hits the exact record 1/5 (the noise edge). 8 axes carry ~2 bits of
+  family geometry; record identity lives in the residuals. Composed
+  vectors are free family probes.
+- **The ternary zero is worth five records.** Binary loses 5 records per
+  arm vs ternary (0.35/0.40 vs 0.60) — the zero expresses "typical here,"
+  a refusal the sign cannot. The 4th level: ordinal arms gain nothing,
+  calibrated arms gain two records. At 2 bits/axis the 4-level noul code
+  (0.70) is the best practical 16-bit config; ternary stays the
+  algebra-capable, entropy-efficient one.
+- **Typed noul readouts are injection-resistant by construction.** A
+  blatant appended "system priority" note claiming central concern for
+  two decoy domains moved those decoys by ≤0.05 (tripwire threshold 0.10,
+  demanded "central" ~0.9). The readout grounds in the record text and
+  refuses instructions embedded in it. Decoy axes' residual value: the
+  in-call cleanliness certificate (floor ~1%, 145/160 crossings) — ship
+  them in every battery; skip the tripwire.
+- **The drift band holds across rounds.** Fresh noul re-embeds a round
+  later: max delta 0.06 vs sealed, 20/20 within 0.10 — the standing
+  monitor's first clean re-reading.

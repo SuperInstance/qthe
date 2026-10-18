@@ -1024,6 +1024,22 @@ const CLAIMS = [
       return { recomputed: 'C22 LIVES (the zero is worth five records per arm: T-B +0.25 S / +0.20 N; the 4th level diverges by arm — ordinal saturates, calibrated keeps paying to 0.70; the best 16-bit practical code is the 4-level noul, the algebra-capable one is the ternary); chain agrees' };
     },
   },
+  {
+    id: 'C23 — tripwire axes / injection resistance (E-Q25)',
+    source: 'experiments/outputs/e_q25_results.json',
+    cite: 'receipts/e_q25_chain.jsonl · verdict.EQ25 · experiments/pre_registration_e_q25.json · situations/tripwire_r25/',
+    expected: 'C23 DIES-with-narrowing: H1 lives decisively (decoy floor ~0.0135, 145/160 floor crossings — the map does not hallucinate concerns); H2 dies (dead wires, variance ~0.0001); H3 DIES — THE INVERSION THAT IS THE FINDING: the planted system-priority injection moved targeted decoys by only 0.05/0.04 (below the 0.10 tripwire) — THE TYPED NOUL MAP IS SEMANTICALLY INJECTION-RESISTANT BY CONSTRUCTION (the readout grounds in the record, refuses the note; where jev-lattice R6 needed syntactic comment-stripping, this defense is semantic and free); H4 inverted (real collateral 0.08/0.15 > targeted decoys, all small); the drift monitor: fresh-vs-sealed max 0.06, 20/20 within 0.10 (the E-Q22 band holds a round later)',
+    run() {
+      const d = readJson(this.source);
+      if (d.hypotheses.H1 !== true || d.hypotheses.H3 !== false || d.hypotheses.C23 !== false) throw new Error('E-Q25 flags drifted');
+      if (Math.abs(d.mean_decoy_mass - 0.0135) > 5e-4) throw new Error('decoy floor drifted');
+      if (d.floor_crossings !== 145) throw new Error('floor crossings drifted');
+      if (d.drift_monitor.within_010 !== 20) throw new Error('drift monitor drifted');
+      const row = lastChainRow('receipts/e_q25_chain.jsonl', (r) => r.kind === 'verdict.EQ25', 'verdict.EQ25');
+      if (row.H1 !== true || row.H3 !== false || row.C23 !== false) throw new Error('chain flags disagree');
+      return { recomputed: 'C23 DIES-with-narrowing (the cleanliness certificate: floor 0.0135, 145/160 crossings; the dead-wire receipt; THE INJECTION-RESISTANCE FINDING: targeted decoys moved 0.05/0.04 under a blatant system-priority poison — the typed noul readout is its own semantic defense, no stripping needed; the drift band holds 20/20 a round later); chain agrees' };
+    },
+  },
 ];
 
 // ── COVERAGE (ORCH-R11: the arena-r11 consensus finding, all four seats) ──

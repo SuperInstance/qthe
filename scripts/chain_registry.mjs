@@ -55,6 +55,7 @@ export const STONE_CHAINS = [
   { path: 'receipts/e_q24_chain.jsonl', gate: 'e_q24', label: 'E-Q24 · the embedding-space walk, the creative lane (ORCH-R24/T15-d)', pin: 'e_q24_walk' },
   { path: 'receipts/e_q26_chain.jsonl', gate: 'e_q26', label: 'E-Q26 · axis algebra, analogy arithmetic over sealed vectors (ORCH-R25/T16-b)', pin: 'e_q26_algebra' },
   { path: 'receipts/e_q27_chain.jsonl', gate: 'e_q27', label: 'E-Q27 · the ternary zero — binary vs ternary vs 4-level (ORCH-R25/T16-c)', pin: 'e_q27_zero' },
+  { path: 'receipts/e_q25_chain.jsonl', gate: 'e_q25', label: 'E-Q25 · tripwire axes — decoys + injection resistance (ORCH-R25/T16-a)', pin: 'e_q25_tripwire' },
   { path: 'receipts/probe_gate_chain.jsonl', gate: 'probe_gate', label: 'probe gate runs', pin: 'probe_gate' },
 ];
 
