@@ -1,0 +1,31 @@
+{
+  "law": "REGISTRATION of E-Q20b — the burn-in ladder (ORCH-R22 lane T13-d): the r21 E-Q20 verdict sealed T* > 64 (spatial autocorrelation is a SLOW MODE of the tick operator; A3 Moore-8 distance converging monotonically but still above the A1 leave-one-out floor at t=64). This extension ladders the SAME sealed planes to t=512 from the journal — ZERO moth credits, pure local replay — to price the relaxation time. Committed BEFORE ANY RUN; the question, arms, floors, metrics and verdict rules are frozen here.",
+  "task_id": "ORCH-R22/T13-d",
+  "agent": "qthe orchestrator (Z.ai), erised fleet line",
+  "wave": "ORCH-R22",
+  "repo": "SuperInstance/qthe",
+  "repo_at_registration": "822b044",
+  "provenance_of_the_question": "E-Q20 sealed verdict (chain e_q20, tip a310f37e…): H2 DIES because A3/A3S Moore-8 Moran's I distance to the A1 population was 0.038/0.034 vs floor 0.021 at t=64, converging monotonically across checkpoints; the r21 close-out registered 'E-Q20b burn-in ladder (t=512 from journals, zero credits)' as the r22 candidate. The slow-mode law (T* > 64) is the direct ancestor.",
+  "data_law": "ALL planes re-derived from sealed material only: A1 = mulberry32(20261018+k) seeds k=0..19 (the E-Q20 recipe); A2 = the sealed comet root expanded by the AM5 SHA-256 counter recipe; A3/A3S = the five blur grids in experiments/outputs/e_q20_blur_journal.json re-quantized per the E-Q20 recipe (round-half-up). ZERO moth credits. F0' floor: the re-derived planes' checkpoint values at t=0 and t=64 must reproduce E-Q20's sealed e_q20_results.json values exactly before any t>64 row counts (the replay-equality gate); a mismatch VOIDS the run LOUD.",
+  "design_frozen": {
+    "grid": "64x64, T=512 ticks, checkpoints t in {0,1,2,4,8,16,32,64,128,192,256,320,384,448,512}",
+    "arms": "identical populations to E-Q20: A1 PRNG n=20 (noise floor, leave-one-out 95th pct nearest-rank at EACH checkpoint), A3 QBLUR n=5, A3S shuffled-control n=5. A2 not needed for the T* question (H1 already sealed: byte provenance invisible) — included at ZERO extra cost for completeness of the washed-out control family? NO: A2 is EXCLUDED, receipted — the T* question concerns the A3/A3S spatial-correlation slow mode only; carrying A2 adds no discriminating power and its exclusion is registered here to keep the read honest.",
+    "metrics": "per checkpoint: Moore-8 Moran's I distance to the A1 population (PRIMARY, AM3 law); d-hist Wasserstein-1, tau-fraction TV, twin events per tick per cell (the three washed-out controls, expected to stay at/below floor — their re-laddering is a consistency check not a hypothesis).",
+    "hypotheses": {
+      "H1b": "T* <= 512: there exists a checkpoint t_c <= 512 where A3's Moore-8 distance <= the A1 floor at t_c, and it STAYS <= floor at every checkpoint in (t_c, 512]. T* is reported as the FIRST such t_c (the E-Q20 'and stays' clause carried verbatim).",
+      "H2b": "the equilibration trajectory is monotone-nonincreasing in checkpoint time after t=16 on the primary metric (no re-excitation above 1.5x floor after first touching 1.5x floor).",
+      "honest_null": "if A3 distance > floor at t=512: T* > 512 — the slow-mode law EXTENDS; no crown jewel; the C11 row's T* annotation amends to '> 512' append-only."
+    },
+    "verdict_rules": "H1b evaluated on the PRIMARY metric only, floor = A1 leave-one-out 95th pct nearest-rank at the same checkpoint (population statistic = MEDIAN of per-plane distances, the AM2 law). H2b fails on ANY excursion above 1.5x floor after first touch. The three controls are reported AS-SAID with no pass/fail power. C11's sealed DIES verdict is NOT reopened by this extension; only its T* annotation may amend, append-only.",
+    "moth_credits": 0,
+    "llm_usd": 0
+  },
+  "falsifier": "ANY of: F0' replay mismatch at t=0 or t=64 vs the sealed e_q20_results.json (VOID LOUD, no data rows); determinism disagreement on a double-replay; a checkpoint row written before the F0' gate passes.",
+  "predictions": {
+    "P1": "T* lands in (64, 256] — the converging-monotone trajectory at t=64 (0.038 vs floor 0.021) extrapolates to crossing within a factor of 4 of the observed horizon",
+    "P2": "A3S crosses the floor no later than A3 (the r21 excursion was dynamical, not quantum-specific — the shuffled twin should relax at the same rate or faster)",
+    "P3": "the three washed-out controls stay at/below floor at every checkpoint t >= 8",
+    "P4": "H2b LIVES (monotone after t=16, no re-excitation)",
+    "P5": "the honest null branch (T* > 512) has p ~= 0.15 — registered as live; if it fires it is reported as the result, not a failure"
+  }
+}
