@@ -31,7 +31,7 @@ on:
         required: false
         default: 'r22'
       lane:
-        description: 'canary | trial | both | harmony'
+        description: 'canary | trial | both | harmony | embed'
         required: false
         default: 'both'
       target:
@@ -89,6 +89,13 @@ jobs:
           GROQ_ROUND: ${{ inputs.round }}
           GROQ_BATTERY_SUFFIX: ${{ inputs.suffix }}
         run: node situations/groq_seats/harmony_battery.mjs "${{ inputs.seat_filter }}"
+
+      - name: "embed battery (E-Q21 Groq arm)"
+        if: ${{ inputs.lane == 'embed' }}
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          GROQ_ROUND: ${{ inputs.round }}
+        run: node situations/groq_seats/embed_battery.mjs
 
       - name: "seat trial (the new-member law — design attack)"
         if: ${{ inputs.lane == 'trial' || inputs.lane == 'both' }}

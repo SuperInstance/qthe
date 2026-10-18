@@ -1,33 +1,42 @@
 {
-  "law": "REGISTRATION of E-Q21 — the embedding round (ORCH-R23 lane T14-a): the systemone typed question map used as an EMBEDDING FUNCTION. A fixed battery of K=8 score probes over N=20 sealed records yields an 8-dim vector per record; the vectors live in Cloudflare Vectorize (index qthe-jev-embed, cosine); retrieval is scored against sealed family labels. Committed BEFORE ANY EMBED CALL; corpus, probes, families, floors and verdict rules frozen here.",
-  "task_id": "ORCH-R23/T14-a",
-  "agent": "qthe orchestrator (Z.ai), erised fleet line",
-  "wave": "ORCH-R23",
-  "repo": "SuperInstance/qthe",
-  "repo_at_registration": "7980577",
-  "provenance_of_the_question": "Operator dispatch ('you have vectorization and embedding and rapid calls… try things you haven't tried and you don't think anyone really has'). The typesafe playground register (docs/research/TYPESAFE-PLAYGROUND.md) holds batching/wobble/grounding findings but NO embedding use of the question map. Cloudflare Vectorize already carries qthe-twins (C6) and qthe-c6 — the account's third index is free tier. The harmony-r22 finding (families misread different statements) motivates C15: do embedding spaces diverge the way answers do?",
-  "design_frozen": {
-    "corpus": "N=20 records, 4 families x 5, drawn verbatim from the sealed verdict record (CLAIM-VERDICTS.md + the experiment verdict files). FAMILIES: N = the non-local channel (C2/E-Q1 wormhole LIVES, C6 twin sidecar DIES-r17, C9 hierarchical wormholes DIES, E-Q6 slot semantics, E-Q8 same-slot collisions); P = the local rule's physics (C1 timbre LIVES, C3 sigma DIES-null, C4 phase threshold DIES, E-Q7 checkerboard cascade, E-Q16 measurement wave); Q = quantum & provenance (C11 construction blindfold DIES, E-Q17 provenance at scale, E-Q20 comet root + interference, E-Q20b burn-in plateau); A = allocation & economics (C10 docket DIES-on-H1, E-Q19 tiled arbitration, E-Q18 population axis, E-Q15 reweighting null, T4-a batching economics 12.36x). Each record: id, family, text (<=120 words: the claim/experiment, the verdict, the decisive numbers). Sealed as corpus.json BEFORE any call.",
-    "probes": "K=8 score questions, IDENTICAL for every record, each on the 5-level rubric ['zero','low','moderate','high','central'] (answer score 0-4, normalized /4 to [0,1]): P1 nonlocal-coupling; P2 local-rule physics; P3 quantum-or-randomness provenance; P4 allocation-or-arbitration; P5 repair-or-self-maintenance; P6 refuted-or-null outcome; P7 cost-or-performance economics; P8 exactness-or-determinism. One systemone call PER RECORD (batched 8 questions — the T5-a law, explicit aggregation loop). Model: jev-latest. The vector = [P1..P8]/4.",
-    "groq_cross": "the same 8 probes through BOTH Groq seats (qwen3.8-27b, gpt-oss-20b) via the Actions seat, same rubric, one call per record per seat (max_completion_tokens: qwen 2048 / gpt-oss 6144 — the reasoning-budget law), for C15.",
-    "floors": "F1 corpus+labels sealed before any call (this file + corpus.json sha-frozen); F2 all 20 typesafe rows http 200 with all 8 answers present (a refusal or missing axis VOIDS the axis LOUD); F3 vectors in [0,1]^8 exactly as derived (recompute check); F4 the Vectorize index exists and every upsert+query round-trips live; F5 repeat-stability: 3 records re-embedded once; per-axis |delta| reported AS-SAID with the r12 wobble law in mind (tolerance 0.25 registered, breach = honest finding not VOID); F6 the BOW control computed from the SAME record texts in code (tf-idf-free bag-of-words cosine, 1-gram, lowercase, no stoplist — the leanest honest baseline).",
-    "hypotheses": {
-      "H1_C14": "jev top-1 NN family accuracy (excluding self) > the majority-class baseline (5/20 = 25%) AND > the permutation-null expectation, on the Vectorize cosine ranking.",
-      "H2_C14": "jev accuracy >= BOW-cosine accuracy minus 0 (the 8 interpretable axes match full-vocab BOW on this corpus). If BELOW BOW: C14's value claim narrows to dimensionality+interpretability, receipted honestly.",
-      "H3_C15": "both Groq seats' retrieval accuracies are within one family-error (>= jev accuracy - 1/20) of jev's; AND the per-axis mean |jev - groq| divergence profile is structured (non-uniform across axes), the harmony finding extended to embeddings.",
-      "honest_null": "if jev accuracy <= majority baseline: C14 DIES — the question map is an instrument panel, not an embedding; the record receipts it either way."
-    },
-    "verdict_rules": "accuracy = (# records whose top-1 non-self Vectorize neighbor shares the family) / 20. Permutation null = mean accuracy over 1000 random label permutations. BOW baseline = same top-1 rule over BOW cosine (computed in code, no LLM). C14 = H1 (AND F1-F4). C15 = H3's accuracy clause AND divergence clause. E vals: pairwise cosine histogram reported AS-SAID (no pass/fail).",
-    "llm_usd_cap": 0.08,
-    "moth_credits": 0
+ "law": "REGISTRATION of E-Q21 \u2014 the embedding round (ORCH-R23 lane T14-a): the systemone typed question map used as an EMBEDDING FUNCTION. A fixed battery of K=8 score probes over N=20 sealed records yields an 8-dim vector per record; the vectors live in Cloudflare Vectorize (index qthe-jev-embed, cosine); retrieval is scored against sealed family labels. Committed BEFORE ANY EMBED CALL; corpus, probes, families, floors and verdict rules frozen here.",
+ "task_id": "ORCH-R23/T14-a",
+ "agent": "qthe orchestrator (Z.ai), erised fleet line",
+ "wave": "ORCH-R23",
+ "repo": "SuperInstance/qthe",
+ "repo_at_registration": "7980577",
+ "provenance_of_the_question": "Operator dispatch ('you have vectorization and embedding and rapid calls\u2026 try things you haven't tried and you don't think anyone really has'). The typesafe playground register (docs/research/TYPESAFE-PLAYGROUND.md) holds batching/wobble/grounding findings but NO embedding use of the question map. Cloudflare Vectorize already carries qthe-twins (C6) and qthe-c6 \u2014 the account's third index is free tier. The harmony-r22 finding (families misread different statements) motivates C15: do embedding spaces diverge the way answers do?",
+ "design_frozen": {
+  "corpus": "N=20 records, 4 families x 5, drawn verbatim from the sealed verdict record (CLAIM-VERDICTS.md + the experiment verdict files). FAMILIES: N = the non-local channel (C2/E-Q1 wormhole LIVES, C6 twin sidecar DIES-r17, C9 hierarchical wormholes DIES, E-Q6 slot semantics, E-Q8 same-slot collisions); P = the local rule's physics (C1 timbre LIVES, C3 sigma DIES-null, C4 phase threshold DIES, E-Q7 checkerboard cascade, E-Q16 measurement wave); Q = quantum & provenance (C11 construction blindfold DIES, E-Q17 provenance at scale, E-Q20 comet root + interference, E-Q20b burn-in plateau); A = allocation & economics (C10 docket DIES-on-H1, E-Q19 tiled arbitration, E-Q18 population axis, E-Q15 reweighting null, T4-a batching economics 12.36x). Each record: id, family, text (<=120 words: the claim/experiment, the verdict, the decisive numbers). Sealed as corpus.json BEFORE any call.",
+  "probes": "K=8 score questions, IDENTICAL for every record, each on the 5-level rubric ['zero','low','moderate','high','central'] (answer score 0-4, normalized /4 to [0,1]): P1 nonlocal-coupling; P2 local-rule physics; P3 quantum-or-randomness provenance; P4 allocation-or-arbitration; P5 repair-or-self-maintenance; P6 refuted-or-null outcome; P7 cost-or-performance economics; P8 exactness-or-determinism. One systemone call PER RECORD (batched 8 questions \u2014 the T5-a law, explicit aggregation loop). Model: jev-latest. The vector = [P1..P8]/4.",
+  "groq_cross": "the same 8 probes through BOTH Groq seats (qwen3.8-27b, gpt-oss-20b) via the Actions seat, same rubric, one call per record per seat (max_completion_tokens: qwen 2048 / gpt-oss 6144 \u2014 the reasoning-budget law), for C15.",
+  "floors": "F1 corpus+labels sealed before any call (this file + corpus.json sha-frozen); F2 all 20 typesafe rows http 200 with all 8 answers present (a refusal or missing axis VOIDS the axis LOUD); F3 vectors in [0,1]^8 exactly as derived (recompute check); F4 the Vectorize index exists and every upsert+query round-trips live; F5 repeat-stability: 3 records re-embedded once; per-axis |delta| reported AS-SAID with the r12 wobble law in mind (tolerance 0.25 registered, breach = honest finding not VOID); F6 the BOW control computed from the SAME record texts in code (tf-idf-free bag-of-words cosine, 1-gram, lowercase, no stoplist \u2014 the leanest honest baseline).",
+  "hypotheses": {
+   "H1_C14": "jev top-1 NN family accuracy (excluding self) > the majority-class baseline (5/20 = 25%) AND > the permutation-null expectation, on the Vectorize cosine ranking.",
+   "H2_C14": "jev accuracy >= BOW-cosine accuracy minus 0 (the 8 interpretable axes match full-vocab BOW on this corpus). If BELOW BOW: C14's value claim narrows to dimensionality+interpretability, receipted honestly.",
+   "H3_C15": "both Groq seats' retrieval accuracies are within one family-error (>= jev accuracy - 1/20) of jev's; AND the per-axis mean |jev - groq| divergence profile is structured (non-uniform across axes), the harmony finding extended to embeddings.",
+   "honest_null": "if jev accuracy <= majority baseline: C14 DIES \u2014 the question map is an instrument panel, not an embedding; the record receipts it either way."
   },
-  "falsifier": "ANY of: F1 breach (corpus edited after calls); F2 incomplete rows without a LOUD receipt; F3 vector derivation mismatch on recompute; F4 index absent or query failure; a checkpoint written before its floor passes; the majority-baseline comparison computed on anything but the sealed labels.",
-  "predictions": {
-    "P1": "jev top-1 accuracy lands in [0.55, 0.80] — families are lexically distinct enough that a good reader groups them, but the A-family (economics) bleeds into others",
-    "P2": "BOW-cosine accuracy >= jev accuracy (the family words — wormhole/quantum/docket/price — make BOW strong on THIS corpus; the honest expectation, and the reason H2 is registered as a real test)",
-    "P3": "the Groq seats land within one family-error of jev (H3 accuracy clause LIVES)",
-    "P4": "per-axis divergence is structured: the quantum axis (P3) and the null-outcome axis (P6) diverge most (the same axes the harmony battery found slippery)",
-    "P5": "repeat-stability: >= 20 of 24 re-embedded axes within 0.25 (the wobble is answer-layer, scores should be calmer than choices)",
-    "P6": "the N family (non-local channel) is the tightest cluster (its records share the most distinctive mechanism vocabulary)"
+  "verdict_rules": "accuracy = (# records whose top-1 non-self Vectorize neighbor shares the family) / 20. Permutation null = mean accuracy over 1000 random label permutations. BOW baseline = same top-1 rule over BOW cosine (computed in code, no LLM). C14 = H1 (AND F1-F4). C15 = H3's accuracy clause AND divergence clause. E vals: pairwise cosine histogram reported AS-SAID (no pass/fail).",
+  "llm_usd_cap": 0.08,
+  "moth_credits": 0
+ },
+ "falsifier": "ANY of: F1 breach (corpus edited after calls); F2 incomplete rows without a LOUD receipt; F3 vector derivation mismatch on recompute; F4 index absent or query failure; a checkpoint written before its floor passes; the majority-baseline comparison computed on anything but the sealed labels.",
+ "predictions": {
+  "P1": "jev top-1 accuracy lands in [0.55, 0.80] \u2014 families are lexically distinct enough that a good reader groups them, but the A-family (economics) bleeds into others",
+  "P2": "BOW-cosine accuracy >= jev accuracy (the family words \u2014 wormhole/quantum/docket/price \u2014 make BOW strong on THIS corpus; the honest expectation, and the reason H2 is registered as a real test)",
+  "P3": "the Groq seats land within one family-error of jev (H3 accuracy clause LIVES)",
+  "P4": "per-axis divergence is structured: the quantum axis (P3) and the null-outcome axis (P6) diverge most (the same axes the harmony battery found slippery)",
+  "P5": "repeat-stability: >= 20 of 24 re-embedded axes within 0.25 (the wobble is answer-layer, scores should be calmer than choices)",
+  "P6": "the N family (non-local channel) is the tightest cluster (its records share the most distinctive mechanism vocabulary)"
+ },
+ "amendments": [
+  {
+   "id": "AM1",
+   "at": "2026-10-19T16:28Z (BEFORE any embed call; corpus sealed, zero vectors exist)",
+   "change": "index dimensions 8 -> 32, zero-padded: probes P1..P8 occupy dims 0-7, dims 8-31 are 0.0",
+   "why": "Cloudflare Vectorize requires dimensions in [32, 1536] (API error vectorize.index.invalid_config code 3003, receipted)",
+   "proof_of_ranking_equivalence": "cosine(a,b) = dot(a,b)/(|a||b|); zero padding leaves dot products and both norms unchanged; therefore the 32-dim cosine ranking is IDENTICAL to the 8-dim ranking. The embedding is still 8 interpretable axes."
   }
+ ]
 }
