@@ -25,7 +25,7 @@ import {
   makeSubstrate, nextD, tick, traceView, mulberry32,
 } from "./qthe-kernel.mjs";
 
-const BUILD = "r19-erratum4 (sidecar field namespace)";
+const BUILD = "r20-docket1 (the second live consumer; C10 priced DEAD by E-Q19 — ships with the honest label)";
 const INFO = {
   service: "qthe-cell", build: BUILD,
   what: "the qthe ternary-cell kernel, live on Cloudflare Workers",
@@ -45,6 +45,12 @@ const INFO = {
     "GET  /receipt/:key": "fetch a chain from R2 (etag = sha256)",
     "POST /c6/experiment": "ORCH-R17 experiment lane: upsert <=40 64-dim vectors (ids prefixed c6-) and return each one's ranking (dedicated qthe-c6 index)",
     "GET  /hud": "the KV HUD line (ticks + state hash of cron-field, written by the 5-minute beat)",
+    "POST /docket/:id/init?seed=": "THE SECOND LIVE CONSUMER (ORCH-R20): a task-arbitration docket — 64x64, 4 jurisdiction tiles, the E-Q19 tiled law",
+    "POST /docket/:id/submit": "submit a task {id, source 0-3, p0 1-62, flip?} — stamped onto the substrate at its home-region hash position",
+    "POST /docket/:id/epoch?times=N": "advance N epochs: real kernel tick + 4 tile claims (max-d, ties age/id); flippers defer (tau=3, invisible to tiles) and re-boost on flip-back",
+    "GET  /docket/:id": "docket state: live/served, per-source counts, plane + arbitration hashes",
+    "GET  /docket/:id/hash": "{epochs, arb_sha256} — the docket determinism handle",
+    "GET  /docket/:id/log": "the serve receipts (task, source, claimer, level, d, age)",
   },
   determinism_contract: "same substrate + same tick sequence -> byte-identical state, always (kernel header, tests G3)",
 };
@@ -203,6 +209,208 @@ export class QtheField extends DurableObject {
   }
 }
 
+// ── the docket (ORCH-R20, T11-b) — the SECOND LIVE CONSUMER ──────────────
+
+// Task arbitration on a ticking substrate, the E-Q19 TILED LAW verbatim:
+// 64x64 plane, 4 jurisdiction tiles (the quadrants — aligned with source
+// homes, so the flood cap is structural), anchor j claims the best ATTRACT
+// task in tile j (max current d, ties age then id). Abstain deferral is
+// invisible to tile claims (LAYER 0: tau=3 contributes 0 to the real
+// accumulator — the debounce) and recoverable only by the wormhole
+// escalation (the kernel's own non-local channel: table.read(cargo) with
+// the live-ABSTAIN guard — the channel E-Q19/AM2 priced as addressing-
+// mismatched under d-drift; it runs here exactly as priced, quietness
+// included, one claim in twelve thousand). The tick is the REAL vendored
+// kernel, every epoch, in the DO's single thread.
+//
+// HONEST LABEL (C10 DIES, E-Q19 tip 568bfef3…): this consumer flood-caps
+// source-local floods structurally and converts re-boost gaming into FIFO
+// penalty; it does NOT beat a FIFO+priority inbox on flapping starvation,
+// and it trades tail latency for starvation reduction. The full autopsy:
+// experiments/outputs/e_q19_verdict.md. Infrastructure claims only below.
+
+const DOCKET_W = 64, DOCKET_H = 64, DOCKET_C = 4, DOCKET_HOME = 32;
+
+function docketAnchors(seed) {
+  // the E-Q19 derivation verbatim: mulberry32(seed+91), one anchor per
+  // quadrant tile, cargo 8..(8+C-1)
+  const rng = mulberry32((seed + 91) >>> 0);
+  const anchors = [];
+  for (let j = 0; j < DOCKET_C; j++) {
+    const qd = { x0: (j & 1) ? 32 : 0, y0: (j & 2) ? 32 : 0 };
+    anchors.push({
+      x: qd.x0 + Math.floor(rng() * DOCKET_HOME),
+      y: qd.y0 + Math.floor(rng() * DOCKET_HOME),
+      cargo: 8 + j,
+      tile: { x0: qd.x0, x1: qd.x0 + DOCKET_HOME, y0: qd.y0, y1: qd.y0 + DOCKET_HOME },
+    });
+  }
+  return anchors;
+}
+
+function docketPos(id, seed, source) {
+  // the E-Q19 pure position function: hash-spread within the source's home
+  const r = mulberry32((Math.imul(id, 2654435761) ^ seed) >>> 0);
+  const qd = { x0: (source & 1) ? 32 : 0, y0: (source & 2) ? 32 : 0 };
+  return { x: qd.x0 + Math.floor(r() * DOCKET_HOME), y: qd.y0 + Math.floor(r() * DOCKET_HOME) };
+}
+
+export class QtheDocket extends DurableObject {
+  async fetch(request) {
+    const url = new URL(request.url);
+    const parts = url.pathname.split("/").filter(Boolean); // ["docket", id, action?]
+    const action = parts[2] || (request.method === "GET" ? "view" : null);
+    try {
+      if (request.method === "POST" && action === "init") {
+        const seed = (parseInt(url.searchParams.get("seed") || "81001", 10) >>> 0);
+        const sub = makeSubstrate(DOCKET_W, DOCKET_H, () => 0);
+        await this.#save(sub, seed, [], [], 0);
+        return json({ ok: true, seed, epochs: 0, law: "E-Q19 tiled docket — 64x64, 4 jurisdiction tiles, real kernel tick per epoch", honest_label: "C10 DIES (E-Q19): flood-cap yes, flapping starvation no, tail latency the price" });
+      }
+      if (request.method === "POST" && action === "submit") {
+        const body = await request.json().catch(() => ({}));
+        const id = parseInt(body.id, 10);
+        const source = Math.min(3, Math.max(0, parseInt(body.source ?? "0", 10) | 0));
+        const p0 = Math.min(62, Math.max(1, parseInt(body.p0 ?? "10", 10) | 0));
+        if (!Number.isInteger(id) || id < 1) return json({ error: "task id must be a positive integer" }, 400);
+        const st = await this.#load();
+        if (!st) return json({ error: "no such docket — POST /docket/:id/init first" }, 404);
+        const { sub, tasks, serveLog, seed, epochs } = st;
+        if (tasks.some((t) => t.id === id)) return json({ error: `task ${id} already live` }, 409);
+        let pos = docketPos(id, seed, source);
+        const occupied = new Set(tasks.map((t) => t.pos.y * DOCKET_W + t.pos.x));
+        if (occupied.has(pos.y * DOCKET_W + pos.x)) {
+          const qd = { x0: (source & 1) ? 32 : 0, y0: (source & 2) ? 32 : 0 };
+          let found = null;
+          for (let n = 0; n < DOCKET_W * DOCKET_H && !found; n++) {
+            const x = (qd.x0 + (n % DOCKET_W)) % DOCKET_W, y = (qd.y0 + Math.floor(n / DOCKET_W)) % DOCKET_H;
+            if (!occupied.has(y * DOCKET_W + x)) found = { x, y };
+          }
+          if (!found) return json({ error: "plane full — the backlog exceeded the substrate (E-Q19's registered backlog-bounded boundary)" }, 507);
+          pos = found;
+        }
+        tasks.push({ id, source, p0, subEpoch: epochs, tau: 1, flip: body.flip ? 8 : 0, pos });
+        sub[pos.y * DOCKET_W + pos.x] = (1 << 6) | p0; // pack(ATTRACT, p0)
+        await this.#save(sub, seed, tasks, serveLog, epochs);
+        return json({ ok: true, task: id, source, p0, flip: body.flip ? 8 : 0, pos, live: tasks.length });
+      }
+      if (request.method === "POST" && action === "epoch") {
+        const times = Math.min(500, Math.max(1, parseInt(url.searchParams.get("times") || "1", 10) | 0));
+        const st = await this.#load();
+        if (!st) return json({ error: "no such docket — POST /docket/:id/init first" }, 404);
+        const { sub, tasks, serveLog, seed } = st;
+        const anchors = docketAnchors(seed);
+        const taskAt = new Map(tasks.map((t) => [t.pos.y * DOCKET_W + t.pos.x, t]));
+        const served = [];
+        let epoch = st.epochs;
+        for (let n = 0; n < times; n++) {
+          // (1) flippers defer / re-boost (the E-Q19 load model; AM6(i): the
+          // re-boost re-stamp resets the flipper's own aging)
+          for (const t of tasks) {
+            if (!t.flip) continue;
+            const dt = epoch - t.subEpoch + (t.id % 8);
+            const tNew = ((dt >> 3) % 2 === 0) ? 1 : 3;
+            if (tNew !== t.tau) {
+              t.tau = tNew;
+              const k = t.pos.y * DOCKET_W + t.pos.x;
+              if (tNew === 1) { t.p0 = 48 + (t.id % 15); sub[k] = (1 << 6) | t.p0; }
+              else sub[k] = (3 << 6) | (sub[k] & 63);
+            }
+          }
+          // (2) the REAL kernel tick
+          tick(sub);
+          // (3) tile claims, anchor order fixed
+          for (let c = 0; c < DOCKET_C; c++) {
+            const a = anchors[c], tl = a.tile;
+            let best = null, bestD = -1;
+            for (let y = tl.y0; y < tl.y1; y++) {
+              for (let x = tl.x0; x < tl.x1; x++) {
+                const k = y * DOCKET_W + x;
+                const t = taskAt.get(k);
+                if (!t || t.tau !== 1) continue; // the debounce: ABSTAIN invisible in the tile
+                const d = sub[k] & 63;
+                if (d > bestD || (d === bestD && best && (t.subEpoch < best.subEpoch || (t.subEpoch === best.subEpoch && t.id < best.id)))) {
+                  best = t; bestD = d;
+                }
+              }
+            }
+            if (best) {
+              this.#serve(sub, taskAt, tasks, serveLog, served, best, epoch, c, "tile");
+            } else {
+              const table = sub.__wormholes;
+              if (table instanceof WormholeTable) {
+                const hit = table.read(a.cargo);
+                if (hit) {
+                  const t = taskAt.get(hit.y * DOCKET_W + hit.x);
+                  if (t && t.tau === 3) this.#serve(sub, taskAt, tasks, serveLog, served, t, epoch, c, "wormhole");
+                }
+              }
+            }
+          }
+          epoch++;
+        }
+        await this.#save(sub, seed, tasks, serveLog, epoch);
+        return json({ ok: true, epochs: epoch, advanced: times, served_this_call: served, live: tasks.length, arb_sha256: await this.#arbHash(sub, serveLog) });
+      }
+      if (request.method === "GET" && (action === "view" || action === "hash" || action === "log")) {
+        const st = await this.#load();
+        if (!st) return json({ error: "no such docket — POST /docket/:id/init first" }, 404);
+        const { sub, tasks, serveLog, epochs } = st;
+        const arb = await this.#arbHash(sub, serveLog);
+        if (action === "hash") return json({ ok: true, id: this.ctx.id.toString(), epochs, arb_sha256: arb });
+        if (action === "log") return json({ ok: true, epochs, served: serveLog.length, serve_log: serveLog });
+        const perSource = {};
+        for (const r of serveLog) perSource[r.source] = (perSource[r.source] || 0) + 1;
+        return json({ ok: true, epochs, live: tasks.length, served: serveLog.length, per_source_served: perSource, plane_sha256: await viewHash(stateView(sub)), arb_sha256: arb });
+      }
+      return json({ error: `unknown action '${action}' for ${request.method}` }, 400);
+    } catch (e) {
+      return json({ error: String(e && e.message || e) }, 500);
+    }
+  }
+
+  #serve(sub, taskAt, tasks, serveLog, served, t, epoch, claimer, level) {
+    const k = t.pos.y * DOCKET_W + t.pos.x;
+    const dServed = sub[k] & 63;
+    sub[k] = 0; // Ground — the cell returns to the substrate
+    taskAt.delete(k);
+    const i = tasks.indexOf(t);
+    if (i >= 0) tasks.splice(i, 1);
+    const rec = { epoch, task: t.id, source: t.source, claimer, level, d: dServed, p0: t.p0, age: epoch - t.subEpoch };
+    serveLog.push(rec);
+    served.push(rec);
+  }
+
+  async #arbHash(sub, serveLog) {
+    // the docket determinism handle: plane + the full arbitration history
+    return sha256Hex(JSON.stringify({ view: stateView(sub), serveLog }));
+  }
+
+  async #save(sub, seed, tasks, serveLog, epochs) {
+    const table = sub.__wormholes instanceof WormholeTable ? sub.__wormholes : null;
+    await this.ctx.storage.put("docket", {
+      seed: seed >>> 0, epochs: epochs | 0,
+      cells: b64FromBytes(sub),
+      table: table ? { sigma: table.sigma, totalWrites: table.totalWrites, snapshot: table.snapshot() } : null,
+      tasks, serveLog,
+    });
+  }
+
+  async #load() {
+    const st = await this.ctx.storage.get("docket");
+    if (!st) return null;
+    const cells = bytesFromB64(st.cells);
+    cells.w = DOCKET_W; cells.h = DOCKET_H; cells.ticks = st.epochs; cells.bytes = cells;
+    if (st.table) {
+      const t = new WormholeTable(st.table.sigma);
+      t.totalWrites = st.table.totalWrites;
+      for (const s of st.table.snapshot) if (s) t.write(s.slot, s.x, s.y, s.resonance);
+      cells.__wormholes = t;
+    }
+    return { sub: cells, tasks: st.tasks, serveLog: st.serveLog, seed: st.seed, epochs: st.epochs };
+  }
+}
+
 // ── twin sidecar (C6): one-hot 64-dim vectors, metadata = the slot pairing ──
 
 // ERRATUM 4 (ORCH-R19, found by the live check failing where r17's retry
@@ -263,6 +471,13 @@ export default {
           return json(body);
         }
         return resp;
+      }
+
+      // /docket/:id/... -> the QtheDocket DO (T11-b, the second live consumer)
+      if (parts[0] === "docket" && parts.length >= 2) {
+        const id = env.QTHE_DOCKET.idFromName(parts[1]);
+        const stub = env.QTHE_DOCKET.get(id);
+        return await stub.fetch(request);
       }
 
       // /twins/:slot (C6) — ?field= scopes the lookup to one field's table

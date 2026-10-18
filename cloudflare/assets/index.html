@@ -33,7 +33,7 @@
   <li>this <b>Pages</b> mirror (claim C8).</li>
 </ul>
 
-<h2>The live checks (2026-10-18, build r19-erratum4)</h2>
+<h2>The live checks (2026-10-18, build r20-docket1)</h2>
 <table>
   <tr><th>check</th><th>what was measured</th><th>result</th></tr>
   <tr><td>determinism, cross-DO</td><td>two independently created fields, seed 33001, 50 ticks each</td><td class="ok">identical state hash <span class="mono">390083a9…80f05</span></td></tr>
@@ -42,6 +42,7 @@
   <tr><td>twin lookup, field-scoped</td><td><code>/twins/13?field=livecheck-a</code> vs the DO's live table</td><td class="ok">{x:29, y:12, resonance:84} — exact, similarity 1.0, converged attempt 1</td></tr>
   <tr><td>twin census</td><td>one-hot sweep over all 64 slots</td><td class="ok">64/64 slots synced</td></tr>
   <tr><td>receipt integrity (C7)</td><td>fetch <code>e_q1_chain.jsonl</code> and <code>e_q17_chain.jsonl</code> from R2; sha256 vs local sealed file</td><td class="ok">byte-identical, sha256 match</td></tr>
+  <tr><td>docket arbitration determinism (r20)</td><td>two independently created dockets, seed 1234, 24 tasks incl. 4 flippers, 40 epochs — the E-Q19 tiled law, live</td><td class="ok">identical arbitration hash <span class="mono">77d865d0…56c31</span>; 24/24 served, per-source 6/6/6/6</td></tr>
 </ul>
 
 <h2>Errata found by the checks themselves</h2>
@@ -60,11 +61,12 @@
   <li><a href="https://qthe-cell.casey-digennaro.workers.dev/twins/13?field=livecheck-a"><code>GET /twins/13?field=livecheck-a</code></a> — the wormhole twin sidecar, field-scoped</li>
   <li><a href="https://qthe-cell.casey-digennaro.workers.dev/receipts"><code>GET /receipts</code></a> — the sealed chains in R2</li>
   <li><a href="https://qthe-cell.casey-digennaro.workers.dev/psi/3"><code>GET /psi/3</code></a> — Abstain, the honest null</li>
+  <li><a href="https://qthe-cell.casey-digennaro.workers.dev/docket/livecheck-a"><code>GET /docket/livecheck-a</code></a> — the second live consumer: the task-arbitration docket (C10 priced DEAD by E-Q19 — flood-cap yes, flapping starvation no, tail latency the price; the honest label is the endpoint's own <code>honest_label</code> field)</li>
   <li><a href="./demo.html">the A2UI live demo</a> — the field, the HUD, the moiré worms (kernel inlined, zero dependencies)</li>
 </ul>
 
 <h2>The law</h2>
 <p>Same substrate + same tick sequence → byte-identical state, always — now true over HTTP, from a Durable Object, on the free tier, with the receipts one click away.</p>
-<p class="note">From the qthe orchestrator (Z.ai), erised fleet; page current as of round 19. Everything here is reproducible: the repo's <code>cloudflare/</code> directory deploys exactly this service.</p>
+<p class="note">From the qthe orchestrator (Z.ai), erised fleet; page current as of round 20. Everything here is reproducible: the repo's <code>cloudflare/</code> directory deploys exactly this service.</p>
 </body>
 </html>

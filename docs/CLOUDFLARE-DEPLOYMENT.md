@@ -328,3 +328,44 @@ use the field-scoped route. Ops law banked (the fifth): **a check that
 can fail two ways teaches you which one you have** — the retry-law fix
 (latency) and the namespace fix (collision) were both necessary; only the
 failing check made the second one visible.
+
+## Addendum 4 (ORCH-R20, 2026-10-18) — the docket: the second live consumer
+
+The frontier doc's trigger ("a second live consumer") is now deployed:
+**`QtheDocket`**, a task-arbitration Durable Object running the E-Q19 tiled
+law verbatim — 64×64 plane, 4 jurisdiction tiles aligned with source homes,
+anchor *j* claims the best ATTRACT task in tile *j* (max current d, ties age
+then id), flippers defer (τ=3 is invisible to tile claims — LAYER 0) and
+re-boost on flip-back (the re-stamp resets their own aging), the wormhole
+escalation runs exactly as E-Q19/AM2 priced it (quiet under d-drift,
+quietness included), and the **real vendored kernel ticks every epoch** in
+the DO's single thread. Build `r20-docket1` (version
+`6de9afb3-bd37-45c5-8f02-0310261152a4`), migration `v2`.
+
+Routes: `POST /docket/:id/init?seed=`, `POST /docket/:id/submit`
+(`{id, source, p0, flip?}`), `POST /docket/:id/epoch?times=N`,
+`GET /docket/:id` (state + per-source + hashes), `/hash` (the arbitration
+determinism handle: plane + full serve history), `/log` (serve receipts).
+
+**The honest label travels with the service**: C10 is DEAD (E-Q19, tip
+`568bfef3…`) — the docket flood-caps source-local floods structurally and
+converts re-boost gaming into FIFO penalty; it does NOT beat a
+FIFO+priority inbox on flapping starvation, and it trades tail latency for
+starvation reduction. The `/docket/:id/init` response carries
+`honest_label` verbatim; the landing page links it. Infrastructure claims
+only: the new P-D battery measures them.
+
+**P-D battery (all pass, 2026-10-18):** cross-DO arbitration determinism
+(two independent dockets, seed 1234, 24 tasks incl. 4 flippers, 40 epochs
+→ identical arbitration hash `77d865d07b156c31…`); work served over HTTP
+(24/24, per-source 6/6/6/6); epoch counter exactly-once (40). The full
+battery re-ran green after the deploy (build marker confirmed first — the
+propagation-window law): P3 determinism `753da5a1…`, in-DO replay, C6
+sidecar field-scoped exact (converged attempt 1), C7 R2 sha256-identical,
+C8 Pages mirror live.
+
+Ops notes: the plane-full guard returns 507 with E-Q19's registered
+backlog-bounded boundary as the error body — the substrate's finite
+capacity is flood insurance, priced 4096 cells at a time. No erratum was
+found by the new checks (first deploy in four rounds); the fifth ops law
+stands unamended.

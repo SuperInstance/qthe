@@ -14,10 +14,20 @@ account_id = "049ff5e84ecf636b53b162cbb580aae6"
 name = "QTHE_FIELD"
 class_name = "QtheField"
 
+# ORCH-R20 (T11-b) — the second live consumer: the task-arbitration docket
+# (the E-Q19 tiled law; C10 priced DEAD, ships with the honest label).
+[[durable_objects.bindings]]
+name = "QTHE_DOCKET"
+class_name = "QtheDocket"
+
 # Free-tier-compatible storage class (SQLite-backed DO).
 [[migrations]]
 tag = "v1"
 new_sqlite_classes = ["QtheField"]
+
+[[migrations]]
+tag = "v2"
+new_sqlite_classes = ["QtheDocket"]
 
 # C6 — the wormhole twin sidecar.
 [[vectorize]]

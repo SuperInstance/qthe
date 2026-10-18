@@ -65,5 +65,32 @@ CODE=$(curl -sL -o /tmp/qthe_pages.html -w "%{http_code}" "$P/")
 CODE2=$(curl -sL -o /tmp/qthe_pages_demo.html -w "%{http_code}" "$P/demo.html")
 [ "$CODE2" = "200" ] && cmp -s /tmp/qthe_pages_demo.html cloudflare/assets/demo.html; chk $? "Pages demo byte-identical (HTTP $CODE2)"
 
+say "== T11-b the docket — the SECOND LIVE CONSUMER (P-D; ORCH-R20) =="
+# Determinism over HTTP, the arbitration form: two independently created
+# dockets, same seed, same scripted load (24 tasks across 4 sources, 4
+# flippers), same epochs -> identical arbitration hashes (plane + full
+# serve history). The E-Q19 tiled law running live in the DO's single
+# thread; C10's honest label rides in the build string.
+curl -s -X POST "$W/docket/livecheck-a/init?seed=1234" > /dev/null
+curl -s -X POST "$W/docket/livecheck-b/init?seed=1234" > /dev/null
+for i in $(seq 1 24); do
+  SRC=$(( (i - 1) % 4 )); P0=$(( (i * 7) % 62 + 1 ))
+  if [ $((i % 6)) -eq 0 ]; then BODY="{\"id\": $i, \"source\": $SRC, \"p0\": $P0, \"flip\": true}"; else BODY="{\"id\": $i, \"source\": $SRC, \"p0\": $P0}"; fi
+  curl -s -X POST "$W/docket/livecheck-a/submit" -H 'content-type: application/json' -d "$BODY" > /dev/null
+  curl -s -X POST "$W/docket/livecheck-b/submit" -H 'content-type: application/json' -d "$BODY" > /dev/null
+done
+curl -s -X POST "$W/docket/livecheck-a/epoch?times=40" > /dev/null
+curl -s -X POST "$W/docket/livecheck-b/epoch?times=40" > /dev/null
+DA=$(curl -s "$W/docket/livecheck-a/hash" | J "d['arb_sha256']")
+DB=$(curl -s "$W/docket/livecheck-b/hash" | J "d['arb_sha256']")
+[ -n "$DA" ] && [ "$DA" = "$DB" ]; chk $? "cross-DO docket arbitration determinism (seed 1234, 24 tasks incl. 4 flippers, 40 epochs): ${DA:0:16}…"
+DV=$(curl -s "$W/docket/livecheck-a")
+DS=$(echo "$DV" | J "d['served']"); DL=$(echo "$DV" | J "d['live']")
+[ -n "$DS" ] && [ "$DS" -gt 0 ]; chk $? "docket served work over HTTP ($DS served, $DL live after 40 epochs)"
+DFL=$(echo "$DV" | J "d['per_source_served']")
+say "      per-source served: $DFL"
+DEP=$(echo "$DV" | J "d['epochs']")
+[ "$DEP" = "40" ]; chk $? "docket epoch counter exactly-once ($DEP)"
+
 say ""
 if [ "$FAIL" = "0" ]; then say "ALL LIVE CHECKS PASS"; else say "LIVE CHECK FAILURES — see above"; exit 1; fi
