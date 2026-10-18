@@ -44,6 +44,7 @@ export const STONE_CHAINS = [
   { path: 'receipts/e_q16_chain.jsonl', gate: 'e_q16', label: 'E-Q16 · measurement wave', pin: 'e_q16_measurement' },
   { path: 'receipts/e_q17_chain.jsonl', gate: 'e_q17', label: 'E-Q17 · provenance at scale (ORCH-R12/T3-b)', pin: 'e_q17_provenance_scale' },
   { path: 'receipts/e_q18_chain.jsonl', gate: 'e_q18', label: 'E-Q18 · hierarchical wormholes, population axis (ORCH-R18/T9-a)', pin: 'e_q18_hier_population' },
+  { path: 'receipts/e_q19_chain.jsonl', gate: 'e_q19', label: 'E-Q19 · docket arbitration, first consumer pricing (ORCH-R20/T11-b2)', pin: 'e_q19_docket' },
   { path: 'receipts/probe_gate_chain.jsonl', gate: 'probe_gate', label: 'probe gate runs', pin: 'probe_gate' },
 ];
 
