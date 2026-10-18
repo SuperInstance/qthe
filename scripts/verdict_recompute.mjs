@@ -717,6 +717,7 @@ const EXCLUDED = [
   { gate: 'G0-G6', reason: 'gate counts, not numeric verdict arithmetic — recomputed by re-running tests/run_tests.mjs itself (the gate is its own checker)' },
   { gate: 'crossimpl-py', reason: 'conformance verdicts are vector-equality counts re-verified by PG1 chain integrity + the crossimpl conformance runner itself' },
   { gate: 'crossimpl-c', reason: 'same class as crossimpl-py: 19/19 byte-exactness is re-derived by the C conformance runner, not by arithmetic on a results file' },
+  { gate: 'crossimpl-rs', reason: 'same class as crossimpl-c: the Rust port re-derives 19/19 byte-exactness by replaying the shared sealed fixtures (crossimpl/rs/seal_rs.mjs additionally cross-checks its per-line counts against the runner summary — the cimpl counting-defect classes designed out); PG1 covers chain integrity' },
   { gate: 'probe_gate', reason: 'the gate seals its own runs; verdict-recomputing the gate with itself is circular — its integrity is PG1-PG3' },
 ];
 

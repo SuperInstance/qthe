@@ -30,6 +30,7 @@ export const STONE_CHAINS = [
   { path: 'tests/receipts.jsonl', gate: 'G0-G6', label: 'kernel gates G0–G6', pin: 'gates_G0_G6' },
   { path: 'crossimpl/receipts/crossimpl_chain.jsonl', gate: 'crossimpl-py', label: 'python LAYER 0 crossimpl', pin: 'crossimpl_py' },
   { path: 'crossimpl/receipts/cimpl_chain.jsonl', gate: 'crossimpl-c', label: 'c LAYER 0+1 crossimpl (ORCH-7)', pin: 'crossimpl_c' },
+  { path: 'crossimpl/receipts/rs_chain.jsonl', gate: 'crossimpl-rs', label: 'rust LAYER 0+1 crossimpl (ORCH-R20/T11-a)', pin: 'crossimpl_rs' },
   { path: 'fixedpoint/receipts/fixedpoint_chain.jsonl', gate: 'fixedpoint', label: 'no-floats plane R8', pin: 'fixedpoint_R8' },
   { path: 'receipts/e_q1_chain.jsonl', gate: 'e_q1', label: 'E-Q1 · C2 wormhole', pin: 'e_q1_C2' },
   { path: 'receipts/e_q2_chain.jsonl', gate: 'e_q2', label: 'E-Q2 · C3 sigma sweep', pin: 'e_q2_C3' },

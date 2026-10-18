@@ -31,6 +31,7 @@ The worked example is the C99 port (crossimpl/c/) — byte-exact 19/19 in under
 | Node/browsers ≥ ESM | none | qthe-core/kernel/qthe.mjs (import) |
 | Python 3 | none | qthe-core/py/qthe_layer0.py (LAYER 0) |
 | Any C99 host | `cc -O2 -std=c99 -c qthe_core.c` | qthe-core/c/ (library object; one main of your own) |
+| Rust (cargo, std only) | `cd crossimpl/rs && cargo build --release` | `target/release/conformance` (byte-exact 19/19 both planes vs `../c/fixtures.txt`; `cargo test` for the unit battery) |
 | Single file, no server | none | public-demo.html (kernel inlined) |
 
 Conformance duty per REPRESENTATION-LAW.md: state which plane you implement,

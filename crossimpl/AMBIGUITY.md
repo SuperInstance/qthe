@@ -149,3 +149,56 @@ Net: 10/10 readings stood; 3 findings (F1 exactness horizon, F2 ragged NaN,
 F3 masking-vs-raising) all live OUTSIDE the specified surface and are
 classified SPEC-ambiguity, receipted in `findings.md` and the chain. Nothing
 was patched on either side to force agreement — none was needed.
+
+## RUST LANE (ORCH-R20, T11-a) — new SPEC-silence findings, appended post-port
+
+Method note: unlike the Python lane (SPEC-alone, pre-peek ledger), this lane
+was registered as a byte-exact port against the sealed fixtures with the C
+lane's receipts as the porting guide (the R20 registration's own words: "σ
+as bits, never libm — the C lane's law"). The items below are the points
+where the port had to make a choice the SPEC does not determine; each is
+classified and receipted, none was patched around.
+
+- **A-R1 — the twin-event telemetry surface is kernel-defined, not
+  SPEC-defined.** SPEC LAYER 1 item 4 says the imaginary channel "receives
+  resonance · σ" but never specifies a per-tick EVENT record; the event
+  shape (`tick, x, y, slot, resonance, term`) AND the per-plane units of
+  `term` (float plane: σ-multiples as a double; fixed plane: resonance·σ_q
+  in S-units as an integer) are qthe.mjs / qthe_fixed.mjs definitions. A
+  fourth-language porter cannot learn the byte-exact conformance contract
+  from SPEC.md alone — the fixtures (or the kernels) are load-bearing.
+  Classification: SPEC-ambiguity (telemetry surface unspecified); resolved
+  by mirroring the C lane's fixture format verbatim.
+
+- **A-R2 — "every cell has exactly 8 neighbors" is impossible on a
+  degenerate torus, and the kernel resolves it silently.** R1 (the toroidal
+  receipt) says Moore-8 wraps "so the update rule is one uniform table — no
+  special case", and SPEC LAYER 1 item 5 implies 8 distinct neighbors. On a
+  1×N, N×1 or 1×1 substrate the 8 neighbor SLOTS are not 8 distinct cells:
+  the kernel's pure modulo arithmetic visits the same cell multiple times
+  (a 1×1 Attract cell contributes to its own accumulator 8 times). The SPEC
+  is silent on degenerate dimensions. CHOSEN (mirroring the kernel bit for
+  bit): pure modulo, self-adjacency allowed and counted per visit; the
+  battery's smallest substrate is 6×3 so this surface is untested by the
+  sealed fixtures — receipted here, verified against qthe.mjs by code
+  reading (the explicit 8-visit list), not by a fixture.
+  Classification: SPEC-ambiguity (degenerate dimensions).
+
+- **A-R3 — byte-exactness of the twin EVENT TERM requires an IEEE754
+  rounding discipline the SPEC never states.** SPEC item 6 claims
+  determinism ("same initial substrate + same tick count → byte-identical
+  trace"), but the trace carries `term = resonance · σ` as a DOUBLE:
+  byte-exact term bits require round-to-nearest IEEE754 multiply — which
+  Rust f64 guarantees and which the C lane enforced by banning libm, but
+  which the SPEC never demands. A port compiled with fast-math-style
+  reassociation (or a non-IEEE float) could keep every PLANE hash
+  (pressures feed only sign tests) while corrupting the event-term bits.
+  The σ-as-bits law is necessary but not sufficient; the missing sentence
+  is "term is one correctly-rounded multiply". Classification:
+  SPEC-ambiguity discovered while proving bit-exactness of the event
+  stream (the Rust port's single-multiply `res as f64 * sigma_f` is the
+  receipt; NC-rs2 proves the term-bits comparison is live).
+
+Net: 3 new items for the register; the py lane's A1–A10 and F1–F3 remain
+the LAYER-0 baseline and nothing in the Rust port contradicts them (the
+i64 carrier sits inside the F1 exactness horizon on the battery surface).
