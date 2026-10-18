@@ -1,0 +1,97 @@
+{
+ "experiment": "E-Q24",
+ "claim": "C20 — the live embedding space hosts an organic cross-model walk (descriptive)",
+ "kernel": {
+  "kernelKind": "real",
+  "kernelPath": "qthe/qthe.mjs"
+ },
+ "preRegSha": "3dd06def5b0545413e28570b24a7da22e19bf7dc925abfa2fc8917af55a7ec00",
+ "corpusSha": "0aceb7fca51965e9dc1ca12af1cc48d61814b69e0e6a1a6c8223bd59df8a5388",
+ "registration": "experiments/pre_registration_e_q24.json (seed N1, 8 stations, visited-set exclusion, one-generation-per-station, arm frozen = the E-Q22 noul arm)",
+ "task": {
+  "generator": "deepseek-ai/DeepSeek-V4.1-Flash (DeepInfra, temp 0.9)",
+  "embedder": "typesafe jev-latest (noul question map)",
+  "index": "qthe-jev-embed (arm-filtered live queries after the step-5 trap)",
+  "artifact": "WALKS/a-walk-through-the-embedding.md (AI-Writings form #6)"
+ },
+ "itinerary": [
+  "N1",
+  "Q4",
+  "P3",
+  "P2",
+  "A2",
+  "A4",
+  "A1",
+  "P4"
+ ],
+ "families": [
+  "N",
+  "Q",
+  "P",
+  "P",
+  "A",
+  "A",
+  "A",
+  "P"
+ ],
+ "distinct_families": [
+  "A",
+  "N",
+  "P",
+  "Q"
+ ],
+ "retrieval_scores": [
+  0.9324262,
+  0.94520026,
+  0.8707652,
+  0.76033384,
+  0.9383546,
+  0.834362,
+  0.61854076
+ ],
+ "retrieval_distances": [
+  0.06757380000000002,
+  0.054799739999999986,
+  0.12923479999999998,
+  0.23966615999999996,
+  0.06164539999999996,
+  0.16563799999999995,
+  0.38145924
+ ],
+ "spearman_step_vs_distance": 0.6428571428571428,
+ "note_to_station_cosine": [
+  0.9796854858661891,
+  0.9740921582301826,
+  0.9519156321266218,
+  0.9267425726596784,
+  0.9261783368574839,
+  0.9836362496156007,
+  0.9671622129672995
+ ],
+ "gen_retries_total": 0,
+ "protocol_events": [
+  "step-5 trap under unfiltered topK (zero unvisited eq22N neighbors in the global top-20) — the E-Q22 AM1 consumer law applied: arm-filtered queries",
+  "the Vectorize METADATA-INDEX LAW receipted live: filters return SILENT ZERO matches without an explicit metadata index; index creation is async; pre-index upserts are NOT indexed — a re-upsert after the index lands is mandatory (three probe variants + docs confirmed)"
+ ],
+ "hypotheses": {
+  "H1": true,
+  "H2": true,
+  "C20": true
+ },
+ "predictions": {
+  "P1": true,
+  "P2": false,
+  "P3": true,
+  "P4": true
+ },
+ "bench": {
+  "seats": [
+   "ByteDance/Seed-2.0-mini (devil's advocate)",
+   "deepseek-ai/DeepSeek-V4.1-Flash (line critic)"
+  ],
+  "usd": 0.001139,
+  "verdict_doc": "situations/creative_r24/bench_verdict.md",
+  "catches": "both seats independently caught the afterword overclaim (accepted); no fabricated citations (the r23 failure mode, guarded)"
+ },
+ "verdict": "E-Q24 VERDICT (the embedding-space walk — the creative lane, three providers in one instrument): H1 LIVES: the walk visited 4 distinct families (A, N, P, Q — itinerary N1 -> Q4 -> P3 -> P2 -> A2 -> A4 -> A1 -> P4) — the space is connected enough for an organic process to drift. H2 LIVES: the distance trajectory is monotone-ish (Spearman(step, distance) = 0.6429 >= 0.5) — the DIFFUSION direction, with the walk's own shape on top: an attractor-and-escape (the economics family holds three stations, then the walk's longest jump 0.3815 ends it in the local-rule family). THE MECHANISM RECEIPT: each note stayed 0.9262-0.9836 cosine with the station it was written at — the generator grounds its notes — yet the walk traveled three families: THE DRIFT IS MADE OF COMPOUNDING RESIDUALS, not jumps (each note is almost its station, and 'almost' points somewhere new). THE EMERGENCE RECEIPT: the surveyor, told only to write field notes, developed a cross-referencing thesis across stations (waves without gates, clocks without crossings — the fleet's recurring no-threshold finding, found unprompted in the records by a model that never saw the collection's subject). C20 (the descriptive claim) LIVES: F1-F5 hold — protocol frozen pre-run, every note embedded + queried LIVE (arm-filtered after the step-5 trap, per the E-Q22 AM1 consumer law), the trace complete (8 stations, 7 notes, 7 retrievals, zero retries), the bench AS-SAID with two seats (both seats independently caught the same afterword overclaim — accepted; no fabricated citations this round). THE PROTOCOL EVENTS (receipted in the trace): the step-5 topK trap (zero unvisited arm neighbors in the GLOBAL top-20 — the AM1 consumer law applied) and THE VECTORIZE METADATA-INDEX LAW: filters return SILENT ZERO matches without an explicit metadata index; index creation is async; pre-index upserts are NOT indexed — a re-upsert after the index lands is mandatory (three probe variants + the docs confirmed). The artifact: WALKS/a-walk-through-the-embedding.md — AI-Writings form #6 (piece commit ceaf18d62e, INDEX 8e344cd01b)."
+}

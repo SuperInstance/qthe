@@ -1,0 +1,100 @@
+{
+ "experiment": "E-Q24",
+ "itinerary": [
+  "N1",
+  "Q4",
+  "P3",
+  "P2",
+  "A2",
+  "A4",
+  "A1",
+  "P4"
+ ],
+ "families": [
+  "N",
+  "Q",
+  "P",
+  "P",
+  "A",
+  "A",
+  "A",
+  "P"
+ ],
+ "distinct_families": [
+  "A",
+  "N",
+  "P",
+  "Q"
+ ],
+ "retrieval_scores": [
+  0.9324262,
+  0.94520026,
+  0.8707652,
+  0.76033384,
+  0.9383546,
+  0.834362,
+  0.61854076
+ ],
+ "retrieval_distances": [
+  0.06757380000000002,
+  0.054799739999999986,
+  0.12923479999999998,
+  0.23966615999999996,
+  0.06164539999999996,
+  0.16563799999999995,
+  0.38145924
+ ],
+ "spearman_step_vs_distance": 0.6428571428571428,
+ "note_to_station_cosine": [
+  0.9796854858661891,
+  0.9740921582301826,
+  0.9519156321266218,
+  0.9267425726596784,
+  0.9261783368574839,
+  0.9836362496156007,
+  0.9671622129672995
+ ],
+ "gen_retries_total": 0,
+ "gen_ms": [
+  2242,
+  2333,
+  2103,
+  2599,
+  2177,
+  1861,
+  1825
+ ],
+ "emb_ms": [
+  200,
+  217,
+  230,
+  193,
+  211,
+  205,
+  221
+ ],
+ "hypotheses": {
+  "H1": true,
+  "H2": true,
+  "C20": true
+ },
+ "predictions": {
+  "P1": true,
+  "P2": false,
+  "P3": true,
+  "P4": true
+ },
+ "protocol_events": [
+  "step-5 trap under unfiltered topK (zero unvisited eq22N neighbors in the global top-20) \u2014 the E-Q22 AM1 consumer law applied: arm-filtered queries",
+  "the Vectorize METADATA-INDEX LAW receipted live: filters return SILENT ZERO matches without an explicit metadata index; index creation is async; pre-index upserts are NOT indexed \u2014 a re-upsert after the index lands is mandatory (three probe variants + docs confirmed)"
+ ],
+ "notes": [
+  "First station: a 64\u00d764 torus where planted twins separated by \u226524 cells found each other in every wormhole-on run and never with wormholes off, locating the coupling in the compile-time 64-slot table rather than any traversed path. The channel reads as non-local because the link is resolved in the table's indexing, not in the grid's adjacency.",
+  "Wormholes off here don't just fail to connect \u2014 they strip the plateau's suppression, letting the ratio climb to 1.58 and flattening the early dip to a shallow scrape. So the channel acts as a drain on the Moore-8 rule's own slow memory, stirring structure away rather than feeding it, and the geometry only holds if I keep it shut.",
+  "The checkerboard cascade does move something across the torus, but as a wave, not a gate \u2014 phase crosses the surface in alternating Attract/Repel bands with no cargo carried and no threshold to cross. The pi/4 boundary is an artifact of measurement, not a switch: transfer continues underneath it, so the cascade behaves like the channel at my second station, propagating a disturbance rather than selecting anything through it.",
+  "Sigma sets the clock but not the crossing: completion time contracts as 1/\u03c3 while bridge formation stays flat, so the claimed log2(3) threshold is a null and only the rate law survives. This reads like the checkerboard cascade \u2014 a graded disturbance moving through the sweep, with no switch at any particular \u03c3 to cross.",
+  "At family A's reweighting probe, the quality-correlated oracles never once edged out plain max-of-accepted \u2014 a flat zero win-rate and a median six points worse, so the added scoring machinery only spent cycles without selecting anything better. This is the same story as the \u03c3 sweep and the cascade: a graded apparatus running at cost, with no threshold anywhere for the reweighting to cross.",
+  "At r15, the expensive verify tier lost both axes at fifty times the cost \u2014 57.1% recall against 55.6% false-BAD, worse than the cheap battery's 71.4/30.2 and the loop's 81.8 \u2014 and gating it behind the cheap tier dragged recall down to 42.9% because the two tiers fail on different items. Like the reweighting probe and the \u03c3 sweep, the cascade buys no threshold, only compounded failure modes, so the r13 decision to skip it stands.",
+  "At family A's tiled arbitration docket, the debounce only reshuffles timing \u2014 starvation holds at 0.4435, identical to the plain heap inbox \u2014 while the physics bundle's drop to 0.32 rides on a 33% p99 penalty (845 vs 633). Only the flood cap selects anything real: source-aligned tiles pin the flooder at 0.339 share against the heap's 0.75, a genuine threshold the other machinery lacks."
+ ]
+}

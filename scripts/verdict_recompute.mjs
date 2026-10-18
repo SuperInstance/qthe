@@ -975,6 +975,22 @@ const CLAIMS = [
       return { recomputed: 'DISTRIBUTED-READING LAW (entropy 0.9079, redundancy-robust readout, occlusion does not localize — attribution needs hash-targeted channels); PROFILE LAW (within 0.1667 vs cross -0.3328: the saliency shape is family-structured where its mass is flat); axis-specificity 0.7009; C18 dies-with-narrowing / C19 lives-with-narrowing (stability bridge null at the 0.045 wobble floor, H5 technically 0.0476); drift axis-structured 4.30x, top P2_localrule (version drift != embedder divergence), mean L1 0.2119; chain agrees' };
     },
   },
+  {
+    id: 'C20 — the embedding-space walk (E-Q24, the creative lane)',
+    source: 'experiments/outputs/e_q24_results.json',
+    cite: 'receipts/e_q24_chain.jsonl · verdict.EQ24 · experiments/pre_registration_e_q24.json · situations/creative_r24/ (walk_trace.jsonl + eq24_results.json + bench_verdict.md + opinions_r24.jsonl)',
+    expected: 'H1 lives (4 distinct families A/N/P/Q, itinerary N1->Q4->P3->P2->A2->A4->A1->P4); H2 lives (Spearman(step, distance) 0.6429 — diffusion, with an attractor-and-escape shape: the economics family holds 3 stations then the longest jump 0.3815); THE MECHANISM: notes stay 0.9262-0.9836 cosine with their stations yet the walk travels 3 families — drift is COMPOUNDING RESIDUALS; THE EMERGENCE: the surveyor developed the no-threshold thesis unprompted with cross-station references; C20 descriptive lives (F1-F5, zero retries, bench AS-SAID, both seats caught the same overclaim); protocol events: the step-5 topK trap (AM1 consumer law applied) + THE VECTORIZE METADATA-INDEX LAW (silent zero matches without a metadata index; async creation; re-upsert mandatory)',
+    run() {
+      const d = readJson(this.source);
+      if (d.hypotheses.H1 !== true || d.hypotheses.H2 !== true || d.hypotheses.C20 !== true) throw new Error('all E-Q24 hypotheses must live');
+      if (d.distinct_families.length !== 4) throw new Error('family count drifted');
+      if (Math.abs(d.spearman_step_vs_distance - 0.6429) > 1e-3) throw new Error('spearman drifted');
+      if (d.gen_retries_total !== 0) throw new Error('F4 no-re-roll law drifted');
+      const row = lastChainRow('receipts/e_q24_chain.jsonl', (r) => r.kind === 'verdict.EQ24', 'verdict.EQ24');
+      if (row.H1 !== true || row.H2 !== true || row.C20 !== true) throw new Error('chain flags disagree');
+      return { recomputed: 'C20 LIVES (the live space hosts an organic cross-model walk: 4 families, Spearman 0.6429 diffusion with attractor-and-escape, notes 0.93-0.98 cosine with stations yet 3 families traveled — compounding residuals; emergence receipt: the unassigned no-threshold thesis; zero retries; bench AS-SAID; the metadata-index law receipted); chain agrees' };
+    },
+  },
 ];
 
 // ── COVERAGE (ORCH-R11: the arena-r11 consensus finding, all four seats) ──
