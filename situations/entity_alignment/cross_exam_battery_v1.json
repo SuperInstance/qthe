@@ -1,0 +1,1558 @@
+{
+ "battery_id": "t6b-cross-exam-v1",
+ "registered_under": "docs/discussions/2026-10-18-orch-r15-registration.md#t6-b",
+ "corpus": {
+  "source": "situations/entity_alignment/pairs_part1.json + pairs_part2.json (sealed T4-c corpus; keys retro-computed by T5-b)",
+  "sha256": "ecc0338ea2c56601c0bf5cdc03fba744b87b128c18e758e5485f09bf45457ab5",
+  "note": "corpus shas carried verbatim from subject_key_retrofit.json inputs_sha256; the battery sha is the concatenation hash of both, stated here so the derivation is checkable. rows_part2.jsonl sha: b41f343c83151d14fe777c5717a20531d93abf602d23d0882909215b484d8039"
+ },
+ "claim_registry": [
+  {
+   "claim_id": "chain_reference",
+   "artifact_key": "crossimpl/receipts/cimpl_chain.jsonl",
+   "claim_statement": "Part-1 list entry refers to the chain artifact at this path (the one question every part-1 entry contests).",
+   "provenance_receipt": "subject_key_retrofit.json part1.claim_id_rule (T5-b, sealed); artifact parsed AS-SAID from the sealed state_entry text",
+   "amends": "-"
+  },
+  {
+   "claim_id": "chain_reference",
+   "artifact_key": "crossimpl/receipts/crossimpl_chain.jsonl",
+   "claim_statement": "Part-1 list entry refers to the chain artifact at this path (the one question every part-1 entry contests).",
+   "provenance_receipt": "subject_key_retrofit.json part1.claim_id_rule (T5-b, sealed); artifact parsed AS-SAID from the sealed state_entry text",
+   "amends": "-"
+  },
+  {
+   "claim_id": "chain_reference",
+   "artifact_key": "experiments/outputs/e_q11_tip.txt",
+   "claim_statement": "Part-1 list entry refers to the chain artifact at this path (the one question every part-1 entry contests).",
+   "provenance_receipt": "subject_key_retrofit.json part1.claim_id_rule (T5-b, sealed); artifact parsed AS-SAID from the sealed state_entry text",
+   "amends": "-"
+  },
+  {
+   "claim_id": "chain_reference",
+   "artifact_key": "experiments/outputs/e_q12_tip.txt",
+   "claim_statement": "Part-1 list entry refers to the chain artifact at this path (the one question every part-1 entry contests).",
+   "provenance_receipt": "subject_key_retrofit.json part1.claim_id_rule (T5-b, sealed); artifact parsed AS-SAID from the sealed state_entry text",
+   "amends": "-"
+  },
+  {
+   "claim_id": "chain_reference",
+   "artifact_key": "fixedpoint/receipts/fixedpoint_chain.jsonl",
+   "claim_statement": "Part-1 list entry refers to the chain artifact at this path (the one question every part-1 entry contests).",
+   "provenance_receipt": "subject_key_retrofit.json part1.claim_id_rule (T5-b, sealed); artifact parsed AS-SAID from the sealed state_entry text",
+   "amends": "-"
+  },
+  {
+   "claim_id": "chain_reference",
+   "artifact_key": "receipts/e_q10_chain.jsonl",
+   "claim_statement": "Part-1 list entry refers to the chain artifact at this path (the one question every part-1 entry contests).",
+   "provenance_receipt": "subject_key_retrofit.json part1.claim_id_rule (T5-b, sealed); artifact parsed AS-SAID from the sealed state_entry text",
+   "amends": "-"
+  },
+  {
+   "claim_id": "chain_reference",
+   "artifact_key": "receipts/e_q13_chain.jsonl",
+   "claim_statement": "Part-1 list entry refers to the chain artifact at this path (the one question every part-1 entry contests).",
+   "provenance_receipt": "subject_key_retrofit.json part1.claim_id_rule (T5-b, sealed); artifact parsed AS-SAID from the sealed state_entry text",
+   "amends": "-"
+  },
+  {
+   "claim_id": "chain_reference",
+   "artifact_key": "receipts/e_q14_chain.jsonl",
+   "claim_statement": "Part-1 list entry refers to the chain artifact at this path (the one question every part-1 entry contests).",
+   "provenance_receipt": "subject_key_retrofit.json part1.claim_id_rule (T5-b, sealed); artifact parsed AS-SAID from the sealed state_entry text",
+   "amends": "-"
+  },
+  {
+   "claim_id": "chain_reference",
+   "artifact_key": "receipts/e_q15_chain.jsonl",
+   "claim_statement": "Part-1 list entry refers to the chain artifact at this path (the one question every part-1 entry contests).",
+   "provenance_receipt": "subject_key_retrofit.json part1.claim_id_rule (T5-b, sealed); artifact parsed AS-SAID from the sealed state_entry text",
+   "amends": "-"
+  },
+  {
+   "claim_id": "chain_reference",
+   "artifact_key": "receipts/e_q16_chain.jsonl",
+   "claim_statement": "Part-1 list entry refers to the chain artifact at this path (the one question every part-1 entry contests).",
+   "provenance_receipt": "subject_key_retrofit.json part1.claim_id_rule (T5-b, sealed); artifact parsed AS-SAID from the sealed state_entry text",
+   "amends": "-"
+  },
+  {
+   "claim_id": "chain_reference",
+   "artifact_key": "receipts/e_q1_chain.jsonl",
+   "claim_statement": "Part-1 list entry refers to the chain artifact at this path (the one question every part-1 entry contests).",
+   "provenance_receipt": "subject_key_retrofit.json part1.claim_id_rule (T5-b, sealed); artifact parsed AS-SAID from the sealed state_entry text",
+   "amends": "-"
+  },
+  {
+   "claim_id": "chain_reference",
+   "artifact_key": "receipts/e_q2_chain.jsonl",
+   "claim_statement": "Part-1 list entry refers to the chain artifact at this path (the one question every part-1 entry contests).",
+   "provenance_receipt": "subject_key_retrofit.json part1.claim_id_rule (T5-b, sealed); artifact parsed AS-SAID from the sealed state_entry text",
+   "amends": "-"
+  },
+  {
+   "claim_id": "chain_reference",
+   "artifact_key": "receipts/e_q5_chain.jsonl",
+   "claim_statement": "Part-1 list entry refers to the chain artifact at this path (the one question every part-1 entry contests).",
+   "provenance_receipt": "subject_key_retrofit.json part1.claim_id_rule (T5-b, sealed); artifact parsed AS-SAID from the sealed state_entry text",
+   "amends": "-"
+  },
+  {
+   "claim_id": "chain_reference",
+   "artifact_key": "receipts/e_q6_chain.jsonl",
+   "claim_statement": "Part-1 list entry refers to the chain artifact at this path (the one question every part-1 entry contests).",
+   "provenance_receipt": "subject_key_retrofit.json part1.claim_id_rule (T5-b, sealed); artifact parsed AS-SAID from the sealed state_entry text",
+   "amends": "-"
+  },
+  {
+   "claim_id": "chain_reference",
+   "artifact_key": "receipts/e_q7_chain.jsonl",
+   "claim_statement": "Part-1 list entry refers to the chain artifact at this path (the one question every part-1 entry contests).",
+   "provenance_receipt": "subject_key_retrofit.json part1.claim_id_rule (T5-b, sealed); artifact parsed AS-SAID from the sealed state_entry text",
+   "amends": "-"
+  },
+  {
+   "claim_id": "chain_reference",
+   "artifact_key": "receipts/e_q8_chain.jsonl",
+   "claim_statement": "Part-1 list entry refers to the chain artifact at this path (the one question every part-1 entry contests).",
+   "provenance_receipt": "subject_key_retrofit.json part1.claim_id_rule (T5-b, sealed); artifact parsed AS-SAID from the sealed state_entry text",
+   "amends": "-"
+  },
+  {
+   "claim_id": "chain_reference",
+   "artifact_key": "receipts/probe_gate_chain.jsonl",
+   "claim_statement": "Part-1 list entry refers to the chain artifact at this path (the one question every part-1 entry contests).",
+   "provenance_receipt": "subject_key_retrofit.json part1.claim_id_rule (T5-b, sealed); artifact parsed AS-SAID from the sealed state_entry text",
+   "amends": "-"
+  },
+  {
+   "claim_id": "chain_reference",
+   "artifact_key": "tests/receipts.jsonl",
+   "claim_statement": "Part-1 list entry refers to the chain artifact at this path (the one question every part-1 entry contests).",
+   "provenance_receipt": "subject_key_retrofit.json part1.claim_id_rule (T5-b, sealed); artifact parsed AS-SAID from the sealed state_entry text",
+   "amends": "-"
+  },
+  {
+   "claim_id": "c3_scope",
+   "artifact_key": "c3_e_q2",
+   "claim_statement": "Part-2 cross-seat finding tagged with this subject (the r10 adjudication subject map, sealed pre-pairing).",
+   "provenance_receipt": "pairs_part2.json per-pair claim_id_a field (sealed at build time) + the pinned artifact normalization table (subject_key_retrofit.json part2)",
+   "amends": "-"
+  },
+  {
+   "claim_id": "qwen_cache_eviction",
+   "artifact_key": "m4_wormhole_table",
+   "claim_statement": "Part-2 cross-seat finding tagged with this subject (the r10 adjudication subject map, sealed pre-pairing).",
+   "provenance_receipt": "pairs_part2.json per-pair claim_id_a field (sealed at build time) + the pinned artifact normalization table (subject_key_retrofit.json part2)",
+   "amends": "-"
+  },
+  {
+   "claim_id": "eq14_baseline",
+   "artifact_key": "e_q14",
+   "claim_statement": "Part-2 cross-seat finding tagged with this subject (the r10 adjudication subject map, sealed pre-pairing).",
+   "provenance_receipt": "pairs_part2.json per-pair claim_id_b field (sealed at build time) + the pinned artifact normalization table (subject_key_retrofit.json part2)",
+   "amends": "-"
+  },
+  {
+   "claim_id": "m4_content_addressing",
+   "artifact_key": "m4_wormhole_table",
+   "claim_statement": "Part-2 cross-seat finding tagged with this subject (the r10 adjudication subject map, sealed pre-pairing).",
+   "provenance_receipt": "pairs_part2.json per-pair claim_id_a field (sealed at build time) + the pinned artifact normalization table (subject_key_retrofit.json part2)",
+   "amends": "-"
+  },
+  {
+   "claim_id": "license",
+   "artifact_key": "repo_license",
+   "claim_statement": "Part-2 cross-seat finding tagged with this subject (the r10 adjudication subject map, sealed pre-pairing).",
+   "provenance_receipt": "pairs_part2.json per-pair claim_id_b field (sealed at build time) + the pinned artifact normalization table (subject_key_retrofit.json part2)",
+   "amends": "-"
+  },
+  {
+   "claim_id": "eq16_erratum",
+   "artifact_key": "e_q16",
+   "claim_statement": "Part-2 cross-seat finding tagged with this subject (the r10 adjudication subject map, sealed pre-pairing).",
+   "provenance_receipt": "pairs_part2.json per-pair claim_id_a field (sealed at build time) + the pinned artifact normalization table (subject_key_retrofit.json part2)",
+   "amends": "-"
+  },
+  {
+   "claim_id": "eq16_seedfn",
+   "artifact_key": "e_q16",
+   "claim_statement": "Part-2 cross-seat finding tagged with this subject (the r10 adjudication subject map, sealed pre-pairing).",
+   "provenance_receipt": "pairs_part2.json per-pair claim_id_b field (sealed at build time) + the pinned artifact normalization table (subject_key_retrofit.json part2)",
+   "amends": "-"
+  },
+  {
+   "claim_id": "c1_claim",
+   "artifact_key": "c1_e_q13",
+   "claim_statement": "Part-2 cross-seat finding tagged with this subject (the r10 adjudication subject map, sealed pre-pairing).",
+   "provenance_receipt": "pairs_part2.json per-pair claim_id_a field (sealed at build time) + the pinned artifact normalization table (subject_key_retrofit.json part2)",
+   "amends": "-"
+  },
+  {
+   "claim_id": "seedfn_closure",
+   "artifact_key": "e_q16",
+   "claim_statement": "Part-2 cross-seat finding tagged with this subject (the r10 adjudication subject map, sealed pre-pairing).",
+   "provenance_receipt": "pairs_part2.json per-pair claim_id_a field (sealed at build time) + the pinned artifact normalization table (subject_key_retrofit.json part2)",
+   "amends": "-"
+  },
+  {
+   "claim_id": "locality_capacity",
+   "artifact_key": "m4_wormhole_table",
+   "claim_statement": "Part-2 cross-seat finding tagged with this subject (the r10 adjudication subject map, sealed pre-pairing).",
+   "provenance_receipt": "pairs_part2.json per-pair claim_id_a field (sealed at build time) + the pinned artifact normalization table (subject_key_retrofit.json part2)",
+   "amends": "-"
+  },
+  {
+   "claim_id": "c1_budget",
+   "artifact_key": "c1_e_q13",
+   "claim_statement": "Part-2 cross-seat finding tagged with this subject (the r10 adjudication subject map, sealed pre-pairing).",
+   "provenance_receipt": "pairs_part2.json per-pair claim_id_a field (sealed at build time) + the pinned artifact normalization table (subject_key_retrofit.json part2)",
+   "amends": "-"
+  },
+  {
+   "claim_id": "c3_gifted_proof",
+   "artifact_key": "c3_e_q2",
+   "claim_statement": "Part-2 cross-seat finding tagged with this subject (the r10 adjudication subject map, sealed pre-pairing).",
+   "provenance_receipt": "pairs_part2.json per-pair claim_id_a field (sealed at build time) + the pinned artifact normalization table (subject_key_retrofit.json part2)",
+   "amends": "-"
+  },
+  {
+   "claim_id": "c5p_definitional",
+   "artifact_key": "c5p_e_q10",
+   "claim_statement": "Part-2 cross-seat finding tagged with this subject (the r10 adjudication subject map, sealed pre-pairing).",
+   "provenance_receipt": "pairs_part2.json per-pair claim_id_b field (sealed at build time) + the pinned artifact normalization table (subject_key_retrofit.json part2)",
+   "amends": "-"
+  },
+  {
+   "claim_id": "eq9_chainless",
+   "artifact_key": "e_q9_11_12",
+   "claim_statement": "Part-2 cross-seat finding tagged with this subject (the r10 adjudication subject map, sealed pre-pairing).",
+   "provenance_receipt": "pairs_part2.json per-pair claim_id_a field (sealed at build time) + the pinned artifact normalization table (subject_key_retrofit.json part2)",
+   "amends": "-"
+  },
+  {
+   "claim_id": "eq15",
+   "artifact_key": "e_q15",
+   "claim_statement": "Part-2 cross-seat finding tagged with this subject (the r10 adjudication subject map, sealed pre-pairing).",
+   "provenance_receipt": "pairs_part2.json per-pair claim_id_b field (sealed at build time) + the pinned artifact normalization table (subject_key_retrofit.json part2)",
+   "amends": "-"
+  },
+  {
+   "claim_id": "resource_profile",
+   "artifact_key": "resource_profile",
+   "claim_statement": "Part-2 cross-seat finding tagged with this subject (the r10 adjudication subject map, sealed pre-pairing).",
+   "provenance_receipt": "pairs_part2.json per-pair claim_id_a field (sealed at build time) + the pinned artifact normalization table (subject_key_retrofit.json part2)",
+   "amends": "-"
+  },
+  {
+   "claim_id": "c99_sealer",
+   "artifact_key": "cimpl_c99_sealer",
+   "claim_statement": "Part-2 cross-seat finding tagged with this subject (the r10 adjudication subject map, sealed pre-pairing).",
+   "provenance_receipt": "pairs_part2.json per-pair claim_id_a field (sealed at build time) + the pinned artifact normalization table (subject_key_retrofit.json part2)",
+   "amends": "-"
+  }
+ ],
+ "artifact_normalization_table": [
+  {
+   "artifact_text_as_said": "C1 (E-Q13, chain tip d852e6ac...)",
+   "artifact_key": "c1_e_q13",
+   "co_named_artifacts": [],
+   "receipt": "pinned by T5-b (sealed retrofit part2 table): dsv F1: names claim C1 on E-Q13 via its chain tip"
+  },
+  {
+   "artifact_text_as_said": "E-Q14 provenance autopsy (slot-63 saturation rail / adjacent-d convoy)",
+   "artifact_key": "e_q14",
+   "co_named_artifacts": [],
+   "receipt": "pinned by T5-b (sealed retrofit part2 table): dsv F2: the E-Q14 autopsy (floor failure mechanics)"
+  },
+  {
+   "artifact_text_as_said": "E-Q16 16x16 T=100,000 in-run harness fix (seedFn closures consumed rng at call time)",
+   "artifact_key": "e_q16",
+   "co_named_artifacts": [],
+   "receipt": "pinned by T5-b (sealed retrofit part2 table): dsv F3: the E-Q16 measurement wave / its chain"
+  },
+  {
+   "artifact_text_as_said": "C3 sigma = log2(3) critical bridge scale (E-Q2)",
+   "artifact_key": "c3_e_q2",
+   "co_named_artifacts": [],
+   "receipt": "pinned by T5-b (sealed retrofit part2 table): dsv F4: claim C3 on E-Q2"
+  },
+  {
+   "artifact_text_as_said": "THE THREE HONEST GAPS (1) no LICENSE",
+   "artifact_key": "repo_license",
+   "co_named_artifacts": [],
+   "receipt": "pinned by T5-b (sealed retrofit part2 table): dsv F5: the repository-level missing-LICENSE gap"
+  },
+  {
+   "artifact_text_as_said": "E-Q15 reward reweighting probe (win-rate 0.00, median delta -6)",
+   "artifact_key": "e_q15",
+   "co_named_artifacts": [],
+   "receipt": "pinned by T5-b (sealed retrofit part2 table): dsv F6: the E-Q15 probe"
+  },
+  {
+   "artifact_text_as_said": "C5-prime injector repair (E-Q10)",
+   "artifact_key": "c5p_e_q10",
+   "co_named_artifacts": [],
+   "receipt": "pinned by T5-b (sealed retrofit part2 table): dsv F7: claim C5-prime on E-Q10"
+  },
+  {
+   "artifact_text_as_said": "E-Q14 / M4 wormhole table / C2 / demos (agent rendezvous, non-local alignment without a bus)",
+   "artifact_key": "m4_wormhole_table",
+   "co_named_artifacts": [],
+   "receipt": "pinned by T5-b (sealed retrofit part2 table): hy4 F1: co-names E-Q14/C2/demos, but the contested artifact is the M4 table's content-addressing (co-named artifacts receipted, not keyed)"
+  },
+  {
+   "artifact_text_as_said": "E-Q16 / M4 / grid scaling claim (locality HOLDS to 256x256 at 10% Abstain)",
+   "artifact_key": "m4_wormhole_table",
+   "co_named_artifacts": [],
+   "receipt": "pinned by T5-b (sealed retrofit part2 table): hy4 F2: co-names E-Q16 as evidence; the contested artifact is the 64-slot table's capacity vs the locality phrasing"
+  },
+  {
+   "artifact_text_as_said": "C1 / E-Q13 / cached-port caveat (tau plane SRAM-resident)",
+   "artifact_key": "c1_e_q13",
+   "co_named_artifacts": [],
+   "receipt": "pinned by T5-b (sealed retrofit part2 table): hy4 F3: claim C1 on E-Q13, cached-port caveat"
+  },
+  {
+   "artifact_text_as_said": "E-Q16 / seedFn closures consumed rng at call time (harness fix)",
+   "artifact_key": "e_q16",
+   "co_named_artifacts": [],
+   "receipt": "pinned by T5-b (sealed retrofit part2 table): hy4 F4: the E-Q16 measurement wave / its chain"
+  },
+  {
+   "artifact_text_as_said": "E-Q9/E-Q11/E-Q12 (chainless-by-registered-decision) / scripts/verify_all_chains.mjs",
+   "artifact_key": "e_q9_11_12",
+   "co_named_artifacts": [],
+   "receipt": "pinned by T5-b (sealed retrofit part2 table): hy4 F5: the E-Q9/11/12 chainless set (co-names verify_all_chains.mjs)"
+  },
+  {
+   "artifact_text_as_said": "NO LICENSE gap / qthe-core/ / crossimpl/c/ / ADOPTION-KIT.md",
+   "artifact_key": "repo_license",
+   "co_named_artifacts": [],
+   "receipt": "pinned by T5-b (sealed retrofit part2 table): hy4 F6: the repository-level missing-LICENSE gap (distribution roots co-named; the contested fact is the absent license)"
+  },
+  {
+   "artifact_text_as_said": "E-Q14 (adversarial probes, docs/FALSIFICATION-BUDGET.md)",
+   "artifact_key": "e_q14",
+   "co_named_artifacts": [],
+   "receipt": "pinned by T5-b (sealed retrofit part2 table): mimov F1: the E-Q14 zero-pollution floor failure"
+  },
+  {
+   "artifact_text_as_said": "C3 (E-Q2) vs E-Q16 dense sigma phase table",
+   "artifact_key": "c3_e_q2",
+   "co_named_artifacts": [],
+   "receipt": "pinned by T5-b (sealed retrofit part2 table): mimov F2 AND nemotron F2 (byte-identical sealed text, two seats): claim C3 on E-Q2, with E-Q16's dense sigma table co-named as the conflicting evidence"
+  },
+  {
+   "artifact_text_as_said": "C1 / E-Q13 (twin-delivery bytes-gain, cached-port caveat)",
+   "artifact_key": "c1_e_q13",
+   "co_named_artifacts": [],
+   "receipt": "pinned by T5-b (sealed retrofit part2 table): mimov F3: claim C1 on E-Q13"
+  },
+  {
+   "artifact_text_as_said": "E-Q9/E-Q11/E-Q12 (chainless-by-registered-decision)",
+   "artifact_key": "e_q9_11_12",
+   "co_named_artifacts": [],
+   "receipt": "pinned by T5-b (sealed retrofit part2 table): mimov F4: the E-Q9/11/12 chainless set"
+  },
+  {
+   "artifact_text_as_said": "E-Q16 run-1 rows (16x16 T=100,000 harness fix)",
+   "artifact_key": "e_q16",
+   "co_named_artifacts": [],
+   "receipt": "pinned by T5-b (sealed retrofit part2 table): mimov F5: the E-Q16 measurement wave / its chain"
+  },
+  {
+   "artifact_text_as_said": "qthe-core/ PROVENANCE.txt + docs/ADOPTION-KIT.md (no LICENSE)",
+   "artifact_key": "repo_license",
+   "co_named_artifacts": [],
+   "receipt": "pinned by T5-b (sealed retrofit part2 table): mimov F6: the repository-level missing-LICENSE gap"
+  },
+  {
+   "artifact_text_as_said": "E-Q14",
+   "artifact_key": "e_q14",
+   "co_named_artifacts": [],
+   "receipt": "pinned by T5-b (sealed retrofit part2 table): muse F1: the E-Q14 zero-pollution floor failure"
+  },
+  {
+   "artifact_text_as_said": "E-Q9/E-Q11/E-Q12",
+   "artifact_key": "e_q9_11_12",
+   "co_named_artifacts": [],
+   "receipt": "pinned by T5-b (sealed retrofit part2 table): muse F2: the E-Q9/11/12 chainless set"
+  },
+  {
+   "artifact_text_as_said": "E-Q16",
+   "artifact_key": "e_q16",
+   "co_named_artifacts": [],
+   "receipt": "pinned by T5-b (sealed retrofit part2 table): muse F3: the E-Q16 measurement wave / its chain"
+  },
+  {
+   "artifact_text_as_said": "THE THREE HONEST GAPS",
+   "artifact_key": "repo_license",
+   "co_named_artifacts": [],
+   "receipt": "pinned by T5-b (sealed retrofit part2 table): muse F4: the repository-level missing-LICENSE gap"
+  },
+  {
+   "artifact_text_as_said": "cross-implementation C99 port",
+   "artifact_key": "cimpl_c99_sealer",
+   "co_named_artifacts": [],
+   "receipt": "pinned by T5-b (sealed retrofit part2 table): muse F5: the C99 sealer (crossimpl/c/)"
+  },
+  {
+   "artifact_text_as_said": "E-Q16 measurement wave (16x16 T=100,000) and scripts/probe_gate.mjs PG4 determinism witness",
+   "artifact_key": "e_q16",
+   "co_named_artifacts": [],
+   "receipt": "pinned by T5-b (sealed retrofit part2 table): nemotron F1: the E-Q16 measurement wave / its chain (probe_gate.mjs PG4 co-named as the determinism witness; not keyed)"
+  },
+  {
+   "artifact_text_as_said": "M4 wormhole table (64-slot, content-addressed, last-writer-wins) and E-Q14 provenance autopsy",
+   "artifact_key": "m4_wormhole_table",
+   "co_named_artifacts": [],
+   "receipt": "pinned by T5-b (sealed retrofit part2 table): nemotron F3: the M4 table (E-Q14 autopsy co-named as evidence)"
+  },
+  {
+   "artifact_text_as_said": "E-Q9, E-Q11, E-Q12 (chainless-by-registered-decision)",
+   "artifact_key": "e_q9_11_12",
+   "co_named_artifacts": [],
+   "receipt": "pinned by T5-b (sealed retrofit part2 table): nemotron F4: the E-Q9/11/12 chainless set"
+  },
+  {
+   "artifact_text_as_said": "C5-prime injector repair (E-Q10, \"STANDS, definitional\")",
+   "artifact_key": "c5p_e_q10",
+   "co_named_artifacts": [],
+   "receipt": "pinned by T5-b (sealed retrofit part2 table): nemotron F5: claim C5-prime on E-Q10"
+  },
+  {
+   "artifact_text_as_said": "C1 (E-Q13, chain tip d852e6ac...) intra-cell vs inter-cell porting",
+   "artifact_key": "c1_e_q13",
+   "co_named_artifacts": [],
+   "receipt": "pinned by T5-b (sealed retrofit part2 table): nemotron F6: claim C1 on E-Q13"
+  },
+  {
+   "artifact_text_as_said": "THREE HONEST GAPS gap (1) NO LICENSE vs ADOPTION-KIT.md / DAY-1.md outsider path",
+   "artifact_key": "repo_license",
+   "co_named_artifacts": [],
+   "receipt": "pinned by T5-b (sealed retrofit part2 table): nemotron F7: the repository-level missing-LICENSE gap"
+  },
+  {
+   "artifact_text_as_said": "M4 the 64-slot wormhole table / E-Q14 Adversarial probes",
+   "artifact_key": "m4_wormhole_table",
+   "co_named_artifacts": [],
+   "receipt": "pinned by T5-b (sealed retrofit part2 table): qwen F1: the M4 table (E-Q14 co-named; the invented cache-eviction mechanism is the claim side, adjudicated invented)"
+  },
+  {
+   "artifact_text_as_said": "RESOURCE-PROFILE.md / Fixed-point plane (R8)",
+   "artifact_key": "resource_profile",
+   "co_named_artifacts": [],
+   "receipt": "pinned by T5-b (sealed retrofit part2 table): qwen F2: the resource profile doc / fixed-point plane"
+  },
+  {
+   "artifact_text_as_said": "C1 intra-cell timbre (1-byte QTHE) vs inter-cell porting (2-byte tauPlane/dPlane encoding) on the twin-delivery task",
+   "artifact_key": "c1_e_q13",
+   "co_named_artifacts": [],
+   "receipt": "pinned by T5-b (sealed retrofit part2 table): qwen F3: claim C1 on E-Q13 (encoding comparison)"
+  },
+  {
+   "artifact_text_as_said": "E-Q15 Reward reweighting probe",
+   "artifact_key": "e_q15",
+   "co_named_artifacts": [],
+   "receipt": "pinned by T5-b (sealed retrofit part2 table): qwen F4: the E-Q15 probe"
+  },
+  {
+   "artifact_text_as_said": "qthe-core/ standalone package repository root",
+   "artifact_key": "repo_license",
+   "co_named_artifacts": [],
+   "receipt": "pinned by T5-b (sealed retrofit part2 table): seed F1: the repository-level missing-LICENSE gap"
+  },
+  {
+   "artifact_text_as_said": "E-Q14 adversarial probe results",
+   "artifact_key": "e_q14",
+   "co_named_artifacts": [],
+   "receipt": "pinned by T5-b (sealed retrofit part2 table): seed F2: the E-Q14 zero-pollution floor failure"
+  },
+  {
+   "artifact_text_as_said": "C99 cross-implementation sealer code (crossimpl/c/)",
+   "artifact_key": "cimpl_c99_sealer",
+   "co_named_artifacts": [],
+   "receipt": "pinned by T5-b (sealed retrofit part2 table): seed F3: the C99 sealer"
+  },
+  {
+   "artifact_text_as_said": "E-Q15 reward reweighting probe results",
+   "artifact_key": "e_q15",
+   "co_named_artifacts": [],
+   "receipt": "pinned by T5-b (sealed retrofit part2 table): seed F4: the E-Q15 probe"
+  },
+  {
+   "artifact_text_as_said": "C3 sigma critical scale claim and associated gifted proof",
+   "artifact_key": "c3_e_q2",
+   "co_named_artifacts": [],
+   "receipt": "pinned by T5-b (sealed retrofit part2 table): seed F5: claim C3 on E-Q2 (the gifted-proof claim side)"
+  }
+ ],
+ "pairs": [
+  {
+   "pair_id": "p1-001",
+   "side_a_source_ref": "pairs_part1.json#p1-001.state_entry_a",
+   "side_b_source_ref": "pairs_part1.json#p1-001.state_entry_b",
+   "subject_key_a": "tests/receipts.jsonl::chain_reference",
+   "subject_key_b": "tests/receipts.jsonl::chain_reference",
+   "subject_claim_ids": [
+    "chain_reference"
+   ],
+   "same_subject": true,
+   "pairing_reason": "",
+   "expected_relation": "same_entity",
+   "routing": "intra_subject_no_identity_question"
+  },
+  {
+   "pair_id": "p1-002",
+   "side_a_source_ref": "pairs_part1.json#p1-002.state_entry_a",
+   "side_b_source_ref": "pairs_part1.json#p1-002.state_entry_b",
+   "subject_key_a": "tests/receipts.jsonl::chain_reference",
+   "subject_key_b": "tests/receipts.jsonl::chain_reference",
+   "subject_claim_ids": [
+    "chain_reference"
+   ],
+   "same_subject": true,
+   "pairing_reason": "",
+   "expected_relation": "same_entity",
+   "routing": "intra_subject_no_identity_question"
+  },
+  {
+   "pair_id": "p1-003",
+   "side_a_source_ref": "pairs_part1.json#p1-003.state_entry_a",
+   "side_b_source_ref": "pairs_part1.json#p1-003.state_entry_b",
+   "subject_key_a": "tests/receipts.jsonl::chain_reference",
+   "subject_key_b": "tests/receipts.jsonl::chain_reference",
+   "subject_claim_ids": [
+    "chain_reference"
+   ],
+   "same_subject": true,
+   "pairing_reason": "",
+   "expected_relation": "same_entity",
+   "routing": "intra_subject_no_identity_question"
+  },
+  {
+   "pair_id": "p1-004",
+   "side_a_source_ref": "pairs_part1.json#p1-004.state_entry_a",
+   "side_b_source_ref": "pairs_part1.json#p1-004.state_entry_b",
+   "subject_key_a": "tests/receipts.jsonl::chain_reference",
+   "subject_key_b": "tests/receipts.jsonl::chain_reference",
+   "subject_claim_ids": [
+    "chain_reference"
+   ],
+   "same_subject": true,
+   "pairing_reason": "",
+   "expected_relation": "same_entity",
+   "routing": "intra_subject_no_identity_question"
+  },
+  {
+   "pair_id": "p1-005",
+   "side_a_source_ref": "pairs_part1.json#p1-005.state_entry_a",
+   "side_b_source_ref": "pairs_part1.json#p1-005.state_entry_b",
+   "subject_key_a": "receipts/e_q13_chain.jsonl::chain_reference",
+   "subject_key_b": "receipts/e_q13_chain.jsonl::chain_reference",
+   "subject_claim_ids": [
+    "chain_reference"
+   ],
+   "same_subject": true,
+   "pairing_reason": "",
+   "expected_relation": "same_entity",
+   "routing": "intra_subject_no_identity_question"
+  },
+  {
+   "pair_id": "p1-006",
+   "side_a_source_ref": "pairs_part1.json#p1-006.state_entry_a",
+   "side_b_source_ref": "pairs_part1.json#p1-006.state_entry_b",
+   "subject_key_a": "receipts/e_q13_chain.jsonl::chain_reference",
+   "subject_key_b": "receipts/e_q13_chain.jsonl::chain_reference",
+   "subject_claim_ids": [
+    "chain_reference"
+   ],
+   "same_subject": true,
+   "pairing_reason": "",
+   "expected_relation": "same_entity",
+   "routing": "intra_subject_no_identity_question"
+  },
+  {
+   "pair_id": "p1-007",
+   "side_a_source_ref": "pairs_part1.json#p1-007.state_entry_a",
+   "side_b_source_ref": "pairs_part1.json#p1-007.state_entry_b",
+   "subject_key_a": "receipts/e_q13_chain.jsonl::chain_reference",
+   "subject_key_b": "receipts/e_q13_chain.jsonl::chain_reference",
+   "subject_claim_ids": [
+    "chain_reference"
+   ],
+   "same_subject": true,
+   "pairing_reason": "",
+   "expected_relation": "same_entity",
+   "routing": "intra_subject_no_identity_question"
+  },
+  {
+   "pair_id": "p1-008",
+   "side_a_source_ref": "pairs_part1.json#p1-008.state_entry_a",
+   "side_b_source_ref": "pairs_part1.json#p1-008.state_entry_b",
+   "subject_key_a": "receipts/e_q13_chain.jsonl::chain_reference",
+   "subject_key_b": "receipts/e_q13_chain.jsonl::chain_reference",
+   "subject_claim_ids": [
+    "chain_reference"
+   ],
+   "same_subject": true,
+   "pairing_reason": "",
+   "expected_relation": "same_entity",
+   "routing": "intra_subject_no_identity_question"
+  },
+  {
+   "pair_id": "p1-009",
+   "side_a_source_ref": "pairs_part1.json#p1-009.state_entry_a",
+   "side_b_source_ref": "pairs_part1.json#p1-009.state_entry_b",
+   "subject_key_a": "receipts/e_q14_chain.jsonl::chain_reference",
+   "subject_key_b": "receipts/e_q14_chain.jsonl::chain_reference",
+   "subject_claim_ids": [
+    "chain_reference"
+   ],
+   "same_subject": true,
+   "pairing_reason": "",
+   "expected_relation": "same_entity",
+   "routing": "intra_subject_no_identity_question"
+  },
+  {
+   "pair_id": "p1-010",
+   "side_a_source_ref": "pairs_part1.json#p1-010.state_entry_a",
+   "side_b_source_ref": "pairs_part1.json#p1-010.state_entry_b",
+   "subject_key_a": "receipts/e_q14_chain.jsonl::chain_reference",
+   "subject_key_b": "receipts/e_q14_chain.jsonl::chain_reference",
+   "subject_claim_ids": [
+    "chain_reference"
+   ],
+   "same_subject": true,
+   "pairing_reason": "",
+   "expected_relation": "same_entity",
+   "routing": "intra_subject_no_identity_question"
+  },
+  {
+   "pair_id": "p1-011",
+   "side_a_source_ref": "pairs_part1.json#p1-011.state_entry_a",
+   "side_b_source_ref": "pairs_part1.json#p1-011.state_entry_b",
+   "subject_key_a": "receipts/e_q14_chain.jsonl::chain_reference",
+   "subject_key_b": "receipts/e_q14_chain.jsonl::chain_reference",
+   "subject_claim_ids": [
+    "chain_reference"
+   ],
+   "same_subject": true,
+   "pairing_reason": "",
+   "expected_relation": "same_entity",
+   "routing": "intra_subject_no_identity_question"
+  },
+  {
+   "pair_id": "p1-012",
+   "side_a_source_ref": "pairs_part1.json#p1-012.state_entry_a",
+   "side_b_source_ref": "pairs_part1.json#p1-012.state_entry_b",
+   "subject_key_a": "receipts/e_q14_chain.jsonl::chain_reference",
+   "subject_key_b": "receipts/e_q14_chain.jsonl::chain_reference",
+   "subject_claim_ids": [
+    "chain_reference"
+   ],
+   "same_subject": true,
+   "pairing_reason": "",
+   "expected_relation": "same_entity",
+   "routing": "intra_subject_no_identity_question"
+  },
+  {
+   "pair_id": "p1-013",
+   "side_a_source_ref": "pairs_part1.json#p1-013.state_entry_a",
+   "side_b_source_ref": "pairs_part1.json#p1-013.state_entry_b",
+   "subject_key_a": "receipts/e_q15_chain.jsonl::chain_reference",
+   "subject_key_b": "receipts/e_q15_chain.jsonl::chain_reference",
+   "subject_claim_ids": [
+    "chain_reference"
+   ],
+   "same_subject": true,
+   "pairing_reason": "",
+   "expected_relation": "same_entity",
+   "routing": "intra_subject_no_identity_question"
+  },
+  {
+   "pair_id": "p1-014",
+   "side_a_source_ref": "pairs_part1.json#p1-014.state_entry_a",
+   "side_b_source_ref": "pairs_part1.json#p1-014.state_entry_b",
+   "subject_key_a": "receipts/e_q16_chain.jsonl::chain_reference",
+   "subject_key_b": "receipts/e_q16_chain.jsonl::chain_reference",
+   "subject_claim_ids": [
+    "chain_reference"
+   ],
+   "same_subject": true,
+   "pairing_reason": "",
+   "expected_relation": "same_entity",
+   "routing": "intra_subject_no_identity_question"
+  },
+  {
+   "pair_id": "p1-015",
+   "side_a_source_ref": "pairs_part1.json#p1-015.state_entry_a",
+   "side_b_source_ref": "pairs_part1.json#p1-015.state_entry_b",
+   "subject_key_a": "receipts/probe_gate_chain.jsonl::chain_reference",
+   "subject_key_b": "receipts/probe_gate_chain.jsonl::chain_reference",
+   "subject_claim_ids": [
+    "chain_reference"
+   ],
+   "same_subject": true,
+   "pairing_reason": "",
+   "expected_relation": "same_entity",
+   "routing": "intra_subject_no_identity_question"
+  },
+  {
+   "pair_id": "p1-016",
+   "side_a_source_ref": "pairs_part1.json#p1-016.state_entry_a",
+   "side_b_source_ref": "pairs_part1.json#p1-016.state_entry_b",
+   "subject_key_a": "receipts/probe_gate_chain.jsonl::chain_reference",
+   "subject_key_b": "receipts/probe_gate_chain.jsonl::chain_reference",
+   "subject_claim_ids": [
+    "chain_reference"
+   ],
+   "same_subject": true,
+   "pairing_reason": "",
+   "expected_relation": "same_entity",
+   "routing": "intra_subject_no_identity_question"
+  },
+  {
+   "pair_id": "p1-017",
+   "side_a_source_ref": "pairs_part1.json#p1-017.state_entry_a",
+   "side_b_source_ref": "pairs_part1.json#p1-017.state_entry_b",
+   "subject_key_a": "receipts/probe_gate_chain.jsonl::chain_reference",
+   "subject_key_b": "receipts/probe_gate_chain.jsonl::chain_reference",
+   "subject_claim_ids": [
+    "chain_reference"
+   ],
+   "same_subject": true,
+   "pairing_reason": "",
+   "expected_relation": "same_entity",
+   "routing": "intra_subject_no_identity_question"
+  },
+  {
+   "pair_id": "p1-018",
+   "side_a_source_ref": "pairs_part1.json#p1-018.state_entry_a",
+   "side_b_source_ref": "pairs_part1.json#p1-018.state_entry_b",
+   "subject_key_a": "experiments/outputs/e_q11_tip.txt::chain_reference",
+   "subject_key_b": "experiments/outputs/e_q11_tip.txt::chain_reference",
+   "subject_claim_ids": [
+    "chain_reference"
+   ],
+   "same_subject": true,
+   "pairing_reason": "",
+   "expected_relation": "same_entity",
+   "routing": "intra_subject_no_identity_question"
+  },
+  {
+   "pair_id": "p1-019",
+   "side_a_source_ref": "pairs_part1.json#p1-019.state_entry_a",
+   "side_b_source_ref": "pairs_part1.json#p1-019.state_entry_b",
+   "subject_key_a": "experiments/outputs/e_q12_tip.txt::chain_reference",
+   "subject_key_b": "experiments/outputs/e_q12_tip.txt::chain_reference",
+   "subject_claim_ids": [
+    "chain_reference"
+   ],
+   "same_subject": true,
+   "pairing_reason": "",
+   "expected_relation": "same_entity",
+   "routing": "intra_subject_no_identity_question"
+  },
+  {
+   "pair_id": "p1-020",
+   "side_a_source_ref": "pairs_part1.json#p1-020.state_entry_a",
+   "side_b_source_ref": "pairs_part1.json#p1-020.state_entry_b",
+   "subject_key_a": "tests/receipts.jsonl::chain_reference",
+   "subject_key_b": "receipts/probe_gate_chain.jsonl::chain_reference",
+   "subject_claim_ids": [
+    "chain_reference"
+   ],
+   "same_subject": false,
+   "pairing_reason": "",
+   "expected_relation": "different_entity",
+   "routing": "cross_subject_same_issue_question"
+  },
+  {
+   "pair_id": "p1-021",
+   "side_a_source_ref": "pairs_part1.json#p1-021.state_entry_a",
+   "side_b_source_ref": "pairs_part1.json#p1-021.state_entry_b",
+   "subject_key_a": "tests/receipts.jsonl::chain_reference",
+   "subject_key_b": "receipts/probe_gate_chain.jsonl::chain_reference",
+   "subject_claim_ids": [
+    "chain_reference"
+   ],
+   "same_subject": false,
+   "pairing_reason": "",
+   "expected_relation": "different_entity",
+   "routing": "cross_subject_same_issue_question"
+  },
+  {
+   "pair_id": "p1-022",
+   "side_a_source_ref": "pairs_part1.json#p1-022.state_entry_a",
+   "side_b_source_ref": "pairs_part1.json#p1-022.state_entry_b",
+   "subject_key_a": "receipts/e_q13_chain.jsonl::chain_reference",
+   "subject_key_b": "receipts/e_q14_chain.jsonl::chain_reference",
+   "subject_claim_ids": [
+    "chain_reference"
+   ],
+   "same_subject": false,
+   "pairing_reason": "",
+   "expected_relation": "different_entity",
+   "routing": "cross_subject_same_issue_question"
+  },
+  {
+   "pair_id": "p1-023",
+   "side_a_source_ref": "pairs_part1.json#p1-023.state_entry_a",
+   "side_b_source_ref": "pairs_part1.json#p1-023.state_entry_b",
+   "subject_key_a": "receipts/e_q15_chain.jsonl::chain_reference",
+   "subject_key_b": "receipts/e_q16_chain.jsonl::chain_reference",
+   "subject_claim_ids": [
+    "chain_reference"
+   ],
+   "same_subject": false,
+   "pairing_reason": "",
+   "expected_relation": "different_entity",
+   "routing": "cross_subject_same_issue_question"
+  },
+  {
+   "pair_id": "p1-024",
+   "side_a_source_ref": "pairs_part1.json#p1-024.state_entry_a",
+   "side_b_source_ref": "pairs_part1.json#p1-024.state_entry_b",
+   "subject_key_a": "receipts/e_q16_chain.jsonl::chain_reference",
+   "subject_key_b": "receipts/e_q15_chain.jsonl::chain_reference",
+   "subject_claim_ids": [
+    "chain_reference"
+   ],
+   "same_subject": false,
+   "pairing_reason": "",
+   "expected_relation": "different_entity",
+   "routing": "cross_subject_same_issue_question"
+  },
+  {
+   "pair_id": "p1-025",
+   "side_a_source_ref": "pairs_part1.json#p1-025.state_entry_a",
+   "side_b_source_ref": "pairs_part1.json#p1-025.state_entry_b",
+   "subject_key_a": "receipts/e_q15_chain.jsonl::chain_reference",
+   "subject_key_b": "receipts/e_q14_chain.jsonl::chain_reference",
+   "subject_claim_ids": [
+    "chain_reference"
+   ],
+   "same_subject": false,
+   "pairing_reason": "",
+   "expected_relation": "different_entity",
+   "routing": "cross_subject_same_issue_question"
+  },
+  {
+   "pair_id": "p1-026",
+   "side_a_source_ref": "pairs_part1.json#p1-026.state_entry_a",
+   "side_b_source_ref": "pairs_part1.json#p1-026.state_entry_b",
+   "subject_key_a": "receipts/e_q16_chain.jsonl::chain_reference",
+   "subject_key_b": "receipts/e_q13_chain.jsonl::chain_reference",
+   "subject_claim_ids": [
+    "chain_reference"
+   ],
+   "same_subject": false,
+   "pairing_reason": "",
+   "expected_relation": "different_entity",
+   "routing": "cross_subject_same_issue_question"
+  },
+  {
+   "pair_id": "p1-027",
+   "side_a_source_ref": "pairs_part1.json#p1-027.state_entry_a",
+   "side_b_source_ref": "pairs_part1.json#p1-027.state_entry_b",
+   "subject_key_a": "experiments/outputs/e_q11_tip.txt::chain_reference",
+   "subject_key_b": "experiments/outputs/e_q12_tip.txt::chain_reference",
+   "subject_claim_ids": [
+    "chain_reference"
+   ],
+   "same_subject": false,
+   "pairing_reason": "",
+   "expected_relation": "different_entity",
+   "routing": "cross_subject_same_issue_question"
+  },
+  {
+   "pair_id": "p1-028",
+   "side_a_source_ref": "pairs_part1.json#p1-028.state_entry_a",
+   "side_b_source_ref": "pairs_part1.json#p1-028.state_entry_b",
+   "subject_key_a": "receipts/e_q13_chain.jsonl::chain_reference",
+   "subject_key_b": "receipts/e_q15_chain.jsonl::chain_reference",
+   "subject_claim_ids": [
+    "chain_reference"
+   ],
+   "same_subject": false,
+   "pairing_reason": "",
+   "expected_relation": "different_entity",
+   "routing": "cross_subject_same_issue_question"
+  },
+  {
+   "pair_id": "p1-029",
+   "side_a_source_ref": "pairs_part1.json#p1-029.state_entry_a",
+   "side_b_source_ref": "pairs_part1.json#p1-029.state_entry_b",
+   "subject_key_a": "receipts/e_q14_chain.jsonl::chain_reference",
+   "subject_key_b": "receipts/e_q16_chain.jsonl::chain_reference",
+   "subject_claim_ids": [
+    "chain_reference"
+   ],
+   "same_subject": false,
+   "pairing_reason": "",
+   "expected_relation": "different_entity",
+   "routing": "cross_subject_same_issue_question"
+  },
+  {
+   "pair_id": "p1-030",
+   "side_a_source_ref": "pairs_part1.json#p1-030.state_entry_a",
+   "side_b_source_ref": "pairs_part1.json#p1-030.state_entry_b",
+   "subject_key_a": "receipts/e_q15_chain.jsonl::chain_reference",
+   "subject_key_b": "receipts/probe_gate_chain.jsonl::chain_reference",
+   "subject_claim_ids": [
+    "chain_reference"
+   ],
+   "same_subject": false,
+   "pairing_reason": "",
+   "expected_relation": "different_entity",
+   "routing": "cross_subject_same_issue_question"
+  },
+  {
+   "pair_id": "p1-031",
+   "side_a_source_ref": "pairs_part1.json#p1-031.state_entry_a",
+   "side_b_source_ref": "pairs_part1.json#p1-031.state_entry_b",
+   "subject_key_a": "receipts/e_q16_chain.jsonl::chain_reference",
+   "subject_key_b": "receipts/probe_gate_chain.jsonl::chain_reference",
+   "subject_claim_ids": [
+    "chain_reference"
+   ],
+   "same_subject": false,
+   "pairing_reason": "",
+   "expected_relation": "different_entity",
+   "routing": "cross_subject_same_issue_question"
+  },
+  {
+   "pair_id": "p1-032",
+   "side_a_source_ref": "pairs_part1.json#p1-032.state_entry_a",
+   "side_b_source_ref": "pairs_part1.json#p1-032.state_entry_b",
+   "subject_key_a": "experiments/outputs/e_q11_tip.txt::chain_reference",
+   "subject_key_b": "experiments/outputs/e_q12_tip.txt::chain_reference",
+   "subject_claim_ids": [
+    "chain_reference"
+   ],
+   "same_subject": false,
+   "pairing_reason": "",
+   "expected_relation": "different_entity",
+   "routing": "cross_subject_same_issue_question"
+  },
+  {
+   "pair_id": "p1-033",
+   "side_a_source_ref": "pairs_part1.json#p1-033.state_entry_a",
+   "side_b_source_ref": "pairs_part1.json#p1-033.state_entry_b",
+   "subject_key_a": "receipts/e_q13_chain.jsonl::chain_reference",
+   "subject_key_b": "receipts/e_q14_chain.jsonl::chain_reference",
+   "subject_claim_ids": [
+    "chain_reference"
+   ],
+   "same_subject": false,
+   "pairing_reason": "",
+   "expected_relation": "different_entity",
+   "routing": "cross_subject_same_issue_question"
+  },
+  {
+   "pair_id": "p1-034",
+   "side_a_source_ref": "pairs_part1.json#p1-034.state_entry_a",
+   "side_b_source_ref": "pairs_part1.json#p1-034.state_entry_b",
+   "subject_key_a": "receipts/e_q1_chain.jsonl::chain_reference",
+   "subject_key_b": "receipts/e_q1_chain.jsonl::chain_reference",
+   "subject_claim_ids": [
+    "chain_reference"
+   ],
+   "same_subject": true,
+   "pairing_reason": "",
+   "expected_relation": "same_entity",
+   "routing": "intra_subject_no_identity_question"
+  },
+  {
+   "pair_id": "p1-035",
+   "side_a_source_ref": "pairs_part1.json#p1-035.state_entry_a",
+   "side_b_source_ref": "pairs_part1.json#p1-035.state_entry_b",
+   "subject_key_a": "receipts/e_q2_chain.jsonl::chain_reference",
+   "subject_key_b": "receipts/e_q2_chain.jsonl::chain_reference",
+   "subject_claim_ids": [
+    "chain_reference"
+   ],
+   "same_subject": true,
+   "pairing_reason": "",
+   "expected_relation": "same_entity",
+   "routing": "intra_subject_no_identity_question"
+  },
+  {
+   "pair_id": "p1-036",
+   "side_a_source_ref": "pairs_part1.json#p1-036.state_entry_a",
+   "side_b_source_ref": "pairs_part1.json#p1-036.state_entry_b",
+   "subject_key_a": "receipts/e_q5_chain.jsonl::chain_reference",
+   "subject_key_b": "receipts/e_q5_chain.jsonl::chain_reference",
+   "subject_claim_ids": [
+    "chain_reference"
+   ],
+   "same_subject": true,
+   "pairing_reason": "",
+   "expected_relation": "same_entity",
+   "routing": "intra_subject_no_identity_question"
+  },
+  {
+   "pair_id": "p1-037",
+   "side_a_source_ref": "pairs_part1.json#p1-037.state_entry_a",
+   "side_b_source_ref": "pairs_part1.json#p1-037.state_entry_b",
+   "subject_key_a": "receipts/e_q6_chain.jsonl::chain_reference",
+   "subject_key_b": "receipts/e_q6_chain.jsonl::chain_reference",
+   "subject_claim_ids": [
+    "chain_reference"
+   ],
+   "same_subject": true,
+   "pairing_reason": "",
+   "expected_relation": "same_entity",
+   "routing": "intra_subject_no_identity_question"
+  },
+  {
+   "pair_id": "p1-038",
+   "side_a_source_ref": "pairs_part1.json#p1-038.state_entry_a",
+   "side_b_source_ref": "pairs_part1.json#p1-038.state_entry_b",
+   "subject_key_a": "receipts/e_q7_chain.jsonl::chain_reference",
+   "subject_key_b": "receipts/e_q7_chain.jsonl::chain_reference",
+   "subject_claim_ids": [
+    "chain_reference"
+   ],
+   "same_subject": true,
+   "pairing_reason": "",
+   "expected_relation": "same_entity",
+   "routing": "intra_subject_no_identity_question"
+  },
+  {
+   "pair_id": "p1-039",
+   "side_a_source_ref": "pairs_part1.json#p1-039.state_entry_a",
+   "side_b_source_ref": "pairs_part1.json#p1-039.state_entry_b",
+   "subject_key_a": "receipts/e_q8_chain.jsonl::chain_reference",
+   "subject_key_b": "receipts/e_q8_chain.jsonl::chain_reference",
+   "subject_claim_ids": [
+    "chain_reference"
+   ],
+   "same_subject": true,
+   "pairing_reason": "",
+   "expected_relation": "same_entity",
+   "routing": "intra_subject_no_identity_question"
+  },
+  {
+   "pair_id": "p1-040",
+   "side_a_source_ref": "pairs_part1.json#p1-040.state_entry_a",
+   "side_b_source_ref": "pairs_part1.json#p1-040.state_entry_b",
+   "subject_key_a": "receipts/e_q10_chain.jsonl::chain_reference",
+   "subject_key_b": "receipts/e_q10_chain.jsonl::chain_reference",
+   "subject_claim_ids": [
+    "chain_reference"
+   ],
+   "same_subject": true,
+   "pairing_reason": "",
+   "expected_relation": "same_entity",
+   "routing": "intra_subject_no_identity_question"
+  },
+  {
+   "pair_id": "p1-041",
+   "side_a_source_ref": "pairs_part1.json#p1-041.state_entry_a",
+   "side_b_source_ref": "pairs_part1.json#p1-041.state_entry_b",
+   "subject_key_a": "crossimpl/receipts/crossimpl_chain.jsonl::chain_reference",
+   "subject_key_b": "crossimpl/receipts/crossimpl_chain.jsonl::chain_reference",
+   "subject_claim_ids": [
+    "chain_reference"
+   ],
+   "same_subject": true,
+   "pairing_reason": "",
+   "expected_relation": "same_entity",
+   "routing": "intra_subject_no_identity_question"
+  },
+  {
+   "pair_id": "p1-042",
+   "side_a_source_ref": "pairs_part1.json#p1-042.state_entry_a",
+   "side_b_source_ref": "pairs_part1.json#p1-042.state_entry_b",
+   "subject_key_a": "crossimpl/receipts/cimpl_chain.jsonl::chain_reference",
+   "subject_key_b": "crossimpl/receipts/cimpl_chain.jsonl::chain_reference",
+   "subject_claim_ids": [
+    "chain_reference"
+   ],
+   "same_subject": true,
+   "pairing_reason": "",
+   "expected_relation": "same_entity",
+   "routing": "intra_subject_no_identity_question"
+  },
+  {
+   "pair_id": "p1-043",
+   "side_a_source_ref": "pairs_part1.json#p1-043.state_entry_a",
+   "side_b_source_ref": "pairs_part1.json#p1-043.state_entry_b",
+   "subject_key_a": "fixedpoint/receipts/fixedpoint_chain.jsonl::chain_reference",
+   "subject_key_b": "fixedpoint/receipts/fixedpoint_chain.jsonl::chain_reference",
+   "subject_claim_ids": [
+    "chain_reference"
+   ],
+   "same_subject": true,
+   "pairing_reason": "",
+   "expected_relation": "same_entity",
+   "routing": "intra_subject_no_identity_question"
+  },
+  {
+   "pair_id": "p2-S01",
+   "side_a_source_ref": "pairs_part2.json#p2-S01.state_entry_a",
+   "side_b_source_ref": "pairs_part2.json#p2-S01.state_entry_b",
+   "subject_key_a": "c3_e_q2::c3_scope",
+   "subject_key_b": "c3_e_q2::c3_scope",
+   "subject_claim_ids": [
+    "c3_scope"
+   ],
+   "same_subject": true,
+   "pairing_reason": "",
+   "expected_relation": "same_entity",
+   "routing": "intra_subject_no_identity_question"
+  },
+  {
+   "pair_id": "p2-D01",
+   "side_a_source_ref": "pairs_part2.json#p2-D01.state_entry_a",
+   "side_b_source_ref": "pairs_part2.json#p2-D01.state_entry_b",
+   "subject_key_a": "m4_wormhole_table::qwen_cache_eviction",
+   "subject_key_b": "e_q14::eq14_baseline",
+   "subject_claim_ids": [
+    "eq14_baseline",
+    "qwen_cache_eviction"
+   ],
+   "same_subject": false,
+   "pairing_reason": "",
+   "expected_relation": "different_entity",
+   "routing": "cross_subject_same_issue_question"
+  },
+  {
+   "pair_id": "p2-R01",
+   "side_a_source_ref": "pairs_part2.json#p2-R01.state_entry_a",
+   "side_b_source_ref": "pairs_part2.json#p2-R01.state_entry_b",
+   "subject_key_a": "m4_wormhole_table::m4_content_addressing",
+   "subject_key_b": "repo_license::license",
+   "subject_claim_ids": [
+    "license",
+    "m4_content_addressing"
+   ],
+   "same_subject": false,
+   "pairing_reason": "",
+   "expected_relation": "different_entity",
+   "routing": "cross_subject_same_issue_question"
+  },
+  {
+   "pair_id": "p2-S02",
+   "side_a_source_ref": "pairs_part2.json#p2-S02.state_entry_a",
+   "side_b_source_ref": "pairs_part2.json#p2-S02.state_entry_b",
+   "subject_key_a": "c3_e_q2::c3_scope",
+   "subject_key_b": "c3_e_q2::c3_scope",
+   "subject_claim_ids": [
+    "c3_scope"
+   ],
+   "same_subject": true,
+   "pairing_reason": "",
+   "expected_relation": "same_entity",
+   "routing": "intra_subject_no_identity_question"
+  },
+  {
+   "pair_id": "p2-D02",
+   "side_a_source_ref": "pairs_part2.json#p2-D02.state_entry_a",
+   "side_b_source_ref": "pairs_part2.json#p2-D02.state_entry_b",
+   "subject_key_a": "e_q16::eq16_erratum",
+   "subject_key_b": "e_q16::eq16_seedfn",
+   "subject_claim_ids": [
+    "eq16_erratum",
+    "eq16_seedfn"
+   ],
+   "same_subject": false,
+   "pairing_reason": "",
+   "expected_relation": "different_entity",
+   "routing": "cross_subject_same_issue_question"
+  },
+  {
+   "pair_id": "p2-R02",
+   "side_a_source_ref": "pairs_part2.json#p2-R02.state_entry_a",
+   "side_b_source_ref": "pairs_part2.json#p2-R02.state_entry_b",
+   "subject_key_a": "c1_e_q13::c1_claim",
+   "subject_key_b": "m4_wormhole_table::m4_content_addressing",
+   "subject_claim_ids": [
+    "c1_claim",
+    "m4_content_addressing"
+   ],
+   "same_subject": false,
+   "pairing_reason": "",
+   "expected_relation": "different_entity",
+   "routing": "cross_subject_same_issue_question"
+  },
+  {
+   "pair_id": "p2-S03",
+   "side_a_source_ref": "pairs_part2.json#p2-S03.state_entry_a",
+   "side_b_source_ref": "pairs_part2.json#p2-S03.state_entry_b",
+   "subject_key_a": "c3_e_q2::c3_scope",
+   "subject_key_b": "c3_e_q2::c3_scope",
+   "subject_claim_ids": [
+    "c3_scope"
+   ],
+   "same_subject": true,
+   "pairing_reason": "",
+   "expected_relation": "same_entity",
+   "routing": "intra_subject_no_identity_question"
+  },
+  {
+   "pair_id": "p2-D03",
+   "side_a_source_ref": "pairs_part2.json#p2-D03.state_entry_a",
+   "side_b_source_ref": "pairs_part2.json#p2-D03.state_entry_b",
+   "subject_key_a": "e_q16::seedfn_closure",
+   "subject_key_b": "e_q16::eq16_seedfn",
+   "subject_claim_ids": [
+    "eq16_seedfn",
+    "seedfn_closure"
+   ],
+   "same_subject": false,
+   "pairing_reason": "",
+   "expected_relation": "different_entity",
+   "routing": "cross_subject_same_issue_question"
+  },
+  {
+   "pair_id": "p2-R03",
+   "side_a_source_ref": "pairs_part2.json#p2-R03.state_entry_a",
+   "side_b_source_ref": "pairs_part2.json#p2-R03.state_entry_b",
+   "subject_key_a": "e_q16::eq16_seedfn",
+   "subject_key_b": "repo_license::license",
+   "subject_claim_ids": [
+    "eq16_seedfn",
+    "license"
+   ],
+   "same_subject": false,
+   "pairing_reason": "",
+   "expected_relation": "different_entity",
+   "routing": "cross_subject_same_issue_question"
+  },
+  {
+   "pair_id": "p2-S04",
+   "side_a_source_ref": "pairs_part2.json#p2-S04.state_entry_a",
+   "side_b_source_ref": "pairs_part2.json#p2-S04.state_entry_b",
+   "subject_key_a": "e_q14::eq14_baseline",
+   "subject_key_b": "e_q14::eq14_baseline",
+   "subject_claim_ids": [
+    "eq14_baseline"
+   ],
+   "same_subject": true,
+   "pairing_reason": "",
+   "expected_relation": "same_entity",
+   "routing": "intra_subject_no_identity_question"
+  },
+  {
+   "pair_id": "p2-D04",
+   "side_a_source_ref": "pairs_part2.json#p2-D04.state_entry_a",
+   "side_b_source_ref": "pairs_part2.json#p2-D04.state_entry_b",
+   "subject_key_a": "m4_wormhole_table::locality_capacity",
+   "subject_key_b": "e_q14::eq14_baseline",
+   "subject_claim_ids": [
+    "eq14_baseline",
+    "locality_capacity"
+   ],
+   "same_subject": false,
+   "pairing_reason": "",
+   "expected_relation": "different_entity",
+   "routing": "cross_subject_same_issue_question"
+  },
+  {
+   "pair_id": "p2-R04",
+   "side_a_source_ref": "pairs_part2.json#p2-R04.state_entry_a",
+   "side_b_source_ref": "pairs_part2.json#p2-R04.state_entry_b",
+   "subject_key_a": "repo_license::license",
+   "subject_key_b": "c3_e_q2::c3_scope",
+   "subject_claim_ids": [
+    "c3_scope",
+    "license"
+   ],
+   "same_subject": false,
+   "pairing_reason": "",
+   "expected_relation": "different_entity",
+   "routing": "cross_subject_same_issue_question"
+  },
+  {
+   "pair_id": "p2-S05",
+   "side_a_source_ref": "pairs_part2.json#p2-S05.state_entry_a",
+   "side_b_source_ref": "pairs_part2.json#p2-S05.state_entry_b",
+   "subject_key_a": "c1_e_q13::c1_budget",
+   "subject_key_b": "c1_e_q13::c1_budget",
+   "subject_claim_ids": [
+    "c1_budget"
+   ],
+   "same_subject": true,
+   "pairing_reason": "",
+   "expected_relation": "same_entity",
+   "routing": "intra_subject_no_identity_question"
+  },
+  {
+   "pair_id": "p2-D05",
+   "side_a_source_ref": "pairs_part2.json#p2-D05.state_entry_a",
+   "side_b_source_ref": "pairs_part2.json#p2-D05.state_entry_b",
+   "subject_key_a": "c3_e_q2::c3_gifted_proof",
+   "subject_key_b": "c3_e_q2::c3_scope",
+   "subject_claim_ids": [
+    "c3_gifted_proof",
+    "c3_scope"
+   ],
+   "same_subject": false,
+   "pairing_reason": "",
+   "expected_relation": "different_entity",
+   "routing": "cross_subject_same_issue_question"
+  },
+  {
+   "pair_id": "p2-R05",
+   "side_a_source_ref": "pairs_part2.json#p2-R05.state_entry_a",
+   "side_b_source_ref": "pairs_part2.json#p2-R05.state_entry_b",
+   "subject_key_a": "c3_e_q2::c3_scope",
+   "subject_key_b": "c5p_e_q10::c5p_definitional",
+   "subject_claim_ids": [
+    "c3_scope",
+    "c5p_definitional"
+   ],
+   "same_subject": false,
+   "pairing_reason": "",
+   "expected_relation": "different_entity",
+   "routing": "cross_subject_same_issue_question"
+  },
+  {
+   "pair_id": "p2-S06",
+   "side_a_source_ref": "pairs_part2.json#p2-S06.state_entry_a",
+   "side_b_source_ref": "pairs_part2.json#p2-S06.state_entry_b",
+   "subject_key_a": "c1_e_q13::c1_budget",
+   "subject_key_b": "c1_e_q13::c1_budget",
+   "subject_claim_ids": [
+    "c1_budget"
+   ],
+   "same_subject": true,
+   "pairing_reason": "",
+   "expected_relation": "same_entity",
+   "routing": "intra_subject_no_identity_question"
+  },
+  {
+   "pair_id": "p2-D06",
+   "side_a_source_ref": "pairs_part2.json#p2-D06.state_entry_a",
+   "side_b_source_ref": "pairs_part2.json#p2-D06.state_entry_b",
+   "subject_key_a": "c1_e_q13::c1_claim",
+   "subject_key_b": "c1_e_q13::c1_budget",
+   "subject_claim_ids": [
+    "c1_budget",
+    "c1_claim"
+   ],
+   "same_subject": false,
+   "pairing_reason": "",
+   "expected_relation": "different_entity",
+   "routing": "cross_subject_same_issue_question"
+  },
+  {
+   "pair_id": "p2-R06",
+   "side_a_source_ref": "pairs_part2.json#p2-R06.state_entry_a",
+   "side_b_source_ref": "pairs_part2.json#p2-R06.state_entry_b",
+   "subject_key_a": "m4_wormhole_table::m4_content_addressing",
+   "subject_key_b": "c1_e_q13::c1_budget",
+   "subject_claim_ids": [
+    "c1_budget",
+    "m4_content_addressing"
+   ],
+   "same_subject": false,
+   "pairing_reason": "",
+   "expected_relation": "different_entity",
+   "routing": "cross_subject_same_issue_question"
+  },
+  {
+   "pair_id": "p2-S07",
+   "side_a_source_ref": "pairs_part2.json#p2-S07.state_entry_a",
+   "side_b_source_ref": "pairs_part2.json#p2-S07.state_entry_b",
+   "subject_key_a": "c1_e_q13::c1_budget",
+   "subject_key_b": "c1_e_q13::c1_budget",
+   "subject_claim_ids": [
+    "c1_budget"
+   ],
+   "same_subject": true,
+   "pairing_reason": "",
+   "expected_relation": "same_entity",
+   "routing": "intra_subject_no_identity_question"
+  },
+  {
+   "pair_id": "p2-D07",
+   "side_a_source_ref": "pairs_part2.json#p2-D07.state_entry_a",
+   "side_b_source_ref": "pairs_part2.json#p2-D07.state_entry_b",
+   "subject_key_a": "e_q9_11_12::eq9_chainless",
+   "subject_key_b": "e_q15::eq15",
+   "subject_claim_ids": [
+    "eq15",
+    "eq9_chainless"
+   ],
+   "same_subject": false,
+   "pairing_reason": "",
+   "expected_relation": "different_entity",
+   "routing": "cross_subject_same_issue_question"
+  },
+  {
+   "pair_id": "p2-R07",
+   "side_a_source_ref": "pairs_part2.json#p2-R07.state_entry_a",
+   "side_b_source_ref": "pairs_part2.json#p2-R07.state_entry_b",
+   "subject_key_a": "e_q14::eq14_baseline",
+   "subject_key_b": "e_q15::eq15",
+   "subject_claim_ids": [
+    "eq14_baseline",
+    "eq15"
+   ],
+   "same_subject": false,
+   "pairing_reason": "",
+   "expected_relation": "different_entity",
+   "routing": "cross_subject_same_issue_question"
+  },
+  {
+   "pair_id": "p2-S08",
+   "side_a_source_ref": "pairs_part2.json#p2-S08.state_entry_a",
+   "side_b_source_ref": "pairs_part2.json#p2-S08.state_entry_b",
+   "subject_key_a": "repo_license::license",
+   "subject_key_b": "repo_license::license",
+   "subject_claim_ids": [
+    "license"
+   ],
+   "same_subject": true,
+   "pairing_reason": "",
+   "expected_relation": "same_entity",
+   "routing": "intra_subject_no_identity_question"
+  },
+  {
+   "pair_id": "p2-D08",
+   "side_a_source_ref": "pairs_part2.json#p2-D08.state_entry_a",
+   "side_b_source_ref": "pairs_part2.json#p2-D08.state_entry_b",
+   "subject_key_a": "c5p_e_q10::c5p_definitional",
+   "subject_key_b": "m4_wormhole_table::m4_content_addressing",
+   "subject_claim_ids": [
+    "c5p_definitional",
+    "m4_content_addressing"
+   ],
+   "same_subject": false,
+   "pairing_reason": "",
+   "expected_relation": "different_entity",
+   "routing": "cross_subject_same_issue_question"
+  },
+  {
+   "pair_id": "p2-R08",
+   "side_a_source_ref": "pairs_part2.json#p2-R08.state_entry_a",
+   "side_b_source_ref": "pairs_part2.json#p2-R08.state_entry_b",
+   "subject_key_a": "c1_e_q13::c1_claim",
+   "subject_key_b": "m4_wormhole_table::qwen_cache_eviction",
+   "subject_claim_ids": [
+    "c1_claim",
+    "qwen_cache_eviction"
+   ],
+   "same_subject": false,
+   "pairing_reason": "",
+   "expected_relation": "different_entity",
+   "routing": "cross_subject_same_issue_question"
+  },
+  {
+   "pair_id": "p2-S09",
+   "side_a_source_ref": "pairs_part2.json#p2-S09.state_entry_a",
+   "side_b_source_ref": "pairs_part2.json#p2-S09.state_entry_b",
+   "subject_key_a": "e_q9_11_12::eq9_chainless",
+   "subject_key_b": "e_q9_11_12::eq9_chainless",
+   "subject_claim_ids": [
+    "eq9_chainless"
+   ],
+   "same_subject": true,
+   "pairing_reason": "",
+   "expected_relation": "same_entity",
+   "routing": "intra_subject_no_identity_question"
+  },
+  {
+   "pair_id": "p2-D09",
+   "side_a_source_ref": "pairs_part2.json#p2-D09.state_entry_a",
+   "side_b_source_ref": "pairs_part2.json#p2-D09.state_entry_b",
+   "subject_key_a": "resource_profile::resource_profile",
+   "subject_key_b": "e_q15::eq15",
+   "subject_claim_ids": [
+    "eq15",
+    "resource_profile"
+   ],
+   "same_subject": false,
+   "pairing_reason": "",
+   "expected_relation": "different_entity",
+   "routing": "cross_subject_same_issue_question"
+  },
+  {
+   "pair_id": "p2-R09",
+   "side_a_source_ref": "pairs_part2.json#p2-R09.state_entry_a",
+   "side_b_source_ref": "pairs_part2.json#p2-R09.state_entry_b",
+   "subject_key_a": "m4_wormhole_table::locality_capacity",
+   "subject_key_b": "resource_profile::resource_profile",
+   "subject_claim_ids": [
+    "locality_capacity",
+    "resource_profile"
+   ],
+   "same_subject": false,
+   "pairing_reason": "",
+   "expected_relation": "different_entity",
+   "routing": "cross_subject_same_issue_question"
+  },
+  {
+   "pair_id": "p2-S10",
+   "side_a_source_ref": "pairs_part2.json#p2-S10.state_entry_a",
+   "side_b_source_ref": "pairs_part2.json#p2-S10.state_entry_b",
+   "subject_key_a": "repo_license::license",
+   "subject_key_b": "repo_license::license",
+   "subject_claim_ids": [
+    "license"
+   ],
+   "same_subject": true,
+   "pairing_reason": "",
+   "expected_relation": "same_entity",
+   "routing": "intra_subject_no_identity_question"
+  },
+  {
+   "pair_id": "p2-D10",
+   "side_a_source_ref": "pairs_part2.json#p2-D10.state_entry_a",
+   "side_b_source_ref": "pairs_part2.json#p2-D10.state_entry_b",
+   "subject_key_a": "cimpl_c99_sealer::c99_sealer",
+   "subject_key_b": "c5p_e_q10::c5p_definitional",
+   "subject_claim_ids": [
+    "c5p_definitional",
+    "c99_sealer"
+   ],
+   "same_subject": false,
+   "pairing_reason": "",
+   "expected_relation": "different_entity",
+   "routing": "cross_subject_same_issue_question"
+  },
+  {
+   "pair_id": "p2-R10",
+   "side_a_source_ref": "pairs_part2.json#p2-R10.state_entry_a",
+   "side_b_source_ref": "pairs_part2.json#p2-R10.state_entry_b",
+   "subject_key_a": "c3_e_q2::c3_scope",
+   "subject_key_b": "repo_license::license",
+   "subject_claim_ids": [
+    "c3_scope",
+    "license"
+   ],
+   "same_subject": false,
+   "pairing_reason": "",
+   "expected_relation": "different_entity",
+   "routing": "cross_subject_same_issue_question"
+  }
+ ],
+ "refusals": [],
+ "asked": {
+  "the_model_is_asked": [
+   "within-subject questions only for intra_subject pairs (corroboration, added information, severity comparison)",
+   "cross-subject same-issue reads for cross_subject pairs, as curator evidence for an append-only claim-registry amendment -- never an automatic merge"
+  ],
+  "the_model_is_not_asked": [
+   "same-entity questions for cross-subject pairs (BARRED by R3)",
+   "subject identity for any pair (keys are code-computed)",
+   "anything about artifacts' existence (grounding law, cookbook 0)"
+  ],
+  "outputs_that_amend_the_claim_registry": [
+   "a yes on a cross-subject same-issue question files an append-only amendment request to the curator queue; superseded claim ids stay visible"
+  ]
+ },
+ "sealing": {
+  "append_only": true,
+  "no_model_output_in_keys": true,
+  "declaration": "every subject_key_*, subject_claim_ids, same_subject and routing value in this battery was computed without any LLM output (retrofit T5-b, code-only, deterministic re-derivation guarded)",
+  "preregistration_sha256": "e507fb264881487975abc28f8fcd07bbadae7aeb05b1fa2040a83d9cb774d3ee",
+  "sealed_before_first_call_at": "2026-10-18T02:53:18Z"
+ }
+}

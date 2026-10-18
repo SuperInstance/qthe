@@ -100,3 +100,62 @@ economics flip when the expensive tier is actually expensive.
   `cascade_computation.json`).
 - Round running total: T4-a $0.0221 + T4-c $0.0023 + T4-b $0.0121 =
   **$0.0365** of the $0.15 round ceiling.
+
+---
+
+## ADDENDUM — ORCH-R15 T6-a: the Hy4 verify-tier re-price (the r13 pointer, discharged)
+
+**Trigger.** The r13 standing decision's re-registration pointer fired: "if the
+tavern ever runs expensive adjudicator seats (Hy4 at $0.016/audit) as the
+verify tier, re-run this sweep with arm-1 priced at seat prices." R15 ran
+`tencent/Hy4-preview` AS the verify tier on the sealed 90-item corpus
+(sub-sample: all 14 BAD + 9/14 CLEAN covered before the lane ceiling;
+JUDGMENT not reached — all coverage losses receipted in
+`reprice_analysis.json`).
+
+**The measured seat.** $0.0068/audit (DeepInfra `estimated_cost` basis,
+Erratum 1; the registration's house constants under-priced ~1.5× — receipted).
+Hy4-preview is a reasoning model: **2,400 reasoning tokens on every call,
+96% of output, never cached** — the prefix cache moves the seat price only
+21% ($0.0084 cold → $0.0066 warm). The r11 law "multi-turn rounds cash the
+discounts" does NOT transfer to reasoning-model audit seats.
+
+**The quality axis (the pointer's hidden premise, now measured).** The
+pointer assumed the expensive tier was at least as good as the cheap ones.
+It is not:
+
+| tier | price | BAD recall | false-BAD on CLEAN |
+|---|---|---|---|
+| battery (jev, sealed r13) | $0.0121 all-90 | 71.4% | 30.2% fires |
+| earned loop (r13 arm 1) | $0.0306 all-90 | 81.8% | (its loop-priced subsets) |
+| **Hy4-preview verify tier** | **$0.0068/audit ($0.61 all-90)** | **57.1%** | **55.6%** |
+
+Worse than both, on both axes, at 50× the loop's price. The orientation is
+inverted: Hy4 **convicts dense-true claims** (5/9 CLEAN → BAD — the same
+claim-density confound the battery showed, amplified) and **defers on actual
+misstatements** (6/14 BAD → JUDGMENT, incl. the muse/r11 invented-flag class
+the earned loop catches mechanically at $0).
+
+**The re-priced sweep.** cascade@0.7 = battery $0.0121 + 28 escalations ×
+$0.0068 = **$0.2026**, measured BAD recall **42.9%** — *worse than the raw
+verify tier* (57.1%): the battery and Hy4 miss **different** items, so the
+gate compounds failure modes instead of complementing them. F-b: no
+dominance (cheaper, yes; recall worse). All-expensive-90: $0.6124 at 57.1%.
+
+**Verdict.** The r13 pointer is discharged **with prejudice**: the economics
+flip is moot because the quality axis was never there to flip. Price does
+not buy adjudication on briefing-side audit traffic. The r13 standing
+decision SURVIVES unchanged — battery as triage hint, earned loop as the
+middle rung, mechanical layer at $0 for the invented-flag class.
+
+**Budget erratum (receipted).** Real lane spend $0.1565 vs the $0.1357 the
+fail-stop counter saw: rows 1–10 were counted at the pre-erratum house
+constants. Round total $0.1565 + creative-round calls exceeds the $0.15
+round ceiling by ~$0.01 — cause: the counter consumed the wrong price field
+until Erratum 1 switched basis mid-run. Law for MODEL-LEARNINGS: **ceiling
+counters must consume the authoritative price field from call #1.**
+
+Artifacts: `reprice_hy4.py` (the probe), `reprice_subsample.json` (frozen),
+`reprice_rows.jsonl` (23 sealed calls), `reprice_analysis.json` (this table's
+derivation), registration + Erratum 1 + Amendments 1–2 in
+`docs/discussions/2026-10-18-orch-r15-registration.md`.

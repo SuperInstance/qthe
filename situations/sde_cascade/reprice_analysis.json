@@ -1,0 +1,57 @@
+{
+ "lane": "T6-a",
+ "round": "ORCH-R15",
+ "basis": {
+  "price": "DeepInfra usage.estimated_cost (Erratum 1); rows 1-9 house-constant underestimates receipted, recomputed here",
+  "per_audit_usd": 0.006805,
+  "spend_real_usd": 0.1565,
+  "calls": 23,
+  "reasoning_tokens_per_call": "2400 (constant; 96% of output; never cached)",
+  "cache_effect": "cold $0.0084 -> warm $0.0066 (21%); reasoning dominates"
+ },
+ "coverage": {
+  "BAD": "14/14 (full denominator)",
+  "CLEAN": "9/14 (ceiling-cut, partial, receipted)",
+  "JUDGMENT": "0/6 (not reached, receipted)"
+ },
+ "hy4_verify_tier": {
+  "bad_recall": 0.5714,
+  "judgment_on_bad": 0.4286,
+  "false_bad_on_clean": 0.5556,
+  "judgment_on_clean": 0.3333,
+  "verdict_counts_on_bad": {
+   "BAD": 8,
+   "JUDGMENT": 6
+  },
+  "verdict_counts_on_clean": {
+   "BAD": 5,
+   "CLEAN": 1,
+   "JUDGMENT": 3
+  },
+  "orientation": "convicts dense-true claims, defers on actual misstatements (the muse/r11 invented-flag class -> JUDGMENT, not BAD)"
+ },
+ "repriced_sweep_at_0.7": {
+  "all_expensive_hy4_90": {
+   "cost_usd": 0.6124,
+   "bad_recall": 0.5714
+  },
+  "cascade_battery_plus_hy4_on_escalated": {
+   "cost_usd": 0.2026,
+   "bad_recall_ceiling_battery_gated": 0.7143,
+   "bad_recall_measured": 0.4286
+  },
+  "r13_sealed_stack": {
+   "battery_usd": 0.012118,
+   "earned_loop_usd": 0.0306,
+   "battery_bad_recall": 0.7143,
+   "loop_bad_recall": 0.818,
+   "battery_clean_fire": 0.302
+  }
+ },
+ "falsifiers": {
+  "F_a_validity_hy4_recall_ge_6_of_14": "PASS (8/14)",
+  "F_b_dominance_cascade_vs_all_expensive": "cascade strictly cheaper (-66.9%), recall WORSE than all-expensive -> no dominance",
+  "F_c_cache_law": "prefix cache moves the seat price only 21% (reasoning-dominated); the r11 multi-turn discount law does NOT transfer to reasoning-model audit seats"
+ },
+ "headline": "The expensive verify tier is dominated by both cheaper tiers on this corpus: Hy4-preview at $0.0068/audit delivers 57.1% BAD recall and 55.6% false-BAD on CLEAN, vs the $0.0121 battery's 71.4%/30.2% and the earned loop's 81.8% at $0.00034/finding. The r13 pointer's premise (economics flip when the expensive tier is actually expensive) is VOID at the quality axis: price does not buy adjudication here. The r13 standing decision (battery as triage hint, earned loop as the middle rung) SURVIVES the re-price."
+}

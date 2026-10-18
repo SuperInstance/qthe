@@ -152,3 +152,19 @@
 - Zero other arena traffic this round (fleet citizenship + code lanes
   dominated); the tavern's instruments were used where they price: opinions
   before drops, not opinions for their own sake.
+
+---
+
+## ORCH-R15 additions (Hy4 audit-seat law + two ops laws)
+
+| law | receipt |
+|---|---|
+| **Hy4 audit-seat law**: tencent/Hy4-preview at temp 0 on briefing-side adjudication = $0.0068/call, 2,400 reasoning tokens EVERY call (96% of output, never cached, prefix cache only −21%), BAD recall 57.1% with 55.6% false-BAD — convicts dense-true claims, defers (JUDGMENT) on invented-flag misstatements. Price does not buy adjudication on this traffic class. Keep Hy4 for seat-work where its r11 adjudicator value was earned (attack/design critique), not for verify-tier audit gates. | `situations/sde_cascade/reprice_analysis.json` (23 sealed calls) |
+| **Counter-basis law**: budget fail-stops must consume the provider's authoritative cost field (`usage.estimated_cost` on DeepInfra) from call #1. Switching price basis mid-run (r15 Erratum 1) under-tracks ~1.5× and silently overspends the ceiling. | r15 budget erratum, `reprice_analysis.json` basis note |
+| **Reaper law (this build env)**: backgrounded processes (even `setsid nohup`) are reaped between tool calls — long probe runs must be foreground chunks with a `--max-seconds` clean-exit budget so no call dies mid-flight unreceipted. | r15 probe ops, 2 dead runs receipted |
+
+Devil's-advocate calibration note (creative round): Seed-2.0-mini's expansion
+ideas were creative but 1 of 2 was factually wrong (proposed a "23-cell
+Chebyshev within sight range" control — Moore-8 sight is 1 cell). Creative
+expansion ≠ factual grounding; verify before adopting. Receipt:
+`situations/creative_r15/opinions_r15.jsonl`.

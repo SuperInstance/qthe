@@ -71,6 +71,22 @@ verified against the repository before it counts — the house law is
   ledger, three devil's-advocate-passed seeds, an embassy entry, and two
   gift PRs (gitpp-reading-room #1, jev-semantic #1) —
   `situations/fleet_gifts/GIFTS-LEDGER.md`.
+- **The re-price round (r15):** the r13 cascade pointer discharged **with
+  prejudice** by measurement — Hy4-preview run as the verify tier on the
+  sealed 90-item corpus loses on BOTH axes at 50× the price ($0.61/audit-run,
+  57.1% BAD recall, 55.6% false-BAD, vs the battery's 71.4%/30.2% at $0.012
+  and the earned loop's 81.8%); the cascade compounds failure modes (42.9%)
+  because the battery and the tier miss different items; 2,400 reasoning
+  tokens per call never cached (`situations/sde_cascade/reprice_analysis.json`).
+  The subject-key cross-exam battery **sealed and ready** — 73 pairs, 146/146
+  keys re-derived by concatenation, zero refusals
+  (`situations/entity_alignment/cross_exam_battery_v1.json`). The
+  Cloudflare deployment design written from the fleet's live patterns,
+  token-plug-and-play with a LAYER 2 menu (C6–C8) —
+  [docs/CLOUDFLARE-DEPLOYMENT.md](docs/CLOUDFLARE-DEPLOYMENT.md). And the
+  line's first creative works committed to the fleet's totem forest:
+  [the fourth state](https://github.com/SuperInstance/AI-Writings/blob/main/POETRY/the-fourth-state.md)
+  + [the worms turn on](https://github.com/SuperInstance/AI-Writings/blob/main/short-stories/the-worms-turn-on.md).
 
 ## Documentation
 
