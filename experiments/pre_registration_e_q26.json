@@ -1,0 +1,37 @@
+{
+ "law": "REGISTRATION of E-Q26 — axis algebra (ORCH-R25 lane T16-b): does the noul question-map space support ANALOGY ARITHMETIC? Ten sealed compositions v(a) - v(b) + v(c) built purely from the SEALED E-Q22 noul vectors; the question is whether the composed vector retrieves the analogy target d. Every coordinate is a named, diagnosable question — axis algebra where the arithmetic is interpretable axis by axis. ZERO new embed calls (pure re-analysis of sealed vectors + live queries). The r24 ideas battery's cheapest candidate (I-2, novelty 3.5 / feasibility 4).",
+ "task_id": "ORCH-R25/T16-b",
+ "agent": "qthe orchestrator (Z.ai), erised fleet line",
+ "wave": "ORCH-R25",
+ "repo": "SuperInstance/qthe",
+ "repo_at_registration": "34b5f1f",
+ "provenance_of_the_question": "The r24 ideas battery (I-2, the operator's standing challenge) + the deep-embedding round's vector stockpile: 40 sealed noul vectors (E-Q22) whose space supports retrieval at 0.80. Word2vec's king - man + woman = queen is the ancestor; nobody (per the prior-art pass) has run analogy arithmetic on QA-score embeddings, where each coordinate is a named question.",
+ "design_frozen": {
+  "vectors": "the E-Q22 noul arm (N), 20 records, sealed in situations/embedding_r24/eval_eq22_results.json",
+  "compositions": "Ten, deterministic, frozen: FIVE ANALOGY compositions (a and d same family, b and c same other family: comp = v(a) - v(b) + v(c), target d) + FIVE TRANSLATION compositions (a and d DIFFERENT families: does subtracting one family's offset and adding another's carry the record across?). Family order N,P,Q,A; record order within family by id. The exact 10 tuples are derived by the rule: for i in 0..4, analogy_i uses (a = F[i%4][0], d = F[i%4][(i//4)+1] or F[(i+1)%4][0] fallback, b = F[(i+1)%4][0], c = F[(i+1)%4][1]) and translation_i uses (a = F[i%4][0], d = F[(i+2)%4][0], b = F[(i+1)%4][0], c = F[(i+3)%4][0]) — emitted verbatim into the results file before scoring.",
+  "scoring": "Per composition: the composed vector queries LIVE Vectorize (arm-filtered eq22N, topK 20) over the 20 sealed records; HIT = target d is top-1; also rank(d) and cosine(comp, d). Hypothesis calls vs the PERMUTATION NULL: 1000 draws, record-vector labels shuffled, same 10 compositions re-scored (in code, local cosine — the null is a label-shuffle, the live round-trip is for the real arm).",
+  "zero_new_calls": "no typesafe calls; ~10 live Vectorize queries (free tier)"
+ },
+ "floors": {
+  "F1": "the composition tuples are emitted by the frozen rule and sealed in the results file before any scoring",
+  "F2": "the vectors are the sealed E-Q22 noul vectors, byte-identical on recompute from the eval file",
+  "F3": "all 10 compositions scored through the LIVE arm-filtered round-trip",
+  "F4": "the permutation null computed in code with seed 20261019, 1000 draws"
+ },
+ "hypotheses": {
+  "H1_analogy": "analogy hit rate > the permutation null's mean analogy hit rate + 2 standard deviations",
+  "H2_rank": "mean rank(d) over the 10 compositions <= 5 (of 20)",
+  "H3_analogy_vs_translation": "analogy hit rate >= translation hit rate (family offsets subtract cleanly; cross-family carry is harder)",
+  "C21": "the question-map space supports analogy arithmetic — LIVES iff H1 AND H2"
+ },
+ "predictions": {
+  "P1": "analogy hit rate in [0.2, 0.6] (above null ~0.1, below dense-encoder word-analogy rates — 8 axes carry structure but coarsely)",
+  "P2": "mean rank(d) in [3, 8]",
+  "P3": "translation hit rate <= analogy hit rate (H3 direction), with translation still above null (the offsets carry SOME family geometry)",
+  "P4": "the axis-wise autopsy shows the composed vector's family axes (the family-defining ones) move toward d's values while the null axes wobble"
+ },
+ "falsifier": "ANY of F1-F4 breached; compositions edited after emission; the null computed on anything but label shuffles; a hit claimed without the live round-trip.",
+ "budget": "$0.00 LLM (zero calls) + free-tier queries. Part of the r25 round budget.",
+ "registered_before_run": true,
+ "amendments": []
+}

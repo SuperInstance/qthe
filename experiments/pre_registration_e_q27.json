@@ -1,0 +1,37 @@
+{
+ "law": "REGISTRATION of E-Q27 — does the ternary zero do work? (ORCH-R25 lane T16-c; the prior-art pass's open question Q3). Binary ({-1,+1}), ternary ({-1,0,+1}, the E-Q22 rule), and 4-level (quaternary, quartile-based) quantizations of BOTH sealed arms (score-continuous S and noul-continuous N), same live retrieval protocol, arm-filtered queries (the metadata-index law applied from the start this time). ZERO new embed calls. The question: is the ternary middle level carrying information beyond the sign, and where does quantization-diminishing-returns set in?",
+ "task_id": "ORCH-R25/T16-c",
+ "agent": "qthe orchestrator (Z.ai), erised fleet line",
+ "wave": "ORCH-R25",
+ "repo": "SuperInstance/qthe",
+ "repo_at_registration": "34b5f1f",
+ "provenance_of_the_question": "The research pass (R24-RESEARCH): the retrieval-code literature is overwhelmingly BINARY at 100s-1000s of bits; an untrained 8-coordinate ternary QA-code at 16 bits is unoccupied territory, and whether the ZERO level does work is the sharpest open sub-question (Q3). E-Q22 found ternary retention 86% (score arm) / 69% (noul arm) vs continuous — the binary and 4-level points on the same curve are missing.",
+ "design_frozen": {
+  "arms": "S (E-Q21 sealed score vectors) and N (E-Q22 sealed noul vectors), 20 records each",
+  "quantizations": "BINARY: x > m_a -> +1 else -1 (the sign, no zero; m_a = the E-Q22 median rule). TERNARY: the E-Q22 AM1-registered rule (+1 if x > m + 0.5*MAD, -1 if x < m - 0.5*MAD, else 0). FOUR-LEVEL: quartile thresholds q25/q50/q75 per axis over the 20 corpus values -> {-1.5, -0.5, +0.5, +1.5}. All tables derived from the arm's own 20 corpus vectors only, frozen in the results file.",
+  "eval": "Six arms upserted (eq27SB, eq27NB, eq27ST, eq27NT, eq27SQ, eq27NQ; the metadata arm field set, arm-FILTERED topK 20 queries — no topK starvation by construction); top-1 non-self WITHIN-ARM family accuracy, STRICT scoring only (NO-NEIGHBOR impossible under the arm filter; receipt if any)",
+  "measures": "accuracy per quantization per arm; the zero-level mass (fraction of 0s in ternary codes); monotonicity checks (B vs T vs Q vs continuous); the ternary-zero information question: among records whose ternary code contains >= 1 zero, does binary (which forced that axis to +/-1) misfile them more?"
+ },
+ "floors": {
+  "F1": "vectors are the sealed E-Q21/E-Q22 vectors, recomputed from the sealed rows",
+  "F2": "quantization tables derived from the arm's own 20 corpus vectors only, frozen pre-eval",
+  "F3": "all six arms upserted with metadata arm tags AND live-queried through arm-filtered topK",
+  "F4": "strict scoring with denominator 20"
+ },
+ "hypotheses": {
+  "H1_zero_works": "T > B on at least one arm (the zero level carries retrieval information beyond the sign)",
+  "H2_diminishing": "Q - T < T - B on the arm where H1 holds (diminishing returns above 3 levels) OR Q <= T on both arms (4 levels buy nothing)",
+  "H3_saturation_interaction": "the T-B gap is larger on the N arm (saturated noul mass produces more zeros; more zeros = more value from the zero level)",
+  "C22": "the ternary zero does work — LIVES iff H1"
+ },
+ "predictions": {
+  "P1": "T > B on both arms by >= 0.05 (one record)",
+  "P2": "Q within 0.05 of T on both arms (4 levels buy little at 20 records)",
+  "P3": "zero-level mass on N (mean ~0.35-0.5 of axes) exceeds S (mean ~0.25-0.4)",
+  "P4": "continuous still beats every quantization on both arms (quantization only ever costs)"
+ },
+ "falsifier": "ANY of F1-F4 breached; a quantization table computed from anything but the arm's own corpus vectors; an arm queried without the filter (the E-Q24 receipted trap); scoring on anything but denominator 20.",
+ "budget": "$0.00 LLM (zero calls) + free-tier upserts/queries.",
+ "registered_before_run": true,
+ "amendments": []
+}
