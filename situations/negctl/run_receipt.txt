@@ -1,0 +1,3 @@
+
+negctl FAIL-CLOSED: suite-consumed files are modified vs HEAD — baseline would be untrustworthy: [" M fixedpoint/receipts/chain_tip.txt"," M receipts/probe_gate_chain.jsonl"," M scripts/probe_gate.mjs"," M scripts/verify_all_chains.mjs"," M tests/receipt.json"," M tests/receipts.jsonl"," M tests/run_tests.mjs"]
+The control refuses to continue. Nothing in the real repo was modified.

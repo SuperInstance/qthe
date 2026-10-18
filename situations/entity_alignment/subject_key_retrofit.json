@@ -1,0 +1,2105 @@
+{
+ "lane": "T5-b",
+ "artifact": "situations/entity_alignment/subject_key_retrofit.json",
+ "law": "docs/SUBJECT-KEY.md",
+ "schema": "situations/entity_alignment/subject_key_schema.json",
+ "validator": "situations/entity_alignment/subject_key_validator.py",
+ "validator_version": 1,
+ "key_rule": "subject_key = artifact_key + '::' + claim_id; same_subject <-> string equality; computed in code, never by a model",
+ "inputs_sha256": {
+  "pairs_part1.json": "6ddd13b93b5ecb8a844d2a47f63584cae117e93ac430836701c734e2354cdb28",
+  "pairs_part2.json": "a8d2434e1e2811356a7ed9b73294b9055409667999eb68a8071586d957e8d117",
+  "rows_part2.jsonl": "b41f343c83151d14fe777c5717a20531d93abf602d23d0882909215b484d8039"
+ },
+ "deterministic": true,
+ "part1": {
+  "claim_id_rule": "constant claim id for part 1: every pre-fix list entry contests the same question -- WHICH chain artifact does this entry refer to -- so the claim dimension is constant and the subject is fully determined by the artifact path (receipted: this is why part 1 is the path-keyed application; the Inkling ORCH-R13 correction already established the path is the registry's own key on this corpus, zero alias cases)",
+  "pairs": [
+   {
+    "pair_id": "p1-001",
+    "ground_truth": "same_entity",
+    "path_line_a": "path: tests/receipts.jsonl",
+    "path_line_b": "path: tests/receipts.jsonl",
+    "refused": false,
+    "subject_key_a": "tests/receipts.jsonl::chain_reference",
+    "subject_key_b": "tests/receipts.jsonl::chain_reference",
+    "subject_claim_ids": [
+     "chain_reference",
+     "chain_reference"
+    ],
+    "same_subject": true,
+    "routing": "intra_subject_no_identity_question",
+    "predicted_relation": "same_entity",
+    "agrees_with_ground_truth": true
+   },
+   {
+    "pair_id": "p1-002",
+    "ground_truth": "same_entity",
+    "path_line_a": "path: tests/receipts.jsonl",
+    "path_line_b": "path: tests/receipts.jsonl",
+    "refused": false,
+    "subject_key_a": "tests/receipts.jsonl::chain_reference",
+    "subject_key_b": "tests/receipts.jsonl::chain_reference",
+    "subject_claim_ids": [
+     "chain_reference",
+     "chain_reference"
+    ],
+    "same_subject": true,
+    "routing": "intra_subject_no_identity_question",
+    "predicted_relation": "same_entity",
+    "agrees_with_ground_truth": true
+   },
+   {
+    "pair_id": "p1-003",
+    "ground_truth": "same_entity",
+    "path_line_a": "path: tests/receipts.jsonl",
+    "path_line_b": "path: tests/receipts.jsonl",
+    "refused": false,
+    "subject_key_a": "tests/receipts.jsonl::chain_reference",
+    "subject_key_b": "tests/receipts.jsonl::chain_reference",
+    "subject_claim_ids": [
+     "chain_reference",
+     "chain_reference"
+    ],
+    "same_subject": true,
+    "routing": "intra_subject_no_identity_question",
+    "predicted_relation": "same_entity",
+    "agrees_with_ground_truth": true
+   },
+   {
+    "pair_id": "p1-004",
+    "ground_truth": "same_entity",
+    "path_line_a": "path: tests/receipts.jsonl",
+    "path_line_b": "path: tests/receipts.jsonl",
+    "refused": false,
+    "subject_key_a": "tests/receipts.jsonl::chain_reference",
+    "subject_key_b": "tests/receipts.jsonl::chain_reference",
+    "subject_claim_ids": [
+     "chain_reference",
+     "chain_reference"
+    ],
+    "same_subject": true,
+    "routing": "intra_subject_no_identity_question",
+    "predicted_relation": "same_entity",
+    "agrees_with_ground_truth": true
+   },
+   {
+    "pair_id": "p1-005",
+    "ground_truth": "same_entity",
+    "path_line_a": "path: receipts/e_q13_chain.jsonl",
+    "path_line_b": "path: receipts/e_q13_chain.jsonl",
+    "refused": false,
+    "subject_key_a": "receipts/e_q13_chain.jsonl::chain_reference",
+    "subject_key_b": "receipts/e_q13_chain.jsonl::chain_reference",
+    "subject_claim_ids": [
+     "chain_reference",
+     "chain_reference"
+    ],
+    "same_subject": true,
+    "routing": "intra_subject_no_identity_question",
+    "predicted_relation": "same_entity",
+    "agrees_with_ground_truth": true
+   },
+   {
+    "pair_id": "p1-006",
+    "ground_truth": "same_entity",
+    "path_line_a": "path: receipts/e_q13_chain.jsonl",
+    "path_line_b": "matched file (glob *_chain.jsonl): receipts/e_q13_chain.jsonl",
+    "refused": false,
+    "subject_key_a": "receipts/e_q13_chain.jsonl::chain_reference",
+    "subject_key_b": "receipts/e_q13_chain.jsonl::chain_reference",
+    "subject_claim_ids": [
+     "chain_reference",
+     "chain_reference"
+    ],
+    "same_subject": true,
+    "routing": "intra_subject_no_identity_question",
+    "predicted_relation": "same_entity",
+    "agrees_with_ground_truth": true
+   },
+   {
+    "pair_id": "p1-007",
+    "ground_truth": "same_entity",
+    "path_line_a": "path: receipts/e_q13_chain.jsonl",
+    "path_line_b": "path: receipts/e_q13_chain.jsonl",
+    "refused": false,
+    "subject_key_a": "receipts/e_q13_chain.jsonl::chain_reference",
+    "subject_key_b": "receipts/e_q13_chain.jsonl::chain_reference",
+    "subject_claim_ids": [
+     "chain_reference",
+     "chain_reference"
+    ],
+    "same_subject": true,
+    "routing": "intra_subject_no_identity_question",
+    "predicted_relation": "same_entity",
+    "agrees_with_ground_truth": true
+   },
+   {
+    "pair_id": "p1-008",
+    "ground_truth": "same_entity",
+    "path_line_a": "matched file (glob *_chain.jsonl): receipts/e_q13_chain.jsonl",
+    "path_line_b": "path: receipts/e_q13_chain.jsonl",
+    "refused": false,
+    "subject_key_a": "receipts/e_q13_chain.jsonl::chain_reference",
+    "subject_key_b": "receipts/e_q13_chain.jsonl::chain_reference",
+    "subject_claim_ids": [
+     "chain_reference",
+     "chain_reference"
+    ],
+    "same_subject": true,
+    "routing": "intra_subject_no_identity_question",
+    "predicted_relation": "same_entity",
+    "agrees_with_ground_truth": true
+   },
+   {
+    "pair_id": "p1-009",
+    "ground_truth": "same_entity",
+    "path_line_a": "path: receipts/e_q14_chain.jsonl",
+    "path_line_b": "path: receipts/e_q14_chain.jsonl",
+    "refused": false,
+    "subject_key_a": "receipts/e_q14_chain.jsonl::chain_reference",
+    "subject_key_b": "receipts/e_q14_chain.jsonl::chain_reference",
+    "subject_claim_ids": [
+     "chain_reference",
+     "chain_reference"
+    ],
+    "same_subject": true,
+    "routing": "intra_subject_no_identity_question",
+    "predicted_relation": "same_entity",
+    "agrees_with_ground_truth": true
+   },
+   {
+    "pair_id": "p1-010",
+    "ground_truth": "same_entity",
+    "path_line_a": "path: receipts/e_q14_chain.jsonl",
+    "path_line_b": "path: receipts/e_q14_chain.jsonl",
+    "refused": false,
+    "subject_key_a": "receipts/e_q14_chain.jsonl::chain_reference",
+    "subject_key_b": "receipts/e_q14_chain.jsonl::chain_reference",
+    "subject_claim_ids": [
+     "chain_reference",
+     "chain_reference"
+    ],
+    "same_subject": true,
+    "routing": "intra_subject_no_identity_question",
+    "predicted_relation": "same_entity",
+    "agrees_with_ground_truth": true
+   },
+   {
+    "pair_id": "p1-011",
+    "ground_truth": "same_entity",
+    "path_line_a": "path: receipts/e_q14_chain.jsonl",
+    "path_line_b": "matched file (glob *_chain.jsonl): receipts/e_q14_chain.jsonl",
+    "refused": false,
+    "subject_key_a": "receipts/e_q14_chain.jsonl::chain_reference",
+    "subject_key_b": "receipts/e_q14_chain.jsonl::chain_reference",
+    "subject_claim_ids": [
+     "chain_reference",
+     "chain_reference"
+    ],
+    "same_subject": true,
+    "routing": "intra_subject_no_identity_question",
+    "predicted_relation": "same_entity",
+    "agrees_with_ground_truth": true
+   },
+   {
+    "pair_id": "p1-012",
+    "ground_truth": "same_entity",
+    "path_line_a": "matched file (glob *_chain.jsonl): receipts/e_q14_chain.jsonl",
+    "path_line_b": "path: receipts/e_q14_chain.jsonl",
+    "refused": false,
+    "subject_key_a": "receipts/e_q14_chain.jsonl::chain_reference",
+    "subject_key_b": "receipts/e_q14_chain.jsonl::chain_reference",
+    "subject_claim_ids": [
+     "chain_reference",
+     "chain_reference"
+    ],
+    "same_subject": true,
+    "routing": "intra_subject_no_identity_question",
+    "predicted_relation": "same_entity",
+    "agrees_with_ground_truth": true
+   },
+   {
+    "pair_id": "p1-013",
+    "ground_truth": "same_entity",
+    "path_line_a": "matched file (glob *_chain.jsonl): receipts/e_q15_chain.jsonl",
+    "path_line_b": "path: receipts/e_q15_chain.jsonl",
+    "refused": false,
+    "subject_key_a": "receipts/e_q15_chain.jsonl::chain_reference",
+    "subject_key_b": "receipts/e_q15_chain.jsonl::chain_reference",
+    "subject_claim_ids": [
+     "chain_reference",
+     "chain_reference"
+    ],
+    "same_subject": true,
+    "routing": "intra_subject_no_identity_question",
+    "predicted_relation": "same_entity",
+    "agrees_with_ground_truth": true
+   },
+   {
+    "pair_id": "p1-014",
+    "ground_truth": "same_entity",
+    "path_line_a": "matched file (glob *_chain.jsonl): receipts/e_q16_chain.jsonl",
+    "path_line_b": "path: receipts/e_q16_chain.jsonl",
+    "refused": false,
+    "subject_key_a": "receipts/e_q16_chain.jsonl::chain_reference",
+    "subject_key_b": "receipts/e_q16_chain.jsonl::chain_reference",
+    "subject_claim_ids": [
+     "chain_reference",
+     "chain_reference"
+    ],
+    "same_subject": true,
+    "routing": "intra_subject_no_identity_question",
+    "predicted_relation": "same_entity",
+    "agrees_with_ground_truth": true
+   },
+   {
+    "pair_id": "p1-015",
+    "ground_truth": "same_entity",
+    "path_line_a": "path: receipts/probe_gate_chain.jsonl",
+    "path_line_b": "matched file (glob *_chain.jsonl): receipts/probe_gate_chain.jsonl",
+    "refused": false,
+    "subject_key_a": "receipts/probe_gate_chain.jsonl::chain_reference",
+    "subject_key_b": "receipts/probe_gate_chain.jsonl::chain_reference",
+    "subject_claim_ids": [
+     "chain_reference",
+     "chain_reference"
+    ],
+    "same_subject": true,
+    "routing": "intra_subject_no_identity_question",
+    "predicted_relation": "same_entity",
+    "agrees_with_ground_truth": true
+   },
+   {
+    "pair_id": "p1-016",
+    "ground_truth": "same_entity",
+    "path_line_a": "path: receipts/probe_gate_chain.jsonl",
+    "path_line_b": "path: receipts/probe_gate_chain.jsonl",
+    "refused": false,
+    "subject_key_a": "receipts/probe_gate_chain.jsonl::chain_reference",
+    "subject_key_b": "receipts/probe_gate_chain.jsonl::chain_reference",
+    "subject_claim_ids": [
+     "chain_reference",
+     "chain_reference"
+    ],
+    "same_subject": true,
+    "routing": "intra_subject_no_identity_question",
+    "predicted_relation": "same_entity",
+    "agrees_with_ground_truth": true
+   },
+   {
+    "pair_id": "p1-017",
+    "ground_truth": "same_entity",
+    "path_line_a": "matched file (glob *_chain.jsonl): receipts/probe_gate_chain.jsonl",
+    "path_line_b": "path: receipts/probe_gate_chain.jsonl",
+    "refused": false,
+    "subject_key_a": "receipts/probe_gate_chain.jsonl::chain_reference",
+    "subject_key_b": "receipts/probe_gate_chain.jsonl::chain_reference",
+    "subject_claim_ids": [
+     "chain_reference",
+     "chain_reference"
+    ],
+    "same_subject": true,
+    "routing": "intra_subject_no_identity_question",
+    "predicted_relation": "same_entity",
+    "agrees_with_ground_truth": true
+   },
+   {
+    "pair_id": "p1-018",
+    "ground_truth": "same_entity",
+    "path_line_a": "path: experiments/outputs/e_q11_tip.txt",
+    "path_line_b": "path: experiments/outputs/e_q11_tip.txt",
+    "refused": false,
+    "subject_key_a": "experiments/outputs/e_q11_tip.txt::chain_reference",
+    "subject_key_b": "experiments/outputs/e_q11_tip.txt::chain_reference",
+    "subject_claim_ids": [
+     "chain_reference",
+     "chain_reference"
+    ],
+    "same_subject": true,
+    "routing": "intra_subject_no_identity_question",
+    "predicted_relation": "same_entity",
+    "agrees_with_ground_truth": true
+   },
+   {
+    "pair_id": "p1-019",
+    "ground_truth": "same_entity",
+    "path_line_a": "path: experiments/outputs/e_q12_tip.txt",
+    "path_line_b": "path: experiments/outputs/e_q12_tip.txt",
+    "refused": false,
+    "subject_key_a": "experiments/outputs/e_q12_tip.txt::chain_reference",
+    "subject_key_b": "experiments/outputs/e_q12_tip.txt::chain_reference",
+    "subject_claim_ids": [
+     "chain_reference",
+     "chain_reference"
+    ],
+    "same_subject": true,
+    "routing": "intra_subject_no_identity_question",
+    "predicted_relation": "same_entity",
+    "agrees_with_ground_truth": true
+   },
+   {
+    "pair_id": "p1-020",
+    "ground_truth": "different_entity",
+    "path_line_a": "path: tests/receipts.jsonl",
+    "path_line_b": "path: receipts/probe_gate_chain.jsonl",
+    "refused": false,
+    "subject_key_a": "tests/receipts.jsonl::chain_reference",
+    "subject_key_b": "receipts/probe_gate_chain.jsonl::chain_reference",
+    "subject_claim_ids": [
+     "chain_reference",
+     "chain_reference"
+    ],
+    "same_subject": false,
+    "routing": "cross_subject_same_issue_question",
+    "predicted_relation": "different_entity",
+    "agrees_with_ground_truth": true
+   },
+   {
+    "pair_id": "p1-021",
+    "ground_truth": "different_entity",
+    "path_line_a": "path: tests/receipts.jsonl",
+    "path_line_b": "matched file (glob *_chain.jsonl): receipts/probe_gate_chain.jsonl",
+    "refused": false,
+    "subject_key_a": "tests/receipts.jsonl::chain_reference",
+    "subject_key_b": "receipts/probe_gate_chain.jsonl::chain_reference",
+    "subject_claim_ids": [
+     "chain_reference",
+     "chain_reference"
+    ],
+    "same_subject": false,
+    "routing": "cross_subject_same_issue_question",
+    "predicted_relation": "different_entity",
+    "agrees_with_ground_truth": true
+   },
+   {
+    "pair_id": "p1-022",
+    "ground_truth": "different_entity",
+    "path_line_a": "path: receipts/e_q13_chain.jsonl",
+    "path_line_b": "path: receipts/e_q14_chain.jsonl",
+    "refused": false,
+    "subject_key_a": "receipts/e_q13_chain.jsonl::chain_reference",
+    "subject_key_b": "receipts/e_q14_chain.jsonl::chain_reference",
+    "subject_claim_ids": [
+     "chain_reference",
+     "chain_reference"
+    ],
+    "same_subject": false,
+    "routing": "cross_subject_same_issue_question",
+    "predicted_relation": "different_entity",
+    "agrees_with_ground_truth": true
+   },
+   {
+    "pair_id": "p1-023",
+    "ground_truth": "different_entity",
+    "path_line_a": "matched file (glob *_chain.jsonl): receipts/e_q15_chain.jsonl",
+    "path_line_b": "path: receipts/e_q16_chain.jsonl",
+    "refused": false,
+    "subject_key_a": "receipts/e_q15_chain.jsonl::chain_reference",
+    "subject_key_b": "receipts/e_q16_chain.jsonl::chain_reference",
+    "subject_claim_ids": [
+     "chain_reference",
+     "chain_reference"
+    ],
+    "same_subject": false,
+    "routing": "cross_subject_same_issue_question",
+    "predicted_relation": "different_entity",
+    "agrees_with_ground_truth": true
+   },
+   {
+    "pair_id": "p1-024",
+    "ground_truth": "different_entity",
+    "path_line_a": "matched file (glob *_chain.jsonl): receipts/e_q16_chain.jsonl",
+    "path_line_b": "path: receipts/e_q15_chain.jsonl",
+    "refused": false,
+    "subject_key_a": "receipts/e_q16_chain.jsonl::chain_reference",
+    "subject_key_b": "receipts/e_q15_chain.jsonl::chain_reference",
+    "subject_claim_ids": [
+     "chain_reference",
+     "chain_reference"
+    ],
+    "same_subject": false,
+    "routing": "cross_subject_same_issue_question",
+    "predicted_relation": "different_entity",
+    "agrees_with_ground_truth": true
+   },
+   {
+    "pair_id": "p1-025",
+    "ground_truth": "different_entity",
+    "path_line_a": "matched file (glob *_chain.jsonl): receipts/e_q15_chain.jsonl",
+    "path_line_b": "path: receipts/e_q14_chain.jsonl",
+    "refused": false,
+    "subject_key_a": "receipts/e_q15_chain.jsonl::chain_reference",
+    "subject_key_b": "receipts/e_q14_chain.jsonl::chain_reference",
+    "subject_claim_ids": [
+     "chain_reference",
+     "chain_reference"
+    ],
+    "same_subject": false,
+    "routing": "cross_subject_same_issue_question",
+    "predicted_relation": "different_entity",
+    "agrees_with_ground_truth": true
+   },
+   {
+    "pair_id": "p1-026",
+    "ground_truth": "different_entity",
+    "path_line_a": "matched file (glob *_chain.jsonl): receipts/e_q16_chain.jsonl",
+    "path_line_b": "path: receipts/e_q13_chain.jsonl",
+    "refused": false,
+    "subject_key_a": "receipts/e_q16_chain.jsonl::chain_reference",
+    "subject_key_b": "receipts/e_q13_chain.jsonl::chain_reference",
+    "subject_claim_ids": [
+     "chain_reference",
+     "chain_reference"
+    ],
+    "same_subject": false,
+    "routing": "cross_subject_same_issue_question",
+    "predicted_relation": "different_entity",
+    "agrees_with_ground_truth": true
+   },
+   {
+    "pair_id": "p1-027",
+    "ground_truth": "different_entity",
+    "path_line_a": "path: experiments/outputs/e_q11_tip.txt",
+    "path_line_b": "path: experiments/outputs/e_q12_tip.txt",
+    "refused": false,
+    "subject_key_a": "experiments/outputs/e_q11_tip.txt::chain_reference",
+    "subject_key_b": "experiments/outputs/e_q12_tip.txt::chain_reference",
+    "subject_claim_ids": [
+     "chain_reference",
+     "chain_reference"
+    ],
+    "same_subject": false,
+    "routing": "cross_subject_same_issue_question",
+    "predicted_relation": "different_entity",
+    "agrees_with_ground_truth": true
+   },
+   {
+    "pair_id": "p1-028",
+    "ground_truth": "different_entity",
+    "path_line_a": "path: receipts/e_q13_chain.jsonl",
+    "path_line_b": "matched file (glob *_chain.jsonl): receipts/e_q15_chain.jsonl",
+    "refused": false,
+    "subject_key_a": "receipts/e_q13_chain.jsonl::chain_reference",
+    "subject_key_b": "receipts/e_q15_chain.jsonl::chain_reference",
+    "subject_claim_ids": [
+     "chain_reference",
+     "chain_reference"
+    ],
+    "same_subject": false,
+    "routing": "cross_subject_same_issue_question",
+    "predicted_relation": "different_entity",
+    "agrees_with_ground_truth": true
+   },
+   {
+    "pair_id": "p1-029",
+    "ground_truth": "different_entity",
+    "path_line_a": "path: receipts/e_q14_chain.jsonl",
+    "path_line_b": "matched file (glob *_chain.jsonl): receipts/e_q16_chain.jsonl",
+    "refused": false,
+    "subject_key_a": "receipts/e_q14_chain.jsonl::chain_reference",
+    "subject_key_b": "receipts/e_q16_chain.jsonl::chain_reference",
+    "subject_claim_ids": [
+     "chain_reference",
+     "chain_reference"
+    ],
+    "same_subject": false,
+    "routing": "cross_subject_same_issue_question",
+    "predicted_relation": "different_entity",
+    "agrees_with_ground_truth": true
+   },
+   {
+    "pair_id": "p1-030",
+    "ground_truth": "different_entity",
+    "path_line_a": "matched file (glob *_chain.jsonl): receipts/e_q15_chain.jsonl",
+    "path_line_b": "path: receipts/probe_gate_chain.jsonl",
+    "refused": false,
+    "subject_key_a": "receipts/e_q15_chain.jsonl::chain_reference",
+    "subject_key_b": "receipts/probe_gate_chain.jsonl::chain_reference",
+    "subject_claim_ids": [
+     "chain_reference",
+     "chain_reference"
+    ],
+    "same_subject": false,
+    "routing": "cross_subject_same_issue_question",
+    "predicted_relation": "different_entity",
+    "agrees_with_ground_truth": true
+   },
+   {
+    "pair_id": "p1-031",
+    "ground_truth": "different_entity",
+    "path_line_a": "matched file (glob *_chain.jsonl): receipts/e_q16_chain.jsonl",
+    "path_line_b": "path: receipts/probe_gate_chain.jsonl",
+    "refused": false,
+    "subject_key_a": "receipts/e_q16_chain.jsonl::chain_reference",
+    "subject_key_b": "receipts/probe_gate_chain.jsonl::chain_reference",
+    "subject_claim_ids": [
+     "chain_reference",
+     "chain_reference"
+    ],
+    "same_subject": false,
+    "routing": "cross_subject_same_issue_question",
+    "predicted_relation": "different_entity",
+    "agrees_with_ground_truth": true
+   },
+   {
+    "pair_id": "p1-032",
+    "ground_truth": "different_entity",
+    "path_line_a": "path: experiments/outputs/e_q11_tip.txt",
+    "path_line_b": "path: experiments/outputs/e_q12_tip.txt",
+    "refused": false,
+    "subject_key_a": "experiments/outputs/e_q11_tip.txt::chain_reference",
+    "subject_key_b": "experiments/outputs/e_q12_tip.txt::chain_reference",
+    "subject_claim_ids": [
+     "chain_reference",
+     "chain_reference"
+    ],
+    "same_subject": false,
+    "routing": "cross_subject_same_issue_question",
+    "predicted_relation": "different_entity",
+    "agrees_with_ground_truth": true
+   },
+   {
+    "pair_id": "p1-033",
+    "ground_truth": "different_entity",
+    "path_line_a": "matched file (glob *_chain.jsonl): receipts/e_q13_chain.jsonl",
+    "path_line_b": "path: receipts/e_q14_chain.jsonl",
+    "refused": false,
+    "subject_key_a": "receipts/e_q13_chain.jsonl::chain_reference",
+    "subject_key_b": "receipts/e_q14_chain.jsonl::chain_reference",
+    "subject_claim_ids": [
+     "chain_reference",
+     "chain_reference"
+    ],
+    "same_subject": false,
+    "routing": "cross_subject_same_issue_question",
+    "predicted_relation": "different_entity",
+    "agrees_with_ground_truth": true
+   },
+   {
+    "pair_id": "p1-034",
+    "ground_truth": "same_entity",
+    "path_line_a": "path: receipts/e_q1_chain.jsonl",
+    "path_line_b": "path: receipts/e_q1_chain.jsonl",
+    "refused": false,
+    "subject_key_a": "receipts/e_q1_chain.jsonl::chain_reference",
+    "subject_key_b": "receipts/e_q1_chain.jsonl::chain_reference",
+    "subject_claim_ids": [
+     "chain_reference",
+     "chain_reference"
+    ],
+    "same_subject": true,
+    "routing": "intra_subject_no_identity_question",
+    "predicted_relation": "same_entity",
+    "agrees_with_ground_truth": true
+   },
+   {
+    "pair_id": "p1-035",
+    "ground_truth": "same_entity",
+    "path_line_a": "path: receipts/e_q2_chain.jsonl",
+    "path_line_b": "matched file (glob *_chain.jsonl): receipts/e_q2_chain.jsonl",
+    "refused": false,
+    "subject_key_a": "receipts/e_q2_chain.jsonl::chain_reference",
+    "subject_key_b": "receipts/e_q2_chain.jsonl::chain_reference",
+    "subject_claim_ids": [
+     "chain_reference",
+     "chain_reference"
+    ],
+    "same_subject": true,
+    "routing": "intra_subject_no_identity_question",
+    "predicted_relation": "same_entity",
+    "agrees_with_ground_truth": true
+   },
+   {
+    "pair_id": "p1-036",
+    "ground_truth": "same_entity",
+    "path_line_a": "path: receipts/e_q5_chain.jsonl",
+    "path_line_b": "path: receipts/e_q5_chain.jsonl",
+    "refused": false,
+    "subject_key_a": "receipts/e_q5_chain.jsonl::chain_reference",
+    "subject_key_b": "receipts/e_q5_chain.jsonl::chain_reference",
+    "subject_claim_ids": [
+     "chain_reference",
+     "chain_reference"
+    ],
+    "same_subject": true,
+    "routing": "intra_subject_no_identity_question",
+    "predicted_relation": "same_entity",
+    "agrees_with_ground_truth": true
+   },
+   {
+    "pair_id": "p1-037",
+    "ground_truth": "same_entity",
+    "path_line_a": "path: receipts/e_q6_chain.jsonl",
+    "path_line_b": "path: receipts/e_q6_chain.jsonl",
+    "refused": false,
+    "subject_key_a": "receipts/e_q6_chain.jsonl::chain_reference",
+    "subject_key_b": "receipts/e_q6_chain.jsonl::chain_reference",
+    "subject_claim_ids": [
+     "chain_reference",
+     "chain_reference"
+    ],
+    "same_subject": true,
+    "routing": "intra_subject_no_identity_question",
+    "predicted_relation": "same_entity",
+    "agrees_with_ground_truth": true
+   },
+   {
+    "pair_id": "p1-038",
+    "ground_truth": "same_entity",
+    "path_line_a": "matched file (glob *_chain.jsonl): receipts/e_q7_chain.jsonl",
+    "path_line_b": "path: receipts/e_q7_chain.jsonl",
+    "refused": false,
+    "subject_key_a": "receipts/e_q7_chain.jsonl::chain_reference",
+    "subject_key_b": "receipts/e_q7_chain.jsonl::chain_reference",
+    "subject_claim_ids": [
+     "chain_reference",
+     "chain_reference"
+    ],
+    "same_subject": true,
+    "routing": "intra_subject_no_identity_question",
+    "predicted_relation": "same_entity",
+    "agrees_with_ground_truth": true
+   },
+   {
+    "pair_id": "p1-039",
+    "ground_truth": "same_entity",
+    "path_line_a": "path: receipts/e_q8_chain.jsonl",
+    "path_line_b": "path: receipts/e_q8_chain.jsonl",
+    "refused": false,
+    "subject_key_a": "receipts/e_q8_chain.jsonl::chain_reference",
+    "subject_key_b": "receipts/e_q8_chain.jsonl::chain_reference",
+    "subject_claim_ids": [
+     "chain_reference",
+     "chain_reference"
+    ],
+    "same_subject": true,
+    "routing": "intra_subject_no_identity_question",
+    "predicted_relation": "same_entity",
+    "agrees_with_ground_truth": true
+   },
+   {
+    "pair_id": "p1-040",
+    "ground_truth": "same_entity",
+    "path_line_a": "path: receipts/e_q10_chain.jsonl",
+    "path_line_b": "path: receipts/e_q10_chain.jsonl",
+    "refused": false,
+    "subject_key_a": "receipts/e_q10_chain.jsonl::chain_reference",
+    "subject_key_b": "receipts/e_q10_chain.jsonl::chain_reference",
+    "subject_claim_ids": [
+     "chain_reference",
+     "chain_reference"
+    ],
+    "same_subject": true,
+    "routing": "intra_subject_no_identity_question",
+    "predicted_relation": "same_entity",
+    "agrees_with_ground_truth": true
+   },
+   {
+    "pair_id": "p1-041",
+    "ground_truth": "same_entity",
+    "path_line_a": "path: crossimpl/receipts/crossimpl_chain.jsonl",
+    "path_line_b": "matched file (glob *_chain.jsonl): crossimpl/receipts/crossimpl_chain.jsonl",
+    "refused": false,
+    "subject_key_a": "crossimpl/receipts/crossimpl_chain.jsonl::chain_reference",
+    "subject_key_b": "crossimpl/receipts/crossimpl_chain.jsonl::chain_reference",
+    "subject_claim_ids": [
+     "chain_reference",
+     "chain_reference"
+    ],
+    "same_subject": true,
+    "routing": "intra_subject_no_identity_question",
+    "predicted_relation": "same_entity",
+    "agrees_with_ground_truth": true
+   },
+   {
+    "pair_id": "p1-042",
+    "ground_truth": "same_entity",
+    "path_line_a": "path: crossimpl/receipts/cimpl_chain.jsonl",
+    "path_line_b": "path: crossimpl/receipts/cimpl_chain.jsonl",
+    "refused": false,
+    "subject_key_a": "crossimpl/receipts/cimpl_chain.jsonl::chain_reference",
+    "subject_key_b": "crossimpl/receipts/cimpl_chain.jsonl::chain_reference",
+    "subject_claim_ids": [
+     "chain_reference",
+     "chain_reference"
+    ],
+    "same_subject": true,
+    "routing": "intra_subject_no_identity_question",
+    "predicted_relation": "same_entity",
+    "agrees_with_ground_truth": true
+   },
+   {
+    "pair_id": "p1-043",
+    "ground_truth": "same_entity",
+    "path_line_a": "path: fixedpoint/receipts/fixedpoint_chain.jsonl",
+    "path_line_b": "matched file (glob *_chain.jsonl): fixedpoint/receipts/fixedpoint_chain.jsonl",
+    "refused": false,
+    "subject_key_a": "fixedpoint/receipts/fixedpoint_chain.jsonl::chain_reference",
+    "subject_key_b": "fixedpoint/receipts/fixedpoint_chain.jsonl::chain_reference",
+    "subject_claim_ids": [
+     "chain_reference",
+     "chain_reference"
+    ],
+    "same_subject": true,
+    "routing": "intra_subject_no_identity_question",
+    "predicted_relation": "same_entity",
+    "agrees_with_ground_truth": true
+   }
+  ],
+  "coverage": {
+   "pairs": 43,
+   "computable": 43,
+   "refused": 0
+  },
+  "agreement_with_ground_truth": {
+   "agree": 43,
+   "n": 43,
+   "tautology_receipt": "BY CONSTRUCTION: part-1 ground truth is registry-record identity and the registry's own key is the path (zero alias cases in the corpus -- the Inkling ORCH-R13 append-only correction). Key agreement here proves computability and routing, NOT predictive power. The one case path-equality cannot decide (two paths, one artifact) is the alias channel -> curator evidence, never a model merge (SUBJECT-KEY.md R3)."
+  }
+ },
+ "part2": {
+  "artifact_key_source": "pinned normalization table in the validator, keyed by the artifact field text VERBATIM (AS-SAID) as sealed in pairs_part2.json :: state_finding_*; texts byte-identical to situations/arena_rows_r10.jsonl",
+  "claim_id_source": "pairs_part2.json :: per-pair subject_a/subject_b fields, sealed at build time BEFORE any call -- the pre-pairing subject map over the r10 adjudication record (receipts: pairs_part2.json :: subject_map_receipts)",
+  "artifact_normalization_table": [
+   {
+    "artifact_text_as_said": "C1 (E-Q13, chain tip d852e6ac...)",
+    "artifact_key": "c1_e_q13",
+    "receipt": "dsv F1: names claim C1 on E-Q13 via its chain tip"
+   },
+   {
+    "artifact_text_as_said": "E-Q14 provenance autopsy (slot-63 saturation rail / adjacent-d convoy)",
+    "artifact_key": "e_q14",
+    "receipt": "dsv F2: the E-Q14 autopsy (floor failure mechanics)"
+   },
+   {
+    "artifact_text_as_said": "E-Q16 16x16 T=100,000 in-run harness fix (seedFn closures consumed rng at call time)",
+    "artifact_key": "e_q16",
+    "receipt": "dsv F3: the E-Q16 measurement wave / its chain"
+   },
+   {
+    "artifact_text_as_said": "C3 sigma = log2(3) critical bridge scale (E-Q2)",
+    "artifact_key": "c3_e_q2",
+    "receipt": "dsv F4: claim C3 on E-Q2"
+   },
+   {
+    "artifact_text_as_said": "THE THREE HONEST GAPS (1) no LICENSE",
+    "artifact_key": "repo_license",
+    "receipt": "dsv F5: the repository-level missing-LICENSE gap"
+   },
+   {
+    "artifact_text_as_said": "E-Q15 reward reweighting probe (win-rate 0.00, median delta -6)",
+    "artifact_key": "e_q15",
+    "receipt": "dsv F6: the E-Q15 probe"
+   },
+   {
+    "artifact_text_as_said": "C5-prime injector repair (E-Q10)",
+    "artifact_key": "c5p_e_q10",
+    "receipt": "dsv F7: claim C5-prime on E-Q10"
+   },
+   {
+    "artifact_text_as_said": "E-Q14 / M4 wormhole table / C2 / demos (agent rendezvous, non-local alignment without a bus)",
+    "artifact_key": "m4_wormhole_table",
+    "receipt": "hy4 F1: co-names E-Q14/C2/demos, but the contested artifact is the M4 table's content-addressing (co-named artifacts receipted, not keyed)"
+   },
+   {
+    "artifact_text_as_said": "E-Q16 / M4 / grid scaling claim (locality HOLDS to 256x256 at 10% Abstain)",
+    "artifact_key": "m4_wormhole_table",
+    "receipt": "hy4 F2: co-names E-Q16 as evidence; the contested artifact is the 64-slot table's capacity vs the locality phrasing"
+   },
+   {
+    "artifact_text_as_said": "C1 / E-Q13 / cached-port caveat (tau plane SRAM-resident)",
+    "artifact_key": "c1_e_q13",
+    "receipt": "hy4 F3: claim C1 on E-Q13, cached-port caveat"
+   },
+   {
+    "artifact_text_as_said": "E-Q16 / seedFn closures consumed rng at call time (harness fix)",
+    "artifact_key": "e_q16",
+    "receipt": "hy4 F4: the E-Q16 measurement wave / its chain"
+   },
+   {
+    "artifact_text_as_said": "E-Q9/E-Q11/E-Q12 (chainless-by-registered-decision) / scripts/verify_all_chains.mjs",
+    "artifact_key": "e_q9_11_12",
+    "receipt": "hy4 F5: the E-Q9/11/12 chainless set (co-names verify_all_chains.mjs)"
+   },
+   {
+    "artifact_text_as_said": "NO LICENSE gap / qthe-core/ / crossimpl/c/ / ADOPTION-KIT.md",
+    "artifact_key": "repo_license",
+    "receipt": "hy4 F6: the repository-level missing-LICENSE gap (distribution roots co-named; the contested fact is the absent license)"
+   },
+   {
+    "artifact_text_as_said": "E-Q14 (adversarial probes, docs/FALSIFICATION-BUDGET.md)",
+    "artifact_key": "e_q14",
+    "receipt": "mimov F1: the E-Q14 zero-pollution floor failure"
+   },
+   {
+    "artifact_text_as_said": "C3 (E-Q2) vs E-Q16 dense sigma phase table",
+    "artifact_key": "c3_e_q2",
+    "receipt": "mimov F2 AND nemotron F2 (byte-identical sealed text, two seats): claim C3 on E-Q2, with E-Q16's dense sigma table co-named as the conflicting evidence"
+   },
+   {
+    "artifact_text_as_said": "C1 / E-Q13 (twin-delivery bytes-gain, cached-port caveat)",
+    "artifact_key": "c1_e_q13",
+    "receipt": "mimov F3: claim C1 on E-Q13"
+   },
+   {
+    "artifact_text_as_said": "E-Q9/E-Q11/E-Q12 (chainless-by-registered-decision)",
+    "artifact_key": "e_q9_11_12",
+    "receipt": "mimov F4: the E-Q9/11/12 chainless set"
+   },
+   {
+    "artifact_text_as_said": "E-Q16 run-1 rows (16x16 T=100,000 harness fix)",
+    "artifact_key": "e_q16",
+    "receipt": "mimov F5: the E-Q16 measurement wave / its chain"
+   },
+   {
+    "artifact_text_as_said": "qthe-core/ PROVENANCE.txt + docs/ADOPTION-KIT.md (no LICENSE)",
+    "artifact_key": "repo_license",
+    "receipt": "mimov F6: the repository-level missing-LICENSE gap"
+   },
+   {
+    "artifact_text_as_said": "E-Q14",
+    "artifact_key": "e_q14",
+    "receipt": "muse F1: the E-Q14 zero-pollution floor failure"
+   },
+   {
+    "artifact_text_as_said": "E-Q9/E-Q11/E-Q12",
+    "artifact_key": "e_q9_11_12",
+    "receipt": "muse F2: the E-Q9/11/12 chainless set"
+   },
+   {
+    "artifact_text_as_said": "E-Q16",
+    "artifact_key": "e_q16",
+    "receipt": "muse F3: the E-Q16 measurement wave / its chain"
+   },
+   {
+    "artifact_text_as_said": "THE THREE HONEST GAPS",
+    "artifact_key": "repo_license",
+    "receipt": "muse F4: the repository-level missing-LICENSE gap"
+   },
+   {
+    "artifact_text_as_said": "cross-implementation C99 port",
+    "artifact_key": "cimpl_c99_sealer",
+    "receipt": "muse F5: the C99 sealer (crossimpl/c/)"
+   },
+   {
+    "artifact_text_as_said": "E-Q16 measurement wave (16x16 T=100,000) and scripts/probe_gate.mjs PG4 determinism witness",
+    "artifact_key": "e_q16",
+    "receipt": "nemotron F1: the E-Q16 measurement wave / its chain (probe_gate.mjs PG4 co-named as the determinism witness; not keyed)"
+   },
+   {
+    "artifact_text_as_said": "M4 wormhole table (64-slot, content-addressed, last-writer-wins) and E-Q14 provenance autopsy",
+    "artifact_key": "m4_wormhole_table",
+    "receipt": "nemotron F3: the M4 table (E-Q14 autopsy co-named as evidence)"
+   },
+   {
+    "artifact_text_as_said": "E-Q9, E-Q11, E-Q12 (chainless-by-registered-decision)",
+    "artifact_key": "e_q9_11_12",
+    "receipt": "nemotron F4: the E-Q9/11/12 chainless set"
+   },
+   {
+    "artifact_text_as_said": "C5-prime injector repair (E-Q10, \"STANDS, definitional\")",
+    "artifact_key": "c5p_e_q10",
+    "receipt": "nemotron F5: claim C5-prime on E-Q10"
+   },
+   {
+    "artifact_text_as_said": "C1 (E-Q13, chain tip d852e6ac...) intra-cell vs inter-cell porting",
+    "artifact_key": "c1_e_q13",
+    "receipt": "nemotron F6: claim C1 on E-Q13"
+   },
+   {
+    "artifact_text_as_said": "THREE HONEST GAPS gap (1) NO LICENSE vs ADOPTION-KIT.md / DAY-1.md outsider path",
+    "artifact_key": "repo_license",
+    "receipt": "nemotron F7: the repository-level missing-LICENSE gap"
+   },
+   {
+    "artifact_text_as_said": "M4 the 64-slot wormhole table / E-Q14 Adversarial probes",
+    "artifact_key": "m4_wormhole_table",
+    "receipt": "qwen F1: the M4 table (E-Q14 co-named; the invented cache-eviction mechanism is the claim side, adjudicated invented)"
+   },
+   {
+    "artifact_text_as_said": "RESOURCE-PROFILE.md / Fixed-point plane (R8)",
+    "artifact_key": "resource_profile",
+    "receipt": "qwen F2: the resource profile doc / fixed-point plane"
+   },
+   {
+    "artifact_text_as_said": "C1 intra-cell timbre (1-byte QTHE) vs inter-cell porting (2-byte tauPlane/dPlane encoding) on the twin-delivery task",
+    "artifact_key": "c1_e_q13",
+    "receipt": "qwen F3: claim C1 on E-Q13 (encoding comparison)"
+   },
+   {
+    "artifact_text_as_said": "E-Q15 Reward reweighting probe",
+    "artifact_key": "e_q15",
+    "receipt": "qwen F4: the E-Q15 probe"
+   },
+   {
+    "artifact_text_as_said": "qthe-core/ standalone package repository root",
+    "artifact_key": "repo_license",
+    "receipt": "seed F1: the repository-level missing-LICENSE gap"
+   },
+   {
+    "artifact_text_as_said": "E-Q14 adversarial probe results",
+    "artifact_key": "e_q14",
+    "receipt": "seed F2: the E-Q14 zero-pollution floor failure"
+   },
+   {
+    "artifact_text_as_said": "C99 cross-implementation sealer code (crossimpl/c/)",
+    "artifact_key": "cimpl_c99_sealer",
+    "receipt": "seed F3: the C99 sealer"
+   },
+   {
+    "artifact_text_as_said": "E-Q15 reward reweighting probe results",
+    "artifact_key": "e_q15",
+    "receipt": "seed F4: the E-Q15 probe"
+   },
+   {
+    "artifact_text_as_said": "C3 sigma critical scale claim and associated gifted proof",
+    "artifact_key": "c3_e_q2",
+    "receipt": "seed F5: claim C3 on E-Q2 (the gifted-proof claim side)"
+   }
+  ],
+  "pairs": [
+   {
+    "pair_id": "p2-S01",
+    "ground_truth": "same_entity",
+    "class": "known_same",
+    "seat_a": "mimov26f",
+    "finding_id_a": "F2",
+    "seat_b": "dsv41f",
+    "finding_id_b": "F4",
+    "artifact_text_a": "C3 (E-Q2) vs E-Q16 dense sigma phase table",
+    "artifact_text_b": "C3 sigma = log2(3) critical bridge scale (E-Q2)",
+    "claim_id_a": "c3_scope",
+    "claim_id_b": "c3_scope",
+    "refused": false,
+    "artifact_key_a": "c3_e_q2",
+    "artifact_key_b": "c3_e_q2",
+    "artifact_table_receipt_a": "mimov F2 AND nemotron F2 (byte-identical sealed text, two seats): claim C3 on E-Q2, with E-Q16's dense sigma table co-named as the conflicting evidence",
+    "artifact_table_receipt_b": "dsv F4: claim C3 on E-Q2",
+    "subject_key_a": "c3_e_q2::c3_scope",
+    "subject_key_b": "c3_e_q2::c3_scope",
+    "subject_claim_ids": [
+     "c3_scope",
+     "c3_scope"
+    ],
+    "same_subject": true,
+    "artifact_half_same": true,
+    "claim_half_same": true,
+    "routing": "intra_subject_no_identity_question",
+    "predicted_relation": "same_entity",
+    "agrees_with_ground_truth": true,
+    "artifact_half_only_prediction": "same_entity",
+    "artifact_half_only_agrees": true,
+    "claim_half_only_prediction": "same_entity",
+    "claim_half_only_agrees": true
+   },
+   {
+    "pair_id": "p2-D01",
+    "ground_truth": "different_entity",
+    "class": "known_different",
+    "seat_a": "qwen3635b",
+    "finding_id_a": "F1",
+    "seat_b": "mimov26f",
+    "finding_id_b": "F1",
+    "artifact_text_a": "M4 the 64-slot wormhole table / E-Q14 Adversarial probes",
+    "artifact_text_b": "E-Q14 (adversarial probes, docs/FALSIFICATION-BUDGET.md)",
+    "claim_id_a": "qwen_cache_eviction",
+    "claim_id_b": "eq14_baseline",
+    "refused": false,
+    "artifact_key_a": "m4_wormhole_table",
+    "artifact_key_b": "e_q14",
+    "artifact_table_receipt_a": "qwen F1: the M4 table (E-Q14 co-named; the invented cache-eviction mechanism is the claim side, adjudicated invented)",
+    "artifact_table_receipt_b": "mimov F1: the E-Q14 zero-pollution floor failure",
+    "subject_key_a": "m4_wormhole_table::qwen_cache_eviction",
+    "subject_key_b": "e_q14::eq14_baseline",
+    "subject_claim_ids": [
+     "qwen_cache_eviction",
+     "eq14_baseline"
+    ],
+    "same_subject": false,
+    "artifact_half_same": false,
+    "claim_half_same": false,
+    "routing": "cross_subject_same_issue_question",
+    "predicted_relation": "different_entity",
+    "agrees_with_ground_truth": true,
+    "artifact_half_only_prediction": "different_entity",
+    "artifact_half_only_agrees": true,
+    "claim_half_only_prediction": "different_entity",
+    "claim_half_only_agrees": true
+   },
+   {
+    "pair_id": "p2-R01",
+    "ground_truth": "different_entity",
+    "class": "seeded_random",
+    "seat_a": "hy4p",
+    "finding_id_a": "F1",
+    "seat_b": "seed20mini",
+    "finding_id_b": "F1",
+    "artifact_text_a": "E-Q14 / M4 wormhole table / C2 / demos (agent rendezvous, non-local alignment without a bus)",
+    "artifact_text_b": "qthe-core/ standalone package repository root",
+    "claim_id_a": "m4_content_addressing",
+    "claim_id_b": "license",
+    "refused": false,
+    "artifact_key_a": "m4_wormhole_table",
+    "artifact_key_b": "repo_license",
+    "artifact_table_receipt_a": "hy4 F1: co-names E-Q14/C2/demos, but the contested artifact is the M4 table's content-addressing (co-named artifacts receipted, not keyed)",
+    "artifact_table_receipt_b": "seed F1: the repository-level missing-LICENSE gap",
+    "subject_key_a": "m4_wormhole_table::m4_content_addressing",
+    "subject_key_b": "repo_license::license",
+    "subject_claim_ids": [
+     "m4_content_addressing",
+     "license"
+    ],
+    "same_subject": false,
+    "artifact_half_same": false,
+    "claim_half_same": false,
+    "routing": "cross_subject_same_issue_question",
+    "predicted_relation": "different_entity",
+    "agrees_with_ground_truth": true,
+    "artifact_half_only_prediction": "different_entity",
+    "artifact_half_only_agrees": true,
+    "claim_half_only_prediction": "different_entity",
+    "claim_half_only_agrees": true
+   },
+   {
+    "pair_id": "p2-S02",
+    "ground_truth": "same_entity",
+    "class": "known_same",
+    "seat_a": "mimov26f",
+    "finding_id_a": "F2",
+    "seat_b": "nemotron35sv",
+    "finding_id_b": "F2",
+    "artifact_text_a": "C3 (E-Q2) vs E-Q16 dense sigma phase table",
+    "artifact_text_b": "C3 (E-Q2) vs E-Q16 dense sigma phase table",
+    "claim_id_a": "c3_scope",
+    "claim_id_b": "c3_scope",
+    "refused": false,
+    "artifact_key_a": "c3_e_q2",
+    "artifact_key_b": "c3_e_q2",
+    "artifact_table_receipt_a": "mimov F2 AND nemotron F2 (byte-identical sealed text, two seats): claim C3 on E-Q2, with E-Q16's dense sigma table co-named as the conflicting evidence",
+    "artifact_table_receipt_b": "mimov F2 AND nemotron F2 (byte-identical sealed text, two seats): claim C3 on E-Q2, with E-Q16's dense sigma table co-named as the conflicting evidence",
+    "subject_key_a": "c3_e_q2::c3_scope",
+    "subject_key_b": "c3_e_q2::c3_scope",
+    "subject_claim_ids": [
+     "c3_scope",
+     "c3_scope"
+    ],
+    "same_subject": true,
+    "artifact_half_same": true,
+    "claim_half_same": true,
+    "routing": "intra_subject_no_identity_question",
+    "predicted_relation": "same_entity",
+    "agrees_with_ground_truth": true,
+    "artifact_half_only_prediction": "same_entity",
+    "artifact_half_only_agrees": true,
+    "claim_half_only_prediction": "same_entity",
+    "claim_half_only_agrees": true
+   },
+   {
+    "pair_id": "p2-D02",
+    "ground_truth": "different_entity",
+    "class": "known_different",
+    "seat_a": "mimov26f",
+    "finding_id_a": "F5",
+    "seat_b": "musegl30b",
+    "finding_id_b": "F3",
+    "artifact_text_a": "E-Q16 run-1 rows (16x16 T=100,000 harness fix)",
+    "artifact_text_b": "E-Q16",
+    "claim_id_a": "eq16_erratum",
+    "claim_id_b": "eq16_seedfn",
+    "refused": false,
+    "artifact_key_a": "e_q16",
+    "artifact_key_b": "e_q16",
+    "artifact_table_receipt_a": "mimov F5: the E-Q16 measurement wave / its chain",
+    "artifact_table_receipt_b": "muse F3: the E-Q16 measurement wave / its chain",
+    "subject_key_a": "e_q16::eq16_erratum",
+    "subject_key_b": "e_q16::eq16_seedfn",
+    "subject_claim_ids": [
+     "eq16_erratum",
+     "eq16_seedfn"
+    ],
+    "same_subject": false,
+    "artifact_half_same": true,
+    "claim_half_same": false,
+    "routing": "cross_subject_same_issue_question",
+    "predicted_relation": "different_entity",
+    "agrees_with_ground_truth": true,
+    "artifact_half_only_prediction": "same_entity",
+    "artifact_half_only_agrees": false,
+    "claim_half_only_prediction": "different_entity",
+    "claim_half_only_agrees": true
+   },
+   {
+    "pair_id": "p2-R02",
+    "ground_truth": "different_entity",
+    "class": "seeded_random",
+    "seat_a": "dsv41f",
+    "finding_id_a": "F1",
+    "seat_b": "nemotron35sv",
+    "finding_id_b": "F3",
+    "artifact_text_a": "C1 (E-Q13, chain tip d852e6ac...)",
+    "artifact_text_b": "M4 wormhole table (64-slot, content-addressed, last-writer-wins) and E-Q14 provenance autopsy",
+    "claim_id_a": "c1_claim",
+    "claim_id_b": "m4_content_addressing",
+    "refused": false,
+    "artifact_key_a": "c1_e_q13",
+    "artifact_key_b": "m4_wormhole_table",
+    "artifact_table_receipt_a": "dsv F1: names claim C1 on E-Q13 via its chain tip",
+    "artifact_table_receipt_b": "nemotron F3: the M4 table (E-Q14 autopsy co-named as evidence)",
+    "subject_key_a": "c1_e_q13::c1_claim",
+    "subject_key_b": "m4_wormhole_table::m4_content_addressing",
+    "subject_claim_ids": [
+     "c1_claim",
+     "m4_content_addressing"
+    ],
+    "same_subject": false,
+    "artifact_half_same": false,
+    "claim_half_same": false,
+    "routing": "cross_subject_same_issue_question",
+    "predicted_relation": "different_entity",
+    "agrees_with_ground_truth": true,
+    "artifact_half_only_prediction": "different_entity",
+    "artifact_half_only_agrees": true,
+    "claim_half_only_prediction": "different_entity",
+    "claim_half_only_agrees": true
+   },
+   {
+    "pair_id": "p2-S03",
+    "ground_truth": "same_entity",
+    "class": "known_same",
+    "seat_a": "dsv41f",
+    "finding_id_a": "F4",
+    "seat_b": "nemotron35sv",
+    "finding_id_b": "F2",
+    "artifact_text_a": "C3 sigma = log2(3) critical bridge scale (E-Q2)",
+    "artifact_text_b": "C3 (E-Q2) vs E-Q16 dense sigma phase table",
+    "claim_id_a": "c3_scope",
+    "claim_id_b": "c3_scope",
+    "refused": false,
+    "artifact_key_a": "c3_e_q2",
+    "artifact_key_b": "c3_e_q2",
+    "artifact_table_receipt_a": "dsv F4: claim C3 on E-Q2",
+    "artifact_table_receipt_b": "mimov F2 AND nemotron F2 (byte-identical sealed text, two seats): claim C3 on E-Q2, with E-Q16's dense sigma table co-named as the conflicting evidence",
+    "subject_key_a": "c3_e_q2::c3_scope",
+    "subject_key_b": "c3_e_q2::c3_scope",
+    "subject_claim_ids": [
+     "c3_scope",
+     "c3_scope"
+    ],
+    "same_subject": true,
+    "artifact_half_same": true,
+    "claim_half_same": true,
+    "routing": "intra_subject_no_identity_question",
+    "predicted_relation": "same_entity",
+    "agrees_with_ground_truth": true,
+    "artifact_half_only_prediction": "same_entity",
+    "artifact_half_only_agrees": true,
+    "claim_half_only_prediction": "same_entity",
+    "claim_half_only_agrees": true
+   },
+   {
+    "pair_id": "p2-D03",
+    "ground_truth": "different_entity",
+    "class": "known_different",
+    "seat_a": "dsv41f",
+    "finding_id_a": "F3",
+    "seat_b": "nemotron35sv",
+    "finding_id_b": "F1",
+    "artifact_text_a": "E-Q16 16x16 T=100,000 in-run harness fix (seedFn closures consumed rng at call time)",
+    "artifact_text_b": "E-Q16 measurement wave (16x16 T=100,000) and scripts/probe_gate.mjs PG4 determinism witness",
+    "claim_id_a": "seedfn_closure",
+    "claim_id_b": "eq16_seedfn",
+    "refused": false,
+    "artifact_key_a": "e_q16",
+    "artifact_key_b": "e_q16",
+    "artifact_table_receipt_a": "dsv F3: the E-Q16 measurement wave / its chain",
+    "artifact_table_receipt_b": "nemotron F1: the E-Q16 measurement wave / its chain (probe_gate.mjs PG4 co-named as the determinism witness; not keyed)",
+    "subject_key_a": "e_q16::seedfn_closure",
+    "subject_key_b": "e_q16::eq16_seedfn",
+    "subject_claim_ids": [
+     "seedfn_closure",
+     "eq16_seedfn"
+    ],
+    "same_subject": false,
+    "artifact_half_same": true,
+    "claim_half_same": false,
+    "routing": "cross_subject_same_issue_question",
+    "predicted_relation": "different_entity",
+    "agrees_with_ground_truth": true,
+    "artifact_half_only_prediction": "same_entity",
+    "artifact_half_only_agrees": false,
+    "claim_half_only_prediction": "different_entity",
+    "claim_half_only_agrees": true
+   },
+   {
+    "pair_id": "p2-R03",
+    "ground_truth": "different_entity",
+    "class": "seeded_random",
+    "seat_a": "hy4p",
+    "finding_id_a": "F4",
+    "seat_b": "seed20mini",
+    "finding_id_b": "F1",
+    "artifact_text_a": "E-Q16 / seedFn closures consumed rng at call time (harness fix)",
+    "artifact_text_b": "qthe-core/ standalone package repository root",
+    "claim_id_a": "eq16_seedfn",
+    "claim_id_b": "license",
+    "refused": false,
+    "artifact_key_a": "e_q16",
+    "artifact_key_b": "repo_license",
+    "artifact_table_receipt_a": "hy4 F4: the E-Q16 measurement wave / its chain",
+    "artifact_table_receipt_b": "seed F1: the repository-level missing-LICENSE gap",
+    "subject_key_a": "e_q16::eq16_seedfn",
+    "subject_key_b": "repo_license::license",
+    "subject_claim_ids": [
+     "eq16_seedfn",
+     "license"
+    ],
+    "same_subject": false,
+    "artifact_half_same": false,
+    "claim_half_same": false,
+    "routing": "cross_subject_same_issue_question",
+    "predicted_relation": "different_entity",
+    "agrees_with_ground_truth": true,
+    "artifact_half_only_prediction": "different_entity",
+    "artifact_half_only_agrees": true,
+    "claim_half_only_prediction": "different_entity",
+    "claim_half_only_agrees": true
+   },
+   {
+    "pair_id": "p2-S04",
+    "ground_truth": "same_entity",
+    "class": "known_same",
+    "seat_a": "mimov26f",
+    "finding_id_a": "F1",
+    "seat_b": "dsv41f",
+    "finding_id_b": "F2",
+    "artifact_text_a": "E-Q14 (adversarial probes, docs/FALSIFICATION-BUDGET.md)",
+    "artifact_text_b": "E-Q14 provenance autopsy (slot-63 saturation rail / adjacent-d convoy)",
+    "claim_id_a": "eq14_baseline",
+    "claim_id_b": "eq14_baseline",
+    "refused": false,
+    "artifact_key_a": "e_q14",
+    "artifact_key_b": "e_q14",
+    "artifact_table_receipt_a": "mimov F1: the E-Q14 zero-pollution floor failure",
+    "artifact_table_receipt_b": "dsv F2: the E-Q14 autopsy (floor failure mechanics)",
+    "subject_key_a": "e_q14::eq14_baseline",
+    "subject_key_b": "e_q14::eq14_baseline",
+    "subject_claim_ids": [
+     "eq14_baseline",
+     "eq14_baseline"
+    ],
+    "same_subject": true,
+    "artifact_half_same": true,
+    "claim_half_same": true,
+    "routing": "intra_subject_no_identity_question",
+    "predicted_relation": "same_entity",
+    "agrees_with_ground_truth": true,
+    "artifact_half_only_prediction": "same_entity",
+    "artifact_half_only_agrees": true,
+    "claim_half_only_prediction": "same_entity",
+    "claim_half_only_agrees": true
+   },
+   {
+    "pair_id": "p2-D04",
+    "ground_truth": "different_entity",
+    "class": "known_different",
+    "seat_a": "hy4p",
+    "finding_id_a": "F2",
+    "seat_b": "mimov26f",
+    "finding_id_b": "F1",
+    "artifact_text_a": "E-Q16 / M4 / grid scaling claim (locality HOLDS to 256x256 at 10% Abstain)",
+    "artifact_text_b": "E-Q14 (adversarial probes, docs/FALSIFICATION-BUDGET.md)",
+    "claim_id_a": "locality_capacity",
+    "claim_id_b": "eq14_baseline",
+    "refused": false,
+    "artifact_key_a": "m4_wormhole_table",
+    "artifact_key_b": "e_q14",
+    "artifact_table_receipt_a": "hy4 F2: co-names E-Q16 as evidence; the contested artifact is the 64-slot table's capacity vs the locality phrasing",
+    "artifact_table_receipt_b": "mimov F1: the E-Q14 zero-pollution floor failure",
+    "subject_key_a": "m4_wormhole_table::locality_capacity",
+    "subject_key_b": "e_q14::eq14_baseline",
+    "subject_claim_ids": [
+     "locality_capacity",
+     "eq14_baseline"
+    ],
+    "same_subject": false,
+    "artifact_half_same": false,
+    "claim_half_same": false,
+    "routing": "cross_subject_same_issue_question",
+    "predicted_relation": "different_entity",
+    "agrees_with_ground_truth": true,
+    "artifact_half_only_prediction": "different_entity",
+    "artifact_half_only_agrees": true,
+    "claim_half_only_prediction": "different_entity",
+    "claim_half_only_agrees": true
+   },
+   {
+    "pair_id": "p2-R04",
+    "ground_truth": "different_entity",
+    "class": "seeded_random",
+    "seat_a": "dsv41f",
+    "finding_id_a": "F5",
+    "seat_b": "mimov26f",
+    "finding_id_b": "F2",
+    "artifact_text_a": "THE THREE HONEST GAPS (1) no LICENSE",
+    "artifact_text_b": "C3 (E-Q2) vs E-Q16 dense sigma phase table",
+    "claim_id_a": "license",
+    "claim_id_b": "c3_scope",
+    "refused": false,
+    "artifact_key_a": "repo_license",
+    "artifact_key_b": "c3_e_q2",
+    "artifact_table_receipt_a": "dsv F5: the repository-level missing-LICENSE gap",
+    "artifact_table_receipt_b": "mimov F2 AND nemotron F2 (byte-identical sealed text, two seats): claim C3 on E-Q2, with E-Q16's dense sigma table co-named as the conflicting evidence",
+    "subject_key_a": "repo_license::license",
+    "subject_key_b": "c3_e_q2::c3_scope",
+    "subject_claim_ids": [
+     "license",
+     "c3_scope"
+    ],
+    "same_subject": false,
+    "artifact_half_same": false,
+    "claim_half_same": false,
+    "routing": "cross_subject_same_issue_question",
+    "predicted_relation": "different_entity",
+    "agrees_with_ground_truth": true,
+    "artifact_half_only_prediction": "different_entity",
+    "artifact_half_only_agrees": true,
+    "claim_half_only_prediction": "different_entity",
+    "claim_half_only_agrees": true
+   },
+   {
+    "pair_id": "p2-S05",
+    "ground_truth": "same_entity",
+    "class": "known_same",
+    "seat_a": "mimov26f",
+    "finding_id_a": "F3",
+    "seat_b": "hy4p",
+    "finding_id_b": "F3",
+    "artifact_text_a": "C1 / E-Q13 (twin-delivery bytes-gain, cached-port caveat)",
+    "artifact_text_b": "C1 / E-Q13 / cached-port caveat (tau plane SRAM-resident)",
+    "claim_id_a": "c1_budget",
+    "claim_id_b": "c1_budget",
+    "refused": false,
+    "artifact_key_a": "c1_e_q13",
+    "artifact_key_b": "c1_e_q13",
+    "artifact_table_receipt_a": "mimov F3: claim C1 on E-Q13",
+    "artifact_table_receipt_b": "hy4 F3: claim C1 on E-Q13, cached-port caveat",
+    "subject_key_a": "c1_e_q13::c1_budget",
+    "subject_key_b": "c1_e_q13::c1_budget",
+    "subject_claim_ids": [
+     "c1_budget",
+     "c1_budget"
+    ],
+    "same_subject": true,
+    "artifact_half_same": true,
+    "claim_half_same": true,
+    "routing": "intra_subject_no_identity_question",
+    "predicted_relation": "same_entity",
+    "agrees_with_ground_truth": true,
+    "artifact_half_only_prediction": "same_entity",
+    "artifact_half_only_agrees": true,
+    "claim_half_only_prediction": "same_entity",
+    "claim_half_only_agrees": true
+   },
+   {
+    "pair_id": "p2-D05",
+    "ground_truth": "different_entity",
+    "class": "known_different",
+    "seat_a": "seed20mini",
+    "finding_id_a": "F5",
+    "seat_b": "mimov26f",
+    "finding_id_b": "F2",
+    "artifact_text_a": "C3 sigma critical scale claim and associated gifted proof",
+    "artifact_text_b": "C3 (E-Q2) vs E-Q16 dense sigma phase table",
+    "claim_id_a": "c3_gifted_proof",
+    "claim_id_b": "c3_scope",
+    "refused": false,
+    "artifact_key_a": "c3_e_q2",
+    "artifact_key_b": "c3_e_q2",
+    "artifact_table_receipt_a": "seed F5: claim C3 on E-Q2 (the gifted-proof claim side)",
+    "artifact_table_receipt_b": "mimov F2 AND nemotron F2 (byte-identical sealed text, two seats): claim C3 on E-Q2, with E-Q16's dense sigma table co-named as the conflicting evidence",
+    "subject_key_a": "c3_e_q2::c3_gifted_proof",
+    "subject_key_b": "c3_e_q2::c3_scope",
+    "subject_claim_ids": [
+     "c3_gifted_proof",
+     "c3_scope"
+    ],
+    "same_subject": false,
+    "artifact_half_same": true,
+    "claim_half_same": false,
+    "routing": "cross_subject_same_issue_question",
+    "predicted_relation": "different_entity",
+    "agrees_with_ground_truth": true,
+    "artifact_half_only_prediction": "same_entity",
+    "artifact_half_only_agrees": false,
+    "claim_half_only_prediction": "different_entity",
+    "claim_half_only_agrees": true
+   },
+   {
+    "pair_id": "p2-R05",
+    "ground_truth": "different_entity",
+    "class": "seeded_random",
+    "seat_a": "mimov26f",
+    "finding_id_a": "F2",
+    "seat_b": "nemotron35sv",
+    "finding_id_b": "F5",
+    "artifact_text_a": "C3 (E-Q2) vs E-Q16 dense sigma phase table",
+    "artifact_text_b": "C5-prime injector repair (E-Q10, \"STANDS, definitional\")",
+    "claim_id_a": "c3_scope",
+    "claim_id_b": "c5p_definitional",
+    "refused": false,
+    "artifact_key_a": "c3_e_q2",
+    "artifact_key_b": "c5p_e_q10",
+    "artifact_table_receipt_a": "mimov F2 AND nemotron F2 (byte-identical sealed text, two seats): claim C3 on E-Q2, with E-Q16's dense sigma table co-named as the conflicting evidence",
+    "artifact_table_receipt_b": "nemotron F5: claim C5-prime on E-Q10",
+    "subject_key_a": "c3_e_q2::c3_scope",
+    "subject_key_b": "c5p_e_q10::c5p_definitional",
+    "subject_claim_ids": [
+     "c3_scope",
+     "c5p_definitional"
+    ],
+    "same_subject": false,
+    "artifact_half_same": false,
+    "claim_half_same": false,
+    "routing": "cross_subject_same_issue_question",
+    "predicted_relation": "different_entity",
+    "agrees_with_ground_truth": true,
+    "artifact_half_only_prediction": "different_entity",
+    "artifact_half_only_agrees": true,
+    "claim_half_only_prediction": "different_entity",
+    "claim_half_only_agrees": true
+   },
+   {
+    "pair_id": "p2-S06",
+    "ground_truth": "same_entity",
+    "class": "known_same",
+    "seat_a": "mimov26f",
+    "finding_id_a": "F3",
+    "seat_b": "nemotron35sv",
+    "finding_id_b": "F6",
+    "artifact_text_a": "C1 / E-Q13 (twin-delivery bytes-gain, cached-port caveat)",
+    "artifact_text_b": "C1 (E-Q13, chain tip d852e6ac...) intra-cell vs inter-cell porting",
+    "claim_id_a": "c1_budget",
+    "claim_id_b": "c1_budget",
+    "refused": false,
+    "artifact_key_a": "c1_e_q13",
+    "artifact_key_b": "c1_e_q13",
+    "artifact_table_receipt_a": "mimov F3: claim C1 on E-Q13",
+    "artifact_table_receipt_b": "nemotron F6: claim C1 on E-Q13",
+    "subject_key_a": "c1_e_q13::c1_budget",
+    "subject_key_b": "c1_e_q13::c1_budget",
+    "subject_claim_ids": [
+     "c1_budget",
+     "c1_budget"
+    ],
+    "same_subject": true,
+    "artifact_half_same": true,
+    "claim_half_same": true,
+    "routing": "intra_subject_no_identity_question",
+    "predicted_relation": "same_entity",
+    "agrees_with_ground_truth": true,
+    "artifact_half_only_prediction": "same_entity",
+    "artifact_half_only_agrees": true,
+    "claim_half_only_prediction": "same_entity",
+    "claim_half_only_agrees": true
+   },
+   {
+    "pair_id": "p2-D06",
+    "ground_truth": "different_entity",
+    "class": "known_different",
+    "seat_a": "dsv41f",
+    "finding_id_a": "F1",
+    "seat_b": "hy4p",
+    "finding_id_b": "F3",
+    "artifact_text_a": "C1 (E-Q13, chain tip d852e6ac...)",
+    "artifact_text_b": "C1 / E-Q13 / cached-port caveat (tau plane SRAM-resident)",
+    "claim_id_a": "c1_claim",
+    "claim_id_b": "c1_budget",
+    "refused": false,
+    "artifact_key_a": "c1_e_q13",
+    "artifact_key_b": "c1_e_q13",
+    "artifact_table_receipt_a": "dsv F1: names claim C1 on E-Q13 via its chain tip",
+    "artifact_table_receipt_b": "hy4 F3: claim C1 on E-Q13, cached-port caveat",
+    "subject_key_a": "c1_e_q13::c1_claim",
+    "subject_key_b": "c1_e_q13::c1_budget",
+    "subject_claim_ids": [
+     "c1_claim",
+     "c1_budget"
+    ],
+    "same_subject": false,
+    "artifact_half_same": true,
+    "claim_half_same": false,
+    "routing": "cross_subject_same_issue_question",
+    "predicted_relation": "different_entity",
+    "agrees_with_ground_truth": true,
+    "artifact_half_only_prediction": "same_entity",
+    "artifact_half_only_agrees": false,
+    "claim_half_only_prediction": "different_entity",
+    "claim_half_only_agrees": true
+   },
+   {
+    "pair_id": "p2-R06",
+    "ground_truth": "different_entity",
+    "class": "seeded_random",
+    "seat_a": "hy4p",
+    "finding_id_a": "F1",
+    "seat_b": "qwen3635b",
+    "finding_id_b": "F3",
+    "artifact_text_a": "E-Q14 / M4 wormhole table / C2 / demos (agent rendezvous, non-local alignment without a bus)",
+    "artifact_text_b": "C1 intra-cell timbre (1-byte QTHE) vs inter-cell porting (2-byte tauPlane/dPlane encoding) on the twin-delivery task",
+    "claim_id_a": "m4_content_addressing",
+    "claim_id_b": "c1_budget",
+    "refused": false,
+    "artifact_key_a": "m4_wormhole_table",
+    "artifact_key_b": "c1_e_q13",
+    "artifact_table_receipt_a": "hy4 F1: co-names E-Q14/C2/demos, but the contested artifact is the M4 table's content-addressing (co-named artifacts receipted, not keyed)",
+    "artifact_table_receipt_b": "qwen F3: claim C1 on E-Q13 (encoding comparison)",
+    "subject_key_a": "m4_wormhole_table::m4_content_addressing",
+    "subject_key_b": "c1_e_q13::c1_budget",
+    "subject_claim_ids": [
+     "m4_content_addressing",
+     "c1_budget"
+    ],
+    "same_subject": false,
+    "artifact_half_same": false,
+    "claim_half_same": false,
+    "routing": "cross_subject_same_issue_question",
+    "predicted_relation": "different_entity",
+    "agrees_with_ground_truth": true,
+    "artifact_half_only_prediction": "different_entity",
+    "artifact_half_only_agrees": true,
+    "claim_half_only_prediction": "different_entity",
+    "claim_half_only_agrees": true
+   },
+   {
+    "pair_id": "p2-S07",
+    "ground_truth": "same_entity",
+    "class": "known_same",
+    "seat_a": "hy4p",
+    "finding_id_a": "F3",
+    "seat_b": "nemotron35sv",
+    "finding_id_b": "F6",
+    "artifact_text_a": "C1 / E-Q13 / cached-port caveat (tau plane SRAM-resident)",
+    "artifact_text_b": "C1 (E-Q13, chain tip d852e6ac...) intra-cell vs inter-cell porting",
+    "claim_id_a": "c1_budget",
+    "claim_id_b": "c1_budget",
+    "refused": false,
+    "artifact_key_a": "c1_e_q13",
+    "artifact_key_b": "c1_e_q13",
+    "artifact_table_receipt_a": "hy4 F3: claim C1 on E-Q13, cached-port caveat",
+    "artifact_table_receipt_b": "nemotron F6: claim C1 on E-Q13",
+    "subject_key_a": "c1_e_q13::c1_budget",
+    "subject_key_b": "c1_e_q13::c1_budget",
+    "subject_claim_ids": [
+     "c1_budget",
+     "c1_budget"
+    ],
+    "same_subject": true,
+    "artifact_half_same": true,
+    "claim_half_same": true,
+    "routing": "intra_subject_no_identity_question",
+    "predicted_relation": "same_entity",
+    "agrees_with_ground_truth": true,
+    "artifact_half_only_prediction": "same_entity",
+    "artifact_half_only_agrees": true,
+    "claim_half_only_prediction": "same_entity",
+    "claim_half_only_agrees": true
+   },
+   {
+    "pair_id": "p2-D07",
+    "ground_truth": "different_entity",
+    "class": "known_different",
+    "seat_a": "mimov26f",
+    "finding_id_a": "F4",
+    "seat_b": "seed20mini",
+    "finding_id_b": "F4",
+    "artifact_text_a": "E-Q9/E-Q11/E-Q12 (chainless-by-registered-decision)",
+    "artifact_text_b": "E-Q15 reward reweighting probe results",
+    "claim_id_a": "eq9_chainless",
+    "claim_id_b": "eq15",
+    "refused": false,
+    "artifact_key_a": "e_q9_11_12",
+    "artifact_key_b": "e_q15",
+    "artifact_table_receipt_a": "mimov F4: the E-Q9/11/12 chainless set",
+    "artifact_table_receipt_b": "seed F4: the E-Q15 probe",
+    "subject_key_a": "e_q9_11_12::eq9_chainless",
+    "subject_key_b": "e_q15::eq15",
+    "subject_claim_ids": [
+     "eq9_chainless",
+     "eq15"
+    ],
+    "same_subject": false,
+    "artifact_half_same": false,
+    "claim_half_same": false,
+    "routing": "cross_subject_same_issue_question",
+    "predicted_relation": "different_entity",
+    "agrees_with_ground_truth": true,
+    "artifact_half_only_prediction": "different_entity",
+    "artifact_half_only_agrees": true,
+    "claim_half_only_prediction": "different_entity",
+    "claim_half_only_agrees": true
+   },
+   {
+    "pair_id": "p2-R07",
+    "ground_truth": "different_entity",
+    "class": "seeded_random",
+    "seat_a": "mimov26f",
+    "finding_id_a": "F1",
+    "seat_b": "seed20mini",
+    "finding_id_b": "F4",
+    "artifact_text_a": "E-Q14 (adversarial probes, docs/FALSIFICATION-BUDGET.md)",
+    "artifact_text_b": "E-Q15 reward reweighting probe results",
+    "claim_id_a": "eq14_baseline",
+    "claim_id_b": "eq15",
+    "refused": false,
+    "artifact_key_a": "e_q14",
+    "artifact_key_b": "e_q15",
+    "artifact_table_receipt_a": "mimov F1: the E-Q14 zero-pollution floor failure",
+    "artifact_table_receipt_b": "seed F4: the E-Q15 probe",
+    "subject_key_a": "e_q14::eq14_baseline",
+    "subject_key_b": "e_q15::eq15",
+    "subject_claim_ids": [
+     "eq14_baseline",
+     "eq15"
+    ],
+    "same_subject": false,
+    "artifact_half_same": false,
+    "claim_half_same": false,
+    "routing": "cross_subject_same_issue_question",
+    "predicted_relation": "different_entity",
+    "agrees_with_ground_truth": true,
+    "artifact_half_only_prediction": "different_entity",
+    "artifact_half_only_agrees": true,
+    "claim_half_only_prediction": "different_entity",
+    "claim_half_only_agrees": true
+   },
+   {
+    "pair_id": "p2-S08",
+    "ground_truth": "same_entity",
+    "class": "known_same",
+    "seat_a": "mimov26f",
+    "finding_id_a": "F6",
+    "seat_b": "dsv41f",
+    "finding_id_b": "F5",
+    "artifact_text_a": "qthe-core/ PROVENANCE.txt + docs/ADOPTION-KIT.md (no LICENSE)",
+    "artifact_text_b": "THE THREE HONEST GAPS (1) no LICENSE",
+    "claim_id_a": "license",
+    "claim_id_b": "license",
+    "refused": false,
+    "artifact_key_a": "repo_license",
+    "artifact_key_b": "repo_license",
+    "artifact_table_receipt_a": "mimov F6: the repository-level missing-LICENSE gap",
+    "artifact_table_receipt_b": "dsv F5: the repository-level missing-LICENSE gap",
+    "subject_key_a": "repo_license::license",
+    "subject_key_b": "repo_license::license",
+    "subject_claim_ids": [
+     "license",
+     "license"
+    ],
+    "same_subject": true,
+    "artifact_half_same": true,
+    "claim_half_same": true,
+    "routing": "intra_subject_no_identity_question",
+    "predicted_relation": "same_entity",
+    "agrees_with_ground_truth": true,
+    "artifact_half_only_prediction": "same_entity",
+    "artifact_half_only_agrees": true,
+    "claim_half_only_prediction": "same_entity",
+    "claim_half_only_agrees": true
+   },
+   {
+    "pair_id": "p2-D08",
+    "ground_truth": "different_entity",
+    "class": "known_different",
+    "seat_a": "dsv41f",
+    "finding_id_a": "F7",
+    "seat_b": "nemotron35sv",
+    "finding_id_b": "F3",
+    "artifact_text_a": "C5-prime injector repair (E-Q10)",
+    "artifact_text_b": "M4 wormhole table (64-slot, content-addressed, last-writer-wins) and E-Q14 provenance autopsy",
+    "claim_id_a": "c5p_definitional",
+    "claim_id_b": "m4_content_addressing",
+    "refused": false,
+    "artifact_key_a": "c5p_e_q10",
+    "artifact_key_b": "m4_wormhole_table",
+    "artifact_table_receipt_a": "dsv F7: claim C5-prime on E-Q10",
+    "artifact_table_receipt_b": "nemotron F3: the M4 table (E-Q14 autopsy co-named as evidence)",
+    "subject_key_a": "c5p_e_q10::c5p_definitional",
+    "subject_key_b": "m4_wormhole_table::m4_content_addressing",
+    "subject_claim_ids": [
+     "c5p_definitional",
+     "m4_content_addressing"
+    ],
+    "same_subject": false,
+    "artifact_half_same": false,
+    "claim_half_same": false,
+    "routing": "cross_subject_same_issue_question",
+    "predicted_relation": "different_entity",
+    "agrees_with_ground_truth": true,
+    "artifact_half_only_prediction": "different_entity",
+    "artifact_half_only_agrees": true,
+    "claim_half_only_prediction": "different_entity",
+    "claim_half_only_agrees": true
+   },
+   {
+    "pair_id": "p2-R08",
+    "ground_truth": "different_entity",
+    "class": "seeded_random",
+    "seat_a": "dsv41f",
+    "finding_id_a": "F1",
+    "seat_b": "qwen3635b",
+    "finding_id_b": "F1",
+    "artifact_text_a": "C1 (E-Q13, chain tip d852e6ac...)",
+    "artifact_text_b": "M4 the 64-slot wormhole table / E-Q14 Adversarial probes",
+    "claim_id_a": "c1_claim",
+    "claim_id_b": "qwen_cache_eviction",
+    "refused": false,
+    "artifact_key_a": "c1_e_q13",
+    "artifact_key_b": "m4_wormhole_table",
+    "artifact_table_receipt_a": "dsv F1: names claim C1 on E-Q13 via its chain tip",
+    "artifact_table_receipt_b": "qwen F1: the M4 table (E-Q14 co-named; the invented cache-eviction mechanism is the claim side, adjudicated invented)",
+    "subject_key_a": "c1_e_q13::c1_claim",
+    "subject_key_b": "m4_wormhole_table::qwen_cache_eviction",
+    "subject_claim_ids": [
+     "c1_claim",
+     "qwen_cache_eviction"
+    ],
+    "same_subject": false,
+    "artifact_half_same": false,
+    "claim_half_same": false,
+    "routing": "cross_subject_same_issue_question",
+    "predicted_relation": "different_entity",
+    "agrees_with_ground_truth": true,
+    "artifact_half_only_prediction": "different_entity",
+    "artifact_half_only_agrees": true,
+    "claim_half_only_prediction": "different_entity",
+    "claim_half_only_agrees": true
+   },
+   {
+    "pair_id": "p2-S09",
+    "ground_truth": "same_entity",
+    "class": "known_same",
+    "seat_a": "mimov26f",
+    "finding_id_a": "F4",
+    "seat_b": "hy4p",
+    "finding_id_b": "F5",
+    "artifact_text_a": "E-Q9/E-Q11/E-Q12 (chainless-by-registered-decision)",
+    "artifact_text_b": "E-Q9/E-Q11/E-Q12 (chainless-by-registered-decision) / scripts/verify_all_chains.mjs",
+    "claim_id_a": "eq9_chainless",
+    "claim_id_b": "eq9_chainless",
+    "refused": false,
+    "artifact_key_a": "e_q9_11_12",
+    "artifact_key_b": "e_q9_11_12",
+    "artifact_table_receipt_a": "mimov F4: the E-Q9/11/12 chainless set",
+    "artifact_table_receipt_b": "hy4 F5: the E-Q9/11/12 chainless set (co-names verify_all_chains.mjs)",
+    "subject_key_a": "e_q9_11_12::eq9_chainless",
+    "subject_key_b": "e_q9_11_12::eq9_chainless",
+    "subject_claim_ids": [
+     "eq9_chainless",
+     "eq9_chainless"
+    ],
+    "same_subject": true,
+    "artifact_half_same": true,
+    "claim_half_same": true,
+    "routing": "intra_subject_no_identity_question",
+    "predicted_relation": "same_entity",
+    "agrees_with_ground_truth": true,
+    "artifact_half_only_prediction": "same_entity",
+    "artifact_half_only_agrees": true,
+    "claim_half_only_prediction": "same_entity",
+    "claim_half_only_agrees": true
+   },
+   {
+    "pair_id": "p2-D09",
+    "ground_truth": "different_entity",
+    "class": "known_different",
+    "seat_a": "qwen3635b",
+    "finding_id_a": "F2",
+    "seat_b": "dsv41f",
+    "finding_id_b": "F6",
+    "artifact_text_a": "RESOURCE-PROFILE.md / Fixed-point plane (R8)",
+    "artifact_text_b": "E-Q15 reward reweighting probe (win-rate 0.00, median delta -6)",
+    "claim_id_a": "resource_profile",
+    "claim_id_b": "eq15",
+    "refused": false,
+    "artifact_key_a": "resource_profile",
+    "artifact_key_b": "e_q15",
+    "artifact_table_receipt_a": "qwen F2: the resource profile doc / fixed-point plane",
+    "artifact_table_receipt_b": "dsv F6: the E-Q15 probe",
+    "subject_key_a": "resource_profile::resource_profile",
+    "subject_key_b": "e_q15::eq15",
+    "subject_claim_ids": [
+     "resource_profile",
+     "eq15"
+    ],
+    "same_subject": false,
+    "artifact_half_same": false,
+    "claim_half_same": false,
+    "routing": "cross_subject_same_issue_question",
+    "predicted_relation": "different_entity",
+    "agrees_with_ground_truth": true,
+    "artifact_half_only_prediction": "different_entity",
+    "artifact_half_only_agrees": true,
+    "claim_half_only_prediction": "different_entity",
+    "claim_half_only_agrees": true
+   },
+   {
+    "pair_id": "p2-R09",
+    "ground_truth": "different_entity",
+    "class": "seeded_random",
+    "seat_a": "hy4p",
+    "finding_id_a": "F2",
+    "seat_b": "qwen3635b",
+    "finding_id_b": "F2",
+    "artifact_text_a": "E-Q16 / M4 / grid scaling claim (locality HOLDS to 256x256 at 10% Abstain)",
+    "artifact_text_b": "RESOURCE-PROFILE.md / Fixed-point plane (R8)",
+    "claim_id_a": "locality_capacity",
+    "claim_id_b": "resource_profile",
+    "refused": false,
+    "artifact_key_a": "m4_wormhole_table",
+    "artifact_key_b": "resource_profile",
+    "artifact_table_receipt_a": "hy4 F2: co-names E-Q16 as evidence; the contested artifact is the 64-slot table's capacity vs the locality phrasing",
+    "artifact_table_receipt_b": "qwen F2: the resource profile doc / fixed-point plane",
+    "subject_key_a": "m4_wormhole_table::locality_capacity",
+    "subject_key_b": "resource_profile::resource_profile",
+    "subject_claim_ids": [
+     "locality_capacity",
+     "resource_profile"
+    ],
+    "same_subject": false,
+    "artifact_half_same": false,
+    "claim_half_same": false,
+    "routing": "cross_subject_same_issue_question",
+    "predicted_relation": "different_entity",
+    "agrees_with_ground_truth": true,
+    "artifact_half_only_prediction": "different_entity",
+    "artifact_half_only_agrees": true,
+    "claim_half_only_prediction": "different_entity",
+    "claim_half_only_agrees": true
+   },
+   {
+    "pair_id": "p2-S10",
+    "ground_truth": "same_entity",
+    "class": "known_same",
+    "seat_a": "seed20mini",
+    "finding_id_a": "F1",
+    "seat_b": "musegl30b",
+    "finding_id_b": "F4",
+    "artifact_text_a": "qthe-core/ standalone package repository root",
+    "artifact_text_b": "THE THREE HONEST GAPS",
+    "claim_id_a": "license",
+    "claim_id_b": "license",
+    "refused": false,
+    "artifact_key_a": "repo_license",
+    "artifact_key_b": "repo_license",
+    "artifact_table_receipt_a": "seed F1: the repository-level missing-LICENSE gap",
+    "artifact_table_receipt_b": "muse F4: the repository-level missing-LICENSE gap",
+    "subject_key_a": "repo_license::license",
+    "subject_key_b": "repo_license::license",
+    "subject_claim_ids": [
+     "license",
+     "license"
+    ],
+    "same_subject": true,
+    "artifact_half_same": true,
+    "claim_half_same": true,
+    "routing": "intra_subject_no_identity_question",
+    "predicted_relation": "same_entity",
+    "agrees_with_ground_truth": true,
+    "artifact_half_only_prediction": "same_entity",
+    "artifact_half_only_agrees": true,
+    "claim_half_only_prediction": "same_entity",
+    "claim_half_only_agrees": true
+   },
+   {
+    "pair_id": "p2-D10",
+    "ground_truth": "different_entity",
+    "class": "known_different",
+    "seat_a": "seed20mini",
+    "finding_id_a": "F3",
+    "seat_b": "nemotron35sv",
+    "finding_id_b": "F5",
+    "artifact_text_a": "C99 cross-implementation sealer code (crossimpl/c/)",
+    "artifact_text_b": "C5-prime injector repair (E-Q10, \"STANDS, definitional\")",
+    "claim_id_a": "c99_sealer",
+    "claim_id_b": "c5p_definitional",
+    "refused": false,
+    "artifact_key_a": "cimpl_c99_sealer",
+    "artifact_key_b": "c5p_e_q10",
+    "artifact_table_receipt_a": "seed F3: the C99 sealer",
+    "artifact_table_receipt_b": "nemotron F5: claim C5-prime on E-Q10",
+    "subject_key_a": "cimpl_c99_sealer::c99_sealer",
+    "subject_key_b": "c5p_e_q10::c5p_definitional",
+    "subject_claim_ids": [
+     "c99_sealer",
+     "c5p_definitional"
+    ],
+    "same_subject": false,
+    "artifact_half_same": false,
+    "claim_half_same": false,
+    "routing": "cross_subject_same_issue_question",
+    "predicted_relation": "different_entity",
+    "agrees_with_ground_truth": true,
+    "artifact_half_only_prediction": "different_entity",
+    "artifact_half_only_agrees": true,
+    "claim_half_only_prediction": "different_entity",
+    "claim_half_only_agrees": true
+   },
+   {
+    "pair_id": "p2-R10",
+    "ground_truth": "different_entity",
+    "class": "seeded_random",
+    "seat_a": "dsv41f",
+    "finding_id_a": "F4",
+    "seat_b": "seed20mini",
+    "finding_id_b": "F1",
+    "artifact_text_a": "C3 sigma = log2(3) critical bridge scale (E-Q2)",
+    "artifact_text_b": "qthe-core/ standalone package repository root",
+    "claim_id_a": "c3_scope",
+    "claim_id_b": "license",
+    "refused": false,
+    "artifact_key_a": "c3_e_q2",
+    "artifact_key_b": "repo_license",
+    "artifact_table_receipt_a": "dsv F4: claim C3 on E-Q2",
+    "artifact_table_receipt_b": "seed F1: the repository-level missing-LICENSE gap",
+    "subject_key_a": "c3_e_q2::c3_scope",
+    "subject_key_b": "repo_license::license",
+    "subject_claim_ids": [
+     "c3_scope",
+     "license"
+    ],
+    "same_subject": false,
+    "artifact_half_same": false,
+    "claim_half_same": false,
+    "routing": "cross_subject_same_issue_question",
+    "predicted_relation": "different_entity",
+    "agrees_with_ground_truth": true,
+    "artifact_half_only_prediction": "different_entity",
+    "artifact_half_only_agrees": true,
+    "claim_half_only_prediction": "different_entity",
+    "claim_half_only_agrees": true
+   }
+  ],
+  "coverage": {
+   "pairs": 30,
+   "computable": 30,
+   "refused": 0
+  },
+  "agreement_with_ground_truth": {
+   "full_key": {
+    "agree": 30,
+    "n": 30,
+    "tautology_receipt": "BY CONSTRUCTION: part-2 ground truth was DEFINED as subject-map equality, and the retro claim_id IS the subject map -- full-key agreement is the Inkling circularity class, receipted. It proves the schema can EXPRESS and CARRY the distinctions (routing), not that it discovers them (discovery is the tagger's job, relocated to pre-registration by the law)."
+   },
+   "artifact_half_only": {
+    "agree": 26,
+    "n": 30,
+    "receipt": "MEASURED, not by construction: the artifact half is computed from the seats' own sealed artifact fields via the pinned table, independently of the subject map. Divergence from ground truth localizes exactly where artifact identity does NOT decide the subject -- the same-experiment cluster boundaries."
+   },
+   "claim_half_only": {
+    "agree": 30,
+    "n": 30,
+    "receipt": "tautological for the same reason as the full key (claim ids ARE the subject map)"
+   }
+  }
+ },
+ "counterfactual_three_wrong_merges": [
+  {
+   "pair_id": "p2-D02",
+   "ground_truth": "different_entity",
+   "sides_as_said": {
+    "a": "mimov26f/F5 subject 'eq16_erratum': E-Q16 correction row does not name superseded run-1 rows",
+    "b": "musegl30b/F3 subject 'eq16_seedfn': E-Q16 seedFn RNG non-determinism + correction, run-1 stands"
+   },
+   "sealed_score_as_said": {
+    "model_served": "jev-1.13.0",
+    "score": 1.96,
+    "confidence": 0.94,
+    "probabilities": {
+     "0": 0.0,
+     "1": 0.04,
+     "2": 0.96
+    },
+    "path_match_noul": 0.95,
+    "label_match_noul": 0.85,
+    "note": "sealed in rows_part2.jsonl, call_id p2-D02 (AS-SAID; the Score merged a known-different pair)"
+   },
+   "subject_key_a": "e_q16::eq16_erratum",
+   "subject_key_b": "e_q16::eq16_seedfn",
+   "counterfactual_verdict": "BLOCKED -- subject_key_a != subject_key_b; under R3 the same-entity question is BARRED for this pair (cross-subject routing); the Score would never have been asked 'same entity?'",
+   "decomposition": {
+    "artifact_half_same": true,
+    "claim_half_same": false,
+    "reading": "artifact half EQUAL, claim half DIFFERS: the two sides name the same experiment artifact but contest different claims -- an artifact-only key would NOT have blocked this pair; the blocking power is the claim_id half"
+   }
+  },
+  {
+   "pair_id": "p2-D03",
+   "ground_truth": "different_entity",
+   "sides_as_said": {
+    "a": "dsv41f/F3 subject 'seedfn_closure': seedFn contamination question closes clean (sweep)",
+    "b": "nemotron35sv/F1 subject 'eq16_seedfn': E-Q16 run-1 rows from defective seedFn harness"
+   },
+   "sealed_score_as_said": {
+    "model_served": "jev-1.13.0",
+    "score": 1.81,
+    "confidence": 0.73,
+    "probabilities": {
+     "0": 0.0,
+     "1": 0.18,
+     "2": 0.8200000000000001
+    },
+    "path_match_noul": 0.93,
+    "label_match_noul": 0.84,
+    "note": "sealed in rows_part2.jsonl, call_id p2-D03 (AS-SAID; the Score merged a known-different pair)"
+   },
+   "subject_key_a": "e_q16::seedfn_closure",
+   "subject_key_b": "e_q16::eq16_seedfn",
+   "counterfactual_verdict": "BLOCKED -- subject_key_a != subject_key_b; under R3 the same-entity question is BARRED for this pair (cross-subject routing); the Score would never have been asked 'same entity?'",
+   "decomposition": {
+    "artifact_half_same": true,
+    "claim_half_same": false,
+    "reading": "artifact half EQUAL, claim half DIFFERS: the two sides name the same experiment artifact but contest different claims -- an artifact-only key would NOT have blocked this pair; the blocking power is the claim_id half"
+   }
+  },
+  {
+   "pair_id": "p2-D06",
+   "ground_truth": "different_entity",
+   "sides_as_said": {
+    "a": "dsv41f/F1 subject 'c1_claim': C1 47.40% is a footprint claim scored as capability",
+    "b": "hy4p/F3 subject 'c1_budget': C1 gain depends on tau-plane SRAM residency"
+   },
+   "sealed_score_as_said": {
+    "model_served": "jev-1.13.0",
+    "score": 1.62,
+    "confidence": 0.41,
+    "probabilities": {
+     "0": 0.01,
+     "1": 0.37,
+     "2": 0.62
+    },
+    "path_match_noul": 0.96,
+    "label_match_noul": 0.72,
+    "note": "sealed in rows_part2.jsonl, call_id p2-D06 (AS-SAID; the Score merged a known-different pair)"
+   },
+   "subject_key_a": "c1_e_q13::c1_claim",
+   "subject_key_b": "c1_e_q13::c1_budget",
+   "counterfactual_verdict": "BLOCKED -- subject_key_a != subject_key_b; under R3 the same-entity question is BARRED for this pair (cross-subject routing); the Score would never have been asked 'same entity?'",
+   "decomposition": {
+    "artifact_half_same": true,
+    "claim_half_same": false,
+    "reading": "artifact half EQUAL, claim half DIFFERS: the two sides name the same experiment artifact but contest different claims -- an artifact-only key would NOT have blocked this pair; the blocking power is the claim_id half"
+   }
+  }
+ ],
+ "refusals": [],
+ "refusals_note": "expected empty for this corpus: the pinned table covers all 40 sealed artifact texts and every part-1 state_entry states a path or matched-file line; any non-empty entry is R4 firing lawfully (curator queue, never a model guess)",
+ "refusal_rule_negative_control": {
+  "fabricated_artifact_text": "FABRICATED artifact text absent from the pinned table (T5-b negative control; no seat ever wrote this)",
+  "table_lookup_result": null,
+  "refused": true,
+  "receipt": "R4 negative control: a fabricated artifact text absent from the pinned table MUST yield no key (refusal -> curator queue), never a guess. CONTROL PASSES."
+ },
+ "falsifier_verdict": "EXPRESSIBLE: all three wrong merges (p2-D02/D03/D06) retro-compute to subject-key MISMATCHES -- under R3 their same-entity questions would have been barred (cross-subject routing), so the merges could not have happened as same-entity answers",
+ "falsifier_rule": "registration Lane T5-b: if the validator cannot express the three wrong merges (p2-D02/D03/D06) as subject-key mismatches, the schema is NOT sufficient -> iterate or honest NOT-YET"
+}

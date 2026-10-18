@@ -80,7 +80,15 @@ const pass = (section, detail) => { results.sections[section] = { pass: true, ..
   for (const [p, n] of STONE_CHAINS) {
     if (scope !== 'all' && !(p.includes(scope) || n === scope)) continue;
     const tipPath = join(ROOT, 'experiments', 'outputs', `${n}_tip.txt`);
-    if (!existsSync(tipPath)) continue; // tests/crossimpl/fixedpoint have their own tip records
+    // ORCH-R14 T5-c P3 closure (negctl): a DELETED tip file used to `continue`
+    // silently — deletion evaded the pin with zero signal. e_q* chains MUST
+    // have their tip file; only tests/crossimpl/fixedpoint/probe_gate are
+    // exempt (their tip records live elsewhere: receipt.json / cimpl_tip /
+    // chain_tip / this gate's own chain).
+    if (!existsSync(tipPath)) {
+      if (/^e_q\d+/.test(n)) mismatches.push(`${n}: tip file ABSENT — deletion must not evade the pin (T5-c P3)`);
+      continue;
+    }
     const pinned = readFileSync(tipPath, 'utf8').trim().split(' ')[0];
     const v = stone.verifyChainFile(join(ROOT, p));
     if (v.ok && v.tip && pinned && v.tip !== pinned) mismatches.push(`${n}: tip-file ${pinned.slice(0, 8)} != chain ${v.tip.slice(0, 8)}`);
@@ -136,7 +144,13 @@ const pass = (section, detail) => { results.sections[section] = { pass: true, ..
     };
     let sub = makeSubstrate(W, H, seedFn);
     const hashes = [planeHash(sub, 0, bytePlane)];
-    for (let t = 1; t <= T; t++) { sub = tick(sub, { wormholes: true }); if (t % 100 === 0) hashes.push(planeHash(sub, t, bytePlane)); }
+    // ORCH-R14 T5-c P5b closure (negctl): sampling was t % 100 — a period-2
+    // phase-locked perturbation returns to the unperturbed byte at every
+    // 100th tick and was INVISIBLE to this witness (found live by the
+    // control; G3's per-tick witness caught it, PG4 alone did not). The
+    // schedule is now t % 97 (odd stride: a period-2 oscillation cannot
+    // phase-lock to it) plus a mandatory final checkpoint at t === T.
+    for (let t = 1; t <= T; t++) { sub = tick(sub, { wormholes: true }); if (t % 97 === 0 || t === T) hashes.push(planeHash(sub, t, bytePlane)); }
     rng(); // touch the rng so the seed is part of the closure (lint-quiet)
     return hashes;
   };

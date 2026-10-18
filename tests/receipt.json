@@ -149,7 +149,7 @@
  "chain": {
   "file": "tests/receipts.jsonl",
   "links": 10,
-  "tip": "7e66ea218978fc7de10dae1c26141a5530ed142ca54e9f6c0aa13a465bb1235d",
+  "tip": "e185d79abfa285ef9037c904e4691d7c7efdbb653d8882efdb9396cf21e52257",
   "alg": "stone-v1",
   "verified": true
  }

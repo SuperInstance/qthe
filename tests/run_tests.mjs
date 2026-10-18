@@ -337,7 +337,17 @@ function pairedArm(seed, tauSpan, ticks = 200) {
 // all_pass: every registered gate passes, or its failure is diagnosed as a
 // PREDICTION error with the post-hoc corrected gate passing (house pattern:
 // falsified predictions stay beside their post-hoc labels — never rewritten).
-const allPass = gates.every((g) => g.pass || g.postHocPass === true);
+// ORCH-R14 T5-c R2 closure (negctl): the GATE SET IS PINNED. This suite
+// rewrites its own receipt chain with whatever gates ran — so a deleted
+// gate block used to pass silently end-to-end. The expected id list below
+// is the contract; a missing OR unexpected gate id fails the run loudly.
+const EXPECTED_GATES = ['G0', 'G1', 'G2', 'G3', 'G4', 'G4-P2', 'G5', 'G6'];
+const gotGateIds = gates.map((g) => g.id);
+const gateSetOk = JSON.stringify(gotGateIds) === JSON.stringify(EXPECTED_GATES);
+if (!gateSetOk) {
+  console.error('GATE-SET PIN FAILED: expected ' + JSON.stringify(EXPECTED_GATES) + ' but ran ' + JSON.stringify(gotGateIds) + ' — a gate block was removed or added without updating the pin (T5-c R2)');
+}
+const allPass = gateSetOk && gates.every((g) => g.pass || g.postHocPass === true);
 const kernelPath = path.join(HERE, '..', 'qthe.mjs');
 const receipt = {
   kernel: 'qthe.mjs',
@@ -359,7 +369,7 @@ const rows = [
     predicted: g.predicted, observed: g.observed,
   })),
   {
-    kind: 'qthe.gate.summary', all_pass: allPass,
+    kind: 'qthe.gate.summary', all_pass: allPass, gate_set_pinned: gateSetOk,
     gates_passed: gates.filter((g) => g.pass).length, gates_total: gates.length,
     note: 'honest FAILs stay in the record; re-run rewrites identical bytes (no wall-clock)',
   },

@@ -189,6 +189,8 @@ def build_call(seat_row: dict) -> dict:
 
 
 def cmd_canary() -> None:
+    # QUILT:BATCH-EXEMPT: canary key-check probe -- one question by design;
+    # not a guest battery (receipted in situations/batched_audit/audit.md).
     body = {
         "state": "Canary: the tavern checks its key before it spends.",
         "model": MODEL,

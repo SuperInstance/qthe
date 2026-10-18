@@ -10,6 +10,8 @@ import jev_client as jc
 ROWS = pathlib.Path(__file__).resolve().parent / "rows_canary.jsonl"
 
 if __name__ == "__main__":
+    # QUILT:BATCH-EXEMPT: canary key-check probe -- one question by design;
+    # not a guest battery (receipted in situations/batched_audit/audit.md).
     body = {
         "state": "Canary: the grounding loop checks its key before it spends.",
         "model": jc.MODEL,

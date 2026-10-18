@@ -1,0 +1,134 @@
+{
+ "A_falsifier_calibration": {
+  "n_rows": 200,
+  "tok_per_state_char": 0.318163,
+  "tok_per_question": 148.302,
+  "tok_per_call_fixed": -13.036,
+  "r2": 0.983362,
+  "sealed_marginal_tokens_per_question": 146.67256637168143,
+  "note": "compact-state rows only (arm B 50 + arm S 150); doc-probe rows excluded (different state shape, per the T4-a shape-dependent tokenizer finding)"
+ },
+ "B_triage_stage2": {
+  "sealed_v3_rows": 14,
+  "reconstruction_membership_matches_sealed": true,
+  "reconstruction_state_chars_match_sealed": false,
+  "mechanical_fabricated_findings": [
+   "musegl30b/F1",
+   "musegl30b/F2",
+   "musegl30b/F5"
+  ],
+  "members_total": 37,
+  "local_fit_M1_3param": {
+   "tok_per_state_char": 0.421395,
+   "tok_per_question": 682.268,
+   "tok_per_call_fixed": -856.66,
+   "r2": 0.966025,
+   "confound_receipt": "question_count and state_chars co-vary with group size over 14 rows; b and c are locally confounded (M2 below pins them from the 200-row falsifier calibration)"
+  },
+  "local_fit_M2_pinned": {
+   "tok_per_state_char": 0.456449,
+   "tok_per_question_pinned": 148.302,
+   "tok_per_call_fixed_pinned": -13.036,
+   "r2": 0.947619
+  },
+  "actual_per_file": {
+   "calls": 14,
+   "state_chars": 247612,
+   "questions": 37,
+   "input_tokens_sealed": 117593,
+   "usd": 0.00493891
+  },
+  "counterfactual_per_seat_capped": {
+   "calls": 9,
+   "state_chars": 349950,
+   "questions": 37,
+   "input_tokens_fitted_M1": 165001.0,
+   "input_tokens_fitted_M2": 165104.1,
+   "usd_M2": 0.00693437
+  },
+  "counterfactual_per_seat_uncapped_one_call_per_guest": {
+   "calls": 7,
+   "state_chars": 348144,
+   "questions": 37,
+   "input_tokens_fitted_M1": 165953.3,
+   "input_tokens_fitted_M2": 164305.9,
+   "usd_M2": 0.00690085
+  },
+  "counterfactual_one_per_call_floor": {
+   "calls": 37,
+   "state_chars": 393913,
+   "questions": 37,
+   "input_tokens_fitted_M1": 159540.3,
+   "input_tokens_fitted_M2": 184806.0,
+   "usd_M2": 0.00776185
+  },
+  "t4a_constants_for_reference": {
+   "doc_dominated_ratio": 12.358102666271035,
+   "compact_ratio": 7.410761488409923,
+   "singles_floor_vs_actual_ratio_M2": 1.572
+  },
+  "drift_receipt": "membership re-derivation matches the sealed v3 grouping 14/14 groups, 37/37 members (mechanical fabrications reproduce: musegl30b F1/F2/F5); state chars drift -491..+144 per group (total ~0.04% of 247,612) because the tree moved after the r12 seal -- the ACTUAL side uses the sealed state_chars AS-SAID, the counterfactual sides are built from the same re-derivation, so the comparison is internally consistent"
+ },
+ "C_entity_alignment": {
+  "sealed_rows": 73,
+  "fit_2param": {
+   "tok_per_state_char": 0.248845,
+   "k_confounded_3q_plus_fixed": 426.11,
+   "r2": 0.979932,
+   "receipt": "question_count constant at 3 -> b, c not locally separable; b, c pinned from the 200-row falsifier calibration (b=148.302 tok/q upper estimate for these shorter generic questions, c=-13.036)"
+  },
+  "actual_per_pair": {
+   "calls": 73,
+   "state_chars": 90526,
+   "questions": 219,
+   "input_tokens_sealed": 53633,
+   "usd": 0.00225259
+  },
+  "counterfactual_one_call_per_part": {
+   "calls": 2,
+   "state_chars": 48443,
+   "questions": 219,
+   "input_tokens_fitted": 44506.9,
+   "usd": 0.00186929,
+   "saving_usd_lower_bound": 0.0003833,
+   "saving_is_lower_bound_receipt": "pinned b overestimates this battery's shorter questions, so the true counterfactual cost is lower and the true saving higher"
+  },
+  "counterfactual_one_per_call_floor": {
+   "calls": 219,
+   "input_tokens_fitted": 97204.2,
+   "usd": 0.00408257
+  }
+ },
+ "D_cascade_grounding": {
+  "sealed_rows": 45,
+  "fit": {
+   "tok_per_state_char": 0.274044,
+   "tok_per_question": 69.853,
+   "tok_per_call_fixed": 362.649,
+   "r2": 0.997653
+  },
+  "actual_4x8_chunks_3_repeats": {
+   "calls": 45,
+   "input_tokens_sealed": 288516,
+   "usd": 0.01211767,
+   "grounding_calls": 12,
+   "grounding_input_tokens_sealed": 87171
+  },
+  "counterfactual_grounding_1x32_3_repeats": {
+   "calls": 3,
+   "state_chars": 15553,
+   "questions": 225,
+   "input_tokens_fitted": 61025.6,
+   "usd": 0.00256308
+  },
+  "counterfactual_grounding_one_per_call_floor": {
+   "input_tokens_fitted": 2254864.8,
+   "usd": 0.09470432
+  },
+  "caveat": "225 questions in one call exceeds the measured high-water (96, T3-a arm A); the cascade verdict is NOT-YET (parked at r13), so this rewire is moot unless the cascade is re-priced"
+ },
+ "pricing": {
+  "usd_per_mtok_in": 0.042,
+  "usd_per_mtok_out": 0.0
+ }
+}

@@ -1,0 +1,267 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "qthe:situations/entity_alignment/subject_key_schema.json",
+  "title": "qthe subject-key pre-registration (cross-examination batteries)",
+  "description": "Machine-usable schema for the SUBJECT-KEY law (docs/SUBJECT-KEY.md). A cross-examination battery MUST be pre-registered in this shape BEFORE any LLM call: every pair carries code-computed subject keys (artifact_key + '::' + claim_id), the contested claim ids, a pairing reason, and a pre-registered expected relation. The model judges same-issue-ness only within a subject or across two explicitly-tagged subjects; it never infers subject identity. Pairs whose keys cannot be computed in code are refusals (curator queue), never model guesses.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "battery_id",
+    "registered_under",
+    "corpus",
+    "claim_registry",
+    "artifact_normalization_table",
+    "pairs",
+    "refusals",
+    "sealing"
+  ],
+  "properties": {
+    "battery_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9._-]+$",
+      "description": "Stable id of this battery (e.g. 't6c-cross-exam-v1')."
+    },
+    "registered_under": {
+      "type": "string",
+      "description": "Pointer to the round registration / lane spec that froze this battery."
+    },
+    "corpus": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source", "sha256"],
+      "properties": {
+        "source": {
+          "type": "string",
+          "description": "The sealed corpus the findings/entries come from (file path or git ref + path)."
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$",
+          "description": "sha256 of the exact corpus bytes the tags were made against."
+        },
+        "note": { "type": "string" }
+      }
+    },
+    "claim_registry": {
+      "type": "array",
+      "minItems": 1,
+      "description": "The pre-registered contested-claim taxonomy. Sealed BEFORE pairing; amendments are append-only with receipts.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "claim_id",
+          "artifact_key",
+          "claim_statement",
+          "provenance_receipt"
+        ],
+        "properties": {
+          "claim_id": {
+            "type": "string",
+            "pattern": "^[a-z0-9_]+$",
+            "description": "Stable claim id (snake_case). Names the CONTESTED CLAIM, not the experiment."
+          },
+          "artifact_key": {
+            "type": "string",
+            "pattern": "^[a-z0-9_:./-]+$",
+            "description": "Canonical artifact this claim is about (must be producible by the pinned normalization table or a literal artifact_path)."
+          },
+          "artifact_path": {
+            "type": "string",
+            "description": "Repo path of the artifact when one exists (e.g. receipts/e_q16_chain.jsonl)."
+          },
+          "claim_statement": {
+            "type": "string",
+            "description": "One-sentence statement of what is contested (the claim, AS receipted in the provenance)."
+          },
+          "provenance_receipt": {
+            "type": "string",
+            "description": "Where this claim distinction comes from (verdict numbered finding, adjudication row, judgment call + receipt)."
+          },
+          "amends": {
+            "type": "string",
+            "description": "For append-only amendments: the claim_id superseded by this entry (the superseded entry stays in the registry history)."
+          }
+        }
+      }
+    },
+    "artifact_normalization_table": {
+      "type": "array",
+      "minItems": 1,
+      "description": "Pinned mapping from artifact text AS SAID in the sealed corpus to canonical artifact_key. Every mapping carries a receipt. A corpus text not in this table makes its pairs UNCOMPUTABLE -> refusal (R4), never a guess.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["artifact_text_as_said", "artifact_key", "receipt"],
+        "properties": {
+          "artifact_text_as_said": {
+            "type": "string",
+            "description": "The artifact field text VERBATIM as the sealed source stated it (AS-SAID)."
+          },
+          "artifact_key": {
+            "type": "string",
+            "pattern": "^[a-z0-9_:./-]+$"
+          },
+          "co_named_artifacts": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "Other artifacts named in the same text (receipted; not part of the key)."
+          },
+          "receipt": {
+            "type": "string",
+            "description": "Why this text normalizes to this key."
+          }
+        }
+      }
+    },
+    "pairs": {
+      "type": "array",
+      "description": "The pre-registered pair list. Every field here is sealed BEFORE any LLM call.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "pair_id",
+          "side_a",
+          "side_b",
+          "subject_key_a",
+          "subject_key_b",
+          "subject_claim_ids",
+          "same_subject",
+          "pairing_reason",
+          "expected_relation",
+          "routing"
+        ],
+        "properties": {
+          "pair_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9._:-]+$"
+          },
+          "side_a": {
+            "$ref": "#/definitions/side_ref"
+          },
+          "side_b": {
+            "$ref": "#/definitions/side_ref"
+          },
+          "subject_key_a": {
+            "type": "string",
+            "pattern": "^[a-z0-9_:./-]+::[a-z0-9_]+$",
+            "description": "artifact_key + '::' + claim_id, computed in code for side A."
+          },
+          "subject_key_b": {
+            "type": "string",
+            "pattern": "^[a-z0-9_:./-]+::[a-z0-9_]+$",
+            "description": "artifact_key + '::' + claim_id, computed in code for side B."
+          },
+          "subject_claim_ids": {
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 2,
+            "items": { "type": "string", "pattern": "^[a-z0-9_]+$" },
+            "description": "[claim_id_a, claim_id_b] -- the contested claims, from the claim registry."
+          },
+          "same_subject": {
+            "type": "boolean",
+            "description": "subject_key_a == subject_key_b, computed by string comparison in code. NEVER derived from model output."
+          },
+          "pairing_reason": {
+            "type": "string",
+            "description": "Why this pair is in the battery (e.g. 'confusable boundary: both describe the E-Q16 correction')."
+          },
+          "expected_relation": {
+            "type": "string",
+            "enum": ["same_entity", "related_needs_curator", "different_entity"],
+            "description": "The curator's pre-registered expectation, from the claim registry -- a prediction sealed before any call."
+          },
+          "routing": {
+            "type": "string",
+            "enum": [
+              "intra_subject_no_identity_question",
+              "cross_subject_same_issue_question",
+              "refused_curator_queue"
+            ],
+            "description": "Computed by the pairing code per R3: equal keys -> the identity question is decided in code (model asked only within-subject questions); different keys -> the same-entity question is BARRED, model may be asked the cross-subject same-issue question whose yes is curator amendment evidence; uncomputable keys -> refusal."
+          },
+          "notes": { "type": "string" }
+        }
+      }
+    },
+    "refusals": {
+      "type": "array",
+      "description": "Pairs NOT paired because a subject key was not computable in code (R4). Each is a curator-queue receipt, not a model question.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["pair_id", "side", "reason", "queue"],
+        "properties": {
+          "pair_id": { "type": "string" },
+          "side": {
+            "type": "string",
+            "enum": ["a", "b", "both"]
+          },
+          "reason": {
+            "type": "string",
+            "description": "What was missing: artifact text not in the pinned table, missing claim tag, unparsable path."
+          },
+          "as_said": {
+            "type": "string",
+            "description": "The uncomputable field text VERBATIM."
+          },
+          "queue": { "const": "curator" }
+        }
+      }
+    },
+    "sealing": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["append_only", "no_model_output_in_keys", "preregistration_sha256"],
+      "properties": {
+        "append_only": {
+          "type": "boolean",
+          "const": true,
+          "description": "This pre-registration is never edited after sealing; corrections are append-only entries with receipts."
+        },
+        "no_model_output_in_keys": {
+          "type": "boolean",
+          "const": true,
+          "description": "Declaration: subject_key_*, subject_claim_ids, same_subject and routing were computed without any LLM output."
+        },
+        "preregistration_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$",
+          "description": "sha256 of the canonical serialization of this file's content (pairs + registries + tables), sealed before the first call."
+        },
+        "sealed_before_first_call_at": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "definitions": {
+    "side_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_ref", "artifact_text_as_said", "claim_id"],
+      "properties": {
+        "source_ref": {
+          "type": "string",
+          "description": "Where this side's finding/entry lives in the sealed corpus (e.g. 'arena_rows_r10.jsonl :: mimov26f/F5' or 'verify_all_chains.mjs @ 74bc4b5^ :: tests/receipts.jsonl')."
+        },
+        "artifact_text_as_said": {
+          "type": "string",
+          "description": "The artifact field VERBATIM as the sealed source stated it (AS-SAID; never paraphrased)."
+        },
+        "artifact_key": {
+          "type": "string",
+          "pattern": "^[a-z0-9_:./-]+$",
+          "description": "Canonical key from the pinned normalization table (or the literal path for path-keyed corpora)."
+        },
+        "claim_id": {
+          "type": "string",
+          "pattern": "^[a-z0-9_]+$",
+          "description": "From the claim registry. Constant tag (e.g. 'chain_reference') is allowed ONLY with a receipted rule declaring the corpus's claim dimension constant."
+        }
+      }
+    }
+  }
+}

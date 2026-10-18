@@ -38,11 +38,52 @@ for (const [path, label] of CHAINS) {
 // Content-hash receipts: recompute sha256(JSON.stringify(summary)) — the
 // eval scripts seal `summary` objects; we recompute from the results file's
 // own summary field where the shape allows, else just pin presence + tip.
+// ORCH-R14 T5-c V6 closure (negctl): the recompute is now IMPLEMENTED — a
+// flipped tip CONTENT fails here, not only a missing file. Mint shape:
+// e_q11/e_q12_eval.mjs write tip = sha256(JSON.stringify(summary)) where
+// summary IS the entire results-file object (written pretty, hashed compact).
 for (const [tipPath, resPath, label] of CONTENT_TIPS) {
   const ok = existsSync(tipPath) && existsSync(resPath);
   const tip = ok ? readFileSync(tipPath, 'utf8').trim() : null;
-  console.log(`${ok ? 'TIP-PIN ' : 'MISSING '} ${tipPath} :: ${label} :: tip=${tip}`);
-  if (!ok) bad++;
+  let recomputed = null;
+  if (ok) {
+    try { recomputed = createHash('sha256').update(JSON.stringify(JSON.parse(readFileSync(resPath, 'utf8')))).digest('hex'); }
+    catch { recomputed = null; }
+  }
+  const agree = ok && tip !== null && tip === recomputed;
+  console.log(`${agree ? 'TIP-PIN ' : 'BROKEN  '} ${tipPath} :: ${label} :: tip=${tip} :: recomputed=${recomputed}`);
+  if (!agree) bad++;
+}
+
+// ORCH-R14 T5-c V8 closure (negctl): tip-file AGREEMENT for stone chains.
+// Before this clause, verify_all_chains never read <gate>_tip.txt at all —
+// a flipped stored tip was invisible to THIS auditor (PG2 caught it, but
+// the auditor's own scope said "tip" without checking it). The map below is
+// EXPLICIT (fail-closed: no convention-guessing) — chains without a tip
+// file stay unpinned here and that scope fact is receipted in negctl.md.
+const STONE_TIP_FILES = {
+  'receipts/e_q1_chain.jsonl': 'experiments/outputs/e_q1_tip.txt',
+  'receipts/e_q2_chain.jsonl': 'experiments/outputs/e_q2_tip.txt',
+  'receipts/e_q5_chain.jsonl': 'experiments/outputs/e_q5_tip.txt',
+  'receipts/e_q6_chain.jsonl': 'experiments/outputs/e_q6_tip.txt',
+  'receipts/e_q7_chain.jsonl': 'experiments/outputs/e_q7_tip.txt',
+  'receipts/e_q8_chain.jsonl': 'experiments/outputs/e_q8_tip.txt',
+  'receipts/e_q10_chain.jsonl': 'experiments/outputs/e_q10_tip.txt',
+  'receipts/e_q13_chain.jsonl': 'experiments/outputs/e_q13_tip.txt',
+  'receipts/e_q14_chain.jsonl': 'experiments/outputs/e_q14_tip.txt',
+  'receipts/e_q15_chain.jsonl': 'experiments/outputs/e_q15_tip.txt',
+  'receipts/e_q16_chain.jsonl': 'experiments/outputs/e_q16_tip.txt',
+  'receipts/e_q17_chain.jsonl': 'experiments/outputs/e_q17_tip.txt',
+  'crossimpl/receipts/cimpl_chain.jsonl': 'crossimpl/receipts/cimpl_tip.txt',
+  'fixedpoint/receipts/fixedpoint_chain.jsonl': 'fixedpoint/receipts/chain_tip.txt',
+};
+for (const [chainPath, tipPath] of Object.entries(STONE_TIP_FILES)) {
+  const row = rows.find((r) => r.path === chainPath);
+  if (!row || !row.ok) continue; // broken chains already counted above
+  if (!existsSync(tipPath)) { console.log(`BROKEN   ${tipPath} :: pinned tip file ABSENT for ${chainPath}`); bad++; continue; }
+  const pinned = readFileSync(tipPath, 'utf8').trim().split(' ')[0];
+  if (row.tip && pinned !== row.tip) { console.log(`BROKEN   ${tipPath} :: tip-file ${pinned.slice(0, 8)} != chain tip ${row.tip.slice(0, 8)} (${chainPath})`); bad++; }
+  else console.log(`TIP-AGREE ${tipPath} == ${chainPath} :: tip=${pinned}`);
 }
 
 // Strays: chain-shaped files on disk the registry does not know about
@@ -50,6 +91,6 @@ for (const [tipPath, resPath, label] of CONTENT_TIPS) {
 // this auditor silently; the sealing commit registers, always).
 for (const s of strayChainFiles('.')) { console.log(`STRAY    ${s} :: chain-shaped file not in scripts/chain_registry.mjs — register it in the sealing commit`); bad++; }
 
-const total = CHAINS.length + CONTENT_TIPS.length;
-console.log(`\nverify_all_chains: ${bad === 0 ? 'ALL CLEAN' : bad + ' BROKEN'} :: ${total - bad}/${total} receipts of record verified from disk`);
+const total = CHAINS.length + CONTENT_TIPS.length + Object.keys(STONE_TIP_FILES).length;
+console.log(`\nverify_all_chains: ${bad === 0 ? 'ALL CLEAN' : bad + ' BROKEN'} :: ${total - bad}/${total} receipts of record verified from disk (incl. ${Object.keys(STONE_TIP_FILES).length} tip-file agreements)`);
 process.exit(bad === 0 ? 0 : 1);
