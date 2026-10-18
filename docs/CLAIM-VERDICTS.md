@@ -235,3 +235,17 @@ house paid for every funeral with a receipt, and the receipts are the
 boundary map's first three entries: non-local alignment and memory-density
 are where the primitive wins; thresholds, numerology, and self-healing are
 where it honestly does not.
+
+## LAYER 1 external receipt (ORCH-R14)
+
+The determinism contract now has an OUTSIDE receipt:
+[SuperInstance/qthe-verify](https://github.com/SuperInstance/qthe-verify) —
+an independent rebuilder built from `SPEC.md` alone (doc-only discipline; its
+`verify.mjs` never imports vendor code; the vendored sealed kernel is used
+only by the corpus-minting tool). Result: **12/12 corpus cases byte-identical**
+to the sealed kernel's replay, including this repo's own armor-ring demo
+geometry at two tick depths and a sigma sweep (the C3 parameter). This does
+not touch LAYER 2 (the tool explicitly does not test pricing claims) — it is
+the LAYER 1 "same input, same bytes, independent of who computes it" claim,
+receipted by a stranger. Cross-referenced from the README per the fleet
+Reader's Fold: we carry the pointer, not a verdict about the tool.

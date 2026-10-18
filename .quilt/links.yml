@@ -1,0 +1,35 @@
+# .quilt/links.yml — the Reader's Fold manifest (jev-quilt Law 6).
+# This repo carries NO verdicts about its neighbors — only content-addressed
+# pointers each reader folds under its own weights. Edit this file; never edit
+# the generated block in README.md by hand.
+
+repo: qthe
+family: qthe
+
+provides:
+  - id: qthe-kernel
+    what: the 8-bit ternary substrate kernel — [tau:2][d:6] packing, Psi(tau) in {0,+1,-1,i}, Moore-8 tick, zero-dependency ESM (qthe.mjs, 249 lines)
+  - id: wormhole-table
+    what: the compiled 64-slot wormhole table — Abstain cells resonate with non-local twins; the repo's novel mechanism (SPEC.md)
+  - id: three-layer-honesty
+    what: LAYER 0 algebra (exhaustive) / LAYER 1 mechanism (byte-level traces) / LAYER 2 pricing claims C1-C5 (open until bought by experiment)
+  - id: tavern-patterns
+    what: the multi-seat audit tavern — batched-per-guest systemone batteries (12.36x measured), earned mechanical-first verification loops, per-seat hallucination catches (situations/)
+  - id: negctl-harness
+    what: sabotage-restore negative controls for receipt-chain verifiers — 28/28 detected (scripts/negctl_qthe.mjs)
+
+consumes:
+  - repo: quilt-stone
+    what: stone-v1 receipt chains — the canonical sealChain/verifyChainFile module, read-only via experiments/_stone_link.mjs (never forked)
+  - repo: fleet-seeds
+    what: the negctl doctrine (a suite that cannot fail is not evidence) adopted ORCH-R14; the seedbox intake lane; the Tap Tavern ledger that dramatizes this repo's rounds
+  - repo: jev-quilt
+    what: Law 6 (Reader's Fold) + Law 7 (Reach Bound) — the doctrinal basis of this manifest's shape
+
+related:
+  - repo: qthe-verify
+    why: the independent spec-only rebuilder of this kernel — 12/12 cases byte-identical; our LAYER 1 determinism contract receipted by a stranger
+  - repo: jev-garden
+    why: the JEV living-model arc — the tavern's standing live-wiring gap points here
+  - repo: MicroMoth-quilt
+    why: the quantum substrate sibling; the marine/edge workload family (docs/MARINE-EDGE-WORKLOAD.md)

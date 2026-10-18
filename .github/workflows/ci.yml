@@ -1,0 +1,46 @@
+# ci.yml — qthe's first CI workflow (ORCH-R14 T5-d, fleet citizenship).
+# The atlas receipted qthe as "— none —" CI in the top-motion table; this
+# closes that gap. Every check here is a REAL check that already runs on the
+# orchestrator's machine each round — CI just makes them public and continuous.
+#
+# Layout law: the SIBLING layout (qthe/ next to quilt-stone/), exactly the
+# dev-box and negctl-workspace layout every suite's stone resolver already
+# proves — _stone_link.mjs candidate 1, run_tests STONE_PATHS candidate 1.
+# The stray scan stays scoped to qthe/ (cwd), so the sibling stone can never
+# fire false strays.
+#
+# Ordering law: negctl FIRST. The suites rewrite their own receipt chains
+# (tests/receipts.jsonl, receipts/probe_gate_chain.jsonl) when they run, and
+# the negctl pre-flight fail-closes on dirty suite-consumed files — proven
+# live at ORCH-R14 (the clobber receipt). After negctl the tree is still
+# clean (workspace-only sabotage), so the suite steps then run on the real
+# repo and may rewrite receipts freely — ephemeral runner, nothing pushed back.
+name: ci
+on: [push, workflow_dispatch]
+defaults:
+  run:
+    working-directory: qthe
+jobs:
+  suites:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: qthe
+      - uses: actions/checkout@v4
+        with:
+          repository: SuperInstance/quilt-stone
+          path: quilt-stone
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: sabotage negative controls (a suite that cannot fail is not evidence)
+        run: node scripts/negctl_qthe.mjs
+      - name: LAYER 0 kernel gates G0-G6 (gate-set pinned)
+        run: node tests/run_tests.mjs
+      - name: chain-of-chains auditor (33/33 incl. 14 tip agreements)
+        run: node scripts/verify_all_chains.mjs
+      - name: probe gate PG1-PG6 (23-claim verdict recompute)
+        run: node scripts/probe_gate.mjs
+      - name: batched-call guard (T5-a standing guard)
+        run: node situations/batched_audit/guard.mjs

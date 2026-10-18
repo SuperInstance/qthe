@@ -19,6 +19,17 @@ House: stone-v1 receipt chains; determinism or it didn't happen; the tavern
 hosts a 10-seat DeepInfra arena with a typed-question judge. 已落地 — live
 as we work.
 
+**Verified externally** — [SuperInstance/qthe-verify](https://github.com/SuperInstance/qthe-verify)
+(a sibling lane's artifact, also vendored in `fleet-seeds/qthe-verify/`) is an
+independent rebuilder of this kernel written from `SPEC.md` alone: its reader
+never imports vendor code, replays a 12-case committed corpus (including this
+repo's own armor-ring demo geometry), and reproduces the sealed traces
+**12/12 byte-identical**. That is our LAYER 1 determinism contract receipted by
+a stranger — the doc-only-discipline existence proof for this repo. CI
+([`ci.yml`](./.github/workflows/ci.yml)) runs the sabotage controls, the
+gate-pinned LAYER 0 suite, the 33/33 chain auditor, the 23-claim probe gate,
+and the batched-call guard on every push.
+
 ## The audit tavern (r10–r13, priced)
 
 The corpus is audited by a tavern of LLM seats whose every claim is
@@ -64,3 +75,28 @@ Wave-69 docs layer (added; nothing above was changed). Route by audience:
 - Index of all deeper knowledge: [docs/KNOWLEDGE-MAP.md](docs/KNOWLEDGE-MAP.md)
 - The 10-minute outsider path: [docs/DAY-1.md](docs/DAY-1.md) · all 50 roadmap phases: [docs/PHASES-REPORT.md](docs/PHASES-REPORT.md) · the live scoreboard: [docs/dashboard.html](docs/dashboard.html)
 - Round reports (decisions, arguments, prices): [docs/discussions/](docs/discussions/) · the tavern's seat manual: [situations/MODEL-LEARNINGS.md](situations/MODEL-LEARNINGS.md)
+
+<!-- QUILT:LINKS:START — generated from .quilt/links.yml by quilt-links.mjs. Do not edit by hand. -->
+## Cross-pollination — the Reader's Fold
+
+*Part of the **qthe** family. Under [Law 6](https://github.com/SuperInstance/jev-quilt), this repo carries no verdicts about its neighbors — only content-addressed pointers you fold under your own weights.*
+
+**Provides** (fold these from here)
+- `qthe-kernel` — the 8-bit ternary substrate kernel — [tau:2][d:6] packing, Psi(tau) in {0,+1,-1,i}, Moore-8 tick, zero-dependency ESM (qthe.mjs, 249 lines)
+- `wormhole-table` — the compiled 64-slot wormhole table — Abstain cells resonate with non-local twins; the repo's novel mechanism (SPEC.md)
+- `three-layer-honesty` — LAYER 0 algebra (exhaustive) / LAYER 1 mechanism (byte-level traces) / LAYER 2 pricing claims C1-C5 (open until bought by experiment)
+- `tavern-patterns` — the multi-seat audit tavern — batched-per-guest systemone batteries (12.36x measured), earned mechanical-first verification loops, per-seat hallucination catches (situations/)
+- `negctl-harness` — sabotage-restore negative controls for receipt-chain verifiers — 28/28 detected (scripts/negctl_qthe.mjs)
+
+**Consumes** (folded from elsewhere)
+- [quilt-stone](https://github.com/SuperInstance/quilt-stone) — stone-v1 receipt chains — the canonical sealChain/verifyChainFile module, read-only via experiments/_stone_link.mjs (never forked)
+- [fleet-seeds](https://github.com/SuperInstance/fleet-seeds) — the negctl doctrine (a suite that cannot fail is not evidence) adopted ORCH-R14; the seedbox intake lane; the Tap Tavern ledger that dramatizes this repo's rounds
+- [jev-quilt](https://github.com/SuperInstance/jev-quilt) — Law 6 (Reader's Fold) + Law 7 (Reach Bound) — the doctrinal basis of this manifest's shape
+
+**Related** (1-hop siblings — Law 7)
+- [qthe-verify](https://github.com/SuperInstance/qthe-verify) — the independent spec-only rebuilder of this kernel — 12/12 cases byte-identical; our LAYER 1 determinism contract receipted by a stranger
+- [jev-garden](https://github.com/SuperInstance/jev-garden) — the JEV living-model arc — the tavern's standing live-wiring gap points here
+- [MicroMoth-quilt](https://github.com/SuperInstance/MicroMoth-quilt) — the quantum substrate sibling; the marine/edge workload family (docs/MARINE-EDGE-WORKLOAD.md)
+
+<sub>Regenerate: `node quilt-links.mjs` · Fleet map: [FLEET.md](https://github.com/SuperInstance/fleet-seeds/blob/main/FLEET.md)</sub>
+<!-- QUILT:LINKS:END -->
