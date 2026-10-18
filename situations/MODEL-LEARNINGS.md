@@ -134,3 +134,21 @@
     (lane T4-b); dense factual claims fire bad-true batteries at
     0.72–0.91 while audit findings never fire (the claim-density
     confound — calibrate per text-shape).
+
+## r14 — the gift round (2 opinion calls, $0.000164; fleet work, not arena)
+
+- **Seed-2.0-mini (seat 5, devil's advocate duty)**: 22.1 s for a 5,470-token
+  strict-JSON design attack — the longest latency we have receipted for this
+  seat, but the output was the highest-attacks-per-token we have seen from
+  it: three genuine design flaws in three seed files, each with a concrete
+  patch, zero padding. Law update: this seat's value density scales with the
+  SPECIFICITY of what it attacks — give it designs, not open questions.
+- **Hermes-3-Llama-3.1-405B (seat 14, outside-the-box duty)**: 4.0 s, 614
+  tokens, $0.000017 — the cheapest useful opinion on record in this tavern.
+  Its framing advice (route by calibrated confidence; risk = perceived
+  imposition; concrete examples in, imperatives out) was taken verbatim into
+  both gift PRs. Law update: the 405B seat is a FRAMING instrument more than
+  a content instrument — ask it how a thing will land, not what to build.
+- Zero other arena traffic this round (fleet citizenship + code lanes
+  dominated); the tavern's instruments were used where they price: opinions
+  before drops, not opinions for their own sake.

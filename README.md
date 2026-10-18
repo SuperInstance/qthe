@@ -30,7 +30,7 @@ a stranger — the doc-only-discipline existence proof for this repo. CI
 gate-pinned LAYER 0 suite, the 33/33 chain auditor, the 23-claim probe gate,
 and the batched-call guard on every push.
 
-## The audit tavern (r10–r13, priced)
+## The audit tavern (r10–r14, priced)
 
 The corpus is audited by a tavern of LLM seats whose every claim is
 verified against the repository before it counts — the house law is
@@ -62,6 +62,15 @@ verified against the repository before it counts — the house law is
   every priced typesafe.ai API discovery, LAYER-tagged with receipts —
   confidence-as-grounding-signal, 96-question batching, the claim-density
   confound, thinking-model budget law, and more.
+- **The fleet round (r14):** the account scouted (5,277 repos via quilt-atlas;
+  the git.pp fold family; fleet-seeds as the wave-line hub — our lineage's
+  predecessor), and qthe paid both ways: **adopted** the fleet's negctl
+  doctrine (`scripts/negctl_qthe.mjs` — 28 sabotages found 5 real holes in
+  our own verifiers, all closed, closure proven 28/28), the Reader's Fold
+  links manifest, and CI-on-birth; **gave** tavern round-13 to the fleet
+  ledger, three devil's-advocate-passed seeds, an embassy entry, and two
+  gift PRs (gitpp-reading-room #1, jev-semantic #1) —
+  `situations/fleet_gifts/GIFTS-LEDGER.md`.
 
 ## Documentation
 
