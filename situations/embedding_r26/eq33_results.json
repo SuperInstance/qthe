@@ -1,0 +1,102 @@
+{
+ "experiment": "E-Q33",
+ "generated_questions": [
+  "Does the record's experiment name contain the letter 'b' or end with a number after a hyphen?",
+  "Does the record report a measured numerical percentage or ratio comparing two conditions?",
+  "Does the record explicitly state a verdict word such as LIVES or DIES?",
+  "Does the record mention a 64x64 torus, Moore-8 neighborhood, or checkerboard cascade?"
+ ],
+ "generation_retries": 0,
+ "live_accuracy": 0.25,
+ "live_hits": 5,
+ "misses": [
+  [
+   "N1",
+   "P1"
+  ],
+  [
+   "N2",
+   "P2"
+  ],
+  [
+   "N3",
+   "A2"
+  ],
+  [
+   "N4",
+   "Q1"
+  ],
+  [
+   "N5",
+   "Q2"
+  ],
+  [
+   "P1",
+   "N1"
+  ],
+  [
+   "P2",
+   "N2"
+  ],
+  [
+   "P3",
+   "Q1"
+  ],
+  [
+   "P4",
+   "Q3"
+  ],
+  [
+   "Q1",
+   "P3"
+  ],
+  [
+   "Q2",
+   "N5"
+  ],
+  [
+   "Q3",
+   "A3"
+  ],
+  [
+   "Q4",
+   "P4"
+  ],
+  [
+   "A1",
+   "N3"
+  ],
+  [
+   "A2",
+   "N3"
+  ]
+ ],
+ "local_best_curve": {
+  "1": 0.25,
+  "2": 0.6,
+  "3": 0.45,
+  "4": 0.25
+ },
+ "local_full4": 0.25,
+ "shapley": {
+  "G1": -0.03333,
+  "G2": 0.14167,
+  "G3": 0.01667,
+  "G4": 0.125
+ },
+ "references": {
+  "fixed_knee_eq29S4": 0.9,
+  "full8_eq29S8": 0.8
+ },
+ "hypotheses": {
+  "H1_beats_full": false,
+  "H2_beats_knee": false,
+  "C31": false
+ },
+ "predictions": {
+  "P1": false,
+  "P3_flat": true,
+  "P4": true,
+  "P2_inspection": "receipted in the verdict doc (concept rediscovery)"
+ }
+}

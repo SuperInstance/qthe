@@ -410,3 +410,47 @@ expansion ≠ factual grounding; verify before adopting. Receipt:
   run cwd-dependent tools via `node -e "process.chdir(...)"` or
   absolute paths. (4) wrangler needs the FULL environment (HOME
   included), not a minimal env dict.
+
+## ORCH-R27 additions (the repair round: retrieval-coupled selection, the shortcut law, the phrasing law)
+
+- **SELECTION ON THE OBJECTIVE REPAIRS THE DECOUPLING (E-Q32).** Gating
+  on the retrieval itself (both Jev models' top-1 unvisited retrievals
+  must land in the same unvisited family) compressed coverage to 4
+  stations — the theoretical minimum (the ungated walk 5, the
+  centroid-proxy gate 6). The comparison ladder is now a measured
+  three-point line: proxy selection TAXES, objective selection
+  FLOORS. When a proxy is measurable and the objective is reachable,
+  gate on the objective and receipt the proxy.
+- **VERSION DRIFT DOES NOT FLIP RETRIEVALS (E-Q32).** The two Jev
+  versions (1.13.0 latest, 1.14.0 preview) retrieved the SAME RECORD on
+  every attempt through the same index — 100% agreement at family AND
+  record level. E-Q23 measured their axis masses diverging 4.3x
+  (structured, visible in aggregate); the retrieval layer absorbs that
+  drift entirely. Different question: "do the coordinates agree?" (no)
+  vs "do the neighbors agree?" (yes, perfectly, on this corpus).
+- **THE SHORTCUT LAW (E-Q33).** A one-shot untrained generator given 8
+  examples proposes FEATURE probes (filename formats, verdict
+  vocabulary, surface mentions), not CONCERN questions — and its
+  battery collapses to the majority baseline (0.25). The fixed
+  battery's 0.90 is not per-question quality (generated best-2 matched
+  fixed best-2 at 0.60) — it is COMPLEMENTARITY. Question selection
+  needs training or design iteration; single-shot generation measures
+  exactly what it costs.
+- **STRICTNESS IS NOT A DIFFICULTY DIMENSION (E-Q34).** Five-rung
+  strictness ladders are non-monotone for the noul readout (perfect
+  ladders 12/64): "appears at all" > "substantively concerns" >
+  "central concern" is not an ordered scale. Calibrated mass answers
+  "is this about X" — it does not grade degrees of aboutness.
+- **THE PHRASING LAW (E-Q34 AM1).** A semantically identical,
+  syntactically different question (declarative vs interrogative)
+  moves noul mass by up to 0.18 — 2x the version-drift band. A
+  question map's coordinates are PHRASING-SENSITIVE: replication
+  requires BYTE-IDENTITY, and any cross-battery comparison must
+  control sentence shape. (The amended byte-identical anchor replicated
+  at 0.06.)
+- **The convergent-validity map (E-Q29+E-Q34).** Which importance
+  measures agree: separation <-> Shapley 0.886 (converges);
+  occlusion <-> Shapley -0.02 (orthogonal). Reading locality stands
+  alone; family separation and marginal retrieval value are two views
+  of the same quantity. Instrument comparisons should publish the
+  correlation, not assume it.

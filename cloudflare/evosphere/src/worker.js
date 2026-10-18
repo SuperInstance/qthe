@@ -160,20 +160,50 @@ export class Evosphere {
     }
     const { target } = this.pickTarget(w);
     const centroid = w.centroids[target];
+    // the fitness receipts (always computed; in retrieval mode they are
+    // recorded, not decisive — the decoupling delta measurement)
     const fL = this.cos(a.v_latest, centroid);
     const fP = this.cos(a.v_preview, centroid);
     const pfL = this.cos(w.parent.v_latest, centroid);
     const pfP = this.cos(w.parent.v_preview, centroid);
-    const accept = fL > pfL && fP > pfP;
+
+    const visitedFamilies = new Set(w.stations.map((s) => s.family));
+    const gateMode = (w.config && w.config.gate_mode) || "centroid";
+    let accept, rejection_clause = null;
+    if (gateMode === "retrieval") {
+      // E-Q32: retrieval-coupled — both models' top-1 unvisited retrievals
+      // must land in the SAME UNVISITED family (the objective itself)
+      const rl = a.retrieval_latest || {};
+      const rp = a.retrieval_preview || {};
+      if (!rl.family || !rp.family) {
+        return Response.json({ error: "retrieval mode requires retrieval_latest and retrieval_preview with family" }, { status: 400 });
+      }
+      const novelL = !visitedFamilies.has(rl.family);
+      const novelP = !visitedFamilies.has(rp.family);
+      accept = novelL && novelP && rl.family === rp.family;
+      if (!accept) {
+        rejection_clause = !novelL ? "latest-retrieval-not-novel"
+          : !novelP ? "preview-retrieval-not-novel"
+          : "model-retrieval-disagreement";
+      }
+    } else {
+      // E-Q28: centroid-coupled — both models' cosine to the target
+      // centroid must strictly improve
+      accept = fL > pfL && fP > pfP;
+      if (!accept) rejection_clause = (fL > pfL) ? "preview-cosine-declined" : "latest-cosine-declined";
+    }
 
     const row = {
       gen: w.gen, attempt: w.attempts_this_gen + 1, note_sha: a.note_sha,
-      target_family: target, verdict: accept ? "accept" : "reject",
+      target_family: target, gate_mode: gateMode, verdict: accept ? "accept" : "reject",
+      rejection_clause,
       fitness_latest: Math.round(fL * 1e6) / 1e6,
       fitness_preview: Math.round(fP * 1e6) / 1e6,
       parent_fitness_latest: Math.round(pfL * 1e6) / 1e6,
       parent_fitness_preview: Math.round(pfP * 1e6) / 1e6,
-      retrieval: a.retrieval, directive_axes: a.directive_axes || null,
+      retrieval: a.retrieval, retrieval_latest: a.retrieval_latest || null,
+      retrieval_preview: a.retrieval_preview || null,
+      directive_axes: a.directive_axes || null,
     };
     const attempts = w.attempts; attempts.push(row);
 
@@ -252,7 +282,14 @@ export default {
       return Response.json({ error: "unauthorized" }, { status: 401 });
     }
     if (url.pathname === "/healthz") return Response.json({ ok: true });
-    const id = env.EVOSPHERE.idFromName("r26");
-    return env.EVOSPHERE.get(id).fetch(request);
+    // the world instance is named by the first path segment (append-only
+    // worlds: /r26/... and /r27/... are separate DO instances; bare paths
+    // default to r26 for backward compatibility with the sealed run)
+    const seg = url.pathname.split("/").filter(Boolean);
+    const world = /^[a-z][a-z0-9-]*$/.test(seg[0] || "") && seg[0] !== "healthz" ? seg[0] : "r26";
+    const rest = "/" + seg.slice(1).join("/");
+    const inner = new Request(new URL(rest, url.origin), request);
+    const id = env.EVOSPHERE.idFromName(world);
+    return env.EVOSPHERE.get(id).fetch(inner);
   },
 };

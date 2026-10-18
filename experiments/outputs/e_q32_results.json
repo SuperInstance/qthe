@@ -1,0 +1,58 @@
+{
+ "experiment": "E-Q32",
+ "claim": "C30 — retrieval-coupled selection repairs the decoupling (LIVES, the strong form)",
+ "kernel": {
+  "kernelKind": "real",
+  "kernelPath": "qthe/qthe.mjs"
+ },
+ "preRegSha": "43d566a1e17fae9d6213a5a2f714d51116c70ab8ffd5a083d346d9e33473d4ce",
+ "registration": "experiments/pre_registration_e_q32.json (no amendments — the run as registered)",
+ "task": {
+  "seed": "N1",
+  "done": "coverage-complete-at-gen-3",
+  "itinerary": [
+   "N1",
+   "Q4",
+   "P1",
+   "A1"
+  ],
+  "attempts": 4,
+  "embed_calls": 9
+ },
+ "stations_to_coverage": 4,
+ "hypotheses": {
+  "H1_coverage": true,
+  "H2_agreement": true,
+  "H3_heredity": true,
+  "C30": true
+ },
+ "predictions": {
+  "P1": true,
+  "P2": true,
+  "P3": false,
+  "P4": true,
+  "P5": true,
+  "P6": false
+ },
+ "verdict": "E-Q32 VERDICT (the decoupling law's fix — retrieval-coupled selection: the gate accepts iff BOTH Jev models' top-1 unvisited retrievals land in the SAME UNVISITED family; the evosphere DO's r27 world, gate_mode=retrieval): H1 LIVES — THE STRONG FORM: 4 stations to 4-family coverage (N1->Q4->P1->A1), ONE PER FAMILY — the theoretical minimum. The comparison ladder is now complete: the ungated walk 5 (compounding residuals), the centroid-cosine gate 6 (the decoupling tax), the retrieval-coupled gate 4 (the objective itself). C30 LIVES: SELECTION ON THE OBJECTIVE REPAIRS THE DECOUPLING — the gate that accepts only what the space will actually do compresses coverage to its floor. H2 LIVES at the ceiling: cross-model retrieval agreement 1 at the FAMILY level and 1 at the RECORD level — the two Jev versions (1.13.0 latest, 1.14.0 preview) retrieved the SAME RECORD on every attempt through the same index: the C15 question answered at the retrieval layer — VERSION DRIFT DOES NOT FLIP RETRIEVALS (P3 MISS above the predicted [0.6,0.9] range, in the strong direction). H3 LIVES: heredity 0.8838 — the family-JUMPING notes stay well-grounded (the flip discount vs E-Q28's 0.9273 is real but bounded, as pre-registered in the weaker direction). THE DECOUPLING DELTA RECEIPT (P5 HIT): the run's ONE rejection had the centroid cosine IMPROVING by +0.41 while the retrieval refused (P5, a visited family) — the E-Q28 failure mode, caught red-handed by the repaired gate. THE DIRECTIVE stays causal: named-axis movement 0.3317 vs unnamed 0.125 (2.7x). THE ECONOMICS: 9 embed calls + 4 generations for 4 stations (the walk: 8+7 for 8; the centroid gate: 21+10 for 6) — the repaired gate is also the CHEAPEST per station. P6 MISS honestly: no stagnation event — the gate was satisfiable within 2 attempts at every generation (the strictness that E-Q28's proxy made unsatisfiable is easy when the objective is real).",
+ "cross_model_retrieval_agreement": {
+  "family": 1,
+  "record": 1
+ },
+ "heredity": {
+  "per_note": [
+   0.9429,
+   0.8696,
+   0.8389
+  ],
+  "mean": 0.8838
+ },
+ "decoupling_delta": {
+  "rate_on_rejections": 1,
+  "rejections": 1
+ },
+ "directive_causality": {
+  "mean_named_move": 0.3317,
+  "mean_unnamed_move": 0.125
+ }
+}

@@ -1,0 +1,278 @@
+{
+ "experiment": "E-Q34",
+ "amendment": "AM1 (pre_registration_amendment_e_q34_1.json): the anchor phrasing law \u2014 the declarative rewording moved mass up to 0.18 (2x the band); R2 amended to byte-identical E-Q22 text BEFORE dependent analysis; the original 8 calls retained as the phrasing receipt",
+ "phrasing_receipt": {
+  "calls": 8,
+  "max_delta": 0.18,
+  "mean_delta": 0.02890625,
+  "over_005": 12
+ },
+ "anchor": {
+  "max_delta_r2_vs_sealed": 0.05999999999999997,
+  "ok": true
+ },
+ "monotonicity": {
+  "perfect_rate": 0.1875,
+  "perfect": 12,
+  "total": 64,
+  "violations": [
+   {
+    "rid": "N1",
+    "axis": "P1_nonlocal",
+    "ladder": [
+     0.95,
+     0.98,
+     0.96,
+     0.9,
+     0.91
+    ]
+   },
+   {
+    "rid": "N1",
+    "axis": "P2_localrule",
+    "ladder": [
+     0.07,
+     0.09,
+     0.11,
+     0.11,
+     0.06
+    ]
+   },
+   {
+    "rid": "N1",
+    "axis": "P3_quantum",
+    "ladder": [
+     0.05,
+     0.06,
+     0.05,
+     0.07,
+     0.05
+    ]
+   },
+   {
+    "rid": "N1",
+    "axis": "P4_alloc",
+    "ladder": [
+     0.04,
+     0.05,
+     0.04,
+     0.04,
+     0.03
+    ]
+   },
+   {
+    "rid": "N1",
+    "axis": "P5_repair",
+    "ladder": [
+     0.08,
+     0.06,
+     0.08,
+     0.07,
+     0.05
+    ]
+   },
+   {
+    "rid": "N1",
+    "axis": "P6_null",
+    "ladder": [
+     0.11,
+     0.06,
+     0.05,
+     0.07,
+     0.04
+    ]
+   },
+   {
+    "rid": "N1",
+    "axis": "P8_exact",
+    "ladder": [
+     0.54,
+     0.32,
+     0.55,
+     0.5,
+     0.26
+    ]
+   },
+   {
+    "rid": "N3",
+    "axis": "P1_nonlocal",
+    "ladder": [
+     0.54,
+     0.9,
+     0.72,
+     0.48,
+     0.37
+    ]
+   },
+   {
+    "rid": "N3",
+    "axis": "P2_localrule",
+    "ladder": [
+     0.04,
+     0.07,
+     0.09,
+     0.1,
+     0.06
+    ]
+   },
+   {
+    "rid": "N3",
+    "axis": "P3_quantum",
+    "ladder": [
+     0.06,
+     0.18,
+     0.09,
+     0.08,
+     0.09
+    ]
+   },
+   {
+    "rid": "N3",
+    "axis": "P4_alloc",
+    "ladder": [
+     0.16,
+     0.14,
+     0.15,
+     0.13,
+     0.08
+    ]
+   },
+   {
+    "rid": "N3",
+    "axis": "P5_repair",
+    "ladder": [
+     0.15,
+     0.2,
+     0.15,
+     0.1,
+     0.07
+    ]
+   }
+  ]
+ },
+ "thresholds": {
+  "P1_nonlocal": [
+   "none",
+   "R4",
+   "R1",
+   "R1",
+   "R1",
+   "R1",
+   "R1",
+   "R1"
+  ],
+  "P2_localrule": [
+   "R1",
+   "R1",
+   "none",
+   "none",
+   "R1",
+   "R1",
+   "R1",
+   "R1"
+  ],
+  "P3_quantum": [
+   "R1",
+   "R1",
+   "R1",
+   "R1",
+   "none",
+   "R4",
+   "R1",
+   "R1"
+  ],
+  "P4_alloc": [
+   "R1",
+   "R1",
+   "R1",
+   "R1",
+   "R1",
+   "R1",
+   "none",
+   "R1"
+  ],
+  "P5_repair": [
+   "R1",
+   "R1",
+   "R1",
+   "R1",
+   "R1",
+   "R1",
+   "R1",
+   "R1"
+  ],
+  "P6_null": [
+   "R1",
+   "none",
+   "R1",
+   "none",
+   "R5",
+   "R1",
+   "R5",
+   "R1"
+  ],
+  "P7_econ": [
+   "R1",
+   "R1",
+   "R1",
+   "R1",
+   "R1",
+   "R2",
+   "R1",
+   "none"
+  ],
+  "P8_exact": [
+   "R2",
+   "R1",
+   "R1",
+   "R1",
+   "R4",
+   "R1",
+   "R1",
+   "R1"
+  ]
+ },
+ "separation": {
+  "P1_nonlocal": {
+   "gap": 0.6883,
+   "best_rung": "R2"
+  },
+  "P2_localrule": {
+   "gap": 0.74,
+   "best_rung": "R2"
+  },
+  "P3_quantum": {
+   "gap": 0.845,
+   "best_rung": "R1"
+  },
+  "P4_alloc": {
+   "gap": 0.5067,
+   "best_rung": "R2"
+  },
+  "P5_repair": null,
+  "P6_null": null,
+  "P7_econ": {
+   "gap": 0.72,
+   "best_rung": "R2"
+  },
+  "P8_exact": {
+   "gap": 0.0217,
+   "best_rung": "R4"
+  }
+ },
+ "cross_instrument_spearman_sep_shapley": 0.8857,
+ "calls": 8,
+ "hypotheses": {
+  "H1_monotone": false,
+  "H2_separation": true,
+  "H3_convergence": true,
+  "C32": false
+ },
+ "predictions": {
+  "P1": false,
+  "P2": false,
+  "P3": false,
+  "P4": false,
+  "P5": true
+ }
+}

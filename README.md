@@ -609,3 +609,36 @@ the 4-question knee), retrieval-coupled fitness (the decoupling law's
 fix — gate on the retrieval, not the centroid), IRT ladders (I-6),
 depth-2 conditional axes (I-3), the standing drift monitor (r27) +
 the watch.
+
+## The repair round (r27 — the objective gate, the shortcut law, the phrasing law)
+
+Three lanes, three chains. **E-Q32 retrieval-coupled fitness** (C30
+LIVES in the strong form): the gate that accepts only what the space
+will actually do — both Jev models' top-1 unvisited retrievals in the
+same unvisited family — covered all four families in **4 stations, the
+theoretical minimum** (N1→Q4→P1→A1; the ungated walk 5, the
+centroid-proxy gate 6), at 9 embed calls + 4 generations (the cheapest
+per station). Cross-model retrieval agreement 100% at family AND
+record level: VERSION DRIFT DOES NOT FLIP RETRIEVALS. The one
+rejection had the centroid cosine improving +0.41 while the retrieval
+refused — the E-Q28 failure mode caught red-handed. **E-Q33 the
+ascending budget arm** (C31 DIES decisively): a one-shot generated
+4-question battery retrieves at 0.25 = the majority baseline — THE
+SHORTCUT LAW (an untrained generator proposes feature probes, not
+concern questions; its best-2 matches the fixed best-2 at 0.60 but its
+4 collapse while the fixed 4 reach 0.90 — the fixed battery's edge is
+COMPLEMENTARITY). **E-Q34 IRT strictness ladders** (C32 DIES on
+monotonicity — 12/64 perfect ladders: strictness is not a difficulty
+dimension) with two live receipts: Spearman(family separation,
+Shapley) = **0.886** (the cross-instrument convergence PASSES where
+occlusion failed at −0.02), and **THE PHRASING LAW** (AM1: a
+semantically identical syntactic rewording moves noul mass up to 0.18
+= 2× the version-drift band; byte-identity is the replication
+requirement). Chains `e_q32`/`e_q33`/`e_q34`; batteries green at close
+(48/48 claims, 37/37 chains, 56/56 verified, probe gate links=50,
+guard PASS 20 call-site files). Registered next: the depth-2
+conditional axes (I-3, the last unrun r24 idea), retrieval-coupled
+evolution at scale (a larger corpus for the 4-station result), the
+phrasing-sensitivity curve (how much mass does sentence shape move,
+systematically), the standing drift monitor (next session's reading) +
+the watch.

@@ -1103,6 +1103,55 @@ const CLAIMS = [
       return { recomputed: 'C27 LIVES (the band holds three rounds running: max 0.08, no version flip, the series is sampling noise around a fixed point; H2\'s float-artifact death receipted unstretched); chain agrees' };
     },
   },
+  {
+    id: 'C30 — retrieval-coupled selection repairs the decoupling (E-Q32)',
+    source: 'experiments/outputs/e_q32_results.json',
+    cite: 'receipts/e_q32_chain.jsonl · verdict.EQ32 · experiments/pre_registration_e_q32.json · situations/evolution_r26/ (evolve32.py + analyze_eq32.py + evolution32_rows_r27.jsonl + evosphere32_state.json) · cloudflare/evosphere/ (the r27 world, gate_mode=retrieval)',
+    expected: 'C30 LIVES in the strong form: 4 stations to 4-family coverage (N1->Q4->P1->A1) — the theoretical minimum (the walk 5, the centroid gate 6). H2 lives at the ceiling: cross-model retrieval agreement 1.00 family AND record level (version drift does not flip retrievals). H3 lives: heredity 0.8838. The decoupling delta: the one rejection had centroid cosine improving +0.41 while the retrieval refused (P5 HIT). Directive causal 0.33 vs 0.125. 9 embeds + 4 generations',
+    run() {
+      const d = readJson(this.source);
+      if (d.hypotheses.H1_coverage !== true || d.hypotheses.C30 !== true) throw new Error('C30 must live');
+      if (d.hypotheses.H2_agreement !== true || d.hypotheses.H3_heredity !== true) throw new Error('H2/H3 must live');
+      if (d.stations_to_coverage !== 4) throw new Error('stations-to-coverage drifted');
+      if (d.cross_model_retrieval_agreement.family !== 1) throw new Error('agreement drifted');
+      if (d.predictions.P5 !== true) throw new Error('decoupling delta receipt drifted');
+      const row = lastChainRow('receipts/e_q32_chain.jsonl', (r) => r.kind === 'verdict.EQ32', 'verdict.EQ32');
+      if (row.C30 !== true || row.stations_to_coverage !== 4) throw new Error('chain flags disagree');
+      return { recomputed: 'C30 LIVES (retrieval-coupled selection: 4 stations = the theoretical minimum; agreement 1.00 both levels; the decoupling delta caught red-handed; cheapest per station); chain agrees' };
+    },
+  },
+  {
+    id: 'C31 — the ascending arm / the shortcut law (E-Q33)',
+    source: 'experiments/outputs/e_q33_results.json',
+    cite: 'receipts/e_q33_chain.jsonl · verdict.EQ33 · experiments/pre_registration_e_q33.json · situations/embedding_r26/ (ascending_budget.py + eq33_results.json + ascending_rows_r27.jsonl)',
+    expected: 'C31 DIES decisively: the one-shot generated battery retrieves at 0.25 LIVE = the majority baseline (vs the fixed knee 0.90, full-8 0.80). THE SHORTCUT-LEARNING LAW: an untrained one-shot generator optimizes distinguishing FEATURES (filename formats, verdict vocabulary, surface mentions), not semantic CONCERNS. The complementarity receipt: generated best-2 0.60 = fixed best-2 parity, but generated-4 collapses to 0.25 while fixed-4 reaches 0.90 — the fixed battery\'s advantage is COMPLEMENTARITY',
+    run() {
+      const d = readJson(this.source);
+      if (d.hypotheses.H1_beats_full !== false || d.hypotheses.C31 !== false) throw new Error('C31 must die');
+      if (d.live_accuracy !== 0.25) throw new Error('live accuracy drifted');
+      if (d.generated_questions.length !== 4) throw new Error('battery shape drifted');
+      const row = lastChainRow('receipts/e_q33_chain.jsonl', (r) => r.kind === 'verdict.EQ33', 'verdict.EQ33');
+      if (row.C31 !== false || num(row.live_accuracy) !== 0.25) throw new Error('chain flags disagree');
+      return { recomputed: 'C31 DIES (the shortcut law: one-shot generation collapses to surface features at 0.25 = majority; complementarity is the fixed battery\'s edge); chain agrees' };
+    },
+  },
+  {
+    id: 'C32 — IRT ladders / monotonicity dies, convergence lives (E-Q34)',
+    source: 'experiments/outputs/e_q34_results.json',
+    cite: 'receipts/e_q34_chain.jsonl · verdict.EQ34 · experiments/pre_registration_e_q34.json + pre_registration_amendment_e_q34_1.json (AM1: the anchor phrasing law) · situations/embedding_r26/ (irt_ladders.py + eq34_results.json + irt_rows_r27.jsonl + irt_phrasing_receipt_r27.jsonl)',
+    expected: 'C32 DIES on monotonicity: perfect-ladder rate 0.1875 (12/64) — strictness phrasings are not an ordered scale for the noul readout. H2 lives: separation positive on all 6 family-defining axes (P3 0.845 at R1). H3 lives decisively: Spearman(separation, Shapley) 0.8857 — the convergence PASSES where occlusion failed (-0.02). THE PHRASING LAW (AM1 receipt): a semantically-identical syntactic rewording moved mass up to 0.18 = 2x the drift band; the amended byte-identical anchor replicated at 0.06',
+    run() {
+      const d = readJson(this.source);
+      if (d.hypotheses.H1_monotone !== false || d.hypotheses.C32 !== false) throw new Error('C32 must die on monotonicity');
+      if (d.hypotheses.H2_separation !== true || d.hypotheses.H3_convergence !== true) throw new Error('H2/H3 must live');
+      if (Math.abs(d.monotonicity.perfect_rate - 0.1875) > 1e-9) throw new Error('monotonicity drifted');
+      if (Math.abs(d.cross_instrument_spearman_sep_shapley - 0.8857) > 1e-3) throw new Error('convergence drifted');
+      if (Math.abs(d.phrasing_receipt.max_delta - 0.18) > 1e-9) throw new Error('phrasing receipt drifted');
+      const row = lastChainRow('receipts/e_q34_chain.jsonl', (r) => r.kind === 'verdict.EQ34', 'verdict.EQ34');
+      if (row.C32 !== false || row.H3 !== true) throw new Error('chain flags disagree');
+      return { recomputed: 'C32 DIES on monotonicity (0.19 — strictness is not a difficulty dimension) with two live receipts: separation-Shapley convergence 0.886 (the convergent-validity map) and the phrasing law (0.18 = 2x the band; byte-identity is the replication requirement); chain agrees' };
+    },
+  },
 ];
 
 // ── COVERAGE (ORCH-R11: the arena-r11 consensus finding, all four seats) ──

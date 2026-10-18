@@ -60,6 +60,9 @@ export const STONE_CHAINS = [
   { path: 'receipts/e_q29_chain.jsonl', gate: 'e_q29', label: 'E-Q29 · the question-budget curve, descending arm (ORCH-R26/T17-b)', pin: 'e_q29_budget' },
   { path: 'receipts/e_q30_chain.jsonl', gate: 'e_q30', label: 'E-Q30 · compositional 16-bit retrieval, code-space algebra (ORCH-R26/T17-c)', pin: 'e_q30_code_algebra' },
   { path: 'receipts/e_q31_chain.jsonl', gate: 'e_q31', label: 'E-Q31 · the drift monitor r26 re-read, three-point series (ORCH-R26/T17-d)', pin: 'e_q31_drift' },
+  { path: 'receipts/e_q32_chain.jsonl', gate: 'e_q32', label: 'E-Q32 · retrieval-coupled fitness, the decoupling repair (ORCH-R27/T18-a)', pin: 'e_q32_retrieval_gate' },
+  { path: 'receipts/e_q33_chain.jsonl', gate: 'e_q33', label: 'E-Q33 · the ascending budget arm, generated questions (ORCH-R27/T18-b)', pin: 'e_q33_ascending' },
+  { path: 'receipts/e_q34_chain.jsonl', gate: 'e_q34', label: 'E-Q34 · IRT strictness ladders + the phrasing law (ORCH-R27/T18-c)', pin: 'e_q34_irt' },
   { path: 'receipts/probe_gate_chain.jsonl', gate: 'probe_gate', label: 'probe gate runs', pin: 'probe_gate' },
 ];
 

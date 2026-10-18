@@ -1,0 +1,107 @@
+{
+ "experiment": "E-Q33",
+ "claim": "C31 — generated discriminative questions vs the fixed knee (dies: the shortcut law)",
+ "kernel": {
+  "kernelKind": "real",
+  "kernelPath": "qthe/qthe.mjs"
+ },
+ "preRegSha": "2b65366708e5fbf0d2400d3952a0c5d750582e8a0e2eee6e4ef821e996cec162",
+ "registration": "experiments/pre_registration_e_q33.json (no amendments — the single-shot dignity rule held: one parse, zero retries)",
+ "task": {
+  "questions": [
+   "Does the record's experiment name contain the letter 'b' or end with a number after a hyphen?",
+   "Does the record report a measured numerical percentage or ratio comparing two conditions?",
+   "Does the record explicitly state a verdict word such as LIVES or DIES?",
+   "Does the record mention a 64x64 torus, Moore-8 neighborhood, or checkerboard cascade?"
+  ],
+  "live_hits": 5,
+  "calls": "1 generator + 20 embeds"
+ },
+ "live_accuracy": 0.25,
+ "hypotheses": {
+  "H1_beats_full": false,
+  "H2_beats_knee": false,
+  "C31": false
+ },
+ "predictions": {
+  "P1": false,
+  "P3_flat": true,
+  "P4": true,
+  "P2_inspection": "receipted in the verdict doc (concept rediscovery)"
+ },
+ "verdict": "E-Q33 VERDICT (the ascending budget arm — ONE DeepSeek call proposes a 4-question battery from 2 example records per family, our axis concepts HIDDEN; embedded over all 20, evaluated LIVE): C31 DIES DECISIVELY — the generated battery retrieves at 0.25 LIVE (5/20) = THE MAJORITY BASELINE, versus the fixed knee 0.90 and the full 8-question battery 0.80. H1 DIES, H2 DIES. THE MECHANISM (the questions are the receipt): the generator went for SURFACE SHORTCUTS, not semantic concerns — Q1 'does the experiment name contain the letter b or end with a number after a hyphen' (a FILENAME-FORMAT probe, Shapley -0.03333 — negative, anti-informative); Q2 'does the record report a measured numerical percentage or ratio' (a format feature); Q3 'does the record explicitly state a verdict word such as LIVES or DIES' (our own verdict vocabulary — FAMILY-BLIND by construction, the E-Q29 P6_null Shapley receipt already knew this); Q4 'does the record mention a 64x64 torus, Moore-8 neighborhood, or checkerboard cascade' (domain surface mentions). THE SHORTCUT-LEARNING LAW: an untrained one-shot generator given 8 examples optimizes distinguishing FEATURES, not semantic CONCERNS — the classifier's spurious-cue failure, reproduced in question space. THE COMPLEMENTARITY RECEIPT: the generated best-2 subset reaches 0.6 (parity with the fixed best-2!) but the full generated-4 COLLAPSES to 0.25 — two surface questions carry as much as two semantic ones, but four surface questions CANCEL each other while four semantic ones (P1+P2+P3+P4) reach 0.90: THE FIXED BATTERY'S ADVANTAGE IS COMPLEMENTARITY, not per-question quality. THE CONSUMER LAW: question selection cannot be one-shot — it needs either training (QA-Emb, CQG-MBQA) or design iteration (our fixed battery's actual history across rounds); the single-shot dignity rule measured exactly what it costs. P4 HIT (the miss tables disagree completely — different question geometry, different errors: [[\"N1\",\"P1\"],[\"N2\",\"P2\"],[\"N3\",\"A2\"],[\"N4\",\"Q1\"]]); P1 MISS honestly (predicted [0.65, 0.85], actual 0.25 — the collapse was not predicted); P2 MISS (no concept rediscovery — zero of the four questions is a semantic concern; P3's flatness prediction also misses: the curve PEAKS at 2 and collapses at 4, the anti-complementarity shape).",
+ "generated_questions": [
+  "Does the record's experiment name contain the letter 'b' or end with a number after a hyphen?",
+  "Does the record report a measured numerical percentage or ratio comparing two conditions?",
+  "Does the record explicitly state a verdict word such as LIVES or DIES?",
+  "Does the record mention a 64x64 torus, Moore-8 neighborhood, or checkerboard cascade?"
+ ],
+ "misses": [
+  [
+   "N1",
+   "P1"
+  ],
+  [
+   "N2",
+   "P2"
+  ],
+  [
+   "N3",
+   "A2"
+  ],
+  [
+   "N4",
+   "Q1"
+  ],
+  [
+   "N5",
+   "Q2"
+  ],
+  [
+   "P1",
+   "N1"
+  ],
+  [
+   "P2",
+   "N2"
+  ],
+  [
+   "P3",
+   "Q1"
+  ],
+  [
+   "P4",
+   "Q3"
+  ],
+  [
+   "Q1",
+   "P3"
+  ],
+  [
+   "Q2",
+   "N5"
+  ],
+  [
+   "Q3",
+   "A3"
+  ],
+  [
+   "Q4",
+   "P4"
+  ],
+  [
+   "A1",
+   "N3"
+  ],
+  [
+   "A2",
+   "N3"
+  ]
+ ],
+ "local_best_curve": {
+  "1": 0.25,
+  "2": 0.6,
+  "3": 0.45,
+  "4": 0.25
+ }
+}

@@ -1,0 +1,247 @@
+{
+ "initialized": true,
+ "gen": 4,
+ "done": "coverage-complete-at-gen-3",
+ "stagnation": 0,
+ "stations": [
+  {
+   "id": "N1",
+   "family": "N",
+   "gen": 0
+  },
+  {
+   "id": "Q4",
+   "family": "Q",
+   "gen": 1
+  },
+  {
+   "id": "P1",
+   "family": "P",
+   "gen": 2
+  },
+  {
+   "id": "A1",
+   "family": "A",
+   "gen": 3
+  }
+ ],
+ "counts": {
+  "N": 1,
+  "P": 1,
+  "Q": 1,
+  "A": 1
+ },
+ "lineage": [
+  {
+   "gen": 1,
+   "note": "Record N1 offers no refuted hypothesis and no account of local neighborhood coupling \u2014 its wormhole table bypasses the lattice entirely, so nothing here describes timbre evolution or threshold cascades. The physical question it leaves open is what the local rule does during those eight runs: whether the remote read merely seeds an aligned value that adjacent cells must then propagate, or whether the twin's agreement exists only at compile time and never enters the neighborhood at all.",
+   "note_sha": "d97726af33da78fcd1d9c93c1346d40e71f9cf7edf27882de555460cb9a01696",
+   "station": "Q4",
+   "station_family": "Q",
+   "fitness_latest": 0.635624,
+   "fitness_preview": 0.600976,
+   "directive_axes": [
+    1,
+    5
+   ],
+   "retrieval": {
+    "top1": "Q4",
+    "family": "Q",
+    "score": 0.9431807,
+    "revisit": false
+   }
+  },
+  {
+   "gen": 2,
+   "note": "Record Q4 states the local Moore-8 rule's own memory as the slow mode, so the plateau is neighborhood coupling persisting through the lattice rather than any remote reservoir \u2014 but it offers no refuted hypothesis or failed claim, only the ablation's measured contrast (ratio 1.18 to 1.58, dip eight times shallower) between wormholes on and off. The physical question it leaves open is whether the Abstain channel's long-range stirring merely erodes a cascade the local thresholds would otherwise sustain, or whether it overwrites aligned timbre states before adjacent cells can propagate them.",
+   "note_sha": "9970a511b23059afd7b0a15542e1dc98375c13e6e3cb52c8b24ddaa6b24a19f0",
+   "station": "P1",
+   "station_family": "P",
+   "fitness_latest": 0.792908,
+   "fitness_preview": 0.772656,
+   "directive_axes": [
+    1,
+    5
+   ],
+   "retrieval": {
+    "top1": "P1",
+    "family": "P",
+    "score": 0.86998093,
+    "revisit": false
+   }
+  },
+  {
+   "gen": 3,
+   "note": "Record P1 prices the port itself: a 47.40 percent byte gain when a cell's update rule runs against a differently composed neighborhood \u2014 but no hypothesis here dies, only the founder's 25 percent estimate falling short of the measured cost. That gap is the arbitration question this station leaves open: which timbre state \u2014 Ground, Attract, Repel, or Abstain-as-i \u2014 gets routed to a ported rule when the neighborhood composition shifts, and by what budget the lattice pays for the swap.",
+   "note_sha": "3a80ac8508a668fa2cb1d6dafde42bac50564c2b0e3d71393889cc1c82410bed",
+   "station": "A1",
+   "station_family": "A",
+   "fitness_latest": 0.78539,
+   "fitness_preview": 0.811084,
+   "directive_axes": [
+    6,
+    5
+   ],
+   "retrieval": {
+    "top1": "A1",
+    "family": "A",
+    "score": 0.8388121,
+    "revisit": false
+   }
+  }
+ ],
+ "attempts": [
+  {
+   "gen": 1,
+   "attempt": 1,
+   "note_sha": "d97726af33da78fcd1d9c93c1346d40e71f9cf7edf27882de555460cb9a01696",
+   "target_family": "P",
+   "gate_mode": "retrieval",
+   "verdict": "accept",
+   "rejection_clause": null,
+   "fitness_latest": 0.635624,
+   "fitness_preview": 0.600976,
+   "parent_fitness_latest": 0.528422,
+   "parent_fitness_preview": 0.515811,
+   "retrieval": {
+    "top1": "Q4",
+    "family": "Q",
+    "score": 0.9431807,
+    "revisit": false
+   },
+   "retrieval_latest": {
+    "top1": "Q4",
+    "family": "Q",
+    "score": 0.9431807,
+    "revisit": false
+   },
+   "retrieval_preview": {
+    "top1": "Q4",
+    "family": "Q",
+    "score": 0.9397298,
+    "revisit": false
+   },
+   "directive_axes": [
+    1,
+    5
+   ]
+  },
+  {
+   "gen": 2,
+   "attempt": 1,
+   "note_sha": "9970a511b23059afd7b0a15542e1dc98375c13e6e3cb52c8b24ddaa6b24a19f0",
+   "target_family": "P",
+   "gate_mode": "retrieval",
+   "verdict": "accept",
+   "rejection_clause": null,
+   "fitness_latest": 0.792908,
+   "fitness_preview": 0.772656,
+   "parent_fitness_latest": 0.635624,
+   "parent_fitness_preview": 0.600976,
+   "retrieval": {
+    "top1": "P1",
+    "family": "P",
+    "score": 0.86998093,
+    "revisit": false
+   },
+   "retrieval_latest": {
+    "top1": "P1",
+    "family": "P",
+    "score": 0.86998093,
+    "revisit": false
+   },
+   "retrieval_preview": {
+    "top1": "P1",
+    "family": "P",
+    "score": 0.87052,
+    "revisit": false
+   },
+   "directive_axes": [
+    1,
+    5
+   ]
+  },
+  {
+   "gen": 3,
+   "attempt": 1,
+   "note_sha": "2ed29ae2a79dda26e7fc7dd74fcd245b4defe7d4618713248c2441d7a98c5fc1",
+   "target_family": "A",
+   "gate_mode": "retrieval",
+   "verdict": "reject",
+   "rejection_clause": "latest-retrieval-not-novel",
+   "fitness_latest": 0.599874,
+   "fitness_preview": 0.604823,
+   "parent_fitness_latest": 0.190267,
+   "parent_fitness_preview": 0.157799,
+   "retrieval": {
+    "top1": "P5",
+    "family": "P",
+    "score": 0.79566646,
+    "revisit": false
+   },
+   "retrieval_latest": {
+    "top1": "P5",
+    "family": "P",
+    "score": 0.79566646,
+    "revisit": false
+   },
+   "retrieval_preview": {
+    "top1": "P5",
+    "family": "P",
+    "score": 0.7635221,
+    "revisit": false
+   },
+   "directive_axes": [
+    6,
+    5
+   ]
+  },
+  {
+   "gen": 3,
+   "attempt": 2,
+   "note_sha": "3a80ac8508a668fa2cb1d6dafde42bac50564c2b0e3d71393889cc1c82410bed",
+   "target_family": "A",
+   "gate_mode": "retrieval",
+   "verdict": "accept",
+   "rejection_clause": null,
+   "fitness_latest": 0.78539,
+   "fitness_preview": 0.811084,
+   "parent_fitness_latest": 0.190267,
+   "parent_fitness_preview": 0.157799,
+   "retrieval": {
+    "top1": "A1",
+    "family": "A",
+    "score": 0.8388121,
+    "revisit": false
+   },
+   "retrieval_latest": {
+    "top1": "A1",
+    "family": "A",
+    "score": 0.8388121,
+    "revisit": false
+   },
+   "retrieval_preview": {
+    "top1": "A1",
+    "family": "A",
+    "score": 0.87665534,
+    "revisit": false
+   },
+   "directive_axes": [
+    6,
+    5
+   ]
+  }
+ ],
+ "config": {
+  "max_gens": 10,
+  "max_attempts": 2,
+  "target_order": [
+   "P",
+   "Q",
+   "A",
+   "N"
+  ],
+  "escape_after": 2,
+  "gate_mode": "retrieval"
+ }
+}

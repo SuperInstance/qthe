@@ -1,0 +1,15 @@
+{
+ "law": "AMENDMENT 1 to E-Q34 (pre_registration_e_q34.json) — THE ANCHOR PHRASING LAW. The registered R2 rung rephrased the map's anchor question as a declarative ('the record substantively concerns X — judge whether this is true'), semantically identical but syntactically different from the sealed E-Q22 interrogative ('does it substantively concern X? — judge whether the record is about this concern'). The first 8-call run measured the consequence: noul mass moves by up to 0.18 (2x the 0.10 drift band; E-Q31 just confirmed the same-version band at 0.08 under a BYTE-IDENTICAL map) — PHRASING IS A COORDINATE. The lane is amended BEFORE any dependent measure (monotonicity, thresholds, separation, convergence) is computed: the anchor rung R2 becomes BYTE-IDENTICAL to the sealed E-Q22 question text (instructions + criteria), the strictness rungs R1/R3/R4/R5 keep the fixed declarative template, and the run re-executes as 8 fresh calls (r27-eq34b-*). The original 8 rows are retained as the phrasing-sensitivity receipt (an unplanned but well-controlled measurement: same records, same model, same session, only the sentence shape changed).",
+ "task_id": "ORCH-R27/T18-c AM1",
+ "appended_before_dependent_analysis": true,
+ "the_receipt": {
+  "phrasing_deltas": "12 of 64 anchor deltas exceed 0.05; max 0.18 (N1/P8_exact: 0.52 declarative vs 0.34 sealed interrogative); the distribution is axis- and record-structured, not noise",
+  "the_law": "a question map's coordinates are PHRASING-SENSITIVE at up to 2x the version-drift band — replication across instruments requires byte-identical question text, and any cross-battery comparison must control the sentence shape",
+  "cost": "8 calls retained as the receipt (~$0.0026), 8 calls re-run under the amendment"
+ },
+ "amended_design": {
+  "R2": "byte-identical to E-Q22's question for each axis (type noul, the exact instructions and criteria strings from situations/embedding_r24/noul_embedder.py)",
+  "R1_R3_R4_R5": "unchanged (the fixed declarative strictness template)",
+  "floors": "F1 amended accordingly; F2's anchor check now expects the byte-identical replication band (<= 0.10, consistent with the drift monitor's same-session behavior); F3/F4 unchanged"
+ }
+}

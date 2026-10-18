@@ -1,0 +1,207 @@
+{
+ "experiment": "E-Q34",
+ "claim": "C32 — strictness ladders as a psychometric instrument (dies on monotonicity; the convergence receipt lives)",
+ "kernel": {
+  "kernelKind": "real",
+  "kernelPath": "qthe/qthe.mjs"
+ },
+ "preRegSha": "7ccf62097a459fbf0e7171abdab28fb0169f23b2e9fb491b6e96752fea896ab8",
+ "registration": "experiments/pre_registration_e_q34.json + AM1 (pre_registration_amendment_e_q34_1.json, appended before dependent analysis)",
+ "task": {
+  "calls": "8 (amended run) + 8 (the phrasing receipt, retained)",
+  "records": 8,
+  "questions_per_call": 40
+ },
+ "monotonicity": {
+  "perfect_rate": 0.1875,
+  "perfect": 12,
+  "total": 64,
+  "violations": [
+   {
+    "rid": "N1",
+    "axis": "P1_nonlocal",
+    "ladder": [
+     0.95,
+     0.98,
+     0.96,
+     0.9,
+     0.91
+    ]
+   },
+   {
+    "rid": "N1",
+    "axis": "P2_localrule",
+    "ladder": [
+     0.07,
+     0.09,
+     0.11,
+     0.11,
+     0.06
+    ]
+   },
+   {
+    "rid": "N1",
+    "axis": "P3_quantum",
+    "ladder": [
+     0.05,
+     0.06,
+     0.05,
+     0.07,
+     0.05
+    ]
+   },
+   {
+    "rid": "N1",
+    "axis": "P4_alloc",
+    "ladder": [
+     0.04,
+     0.05,
+     0.04,
+     0.04,
+     0.03
+    ]
+   },
+   {
+    "rid": "N1",
+    "axis": "P5_repair",
+    "ladder": [
+     0.08,
+     0.06,
+     0.08,
+     0.07,
+     0.05
+    ]
+   },
+   {
+    "rid": "N1",
+    "axis": "P6_null",
+    "ladder": [
+     0.11,
+     0.06,
+     0.05,
+     0.07,
+     0.04
+    ]
+   },
+   {
+    "rid": "N1",
+    "axis": "P8_exact",
+    "ladder": [
+     0.54,
+     0.32,
+     0.55,
+     0.5,
+     0.26
+    ]
+   },
+   {
+    "rid": "N3",
+    "axis": "P1_nonlocal",
+    "ladder": [
+     0.54,
+     0.9,
+     0.72,
+     0.48,
+     0.37
+    ]
+   },
+   {
+    "rid": "N3",
+    "axis": "P2_localrule",
+    "ladder": [
+     0.04,
+     0.07,
+     0.09,
+     0.1,
+     0.06
+    ]
+   },
+   {
+    "rid": "N3",
+    "axis": "P3_quantum",
+    "ladder": [
+     0.06,
+     0.18,
+     0.09,
+     0.08,
+     0.09
+    ]
+   },
+   {
+    "rid": "N3",
+    "axis": "P4_alloc",
+    "ladder": [
+     0.16,
+     0.14,
+     0.15,
+     0.13,
+     0.08
+    ]
+   },
+   {
+    "rid": "N3",
+    "axis": "P5_repair",
+    "ladder": [
+     0.15,
+     0.2,
+     0.15,
+     0.1,
+     0.07
+    ]
+   }
+  ]
+ },
+ "separation": {
+  "P1_nonlocal": {
+   "gap": 0.6883,
+   "best_rung": "R2"
+  },
+  "P2_localrule": {
+   "gap": 0.74,
+   "best_rung": "R2"
+  },
+  "P3_quantum": {
+   "gap": 0.845,
+   "best_rung": "R1"
+  },
+  "P4_alloc": {
+   "gap": 0.5067,
+   "best_rung": "R2"
+  },
+  "P5_repair": null,
+  "P6_null": null,
+  "P7_econ": {
+   "gap": 0.72,
+   "best_rung": "R2"
+  },
+  "P8_exact": {
+   "gap": 0.0217,
+   "best_rung": "R4"
+  }
+ },
+ "cross_instrument_spearman_sep_shapley": 0.8857,
+ "phrasing_receipt": {
+  "calls": 8,
+  "max_delta": 0.18,
+  "mean_delta": 0.02890625,
+  "over_005": 12
+ },
+ "anchor": {
+  "max_delta_r2_vs_sealed": 0.05999999999999997,
+  "ok": true
+ },
+ "hypotheses": {
+  "H1_monotone": false,
+  "H2_separation": true,
+  "H3_convergence": true,
+  "C32": false
+ },
+ "predictions": {
+  "P1": false,
+  "P2": false,
+  "P3": false,
+  "P4": false,
+  "P5": true
+ },
+ "verdict": "E-Q34 VERDICT (IRT strictness ladders — 8 axes x 5 rungs, one 40-question batched call per record over the frozen 8-record subset, with AM1: the anchor R2 amended to byte-identical E-Q22 text after the phrasing law bit): C32 DIES ON MONOTONICITY — H1 DIES DECISIVELY NEGATIVE: the perfect-ladder rate is 0.1875 (12/64) — the noul readout does NOT treat strictness phrasings as an ordered scale; 'appears at all' / 'substantively concerns' / 'central concern' / 'two most dominant' / 'THE dominant' do not yield monotonically decreasing mass. The psychometric-scale intuition FAILS on the calibrated substrate — strictness is not a difficulty dimension here. H2 LIVES: family separation is positive on all 6 family-defining axes (P3_quantum 0.845 at R1 — the LOOSEST rung separates Q best; P2 0.74 and P7 0.72 at R2; P1 0.69 at R2; P4 0.51 at R2; P8 0.02 — family-blind, consistent with its low Shapley). H3 LIVES DECISIVELY: Spearman(family separation, E-Q29 Shapley) = 0.8857 — THE CROSS-INSTRUMENT CONVERGENCE PASSES where occlusion failed (-0.02): the two instruments that AGREE are separation (does the axis split families at its best rung) and Shapley (does the axis add marginal retrieval value) — reading locality is the quantity that stands alone. THE INSTRUMENT'S CONVERGENT-VALIDITY MAP now has three nodes: separation <-> Shapley 0.886; occlusion <-> Shapley -0.02; (separation <-> occlusion untested). THE PHRASING LAW (AM1's receipt, an unplanned but well-controlled measurement): a semantically-identical but syntactically-different anchor phrasing (declarative vs interrogative) moved noul mass by up to 0.18 = 2x the version-drift band (mean 0.02890625, 12/64 deltas > 0.05) — A QUESTION MAP'S COORDINATES ARE PHRASING-SENSITIVE: replication across instruments requires BYTE-IDENTITY, and cross-battery comparisons must control sentence shape. The amended byte-identical anchor replicated at 0.05999999999999997 (within band, F2 held). P3 MISS (the best discriminating rung is R2, the map's default, not R3 — 4 of 6 axes peak at R2; P3_quantum peaks at R1); P1 MISS (predicted [0.70, 0.90], actual 0.19); P2 MISS (thresholds do not order home-later — they barely order at all); P5 HIT (the anchor)."
+}

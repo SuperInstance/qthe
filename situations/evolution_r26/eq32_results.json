@@ -1,0 +1,64 @@
+{
+ "experiment": "E-Q32",
+ "done": "coverage-complete-at-gen-3",
+ "itinerary": [
+  "N1",
+  "Q4",
+  "P1",
+  "A1"
+ ],
+ "family_sequence": [
+  "N",
+  "Q",
+  "P",
+  "A"
+ ],
+ "stations_to_coverage": 4,
+ "comparisons": {
+  "walk_eq24": 5,
+  "centroid_gate_eq28": 6,
+  "retrieval_gate_eq32": 4
+ },
+ "attempts_total": 4,
+ "accepted": 3,
+ "rejected": 1,
+ "acceptance_rate": 0.75,
+ "rejection_anatomy": {
+  "latest-retrieval-not-novel": 1
+ },
+ "cross_model_retrieval_agreement": {
+  "family": 1.0,
+  "record": 1.0
+ },
+ "heredity": {
+  "per_note": [
+   0.9429,
+   0.8696,
+   0.8389
+  ],
+  "mean": 0.8838
+ },
+ "decoupling_delta": {
+  "rate_on_rejections": 1.0,
+  "rejections": 1
+ },
+ "directive_causality": {
+  "mean_named_move": 0.3317,
+  "mean_unnamed_move": 0.125
+ },
+ "embed_calls": 9,
+ "hypotheses": {
+  "H1_coverage": true,
+  "H2_agreement": true,
+  "H3_heredity": true,
+  "C30": true
+ },
+ "predictions": {
+  "P1": true,
+  "P2": true,
+  "P3": false,
+  "P4": true,
+  "P5": true,
+  "P6": false
+ }
+}
