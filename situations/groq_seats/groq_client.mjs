@@ -1,18 +1,20 @@
-// situations/groq_seats/groq_client.mjs — the Groq seat client (ORCH-R21/T12-c).
+// situations/groq_seats/groq_client.mjs — the Groq seat client (ORCH-R21/T12-c,
+// enhanced ORCH-R22/T13-a with the RELAY SEAT).
 //
-// STATUS: CODE-DELIVERED, LIVE-PENDING. The operator's dispatch adds Groq as
-// a rapid-cheap seat family ("qwen/qwen3.8-27b", "openai/gpt-oss-20b") in
-// harmony with the typesafe.ai tooling. This seat is BLOCKED from the
-// orchestrator's sandbox: api.groq.com returns HTTP 403 in ~36 ms PRE-AUTH
-// (authed and no-auth identical; browser User-Agent does not help; Moth —
-// also Cloudflare-fronted — works from the same seat, so this is an IP-range
-// block, not a key fault). Receipt: BLOCKED-SEAT-RECEIPT.md.
+// STATUS: LIVE via any reachable seat — direct (blocked from the
+// orchestrator's HK sandbox egress, r21 receipt), the Cloudflare relay
+// (GROQ_BASE_URL override, r22), or the GitHub Actions seat (Azure US
+// egress, r22). The client is egress-agnostic by design.
 //
 // DESIGN LAWS (the tavern's, carried verbatim):
 // - AS-SAID rows: every call seals {round, call_id, seat, task, model,
 //   prompt_hash, prefix_sha256, finish_reason, usage_norm, usd, elapsed_ms}
 //   — opinions are priced, never laundered.
 // - key doctrine: GROQ_API_KEY from env ONLY; never in a row, log, or file.
+//   RELAY MODE (r22): GROQ_BASE_URL set => the auth header carries
+//   GROQ_RELAY_TOKEN instead (the Groq key then lives server-side at the
+//   relay; the sandbox never transmits it); the row carries `via_relay`
+//   so the ledger never launders the route.
 // - fail-closed: a 401/403 throws GroqError with the evidence; NO retry burn
 //   (the seat-block law: receipt the environment, don't hammer it).
 // - pricing: Groq's listed usd/1M rates carried in RATES below; with_cache
@@ -21,7 +23,8 @@
 
 import { createHash } from 'node:crypto';
 
-export const BASE = 'https://api.groq.com/openai/v1';
+export const BASE = process.env.GROQ_BASE_URL || 'https://api.groq.com/openai/v1';
+export const RELAY_MODE = !!process.env.GROQ_BASE_URL;
 export const MODELS = {
   'qwen/qwen3.8-27b': { in: 0.29, out: 0.59, reasoning_effort: true, note: 'the qwen seat (operator-dispatched)' },
   'openai/gpt-oss-20b': { in: 0.10, out: 0.20, reasoning_effort: true, note: 'the oss seat (operator-dispatched)' },
@@ -36,6 +39,11 @@ export class GroqError extends Error {
 }
 
 export function loadKey() {
+  if (RELAY_MODE) {
+    const t = process.env.GROQ_RELAY_TOKEN;
+    if (!t) throw new GroqError('GROQ_RELAY_TOKEN not set (relay mode: GROQ_BASE_URL is set, so the relay token is the credential)', { status: 0 });
+    return t;
+  }
   const k = process.env.GROQ_API_KEY;
   if (!k) throw new GroqError('GROQ_API_KEY not set (env-only key doctrine)', { status: 0 });
   return k;
@@ -79,6 +87,7 @@ export async function chat({ model, system, user, round, callId, seat, task, tem
       round, call_id: callId, seat, task,
       model_requested: model, model_served: data.model || model,
       temperature, max_completion_tokens, reasoning_effort,
+      via_relay: RELAY_MODE ? BASE : undefined, // r22: the route is part of the row (never launder the path)
       prompt_hash: promptHash,
       prefix_sha256: createHash('sha256').update(system || '', 'utf8').digest('hex'),
       sealed_at: new Date().toISOString(),

@@ -6,7 +6,7 @@
 import { writeFileSync, existsSync, readFileSync } from 'node:fs';
 import { chat, MODELS } from './groq_client.mjs';
 
-const ROUND = 'r21';
+const ROUND = process.env.GROQ_ROUND || 'r22';
 let anyOk = false;
 const rows = [];
 for (const model of Object.keys(MODELS)) {

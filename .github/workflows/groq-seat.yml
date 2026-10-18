@@ -1,0 +1,96 @@
+# .github/workflows/groq-seat.yml — THE ACTIONS SEAT (ORCH-R22/T13-b).
+#
+# WHY THIS EXISTS (the r22 geo law): the orchestrator's sandbox egresses
+# from Hong Kong (Alibaba AS45102) and Groq's edge door-refuses HK-region
+# traffic PRE-AUTH (HTTP 403 {"error":{"message":"Forbidden"}}, receipted
+# r21 + the r22 Worker noauth probe). GitHub Actions runners egress from
+# Azure US ranges — a different geography. This workflow IS the reachable
+# seat for the Groq family: it runs the SAME tavern scripts (canary,
+# seat trial, later batteries) from a US egress and uploads the AS-SAID
+# rows as artifacts; the orchestrator downloads and seals them into the
+# repo with receipts. The client code is egress-agnostic by design.
+#
+# HOUSE LAWS:
+# - The key never prints; scripts are the tavern's (fail-closed, no
+#   retry burn, AS-SAID rows).
+# - The noauth probe runs FIRST and receipts the egress: 401 means the
+#   auth layer was reached (geo hypothesis confirmed from this runner);
+#   403 means a door refusal here too.
+# - Artifacts upload `if: always()` — a blocked seat still receipts.
+# - This file lives in the PUBLIC qthe repo; secrets are not available
+#   to forks; the only secret is GROQ_API_KEY (scoped, low blast
+#   radius). No repo/PAT token is stored here.
+
+name: groq-seat
+
+on:
+  workflow_dispatch:
+    inputs:
+      round:
+        description: 'round tag for the AS-SAID rows'
+        required: false
+        default: 'r22'
+      lane:
+        description: 'canary | trial | both | harmony'
+        required: false
+        default: 'both'
+      target:
+        description: 'registration file the trial attacks (repo-relative)'
+        required: false
+        default: 'experiments/pre_registration_e_q20b.json'
+
+permissions:
+  contents: read
+
+jobs:
+  seat:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: egress + noauth receipts
+        run: |
+          set -x
+          curl -sS --max-time 10 https://ipinfo.io/json || true
+          code=$(curl -sS --max-time 15 -o /tmp/noauth.json -w '%{http_code}' https://api.groq.com/openai/v1/models || echo curl-fail)
+          echo "GROQ-NOAUTH-STATUS: $code"
+          head -c 400 /tmp/noauth.json || true
+          echo
+          {
+            echo "## groq-seat egress receipt"
+            echo '```'
+            curl -sS --max-time 10 https://ipinfo.io/json || true
+            echo
+            echo "noauth status: $code"
+            head -c 400 /tmp/noauth.json || true
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY" || true
+
+      - uses: actions/checkout@v4
+
+      - name: canary (both seats)
+        if: ${{ inputs.lane == 'canary' || inputs.lane == 'both' || inputs.lane == 'harmony' }}
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          GROQ_ROUND: ${{ inputs.round }}
+        run: node situations/groq_seats/canary.mjs
+
+      - name: seat trial (the new-member law: design attack)
+        if: ${{ inputs.lane == 'trial' || inputs.lane == 'both' }}
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          GROQ_ROUND: ${{ inputs.round }}
+        run: |
+          if [ ! -f situations/groq_seats/canary.jsonl ]; then
+            echo "no canary rows -> trial refused (the seat-block law; receipt in BLOCKED-SEAT-RECEIPT.md)"
+            exit 0
+          fi
+          rm -f situations/groq_seats/BLOCKED-SEAT-RECEIPT.md
+          node situations/groq_seats/seat_trial.mjs "${{ inputs.target }}"
+
+      - name: upload rows
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: groq-seat-${{ inputs.round }}-${{ github.run_number }}
+          path: situations/groq_seats/
+          if-no-files-found: warn

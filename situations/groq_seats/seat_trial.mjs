@@ -17,7 +17,8 @@ if (existsSync(RECEIPT)) {
   process.exit(3);
 }
 
-const target = process.argv[2] || 'experiments/pre_registration_e_q20.json';
+const target = process.argv[2] || 'experiments/pre_registration_e_q20b.json'; // r22: the current registration (E-Q20b); r21 default was e_q20
+const ROUND = process.env.GROQ_ROUND || 'r22';
 const reg = readFileSync(target, 'utf8');
 
 const system = `You are a candidate seat of the qthe tavern (an LLM review bench for a cellular-automata kernel repo, SuperInstance/qthe). House law: judges draft, the repo decides; opinions are priced AS-SAID; every attack must name its exact target and be falsifiable by running code. You are ATTACK-BRIEFED and OUTSIDE-THE-BOX-BRIEFED: your value is the angle the incumbent seats miss. Answer ONLY with a JSON object: {"mode":"design-attack","attacks":[{"id":"A1","severity":"critical|major|minor","target":"<exact field/section>","attack":"<the defect>","cheapest_falsifier":"<how to check it>","fix_sketch":"<the concrete amendment if accepted>"}]}`;
@@ -26,10 +27,10 @@ const user = `The experiment registration below is frozen and about to run (or h
 
 for (const [model, seat] of [['qwen/qwen3.8-27b', 'qwen38-27b'], ['openai/gpt-oss-20b', 'gpt-oss-20b']]) {
   const row = await chat({
-    model, seat, round: 'r21', callId: `r21-seattrial-${seat}`, task: 'design-attack',
+    model, seat, round: ROUND, callId: `${ROUND}-seattrial-${seat}`, task: 'design-attack',
     system, user, max_completion_tokens: 4096, temperature: 0.6, reasoning_effort: 'medium',
   });
-  const OUT = 'situations/groq_seats/seat_trial_r21.jsonl';
+  const OUT = `situations/groq_seats/seat_trial_${ROUND}.jsonl`;
   const prev = existsSync(OUT) ? readFileSync(OUT, 'utf8') : '';
   writeFileSync(OUT, prev + JSON.stringify(row) + '\n');
   let parsed = null;

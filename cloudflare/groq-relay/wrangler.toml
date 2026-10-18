@@ -1,0 +1,20 @@
+# groq-relay — the reachable seat (ORCH-R22/T13-a, claim C13).
+# Design + laws: README.md in this directory. Nothing is logged.
+
+name = "groq-relay"
+main = "src/worker.js"
+compatibility_date = "2026-10-01"
+account_id = "049ff5e84ecf636b53b162cbb580aae6"
+
+# The privacy law: no request/response telemetry is retained.
+[observability]
+enabled = false
+
+# THE GEO LAW (ORCH-R22/T13-a): the sandbox client sits in Hong Kong
+# (Alibaba AS45102), so a default Worker runs at the HKG colo — and
+# Groq's edge geo-blocks HK-region traffic (the same 403 as the direct
+# path). Smart Placement relocates this Worker near the BACKEND origin
+# (api.groq.com, US), changing the fetch egress geography. The live
+# checks measure whether the relocation lands.
+[placement]
+mode = "smart"
