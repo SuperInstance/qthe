@@ -1,5 +1,5 @@
 negctl_qthe — T5-c sabotage negative controls (ORCH-R14)
-repo: /home/z/my-project/qthe @ 2925d92edb81
+repo: /home/z/my-project/qthe @ 38df7cad6afd
 pre-flight: zero modifications to suite-consumed files (qthe.mjs, demo/, tests/, scripts/, experiments/, receipts/, crossimpl/, fixedpoint/);
   git status traffic receipted: 1 modified + 0 untracked path(s), all OUTSIDE the consumed set
   (concurrent lanes T5-a/T5-b work in situations/ + docs/ — file-disjoint; the snapshot below is frozen so drift cannot contaminate the control)
@@ -11,7 +11,7 @@ doctrine: a suite that cannot fail is not evidence — sabotage, require the sui
 BASELINE (fresh workspace; all three suites must be GREEN or the control refuses)
 ══════════════════════════════════════════════════════════════════════════════
 
---- baseline run_tests :: exit=0 failures=1 (987 ms) ---
+--- baseline run_tests :: exit=0 failures=1 (960 ms) ---
 PASS G0 demo-sha256 == stone sha256Hex (3 published vectors + 1 fixture) :: {"ok":4,"misses":[]}
 PASS G1 pack/unpack bijection over all 256 values + Psi map :: {"roundTrips":256,"distinctPacked":256,"psiOk":true,"firstMiss":-1}
 PASS G2 bounds invariance by exhaustion (nextD + full tick, tau frozen) :: {"nextD_cases":2304,"nextD_inBounds":2304,"tick_cellsChecked":3840,"tick_cellsOk":3840,"tauFlip":null,"oob":null}
@@ -22,7 +22,7 @@ PASS G5 twin resonance: pinned schedule t0..t5 + own-write guard + OFF arm :: {"
 PASS G6 paired arms: differ iff Abstain cells exist; no leak otherwise :: {"S1":{"abstains":105,"firstDiff":0,"firstCellDiff":7,"identical":false,"onDigest":"38c12a5d09ee07bb81c8bd8032aa5682690888fc2c477375285d45d86ca5f1ba"},"S2":{"abstains":0,"identical":true,"firstDiff":-1,"onDigest":"ea7fadbc0a0dcd3790a3eb15ab3cf58ac712973d2bb982ec40bb035bfdc273db"}}
 {"all_pass":true,"chain":{"file":"tests/receipts.jsonl","links":10,"tip":"e185d79abfa285ef9037c904e4691d7c7efdbb653d8882efdb9396cf21e52257","alg":"stone-v1","verified":true},"gates":[["G0",true],["G1",true],["G2",true],["G3",true],["G4",false],["G4-P2",true],["G5",true],["G6",true]]}
 
---- baseline verify_all_chains :: exit=0 failures=0 (59 ms) ---
+--- baseline verify_all_chains :: exit=0 failures=0 (56 ms) ---
 stone module: ../../quilt-stone/stone.mjs
 OK       tests/receipts.jsonl :: kernel gates G0–G6 :: links=10
 OK       crossimpl/receipts/crossimpl_chain.jsonl :: python LAYER 0 crossimpl :: links=11
@@ -43,7 +43,8 @@ OK       receipts/e_q16_chain.jsonl :: E-Q16 · measurement wave :: links=20
 OK       receipts/e_q17_chain.jsonl :: E-Q17 · provenance at scale (ORCH-R12/T3-b) :: links=13
 OK       receipts/e_q18_chain.jsonl :: E-Q18 · hierarchical wormholes, population axis (ORCH-R18/T9-a) :: links=254
 OK       receipts/e_q19_chain.jsonl :: E-Q19 · docket arbitration, first consumer pricing (ORCH-R20/T11-b2) :: links=19
-OK       receipts/probe_gate_chain.jsonl :: probe gate runs :: links=32
+OK       receipts/e_q20_chain.jsonl :: E-Q20 · construction provenance, quantum constructors (ORCH-R21/T12-b) :: links=22
+OK       receipts/probe_gate_chain.jsonl :: probe gate runs :: links=33
 TIP-PIN  experiments/outputs/e_q11_tip.txt :: E-Q11 · collapse predicate (content-hash receipt) :: tip=e146ed746e8c224f22b2ebb2cb13b5d074a2eb5826dbb8e5b649b1722b0161b9 :: recomputed=e146ed746e8c224f22b2ebb2cb13b5d074a2eb5826dbb8e5b649b1722b0161b9
 TIP-PIN  experiments/outputs/e_q12_tip.txt :: E-Q12 · k-family predicate (content-hash receipt) :: tip=3306f390c802ce408ebddd6b8cb80d711fa5e5751a0aae7c9f41849776fdfd8e :: recomputed=3306f390c802ce408ebddd6b8cb80d711fa5e5751a0aae7c9f41849776fdfd8e
 TIP-AGREE experiments/outputs/e_q1_tip.txt == receipts/e_q1_chain.jsonl :: tip=addc22f9743904cf2382eb89a46bb82c738b5d38b622a0248b1c9fd70d3e7228
@@ -59,18 +60,19 @@ TIP-AGREE experiments/outputs/e_q15_tip.txt == receipts/e_q15_chain.jsonl :: tip
 TIP-AGREE experiments/outputs/e_q16_tip.txt == receipts/e_q16_chain.jsonl :: tip=d7c817a851b199461b5ea4c32370894fef847bfb23995db95419f0ebb3a79e7a
 TIP-AGREE experiments/outputs/e_q17_tip.txt == receipts/e_q17_chain.jsonl :: tip=0d9feae2df50889b233a7f75cc292cdd6f04645799b9321809b4ba5ddad0a2eb
 TIP-AGREE experiments/outputs/e_q19_tip.txt == receipts/e_q19_chain.jsonl :: tip=568bfef308622b0e0e5b8558442348d42f43ee258bb45c7ac0a7f3db3bb700c6
+TIP-AGREE experiments/outputs/e_q20_tip.txt == receipts/e_q20_chain.jsonl :: tip=a310f37e10e6f746ebb8a7362a71e5f108d2110b945d365316bae02d7a78a8cc
 TIP-AGREE crossimpl/receipts/cimpl_tip.txt == crossimpl/receipts/cimpl_chain.jsonl :: tip=03cf0800e6b02f15af439d3db0b78fe7161af99755cf3822558ba3a35d85f4b0
 TIP-AGREE crossimpl/receipts/rs_tip.txt == crossimpl/receipts/rs_chain.jsonl :: tip=f3abf8dbf55ab68c9b5403424fe3e6d3d41c634ecbaead4f0784500dc4824474
 TIP-AGREE fixedpoint/receipts/chain_tip.txt == fixedpoint/receipts/fixedpoint_chain.jsonl :: tip=ff70bdea073765a20277f324835ec437bac9ab813752c0ee822aa79e1197a0be
 
-verify_all_chains: ALL CLEAN :: 38/38 receipts of record verified from disk (incl. 16 tip-file agreements)
+verify_all_chains: ALL CLEAN :: 40/40 receipts of record verified from disk (incl. 17 tip-file agreements)
 
---- baseline probe_gate :: exit=0 failures=0 (223 ms) ---
-PASS PG1_STONE :: {"chains":20,"verified":20}
-PASS PG2_TIP_PIN :: {"checked":22}
-PASS PG3_NEGATIVE :: {"tampered":"/tmp/qthe-pg-PjGNXV/tampered.jsonl","refused":true,"why":"hash mismatch"}
+--- baseline probe_gate :: exit=0 failures=0 (263 ms) ---
+PASS PG1_STONE :: {"chains":21,"verified":21}
+PASS PG2_TIP_PIN :: {"checked":23}
+PASS PG3_NEGATIVE :: {"tampered":"/tmp/qthe-pg-x0dIJM/tampered.jsonl","refused":true,"why":"hash mismatch"}
 PASS PG4_DETERMINISM :: {"ticks":1000,"checkpoints":12,"finalHash":"5fe9402e603a2894…"}
-PASS PG5_BOUNDS :: {"elapsedMs":113,"rssMb":68,"ceilings":"10000ms/512MB"}
+PASS PG5_BOUNDS :: {"elapsedMs":115,"rssMb":67,"ceilings":"10000ms/512MB"}
 PASS C1/E-Q13-gain :: recomputed=47.4026% (20/20 trial gain strings round-trip; chain verdict row agrees) :: expected=bytes-gain at completion 47.4026% (±0.01pp)
 PASS C1/E-Q13-footprint :: recomputed=4096 vs 8192 B seed planes (halving exact; port-identity arms) :: expected=seed-plane footprint 4096 vs 8192 B (halving exact)
 PASS C1/E-Q13-bytes-model :: recomputed=bytes re-derive from the sealed traffic model 20/20; completions {8,9}; median completion 8 (chain row agrees) :: expected=trials 20; completion ticks ⊆ {8,9}; bytesQ = Q_SEED+Q_PER_TICK·completionQ and bytesP = P_SEED+P_PER_TICK·completionP, 20/20
@@ -100,13 +102,16 @@ PASS E-Q18-contention-fold :: recomputed=probe ratio 1/8 exact at all N (the add
 PASS E-Q19-c10-dies-on-h1 :: recomputed=H1 DIES verbatim: A stableStarve 0.31945681211041854 > 0.22176969426467305 and A stableP99 845 > 443.09999999999997; A-static 0.4435393885293461 == B 0.4435393885293461 EXACTLY (the debounce is timing, not share); physics cuts starvation at 0.908 saturation (the re-boost-as-FIFO-penalty law); chain agrees C10 false :: expected=H1 DIES: A L2 stableStarve 0.3194 > 0.5xB 0.4435 AND A stableP99 845 > 0.7xB 633; the timing-not-share law: A-static stableStarve == B stableStarve EXACTLY (0.443539…); physics bundle cuts starvation 0.4435->0.3194 at 0.908 saturation
 PASS E-Q19-flood-cap-lives-backlog-bounded :: recomputed=H2 LIVES structurally: A@500 0.339 vs B 0.75 (tiles aligned with homes); erosion to 0.435625 receipted with 71034 overflows (plane capacity is flood insurance); B flat 0.75 end-to-end :: expected=H2 LIVES at the pre-overflow checkpoint: A L3 maxShare@500 0.339 <= 0.40, B 0.75 >= 0.70; the T_end erosion receipt A 0.4356 > 0.339 (backlog-bounded; overflow 71,034 total across 10 seeds); B share flat 0.75 end-to-end
 PASS E-Q19-floors-and-am2-quiet :: recomputed=F0 150/150, F2/F3 held, kernel real; the wormhole escalation quiet exactly as AM2 priced (1 claim on L2, 0 on A-off); H3/H4 vacuous in the drained regime (p50 0==0, spearman ~0) — receipted as unmeasured, not passed :: expected=F0 150/150 byte-identical; F2 A-off wormhole claims 0 everywhere; F3 capacity matched; the wormhole escalation carried exactly 1 claim on L2 across 10 seeds (AM2 addressing-mismatch receipt); H3/H4 vacuous-pass receipted (p50 0 == 0, spearman(p0) ~ -0.0003)
+PASS E-Q20-c11-dies-on-h2-slow-mode :: recomputed=C11 DIES on H2 verbatim: A2 excursions none (H1 clean — the certified root is invisible); A3 [moransI4,moransI8,satFrac] and A3S [moransI4,moransI8] above floor at t=64 while dW1 1.682 <= floor 1.734 and twinRate washed out — marginals equilibrate, spatial correlation does not (T* > 64: the slow mode); the A3S excursion proves the persistence is dynamical, not quantum-specific; chain agrees :: expected=H1 LIVES (A2 quantum-rooted == A1 PRNG at EVERY checkpoint x metric — byte provenance invisible); H2 DIES at t=64: A3 excurses moransI4+moransI8+satFrac, A3S excurses moransI4+moransI8 but NOT satFrac, A2 excurses nothing; dW1/tauTV/twinRate all washed out within floor; T* null (not reached by t=64) — spatial correlation is a slow mode
+PASS E-Q20-interference-fingerprint-recomputed :: recomputed=H3 LIVES and the quantum geometry receipt RECOMPUTES from sealed sources: A3 t=0 dW1 12.06 vs floor 0.5077; raw Moore-8 Moran I median -0.06807 NEGATIVE across the 5 journaled blur outputs — the exact circuit's unitary interference walks alternating structure (a classical smoothing blur would be strongly positive); chain agrees H3 true :: expected=H3 LIVES: A3 t=0 dW1 12.0597 vs floor 0.5077 and Moore-8 Moran I distance 0.07127 vs floor 0.01444; RECOMPUTED FROM THE SEALED SOURCES: the A3 t=0 Moore-8 Moran I median is NEGATIVE (<= -0.05) — the exact quantum blur is interference-shaped (sign-alternating), not smoothing-shaped (a classical blur gives strong POSITIVE I)
+PASS E-Q20-floors-and-certificates :: recomputed=F0 40/40 byte-identical, F4/F5 held, S 2.8349609375 > 2 (violates_classical_3sigma true, caveat receipted); the AM5 raw-budget law verifies from the root receipt (49152 raw -> 1136 Toeplitz bits at epsilon 2^-64 = 142 B, expanded 40960); AM6 journal replay; moth 10/10 cap held; chain agrees :: expected=F0 determinism 40/40 byte-identical; F4 40 distinct t=0 hashes; F5 A3S marginal identity EXACT; F2 CHSH S 2.834961 > 2 (emu/aer, caveat receipted); F3 blur exact-mode + shape; AM5 root: 142 certified bytes expanded to 40960 (the raw-budget law: 49152 raw bits -> 1136 conditioned bits at epsilon 2^-64); AM6 blur journal replay at 0 credits; moth spend 10/10
 
-coverage: 15 chains with curated claims (e_q13:3, e_q1:2, e_q2:1, e_q14:4, e_q16:3, e_q17:3, fixedpoint:1, e_q5:1, e_q6:1, e_q7:1, e_q15:1, e_q10:1, e_q8:1, e_q18:3, e_q19:3), 5 explicitly excluded (G0-G6, crossimpl-py, crossimpl-c, crossimpl-rs, probe_gate), 0 UNCOVERED
-verdict-recompute: ALL PASS :: 29/29 claims recomputed from the sealed record :: coverage 20/20 chains
-PASS PG6_VERDICT_RECOMPUTE :: {"claims":29,"passed":29}
+coverage: 16 chains with curated claims (e_q13:3, e_q1:2, e_q2:1, e_q14:4, e_q16:3, e_q17:3, fixedpoint:1, e_q5:1, e_q6:1, e_q7:1, e_q15:1, e_q10:1, e_q8:1, e_q18:3, e_q19:3, e_q20:3), 5 explicitly excluded (G0-G6, crossimpl-py, crossimpl-c, crossimpl-rs, probe_gate), 0 UNCOVERED
+verdict-recompute: ALL PASS :: 32/32 claims recomputed from the sealed record :: coverage 21/21 chains
+PASS PG6_VERDICT_RECOMPUTE :: {"claims":32,"passed":32}
 
 PROBE-GATE PASS :: scope=all
-probe_gate chain ok links=33 tip=ef04632def6ff71c3f1baf275b2bcacfe9ebae02c0a752cd9c7601fb4bfdc5ba
+probe_gate chain ok links=34 tip=79e79ef599d87796081e950bdb2f1fbc18ba3caecf0d7b30535768995f44d2b2
 
 baseline receipted GREEN: run_tests (G4 letter-fail by design, post-hoc vindicated), verify_all_chains ALL CLEAN, probe_gate PROBE-GATE PASS.
 
@@ -118,269 +123,269 @@ SABOTAGES (one clause each: apply to a temp copy -> require MORE failures than b
    clause: stone verification from disk — a payload byte flipped in a NON-hash field of a registered chain must break the link hashes (BROKEN)
    sabotage: receipts/e_q13_chain.jsonl: middle result.trial row seed 66010 -> 66011 (one digit, non-hash field)
    predicted: DETECTED
-   sabotaged run: exit=1 failures=1 failLines=1 (baseline exit=0 failures=0 failLines=0, 61 ms) -> DETECTED
+   sabotaged run: exit=1 failures=1 failLines=1 (baseline exit=0 failures=0 failLines=0, 53 ms) -> DETECTED
    failing lines:
      BROKEN   receipts/e_q13_chain.jsonl :: E-Q13 · C1 gain of function :: links=25 :: WHY=hash mismatch
-   restore (clean re-copy): exit=0 failures=0 (59 ms) -> GREEN
+   restore (clean re-copy): exit=0 failures=0 (55 ms) -> GREEN
 
 ── V2-middle-link-deleted :: suite=verify_all_chains
    clause: link continuity — deleting a middle row must break the prev-hash chain at the next row
    sabotage: receipts/e_q13_chain.jsonl: delete the middle result.trial row (seed 66010)
    predicted: DETECTED
-   sabotaged run: exit=1 failures=1 failLines=1 (baseline exit=0 failures=0 failLines=0, 62 ms) -> DETECTED
+   sabotaged run: exit=1 failures=1 failLines=1 (baseline exit=0 failures=0 failLines=0, 54 ms) -> DETECTED
    failing lines:
      BROKEN   receipts/e_q13_chain.jsonl :: E-Q13 · C1 gain of function :: links=24 :: WHY=hash mismatch
-   restore (clean re-copy): exit=0 failures=0 (60 ms) -> GREEN
+   restore (clean re-copy): exit=0 failures=0 (54 ms) -> GREEN
 
 ── V3-forged-row-appended :: suite=verify_all_chains
    clause: seal authenticity — an appended row with a fabricated row_hash must be refused
    sabotage: receipts/e_q13_chain.jsonl: append a forged result.trial row (seed 99999, row_hash all zeros)
    predicted: DETECTED
-   sabotaged run: exit=1 failures=1 failLines=1 (baseline exit=0 failures=0 failLines=0, 59 ms) -> DETECTED
+   sabotaged run: exit=1 failures=1 failLines=1 (baseline exit=0 failures=0 failLines=0, 58 ms) -> DETECTED
    failing lines:
      BROKEN   receipts/e_q13_chain.jsonl :: E-Q13 · C1 gain of function :: links=26 :: WHY=hash mismatch
-   restore (clean re-copy): exit=0 failures=0 (67 ms) -> GREEN
+   restore (clean re-copy): exit=0 failures=0 (54 ms) -> GREEN
 
 ── V4-rows-reordered :: suite=verify_all_chains
    clause: row ordering — swapping two adjacent middle rows must break the implicit prev-hash linkage
    sabotage: receipts/e_q13_chain.jsonl: swap the seed-66010 and seed-66011 rows
    predicted: DETECTED
-   sabotaged run: exit=1 failures=1 failLines=1 (baseline exit=0 failures=0 failLines=0, 59 ms) -> DETECTED
+   sabotaged run: exit=1 failures=1 failLines=1 (baseline exit=0 failures=0 failLines=0, 55 ms) -> DETECTED
    failing lines:
      BROKEN   receipts/e_q13_chain.jsonl :: E-Q13 · C1 gain of function :: links=25 :: WHY=hash mismatch
-   restore (clean re-copy): exit=0 failures=0 (68 ms) -> GREEN
+   restore (clean re-copy): exit=0 failures=0 (54 ms) -> GREEN
 
 ── V5-chain-file-deleted :: suite=verify_all_chains
    clause: registered chain existence — a registered chain file missing from disk must report MISSING
    sabotage: delete receipts/e_q13_chain.jsonl
    predicted: DETECTED
-   sabotaged run: exit=1 failures=1 failLines=1 (baseline exit=0 failures=0 failLines=0, 58 ms) -> DETECTED
+   sabotaged run: exit=1 failures=1 failLines=1 (baseline exit=0 failures=0 failLines=0, 56 ms) -> DETECTED
    failing lines:
      MISSING  receipts/e_q13_chain.jsonl (E-Q13 · C1 gain of function)
-   restore (clean re-copy): exit=0 failures=0 (67 ms) -> GREEN
+   restore (clean re-copy): exit=0 failures=0 (53 ms) -> GREEN
 
 ── V6-content-tip-flipped :: suite=verify_all_chains
    clause: TIP-PIN for content-hash receipts — the auditor's own comment promises "recompute sha256(JSON.stringify(summary)) ... else just pin presence + tip"; flip the CONTENT of a content tip
    sabotage: experiments/outputs/e_q11_tip.txt: flip the first hex char of the pinned 64-hex content hash
    predicted: SURVIVED (presence-only pin — the promised recompute was never implemented)
-   sabotaged run: exit=1 failures=1 failLines=1 (baseline exit=0 failures=0 failLines=0, 66 ms) -> DETECTED
+   sabotaged run: exit=1 failures=1 failLines=1 (baseline exit=0 failures=0 failLines=0, 55 ms) -> DETECTED
    failing lines:
      BROKEN   experiments/outputs/e_q11_tip.txt :: E-Q11 · collapse predicate (content-hash receipt) :: tip=0146ed746e8c224f22b2ebb2cb13b5d074a2eb5826dbb8e5b649b1722b0161b9 :: recomputed=e146ed746e8c224f22b2ebb2cb13b5d074a2eb5826dbb8e5b649b1722b0161b9
-   restore (clean re-copy): exit=0 failures=0 (63 ms) -> GREEN
+   restore (clean re-copy): exit=0 failures=0 (55 ms) -> GREEN
    !! PREDICTION MISMATCH: code-reading said SURVIVED (presence-only pin — the promised recompute was never implemented), the run says DETECTED — receipted
 
 ── V7-registry-entry-removed :: suite=verify_all_chains
    clause: registry completeness / stray enforcement (ORCH-R10 defect #7) — a chain file on disk that the registry no longer lists must fail as STRAY
    sabotage: scripts/chain_registry.mjs: remove the e_q13 entry (file stays on disk)
    predicted: DETECTED
-   sabotaged run: exit=1 failures=1 failLines=1 (baseline exit=0 failures=0 failLines=0, 69 ms) -> DETECTED
+   sabotaged run: exit=1 failures=1 failLines=1 (baseline exit=0 failures=0 failLines=0, 53 ms) -> DETECTED
    failing lines:
      STRAY    receipts/e_q13_chain.jsonl :: chain-shaped file not in scripts/chain_registry.mjs — register it in the sealing commit
-   restore (clean re-copy): exit=0 failures=0 (60 ms) -> GREEN
+   restore (clean re-copy): exit=0 failures=0 (54 ms) -> GREEN
 
 ── V8-stone-tip-flipped :: suite=verify_all_chains
    clause: tip agreement for stone chains (the registration menu's "flip a stored tip") — verify_all_chains never reads <gate>_tip.txt files
    sabotage: experiments/outputs/e_q1_tip.txt: flip the first hex char of the pinned chain tip
    predicted: SURVIVED (stone-tip agreement is probe_gate PG2's clause, not this suite's — receipted as a scope fact)
-   sabotaged run: exit=1 failures=1 failLines=1 (baseline exit=0 failures=0 failLines=0, 57 ms) -> DETECTED
+   sabotaged run: exit=1 failures=1 failLines=1 (baseline exit=0 failures=0 failLines=0, 55 ms) -> DETECTED
    failing lines:
      BROKEN   experiments/outputs/e_q1_tip.txt :: tip-file 0ddc22f9 != chain tip addc22f9 (receipts/e_q1_chain.jsonl)
-   restore (clean re-copy): exit=0 failures=0 (65 ms) -> GREEN
+   restore (clean re-copy): exit=0 failures=0 (53 ms) -> GREEN
    !! PREDICTION MISMATCH: code-reading said SURVIVED (stone-tip agreement is probe_gate PG2's clause, not this suite's — receipted as a scope fact), the run says DETECTED — receipted
 
 ── P1-chain-tampered-PG1 :: suite=probe_gate
    clause: PG1 STONE — every registered stone chain verifies from disk; a tampered payload must be refused
    sabotage: receipts/e_q7_chain.jsonl: rename arm "float:C_7_10" -> "float:C_7_11" on a middle det.arm row (non-hash field)
    predicted: DETECTED
-   sabotaged run: exit=1 failures=1 failLines=1 (baseline exit=0 failures=0 failLines=0, 221 ms) -> DETECTED
+   sabotaged run: exit=1 failures=1 failLines=1 (baseline exit=0 failures=0 failLines=0, 263 ms) -> DETECTED
    failing lines:
      FAIL PG1_STONE: receipts/e_q7_chain.jsonl: hash mismatch
-   restore (clean re-copy): exit=0 failures=0 (241 ms) -> GREEN
+   restore (clean re-copy): exit=0 failures=0 (266 ms) -> GREEN
 
 ── P2-stone-tip-flipped :: suite=probe_gate
    clause: PG2 TIP-PIN — experiments/outputs/<gate>_tip.txt must equal the recomputed chain tip
    sabotage: experiments/outputs/e_q1_tip.txt: flip the first hex char of the pinned tip
    predicted: DETECTED
-   sabotaged run: exit=1 failures=1 failLines=1 (baseline exit=0 failures=0 failLines=0, 235 ms) -> DETECTED
+   sabotaged run: exit=1 failures=1 failLines=1 (baseline exit=0 failures=0 failLines=0, 257 ms) -> DETECTED
    failing lines:
      FAIL PG2_TIP_PIN: e_q1: tip-file 0ddc22f9 != chain addc22f9
-   restore (clean re-copy): exit=0 failures=0 (232 ms) -> GREEN
+   restore (clean re-copy): exit=0 failures=0 (254 ms) -> GREEN
 
 ── P3-stone-tip-deleted :: suite=probe_gate
    clause: PG2 TIP-PIN, presence half — a DELETED stone-chain tip file evades the pin entirely (PG2 `continue`s on absent files)
    sabotage: delete experiments/outputs/e_q1_tip.txt
    predicted: SURVIVED (the `if (!existsSync(tipPath)) continue;` hole)
-   sabotaged run: exit=1 failures=1 failLines=1 (baseline exit=0 failures=0 failLines=0, 230 ms) -> DETECTED
+   sabotaged run: exit=1 failures=1 failLines=1 (baseline exit=0 failures=0 failLines=0, 248 ms) -> DETECTED
    failing lines:
      FAIL PG2_TIP_PIN: e_q1: tip file ABSENT — deletion must not evade the pin (T5-c P3)
-   restore (clean re-copy): exit=0 failures=0 (235 ms) -> GREEN
+   restore (clean re-copy): exit=0 failures=0 (244 ms) -> GREEN
    !! PREDICTION MISMATCH: code-reading said SURVIVED (the `if (!existsSync(tipPath)) continue;` hole), the run says DETECTED — receipted
 
 ── P4-verifier-lobotomized :: suite=probe_gate
    clause: PG3 NEGATIVE — a verifier that cannot say NO is decoration; a tampered chain MUST be refused (here: the stone module copy itself is lobotomized)
    sabotage: ws quilt-stone/stone.mjs copy: verifyChainFile always returns ok:true (tip from the stored last row_hash, so PG2 stays quiet)
    predicted: DETECTED
-   sabotaged run: exit=1 failures=1 failLines=1 (baseline exit=0 failures=0 failLines=0, 201 ms) -> DETECTED
+   sabotaged run: exit=1 failures=1 failLines=1 (baseline exit=0 failures=0 failLines=0, 240 ms) -> DETECTED
    failing lines:
      FAIL PG3_NEGATIVE: TAMPERED CHAIN ACCEPTED — the verifier cannot say NO (critical)
-   restore (clean re-copy): exit=0 failures=0 (245 ms) -> GREEN
+   restore (clean re-copy): exit=0 failures=0 (260 ms) -> GREEN
 
 ── P5-kernel-nondeterministic :: suite=probe_gate
    clause: PG4 DETERMINISM — the 1000-tick twin probe must diverge when the kernel drifts on its second fresh construction (step perturbation: one cell flips once and stays flipped)
    sabotage: qthe.mjs copy: module-global tick counter LATCHES a one-time cell-0 flip at local tick 400, but ONLY on runs after the first 1000 global ticks (the second 1000-tick construction drifts permanently)
    predicted: DETECTED
-   sabotaged run: exit=1 failures=1 failLines=1 (baseline exit=0 failures=0 failLines=0, 245 ms) -> DETECTED
+   sabotaged run: exit=1 failures=1 failLines=1 (baseline exit=0 failures=0 failLines=0, 277 ms) -> DETECTED
    failing lines:
      FAIL PG4_DETERMINISM: 1000-tick twin probe diverged across fresh reruns — VOID environment
-   restore (clean re-copy): exit=0 failures=0 (244 ms) -> GREEN
+   restore (clean re-copy): exit=0 failures=0 (253 ms) -> GREEN
 
 ── P5b-kernel-oscillation-aliased :: suite=probe_gate
    clause: PG4 DETERMINISM, sampling coverage — PG4 hashes the plane only every 100 ticks; a perturbation that returns to the unperturbed byte at each sampled tick is invisible to the sampled witness (found LIVE by this control: the first draft of P5 oscillated and survived; kept as its own receipt)
    sabotage: qthe.mjs copy: cell 0 XORs every tick from local tick 400 on second-construction runs — a period-2 oscillation phase-locked to PG4's t%100 sampling grid (the same kernel IS caught by run_tests G3's per-tick trace comparison — see R5)
    predicted: SURVIVED (the t%100 sampling grid hole; per-tick witness G3 catches it)
-   sabotaged run: exit=1 failures=1 failLines=1 (baseline exit=0 failures=0 failLines=0, 266 ms) -> DETECTED
+   sabotaged run: exit=1 failures=1 failLines=1 (baseline exit=0 failures=0 failLines=0, 262 ms) -> DETECTED
    failing lines:
      FAIL PG4_DETERMINISM: 1000-tick twin probe diverged across fresh reruns — VOID environment
-   restore (clean re-copy): exit=0 failures=0 (247 ms) -> GREEN
+   restore (clean re-copy): exit=0 failures=0 (266 ms) -> GREEN
    !! PREDICTION MISMATCH: code-reading said SURVIVED (the t%100 sampling grid hole; per-tick witness G3 catches it), the run says DETECTED — receipted
 
 ── P6-kernel-slowed :: suite=probe_gate
    clause: PG5 BOUNDS — the PG4 probe's wall-clock must stay under the declared 10 s ceiling
    sabotage: qthe.mjs copy: makeSubstrate busy-waits 6.5 s per construction (PG4 constructs twice -> ~13 s > 10 s; PG4's twin comparison itself stays identical)
    predicted: DETECTED
-   sabotaged run: exit=1 failures=1 failLines=1 (baseline exit=0 failures=0 failLines=0, 13224 ms) -> DETECTED
+   sabotaged run: exit=1 failures=1 failLines=1 (baseline exit=0 failures=0 failLines=0, 13269 ms) -> DETECTED
    failing lines:
-     FAIL PG5_BOUNDS: elapsed=13111ms rss=70451200
-   restore (clean re-copy): exit=0 failures=0 (239 ms) -> GREEN
+     FAIL PG5_BOUNDS: elapsed=13113ms rss=69210112
+   restore (clean re-copy): exit=0 failures=0 (263 ms) -> GREEN
 
 ── P7-registry-entry-removed :: suite=probe_gate
    clause: PG1 strays (defect #7 enforcement) — an unregistered chain-shaped file on disk must fail the gate
    sabotage: scripts/chain_registry.mjs copy: remove the e_q13 entry (file stays on disk)
    predicted: DETECTED
-   sabotaged run: exit=1 failures=1 failLines=1 (baseline exit=0 failures=0 failLines=0, 234 ms) -> DETECTED
+   sabotaged run: exit=1 failures=1 failLines=1 (baseline exit=0 failures=0 failLines=0, 250 ms) -> DETECTED
    failing lines:
      FAIL PG1_STONE: STRAY receipts/e_q13_chain.jsonl: chain-shaped file not in the registry (register it in the sealing commit)
-   restore (clean re-copy): exit=0 failures=0 (243 ms) -> GREEN
+   restore (clean re-copy): exit=0 failures=0 (254 ms) -> GREEN
 
 ── P8-claim-source-remapped :: suite=probe_gate
    clause: PG6 claim-to-chain mapping — a curated claim must read the results file of the chain it cites
    sabotage: scripts/verdict_recompute.mjs copy: claim C1/E-Q13-gain source remapped e_q13_results.json -> e_q14_results.json (foreign data; e_q13 loses one claim)
    predicted: DETECTED
-   sabotaged run: exit=1 failures=2 failLines=2 (baseline exit=0 failures=0 failLines=0, 237 ms) -> DETECTED
+   sabotaged run: exit=1 failures=2 failLines=2 (baseline exit=0 failures=0 failLines=0, 247 ms) -> DETECTED
    failing lines:
      FAIL C1/E-Q13-gain :: recomputed=MISMATCH — expected 20 trials, found undefined :: expected=bytes-gain at completion 47.4026% (±0.01pp)
-     FAIL PG6_VERDICT_RECOMPUTE: 1/29 claims failed recomputation: C1/E-Q13-gain
-   restore (clean re-copy): exit=0 failures=0 (225 ms) -> GREEN
+     FAIL PG6_VERDICT_RECOMPUTE: 1/32 claims failed recomputation: C1/E-Q13-gain
+   restore (clean re-copy): exit=0 failures=0 (253 ms) -> GREEN
 
 ── P9-verdict-row-mutated :: suite=probe_gate
    clause: PG6 data-vs-verdict-row agreement — a sealed verdict row's arithmetic field must match the recomputed headline (also trips PG1: hash integrity — overlapping detection, receipted)
    sabotage: receipts/e_q13_chain.jsonl: verdict.EQ13 row medianGainPct "47.4026%" -> "47.5026%"
    predicted: DETECTED
-   sabotaged run: exit=1 failures=3 failLines=3 (baseline exit=0 failures=0 failLines=0, 233 ms) -> DETECTED
+   sabotaged run: exit=1 failures=3 failLines=3 (baseline exit=0 failures=0 failLines=0, 238 ms) -> DETECTED
    failing lines:
      FAIL PG1_STONE: receipts/e_q13_chain.jsonl: hash mismatch
      FAIL C1/E-Q13-gain :: recomputed=MISMATCH — chain verdict medianGainPct 47.5026% != recomputed headline 47.4026% :: expected=bytes-gain at completion 47.4026% (±0.01pp)
-     FAIL PG6_VERDICT_RECOMPUTE: 1/29 claims failed recomputation: C1/E-Q13-gain
-   restore (clean re-copy): exit=0 failures=0 (243 ms) -> GREEN
+     FAIL PG6_VERDICT_RECOMPUTE: 1/32 claims failed recomputation: C1/E-Q13-gain
+   restore (clean re-copy): exit=0 failures=0 (254 ms) -> GREEN
 
 ── P10-results-arithmetic-mutated :: suite=probe_gate
    clause: PG6 data-vs-claims recomputation — the sealed RESULTS file is not hash-chained; PG6 is the only checker of its arithmetic (the discriminating probe)
    sabotage: experiments/outputs/e_q13_results.json: trials[0].gainStr "47.3988%" -> "47.4988%"
    predicted: DETECTED
-   sabotaged run: exit=1 failures=2 failLines=2 (baseline exit=0 failures=0 failLines=0, 266 ms) -> DETECTED
+   sabotaged run: exit=1 failures=2 failLines=2 (baseline exit=0 failures=0 failLines=0, 259 ms) -> DETECTED
    failing lines:
      FAIL C1/E-Q13-gain :: recomputed=MISMATCH — trial seed=66001: recomputed gain 47.3988% != sealed gainStr 47.4988% :: expected=bytes-gain at completion 47.4026% (±0.01pp)
-     FAIL PG6_VERDICT_RECOMPUTE: 1/29 claims failed recomputation: C1/E-Q13-gain
-   restore (clean re-copy): exit=0 failures=0 (251 ms) -> GREEN
+     FAIL PG6_VERDICT_RECOMPUTE: 1/32 claims failed recomputation: C1/E-Q13-gain
+   restore (clean re-copy): exit=0 failures=0 (259 ms) -> GREEN
 
 ── R1-fixture-literal-flipped :: suite=run_tests
    clause: pre-registered literal comparison (G4-P2) — the suite must actually compare kernel output against the pre-registered expected literals (a flipped literal must FAIL, proving the gate is not vacuous)
    sabotage: tests/run_tests.mjs copy: G4-P2 expected row1 literal re:35 -> re:34 (a plausible wrong hand-arithmetic)
    predicted: DETECTED
-   sabotaged run: exit=1 failures=2 failLines=2 (baseline exit=0 failures=1 failLines=0, 1013 ms) -> DETECTED
+   sabotaged run: exit=1 failures=2 failLines=2 (baseline exit=0 failures=1 failLines=0, 960 ms) -> DETECTED
    failing lines:
      FAIL G4 split-channel vectorPass exact vs hand-computed literals :: {"got":[{"re":8,"im":30},{"re":35,"im":8},{"re":0,"im":0},{"re":-21,"im":0}],"allInt":true}
      FAIL G4-P2 post-hoc: corrected row1 literal (prediction error, not kernel error) :: {"got":[{"re":8,"im":30},{"re":35,"im":8},{"re":0,"im":0},{"re":-21,"im":0}],"allInt":true}
-   restore (clean re-copy): exit=0 failures=1 (995 ms) -> GREEN
+   restore (clean re-copy): exit=0 failures=1 (963 ms) -> GREEN
 
 ── R2-gate-block-removed :: suite=run_tests
    clause: gate coverage — the suite rewrites its own receipt chain (tests/receipts.jsonl) with whatever gates ran; is a REMOVED gate noticed?
    sabotage: tests/run_tests.mjs copy: delete the entire G1 (pack/unpack bijection) gate block
    predicted: DETECTED (amended at the ORCH-R14 closure: the gate-set pin now fails the run loudly on a removed gate via exit-code regression; the ORIGINAL pre-closure prediction SURVIVED stands receipted in situations/negctl/run_receipt.txt v1)
-   sabotaged run: exit=1 failures=1 failLines=1 (baseline exit=0 failures=1 failLines=0, 1004 ms) -> DETECTED
+   sabotaged run: exit=1 failures=1 failLines=1 (baseline exit=0 failures=1 failLines=0, 958 ms) -> DETECTED
    failing lines:
      FAIL G4 split-channel vectorPass exact vs hand-computed literals :: {"got":[{"re":8,"im":30},{"re":35,"im":8},{"re":0,"im":0},{"re":-21,"im":0}],"allInt":true}
-   restore (clean re-copy): exit=0 failures=1 (995 ms) -> GREEN
+   restore (clean re-copy): exit=0 failures=1 (958 ms) -> GREEN
 
 ── R3-kernel-psi-mutated :: suite=run_tests
    clause: G1 — Psi map pinned as [0, 1, -1, 'i'] (kernel-side sabotage: the SUITE must catch a wrong kernel)
    sabotage: qthe.mjs copy: PSI[2] -1 -> 1 (Repel loses its sign)
    predicted: DETECTED
-   sabotaged run: exit=1 failures=2 failLines=2 (baseline exit=0 failures=1 failLines=0, 985 ms) -> DETECTED
+   sabotaged run: exit=1 failures=2 failLines=2 (baseline exit=0 failures=1 failLines=0, 980 ms) -> DETECTED
    failing lines:
      FAIL G1 pack/unpack bijection over all 256 values + Psi map :: {"roundTrips":256,"distinctPacked":256,"psiOk":false,"firstMiss":-1}
      FAIL G4 split-channel vectorPass exact vs hand-computed literals :: {"got":[{"re":8,"im":30},{"re":35,"im":8},{"re":0,"im":0},{"re":-21,"im":0}],"allInt":true}
-   restore (clean re-copy): exit=0 failures=1 (984 ms) -> GREEN
+   restore (clean re-copy): exit=0 failures=1 (982 ms) -> GREEN
 
 ── R4-kernel-nextD-bounds-broken :: suite=run_tests
    clause: G2 — bounds invariance by exhaustion: every nextD(d, p) result must lie in [0,63] (isolated: the sabotage fires only at the decimal pressure -1.585, which tick dynamics cannot produce — log2(3) is irrational)
    sabotage: qthe.mjs copy: nextD returns 64 (out of bounds) when pressure === -1.585
    predicted: DETECTED
-   sabotaged run: exit=1 failures=2 failLines=2 (baseline exit=0 failures=1 failLines=0, 983 ms) -> DETECTED
+   sabotaged run: exit=1 failures=2 failLines=2 (baseline exit=0 failures=1 failLines=0, 1018 ms) -> DETECTED
    failing lines:
      FAIL G2 bounds invariance by exhaustion (nextD + full tick, tau frozen) :: {"nextD_cases":2304,"nextD_inBounds":2048,"tick_cellsChecked":3840,"tick_cellsOk":3840,"tauFlip":null,"oob":null}
      FAIL G4 split-channel vectorPass exact vs hand-computed literals :: {"got":[{"re":8,"im":30},{"re":35,"im":8},{"re":0,"im":0},{"re":-21,"im":0}],"allInt":true}
-   restore (clean re-copy): exit=0 failures=1 (1004 ms) -> GREEN
+   restore (clean re-copy): exit=0 failures=1 (959 ms) -> GREEN
 
 ── R5-kernel-nondeterministic :: suite=run_tests
    clause: G3 — determinism seed-to-hash: same seed must give byte-identical 1000-tick traces across fresh constructions
    sabotage: qthe.mjs copy: module-global tick counter XORs cell 0 every tick from local tick 400 onward, only on runs after the first 1000 global ticks (G3's A2 drifts away from A1 at EVERY tick; G5/G6 tick < 400 so stay exact)
    predicted: DETECTED
-   sabotaged run: exit=1 failures=2 failLines=2 (baseline exit=0 failures=1 failLines=0, 976 ms) -> DETECTED
+   sabotaged run: exit=1 failures=2 failLines=2 (baseline exit=0 failures=1 failLines=0, 968 ms) -> DETECTED
    failing lines:
      FAIL G3 determinism: same seed -> byte-identical 1000-tick trace; no Math.random in kernel :: {"perTickMatch":692,"planeEq":false,"traceDigest_A":"9cbd9111907254be1e08553bc1f899d333639ccd60a7f8e4b9d9941821d0d156","traceDigest_B":"3cbdcb9490d2d9d25688c91c81222d21f3abd97286209b99ac01ebe01f0c1bf6","diffSeed":true,"randHits":0}
      FAIL G4 split-channel vectorPass exact vs hand-computed literals :: {"got":[{"re":8,"im":30},{"re":35,"im":8},{"re":0,"im":0},{"re":-21,"im":0}],"allInt":true}
-   restore (clean re-copy): exit=0 failures=1 (983 ms) -> GREEN
+   restore (clean re-copy): exit=0 failures=1 (932 ms) -> GREEN
 
 ── R6-kernel-vectorPass-sign-flip :: suite=run_tests
    clause: G4/G4-P2 — split-channel exactness vs hand-computed literals (kernel-side: Repel must subtract)
    sabotage: qthe.mjs copy: vectorPass case 2 (Repel) re -= dv * x -> re += dv * x
    predicted: DETECTED
-   sabotaged run: exit=1 failures=2 failLines=2 (baseline exit=0 failures=1 failLines=0, 978 ms) -> DETECTED
+   sabotaged run: exit=1 failures=2 failLines=2 (baseline exit=0 failures=1 failLines=0, 986 ms) -> DETECTED
    failing lines:
      FAIL G4 split-channel vectorPass exact vs hand-computed literals :: {"got":[{"re":32,"im":30},{"re":35,"im":8},{"re":0,"im":0},{"re":21,"im":0}],"allInt":true}
      FAIL G4-P2 post-hoc: corrected row1 literal (prediction error, not kernel error) :: {"got":[{"re":32,"im":30},{"re":35,"im":8},{"re":0,"im":0},{"re":21,"im":0}],"allInt":true}
-   restore (clean re-copy): exit=0 failures=1 (980 ms) -> GREEN
+   restore (clean re-copy): exit=0 failures=1 (957 ms) -> GREEN
 
 ── R7-kernel-wormhole-resonance-broken :: suite=run_tests
    clause: G5 — pinned twin-resonance schedule: written resonance must be |real_acc|+1, term === log2(3), totalWrites === 12
    sabotage: qthe.mjs copy: table.write resonance Math.abs(acc) + 1 -> Math.abs(acc) + 2
    predicted: DETECTED
-   sabotaged run: exit=1 failures=2 failLines=2 (baseline exit=0 failures=1 failLines=0, 993 ms) -> DETECTED
+   sabotaged run: exit=1 failures=2 failLines=2 (baseline exit=0 failures=1 failLines=0, 955 ms) -> DETECTED
    failing lines:
      FAIL G4 split-channel vectorPass exact vs hand-computed literals :: {"got":[{"re":8,"im":30},{"re":35,"im":8},{"re":0,"im":0},{"re":-21,"im":0}],"allInt":true}
      FAIL G5 twin resonance: pinned schedule t0..t5 + own-write guard + OFF arm :: {"misses":[{"t":0,"field":"term/resonance","got":[{"kind":"twin","x":6,"y":6,"slot":40,"resonance":2,"term":3.169925001442312}]},{"t":0,"field":"s40","got":{"x":6,"y":6,"resonance":2},"want":[6,6,1]},{"t":1,"field":"term/resonance","got":[{"kind":"twin","x":1,"y":1,"slot":40,"resonance":2,"term":3.169925001442312}]},{"t":1,"field":"s40","got":{"x":1,"y":1,"resonance":2},"want":[1,1,1]},{"t":2,"field":"term/resonance","got":[{"kind":"twin","x":1,"y":1,"slot":41,"resonance":2,"term":3.169925001442312},{"kind":"twin","x":6,"y":6,"slot":41,"resonance":2,"term":3.169925001442312}]},{"t":2,"field":"s41","got":{"x":6,"y":6,"resonance":2},"want":[6,6,1]},{"t":3,"field":"term/resonance","got":[{"kind":"twin","x":6,"y":6,"slot":42,"resonance":2,"term":3.169925001442312}]},{"t":3,"field":"s42","got":{"x":6,"y":6,"resonance":2},"want":[6,6,1]},{"t":4,"field":"term/resonance","got":[{"kind":"twin","x":1,"y":1,"slot":42,"resonance":2,"term":3.169925001442312}]},{"t":4,"field":"s42","got":{"x":1,"y":1,"resonance":2},"want":[1,1,1]},{"t":5,"field":"term/resonance","got":[{"kind":"twin","x":1,"y":1,"slot":43,"resonance":2,"term":3.169925001442312},{"kind":"twin","x":6,"y":6,"slot":43,"resonance":2,"term":3.169925001442312}]},{"t":5,"field":"s43","got":{"x":6,"y":6,"resonance":2},"want":[6,6,1]}],"loneEvents":0,"loneD":25,"totalWrites":12,"offOk":true}
-   restore (clean re-copy): exit=0 failures=1 (988 ms) -> GREEN
+   restore (clean re-copy): exit=0 failures=1 (958 ms) -> GREEN
 
 ── R8-kernel-wormhole-flag-leak :: suite=run_tests
    clause: G6-S2 (R7 law) — the wormhole flag must not leak into non-Abstain dynamics (no Abstain cells -> ON and OFF arms byte-identical)
    sabotage: qthe.mjs copy: non-Abstain cells feel a +0.001 pressure nudge when wormholes are OFF (Abstain cells and ON arms untouched, so G5 stays exact)
    predicted: DETECTED
-   sabotaged run: exit=1 failures=2 failLines=2 (baseline exit=0 failures=1 failLines=0, 995 ms) -> DETECTED
+   sabotaged run: exit=1 failures=2 failLines=2 (baseline exit=0 failures=1 failLines=0, 911 ms) -> DETECTED
    failing lines:
      FAIL G4 split-channel vectorPass exact vs hand-computed literals :: {"got":[{"re":8,"im":30},{"re":35,"im":8},{"re":0,"im":0},{"re":-21,"im":0}],"allInt":true}
      FAIL G6 paired arms: differ iff Abstain cells exist; no leak otherwise :: {"S1":{"abstains":105,"firstDiff":0,"firstCellDiff":1,"identical":false,"onDigest":"38c12a5d09ee07bb81c8bd8032aa5682690888fc2c477375285d45d86ca5f1ba"},"S2":{"abstains":0,"identical":false,"firstDiff":3,"onDigest":"ea7fadbc0a0dcd3790a3eb15ab3cf58ac712973d2bb982ec40bb035bfdc273db"}}
-   restore (clean re-copy): exit=0 failures=1 (998 ms) -> GREEN
+   restore (clean re-copy): exit=0 failures=1 (946 ms) -> GREEN
 
 ── R9-demo-sha256-broken :: suite=run_tests
    clause: G0 — demo-sha256 cross-substrate agreement: the pure-JS digest must match the published vectors and stone's node:crypto sha256Hex
    sabotage: demo/sha256.mjs copy: first SHA-256 round constant 0x428a2f98 -> 0x428a2f99 (every digest changes)
    predicted: DETECTED
-   sabotaged run: exit=1 failures=2 failLines=2 (baseline exit=0 failures=1 failLines=0, 986 ms) -> DETECTED
+   sabotaged run: exit=1 failures=2 failLines=2 (baseline exit=0 failures=1 failLines=0, 948 ms) -> DETECTED
    failing lines:
      FAIL G0 demo-sha256 == stone sha256Hex (3 published vectors + 1 fixture) :: {"ok":0,"misses":[{"msg":"","got":"85fb6b7d3d968791a2e43411e4d7b419421378aff76ae1fa2bb5d0492079e118","want":"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"},{"msg":"abc","got":"b043392194b879840f51dd682800237a4cf7efd7ff77ec43155a85800565e81c","want":"ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad"},{"msg":"abcdbcdecdef","got":"5ae4985adefe10cc93f5691ea2ace30f714acaaa9e213b1807c5222bea660250","want":"248d6a61d20638b8e5c026930c3e6039a33ce45964ff2167f6ecedd419db06c1"},{"msg":"cross-check","a":"f2bb85741fb9d1671191e6c71f29b802428f499c0ecd03f8912e4a307f085504","b":"b85b48723c91ac37633a08e9334194c4f6ccc8a760c0daf1811bcb5bcbf8408c"}]}
      FAIL G4 split-channel vectorPass exact vs hand-computed literals :: {"got":[{"re":8,"im":30},{"re":35,"im":8},{"re":0,"im":0},{"re":-21,"im":0}],"allInt":true}
-   restore (clean re-copy): exit=0 failures=1 (980 ms) -> GREEN
+   restore (clean re-copy): exit=0 failures=1 (945 ms) -> GREEN
 
 ══════════════════════════════════════════════════════════════════════════════
 SUMMARY
