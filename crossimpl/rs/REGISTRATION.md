@@ -124,9 +124,9 @@ $ echo $?
 First observed run was already 19/19 — the port was written against the
 receipts (R1–R8) and the C lane's methodology, and the battery's known trap
 sites (the R8 S-scaling that caught the C port's run-1 defect; the E-Q8
-artifact boards; the cooker) all passed on the first attempt. No defects
-were found in the Rust port; the honest-defect receipt for THIS lane is the
-sealer's design (below), not a port bug.
+artifact boards; the cooker) all passed on the first attempt. No KERNEL-side
+defect was found in the Rust port. One RUNNER-side, debug-only defect was
+found and fixed (the round's P8 base-rate receipt, see below).
 
 **Unit tests — 13/13 (`cargo test --release`, parsed live by the sealer):**
 
@@ -164,7 +164,21 @@ computed via node crypto.
 **Determinism:** the sealer runs the conformance TWICE per seal and refuses
 on any difference; the two runs were byte-identical, output sha256
 `6899aa2447e8a4fbf9777a239644ac8c0511814e378bfa8b4e1d0ed6798ba2b8`.
-A single battery run measures ~35 ms wall (release build).
+A single battery run measures ~35 ms wall (release build). The port-profile
+cross-check is also part of the record: DEBUG build and RELEASE build
+outputs are byte-identical (`cargo build` vs `cargo build --release`, both
+exit 0, `cmp` clean) — optimization-level independence, observed.
+
+**The round's P8 receipt (defect found and fixed, append-only):** the
+runner's `debug_assert` read `events.last()` after a possibly eventless
+tick — a false positive that panicked the DEBUG profile mid-battery
+(c9_eq8_85) while the release profile (which skips `debug_assertions`)
+passed 19/19. Found by the port-profile cross-check above, fixed to slice
+`events[before..]` of the CURRENT tick, re-verified (debug 0 / release 0 /
+byte-identical / third release run still identical). No kernel-side defect;
+run 1's sealed release result was and remains valid — the correction is
+receipted in the NEW `result.rs` row (`defects_found_and_fixed`), old rows
+standing.
 
 **Negative controls (pre-seal, on temp fixture copies — the comparison is
 live, not vacuous):**
@@ -200,19 +214,33 @@ through THE STONE (`experiments/_stone_link.mjs`, read-only link) and
 `appendAndVerify` (`experiments/_harness.mjs`), which enforces the ORCH-R11
 seal-time registration law — the chain is registered in
 `scripts/chain_registry.mjs` in the SAME commit that seals it (commit
-`1c3271d`). Chain state: **6 links, tip
-`29cc74c39c244c919470bcbc3e7c23ffcaab9b30901d797725126a4ace05288d`**, tip
-file `crossimpl/receipts/rs_tip.txt`. Rows: `rules.rs` (floors + battery +
-fixtures sha) / `run.config` (rustc 1.99.1, cargo 1.99.1, σ policy, unit
-tests) / `result.rs` (19/19 + negative controls + stricter-by-tick note) /
+`1c3271d`). Chain state: **11 links, tip
+`f3abf8dbf55ab68c9b5403424fe3e6d3d41c634ecbaead4f0784500dc4824474`**
+(header + run-1's 5 rows + the corrected-seal's 5 rows carrying the
+debug-assert correction receipt), tip file `crossimpl/receipts/rs_tip.txt`.
+Rows per seal: `rules.rs` (floors + battery + fixtures sha) / `run.config`
+(rustc 1.99.1, cargo 1.99.1, σ policy, unit tests) / `result.rs` (19/19 +
+negative controls + stricter-by-tick note + the correction receipt) /
 `determinism.rs` (double-run byte-identity + output sha) / `verdict.rs`
 (**RUST PORT BYTE-EXACT — 19/19, float plane AND R8 fixed plane, the fourth
 language**).
 
 `node scripts/verify_all_chains.mjs` from this worktree:
 **ALL CLEAN 35/35** receipts of record verified from disk (19 chains incl.
-`crossimpl/receipts/rs_chain.jsonl :: links=6`, 2 content tips, 14 tip-file
+`crossimpl/receipts/rs_chain.jsonl :: links=11`, 2 content tips, 14 tip-file
 agreements).
+
+The chain registration additionally REQUIRED one PG6 coverage-law edit
+(outside `crossimpl/rs/`, receipted here and in the commit): the
+ORCH-R11 coverage law fails `probe_gate` PG6 with
+`uncovered-chains:crossimpl-rs` the moment a chain is registered without
+curated claims or an explicit exclusion — observed live before the fix.
+`scripts/verdict_recompute.mjs` gained the `crossimpl-rs` EXCLUDED entry
+(same class as `crossimpl-c`; the sealer's count cross-check is cited in
+the reason). Post-edit observation runs from this worktree (gate chains
+restored — the receipts of record are the orchestrator's to re-seal):
+`run_tests` exit 0 all_pass; `probe_gate` PROBE-GATE PASS exit 0;
+`verdict_recompute` standalone ALL PASS 26/26, coverage 19/19.
 
 ## Honest limits
 

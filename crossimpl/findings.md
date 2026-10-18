@@ -155,9 +155,14 @@ pack bijection, i·i=−1 and i⁴=+1 as channel-coefficient compositions onto
 the Repel/Attract operators, Ψ(0) absorbing, torus wraparound, saturation
 cap/floor, R2/R4 live-read/never-self, R8 scaled domain, mulberry32 KAT vs
 the JS kernel, sha256/plane-hash KATs). Chain:
-`crossimpl/receipts/rs_chain.jsonl` (6 links, tip `29cc74c3…`), registered
-in `scripts/chain_registry.mjs` in the sealing commit; `verify_all_chains`
-ALL CLEAN 35/35. New SPEC-silence findings: A-R1/A-R2/A-R3 in
-`crossimpl/AMBIGUITY.md` (telemetry surface, degenerate tori, FP rounding
-discipline). Reproduce: `cd crossimpl/rs && cargo test --release && cargo
-build --release && ./target/release/conformance ../c/fixtures.txt`.
+`crossimpl/receipts/rs_chain.jsonl` (11 links — run 1 + the corrected seal
+carrying the debug-assert correction receipt [runner-side, debug-only false
+positive caught by the debug-vs-release profile cross-check; no kernel-side
+defect; run 1's release result was and remains valid], tip `f3abf8db…`),
+registered in `scripts/chain_registry.mjs` in the sealing commit (+ the PG6
+coverage-law exclusion in `scripts/verdict_recompute.mjs`, same class as
+crossimpl-c); `verify_all_chains` ALL CLEAN 35/35. New SPEC-silence
+findings: A-R1/A-R2/A-R3 in `crossimpl/AMBIGUITY.md` (telemetry surface,
+degenerate tori, FP rounding discipline). Reproduce: `cd crossimpl/rs &&
+cargo test --release && cargo build --release &&
+./target/release/conformance ../c/fixtures.txt`.
