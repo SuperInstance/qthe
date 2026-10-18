@@ -192,3 +192,42 @@ expansion ≠ factual grounding; verify before adopting. Receipt:
 | **The seat-block law (Groq)**: api.groq.com returns HTTP 403 in ~36 ms PRE-AUTH (authed and unauthenticated identical; browser UA no help) from this sandbox while Cloudflare-fronted Moth works — an IP-range block, not a key fault. Receipt the environment, don't burn retries: the seats ship code-delivered/live-pending (client + canary + seat-trial in the tavern row schema), ready the moment a reachable seat exists. | `situations/groq_seats/BLOCKED-SEAT-RECEIPT.md` (probes at registration + canary, both models) |
 | **Seed-2.0-mini design attacks keep earning (6th consecutive round)**: AM1 (byte-splitting law) was a real specification hole; A4 (Moore-8 Moran's I) corrected the instrument to the kernel's own coupling; the two refutations (A2 chain-attribution, A6 no-truncation) sharpened the design's own reasoning — the attack/disposition ledger is now the design's QA. | `situations/e_q20_design_attack.jsonl` ($0.005061, 58.9 s, 6 attacks: 4 accepted/in-part, 2 refuted with receipts) |
 | **Blur-core is interference, not smoothing**: the exact-mode quantum blur produced NEGATIVE lag-1 autocorrelation (Moore-8 I −0.068 at t=0) — unitary interference walks alternating structure where classical blurs produce strong positive correlation. Any "quantum blur" consumer should expect oscillatory geometry, not softened geometry. | E-Q20 H3 + the from-sources recompute in `scripts/verdict_recompute.mjs` (E-Q20-interference-fingerprint-recomputed) |
+
+## ORCH-R22 additions (the reachable-seat round: geo, harmony, per-model laws)
+
+- **The geo law (environment, not key).** A pre-auth 403 with
+  authed/unauthenticated identical is a DOOR refusal; triangulate with a
+  second geography before blaming the key (the Worker noauth probe + the
+  Azure US 401 closed it: the key had never been evaluated from HK).
+  Corollary: a Cloudflare Worker runs at the colo NEAREST THE CLIENT —
+  a blocked-origin client puts its own Worker behind the same block
+  (Smart Placement is the registered mitigation, pending relocation).
+  The Actions seat is the standing route: same scripts, different
+  egress, artifacts home.
+- **The per-model defaults law (Groq).** `reasoning_effort` is
+  model-scoped: qwen3.8-27b accepts `default`; gpt-oss-20b 400s
+  (`must be one of low, medium, or high`). The operator's per-model
+  dispatch (qwen: 0.6/0.95/default; gpt-oss: 1/1/medium) is carried in
+  MODELS.defaults and chat() defers — never share one seat's sampling
+  params across a family.
+- **The reasoning-budget law (Groq).** gpt-oss at effort=medium burned
+  ALL 2048 completion tokens on reasoning and emitted NOTHING
+  (finish_reason=length, empty content) — reasoning tokens count
+  against max_completion_tokens. Headroom per seat: qwen 2048,
+  gpt-oss 6144 for a 6-answer JSON battery.
+- **The criteria-keys law (typesafe).** In the systemone choice map the
+  criteria object's KEYS are the answer choices ({option: description});
+  any other shape ({statement, choices}) makes the model echo the key
+  names. The v1 rows stand as the shape-erratum receipt; v2 scored.
+- **The two typesafe models (probe receipted).** GET /v1/models serves
+  `jev-latest` (jev-1.13.0) and `jev-preview` (jev-1.14.0, "should be
+  better in most ways"). On the harmony battery both scored 5/6 with
+  DIFFERENT misses at low confidence — 1.13.0 missed the plateau
+  (S5@0.35), 1.14.0 missed the boundary crossing (S3@0.41). Two
+  models that disagree on exactly the trap-adjacent statements are a
+  complementarity signal: run both when the question is subtle.
+- **The harmony economics (this battery, 5 calls total).** MiMo
+  6/6 at $0.000433/46 s; typesafe pair 5/6+5/6 at 2×(2556 in / 231
+  out)/~240 ms; qwen 4/6 at $0.000752/1.9 s. The cheap DeepInfra seat
+  was the most accurate reader this round — price does not buy
+  comprehension (the r15 Hy4 law, now cross-family).

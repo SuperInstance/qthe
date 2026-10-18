@@ -18,7 +18,7 @@
 | C5′ | repair via injector (one-pager) | **STANDS** — definitional, receipted as such | E-Q10 | `50ddf5f9…` (24 links) |
 | C9 | hierarchical wormholes (8×8+8, folded addressing) restore provenance under population load | **DIES** (with prejudice, opposite direction) — hier provFrac WORSE than flat at every population level (clean 0.0066 vs 0.0725, 11× worse); the d&7 fold trades cross-region anonymity for 8× denser cross-cargo aliasing and the drift convoy floods it. H2 (escalation latency) LIVES: 8/8 delivery, first-delivery 7 == 7 — the delivery channel is addressing-robust; the WHO channel is what dies | E-Q18 (ORCH-R18) | `fe059a2e…` (254 links) |
 | C10 | a qthe-docket (tiled task arbitration) reduces starvation and source-monopolization under flapping and source-local flooding vs a FIFO+static-priority inbox, at spatial-baseline parity | **DIES** (on H1) — the debounce changes timing, not throughput share (A-static stableStarve == the heap's exactly, 0.4435); the physics bundle cuts starvation 0.44→0.32 (the re-boost-as-FIFO-penalty law, AM6(i) confirmed) but buys it with stable p99 +33% (845 vs 633). H2 flood-cap LIVES structurally — tiles aligned with source homes cap the flooder at maxShare@500 0.339 vs the heap's 0.75; T_end erosion 0.436 = the backlog-bounded boundary. H3/H4 vacuous in the drained regime (p50=0 both; receipted as unmeasured, not passed) | E-Q19 (ORCH-R20) | `568bfef3…` (19 links) |
-| C11 | the tick operator is a construction-provenance blindfold: PRNG / quantum-ROOTED hash-expanded comet-certified (SP 800-90B root) / quantum-blur-conditioned planes become statistically indistinguishable within the PRNG noise floor by tick 64, each individually byte-deterministic | **DIES** (on H2) — H1 LIVES cleanly: the certified quantum root, SHA-256-expanded, is indistinguishable from mulberry32 at EVERY checkpoint x metric (byte provenance is invisible — the NIST 90B-to-90A pattern is behaviorally transparent). H3 LIVES: the blur's t=0 fingerprint is huge (dW1 12.06 vs floor 0.51) and the exact circuit is INTERFERENCE-SHAPED — Moore-8 Moran's I NEGATIVE (−0.068; a classical smoothing blur would be strongly positive) — a measured quantum-native geometry. H2 DIES: spatial autocorrelation has not equilibrated by t=64 (A3 0.038 / A3S 0.034 vs floor 0.021, converging monotonically) while dW1/tauTV/twinRate DID wash out — initial spatial correlation is a SLOW MODE of the tick operator; the A3S excursion proves the persistence is dynamical, not quantum-specific. T* > 64 | E-Q20 (ORCH-R21) | `a310f37e…` (22 links) |
+| C11 | the tick operator is a construction-provenance blindfold: PRNG / quantum-ROOTED hash-expanded comet-certified (SP 800-90B root) / quantum-blur-conditioned planes become statistically indistinguishable within the PRNG noise floor by tick 64, each individually byte-deterministic | **DIES** (on H2) — H1 LIVES cleanly: the certified quantum root, SHA-256-expanded, is indistinguishable from mulberry32 at EVERY checkpoint x metric (byte provenance is invisible — the NIST 90B-to-90A pattern is behaviorally transparent). H3 LIVES: the blur's t=0 fingerprint is huge (dW1 12.06 vs floor 0.51) and the exact circuit is INTERFERENCE-SHAPED — Moore-8 Moran's I NEGATIVE (−0.068; a classical smoothing blur would be strongly positive) — a measured quantum-native geometry. H2 DIES: spatial autocorrelation has not equilibrated by t=64 (A3 0.038 / A3S 0.034 vs floor 0.021, converging monotonically) while dW1/tauTV/twinRate DID wash out — initial spatial correlation is a SLOW MODE of the tick operator; the A3S excursion proves the persistence is dynamical, not quantum-specific. T* > 64 **(r22 annotation, E-Q20b: T* > 512 — the "converging monotonically" reading was a checkpoint-sampling artifact; the true shape is dip-at-8 → re-excite → metastable plateau ~20% above floor through t=512; see the C11 annotation section)** | E-Q20 (ORCH-R21) + E-Q20b (ORCH-R22) | `a310f37e…` (22 links) + `4aa12d65…` (6 links) |
 
 Supporting mechanism verdicts (not LAYER 2 claims, but they bound the claims):
 E-Q6 slot semantics = S3 live-read row-major LWW (`ab4ea196…`, 15 links);
@@ -387,3 +387,37 @@ tminus-dispatcher convergence) fires at the boundary and advances
 `GET /hud`. After ERRATUM 3 (the beat's `stub.fetch` calls defaulted to
 GET; init/tick require POST — the first beat wrote a hollow HUD; found
 by the P-D check, fixed, re-verified).
+
+## C11 — T* annotation, amended (ORCH-R22, E-Q20b the burn-in ladder)
+
+**The r21 row's "T* > 64" extends to "T* > 512".** The burn-in ladder
+re-ran the SAME sealed planes to t=512 (zero credits, journal replay;
+chain `e_q20b`, 6 links, tip `4aa12d65…`) under an F0' gate that
+reproduced E-Q20's sealed values byte-exactly (30/30 hashes, 32/32
+floor values, 64/64 cross-arm medians). H1b DIES — no sticky sub-floor
+crossing exists within the ladder; the honest null branch fired exactly
+as registered (P5, p≈0.15). H2b DIES — the trajectory re-excites above
+1.5× floor at t=16, 32, 64 after first touching at t=8.
+
+**The structure the coarse r21 ladder hid:** A3's Moore-8 distance DIPS
+BELOW the floor at t=8 (0.00298 vs 0.01342), re-excites to 0.0482 at
+t=16, and then settles into a METASTABLE PLATEAU at ~0.030 —
+persistently ~16–20% ABOVE the floor — from t=128 through t=512 with no
+trend. The r21 reading "converging monotonically" was a
+checkpoint-sampling artifact of the {…,16,32,64} grid. The shuffled
+control A3S shows the mirror structure: its distance EXCURSES UPWARD
+(the tick operator builds spatial correlation from shuffled initials —
+0.0687 at t=16, above A3's own excursion) and then decays to reach the
+floor exactly at the ladder's edge (t=512, 0.025762 vs floor
+0.025779). The dW1/tauTV/twinRate controls wash out by t=64 (with
+transient excursions at t=8–32) — marginals forget faster than
+geometry.
+
+**The consumer law, sharpened:** at 64×64, spatial-correlation
+statistics of a quantum-constructed plane remain distinguishable from
+PRNG planes for AT LEAST 512 ticks — the burn-in requirement scales at
+least 8× beyond the r21 horizon, and the plateau shape says it does not
+asymptote inside any horizon the ladder measured. C11's sealed DIES
+verdict stands (not reopened — the wash-out claim fails at every
+measured horizon); only the T* annotation amends, append-only, per the
+E-Q20b registration.

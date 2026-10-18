@@ -313,3 +313,65 @@ survive the tick dynamics?
   seat exists, `qwen/qwen3.8-27b` and `openai/gpt-oss-20b` join the tavern
   with zero code changes.
 
+
+## The reachable-seat round (r22 — the geo law, the Actions seat, both Groq seats live, T* > 512)
+
+The operator's dispatch doubled down on Groq ("rapid and cheap models …
+in harmony with the other tools like the two typesafe.ai models") with
+the Cloudflare token now attached. The r21 seat-block turned out to be
+a **geography law, receipted by triangulation**: the sandbox egresses
+from Hong Kong (Alibaba AS45102); a Cloudflare Worker at the HKG colo
+(authed and unauthed via `/probe/noauth`) drew the same pre-auth 403;
+a GitHub Actions runner (Azure US, Des Moines) drew **401 `Invalid API
+Key`** — the auth layer REACHED. Groq's edge door-refuses HK-region
+traffic before ever evaluating the key. Two standing routes now exist:
+**the Actions seat** (`.github/workflows/groq-seat.yml` — the tavern
+scripts run from Azure US, rows ride artifacts home; the house route)
+and the **CF relay** (`groq-relay.casey-digennaro.workers.dev` —
+server-side key custody, fail-closed relay token, Smart Placement
+pending relocation; geo-pending, receipted).
+
+- **Both Groq seats EARNED (the new-member law; tavern → 12 seats).**
+  Canary live (qwen 165 ms / gpt-oss 339 ms, $0.00006 the pair); the
+  design-attack trial on the E-Q20b registration found the same critical
+  family from two angles — qwen from the order-statistic structure (the
+  n=20 95th-pct floor IS the 19th order statistic), gpt-oss from the
+  metric-conflation structure ("Moran's I distance") — plus the
+  per-model defaults law (gpt-oss 400s on `reasoning_effort=default`)
+  and the reasoning-budget law (2048 completion tokens all burned on
+  reasoning, empty answer → 6144 headroom). AS-SAID:
+  `situations/groq_seats/` (SEATS-EARNED-r22.md).
+- **E-Q20b — the burn-in ladder (zero credits) extended the slow-mode
+  law: T* > 512.** The F0' gate reproduced E-Q20's sealed values
+  byte-exactly (30/30 hashes, 32/32 floor, 64/64 cross-arm medians),
+  then laddered to t=512: H1b DIES (no sticky sub-floor crossing — the
+  honest null fired as registered, P5 HIT), H2b DIES (re-excitations at
+  t=16/32/64 after first touch at t=8). **The structure the coarse
+  ladder hid: A3 dips BELOW the floor at t=8 (0.0030 vs 0.0134),
+  re-excites to 0.0482 at t=16, then holds a metastable plateau at
+  ~0.030 — ~16–20% above the floor — through t=512.** The shuffled
+  control's distance EXCURSES UP (the tick operator builds correlation
+  from shuffled initials) and reaches the floor only at the ladder's
+  edge. The consumer law sharpens: burn T > 512 at 64×64 — geometry is
+  remembered at least 8× longer than the r21 horizon, and the plateau
+  shape says it does not asymptote inside any measured horizon. Chain
+  `e_q20b` (6 links, tip `4aa12d65…`); C11's DIES stands, T* annotation
+  amended append-only.
+- **HARMONY-r22 — the three-family battery (the operator's "in
+  harmony" priced).** The same 6-statement ground-truth battery (sealed
+  before any call; traps on the dip-then-re-excite trajectory and the
+  credit provenance) to the Groq pair, the two typesafe models
+  (`jev-latest`/jev-1.13.0 and `jev-preview`/jev-1.14.0 — the models
+  probe found them; the typed question map's criteria keys ARE the
+  choices, receipted v1→v2), and a MiMo-V2.6-Flash control:
+  **MiMo 6/6 perfect**, both typesafe models 5/6 with different
+  low-confidence misses (1.13.0 misses the plateau S5@0.35, 1.14.0
+  misses the boundary crossing S3@0.41), qwen 4/6. The two typesafe
+  models DISAGREE with each other on exactly the two trap-adjacent
+  statements — a complementarity signal, not a redundancy signal.
+- **Batteries at close**: run_tests all_pass · verify_all_chains ALL
+  CLEAN 41/41 (17 tips) · probe gate PASS links=34 (33/33 claims,
+  22/22 chains) · negctl 28/28 DETECTED at clean HEAD · CI green ·
+  fleet seeds re-emitted (22 chains, 741 rows — the dashboard-refusal
+  law held: registry edit → re-emit) · live service unchanged (build
+  `r20-docket1`, no deploy needed).
