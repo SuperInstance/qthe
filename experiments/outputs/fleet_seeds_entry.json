@@ -3,7 +3,7 @@
  "repo": "SuperInstance/qthe",
  "emitted_by": "scripts/emit_fleet_seeds.mjs (ORCH-25)",
  "kernel_sha256": "ef9a3bba0511c78026f30706214e407d362e8972a86f5684d9b16a9e16e3f091",
- "chain_registry_sha256": "3af1973fc5433aa86fd2359c518341211ea8d40015df589cd8a9fe19457f6f78",
+ "chain_registry_sha256": "7c2bcca8520476672a7865c5a88743f7d41b11e8e6cb377ab3e42eb9c35b51a3",
  "scoreboard": {
   "C1": "LIVES (E-Q13, 47.40%)",
   "C2": "LIVES (E-Q1, 8/8 vs 0/20)",
@@ -11,13 +11,15 @@
   "C4": "DIES (E-Q7)",
   "C5": "DIES honest-null (E-Q5)",
   "C5'": "STANDS definitional (E-Q10)",
-  "C9": "DIES with prejudice, opposite direction (E-Q18, 0.0066 vs 0.0725 clean)"
+  "C9": "DIES with prejudice, opposite direction (E-Q18, 0.0066 vs 0.0725 clean)",
+  "C10": "DIES on H1 (E-Q19, timing-not-share; H2 flood-cap LIVES structurally, 0.339 vs 0.75 @500)"
  },
  "cross_language": {
   "js_float": "reference",
   "js_fixed_R8": "byte-identical on swept sigma",
   "c99": "BYTE-EXACT 19/19 both planes (cimpl chain)",
-  "python_L0": "10,272/10,272 (lane 34-e)"
+  "python_L0": "10,272/10,272 (lane 34-e)",
+  "rust": "BYTE-EXACT 19/19 both planes, sigma-as-bits, forbid(unsafe) (rs chain, ORCH-R20)"
  },
  "tooling": [
   "scripts/probe_gate.mjs (mandatory PG1-PG5)",
@@ -38,6 +40,10 @@
   "crossimpl_c": {
    "sha256": "9c620dff2f8d154adaf9fb03cad38f26d72f9325f397bda30e4430f2f54c330b",
    "rows": 10
+  },
+  "crossimpl_rs": {
+   "sha256": "23ed7ffccdc557a2eeeaa179a0c75a7ed5051c82dd18092c9be441cc06017db2",
+   "rows": 11
   },
   "fixedpoint_R8": {
    "sha256": "75987c01dcf8db3ca6f0a5c780a2c580a265775919ccf87f1d034991f1184f71",
@@ -95,9 +101,13 @@
    "sha256": "93e8ab99d9522256cd6ff605668b22c4f8215a8e2cebb47d25af348cb8353707",
    "rows": 254
   },
+  "e_q19_docket": {
+   "sha256": "0759043113a65965064642558ab655976170f01d37218b1137fb0edcbe67a19c",
+   "rows": 19
+  },
   "probe_gate": {
-   "sha256": "1caf6ea3d4a09a81cd9241585d12c5164a4848017860092c8fe5f2e872552b02",
-   "rows": 24
+   "sha256": "14f40d5ef160f100a785c0a4369b11d4eae0d99748b86d84d9e186cf0d6b34a1",
+   "rows": 32
   }
  }
 }

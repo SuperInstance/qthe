@@ -81,8 +81,6 @@ content-addressed, any positive term delivers, and delivery held 80/80 at
 256 polluters. The failure mode is attribution, not delivery: pollution
 fraction rises monotonically to 1.0 while every pair still delivers.
 
-## The map's edge
-
 ## The consumer row (E-Q19, ORCH-R20 — the docket boundary)
 
 The first consumer-priced boundary, for anyone building task arbitration on
@@ -102,6 +100,8 @@ consumer-side WHO-loss; pin the defer band to the claimer band or accept
 at 75% utilization both arbiters serve within the arrival epoch (p50=0)
 and priority fidelity is unmeasurable — price arbitration under backlog
 or not at all.
+
+## The map's edge
 
 The map is complete only where the receipts reach. The grid-scaling row is
 now drawn from the sealed E-Q16-C numbers (it stood PENDING until ORCH-R10

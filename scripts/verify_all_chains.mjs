@@ -74,7 +74,9 @@ const STONE_TIP_FILES = {
   'receipts/e_q15_chain.jsonl': 'experiments/outputs/e_q15_tip.txt',
   'receipts/e_q16_chain.jsonl': 'experiments/outputs/e_q16_tip.txt',
   'receipts/e_q17_chain.jsonl': 'experiments/outputs/e_q17_tip.txt',
+  'receipts/e_q19_chain.jsonl': 'experiments/outputs/e_q19_tip.txt',
   'crossimpl/receipts/cimpl_chain.jsonl': 'crossimpl/receipts/cimpl_tip.txt',
+  'crossimpl/receipts/rs_chain.jsonl': 'crossimpl/receipts/rs_tip.txt',
   'fixedpoint/receipts/fixedpoint_chain.jsonl': 'fixedpoint/receipts/chain_tip.txt',
 };
 for (const [chainPath, tipPath] of Object.entries(STONE_TIP_FILES)) {

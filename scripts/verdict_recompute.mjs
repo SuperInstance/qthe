@@ -704,6 +704,71 @@ const CLAIMS = [
       return { recomputed: `probe ratio 1/8 exact at all N (the addressing gain is real without drift); under drift 0.875 at all 6 levels (57.14→50, 971.43→850: 64 vs 56 occupied slots — the fold cancels the split, null confirmed with the 12.5% receipt)` };
     },
   },
+  {
+    // ORCH-R20: the three E-Q19 claims (the docket round — C10 dies on H1).
+    id: 'E-Q19-c10-dies-on-h1',
+    source: 'experiments/outputs/e_q19_results.json',
+    cite: 'receipts/e_q19_chain.jsonl · result.EQ19 rows + verdict.EQ19 (tip 568bfef3…) · docs/CLAIM-VERDICTS.md C10 · experiments/outputs/e_q19_verdict.md',
+    expected: 'H1 DIES: A L2 stableStarve 0.3194 > 0.5xB 0.4435 AND A stableP99 845 > 0.7xB 633; the timing-not-share law: A-static stableStarve == B stableStarve EXACTLY (0.443539…); physics bundle cuts starvation 0.4435->0.3194 at 0.908 saturation',
+    run() {
+      const d = readJson(this.source);
+      const g = (k, f) => num(d.aggregates[k][f]);
+      const aSS = g('L2|A', 'stableStarveMed'), bSS = g('L2|B', 'stableStarveMed'), sSS = g('L2|A-static', 'stableStarveMed');
+      const aP99 = g('L2|A', 'stableP99Med'), bP99 = g('L2|B', 'stableP99Med');
+      if (aSS <= 0.5 * bSS) throw new Error(`A stableStarve ${aSS} <= 0.5xB ${bSS} — contradicts the sealed h1a death`);
+      if (aP99 <= 0.7 * bP99) throw new Error(`A stableP99 ${aP99} <= 0.7xB ${bP99} — contradicts the sealed h1b death`);
+      if (aSS >= bSS) throw new Error(`A stableStarve ${aSS} >= B ${bSS} — the physics-bundle improvement is gone`);
+      if (String(sSS) !== String(bSS)) throw new Error(`A-static stableStarve ${sSS} != B ${bSS} EXACTLY — the timing-not-share law broken`);
+      if (g('L2|A', 'saturationFracMed') < 0.9) throw new Error('L2 saturation < 0.9 — the aging regime is gone');
+      const row = lastChainRow('receipts/e_q19_chain.jsonl', (r) => r.kind === 'verdict.EQ19', 'verdict.EQ19');
+      if (row.H1 !== false || row.h1a !== false || row.h1b !== false) throw new Error('chain verdict H1 flags disagree with the results file');
+      if (row.C10 !== false) throw new Error('chain C10 != false');
+      return { recomputed: `H1 DIES verbatim: A stableStarve ${aSS} > ${0.5 * bSS} and A stableP99 ${aP99} > ${0.7 * bP99}; A-static ${sSS} == B ${bSS} EXACTLY (the debounce is timing, not share); physics cuts starvation at 0.908 saturation (the re-boost-as-FIFO-penalty law); chain agrees C10 false` };
+    },
+  },
+  {
+    id: 'E-Q19-flood-cap-lives-backlog-bounded',
+    source: 'experiments/outputs/e_q19_results.json',
+    cite: 'receipts/e_q19_chain.jsonl · verdict.EQ19 erosion receipt · docs/BOUNDARY-MAP.md consumer row',
+    expected: 'H2 LIVES at the pre-overflow checkpoint: A L3 maxShare@500 0.339 <= 0.40, B 0.75 >= 0.70; the T_end erosion receipt A 0.4356 > 0.339 (backlog-bounded; overflow 71,034 total across 10 seeds); B share flat 0.75 end-to-end',
+    run() {
+      const d = readJson(this.source);
+      const g = (k, f) => num(d.aggregates[k][f]);
+      const a500 = g('L3|A', 'maxShare500Med'), b500 = g('L3|B', 'maxShare500Med');
+      const aEnd = g('L3|A', 'maxShareMed'), bEnd = g('L3|B', 'maxShareMed');
+      if (a500 > 0.40) throw new Error(`A maxShare@500 ${a500} > 0.40 — contradicts the sealed h2a`);
+      if (b500 < 0.70) throw new Error(`B maxShare@500 ${b500} < 0.70 — contradicts the sealed h2b`);
+      if (aEnd <= a500) throw new Error(`erosion missing: A end ${aEnd} <= checkpoint ${a500}`);
+      if (String(bEnd) !== String(b500)) throw new Error(`B share not flat: ${bEnd} != ${b500}`);
+      if (d.aggregates['L3|A'].overflowTotal <= 0) throw new Error('L3 overflow telemetry missing — the backlog-bounded receipt needs it');
+      const row = lastChainRow('receipts/e_q19_chain.jsonl', (r) => r.kind === 'verdict.EQ19', 'verdict.EQ19');
+      if (row.H2 !== true || row.h2a !== true || row.h2b !== true) throw new Error('chain H2 flags disagree');
+      if (num(row.erosion.aMaxShareEnd) !== aEnd) throw new Error('chain erosion receipt disagrees with the aggregates');
+      return { recomputed: `H2 LIVES structurally: A@500 ${a500} vs B ${b500} (tiles aligned with homes); erosion to ${aEnd} receipted with ${d.aggregates['L3|A'].overflowTotal} overflows (plane capacity is flood insurance); B flat ${bEnd} end-to-end` };
+    },
+  },
+  {
+    id: 'E-Q19-floors-and-am2-quiet',
+    source: 'experiments/outputs/e_q19_results.json',
+    cite: 'receipts/e_q19_chain.jsonl · verdict.EQ19 floors · experiments/pre_registration_e_q19.json (F0-F4 frozen; AM2 the accepted defect)',
+    expected: 'F0 150/150 byte-identical; F2 A-off wormhole claims 0 everywhere; F3 capacity matched; the wormhole escalation carried exactly 1 claim on L2 across 10 seeds (AM2 addressing-mismatch receipt); H3/H4 vacuous-pass receipted (p50 0 == 0, spearman(p0) ~ -0.0003)',
+    run() {
+      const d = readJson(this.source);
+      if (d.floors.F0 !== true || d.floors.detOk !== 150 || d.floors.detPairs !== 150) throw new Error(`F0 broken: ${JSON.stringify(d.floors)}`);
+      if (d.floors.F2 !== true) throw new Error('F2 broken — A-off wormhole claims not 0');
+      if (d.floors.F3 !== true) throw new Error('F3 broken — capacity not matched');
+      if (d.floors.F1.kernelKind !== 'real') throw new Error('F1 broken — kernel not real');
+      const wh = d.aggregates['L2|A'].wormholeClaimsTotal, whOff = d.aggregates['L2|A-off'].wormholeClaimsTotal;
+      if (wh !== 1) throw new Error(`L2 wormhole claims ${wh} != 1 — the AM2 quiet receipt drifted`);
+      if (whOff !== 0) throw new Error(`A-off wormhole claims ${whOff} != 0`);
+      const g = (k, f) => num(d.aggregates[k][f]);
+      if (g('L1|A', 'p50Med') !== 0 || g('L1|B-local', 'p50Med') !== 0) throw new Error('H3 vacuous-pass basis gone (p50 != 0)');
+      if (Math.abs(g('L1|A', 'spearmanP0Med')) > 0.01) throw new Error('H4 unmeasurable-regime receipt drifted (|spearman| > 0.01)');
+      const row = lastChainRow('receipts/e_q19_chain.jsonl', (r) => r.kind === 'verdict.EQ19', 'verdict.EQ19');
+      if (row.F0 !== true || row.F2 !== true || row.F3 !== true) throw new Error('chain floor flags disagree');
+      return { recomputed: `F0 150/150, F2/F3 held, kernel real; the wormhole escalation quiet exactly as AM2 priced (1 claim on L2, 0 on A-off); H3/H4 vacuous in the drained regime (p50 0==0, spearman ~0) — receipted as unmeasured, not passed` };
+    },
+  },
 ];
 
 // ── COVERAGE (ORCH-R11: the arena-r11 consensus finding, all four seats) ──

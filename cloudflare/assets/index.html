@@ -52,6 +52,7 @@
   <li><b>ERRATUM 2</b> — the receipt route matched only single-segment keys, so <code>receipts/e_q1_chain.jsonl</code> 404'd. Fixed: all remaining segments join into the key.</li>
   <li><b>ERRATUM 3</b> (r17) — the cron beat's <code>stub.fetch</code> calls defaulted to GET while init/tick need POST; the first HUD was hollow. Found by the P-D check, fixed, re-verified.</li>
   <li><b>ERRATUM 4</b> (r19) — the sidecar's vector ids were field-agnostic (<code>slot-N</code>), so any field's sync could clobber any other's (the 5-minute beat included): a race no retry budget fixes. Fixed: ids namespaced per field, <code>?field=</code> scopes the lookup, 64 legacy vectors deleted. Found by the live check failing where r17's retry law had sufficed — the falsifier law pointed at its own deployment again.</li>
+  <li><b>ERRATUM 5</b> (r20, cosmetic) — the live-checks table had closed with <code>&lt;/ul&gt;</code> since r19; browsers auto-recover, which is exactly why nothing ever failed. Fixed to <code>&lt;/table&gt;</code>. Found by r20's sweep reading the file it was editing — the display-corruption law's quiet cousin: what never fails still gets read.</li>
 </ul>
 <p class="note">Ops law banked: after a DO deploy, never trust a curl until a build marker in the response confirms the new code — the propagation window will happily serve you the old version with a straight face.</p>
 

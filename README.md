@@ -11,7 +11,7 @@ where an honest null is a crown jewel.
 
 - [`SPEC.md`](./SPEC.md) — the vision, split into Layer 0/1/2 by honesty law
 - `qthe.mjs` — the zero-dependency reference kernel (Lanes: core)
-- `experiments/` — E-Q1..E-Q18 priced claims (all seven LAYER 2 claims CLOSED: C1 LIVES · C2 LIVES · C3/C4/C5 DIED honestly · C5′ STANDS · C9 hierarchical-folded-table DIED with prejudice — `docs/CLAIM-VERDICTS.md`)
+- `experiments/` — E-Q1..E-Q19 priced claims (all eight LAYER 2 claims CLOSED: C1 LIVES · C2 LIVES · C3/C4/C5 DIED honestly · C5′ STANDS · C9 hierarchical-folded-table DIED with prejudice · C10 docket-arbitration DIED on H1 with the flood-cap surviving — `docs/CLAIM-VERDICTS.md`)
 - `qthe-core/` — the standalone zero-dependency distribution (JS float+fixed, C99 byte-exact, Python L0)
 - `index.html` — the A2UI live mirror: pixel = cell, direct buffer-to-canvas
 
@@ -27,7 +27,7 @@ repo's own armor-ring demo geometry), and reproduces the sealed traces
 **12/12 byte-identical**. That is our LAYER 1 determinism contract receipted by
 a stranger — the doc-only-discipline existence proof for this repo. CI
 ([`ci.yml`](./.github/workflows/ci.yml)) runs the sabotage controls, the
-gate-pinned LAYER 0 suite, the 34/34 chain auditor, the 26-claim probe gate,
+gate-pinned LAYER 0 suite, the 38/38 chain auditor, the 29-claim probe gate,
 and the batched-call guard on every push.
 
 ## The audit tavern (r10–r14, priced)
@@ -181,6 +181,48 @@ The Cloudflare token arrived and the r15 design is now a **running service**
   maximally-distant genres (a strict-form sestina, Moore-8 assembly
   minutes, a marine area forecast for the torus) — commits `26c6cda` +
   `469cbf9`. Round spend $0.005254 of the $0.01 target.
+
+## The consumer round (r20 — the fourth language, the second live consumer, C10's honest death)
+
+- **crossimpl/rs — the Rust port, byte-exact** (T11-a): the fourth language
+  joins the matrix (JS reference · Python L0 · C99 · Rust). 13/13 unit
+  tests, float plane 12/12 + fixed plane R8 3/3 + VectorPass 4/4 against
+  the sealed fixtures (sha `dd866748…`, regeneration re-proven identical),
+  σ **as bits, never libm**, `#![forbid(unsafe_code)]`, zero dependencies.
+  Determinism double-run **and** debug-vs-release byte-identical; tampered-
+  fixture negative controls all DETECTED. Chain `rs_chain.jsonl` (11 links,
+  tip `f3abf8db…`); three new spec ambiguities receipted (A-R1/R2/R3); one
+  runner defect found by the debug-vs-release cross-check, correction row
+  appended (`crossimpl/rs/REGISTRATION.md`).
+- **E-Q19 — the first consumer-driven pricing target, and C10 DIES with the
+  richest autopsy in the corpus** (T11-b2): the docket (tiled task
+  arbitration on a ticking 64×64 substrate, the REAL kernel every epoch)
+  vs the FIFO+static-priority inbox and the nearest-first spatial baseline,
+  5 arms × 3 loads × 10 seeds × 2 determinism runs — 150/150 byte-identical.
+  **The debounce is timing, not share** (A-static's stable starvation equals
+  the heap's EXACTLY: 0.4435); **saturation converts re-boost gaming into
+  FIFO penalty** (0.44→0.32 at 0.908 saturation — the re-stamp resets the
+  gamer's own aging) **at the price of tail latency** (stable p99 +33%);
+  **the flood cap is structural and backlog-bounded** (tiles aligned with
+  homes: maxShare@500 0.339 vs the heap's 0.75, eroding to 0.436 as the
+  flood physically overflows its region — plane capacity is flood
+  insurance); **deferred-task recovery by address is drift-blind** (1
+  wormhole claim in 12,000 — the consumer-side WHO-loss, Seed-2.0-mini's
+  AM2 prediction confirmed). Scoreboard: 8 claims priced, 3 LIVES / 5
+  DIES / 1 STANDS. Chain `e_q19` (19 links, tip `568bfef3…`).
+- **The docket is LIVE — the second live consumer** (T11-b): `QtheDocket`
+  DO on the running worker (build `r20-docket1`, migration v2), the E-Q19
+  tiled law verbatim over HTTP — submit/claim/epoch/log routes, the
+  arbitration determinism handle (two independent DOs, seed 1234, 24 tasks
+  incl. 4 flippers, 40 epochs → identical hash `77d865d0…`), and the honest
+  label traveling with the service: *C10 is DEAD — flood-cap yes, flapping
+  starvation no, tail latency the price* (`honest_label` in the init
+  response, the landing page links it). P-D battery green; the full live
+  battery re-ran green after deploy (ERRATUM 5, cosmetic, found by the
+  sweep's own read).
+- The frontier note: the 8×64+8 hierarchical survivor's trigger now
+  carries E-Q19's warning — its provenance channel is exactly the channel
+  AM2 prices as addressing-mismatched under drift.
 
 ## Documentation
 
