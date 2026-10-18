@@ -498,14 +498,17 @@ for (const sab of SABOTAGES) {
     sab.apply(ws); // every primitive dies loudly on a no-op / stale anchor
     applied = true;
     const r = runSuite(ws, sab.suite);
-    // ORCH-R14 closure-proof amendment (receipted): detection = MORE failure
-    // lines than baseline (the original rule) OR an exit-code regression
-    // 0 -> nonzero. The gate-set pin (T5-c R2 closure) fails the RUN loudly
-    // without emitting a new gate FAIL line — exit 0->1 IS the suite noticing.
-    const detected = (r.failures > base.failures && r.code !== 0) || (base.code === 0 && r.code !== 0 && r.failures === base.failures && r.fails.length === base.fails.length);
+    // ORCH-R14 closure-proof amendment (receipted): detection = the suite
+    // NOTICED. From a GREEN baseline, any nonzero exit is noticing — new FAIL
+    // lines, a pin firing without a gate line (the T5-c R2 gate-set pin), or
+    // an uncaught crash under the sabotage (the R2 crash class: the post-hoc
+    // indexing shifts when a gate block is removed). Only silent green is the
+    // disease. From a nonzero baseline, require strictly more failure lines.
+    const rf = (r.fails ?? []).length, bf = (base.fails ?? []).length;
+    const detected = base.code === 0 ? r.code !== 0 : (r.failures > base.failures && r.code !== 0);
     const verdict = detected ? 'DETECTED' : 'SURVIVED';
-    out(`   sabotaged run: exit=${r.code} failures=${r.failures} (baseline ${base.failures}, ${r.ms} ms) -> ${verdict}`);
-    if (r.fails.length) { out('   failing lines:'); for (const f of r.fails) out(`     ${f}`); }
+    out(`   sabotaged run: exit=${r.code} failures=${r.failures} failLines=${rf} (baseline exit=${base.code} failures=${base.failures} failLines=${bf}, ${r.ms} ms) -> ${verdict}`);
+    if (rf) { out('   failing lines:'); for (const f of r.fails) out(`     ${f}`); }
     if (!detected && r.code === 0) out(`   !! the suite stayed GREEN under this sabotage — it is not evidence for the clause above`);
     if (r.failures > base.failures && r.code === 0) out(`   !! ANOMALY: more failures but exit 0`);
     // (d) restore: re-copy clean, re-run, require green
