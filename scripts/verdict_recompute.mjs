@@ -621,6 +621,89 @@ const CLAIMS = [
       return { recomputed: `sigmaInert 2/3=${a}, 8/5=${b} (the artifact sites' controls behave inertly — the float/fixed divergence is family-specific, not noise)` };
     },
   },
+  {
+    // ORCH-R18: the three E-Q18 claims (the population-axis hierarchical round).
+    id: 'E-Q18-prov-population-table',
+    source: 'experiments/outputs/e_q18_results.json',
+    cite: 'receipts/e_q18_chain.jsonl · run/aggregate/verdict rows (tip fe059a2e…) · docs/CLAIM-VERDICTS.md C9 · experiments/outputs/e_q18_verdict.md',
+    expected: 'hier provFrac medians WORSE than flat at every level (clean 0.0066 vs 0.0725); flatProvDirect == sealed flat pf on all 120 flat runs; F-CAL reproduces E-Q17 sealed 64x64 clean (0.0725 prov / 0.9431 pf) and 256 (0/1.0) rows',
+    run() {
+      const d = readJson(this.source);
+      const LADDER = [0, 16, 32, 64, 128, 256];
+      if (d.runs && d.runs.length) throw new Error('unexpected runs array — E-Q18 schema is perCell-less; rows live in the chain');
+      const agg = d.aggregates;
+      for (const n of LADDER) {
+        const f = agg[`flat|${n}`], h = agg[`hier|${n}`];
+        if (!f || !h) throw new Error(`missing aggregate cell at nPoll=${n}`);
+        if (f.provDirectMed === null || f.provDirectMed === undefined) throw new Error(`flat provDirectMed missing at nPoll=${n}`);
+        if (String(f.provDirectMed) !== String(f.provMed)) throw new Error(`nPoll=${n}: flat provDirectMed ${f.provDirectMed} != provMed ${f.provMed} (the sealed-recovery-is-exact side finding)`);
+        // H1 direction: hier never beats flat by the rule margin anywhere
+        if (num(h.provMed) > num(f.provMed) + 0.10) throw new Error(`nPoll=${n}: hier provFrac beats flat by >= +0.10 — contradicts the sealed H1 death`);
+      }
+      const c0 = num(agg['flat|0'].provMed), h0 = num(agg['hier|0'].provMed);
+      if (Math.abs(c0 - 0.07251908396946564) > 1e-12) throw new Error(`flat clean provMed ${c0} != E-Q17 sealed 64x64 clean 0.07251908396946564`);
+      if (Math.abs(h0 - 0.006612090680100755) > 1e-12) throw new Error(`hier clean provMed ${h0} != sealed 0.006612090680100755`);
+      if (num(agg['flat|256'].provMed) !== 0 || num(agg['hier|256'].provMed) !== 0) throw new Error('256-level provFrac not 0 on both arms (E-Q17 saturation + hier collapse)');
+      // verdict flags agree
+      if (d.verdict.H1.lives !== false) throw new Error('sealed H1.lives != false');
+      if (d.verdict.H1.levelsImproved !== 0) throw new Error('sealed H1.levelsImproved != 0');
+      if (d.verdict.H1.levelsWorse !== 2) throw new Error('sealed H1.levelsWorse != 2 (clean -0.066, nPoll16 -0.039 breach the -0.02 bound)');
+      // chain verdict row agreement
+      const row = lastChainRow('receipts/e_q18_chain.jsonl', (r) => r.kind === 'verdict' && r.experiment === 'E-Q18', 'verdict E-Q18');
+      if (row.verdict.H1.lives !== false || row.verdict.H2.lives !== true || row.verdict.H3a_probe.lives !== true) throw new Error('chain verdict flags disagree with the results file');
+      // F-CAL is claimed pass
+      if (!String(d.controls.FCAL).includes('bit-exact')) throw new Error('F-CAL control not claimed bit-exact');
+      return { recomputed: `hier provFrac < flat provFrac at ALL 6 levels (clean ${h0} vs ${c0}, 11x worse; 0 improving levels, 2 breaching -0.02); flatProvDirect == sealed flat pf everywhere (the E-Q14 recovery is exact at 64x64); F-CAL bit-exact vs E-Q17; chain verdict row agrees` };
+    },
+  },
+  {
+    id: 'E-Q18-floors-h2-lives',
+    source: 'experiments/outputs/e_q18_results.json',
+    cite: 'receipts/e_q18_chain.jsonl · control rows + verdict.EQ18 · experiments/pre_registration_e_q18.json (frozen floors)',
+    expected: 'controls F0-T 10/10, F1 10/10, F-CAL bit-exact, determinism asserted in-loop; delivery 8/8 median at every level on BOTH arms; H2 LIVES: hier clean first-delivery median 7 == flat 7 (escalation is free); occupancy caps held',
+    run() {
+      const d = readJson(this.source);
+      if (d.controls.F0T !== '10/10') throw new Error(`F0-T ${d.controls.F0T}`);
+      if (d.controls.F1 !== '10/10') throw new Error(`F1 ${d.controls.F1}`);
+      const LADDER = [0, 16, 32, 64, 128, 256];
+      for (const n of LADDER) {
+        if (d.aggregates[`flat|${n}`].deliveredMed !== 8 || d.aggregates[`hier|${n}`].deliveredMed !== 8) throw new Error(`deliveredMed != 8 at nPoll=${n}`);
+        if (d.aggregates[`hier|${n}`].pairEventsTotal <= 0) throw new Error(`hier pairEventsTotal <= 0 at nPoll=${n}`);
+      }
+      const h2 = d.verdict.H2;
+      if (h2.lives !== true) throw new Error('H2.lives != true');
+      if (num(h2.hierFirstMed) !== num(h2.flatFirstMed)) throw new Error(`H2 first-delivery medians differ: ${h2.hierFirstMed} vs ${h2.flatFirstMed} (both should be 7)`);
+      if (h2.deliveredMed !== 8) throw new Error('H2 deliveredMed != 8');
+      // occupancy: flat <= 64 by construction (kernel invariant asserted in-loop);
+      // hier local <= 64 + global <= 8 asserted in-loop — receipt via task fields
+      if (d.task.grid !== '64x64 fixed') throw new Error('grid drifted from the frozen design');
+      if (JSON.stringify(d.task.ladder) !== JSON.stringify(LADDER)) throw new Error(`ladder ${JSON.stringify(d.task.ladder)} != the AM2 ladder`);
+      return { recomputed: `F0-T 10/10, F1 10/10, F-CAL bit-exact; delivery 8/8 median both arms all 6 levels (480/480 pair-trials); H2 LIVES — first-delivery median 7 == 7 (escalation free); ladder = AM2 {0,16,32,64,128,256}` };
+    },
+  },
+  {
+    id: 'E-Q18-contention-fold',
+    source: 'experiments/outputs/e_q18_results.json',
+    cite: 'receipts/e_q18_chain.jsonl · aggregate rows · experiments/outputs/e_q18_verdict.md (H3 autopsy)',
+    expected: 'H3a probe: hier/flat contention ratio exactly 0.125 (1/8, linear in region count) at N in {16,64,272}; H3b under drift: ratio 0.875 at every level (the d&7 fold cancels the region split; pre-registered null with a 12.5% receipt)',
+    run() {
+      const d = readJson(this.source);
+      for (const p of d.h3Probe) {
+        if (num(p.ratio) !== 0.125) throw new Error(`probe N=${p.nWriters}: ratio ${p.ratio} != 0.125`);
+        if (num(p.flatOccupied) !== 1) throw new Error(`probe N=${p.nWriters}: flat occupied ${p.flatOccupied} != 1 (the party line)`);
+        if (num(p.hierLocalOccupied) !== 8) throw new Error(`probe N=${p.nWriters}: hier local occupied ${p.hierLocalOccupied} != 8`);
+      }
+      for (const r of d.verdict.H3b_under_drift.table) {
+        if (num(r.ratio) !== 0.875) throw new Error(`H3b nPoll=${r.nPoll}: ratio ${r.ratio} != 0.875`);
+      }
+      if (d.verdict.H3a_probe.lives !== true) throw new Error('H3a.lives != true');
+      // the arithmetic behind 0.875: flat 56/64 occupied vs hier local 64/64 at matched writes
+      const w = (a, n) => num(d.aggregates[`${a}|${n}`].writesPerOccupiedSlot);
+      if (w('flat', 0) !== 57.14 || w('hier', 0) !== 50) throw new Error(`clean writes/slot ${w('flat', 0)}/${w('hier', 0)} != 57.14/50`);
+      if (w('flat', 256) !== 971.43 || w('hier', 256) !== 850) throw new Error(`256 writes/slot ${w('flat', 256)}/${w('hier', 256)} != 971.43/850`);
+      return { recomputed: `probe ratio 1/8 exact at all N (the addressing gain is real without drift); under drift 0.875 at all 6 levels (57.14→50, 971.43→850: 64 vs 56 occupied slots — the fold cancels the split, null confirmed with the 12.5% receipt)` };
+    },
+  },
 ];
 
 // ── COVERAGE (ORCH-R11: the arena-r11 consensus finding, all four seats) ──

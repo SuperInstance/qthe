@@ -26,7 +26,7 @@ const entry = {
   // single source of truth is itself now a verified artifact; a forged-chain
   // legalization via registry edit fails the dashboard's drift check.
   chain_registry_sha256: sha(join(ROOT, 'scripts', 'chain_registry.mjs')),
-  scoreboard: { C1: 'LIVES (E-Q13, 47.40%)', C2: 'LIVES (E-Q1, 8/8 vs 0/20)', C3: 'DIES honest-null (E-Q2)', C4: 'DIES (E-Q7)', C5: 'DIES honest-null (E-Q5)', "C5'": 'STANDS definitional (E-Q10)' },
+  scoreboard: { C1: 'LIVES (E-Q13, 47.40%)', C2: 'LIVES (E-Q1, 8/8 vs 0/20)', C3: 'DIES honest-null (E-Q2)', C4: 'DIES (E-Q7)', C5: 'DIES honest-null (E-Q5)', "C5'": 'STANDS definitional (E-Q10)', C9: 'DIES with prejudice, opposite direction (E-Q18, 0.0066 vs 0.0725 clean)' },
   cross_language: { js_float: 'reference', js_fixed_R8: 'byte-identical on swept sigma', c99: 'BYTE-EXACT 19/19 both planes (cimpl chain)', python_L0: '10,272/10,272 (lane 34-e)' },
   tooling: ['scripts/probe_gate.mjs (mandatory PG1-PG5)', 'scripts/verify_all_chains.mjs', 'scripts/repl.mjs', 'scripts/replay.mjs', 'scripts/falsification_budget.mjs'],
   chain_tips: tips,

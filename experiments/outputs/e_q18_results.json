@@ -1,0 +1,615 @@
+{
+  "experiment": "E-Q18",
+  "claim": "hierarchical wormholes on the population axis (HIERARCHICAL-WORMHOLES P42, E-Q17-redirect trigger)",
+  "kernel": {
+    "kernelKind": "real",
+    "kernelPath": "qthe/qthe.mjs"
+  },
+  "stonePath": "../../quilt-stone/stone.mjs",
+  "preRegSha": "8b8448a806c730f210413edae2704d884a0543bec72b3eae7035be00ceeb5962",
+  "registration": "experiments/pre_registration_e_q18.json",
+  "controls": {
+    "F0T": "10/10",
+    "F1": "10/10",
+    "FCAL": "PASS (bit-exact vs E-Q17 sealed 64x64 clean+density rows)",
+    "F0": "80/80 (asserted in-loop, LOUD on violation)"
+  },
+  "task": {
+    "K": 8,
+    "dWindow": [
+      8,
+      15
+    ],
+    "thetaDel": 8,
+    "T": 200,
+    "seeds": [
+      77001,
+      77002,
+      77003,
+      77004,
+      77005,
+      77006,
+      77007,
+      77008,
+      77009,
+      77010
+    ],
+    "sigma": "kernel log2(3)",
+    "grid": "64x64 fixed",
+    "ladder": [
+      0,
+      16,
+      32,
+      64,
+      128,
+      256
+    ],
+    "regionMap": "region(x,y) = ((y>>4)<<1)|(x>>5), 8 regions of 32x16"
+  },
+  "aggregates": {
+    "flat|0": {
+      "arm": "flat",
+      "nPoll": 0,
+      "provMed": "0.07251908396946564",
+      "provDirectMed": "0.07251908396946564",
+      "pfMed": "0.9430661577608143",
+      "deliveredMed": 8,
+      "firstPairDeliveryMed": 7,
+      "writesPerOccupiedSlot": "57.14",
+      "escalatedFractionMed": null,
+      "writerRegionCorrectMed": null,
+      "pairEventsTotal": 31440,
+      "partnerEventsTotal": 2718
+    },
+    "flat|16": {
+      "arm": "flat",
+      "nPoll": 16,
+      "provMed": "0.0416403785488959",
+      "provDirectMed": "0.0416403785488959",
+      "pfMed": "0.9615020511202272",
+      "deliveredMed": 8,
+      "firstPairDeliveryMed": 6,
+      "writesPerOccupiedSlot": "114.29",
+      "escalatedFractionMed": null,
+      "writerRegionCorrectMed": null,
+      "pairEventsTotal": 31697,
+      "partnerEventsTotal": 1395
+    },
+    "flat|32": {
+      "arm": "flat",
+      "nPoll": 32,
+      "provMed": "0.018867924528301886",
+      "provDirectMed": "0.018867924528301886",
+      "pfMed": "0.9817781966698084",
+      "deliveredMed": 8,
+      "firstPairDeliveryMed": 6,
+      "writesPerOccupiedSlot": "171.43",
+      "escalatedFractionMed": null,
+      "writerRegionCorrectMed": null,
+      "pairEventsTotal": 31814,
+      "partnerEventsTotal": 808
+    },
+    "flat|64": {
+      "arm": "flat",
+      "nPoll": 64,
+      "provMed": "0.005649717514124294",
+      "provDirectMed": "0.005649717514124294",
+      "pfMed": "0.9978035770316912",
+      "deliveredMed": 8,
+      "firstPairDeliveryMed": 6,
+      "writesPerOccupiedSlot": "285.71",
+      "escalatedFractionMed": null,
+      "writerRegionCorrectMed": null,
+      "pairEventsTotal": 31892,
+      "partnerEventsTotal": 545
+    },
+    "flat|128": {
+      "arm": "flat",
+      "nPoll": 128,
+      "provMed": "0.009708737864077669",
+      "provDirectMed": "0.009708737864077669",
+      "pfMed": 1,
+      "deliveredMed": 8,
+      "firstPairDeliveryMed": 6,
+      "writesPerOccupiedSlot": "514.29",
+      "escalatedFractionMed": null,
+      "writerRegionCorrectMed": null,
+      "pairEventsTotal": 31935,
+      "partnerEventsTotal": 379
+    },
+    "flat|256": {
+      "arm": "flat",
+      "nPoll": 256,
+      "provMed": 0,
+      "provDirectMed": 0,
+      "pfMed": 1,
+      "deliveredMed": 8,
+      "firstPairDeliveryMed": 6,
+      "writesPerOccupiedSlot": "971.43",
+      "escalatedFractionMed": null,
+      "writerRegionCorrectMed": null,
+      "pairEventsTotal": 31971,
+      "partnerEventsTotal": 154
+    },
+    "hier|0": {
+      "arm": "hier",
+      "nPoll": 0,
+      "provMed": "0.006612090680100755",
+      "provDirectMed": null,
+      "pfMed": "0.9940213971050975",
+      "deliveredMed": 8,
+      "firstPairDeliveryMed": 7,
+      "writesPerOccupiedSlot": 50,
+      "escalatedFractionMed": "0.1418",
+      "writerRegionCorrectMed": 1,
+      "pairEventsTotal": 31731,
+      "partnerEventsTotal": 729
+    },
+    "hier|16": {
+      "arm": "hier",
+      "nPoll": 16,
+      "provMed": "0.002830188679245283",
+      "provDirectMed": null,
+      "pfMed": "0.9974842767295597",
+      "deliveredMed": 8,
+      "firstPairDeliveryMed": 7,
+      "writesPerOccupiedSlot": 100,
+      "escalatedFractionMed": "0.0101",
+      "writerRegionCorrectMed": 1,
+      "pairEventsTotal": 31793,
+      "partnerEventsTotal": 471
+    },
+    "hier|32": {
+      "arm": "hier",
+      "nPoll": 32,
+      "provMed": "0.0015708451146716933",
+      "provDirectMed": null,
+      "pfMed": "0.9987437185929648",
+      "deliveredMed": 8,
+      "firstPairDeliveryMed": 7,
+      "writesPerOccupiedSlot": 150,
+      "escalatedFractionMed": "0.005",
+      "writerRegionCorrectMed": 1,
+      "pairEventsTotal": 31841,
+      "partnerEventsTotal": 292
+    },
+    "hier|64": {
+      "arm": "hier",
+      "nPoll": 64,
+      "provMed": "0.0003139717425431711",
+      "provDirectMed": null,
+      "pfMed": 1,
+      "deliveredMed": 8,
+      "firstPairDeliveryMed": 6,
+      "writesPerOccupiedSlot": 250,
+      "escalatedFractionMed": "0.002",
+      "writerRegionCorrectMed": null,
+      "pairEventsTotal": 31875,
+      "partnerEventsTotal": 114
+    },
+    "hier|128": {
+      "arm": "hier",
+      "nPoll": 128,
+      "provMed": 0,
+      "provDirectMed": null,
+      "pfMed": 1,
+      "deliveredMed": 8,
+      "firstPairDeliveryMed": 6,
+      "writesPerOccupiedSlot": 450,
+      "escalatedFractionMed": "0.0005",
+      "writerRegionCorrectMed": null,
+      "pairEventsTotal": 31923,
+      "partnerEventsTotal": 6
+    },
+    "hier|256": {
+      "arm": "hier",
+      "nPoll": 256,
+      "provMed": 0,
+      "provDirectMed": null,
+      "pfMed": 1,
+      "deliveredMed": 8,
+      "firstPairDeliveryMed": 6,
+      "writesPerOccupiedSlot": 850,
+      "escalatedFractionMed": 0,
+      "writerRegionCorrectMed": null,
+      "pairEventsTotal": 31963,
+      "partnerEventsTotal": 1
+    }
+  },
+  "h3Probe": [
+    {
+      "nWriters": 16,
+      "flatOccupied": 1,
+      "flatContention": 16,
+      "hierLocalOccupied": 8,
+      "hierLocalContention": 2,
+      "ratio": "0.125"
+    },
+    {
+      "nWriters": 64,
+      "flatOccupied": 1,
+      "flatContention": 64,
+      "hierLocalOccupied": 8,
+      "hierLocalContention": 8,
+      "ratio": "0.125"
+    },
+    {
+      "nWriters": 272,
+      "flatOccupied": 1,
+      "flatContention": 272,
+      "hierLocalOccupied": 8,
+      "hierLocalContention": 34,
+      "ratio": "0.125"
+    }
+  ],
+  "verdict": {
+    "H1": {
+      "lives": false,
+      "rule": "EQ18-AM1 PRIMARY: median hier provFrac (direct) >= median flat provDirect + 0.10 at >=2 levels AND >= flat - 0.02 at all levels",
+      "detail": [
+        {
+          "nPoll": 0,
+          "flatProvDirectMed": "0.07251908396946564",
+          "hierProvMed": "0.006612090680100755",
+          "delta": "-0.0659"
+        },
+        {
+          "nPoll": 16,
+          "flatProvDirectMed": "0.0416403785488959",
+          "hierProvMed": "0.002830188679245283",
+          "delta": "-0.0388"
+        },
+        {
+          "nPoll": 32,
+          "flatProvDirectMed": "0.018867924528301886",
+          "hierProvMed": "0.0015708451146716933",
+          "delta": "-0.0173"
+        },
+        {
+          "nPoll": 64,
+          "flatProvDirectMed": "0.005649717514124294",
+          "hierProvMed": "0.0003139717425431711",
+          "delta": "-0.0053"
+        },
+        {
+          "nPoll": 128,
+          "flatProvDirectMed": "0.009708737864077669",
+          "hierProvMed": 0,
+          "delta": "-0.0097"
+        },
+        {
+          "nPoll": 256,
+          "flatProvDirectMed": 0,
+          "hierProvMed": 0,
+          "delta": 0
+        }
+      ],
+      "levelsImproved": 0,
+      "levelsWorse": 2
+    },
+    "H1_secondary_sealed_instrument": {
+      "lives": false,
+      "rule": "same rule, flat side on the sealed E-Q14 log-order recovery (F-CAL continuity)",
+      "detail": [
+        {
+          "nPoll": 0,
+          "flatProvMed": "0.07251908396946564",
+          "hierProvMed": "0.006612090680100755",
+          "delta": "-0.0659"
+        },
+        {
+          "nPoll": 16,
+          "flatProvMed": "0.0416403785488959",
+          "hierProvMed": "0.002830188679245283",
+          "delta": "-0.0388"
+        },
+        {
+          "nPoll": 32,
+          "flatProvMed": "0.018867924528301886",
+          "hierProvMed": "0.0015708451146716933",
+          "delta": "-0.0173"
+        },
+        {
+          "nPoll": 64,
+          "flatProvMed": "0.005649717514124294",
+          "hierProvMed": "0.0003139717425431711",
+          "delta": "-0.0053"
+        },
+        {
+          "nPoll": 128,
+          "flatProvMed": "0.009708737864077669",
+          "hierProvMed": 0,
+          "delta": "-0.0097"
+        },
+        {
+          "nPoll": 256,
+          "flatProvMed": 0,
+          "hierProvMed": 0,
+          "delta": 0
+        }
+      ]
+    },
+    "H2": {
+      "lives": true,
+      "rule": "EQ18-AM3: median over seeds of per-run delivered-pair counts >= 4 (the E-Q1 claim-floor convention) AND hier clean first-delivery median <= flat + 2 (+1 escalation tick + 1 mask-convergence allowance, both mechanism-borne; honest null expected)",
+      "deliveredMed": 8,
+      "flatFirstMed": 7,
+      "hierFirstMed": 7,
+      "hierFirstDeliversAllSeeds": [
+        [
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          8
+        ],
+        [
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          8,
+          9
+        ],
+        [
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          9,
+          10
+        ],
+        [
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          8
+        ],
+        [
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          9,
+          8
+        ],
+        [
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          9,
+          9
+        ],
+        [
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          8
+        ],
+        [
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          8
+        ],
+        [
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          8
+        ],
+        [
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          8,
+          9
+        ]
+      ],
+      "flatFirstDeliversAllSeeds": [
+        [
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          8
+        ],
+        [
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          9
+        ],
+        [
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          9
+        ],
+        [
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          9
+        ],
+        [
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          9
+        ],
+        [
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          8
+        ],
+        [
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          8
+        ],
+        [
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          9
+        ],
+        [
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          8
+        ],
+        [
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          8
+        ]
+      ]
+    },
+    "H3a_probe": {
+      "lives": true,
+      "rule": "hier local contention <= flat/4 at every N (parking-lot, no dynamics)",
+      "probe": [
+        {
+          "nWriters": 16,
+          "flatOccupied": 1,
+          "flatContention": 16,
+          "hierLocalOccupied": 8,
+          "hierLocalContention": 2,
+          "ratio": "0.125"
+        },
+        {
+          "nWriters": 64,
+          "flatOccupied": 1,
+          "flatContention": 64,
+          "hierLocalOccupied": 8,
+          "hierLocalContention": 8,
+          "ratio": "0.125"
+        },
+        {
+          "nWriters": 272,
+          "flatOccupied": 1,
+          "flatContention": 272,
+          "hierLocalOccupied": 8,
+          "hierLocalContention": 34,
+          "ratio": "0.125"
+        }
+      ]
+    },
+    "H3b_under_drift": {
+      "rule": "measured either way (null predicted: the d&7 fold cancels the region split under drift)",
+      "table": [
+        {
+          "nPoll": 0,
+          "flat": "57.14",
+          "hierLocal": 50,
+          "ratio": "0.875"
+        },
+        {
+          "nPoll": 16,
+          "flat": "114.29",
+          "hierLocal": 100,
+          "ratio": "0.875"
+        },
+        {
+          "nPoll": 32,
+          "flat": "171.43",
+          "hierLocal": 150,
+          "ratio": "0.875"
+        },
+        {
+          "nPoll": 64,
+          "flat": "285.71",
+          "hierLocal": 250,
+          "ratio": "0.875"
+        },
+        {
+          "nPoll": 128,
+          "flat": "514.29",
+          "hierLocal": 450,
+          "ratio": "0.875"
+        },
+        {
+          "nPoll": 256,
+          "flat": "971.43",
+          "hierLocal": 850,
+          "ratio": "0.875"
+        }
+      ]
+    }
+  }
+}

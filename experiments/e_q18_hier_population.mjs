@@ -30,7 +30,7 @@ const CHAIN = join(RECEIPTS, 'e_q18_chain.jsonl');
 const W = 64, H = 64, N = W * H;
 const K = 8, THETA = 8, T = 200;
 const SEEDS = [77001, 77002, 77003, 77004, 77005, 77006, 77007, 77008, 77009, 77010];
-const NPOLL_LADDER = [0, 16, 64, 256];
+const NPOLL_LADDER = [0, 16, 32, 64, 128, 256]; // EQ18-AM2: nPoll doubling from 16 (0+256 preserve F-CAL); writer pops 16/32/48/80/144/272
 const CP = [0, 50, 100, 150, 200];
 const SIGMA_DEFAULT = 'kernel log2(3)';
 
@@ -132,13 +132,14 @@ function tickH(cells, mode, table) {
     ? cells.__scratch : (cells.__scratch = new Uint8Array(N));
   snap.set(cells);
   const events = [];
-  let escTerm = null, escRegion = null;
+  let escTerm = null, escRegion = null, escWX = null, escWY = null;
 
   if (mode === 'hier') {
     // Escalation pass FIRST, row-major cell order, reading the tick-STALE
     // tables (state as of end of tick t-1). One-shot: pending flags set by
     // last tick's local misses.
     escTerm = new Float64Array(N); escRegion = new Int8Array(N).fill(-1);
+    escWX = new Int32Array(N).fill(-1); escWY = new Int32Array(N).fill(-1);
     if (cells.__pending instanceof Uint8Array && cells.__pending.length === N) {
       const pending = cells.__pending;
       const nextPending = new Uint8Array(N);
@@ -154,6 +155,7 @@ function tickH(cells, mode, table) {
           const h2 = table.localRead(r, s);
           if (h2 && (h2.x !== x || h2.y !== y)) {
             escTerm[i] = h2.resonance * SIGMA; escRegion[i] = r;
+            escWX[i] = h2.x; escWY[i] = h2.y;
             table.escalations++;
             break; // FIRST foreign hit in fixed region order (the frozen rule)
           }
@@ -206,10 +208,11 @@ function tickH(cells, mode, table) {
             cells.__pending[i] = 1; // local miss => arm escalation for t+1
           }
           if (!fired && escRegion[i] !== -1) {
-            // the escalated hit from this tick's pre-pass (stale tables)
+            // the escalated hit from this tick's pre-pass (stale tables) —
+            // EQ18-AM1: occupant recorded AT FIRE TIME (no post-tick read-back)
             pressure = acc + escTerm[i];
             const h2res = Math.round(escTerm[i] / SIGMA); // recover resonance exactly
-            events.push({ kind: 'twin', x, y, slot: d, resonance: h2res, term: escTerm[i], level: 'escalated', writerRegion: escRegion[i] });
+            events.push({ kind: 'twin', x, y, slot: d, resonance: h2res, term: escTerm[i], level: 'escalated', writerRegion: escRegion[i], wx: escWX[i], wy: escWY[i] });
             table.escalatedEvents++;
           }
           table.localWrite(ownR, s, x, y, Math.abs(acc) + 1);
@@ -334,13 +337,9 @@ function runHier(seed, nPoll) {
       meter[idx] += ev.term;
       if (!firstExceed.has(idx) && meter[idx] >= THETA) firstExceed.set(idx, t);
       pairEvents++;
-      // occupant attribution is DIRECT for hier (the design's structural gain)
-      let occupant = null;
-      if (ev.level === 'local') occupant = { x: ev.wx, y: ev.wy };
-      else {
-        const h2 = table.localRead(ev.writerRegion, ev.slot & 7);
-        if (h2) occupant = { x: h2.x, y: h2.y };
-      }
+      // occupant attribution is DIRECT for hier (the design's structural gain;
+      // EQ18-AM1: both local and escalated events carry (wx, wy) at fire time)
+      const occupant = (ev.wx !== undefined && ev.wy !== undefined) ? { x: ev.wx, y: ev.wy } : null;
       if (occupant && partnerOf.get(idx) === occupant.y * W + occupant.x) {
         partnerEvents++;
         writerRegionTotal++;
@@ -565,7 +564,9 @@ for (const arm of ['flat', 'hier']) {
   }
 }
 
-// H1: hier provFrac >= flat provFrac + 0.10 at >= 2 of 4 levels AND >= flat - 0.02 at all 4 (primary: sealed instrument)
+// H1 (EQ18-AM1: PRIMARY = direct-causation attribution on BOTH arms —
+// flatProvDirect vs hier provFrac, apples-to-apples true causation; the sealed
+// E-Q14-recovery comparison is SECONDARY, kept for F-CAL continuity)
 let h1LevelsImproved = 0, h1LevelsWorse = 0;
 const h1Detail = [];
 for (const nPoll of NPOLL_LADDER) {
@@ -574,20 +575,21 @@ for (const nPoll of NPOLL_LADDER) {
   if (h < f - 0.02) h1LevelsWorse++;
   h1Detail.push({ nPoll, flatProvMed: aggregates[`flat|${nPoll}`].provMed, hierProvMed: aggregates[`hier|${nPoll}`].provMed, delta: q(Math.round((h - f) * 10000) / 10000) });
 }
-const h1Lives = h1LevelsImproved >= 2 && h1LevelsWorse === 0;
-// secondary (direct instrument on the flat side)
-let h1sLevelsImproved = 0, h1sLevelsWorse = 0;
-const h1sDetail = [];
+const h1Secondary = h1Detail; // sealed-instrument comparison (secondary)
+// PRIMARY (direct instrument)
+let h1pLevelsImproved = 0, h1pLevelsWorse = 0;
+const h1pDetail = [];
 for (const nPoll of NPOLL_LADDER) {
   const fd = aggregates[`flat|${nPoll}`].provDirectMed !== null ? num(aggregates[`flat|${nPoll}`].provDirectMed) : null;
   const h = num(aggregates[`hier|${nPoll}`].provMed);
   if (fd !== null) {
-    if (h >= fd + 0.10) h1sLevelsImproved++;
-    if (h < fd - 0.02) h1sLevelsWorse++;
-    h1sDetail.push({ nPoll, flatProvDirectMed: aggregates[`flat|${nPoll}`].provDirectMed, hierProvMed: aggregates[`hier|${nPoll}`].provMed, delta: q(Math.round((h - fd) * 10000) / 10000) });
+    if (h >= fd + 0.10) h1pLevelsImproved++;
+    if (h < fd - 0.02) h1pLevelsWorse++;
+    h1pDetail.push({ nPoll, flatProvDirectMed: aggregates[`flat|${nPoll}`].provDirectMed, hierProvMed: aggregates[`hier|${nPoll}`].provMed, delta: q(Math.round((h - fd) * 10000) / 10000) });
   }
 }
-const h1sLives = h1sLevelsImproved >= 2 && h1sLevelsWorse === 0;
+const h1Lives = h1pLevelsImproved >= 2 && h1pLevelsWorse === 0; // PRIMARY: direct
+const h1SealedLives = h1LevelsImproved >= 2 && h1LevelsWorse === 0; // SECONDARY: sealed instrument
 
 // H2: hier deliveredMed >= 4 AND hier clean first-delivery med <= flat + 2
 const h2Deliver = aggregates['hier|0'].deliveredMed;
@@ -605,9 +607,9 @@ const h3b = NPOLL_LADDER.map((nPoll) => ({
 }));
 
 const verdict = {
-  H1: { lives: h1Lives, rule: 'median provFrac +0.10 at >=2/4 levels AND >= flat-0.02 at 4/4 (sealed instrument)', detail: h1Detail, levelsImproved: h1LevelsImproved, levelsWorse: h1LevelsWorse },
-  H1_secondary_direct: { lives: h1sLives, rule: 'same rule, flat side on direct-causation attribution', detail: h1sDetail },
-  H2: { lives: h2Lives, rule: 'hier deliveredMed >= 4 AND hier clean first-delivery med <= flat + 2', deliveredMed: h2Deliver, flatFirstMed: aggregates['flat|0'].firstPairDeliveryMed, hierFirstMed: aggregates['hier|0'].firstPairDeliveryMed },
+  H1: { lives: h1Lives, rule: 'EQ18-AM1 PRIMARY: median hier provFrac (direct) >= median flat provDirect + 0.10 at >=2 levels AND >= flat - 0.02 at all levels', detail: h1pDetail, levelsImproved: h1pLevelsImproved, levelsWorse: h1pLevelsWorse },
+  H1_secondary_sealed_instrument: { lives: h1SealedLives, rule: 'same rule, flat side on the sealed E-Q14 log-order recovery (F-CAL continuity)', detail: h1Secondary },
+  H2: { lives: h2Lives, rule: 'EQ18-AM3: median over seeds of per-run delivered-pair counts >= 4 (the E-Q1 claim-floor convention) AND hier clean first-delivery median <= flat + 2 (+1 escalation tick + 1 mask-convergence allowance, both mechanism-borne; honest null expected)', deliveredMed: h2Deliver, flatFirstMed: aggregates['flat|0'].firstPairDeliveryMed, hierFirstMed: aggregates['hier|0'].firstPairDeliveryMed, hierFirstDeliversAllSeeds: perCell['hier|0'].map((r) => r.pairDelivers), flatFirstDeliversAllSeeds: perCell['flat|0'].map((r) => r.pairDelivers) },
   H3a_probe: { lives: h3aLives, rule: 'hier local contention <= flat/4 at every N (parking-lot, no dynamics)', probe: h3 },
   H3b_under_drift: { rule: 'measured either way (null predicted: the d&7 fold cancels the region split under drift)', table: h3b },
 };
@@ -638,7 +640,7 @@ const chainRows = [
   { kind: 'aggregate', experiment: 'E-Q18', aggregates },
   { kind: 'verdict', experiment: 'E-Q18', verdict },
 ];
-const tip = await appendAndVerify(stone, CHAIN, chainRows, { experiment: 'E-Q18' });
-writeFileSync(join(OUT, 'e_q18_tip.txt'), tip + '\n');
-console.log(`[e-q18] chain sealed: ${CHAIN} tip=${tip.slice(0, 16)}…`);
+const v = await appendAndVerify(stone, CHAIN, chainRows, { experiment: 'E-Q18' });
+writeFileSync(join(OUT, 'e_q18_tip.txt'), `${v.tip} links=${v.links}\n`);
+console.log(`[e-q18] chain sealed: ${CHAIN} tip=${v.tip.slice(0, 16)}… links=${v.links}`);
 console.log('[e-q18] DONE');

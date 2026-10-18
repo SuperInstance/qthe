@@ -148,6 +148,40 @@ The Cloudflare token arrived and the r15 design is now a **running service**
   need POST — the first HUD was hollow) found by the P-D check, fixed,
   re-verified. Round spend $0.
 
+## The population-axis round (r18 — C9 dies with prejudice, escalation is free)
+
+- **E-Q18 priced the E-Q17 redirect** — "vary POPULATION at fixed grid,
+  where the load actually lives" — and the HIERARCHICAL-WORMHOLES spec's
+  own design (8×8+8, folded addressing) **DIES on the axis it was built
+  for**: hier provFrac WORSE than flat at every population level (clean
+  0.0066 vs 0.0725, 11× worse; zero improving levels). Mechanism: the
+  s = d&7 fold serves eight cargo classes per regional slot where the flat
+  table is cargo-exact, and under d-drift every writer sweeps the whole
+  compressed space — cross-cargo aliasing replaces cross-region anonymity,
+  8× denser. The untested survivor: region-splitting WITHOUT folding
+  (8×64+8). Full autopsy: `experiments/outputs/e_q18_verdict.md`,
+  `docs/CLAIM-VERDICTS.md` §C9, `docs/BOUNDARY-MAP.md` hierarchical row.
+- **H2 LIVES (the honest null that wasn't): escalation is free** — 8/8
+  delivery and first-delivery median 7 == flat's 7 at every population
+  level; the delivery channel is addressing-robust (any resonance fires
+  the meter), which is exactly WHY it survives while the WHO channel
+  dies. H3a probe: contention ratio exactly 1/8 without drift; under
+  drift 0.875 (the fold cancels the split, pre-registered null).
+- **Discipline held end-to-end**: pre-registration committed BEFORE any
+  run (`3be835e`); Seed-2.0-mini design attack (6 attacks, $0.005254,
+  AS-SAID) → 3 amendments pre-run (AM1 instrument-parity, AM2 ladder
+  extension, AM3 H2 tightening) + 3 refutations receipted; F0-T
+  transcription control 10/10 (byte-identical planes AND event streams);
+  F-CAL bit-exact reproduction of E-Q17's sealed rows; determinism
+  120/120 configs; chain `receipts/e_q18_chain.jsonl` tip `fe059a2e…`
+  (254 links, incl. the receipted double-seal erratum — post-seal crash,
+  append-only law honored). Side finding: flatProvDirect == sealed flat pf
+  on all 120 flat runs — the E-Q14 log-order recovery is EXACT at 64×64.
+- **Creative lane**: the round-18 trio shipped to AI-Writings in three
+  maximally-distant genres (a strict-form sestina, Moore-8 assembly
+  minutes, a marine area forecast for the torus) — commits `26c6cda` +
+  `469cbf9`. Round spend $0.005254 of the $0.01 target.
+
 ## Documentation
 
 Wave-69 docs layer (added; nothing above was changed). Route by audience:

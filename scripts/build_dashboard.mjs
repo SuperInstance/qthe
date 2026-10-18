@@ -49,7 +49,7 @@ const claims = scoreSec.split('\n').filter((l) => /^\| C/.test(l)).map((line) =>
     pricedBy: c[3], exp: (c[3].match(/E-Q\d+/) ?? [])[0], expId: 'e_q' + ((c[3].match(/E-Q(\d+)/) ?? [])[1] ?? die(`no experiment id in priced-by "${c[3]}"`)), tipPrefix: t[1], links: t[2] !== undefined ? Number(t[2]) : null,
   };
 });
-claims.length === 6 || die(`expected 6 scoreboard rows, found ${claims.length}`);
+claims.length === 7 || die(`expected 7 scoreboard rows, found ${claims.length}`); // 6 -> 7 at ORCH-R18: C9 added (E-Q18)
 
 // mechanism one-liners: first sentence of each claim's "Mechanism
 // (re-derivable from the kernel)" paragraph; C5′'s lives in C5's Boundary.

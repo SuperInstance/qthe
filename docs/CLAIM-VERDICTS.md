@@ -16,6 +16,7 @@
 | C4 | phase threshold θ > π/4 triggers useful non-local transfer | **DIES** — falsified under the guest's own sealed rule | E-Q7 | `befa0c33…` (36 links) |
 | C5 | the substrate self-repairs (armor-ring) | **DIES** (honest null) — ring self-dissolves; no repair term exists | E-Q5 | `4425545f…` (25 links) |
 | C5′ | repair via injector (one-pager) | **STANDS** — definitional, receipted as such | E-Q10 | `50ddf5f9…` (24 links) |
+| C9 | hierarchical wormholes (8×8+8, folded addressing) restore provenance under population load | **DIES** (with prejudice, opposite direction) — hier provFrac WORSE than flat at every population level (clean 0.0066 vs 0.0725, 11× worse); the d&7 fold trades cross-region anonymity for 8× denser cross-cargo aliasing and the drift convoy floods it. H2 (escalation latency) LIVES: 8/8 delivery, first-delivery 7 == 7 — the delivery channel is addressing-robust; the WHO channel is what dies | E-Q18 (ORCH-R18) | `fe059a2e…` (254 links) |
 
 Supporting mechanism verdicts (not LAYER 2 claims, but they bound the claims):
 E-Q6 slot semantics = S3 live-read row-major LWW (`ab4ea196…`, 15 links);
@@ -219,6 +220,43 @@ under the same law, not a rescue of this one.
 
 **Receipts:** `receipts/e_q5_chain.jsonl` tip `4425545f…` 25 links;
 E-Q10 `receipts/e_q10_chain.jsonl` tip `50ddf5f9…` 24 links.
+
+---
+
+## C9 — DIES (with prejudice): the two-level folded table is worse than flat on the axis it was built for (E-Q18)
+
+**Priced:** the E-Q17-redirect axis — POPULATION at fixed grid. E-Q14-verbatim
+ twin task, 64×64, seeds 77001..77010, polluter ladder {0,16,32,64,128,256}
+(= writer populations 16..272). Flat arm = the real kernel (F-CAL: reproduces
+E-Q17's sealed 64×64 rows bit-exactly). Hier arm = tickH transcription
+(F0-T: byte-identical to the kernel in flat configuration, planes AND event
+streams) carrying the HIERARCHICAL-WORMHOLES spec's own design: 8 regions ×
+8 local slots (s = d&7) + 8 global presence buckets, fixed-order escalation.
+
+**Measured:** hier provFrac below flat at ALL six levels — clean 0.0066 vs
+0.0725 (11× worse), 2 levels breaching the −0.02 no-regression bound, ZERO
+improving levels against the ≥ +0.10-at-2-levels rule. H2 LIVES (8/8
+delivery everywhere, first-delivery median 7 == 7 — escalation is free).
+H3a probe: contention ratio exactly 1/8 without drift; H3b: 0.875 under
+drift (the fold cancels the split, pre-registered null).
+
+**Mechanism (re-derivable from the telemetry):** a regional slot s = d&7 is
+shared by eight cargo classes where a flat slot is cargo-exact; under d-drift
+(the E-Q14 convoy — pressure moves d ±1 per tick and d&7 cycles with period
+8) every writer sweeps the entire compressed regional space. 86% of
+clean-arm twin events are LOCAL hits on folded slots occupied by drifted
+cross-pair writers; escalated events collapse 14.2% → 0.0% as the presence
+mask becomes a party line at one remove. Region-splitting without folding
+(8×64+8 = 520 slots) is the untested survivor of this verdict.
+
+**Receipts:** registration `pre_registration_e_q18.json` (v1 `3be835e`,
+amended pre-run AM1–AM3 after the Seed-2.0-mini design attack — 3
+accepted-in-part, 3 refuted); consult `situations/e_q18_design_attack.jsonl`
+($0.005254, AS-SAID); results `outputs/e_q18_results.json`; chain
+`receipts/e_q18_chain.jsonl` tip `fe059a2e…` (254 links, incl. the receipted
+EQ18 double-seal erratum — post-seal crash, byte-identical duplicates,
+append-only law honored). Side finding kept: flatProvDirect == sealed flat
+pf on all 120 flat runs — the E-Q14 log-order recovery is EXACT at 64×64.
 
 ---
 
