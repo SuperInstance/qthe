@@ -231,3 +231,44 @@ expansion ≠ factual grounding; verify before adopting. Receipt:
   out)/~240 ms; qwen 4/6 at $0.000752/1.9 s. The cheap DeepInfra seat
   was the most accurate reader this round — price does not buy
   comprehension (the r15 Hy4 law, now cross-family).
+
+## ORCH-R23 additions (the embedding round: question-map vectors, cross-seat calibration)
+
+- **The question map is an embedding function (E-Q21, C14 LIVES).** A
+  fixed 8-probe score battery per record — one batched call — yields a
+  vector space that retrieves same-family records at 0.70 top-1 (live
+  Vectorize) vs 0.25 majority. The honest boundary (H2 DIES): on
+  family-lexical corpora, plain BOW (0.80) beats a single LLM embedder
+  — use probe embeddings when you need the AXES (drift detection,
+  cross-seat calibration, interpretability), not merely the ranking.
+  The same axes through qwen scored 0.85 — ABOVE BOW: the axes are
+  sufficient; the seat's calibration is the variable.
+- **Embedder divergence is structured (C15 LIVES).** P8-exactness
+  diverges most across seats (0.24-0.28 mean |Δ|), P5-repair least
+  (0.057); top-3 divergence axes overlap 2/3 across the Groq pair.
+  Cross-seat embedding comparison is a CALIBRATION instrument: the
+  axes a pair of seats disagree on are the axes worth probing.
+- **Scores are calmer than choices (F5).** 24/24 re-embedded axes
+  within 0.25 — the r12 answer-layer wobble lives in the choice layer;
+  score answers are stable enough for vector work.
+- **The reasoning-budget law is now cross-seat.** MiMo-V2.6-Flash at
+  max_tokens 1200 burned 1199 reasoning tokens and emitted NOTHING
+  (same class as r22's gpt-oss at 2048). Thinking models bill reasoning
+  against the completion budget — budget headroom per seat: MiMo 4096,
+  gpt-oss 6144, qwen 2048 for a short JSON answer.
+- **The bench can confabulate citations.** Both creative-bench seats
+  "quoted" a glossary entry that does not exist in the piece, verbatim,
+  and agreed on the cut. The verify-before-act law (check citations
+  against the artifact before editing) caught it; the r10
+  model-misreads-facts-the-caller-knows family, now in creative review
+  too.
+- **The R2 local-simulator law (ops).** `wrangler r2 object put` with
+  a Worker wrangler.toml in cwd defaults to the LOCAL simulator — the
+  put/get round-trip succeeds against .wrangler/state while the
+  deployed Worker sees nothing. `--remote` is mandatory for the real
+  bucket. Symptom signature: split-brain (your writes invisible to the
+  worker, the worker's objects invisible to your wrangler get).
+- **wrangler vectorize query --vector is broken (v4.151.1)** — any
+  input parses as "0 dimensions". Query via the REST API
+  (`/accounts/{id}/vectorize/v2/indexes/{index}/query`), which the
+  CLI's own error message reveals.

@@ -375,3 +375,68 @@ pending relocation; geo-pending, receipted).
   fleet seeds re-emitted (22 chains, 741 rows — the dashboard-refusal
   law held: registry edit → re-emit) · live service unchanged (build
   `r20-docket1`, no deploy needed).
+
+## The embedding round (r23 — the question map is an embedding, the wormhole is a drafty window)
+
+The operator's dispatch pointed at composition nobody has tried:
+"vectorization and embedding and rapid calls… try things you haven't
+tried and you don't think anyone really has." The systemone question
+map — normally an adjudication instrument — became an **embedding
+function**: a fixed battery of 8 score probes (non-local coupling,
+local-rule physics, quantum provenance, allocation, repair, null
+outcome, economics, exactness) over 20 sealed records, one batched call
+per record, vectors into a third Cloudflare Vectorize index
+(`qthe-jev-embed`, 32-dim cosine, zero-padded from 8 — AM1, ranking
+equivalence proven).
+
+- **C14 LIVES — the instrument panel is a metric space.** The jev
+  embedding retrieves same-family records at **0.70 top-1 accuracy via
+  live Vectorize queries**, vs the majority baseline 0.25 and the
+  permutation null 0.21. H2 DIES with the honest narrowing (P2 HIT,
+  predicted): bag-of-words on the same texts scores 0.80 — but the
+  SAME 8 axes through qwen3.8-27b score **0.85, above BOW**. The axes
+  are sufficient; jev's per-axis calibration cost two records. The
+  value claim: interpretable, ~250 bytes/record (~1/300 of BOW's
+  space), portable across seats, one batched call per record.
+- **C15 LIVES — embedder choice is a calibration choice, not a
+  paradigm choice.** Both Groq seats (via the Actions seat, 40 calls,
+  all clean) land within one family-error of jev, and the per-axis
+  divergence is STRUCTURED: P8-exactness diverges most (0.24/0.28),
+  P5-repair least (0.057), top-3 axis overlap 2/3 across seats — the
+  r22 harmony finding extended from answers to embedding spaces.
+  Stability: 24/24 re-embedded axes within 0.25 (scores are calmer
+  than choices). Chain `e_q21` (4 links, tip `f13a483b…`).
+- **E-Q20c — the plateau mechanism, ablated at zero credits: the
+  wormhole twin channel is a correlation DISSIPATOR, not a reservoir.**
+  With wormholes OFF the metastable plateau ratio ROSE from 1.18 to
+  1.58 and the early dip was 8.6× shallower — the non-local Abstain
+  channel stirs long-range structure and erodes it. The E-Q20b slow
+  mode is the LOCAL Moore-8 rule's own memory. **Consumer law, split
+  by intent: preserve constructor-dependent geometry → wormholes OFF;
+  equilibrate → ON, and burn past t=512 either way.** The registered
+  hypotheses both died in an unregistered third direction — decisive,
+  amended append-only (the registration's honest-surprise clause).
+  Chain `e_q20c` (4 links, tip `6c339a17…`).
+- **The ideas battery (the operator's "challenge your agents" made
+  standing)**: generation on chat seats, rating through the typed map
+  (the honest pivot — systemone cannot return free text). Two r24
+  candidates registered: **occlusion gradients** (novelty 2.78, the
+  highest-rated: fixed noul probes as a readout function of state
+  text, sensitivity via state occlusion) and **coherence deficit**
+  (feasibility 2.89: one batched call as a joint distribution,
+  self-consistency across reworded questions).
+- **New laws banked**: the R2 local-simulator law (wrangler r2 object
+  put with a Worker config in cwd defaults to the LOCAL simulator —
+  `--remote` is mandatory; receipted after a split-brain diagnosis),
+  the wrangler `vectorize query --vector` parse bug (queries via the
+  REST API), the reasoning-budget law's second seat (MiMo: 1199
+  reasoning tokens, zero visible content at 1200 max), and the
+  bench-fabrication catch (both creative-bench seats quoted an entry
+  that does not exist in the piece — the verify-before-act law earning
+  its keep).
+- **Batteries at close**: run_tests all_pass · verify_all_chains ALL
+  CLEAN 43/43 (17 tips) · probe gate PASS links=35 (35/35 claims,
+  24/24 chains) · guard PASS · negctl 28/28 DETECTED · ALL LIVE CHECKS
+  PASS (C7 mirror now carries 4 chains) · CI green · fleet seeds
+  re-emitted (24 chains) · `docs/CREATIVE-PRACTICE.md` shipped (the
+  between-rounds discipline, taught forward per the dispatch).

@@ -60,7 +60,7 @@ CMP=$?
 [ "$RSHA" = "$LSHA" ] && [ "$CMP" = "0" ]; chk $? "R2 e_q1_chain sha256-identical ($LSHA)"
 
 # ORCH-R23 (T14-d): the r22/r23 experiment chains join the C7 mirror.
-for CH in e_q20b e_q20c; do
+for CH in e_q20b e_q20c e_q21; do
   RSHA2=$(curl -sD - "$W/receipt/receipts/${CH}_chain.jsonl" -o /tmp/qthe_live_${CH}.jsonl | grep -i x-qthe-sha256 | tr -d '\r' | awk '{print $2}')
   LSHA2=$(sha256sum receipts/${CH}_chain.jsonl | awk '{print $1}')
   cmp -s /tmp/qthe_live_${CH}.jsonl receipts/${CH}_chain.jsonl
