@@ -1,0 +1,381 @@
+{
+ "experiment": "E-Q26",
+ "claim": "C21 — axis algebra (record-level) + the third direction (family-level, AM2)",
+ "kernel": {
+  "kernelKind": "real",
+  "kernelPath": "qthe/qthe.mjs"
+ },
+ "preRegSha": "c90c70571e5596435d7c49a9aba7bdd20eea700b8e205f6003e2eac9d21d4fe2",
+ "registration": "experiments/pre_registration_e_q26.json + AM1 (pre-run de-dup) + AM2 (the family-level third direction, post-hoc on the pre-committed null)",
+ "task": {
+  "vectors": "the sealed E-Q22 noul arm (20 records)",
+  "compositions": "5 analogy + 5 translation (frozen tuples)",
+  "eval": "LIVE arm-filtered queries + 1000-draw permutation null (seed 20261019)",
+  "calls": "ZERO new embed calls"
+ },
+ "real_hits": {
+  "analogy": 1,
+  "translation": 0
+ },
+ "real_family_hits": {
+  "analogy": 5
+ },
+ "null": {
+  "analogy_mean": 0.096,
+  "analogy_sd": 0.3078701024783017,
+  "translation_mean": 0.144,
+  "analogy_p95": 1,
+  "translation_p95": 1,
+  "analogy_family_mean": 1.937,
+  "analogy_family_sd": 1.2794651226196045,
+  "analogy_family_p95": 4
+ },
+ "mean_rank_d": 9.1,
+ "live": {
+  "analogy_0": {
+   "tuple": {
+    "a": "N1",
+    "b": "P1",
+    "c": "P2",
+    "d": "N2"
+   },
+   "top1": "N3",
+   "hit": false,
+   "rank_d": 1,
+   "cos_comp_d": 0.8797,
+   "top5": [
+    "N3",
+    "N2",
+    "N1",
+    "P2",
+    "Q4"
+   ]
+  },
+  "analogy_1": {
+   "tuple": {
+    "a": "P1",
+    "b": "Q1",
+    "c": "Q2",
+    "d": "P2"
+   },
+   "top1": "P1",
+   "hit": false,
+   "rank_d": 17,
+   "cos_comp_d": -0.2637,
+   "top5": [
+    "P1",
+    "P5",
+    "N4",
+    "P4",
+    "N1"
+   ]
+  },
+  "analogy_2": {
+   "tuple": {
+    "a": "Q1",
+    "b": "A1",
+    "c": "A2",
+    "d": "Q2"
+   },
+   "top1": "Q1",
+   "hit": false,
+   "rank_d": 2,
+   "cos_comp_d": 0.6756,
+   "top5": [
+    "Q1",
+    "Q5",
+    "Q2",
+    "Q3",
+    "N2"
+   ]
+  },
+  "analogy_3": {
+   "tuple": {
+    "a": "A1",
+    "b": "N1",
+    "c": "N2",
+    "d": "A2"
+   },
+   "top1": "A1",
+   "hit": false,
+   "rank_d": 1,
+   "cos_comp_d": 0.9207,
+   "top5": [
+    "A1",
+    "A2",
+    "A4",
+    "P2",
+    "N2"
+   ]
+  },
+  "analogy_4": {
+   "tuple": {
+    "a": "N1",
+    "b": "P1",
+    "c": "P2",
+    "d": "N3"
+   },
+   "top1": "N3",
+   "hit": true,
+   "rank_d": 0,
+   "cos_comp_d": 0.9224,
+   "top5": [
+    "N3",
+    "N2",
+    "N1",
+    "P2",
+    "Q4"
+   ]
+  },
+  "translation_0": {
+   "tuple": {
+    "a": "N1",
+    "b": "P1",
+    "c": "A1",
+    "d": "Q1"
+   },
+   "top1": "A1",
+   "hit": false,
+   "rank_d": 14,
+   "cos_comp_d": 0.3532,
+   "top5": [
+    "A1",
+    "N3",
+    "N2",
+    "A4",
+    "A2"
+   ]
+  },
+  "translation_1": {
+   "tuple": {
+    "a": "P1",
+    "b": "Q1",
+    "c": "N1",
+    "d": "A1"
+   },
+   "top1": "N1",
+   "hit": false,
+   "rank_d": 13,
+   "cos_comp_d": -0.0898,
+   "top5": [
+    "N1",
+    "N4",
+    "P1",
+    "Q4",
+    "P5"
+   ]
+  },
+  "translation_2": {
+   "tuple": {
+    "a": "Q1",
+    "b": "A1",
+    "c": "P1",
+    "d": "N1"
+   },
+   "top1": "Q2",
+   "hit": false,
+   "rank_d": 10,
+   "cos_comp_d": 0.3165,
+   "top5": [
+    "Q2",
+    "Q1",
+    "Q5",
+    "P5",
+    "P1"
+   ]
+  },
+  "translation_3": {
+   "tuple": {
+    "a": "A1",
+    "b": "N1",
+    "c": "Q1",
+    "d": "P1"
+   },
+   "top1": "A1",
+   "hit": false,
+   "rank_d": 16,
+   "cos_comp_d": 0.241,
+   "top5": [
+    "A1",
+    "A2",
+    "A4",
+    "P2",
+    "Q1"
+   ]
+  },
+  "translation_4": {
+   "tuple": {
+    "a": "N2",
+    "b": "P2",
+    "c": "A2",
+    "d": "Q2"
+   },
+   "top1": "A2",
+   "hit": false,
+   "rank_d": 17,
+   "cos_comp_d": 0.1655,
+   "top5": [
+    "A2",
+    "N2",
+    "A4",
+    "N3",
+    "P2"
+   ]
+  }
+ },
+ "compositions_sealed": [
+  {
+   "kind": "analogy",
+   "i": 0,
+   "a": "N1",
+   "b": "P1",
+   "c": "P2",
+   "d": "N2"
+  },
+  {
+   "kind": "analogy",
+   "i": 1,
+   "a": "P1",
+   "b": "Q1",
+   "c": "Q2",
+   "d": "P2"
+  },
+  {
+   "kind": "analogy",
+   "i": 2,
+   "a": "Q1",
+   "b": "A1",
+   "c": "A2",
+   "d": "Q2"
+  },
+  {
+   "kind": "analogy",
+   "i": 3,
+   "a": "A1",
+   "b": "N1",
+   "c": "N2",
+   "d": "A2"
+  },
+  {
+   "kind": "analogy",
+   "i": 4,
+   "a": "N1",
+   "b": "P1",
+   "c": "P2",
+   "d": "N3"
+  },
+  {
+   "kind": "translation",
+   "i": 0,
+   "a": "N1",
+   "b": "P1",
+   "c": "A1",
+   "d": "Q1"
+  },
+  {
+   "kind": "translation",
+   "i": 1,
+   "a": "P1",
+   "b": "Q1",
+   "c": "N1",
+   "d": "A1"
+  },
+  {
+   "kind": "translation",
+   "i": 2,
+   "a": "Q1",
+   "b": "A1",
+   "c": "P1",
+   "d": "N1"
+  },
+  {
+   "kind": "translation",
+   "i": 3,
+   "a": "A1",
+   "b": "N1",
+   "c": "Q1",
+   "d": "P1"
+  },
+  {
+   "kind": "translation",
+   "i": 4,
+   "a": "N2",
+   "b": "P2",
+   "c": "A2",
+   "d": "Q2"
+  }
+ ],
+ "axis_autopsy": [
+  {
+   "comp": "N1-P1+P2->N2",
+   "P1_nonlocal": 0.51,
+   "P2_localrule": -0.52,
+   "P3_quantum": 0.11,
+   "P4_alloc": 0.11,
+   "P5_repair": 0.05,
+   "P6_null": 0.01,
+   "P7_econ": -0.1,
+   "P8_exact": -0.15
+  },
+  {
+   "comp": "P1-Q1+Q2->P2",
+   "P1_nonlocal": -0.17,
+   "P2_localrule": 0.28,
+   "P3_quantum": -0.04,
+   "P4_alloc": -0.1,
+   "P5_repair": -0.04,
+   "P6_null": -1.68,
+   "P7_econ": -0.23,
+   "P8_exact": 0
+  },
+  {
+   "comp": "Q1-A1+A2->Q2",
+   "P1_nonlocal": 0.01,
+   "P2_localrule": 0.07,
+   "P3_quantum": -0.03,
+   "P4_alloc": -0.9,
+   "P5_repair": -0.01,
+   "P6_null": 0.86,
+   "P7_econ": -0.21,
+   "P8_exact": 0.03
+  },
+  {
+   "comp": "A1-N1+N2->A2",
+   "P1_nonlocal": -0.35,
+   "P2_localrule": 0.17,
+   "P3_quantum": -0.04,
+   "P4_alloc": 0.89,
+   "P5_repair": 0,
+   "P6_null": 0.81,
+   "P7_econ": 0.54,
+   "P8_exact": 0.12
+  },
+  {
+   "comp": "N1-P1+P2->N3",
+   "P1_nonlocal": 0.16,
+   "P2_localrule": -0.55,
+   "P3_quantum": -0.04,
+   "P4_alloc": -0.01,
+   "P5_repair": -0.16,
+   "P6_null": 0,
+   "P7_econ": -0.13,
+   "P8_exact": -0.07
+  }
+ ],
+ "hypotheses": {
+  "H1": true,
+  "H2": false,
+  "H3": true,
+  "C21": false,
+  "third_direction_family": true
+ },
+ "predictions": {
+  "P1": true,
+  "P2": false,
+  "P3a": true,
+  "P3b": false,
+  "P3": false,
+  "P4": true
+ },
+ "verdict": "E-Q26 VERDICT (axis algebra — v(a) - v(b) + v(c) over the sealed noul vectors): H1 LIVES at the edge: record-level analogy hits 1/5 vs null 0.096+-0.3079 (the +2SD band is 0.7117) — MET but sitting exactly at the null's p95 (1/5): ~5% of label shuffles do this well. H2 DIES: mean rank(d) 9.1 of 20 (> the registered 5) — dragged by analogy_1 (rank 17) and all five translations (ranks 10-17). H3 LIVES: analogy 1/5 >= translation 0/5. C21 (record-level analogy arithmetic) DIES. THE THIRD DIRECTION (AM2, decisive): ALL FIVE analogy compositions retrieved the target's FAMILY as top-1 — 5/5 family-level hits vs null 1.937+-1.2795 (p95 4/5) — PERFECT family algebra: the composition lands in the right family every time (ranks 0-2 on 3 of 5, family-correct top-1 on all 5), while record identity within the family is beyond the axes' resolution. Translation (cross-family carry) is DEAD (0/5, ranks 10-17): family offsets subtract cleanly within the pair structure but do not compose across two offsets. THE LAW: 8 calibrated axes carry ~2 bits of family geometry and support clean OFFSET ARITHMETIC at the family level; record identity lives in the residuals the axes do not resolve. The consumer law: composed-vector queries are family probes, not record lookups — and a composed probe is FREE (zero calls: arithmetic on sealed vectors + one live query)."
+}

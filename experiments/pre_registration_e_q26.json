@@ -33,5 +33,19 @@
  "falsifier": "ANY of F1-F4 breached; compositions edited after emission; the null computed on anything but label shuffles; a hit claimed without the live round-trip.",
  "budget": "$0.00 LLM (zero calls) + free-tier queries. Part of the r25 round budget.",
  "registered_before_run": true,
- "amendments": []
+ "amendments": [
+  {
+   "id": "AM1",
+   "appended": "BEFORE any run or scoring (pre-run amendment, not post-hoc)",
+   "what": "the frozen modular translation rule duplicates: for i=4, (i%4, (i+2)%4, (i+1)%4, (i+3)%4) = (0,2,1,3) — identical to i=0, which would double-count one translation in a 5-composition average.",
+   "rule": "translation_4 amended to use the SECOND record of each family: a = F[0][1], d = F[2][1], b = F[1][1], c = F[3][1] (N2 -> Q2 via P2/A2 offsets), so all five translations are distinct. The five analogy compositions are unaffected by this amendment."
+  },
+  {
+   "id": "AM2",
+   "appended": "after the record-level results were seen, BEFORE sealing — the honest third-direction receipt (the E-Q20c precedent)",
+   "what": "the registered hypotheses scored RECORD-level identity only. The live results showed a decisive UNREGISTERED pattern: all five analogy compositions retrieved the target's FAMILY as top-1 (5/5), while record-level hits sat at the noise edge (1/5, null p95 = 1) and translation failed (0/5).",
+   "rule": "the FAMILY-level null was added to the same fixed-seed permutation draws (seed 20261019, 1000 label shuffles — the shuffle distribution is data-independent by construction, so adding a tally to fixed draws cannot bias it): null family hits 1.94 +- 1.28, p95 = 4. The registered calls (H1/H2/H3/C21) are scored AS REGISTERED on the record-level numbers; the family-level finding is receipted as the third direction in the verdict and curated claim.",
+   "honesty_note": "the family tally was computed after the record-level pattern was visible — it is a post-hoc measurement on a pre-committed null distribution, receipted as such. The narrow p-margin at record level (1/5 vs p95 1) is stated, not hidden."
+  }
+ ]
 }

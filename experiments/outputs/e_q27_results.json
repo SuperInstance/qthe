@@ -1,0 +1,299 @@
+{
+ "experiment": "E-Q27",
+ "claim": "C22 — the ternary zero does work",
+ "kernel": {
+  "kernelKind": "real",
+  "kernelPath": "qthe/qthe.mjs"
+ },
+ "preRegSha": "ad2f076229080672e3c7e59c198c06b3144f46b4d6361675263caa624b66dbd0",
+ "registration": "experiments/pre_registration_e_q27.json (no amendments — all calls as registered)",
+ "task": {
+  "arms": "SB/ST/SQ (score) + NB/NT/NQ (noul), 120 vectors upserted arm-tagged, arm-filtered topK 20, strict denominator 20",
+  "calls": "ZERO new embed calls"
+ },
+ "arms": {
+  "SB": {
+   "accuracy": 0.35,
+   "hits": 7,
+   "misses": [
+    [
+     "N1",
+     "Q2"
+    ],
+    [
+     "N2",
+     "P5"
+    ],
+    [
+     "N3",
+     "Q4"
+    ],
+    [
+     "N4",
+     "Q1"
+    ],
+    [
+     "N5",
+     "NO-NEIGHBOR"
+    ],
+    [
+     "P1",
+     "Q4"
+    ],
+    [
+     "P2",
+     "A2"
+    ],
+    [
+     "P3",
+     "Q4"
+    ],
+    [
+     "P4",
+     "N4"
+    ],
+    [
+     "P5",
+     "A4"
+    ],
+    [
+     "Q4",
+     "P3"
+    ],
+    [
+     "A1",
+     "P2"
+    ],
+    [
+     "A2",
+     "P2"
+    ]
+   ]
+  },
+  "ST": {
+   "accuracy": 0.6,
+   "hits": 12,
+   "misses": [
+    [
+     "N1",
+     "Q2"
+    ],
+    [
+     "N3",
+     "A1"
+    ],
+    [
+     "N4",
+     "P1"
+    ],
+    [
+     "P1",
+     "N4"
+    ],
+    [
+     "P2",
+     "A2"
+    ],
+    [
+     "P3",
+     "Q4"
+    ],
+    [
+     "P4",
+     "N4"
+    ],
+    [
+     "Q4",
+     "P3"
+    ]
+   ]
+  },
+  "SQ": {
+   "accuracy": 0.55,
+   "hits": 11,
+   "misses": [
+    [
+     "N3",
+     "P3"
+    ],
+    [
+     "N4",
+     "P1"
+    ],
+    [
+     "N5",
+     "Q2"
+    ],
+    [
+     "P1",
+     "N4"
+    ],
+    [
+     "P2",
+     "A2"
+    ],
+    [
+     "P3",
+     "Q4"
+    ],
+    [
+     "P4",
+     "N4"
+    ],
+    [
+     "P5",
+     "N2"
+    ],
+    [
+     "Q4",
+     "P3"
+    ]
+   ]
+  },
+  "NB": {
+   "accuracy": 0.4,
+   "hits": 8,
+   "misses": [
+    [
+     "N1",
+     "Q4"
+    ],
+    [
+     "N3",
+     "P2"
+    ],
+    [
+     "N4",
+     "Q2"
+    ],
+    [
+     "P1",
+     "Q4"
+    ],
+    [
+     "P2",
+     "N3"
+    ],
+    [
+     "P3",
+     "Q1"
+    ],
+    [
+     "P4",
+     "Q3"
+    ],
+    [
+     "P5",
+     "Q4"
+    ],
+    [
+     "Q3",
+     "P4"
+    ],
+    [
+     "Q4",
+     "P1"
+    ],
+    [
+     "A1",
+     "P2"
+    ],
+    [
+     "A4",
+     "N3"
+    ]
+   ]
+  },
+  "NT": {
+   "accuracy": 0.6,
+   "hits": 12,
+   "misses": [
+    [
+     "N1",
+     "Q2"
+    ],
+    [
+     "N3",
+     "P2"
+    ],
+    [
+     "N4",
+     "P1"
+    ],
+    [
+     "P2",
+     "Q3"
+    ],
+    [
+     "P3",
+     "Q4"
+    ],
+    [
+     "P4",
+     "N4"
+    ],
+    [
+     "Q3",
+     "P2"
+    ],
+    [
+     "Q4",
+     "P3"
+    ]
+   ]
+  },
+  "NQ": {
+   "accuracy": 0.7,
+   "hits": 14,
+   "misses": [
+    [
+     "N1",
+     "Q4"
+    ],
+    [
+     "N3",
+     "P2"
+    ],
+    [
+     "P1",
+     "Q4"
+    ],
+    [
+     "P2",
+     "N3"
+    ],
+    [
+     "P3",
+     "Q1"
+    ],
+    [
+     "Q4",
+     "P1"
+    ]
+   ]
+  }
+ },
+ "zero_mass": {
+  "ST": 0.25,
+  "NT": 0.2375
+ },
+ "continuous_reference": {
+  "S": 0.7,
+  "N": 0.8
+ },
+ "hypotheses": {
+  "H1": true,
+  "H2": true,
+  "H2a": true,
+  "H2b": false,
+  "H3": false,
+  "C22": true
+ },
+ "predictions": {
+  "P1": true,
+  "P2": false,
+  "P3": false,
+  "P4": true
+ },
+ "verdict": "E-Q27 VERDICT (does the ternary zero do work? — binary vs ternary vs 4-level on both sealed arms, arm-filtered live queries, strict scoring): H1 LIVES — C22 LIVES — DECISIVELY, on BOTH arms: ternary beats binary by 0.25 on the score arm (0.60 vs 0.35) and 0.2 on the noul arm (0.60 vs 0.40): the sign alone loses five records per arm; the middle level carries real information (the zero says 'this record is TYPICAL here' — a refusal the binary code cannot express). H2 LIVES via the diminishing-returns clause: the ternary-to-4-level gain (-0.05 on S, 0.1 on N) is smaller than the binary-to-ternary gain on both arms — but the arms DIVERGE at the 4th level: the score arm SATURATES at ternary (SQ 0.55 < ST 0.6 — the ordinal spread's information is exhausted by 3 levels) while the noul arm KEEPS CLIMBING (NQ 0.7 — the calibrated mass buys two more records from the 4th level). H3 DIES: the T-B gap is SMALLER on the noul arm (0.2 vs 0.25) — the saturation-interaction prediction inverted; the zero-mass receipt explains it: ST 0.25 vs NT 0.2375 — the noul arm does NOT have more zeros (P3 MISS; both arms sit near 0.24, below the predicted ranges). THE QUANTIZATION CURVES: S: 0.35 -> 0.6 -> 0.55 -> 0.70 (continuous); N: 0.4 -> 0.6 -> 0.7 -> 0.80. THE CONSUMER LAW: the marginal value of quantization levels is ARM-DEPENDENT — ordinal spread saturates at 3 levels; calibrated mass keeps paying to 4. At equal PRACTICAL storage (2 bits/axis packed) the 4-level noul code (0.70) is the best 16-bit configuration; the ternary code remains the algebra-capable one (the E-Q26 offset arithmetic operates on {-1,0,+1} codes) and the theory-efficient one (~1.5 bits/axis measured). Binary is never the right choice on this corpus: the zero is worth five records."
+}

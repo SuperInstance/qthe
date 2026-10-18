@@ -53,6 +53,8 @@ export const STONE_CHAINS = [
   { path: 'receipts/e_q22_chain.jsonl', gate: 'e_q22', label: 'E-Q22 · axis-calibration x ternary-quantization factorial (ORCH-R24/T15-b)', pin: 'e_q22_factorial' },
   { path: 'receipts/e_q23_chain.jsonl', gate: 'e_q23', label: 'E-Q23 · occlusion gradients, saliency through the question map (ORCH-R24/T15-c)', pin: 'e_q23_occlusion' },
   { path: 'receipts/e_q24_chain.jsonl', gate: 'e_q24', label: 'E-Q24 · the embedding-space walk, the creative lane (ORCH-R24/T15-d)', pin: 'e_q24_walk' },
+  { path: 'receipts/e_q26_chain.jsonl', gate: 'e_q26', label: 'E-Q26 · axis algebra, analogy arithmetic over sealed vectors (ORCH-R25/T16-b)', pin: 'e_q26_algebra' },
+  { path: 'receipts/e_q27_chain.jsonl', gate: 'e_q27', label: 'E-Q27 · the ternary zero — binary vs ternary vs 4-level (ORCH-R25/T16-c)', pin: 'e_q27_zero' },
   { path: 'receipts/probe_gate_chain.jsonl', gate: 'probe_gate', label: 'probe gate runs', pin: 'probe_gate' },
 ];
 

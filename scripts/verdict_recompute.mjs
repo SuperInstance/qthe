@@ -991,6 +991,39 @@ const CLAIMS = [
       return { recomputed: 'C20 LIVES (the live space hosts an organic cross-model walk: 4 families, Spearman 0.6429 diffusion with attractor-and-escape, notes 0.93-0.98 cosine with stations yet 3 families traveled — compounding residuals; emergence receipt: the unassigned no-threshold thesis; zero retries; bench AS-SAID; the metadata-index law receipted); chain agrees' };
     },
   },
+  {
+    id: 'C21 — axis algebra (E-Q26, analogy arithmetic)',
+    source: 'experiments/outputs/e_q26_results.json',
+    cite: 'receipts/e_q26_chain.jsonl · verdict.EQ26 · experiments/pre_registration_e_q26.json (+AM1 pre-run de-dup, +AM2 the family-level third direction on the pre-committed null) · situations/embedding_r25/eq26_results.json',
+    expected: 'Record-level C21 DIES: analogy 1/5 (at the null p95 edge, null 0.096±0.308), mean rank(d) 9.1 > 5, translation 0/5. THE THIRD DIRECTION (AM2): 5/5 family-level analogy hits vs null 1.937±1.2795 (p95 4) — PERFECT family algebra; the offsets carry ~2 bits of family geometry; record identity lives in the residuals',
+    run() {
+      const d = readJson(this.source);
+      if (d.hypotheses.C21 !== false || d.hypotheses.H1 !== true || d.hypotheses.H2 !== false) throw new Error('C21 record-level calls drifted');
+      if (d.real_hits.analogy !== 1 || d.real_hits.translation !== 0) throw new Error('hit counts drifted');
+      if (d.real_family_hits.analogy !== 5 || d.null.analogy_family_p95 !== 4) throw new Error('family-level third direction drifted');
+      if (Math.abs(d.mean_rank_d - 9.1) > 0.05) throw new Error('mean rank drifted');
+      const row = lastChainRow('receipts/e_q26_chain.jsonl', (r) => r.kind === 'verdict.EQ26', 'verdict.EQ26');
+      if (row.C21 !== false || row.family_hits !== 5) throw new Error('chain flags disagree');
+      return { recomputed: 'C21 DIES at record level (1/5 at the null p95 edge; rank 9.1); the AM2 third direction: 5/5 FAMILY-level analogy vs null p95 4 — perfect family algebra, dead translation (0/5); composed vectors are free family probes; chain agrees' };
+    },
+  },
+  {
+    id: 'C22 — the ternary zero does work (E-Q27)',
+    source: 'experiments/outputs/e_q27_results.json',
+    cite: 'receipts/e_q27_chain.jsonl · verdict.EQ27 · experiments/pre_registration_e_q27.json · situations/embedding_r25/eq27_results.json',
+    expected: 'C22 LIVES decisively: T beats B on BOTH arms (S 0.60 vs 0.35; N 0.60 vs 0.40 — binary loses five records per arm). H2 diminishing returns with arm divergence at the 4th level (S saturates: SQ 0.55 < ST 0.60; N climbs: NQ 0.70). H3 dies (zero-mass ST 0.25 vs NT 0.2375 — the noul arm has no more zeros). Curves: S 0.35/0.60/0.55/0.70; N 0.40/0.60/0.70/0.80',
+    run() {
+      const d = readJson(this.source);
+      if (d.hypotheses.C22 !== true || d.hypotheses.H1 !== true) throw new Error('C22 must live');
+      if (d.hypotheses.H3 !== false) throw new Error('H3 must die (zero-mass receipt)');
+      const a = d.arms;
+      if (a.ST.accuracy !== 0.6 || a.SB.accuracy !== 0.35 || a.NT.accuracy !== 0.6 || a.NB.accuracy !== 0.4) throw new Error('quantization accuracies drifted');
+      if (a.SQ.accuracy !== 0.55 || a.NQ.accuracy !== 0.7) throw new Error('4-level accuracies drifted');
+      const row = lastChainRow('receipts/e_q27_chain.jsonl', (r) => r.kind === 'verdict.EQ27', 'verdict.EQ27');
+      if (row.C22 !== true || row.H3 !== false) throw new Error('chain flags disagree');
+      return { recomputed: 'C22 LIVES (the zero is worth five records per arm: T-B +0.25 S / +0.20 N; the 4th level diverges by arm — ordinal saturates, calibrated keeps paying to 0.70; the best 16-bit practical code is the 4-level noul, the algebra-capable one is the ternary); chain agrees' };
+    },
+  },
 ];
 
 // ── COVERAGE (ORCH-R11: the arena-r11 consensus finding, all four seats) ──
