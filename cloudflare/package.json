@@ -1,0 +1,14 @@
+{
+  "name": "qthe-cloudflare",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "qthe on Cloudflare — Worker + Durable Object (determinism law), Vectorize (C6 twin index), R2 (C7 receipt chains), Pages (C8 demo mirror). Zero runtime dependencies.",
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev"
+  },
+  "devDependencies": {
+    "wrangler": "^4"
+  }
+}

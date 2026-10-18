@@ -249,3 +249,23 @@ not touch LAYER 2 (the tool explicitly does not test pricing claims) — it is
 the LAYER 1 "same input, same bytes, independent of who computes it" claim,
 receipted by a stranger. Cross-referenced from the README per the fleet
 Reader's Fold: we carry the pointer, not a verdict about the tool.
+
+## LAYER 2 deployment receipts (ORCH-R16, 2026-10-18)
+
+The Cloudflare deployment is live and each claim below is measured by
+`bash cloudflare/live_checks.sh` (fail-closed). Worker:
+`https://qthe-cell.casey-digennaro.workers.dev` — kernel vendored
+byte-identical, provenance `cloudflare/PROVENANCE.txt`.
+
+| id | claim | verdict |
+|---|---|---|
+| C7 | DO-serial ticks preserve the determinism law at the edge | **EARNED (measured live)** — two independent DOs, seed 33001, 50 ticks → identical state hash; in-DO replay agrees; hash stable across save/load. Re-run at seed 777/40 → agrees. ERRATUM 1 (event-in-hash) found by the check itself, fixed, receipted in `cloudflare/src/worker.js`. |
+| C6 | Vectorize twin sidecar serves the wormhole table's pairing | **INFRASTRUCTURE LIVE** — exact lookup (similarity 1.0), 64/64 census; convergence is eventual (~10–20 s observed), DO authoritative. The original *pricing* claim (slot-histogram similarity predicts twin overlap) remains **OPEN** — the sidecar is its substrate, not its proof. |
+| C8 | the A2UI mirror over Pages | **LIVE (static form)** — landing + demo byte-identical over HTTPS (`https://qthe-demo.pages.dev`). The original fan-out pixel-faithfulness claim remains **OPEN**. |
+| — | R2 receipt chains, content-addressed | **EARNED (measured live)** — all 13 sealed chains in `qthe-receipts`; fetched bytes sha256-identical to local (`0ee28675…7455e` for e_q1). |
+| — | the falsifier law at the deploy layer | **EARNED** — two live-check errata (event-in-hash, single-segment keys) found by the checks before any claim was written, fixed, receipted in-code. |
+
+Ops laws banked (see the deployment addendum): the propagation-window law
+(build markers before trust), the local-first wrangler law (`--remote` or
+it didn't happen), the eventual-consistency law (the sidecar converges;
+retry with backoff, never assert immediacy).

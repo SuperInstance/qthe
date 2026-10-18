@@ -180,3 +180,74 @@ demo substrate and the honest note in the README).
 
 All three are OPEN until priced. House law travels: a claim that dies, dies
 cheap and honest, with the receipt kept beside the body.
+
+---
+
+# ADDENDUM — the deployment is LIVE (ORCH-R16, 2026-10-18)
+
+The token arrived; the r15 tokenless design is now a running service.
+Everything below was measured on the live deployment; re-run the battery
+anytime with `bash cloudflare/live_checks.sh` (fail-closed, exit 1 on any
+failure).
+
+## What is running
+
+| piece | URL | what it is |
+|---|---|---|
+| Worker | https://qthe-cell.casey-digennaro.workers.dev | the kernel vendored byte-identical (`cloudflare/PROVENANCE.txt`; sha256 `ef9a3bba…3f091`) |
+| Durable Object | `QtheField` (SQLite class, free tier) | one substrate per DO id; single-threaded per id → ticks apply exactly-once, in order |
+| Vectorize | index `qthe-twins` (64-dim, cosine) | live sidecar of the 64-slot wormhole table, auto-synced after each tick batch |
+| R2 | bucket `qthe-receipts` | all 13 sealed chain files, served content-addressed (`x-qthe-sha256` header) |
+| Pages | https://qthe-demo.pages.dev | the C8 landing + the A2UI demo (byte-identical `public-demo.html`, kernel inlined) |
+
+## The measured results (build r16-fix2)
+
+- **Determinism over HTTP (the old C7): EARNED.** Two independently created
+  DOs, seed 33001, 50 ticks → identical state hash (`390083a9…80f05`).
+  In-DO replay from the stored seed → agree. State hash stable across
+  save/load round-trips. Re-run at seed 777/40 ticks → `753da5a1…`, agree.
+- **R2 receipt integrity: EARNED.** `e_q1_chain.jsonl` and `e_q17_chain.jsonl`
+  fetched over HTTPS are byte-identical to the local sealed files; the
+  response's `x-qthe-sha256` equals the local sha256 (`0ee28675…7455e`,
+  `cb31dfc9…acb7d`).
+- **Twin sidecar: INFRASTRUCTURE LIVE, convergence measured.** `/twins/37`
+  returns the DO's exact pairing ({x:26, y:5, resonance:127}, similarity
+  1.0); the one-hot census finds 64/64 occupied slots. **Finding: the
+  sidecar is eventually consistent** — a fresh upsert can take ~10–20 s to
+  become visible to queries; the DO remains authoritative and the live
+  check retries with backoff. The *pricing* claim (slot-histogram
+  similarity predicting twin overlap — the old C6) remains OPEN; what is
+  live is its lookup substrate.
+- **Pages mirror: LIVE (static form).** Landing + demo over HTTPS,
+  byte-identical. The *old C8* (pixel-faithful A2UI under concurrent
+  fan-out over KV/SSE) remains OPEN — the static mirror is the delivery
+  vehicle, not the fan-out experiment.
+
+## Errata found by the live checks (the falsifier law, pointed at my own deploy)
+
+- **ERRATUM 1 (hash semantics):** the first deploy's state hash included
+  the per-tick twin *events* — real telemetry, but not persisted state;
+  the hash was unstable across save/load. Two DOs agreed while the in-DO
+  replay "disagreed" (the planes were identical). Fix: the hash basis is
+  `stateView()` — persisted state only. Found by `/abtest` on first live
+  run, before any claim was written.
+- **ERRATUM 2 (route shape):** the receipt route matched only
+  single-segment keys, so `receipts/e_q1_chain.jsonl` 404'd. Fix: join
+  all remaining path segments (traversal-guarded). Found by the P5 check.
+- **OPS LAW (propagation window):** a DO deploy is not live the moment
+  `wrangler` says so — the first post-deploy curls were served the OLD
+  code with a straight face. Every response now carries a `build` marker;
+  never trust a post-deploy curl until the marker confirms the new build.
+- **OPS LAW (local-first wrangler):** `wrangler r2 object put` defaults to
+  LOCAL simulation — the first 13 "uploads" landed in `.wrangler/` state.
+  Remote uploads need `--remote`. The receipt: 13 objects in the real
+  bucket, verified by listing + sha256.
+
+## Scope cuts, receipted
+
+- The KV HUD from the r15 design is not built: the DO's `/hash` route
+  serves the HUD line (the tip hash) directly. KV adds nothing until a
+  second consumer needs it.
+- The DO determinism claim covers the kernel path as vendored; the
+  E-Q1-style 40/40 replay battery through the Worker API is the next
+  registered step if the fleet wants the full protocol at the edge.

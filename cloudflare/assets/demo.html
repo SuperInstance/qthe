@@ -1,0 +1,704 @@
+<!doctype html>
+<!-- qthe A2UI live mirror — the SPEC LAYER 1 item 7 telemetry: pixel = cell,
+     6-bit value = intensity, direct buffer-to-canvas, no log files.
+     ZERO dependencies, no build, no CDN. The SAME ../qthe.mjs kernel the
+     tests seal runs here, unmodified, via <script type="module">.
+     NOTE: ES modules need http(s) in some browsers — if file:// refuses,
+     serve this dir:  python3 -m http.server 8080  →  localhost:8080
+     ORCH-9: first-class telemetry added BELOW the sealed HUD contract —
+     channel split (re/im masses), the looking-glass table strip (slot
+     occupancy + resonance heat), and the live wormhole event stream. The
+     HUD line format above is UNCHANGED (demo/smoke pins it). -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- favicon: the Abstain purple, inline — keeps the smoke network log at zero 404s (34-c) -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Crect width='8' height='8' fill='%23a86ae8'/%3E%3C/svg%3E">
+<title>qthe — the Looking Glass, live (single-file public demo)</title>
+<style>
+  :root { color-scheme: dark; }
+  body { margin: 0; background: #0b0b10; color: #c9c9d4;
+         font: 13px/1.45 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+  main { max-width: 640px; margin: 2rem auto; padding: 0 1rem; }
+  h1 { font-size: 15px; font-weight: 600; color: #e8e8f2; margin: 0 0 2px; }
+  h1 span { color: #a86ae8; }                       /* the Abstain purple */
+  p.sub { margin: 0 0 12px; color: #6f6f80; }
+  canvas { display: block; width: 100%; image-rendering: pixelated;
+           border: 1px solid #23232e; background: #0b0b10; }
+  #hud { margin: 8px 0; padding: 6px 8px; background: #12121a;
+         border: 1px solid #23232e; white-space: nowrap; overflow: hidden;
+         text-overflow: ellipsis; }
+  #hud b { color: #7fdc87; font-weight: 600; }      /* the live trace hash */
+  #hud .off { color: #e07a7a; }
+  .row { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; }
+  button { background: #16161f; color: #c9c9d4; border: 1px solid #2c2c3a;
+           padding: 5px 10px; font: inherit; cursor: pointer; }
+  button:hover { border-color: #4a4a5e; color: #ffffff; }
+  button.on { border-color: #a86ae8; color: #d9b8ff; }
+  .legend { margin-top: 10px; color: #6f6f80; }
+  .legend i { font-style: normal; }
+  .g { color: #4fd45f; } .r { color: #e05a5a; } .k { color: #55555f; }
+  .p { color: #b06ae8; }
+  /* ── ORCH-9 telemetry panel ─────────────────────────────────────────── */
+  #tel { margin-top: 12px; display: grid; gap: 8px; }
+  #tel[hidden] { display: none; }
+  .panel { background: #12121a; border: 1px solid #23232e; padding: 8px 10px; }
+  .panel h2 { font-size: 11px; font-weight: 600; color: #6f6f80; margin: 0 0 6px;
+              letter-spacing: .08em; text-transform: uppercase; }
+  .bar { display: grid; grid-template-columns: 7.5em 1fr 6.5em; gap: 8px;
+         align-items: center; margin: 3px 0; color: #9a9aac; }
+  .bar .track { height: 8px; background: #0b0b10; border: 1px solid #23232e; }
+  .bar .fill { height: 100%; width: 0%; }
+  #re-fill { background: #4fd45f; }                  /* the real channel: Attract/Repel mass */
+  #im-fill { background: #b06ae8; }                  /* the imaginary channel: twin resonance */
+  .bar b { color: #c9c9d4; font-weight: 600; text-align: right; }
+  #whstrip { width: 100%; height: 18px; image-rendering: pixelated;
+             border: 1px solid #23232e; background: #0b0b10; display: block; }
+  #wh-cap { margin: 4px 0 0; color: #6f6f80; font-size: 11px; }
+  #evstream { margin: 0; padding: 0; list-style: none; color: #9a9aac;
+              font-size: 12px; min-height: 5.4em; }
+  #evstream li { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  #evstream .t { color: #b06ae8; }
+  #evstream .empty { color: #55555f; }
+</style>
+</head>
+<body>
+<main>
+  <h1>qthe <span>· the Looking Glass, live</span></h1>
+  <p class="sub">one byte = 6-bit amplitude d + 2-bit timbre τ · the same kernel tests/run_tests.mjs seals</p>
+  <canvas id="sub" width="96" height="64"></canvas>
+  <div id="hud">booting…</div>
+  <div class="row">
+    <button id="b-ring">Seed: armor ring</button>
+    <button id="b-rand">Seed: random</button>
+    <button id="b-worms">Seed: twin worms</button>
+    <button id="b-pause">Pause</button>
+    <button id="b-wh" class="on">wormholes ON</button>
+    <button id="b-tel" class="on">telemetry ON</button>
+  </div>
+  <p class="legend">τ=1 <i class="g">Attract ▮ green</i> · τ=2 <i class="r">Repel ▮ red</i> ·
+     τ=0 <i class="k">Ground ▮ gray</i> · τ=3 <i class="p">Abstain ▮ purple</i> —
+     it blinks when the wormhole table answers (twin resonance)</p>
+
+  <div id="tel">
+    <div class="panel" id="p-split">
+      <h2>channel split · per tick</h2>
+      <div class="bar"><span>re · Σ|acc| Moore-8</span><span class="track"><span class="fill" id="re-fill"></span></span><b id="re-val">0</b></div>
+      <div class="bar"><span>im · Σ|term| twins</span><span class="track"><span class="fill" id="im-fill"></span></span><b id="im-val">0</b></div>
+      <div class="bar"><span>im · cumulative mass</span><span class="track"><span class="fill" id="imc-fill" style="background:#7a4fa8"></span></span><b id="imc-val">0</b></div>
+    </div>
+    <div class="panel" id="p-glass">
+      <h2>the looking glass · 64 slots</h2>
+      <canvas id="whstrip" width="64" height="8"></canvas>
+      <p id="wh-cap">slot d=0…63 · brightness = resonance |real_acc|+1 · occupancy <span id="wh-occ">0</span>/64 · max R <span id="wh-max">0</span></p>
+    </div>
+    <div class="panel" id="p-events">
+      <h2>wormhole event stream · last 5 twin resonances</h2>
+      <ul id="evstream"><li class="empty">waiting for the table to answer…</li></ul>
+    </div>
+  </div>
+</main>
+<script type="module">
+/* ── inlined: qthe.mjs (the reference kernel, unmodified) ── */
+// qthe/qthe.mjs — THE QTHE REFERENCE KERNEL (zero dependencies, ESM,
+// integer-exact where the spec says exact).
+//
+// The primitive: one byte, two planes — 6 bits of spatial amplitude `d`,
+// 2 bits of timbre `tau` {Ground, Attract, Repel, Abstain}. Data is geometry,
+// control is physics. Source: SPEC.md (the gifted vision, priced by the
+// house); this file implements LAYER 0 (algebra facts, exhaustively tested
+// by tests/run_tests.mjs) and LAYER 1 (mechanism, determinism-checked).
+//
+// DETERMINISM CONTRACT: no Math.random anywhere in the kernel. mulberry32()
+// lives here as a SEEDED generator for CALLERS (substrate seeding, probes);
+// tick() never draws from it. Same substrate + same opts -> byte-identical
+// state, always (proof by exhaustion of runs: tests G3).
+//
+// INTERPRETATION RECEIPTS (choices the SPEC leaves open, made explicit —
+// each is priced, not LARPed; change one and the tests' pre-registered
+// fixtures must be re-derived):
+//   R1  Edges are TOROIDAL (Moore-8 wraps). Every cell has exactly 8
+//       neighbors, so the update rule is one uniform table — no special case.
+//   R2  Neighbors are read from the PRE-tick grid (synchronous update,
+//       double-buffered). The wormhole table, however, is read LIVE in
+//       row-major cell order: a cell that writes slot s before a same-tick
+//       reader reaches it is heard the same tick. SPEC says the write lands
+//       "for the next tick"; live reads make equal-d twins mutually resonate
+//       from their second co-tick on (G5 pins the exact schedule), which is
+//       the mechanism claim C2 prices. Order is fixed => deterministic.
+//   R3  Abstain cells (tau=3) still accumulate real_acc from their
+//       neighborhood (their resonance = |real_acc| + 1 needs it), and on a
+//       twin hit the imaginary term resonance*sigma is ADDED to the pressure
+//       whose sign moves d. The data rule table (item 5) is untouched — the
+//       imaginary channel enters through the only degree of freedom the byte
+//       has (tau is frozen inside tick, d is bounded). This makes sigma
+//       EMPIRICALLY POTENT: with sigma=log2(3)~1.585 a lone twin (resonance
+//       1) flips exactly one unit of net-negative pressure; the C3 sigma
+//       sweep is a real dynamics sweep, not decoration.
+//   R4  Wormhole WRITES collide last-writer-wins per slot (64 slots, one
+//       occupant each), but live reads (R2) keep same-slot twins mutually
+//       audible. A cell never resonates with its OWN write (guard:
+//       different (x,y) AND resonance != 0).
+//   R5  makeSubstrate/tick carry the grid dimensions, tick counter, the
+//       persistent wormhole table and a self-readback shim as named
+//       properties on the Uint8Array (w, h, ticks, __wormholes, bytes).
+//       `bytes` points at the substrate itself: the field lane's frozen
+//       bytePlane() contract reads sub.bytes. Serialize state with
+//       traceView(), not JSON.stringify (the expandos stay out of it).
+//   R6  CROSS-LANE CONTRACT (frozen by lane 33-b's pre_registration.json
+//       BEFORE this kernel landed — the newcomer fits the earlier record):
+//       seedFn(x, y, i) — x first, index optional third; tick(sub, opts)
+//       MUTATES the substrate in place AND returns it (callers may reassign
+//       or not). Neighbors always come from the pre-tick snapshot, so
+//       in-place update stays synchronous-exact.
+//
+// Stone law: a receipt without a chain is a rumor. Tests seal G1-G6 into
+// tests/receipts.jsonl (stone-v1) with observed numbers; honest FAILs stay.
+
+// ── LAYER 0 · the primitive ────────────────────────────────────────────────
+
+const const TAU = { GROUND: 0, ATTRACT: 1, REPEL: 2, ABSTAIN: 3 };
+const const D_MAX = 63;
+
+// Ψ map (SPEC LAYER 0): {0:0, 1:+1, 2:-1, 3:'i'} — the operator character.
+const const PSI = [0, 1, -1, 'i'];
+const function psi(tau) { return PSI[tau & 3]; }
+
+// pack/unpack bijection: bit 7-6 = tau, bit 5-0 = d. Exact onto {0..255}.
+const function pack(tau, d) { return (((tau & 3) << 6) | (d & D_MAX)) & 0xff; }
+const function unpack(c) { return { tau: (c >> 6) & 3, d: c & D_MAX }; }
+const function tauOf(c) { return (c >> 6) & 3; }
+const function dOf(c) { return c & D_MAX; }
+
+// LAYER 0 item 3 — split-channel vector pass, EXACT integers, no floats:
+//   y_j^R = Σ_{tau=1} d·x_k  −  Σ_{tau=2} d·x_k
+//   y_j^I = Σ_{tau=3} d·x_k
+// Ground (tau=0) contributes to neither channel even when d>0. weights is an
+// array of rows; each row is an array of packed QTHE bytes w_jk; xs are the
+// integer inputs. Returns [{re, im}] per output channel j.
+const function vectorPass(weights, xs) {
+  const out = [];
+  for (let j = 0; j < weights.length; j++) {
+    const row = weights[j];
+    let re = 0, im = 0;
+    for (let k = 0; k < row.length; k++) {
+      const c = row[k] & 0xff;
+      const dv = c & D_MAX, x = xs[k];
+      switch (c >> 6) {
+        case 1: re += dv * x; break;   // Attract: +d·x into the real channel
+        case 2: re -= dv * x; break;   // Repel:   -d·x into the real channel
+        case 3: im += dv * x; break;   // Abstain: +d·x into the imaginary channel
+        default: /* Ground: neither channel */ break;
+      }
+    }
+    out.push({ re, im });
+  }
+  return out;
+}
+
+// ── LAYER 1 · item 4 — the 64-slot wormhole table ──────────────────────────
+
+const const SLOT_COUNT = 64;
+const const DEFAULT_SIGMA = Math.log2(3); // the bridged scale, swept by C3
+
+// Exactly 64 slots. Slot s is empty or {x, y, resonance} — the compile-time
+// blueprint: static allocation, zero runtime discovery (the GraphQL insight,
+// receipted in SPEC.md). sigma is a parameter (default log2(3)).
+const class WormholeTable {
+  constructor(sigma = DEFAULT_SIGMA) {
+    this.sigma = sigma;
+    this.sx = new Int32Array(SLOT_COUNT).fill(-1);
+    this.sy = new Int32Array(SLOT_COUNT).fill(-1);
+    this.sr = new Int32Array(SLOT_COUNT);          // resonance = |real_acc|+1
+    this.occupied = new Uint8Array(SLOT_COUNT);
+    this.totalWrites = 0;                          // cumulative, deterministic
+  }
+  clear() {
+    this.sx.fill(-1); this.sy.fill(-1); this.sr.fill(0);
+    this.occupied.fill(0); this.totalWrites = 0;
+    return this;
+  }
+  read(slot) {
+    if (!(slot >= 0 && slot < SLOT_COUNT) || !this.occupied[slot]) return null;
+    return { x: this.sx[slot], y: this.sy[slot], resonance: this.sr[slot] };
+  }
+  write(slot, x, y, resonance) {
+    if (!(slot >= 0 && slot < SLOT_COUNT)) throw new RangeError('wormhole slot out of range: ' + slot);
+    this.sx[slot] = x; this.sy[slot] = y;
+    this.sr[slot] = resonance; this.occupied[slot] = 1;
+    this.totalWrites++;
+  }
+  occupiedCount() {
+    let n = 0;
+    for (let i = 0; i < SLOT_COUNT; i++) n += this.occupied[i];
+    return n;
+  }
+  // Deterministic JSON-able view for traces (G3/G6 seal this).
+  snapshot() {
+    const slots = new Array(SLOT_COUNT).fill(null);
+    for (let i = 0; i < SLOT_COUNT; i++) {
+      if (this.occupied[i]) slots[i] = { slot: i, x: this.sx[i], y: this.sy[i], resonance: this.sr[i] };
+    }
+    return slots;
+  }
+}
+
+// ── LAYER 1 · item 5 — substrate + Moore-8 tick ────────────────────────────
+
+// Uint8Array of packed cells, row-major, w*h. seedFn(i, x, y) -> byte
+// (usually built on mulberry32 — a seeded CALLER-side generator).
+const function makeSubstrate(w, h, seedFn) {
+  if (!Number.isInteger(w) || w < 1 || !Number.isInteger(h) || h < 1) {
+    throw new RangeError('substrate dimensions must be positive integers');
+  }
+  const cells = new Uint8Array(w * h);
+  let i = 0;
+  for (let y = 0; y < h; y++) {
+    for (let x = 0; x < w; x++, i++) cells[i] = seedFn(x, y, i) & 0xff;
+  }
+  cells.w = w; cells.h = h; cells.ticks = 0; cells.__wormholes = undefined;
+  cells.bytes = cells;   // frozen field-lane bytePlane() contract (R6)
+  return cells;
+}
+
+// THE rule table (item 5), pure and exported so G2 can exhaust it:
+// net-positive pressure -> d toward saturation min(d+1, 63); net-negative
+// -> toward 0; zero -> unchanged. tau NEVER changes here (R3/R4: timbre is
+// written only by injectors, never by tick — this keeps C2 paired arms clean).
+const function nextD(d, pressure) {
+  if (pressure > 0) return d < D_MAX ? d + 1 : D_MAX;
+  if (pressure < 0) return d > 0 ? d - 1 : 0;
+  return d;
+}
+
+// One synchronous Moore-8 tick (toroidal, R1). MUTATES the substrate in
+// place and returns it (R6, the field lane's frozen contract); neighbors are
+// read from a pre-tick snapshot so the update stays synchronous-exact. opts:
+//   wormholes : true (default) — Abstain cells read/write the table
+//               false — the table is never touched (paired-arm OFF arm, G6)
+//   table     : a persistent WormholeTable; default = the substrate's own
+//               lazy table (cells.__wormholes), created on first use
+//   sigma     : override the bridge scale for this tick (C3 sweeps)
+// Returns the SAME substrate, advanced one tick (dims/ticks/table ride along). Wormhole twin hits are emitted as events:
+//   { kind:'twin', x, y, slot, resonance, term }  (term = resonance * sigma)
+const function tick(cells, opts = {}) {
+  const w = cells.w, h = cells.h;
+  if (!(w > 0 && h > 0)) throw new Error('not a substrate — use makeSubstrate()');
+  const wormholes = opts.wormholes !== false;
+  let table = opts.table !== undefined ? opts.table : cells.__wormholes;
+  if (wormholes && !(table instanceof WormholeTable)) {
+    table = new WormholeTable(opts.sigma);          // lazy persistent default
+  }
+  const sigma = opts.sigma !== undefined ? opts.sigma : (table ? table.sigma : DEFAULT_SIGMA);
+  const n = w * h;
+  const snap = cells.__scratch instanceof Uint8Array && cells.__scratch.length === n
+    ? cells.__scratch : (cells.__scratch = new Uint8Array(n));
+  snap.set(cells);                                  // pre-tick neighbor snapshot
+  const events = [];
+
+  for (let y = 0; y < h; y++) {
+    const yUp = (y + h - 1) % h, yDn = (y + 1) % h;
+    for (let x = 0; x < w; x++) {
+      const i = y * w + x;
+      const c = snap[i];
+      const tau = c >> 6, d = c & D_MAX;
+
+      // real accumulator over Moore-8 (pre-tick grid, R2): Attract +d, Repel -d
+      const xL = (x + w - 1) % w, xR = (x + 1) % w;
+      let acc = 0;
+      let nb = snap[yUp * w + xL]; if ((nb >> 6) === 1) acc += nb & D_MAX; else if ((nb >> 6) === 2) acc -= nb & D_MAX;
+      nb = snap[yUp * w + x];      if ((nb >> 6) === 1) acc += nb & D_MAX; else if ((nb >> 6) === 2) acc -= nb & D_MAX;
+      nb = snap[yUp * w + xR];     if ((nb >> 6) === 1) acc += nb & D_MAX; else if ((nb >> 6) === 2) acc -= nb & D_MAX;
+      nb = snap[y * w + xL];       if ((nb >> 6) === 1) acc += nb & D_MAX; else if ((nb >> 6) === 2) acc -= nb & D_MAX;
+      nb = snap[y * w + xR];       if ((nb >> 6) === 1) acc += nb & D_MAX; else if ((nb >> 6) === 2) acc -= nb & D_MAX;
+      nb = snap[yDn * w + xL];     if ((nb >> 6) === 1) acc += nb & D_MAX; else if ((nb >> 6) === 2) acc -= nb & D_MAX;
+      nb = snap[yDn * w + x];      if ((nb >> 6) === 1) acc += nb & D_MAX; else if ((nb >> 6) === 2) acc -= nb & D_MAX;
+      nb = snap[yDn * w + xR];     if ((nb >> 6) === 1) acc += nb & D_MAX; else if ((nb >> 6) === 2) acc -= nb & D_MAX;
+
+      let pressure = acc;
+      if (tau === 3 && wormholes) {
+        const hit = table.read(d);                    // live read (R2)
+        if (hit && hit.resonance !== 0 && (hit.x !== x || hit.y !== y)) {
+          const term = hit.resonance * sigma;         // twin resonance, item 4
+          pressure = acc + term;                      // imaginary pressure (R3)
+          events.push({ kind: 'twin', x, y, slot: d, resonance: hit.resonance, term });
+        }
+        table.write(d, x, y, Math.abs(acc) + 1);      // write for the next tick
+      }
+      cells[i] = (tau << 6) | nextD(d, pressure);   // in place (R6); tau frozen
+    }
+  }
+  cells.ticks = (cells.ticks | 0) + 1;
+  cells.__wormholes = wormholes ? table : cells.__wormholes;
+  cells.lastEvents = events;
+  return cells;
+}
+
+// ── telemetry & seeded randomness (callers only, never tick) ───────────────
+
+// Canonical JSON-able view of substrate + table + this tick's events — the
+// thing G3/G6 hash and the A2UI HUD displays. Cells are copied by value; the
+// expandos (w/h/ticks/bytes/__scratch/__) never enter the view.
+// R7 (found by gate G6 run 1 — the flag leaked into traces): the view records
+// wormhole STATE, not the flag — an EMPTY table is trace-equivalent to
+// wormholes disabled. Without Abstain cells the paired arms are byte-equal.
+const function traceView(cells, events) {
+  const table = cells.__wormholes instanceof WormholeTable ? cells.__wormholes : null;
+  return {
+    w: cells.w, h: cells.h, ticks: cells.ticks | 0,
+    cells: Array.from(cells),
+    wormholes: table && table.occupiedCount() > 0 ? table.snapshot() : null,
+    events: events !== undefined ? events : (cells.lastEvents || []),
+  };
+}
+
+// mulberry32 — SEEDED PRNG for callers (substrate seeding, probes, demo
+// patterns). NEVER called inside tick(); the kernel's determinism does not
+// depend on it. Returns a function in [0, 1).
+const function mulberry32(seed) {
+  let a = seed >>> 0;
+  return function () {
+    a = (a + 0x6d2b79f5) >>> 0;
+    let t = a;
+    t = Math.imul(t ^ (t >>> 15), t | 1);
+    t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
+/* re-export shim for the driver's import shape */
+const __exports = { pack, tauOf, dOf, makeSubstrate, tick, traceView, mulberry32, WormholeTable };
+/* ── inlined: demo/sha256.mjs ── */
+// demo/sha256.mjs — pure-JS SHA-256 for the zero-dependency A2UI mirror
+// (the browser cannot import quilt-stone/stone.mjs: it pulls node:crypto).
+// One algorithm, two substrates: tests/run_tests.mjs gate G0 pins this
+// implementation byte-identical to the stone's sha256Hex on published
+// vectors + kernel fixtures, so the HUD's live trace hash is the SAME hash
+// the receipt chains seal. Zero dependencies; TextEncoder-only (universal
+// in browsers and Node >= 11).
+
+const K = new Uint32Array([
+  0x428a2f98, 0x71374491, 0xb5c0fbcf, 0xe9b5dba5, 0x3956c25b, 0x59f111f1, 0x923f82a4, 0xab1c5ed5,
+  0xd807aa98, 0x12835b01, 0x243185be, 0x550c7dc3, 0x72be5d74, 0x80deb1fe, 0x9bdc06a7, 0xc19bf174,
+  0xe49b69c1, 0xefbe4786, 0x0fc19dc6, 0x240ca1cc, 0x2de92c6f, 0x4a7484aa, 0x5cb0a9dc, 0x76f988da,
+  0x983e5152, 0xa831c66d, 0xb00327c8, 0xbf597fc7, 0xc6e00bf3, 0xd5a79147, 0x06ca6351, 0x14292967,
+  0x27b70a85, 0x2e1b2138, 0x4d2c6dfc, 0x53380d13, 0x650a7354, 0x766a0abb, 0x81c2c92e, 0x92722c85,
+  0xa2bfe8a1, 0xa81a664b, 0xc24b8b70, 0xc76c51a3, 0xd192e819, 0xd6990624, 0xf40e3585, 0x106aa070,
+  0x19a4c116, 0x1e376c08, 0x2748774c, 0x34b0bcb5, 0x391c0cb3, 0x4ed8aa4a, 0x5b9cca4f, 0x682e6ff3,
+  0x748f82ee, 0x78a5636f, 0x84c87814, 0x8cc70208, 0x90befffa, 0xa4506ceb, 0xbef9a3f7, 0xc67178f2,
+]);
+
+function utf8Bytes(str) {
+  if (typeof TextEncoder !== 'undefined') return new TextEncoder().encode(str);
+  const out = [];
+  for (let i = 0; i < str.length; i++) {
+    const cp = str.codePointAt(i);
+    if (cp > 0xffff) i++;
+    if (cp < 0x80) out.push(cp);
+    else if (cp < 0x800) out.push(0xc0 | (cp >> 6), 0x80 | (cp & 63));
+    else if (cp < 0x10000) out.push(0xe0 | (cp >> 12), 0x80 | ((cp >> 6) & 63), 0x80 | (cp & 63));
+    else out.push(0xf0 | (cp >> 18), 0x80 | ((cp >> 12) & 63), 0x80 | ((cp >> 6) & 63), 0x80 | (cp & 63));
+  }
+  return new Uint8Array(out);
+}
+
+const rotr = (x, n) => (x >>> n) | (x << (32 - n));
+
+// sha256 of a byte array -> 64 lowercase hex chars.
+const function sha256Bytes(bytes) {
+  const l = bytes.length;
+  const buf = new Uint8Array((((l + 8) >> 6) + 1) << 6);
+  buf.set(bytes);
+  buf[l] = 0x80;
+  const dv = new DataView(buf.buffer);
+  dv.setUint32(buf.length - 8, l >>> 29);        // message length in bits, big-endian
+  dv.setUint32(buf.length - 4, (l << 3) >>> 0);
+
+  const H = new Uint32Array([0x6a09e667, 0xbb67ae85, 0x3c6ef372, 0xa54ff53a,
+                             0x510e527f, 0x9b05688c, 0x1f83d9ab, 0x5be0cd19]);
+  const w = new Uint32Array(64);
+  for (let off = 0; off < buf.length; off += 64) {
+    for (let i = 0; i < 16; i++) w[i] = dv.getUint32(off + i * 4);
+    for (let i = 16; i < 64; i++) {
+      const s0 = rotr(w[i - 15], 7) ^ rotr(w[i - 15], 18) ^ (w[i - 15] >>> 3);
+      const s1 = rotr(w[i - 2], 17) ^ rotr(w[i - 2], 19) ^ (w[i - 2] >>> 10);
+      w[i] = (w[i - 16] + s0 + w[i - 7] + s1) >>> 0;
+    }
+    let a = H[0], b = H[1], c = H[2], d = H[3], e = H[4], f = H[5], g = H[6], h = H[7];
+    for (let i = 0; i < 64; i++) {
+      const S1 = rotr(e, 6) ^ rotr(e, 11) ^ rotr(e, 25);
+      const ch = (e & f) ^ (~e & g);
+      const t1 = (h + S1 + ch + K[i] + w[i]) >>> 0;
+      const S0 = rotr(a, 2) ^ rotr(a, 13) ^ rotr(a, 22);
+      const mj = (a & b) ^ (a & c) ^ (b & c);
+      const t2 = (S0 + mj) >>> 0;
+      h = g; g = f; f = e; e = (d + t1) >>> 0;
+      d = c; c = b; b = a; a = (t1 + t2) >>> 0;
+    }
+    H[0] = (H[0] + a) >>> 0; H[1] = (H[1] + b) >>> 0; H[2] = (H[2] + c) >>> 0; H[3] = (H[3] + d) >>> 0;
+    H[4] = (H[4] + e) >>> 0; H[5] = (H[5] + f) >>> 0; H[6] = (H[6] + g) >>> 0; H[7] = (H[7] + h) >>> 0;
+  }
+  let hex = '';
+  for (let i = 0; i < 8; i++) hex += H[i].toString(16).padStart(8, '0');
+  return hex;
+}
+
+// sha256 of a UTF-8 string -> 64 lowercase hex chars.
+const function sha256Hex(str) {
+  return sha256Bytes(utf8Bytes(str));
+}
+
+/* ── inlined: demo/a2ui.mjs (the mirror driver, unmodified) ── */
+// demo/a2ui.mjs — the A2UI live mirror driver (zero dependencies).
+// Runs the SAME ../qthe.mjs kernel the tests seal: one tick per frame,
+// pixel = cell, direct buffer-to-canvas (SPEC item 7). The HUD trace hash is
+// demo/sha256.mjs — the implementation tests/run_tests.mjs G0 pins identical
+// to the stone's sha256Hex, so what you see live is receipt-grade hashing.
+//
+// ORCH-9 — FIRST-CLASS TELEMETRY (below the sealed HUD contract, which is
+// byte-identical to the pre-telemetry format the smoke suite pins):
+//   · channel split: re mass = Σ|acc| over Moore-8 (READ-ONLY re-derivation
+//     of the SPEC L1 s5 accumulator for display — the kernel stays the only
+//     writer); im mass = Σ|term| over this tick's twin events; im cumulative.
+//     Floats are DISPLAY-ONLY (strings, never hashed — house law).
+//   · the looking glass: the 64-slot table strip — slot d on x, resonance
+//     |real_acc|+1 as brightness (log-scaled), the table's live census.
+//   · event stream: the last 5 twin resonances verbatim.
+
+
+
+const W = 96, H = 64;
+const TAU_GROUND = 0, TAU_A = 1, TAU_R = 2, TAU_I = 3;
+
+const canvas = document.getElementById('sub');
+const ctx = canvas.getContext('2d');
+const img = ctx.createImageData(W, H);            // direct buffer, one px per cell
+const hud = document.getElementById('hud');
+
+// telemetry handles (all optional-safe: the mirror still runs if absent)
+const tel = {
+  panel: document.getElementById('tel'),
+  reFill: document.getElementById('re-fill'), reVal: document.getElementById('re-val'),
+  imFill: document.getElementById('im-fill'), imVal: document.getElementById('im-val'),
+  imcFill: document.getElementById('imc-fill'), imcVal: document.getElementById('imc-val'),
+  strip: document.getElementById('whstrip'),
+  whOcc: document.getElementById('wh-occ'), whMax: document.getElementById('wh-max'),
+  evstream: document.getElementById('evstream'),
+};
+const stripCtx = tel.strip ? tel.strip.getContext('2d') : null;
+const stripImg = stripCtx ? stripCtx.createImageData(64, 8) : null;
+let telemetryOn = true, imCumulative = 0;
+const recentEvents = [];
+
+let sub, table, wormholes, paused, flash, twinsLast;
+const frameStats = { ticks: 0 };
+
+// ── seed patterns (deterministic: mulberry32 from the kernel, never tick) ──
+const seeds = {
+  // C5's armor-ring scenario: an Attract ring (the armor), Ground keep, and
+  // two Abstain keepers whose wormhole link spans the ring's interior.
+  ring() {
+    const sub = makeSubstrate(W, H, (x, y) => {
+      const dx = x - W / 2, dy = y - H / 2, r = Math.max(Math.abs(dx), Math.abs(dy));
+      if (r === 14) return pack(TAU_A, 50);                 // the armor ring
+      if (r === 15) return pack(TAU_R, 30);                 // inversion skin
+      if (r < 14 && (x === 40 || x === 56) && (y === 22 || y === 42))
+        return pack(TAU_I, 40);                             // the keepers (inside the ring)
+      return pack(TAU_GROUND, 8);                           // baseline ground
+    });
+    return sub;
+  },
+  rand() {
+    const rng = mulberry32(20260927);
+    return makeSubstrate(W, H, () => pack(Math.floor(rng() * 4), Math.floor(rng() * 64)));
+  },
+  // C2's planted twins: two Abstain worms with equal d, far apart — the
+  // wormhole table is their only bridge (they never touch neighborhoods).
+  worms() {
+    const rng = mulberry32(33);
+    return makeSubstrate(W, H, (x, y) => {
+      const onWorm = (y === 12 && x >= 8 && x < 30) || (y === 50 && x >= 62 && x < 84);
+      if (onWorm) return pack(TAU_I, 40);
+      if (rng() < 0.02) return pack(rng() < 0.5 ? TAU_A : TAU_R, Math.floor(rng() * 64)); // weather
+      return pack(TAU_GROUND, 0);
+    });
+  },
+};
+
+function seed(name) {
+  sub = seeds[name]();
+  table = new WormholeTable();          // σ = log2(3), swept by the field lane
+  wormholes = wormholes !== false;      // the toggle survives reseeding
+  flash = new Float32Array(W * H);
+  twinsLast = 0;
+  frameStats.ticks = 0;
+  imCumulative = 0;
+  recentEvents.length = 0;
+  renderTelemetry(0, 0);                // zero the panels on reseed
+  render();                              // first paint before the loop catches up
+}
+
+// ── A2UI mapping: τ → color plane, d → intensity, twin hit → blink ────────
+function render() {
+  const px = img.data;
+  for (let i = 0; i < W * H; i++) {
+    const c = sub[i], t = tauOf(c), d = dOf(c), v = Math.round(255 * d / 63);
+    let r, g, b;
+    if (t === TAU_A)      { r = 0;        g = 40 + v;    b = 0; }        // green
+    else if (t === TAU_R) { r = 40 + v;   g = 0;         b = 0; }        // red
+    else if (t === TAU_I) {                                     // purple (+blink)
+      const f = flash[i];
+      r = Math.min(255, 90 + v * 0.6 + f * 200);
+      g = Math.round(f * 190);
+      b = Math.min(255, 140 + v * 0.6 + f * 115);
+    } else                { r = 26;       g = 26;        b = 32; }       // ground gray
+    const o = i * 4;
+    px[o] = r; px[o + 1] = g; px[o + 2] = b; px[o + 3] = 255;
+  }
+  ctx.putImageData(img, 0, 0);
+}
+
+// ── HUD: tick count + trace sha256 — determinism you can watch ────────────
+function hudLine() {
+  const sha = sha256Bytes(sub);         // hashes ONLY the byte plane
+  const occ = table.occupiedCount();
+  const whState = wormholes
+    ? `wormholes <b style="color:#d9b8ff">ON</b> slots ${occ}/64`
+    : 'wormholes <span class="off">OFF</span> (paired-arm view: no Looking Glass)';
+  hud.innerHTML = `tick ${String(frameStats.ticks).padStart(6, ' ')} · sha256 <b>${sha.slice(0, 16)}…</b>` +
+    ` · twins last tick ${twinsLast} · ${whState}` +
+    ` · full: <span style="color:#4a4a5e">${sha}</span>`;
+}
+
+// ── ORCH-9: telemetry renderers ───────────────────────────────────────────
+// Read-only re-derivation of the SPEC L1 s5 accumulator (display only).
+function reMass() {
+  let sum = 0;
+  for (let y = 0; y < H; y++) {
+    const yUp = (y + H - 1) % H, yDn = (y + 1) % H;
+    for (let x = 0; x < W; x++) {
+      const xL = (x + W - 1) % W, xR = (x + 1) % W;
+      let acc = 0;
+      const nb = [yUp * W + xL, yUp * W + x, yUp * W + xR, y * W + xL,
+                  y * W + xR, yDn * W + xL, yDn * W + x, yDn * W + xR];
+      for (const j of nb) {
+        const t = sub[j] >> 6;
+        if (t === TAU_A) acc += sub[j] & 63;
+        else if (t === TAU_R) acc -= sub[j] & 63;
+      }
+      sum += acc < 0 ? -acc : acc;
+    }
+  }
+  return sum;
+}
+
+function setBar(fill, val, v) {
+  if (!fill) return;
+  fill.style.width = Math.min(100, v).toFixed(2) + '%';
+  if (val) val.textContent = formatNum(v);
+}
+function formatNum(v) {
+  return v >= 1000 ? Math.round(v).toLocaleString('en-US')
+    : v >= 100 ? v.toFixed(0) : v.toFixed(2);
+}
+
+function renderTelemetry(reMassNow, imMassNow) {
+  if (!telemetryOn || !tel.panel) return;
+  // channel split, normalized against each other + a soft 99th-percentile cap
+  const scale = Math.max(reMassNow, imMassNow, 1);
+  setBar(tel.reFill, tel.reVal, (reMassNow / scale) * 100);
+  setBar(tel.imFill, tel.imVal, (imMassNow / scale) * 100);
+  setBar(tel.imcFill, tel.imcVal, Math.min(100, imCumulative / 50)); // 50 units = full bar
+  if (tel.imcVal) tel.imcVal.textContent = formatNum(imCumulative);
+  // the looking glass strip: 64 slots, brightness = log2(1+resonance)
+  if (stripCtx && stripImg) {
+    const px = stripImg.data;
+    let occ = 0, maxR = 0;
+    for (let s = 0; s < 64; s++) {
+      const hit = table.read(s);                    // read() is the public door
+      const res = hit ? hit.resonance : 0;
+      const o = s * 8 * 4;                     // 8 rows tall
+      for (let row = 0; row < 8; row++) {
+        const q = o + row * 4;
+        if (res > 0) {
+          occ++; if (row === 0) maxR = Math.max(maxR, res);
+          const b = Math.min(255, Math.round(255 * Math.log2(1 + res) / 12));
+          px[q] = Math.round(b * 0.66); px[q + 1] = b; px[q + 2] = Math.round(b * 0.92); px[q + 3] = 255;
+        } else { px[q] = 14; px[q + 1] = 14; px[q + 2] = 20; px[q + 3] = 255; }
+      }
+    }
+    stripCtx.putImageData(stripImg, 0, 0);
+    if (tel.whOcc) tel.whOcc.textContent = occ / 8;
+    if (tel.whMax) tel.whMax.textContent = maxR;
+  }
+  // event stream (last 5)
+  if (tel.evstream) {
+    if (recentEvents.length === 0) {
+      tel.evstream.innerHTML = '<li class="empty">waiting for the table to answer…</li>';
+    } else {
+      tel.evstream.innerHTML = recentEvents.slice(-5).map((e) =>
+        `<li><span class="t">t${String(e.t).padStart(5, '0')}</span> (${e.x},${e.y}) slot=${e.slot} res=${e.resonance} → term ${e.term.toFixed(3)}</li>`).join('');
+    }
+  }
+}
+
+// ── the loop: one kernel tick per animation frame (~60 ticks/s) ───────────
+function frame() {
+  if (!paused) {
+    const reNow = telemetryOn ? reMass() : 0;    // pre-tick plane = what tick() reads
+    const before = table.totalWrites;
+    tick(sub, { wormholes, table });
+    const ev = sub.lastEvents;
+    twinsLast = ev.length;
+    let imNow = 0;
+    for (const e of ev) {
+      flash[e.y * W + e.x] = 1;                 // blink the receivers
+      imNow += Math.abs(e.term);
+      imCumulative += e.term;
+      recentEvents.push({ t: sub.ticks, x: e.x, y: e.y, slot: e.slot, resonance: e.resonance, term: e.term });
+      if (recentEvents.length > 32) recentEvents.shift();
+    }
+    if (wormholes && table.totalWrites > before) {
+      for (let s = 0; s < 64; s++) {
+        const hit = table.read(s);                       // writers blink fainter
+        if (hit) flash[hit.y * W + hit.x] = Math.max(flash[hit.y * W + hit.x], 0.35);
+      }
+    }
+    for (let i = 0; i < flash.length; i++) flash[i] *= 0.82;
+    frameStats.ticks = sub.ticks;
+    render();
+    hudLine();
+    renderTelemetry(reNow, imNow);
+  }
+  requestAnimationFrame(frame);
+}
+
+// ── controls ──────────────────────────────────────────────────────────────
+const bPause = document.getElementById('b-pause');
+const bWh = document.getElementById('b-wh');
+document.getElementById('b-ring').onclick = () => seed('ring');
+document.getElementById('b-rand').onclick = () => seed('rand');
+document.getElementById('b-worms').onclick = () => seed('worms');
+bPause.onclick = () => { paused = !paused; bPause.textContent = paused ? 'Run' : 'Pause'; };
+bWh.onclick = () => {
+  wormholes = !wormholes;
+  bWh.textContent = wormholes ? 'wormholes ON' : 'wormholes OFF';
+  bWh.classList.toggle('on', wormholes);
+  hudLine();                                            // trace hash unchanged: the toggle is telemetry-free until a slot moves
+};
+const bTel = document.getElementById('b-tel');
+if (bTel) bTel.onclick = () => {
+  telemetryOn = !telemetryOn;
+  bTel.textContent = telemetryOn ? 'telemetry ON' : 'telemetry OFF';
+  bTel.classList.toggle('on', telemetryOn);
+  if (tel.panel) tel.panel.hidden = !telemetryOn;
+};
+
+seed('ring');
+paused = false;
+requestAnimationFrame(frame);
+
+</script>
+</body>
+</html>

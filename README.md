@@ -88,6 +88,43 @@ verified against the repository before it counts — the house law is
   [the fourth state](https://github.com/SuperInstance/AI-Writings/blob/main/POETRY/the-fourth-state.md)
   + [the worms turn on](https://github.com/SuperInstance/AI-Writings/blob/main/short-stories/the-worms-turn-on.md).
 
+## The live round (r16 — deployed)
+
+The Cloudflare token arrived and the r15 design is now a **running service**
+(worker: `https://qthe-cell.casey-digennaro.workers.dev`, pages:
+`https://qthe-demo.pages.dev`; re-run the battery with
+`bash cloudflare/live_checks.sh` — fail-closed):
+
+- **The determinism law is now true over HTTP.** A Durable Object per field
+  (single-threaded per id → ticks exactly-once, in order): two independently
+  created DOs at seed 33001/50 ticks produce the identical state hash; the
+  in-DO replay from the stored seed agrees; the hash is stable across
+  save/load. Kernel vendored byte-identical (`cloudflare/PROVENANCE.txt`).
+- **C6/C7/C8, honestly split**: the old C7 (DO-serial determinism at the
+  edge) **EARNED by measurement**; the R2 receipt chains **EARNED**
+  (13/13 sealed chains, fetched bytes sha256-identical); the Vectorize twin
+  sidecar **LIVE as infrastructure** (exact lookups, similarity 1.0, 64/64
+  census — convergence is eventual, ~10–20 s, DO authoritative) with its
+  original pricing claim still OPEN; the Pages mirror **LIVE** (static
+  form) with the fan-out claim still OPEN — [docs/CLAIM-VERDICTS.md](docs/CLAIM-VERDICTS.md).
+- **The falsifier law, pointed at the deploy itself**: two live-check
+  errata found before any claim was written (the state hash briefly
+  included non-persisted telemetry; the receipt route briefly matched only
+  single-segment keys) — both fixed, receipted in-code; two ops laws banked
+  (the propagation-window law: never trust a post-deploy curl until a build
+  marker confirms the new code; the local-first wrangler law: `--remote` or
+  it didn't happen).
+- **Three more creative works** in the fleet's totem forest, three genres
+  maximally distant from the r15 pair, all bench-reviewed AS-SAID with an
+  amendment log:
+  [E22 — the smallest working animal](https://github.com/SuperInstance/AI-Writings/blob/main/SIT-COM_THE_WORKING_ANIMALS/E22_THE_SMALLEST_WORKING_ANIMAL.md)
+  (the working animals hire a 249-line cell with four states),
+  [four seats at the tavern](https://github.com/SuperInstance/AI-Writings/blob/main/MODEL_PORTRAITS/four-seats-at-the-tavern.md)
+  (this bench, drawn only from receipts), and
+  [the-ternary-crew shanty](https://github.com/SuperInstance/AI-Writings/tree/main/radio-theater/compass-head-radio-hour/the-ternary-crew)
+  (*heave the claim, boys* — the round cycle as a hauling song).
+  Round spend: ~$0.004 (3 opinion calls), all other lanes $0 (free tier).
+
 ## Documentation
 
 Wave-69 docs layer (added; nothing above was changed). Route by audience:

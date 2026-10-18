@@ -1,0 +1,68 @@
+<!doctype html>
+<!-- qthe on Cloudflare — the C8 Pages mirror (ORCH-R16).
+     Static, zero-dependency, no build. The live Worker is one click away;
+     every number on this page was measured live on 2026-10-18 and is
+     re-derivable from the /abtest, /twins and /receipt routes below. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>qthe on Cloudflare</title>
+<style>
+  body{background:#0a0a0f;color:#e8e0d0;font-family:Georgia,serif;max-width:820px;margin:0 auto;padding:40px 20px;line-height:1.65}
+  h1{color:#44cc88;font-weight:normal} h2{color:#8ab4f8;font-weight:normal;margin-top:2em}
+  a{color:#8ab4f8} code{color:#f0c674;font-size:.92em}
+  table{border-collapse:collapse;width:100%;margin:1em 0}
+  td,th{border:1px solid #22222f;padding:7px 10px;text-align:left;font-size:.95em}
+  th{color:#999;font-weight:normal}
+  .ok{color:#44cc88} .mono{font-family:ui-monospace,monospace;font-size:.85em;color:#999}
+  .note{color:#999;font-style:italic}
+  ul{padding-left:1.2em}
+</style>
+</head>
+<body>
+<h1>qthe on Cloudflare</h1>
+<p class="note">The ternary-cell kernel, deployed. LAYER 2 claims, each measured live on 2026-10-18 — the receipts are the routes.</p>
+
+<h2>The live service</h2>
+<p>Worker: <a href="https://qthe-cell.casey-digennaro.workers.dev/"><code>qthe-cell.casey-digennaro.workers.dev</code></a> — the kernel vendored byte-identical (see the repo's <code>cloudflare/PROVENANCE.txt</code>), running as:</p>
+<ul>
+  <li>a <b>Durable Object</b> per field — single-threaded per id, so ticks apply exactly-once, in order. The determinism law gets a runtime.</li>
+  <li>a <b>Vectorize</b> sidecar of the 64-slot wormhole table (claim C6),</li>
+  <li>an <b>R2</b> bucket holding the sealed receipt chains, content-addressed (claim C7),</li>
+  <li>this <b>Pages</b> mirror (claim C8).</li>
+</ul>
+
+<h2>The live checks (2026-10-18, build r16-fix2)</h2>
+<table>
+  <tr><th>check</th><th>what was measured</th><th>result</th></tr>
+  <tr><td>determinism, cross-DO</td><td>two independently created fields, seed 33001, 50 ticks each</td><td class="ok">identical state hash <span class="mono">390083a9…80f05</span></td></tr>
+  <tr><td>determinism, in-DO replay</td><td><code>/field/epsilon/abtest</code> — replay the whole history from the stored seed</td><td class="ok">live ≡ replay</td></tr>
+  <tr><td>hash stability across save/load</td><td>the state hash before and after a DO storage round-trip</td><td class="ok">stable (after ERRATUM 1)</td></tr>
+  <tr><td>twin lookup (C6)</td><td><code>/twins/37</code> vs the DO's live table</td><td class="ok">{x:26, y:5, resonance:127} — exact, similarity 1.0</td></tr>
+  <tr><td>twin census</td><td>one-hot sweep over all 64 slots</td><td class="ok">64/64 slots synced</td></tr>
+  <tr><td>receipt integrity (C7)</td><td>fetch <code>e_q1_chain.jsonl</code> and <code>e_q17_chain.jsonl</code> from R2; sha256 vs local sealed file</td><td class="ok">byte-identical, sha256 match</td></tr>
+</ul>
+
+<h2>Errata found by the checks themselves</h2>
+<p>Two, both found live before any claim was written (the falsifier law, pointed at my own deployment):</p>
+<ul>
+  <li><b>ERRATUM 1</b> — the first deploy's state hash included the per-tick twin <i>events</i>, which are real telemetry but do not survive a save/load round-trip; the hash was not stable. Fixed: the hash basis is the persisted state only (cells, table, ticks).</li>
+  <li><b>ERRATUM 2</b> — the receipt route matched only single-segment keys, so <code>receipts/e_q1_chain.jsonl</code> 404'd. Fixed: all remaining segments join into the key.</li>
+</ul>
+<p class="note">Ops law banked: after a DO deploy, never trust a curl until a build marker in the response confirms the new code — the propagation window will happily serve you the old version with a straight face.</p>
+
+<h2>Poke it</h2>
+<ul>
+  <li><a href="https://qthe-cell.casey-digennaro.workers.dev/field/epsilon/abtest"><code>GET /field/epsilon/abtest</code></a> — the determinism law, self-verifying</li>
+  <li><a href="https://qthe-cell.casey-digennaro.workers.dev/twins/37"><code>GET /twins/37</code></a> — the wormhole twin sidecar</li>
+  <li><a href="https://qthe-cell.casey-digennaro.workers.dev/receipts"><code>GET /receipts</code></a> — the sealed chains in R2</li>
+  <li><a href="https://qthe-cell.casey-digennaro.workers.dev/psi/3"><code>GET /psi/3</code></a> — Abstain, the honest null</li>
+  <li><a href="./demo.html">the A2UI live demo</a> — the field, the HUD, the moiré worms (kernel inlined, zero dependencies)</li>
+</ul>
+
+<h2>The law</h2>
+<p>Same substrate + same tick sequence → byte-identical state, always — now true over HTTP, from a Durable Object, on the free tier, with the receipts one click away.</p>
+<p class="note">From the qthe orchestrator (Z.ai), erised fleet, round 16. Everything here is reproducible: the repo's <code>cloudflare/</code> directory deploys exactly this service.</p>
+</body>
+</html>

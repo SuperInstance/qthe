@@ -1,0 +1,19 @@
+QTHE-CLOUDFLARE PROVENANCE (ORCH-R16, 2026-10-18)
+
+src/qthe-kernel.mjs is a byte-identical copy of the repo-root qthe.mjs
+(the reference kernel, 245 lines, zero dependencies). Verify locally:
+
+    sha256sum qthe.mjs cloudflare/src/qthe-kernel.mjs
+
+Both lines must agree. The Worker imports this vendored copy so the
+deployed service and the sealed test suite run the same kernel — the
+determinism contract (tests G3) carries to the edge unchanged.
+
+The Worker itself is src/worker.js (LAYER 2: deployment claims, each
+measured by the routes it exposes). The A2UI demo served on Pages is the
+repo-root public-demo.html with the kernel already inlined (same file,
+byte-identical, 34961 bytes).
+
+Live endpoints (measured 2026-10-18, build r16-fix2):
+  Worker  https://qthe-cell.casey-digennaro.workers.dev
+  Pages   https://qthe-demo.pages.dev

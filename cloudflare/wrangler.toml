@@ -1,0 +1,33 @@
+# qthe-cell — the qthe kernel live on Cloudflare
+# See docs/CLOUDFLARE-DEPLOYMENT.md for the design; PROVENANCE.txt for the
+# kernel's byte-identity receipt. LAYER 2: every claim here is measured by
+# the /abtest, /twins/:slot and /receipt/:key routes.
+
+name = "qthe-cell"
+main = "src/worker.js"
+compatibility_date = "2026-10-01"
+account_id = "049ff5e84ecf636b53b162cbb580aae6"
+
+# The determinism law at runtime: one substrate per DO id, single-threaded,
+# ticks applied exactly-once in order.
+[[durable_objects.bindings]]
+name = "QTHE_FIELD"
+class_name = "QtheField"
+
+# Free-tier-compatible storage class (SQLite-backed DO).
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["QtheField"]
+
+# C6 — the wormhole twin sidecar.
+[[vectorize]]
+binding = "QTHE_TWINS"
+index_name = "qthe-twins"
+
+# C7 — the sealed receipt chains, content-addressed.
+[[r2_buckets]]
+binding = "QTHE_RECEIPTS"
+bucket_name = "qthe-receipts"
+
+[observability]
+enabled = true

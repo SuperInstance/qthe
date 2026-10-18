@@ -168,3 +168,15 @@ ideas were creative but 1 of 2 was factually wrong (proposed a "23-cell
 Chebyshev within sight range" control — Moore-8 sight is 1 cell). Creative
 expansion ≠ factual grounding; verify before adopting. Receipt:
 `situations/creative_r15/opinions_r15.jsonl`.
+
+---
+
+## ORCH-R16 additions (the propagation-window law + bench convergence)
+
+| law | receipt |
+|---|---|
+| **Propagation-window law (Cloudflare DO deploys)**: `wrangler deploy` returning "Deployed" does not mean the next curl sees the new code — post-deploy requests can be served the OLD Worker version (observed: a redeploy whose fix provably did not apply until ~seconds later). Bank a `build` marker in every response BEFORE you need it, and never trust a post-deploy curl until the marker confirms the new build. | r16 ERRATUM 1 verification chase (`cloudflare/src/worker.js` BUILD marker; the c6b12245/390083a9 hash forensics) |
+| **Local-first wrangler law**: `wrangler r2 object put` defaults to LOCAL simulation ("Resource location: local") — the first 13 "uploads" landed in `.wrangler/` state. Remote operations need `--remote`; verify with a listing + sha256 before claiming anything was stored. | r16 R2 upload log (13 local ghosts, then 13 remote, verified) |
+| **Eventual-consistency law (Vectorize sidecar)**: a fresh upsert can take ~10–20 s to become visible to queries. The source of truth (the DO) stays authoritative; sidecar comparisons must retry with backoff, never assert immediacy. | r16 live_checks.sh C6 retry loop (first run FAIL, settle run exact match) |
+| **Bench convergence pattern, 3 rounds stable**: the devil's advocate over-attacks (r16: 3 declines-on-facts in one pass), the line critic locates the precise wounds (4 of 10 amendments from a 341-token pass), the landing judge catches canon violations by simulating the stranger. The seats cover each other's blind spots — which is the bench's whole design, enacted. | `situations/creative_r16/amendments.md` (r14 seeds, r15 pair, r16 trio) |
+| **Hash-basis law (state vs telemetry)**: a state hash must cover persisted state only. Hashing transient telemetry (per-tick events) that doesn't survive a save/load round-trip produces hashes that "disagree" while the planes are identical — two DOs agreed while the in-DO replay failed, which is the fingerprint. | r16 ERRATUM 1, found live by /abtest on first deploy |
