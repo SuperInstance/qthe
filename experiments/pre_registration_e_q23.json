@@ -1,0 +1,47 @@
+{
+ "law": "REGISTRATION of E-Q23 — occlusion gradients: saliency for the question-map embedder (ORCH-R24 lane T15-c). The 8-axis vector is a function of the record text; occluding one span at a time and measuring the axis deltas yields a SALIENCY MAP — where does the embedder read? The r23 ideas battery rated this the top-novelty candidate (2.78/2.53, its doubted axis was feasibility — this lane prices the doubt). The jev-lattice bridge: their fragility formalism (gates within 0.02 of the bar flip 50% on re-ask) motivates the stability question — does saliency CONCENTRATION predict re-embed stability? Folded secondary lane D1: the jev-latest vs jev-preview (1.13.0 vs 1.14.0) embedding-drift receipt (their R5-E: 4.7-6.2% of verdicts move on upgrade — our question: how far do the VECTORS move, and on which axes). Committed BEFORE ANY EMBED CALL.",
+ "task_id": "ORCH-R24/T15-c",
+ "agent": "qthe orchestrator (Z.ai), erised fleet line",
+ "wave": "ORCH-R24",
+ "repo": "SuperInstance/qthe",
+ "repo_at_registration": "e2a0d8e",
+ "provenance_of_the_question": "Operator dispatch r24 ('go a lot deeper… try this in many more novel ways') — occlusion gradients were the r23 ideas battery's registered r24 candidate. The jev-lattice recon (R24-RECON-LATTICE) supplied both the ground-truth motivation (fragility bands predict flips) and the drift lane (their model-pinning finding R5-E). No prior art found in the typesafe playground register for typed-map-as-readout-function saliency.",
+ "design_frozen": {
+  "subset": "8 records = the FIRST and THIRD by id order within each family: N1, N3, P1, P3, Q1, Q3, A1, A3. Rule frozen — no cherry-pick.",
+  "span_split": "Deterministic splitter, sealed BEFORE calls: split each record's text on sentence boundaries ('.' followed by space-or-end), then merge any span shorter than 30 chars into the PREVIOUS span (a leading short span merges FORWARD). The split result (spans per record) is hashed and sealed pre-call (F2).",
+  "calls": "Per record: 1 FULL re-embed (fresh baseline v_full) + 1 call per span with that span replaced by the ellipsis token '[…]' (state prefix and question map identical to E-Q21's score arm — the incumbent representation). Estimated 8 x (1 + ~6) + 8 = ~64 calls, jev-latest, batched 8 questions per call. PLUS lane D1: the same 8 records re-embedded with model=jev-preview (8 calls, score arm) for the version-drift receipt. Total ~72 calls.",
+  "saliency": "sal(record, span, axis) = |v_axis(full) - v_axis(occluded)|, normalized per record by the max over (span, axis).",
+  "metrics": "M1 concentration: per record, normalized entropy of the span-mass distribution (sum sal over axes -> distribution over spans -> H / H_max); M2 axis-specificity: fraction of axis PAIRS within a record whose top-saliency span differs; M3 family signature: mean within-family vs cross-family Spearman correlation of flattened saliency profiles; M4 misfile bridge: E-Q21's jev misfiled records (from the sealed e_q21_results.json misses) vs their saliency entropy (small-n directional receipt); M5 stability bridge: per-record max axis delta between v_full (fresh) and the E-Q21 sealed vector, vs saliency entropy — does concentration predict stability (the lattice bridge, small-n honest); M6/D1 drift: per-axis mean |jev-preview - jev-latest| over the 8 records — the version-drift profile against C15's divergence profile (P8_exact, P3_quantum predicted maximal).",
+  "floors_note": "The occlusion DELTAS are the object of study; the absolute v_full values only anchor them (a v_full that differs from E-Q21's sealed vector is EXPECTED sampling wobble and is itself measured as M5)."
+ },
+ "floors": {
+  "F1": "corpus.json sha equal to the sha sealed in the e_q21 chain rules row",
+  "F2": "span split sealed pre-call: the splitter is deterministic, its output hashed into the results file, and the hash was committed before the first occlusion call",
+  "F3": "all occlusion rows complete: every (record, span) pair has a row with 8 score answers",
+  "F4": "saliency recomputable from sealed rows by an independent recompute",
+  "F5": "all 8 full re-embed rows present and complete",
+  "F6": "all 8 jev-preview drift rows present and complete (model_served must attribute jev-1.14.0)"
+ },
+ "hypotheses": {
+  "H1_concentration": "mean normalized span entropy < 0.85 (the readout is concentrated, not flat)",
+  "H2_axis_specificity": "mean fraction of axis pairs peaking on different spans >= 0.50 (different axes read different places)",
+  "H3_family_signature": "within-family saliency correlation > cross-family (the readout is family-structured)",
+  "H4_misfile_bridge": "records jev misfiled in E-Q21 have HIGHER saliency entropy than correctly-filed ones (directional, small-n)",
+  "H5_stability_bridge": "saliency entropy correlates positively with re-embed delta (concentrated implies stable — the lattice fragility bridge, directional, small-n)",
+  "H6_drift": "jev-preview drift is axis-structured (max/min axis mean drift >= 2x), with P8_exact or P3_quantum maximal (C15's divergent axes)",
+  "C18": "the question map yields occlusion saliency — LIVES iff H1 AND H2",
+  "C19": "saliency structure carries family and stability signal — LIVES iff H3 AND the H5 direction holds (H4 directional receipt either way)"
+ },
+ "predictions": {
+  "P1": "mean span entropy in [0.60, 0.85] — concentrated but not single-span",
+  "P2": "axis-specificity in [0.50, 0.80]",
+  "P3": "within-family saliency correlation exceeds cross-family by >= 0.10",
+  "P4": "the misfiled records (per E-Q21's sealed misses) are the higher-entropy ones",
+  "P5": "the stability bridge holds directionally (Spearman > 0 on 8 points; honest small-n — a null here is informative, not fatal)",
+  "P6": "drift profile peaks on P8_exact or P3_quantum and the max/min ratio >= 2"
+ },
+ "falsifier": "ANY of F1-F6 breached; spans edited after the split seal; a saliency number not recomputable from sealed rows; the misfile list taken from anywhere but the sealed e_q21_results.json; the drift lane attributed to the wrong served model.",
+ "budget": "~72 typesafe calls (~$0.02 ceiling) + $0.00 moth. Part of the round-level $0.10 LLM budget registered in the r24 registration commit.",
+ "registered_before_run": true,
+ "amendments": []
+}

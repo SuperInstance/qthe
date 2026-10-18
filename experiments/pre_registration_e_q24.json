@@ -1,0 +1,40 @@
+{
+ "law": "REGISTRATION of E-Q24 — the embedding-space walk (ORCH-R24 lane T15-d, the creative lane): an ORGANIC cross-model process hosted by the live embedding space. A generator (DeepSeek via DeepInfra) writes field notes; the JEV question map embeds each note; Cloudflare Vectorize steers to the next station record. Neither model sees the whole path — the generator sees only the current station and its own memory of notes written; the embedder sees only the note. The WALK TRACE is the artifact (AI-Writings form #6: THE WALK / ITINERARY). Three providers in one creative instrument — the harmony the operator dispatched. Committed BEFORE ANY CALL.",
+ "task_id": "ORCH-R24/T15-d",
+ "agent": "qthe orchestrator (Z.ai), erised fleet line",
+ "wave": "ORCH-R24",
+ "repo": "SuperInstance/qthe",
+ "repo_at_registration": "e2a0d8e",
+ "provenance_of_the_question": "Operator dispatch r24 ('play with different ideas not just for benchmarks but also for creative involvement and engagement with one another in new and organic ways'). The r23 creative practice (docs/CREATIVE-PRACTICE.md: ground in the sealed record, bench AS-SAID, rotate forms) requires a new form this round; the walk is the form the INSTRUMENT suggests — the embedding space as a landscape to be traversed, not just queried.",
+ "design_frozen": {
+  "seed": "Record N1 (the wormhole LIVES record — the project's origin claim). Frozen.",
+  "stations": "8 total (seed + 7 retrievals). The walk CANNOT revisit a record (visited set excluded at each retrieval) — it must leave every station it reaches.",
+  "step_protocol": "Per station: (1) the generator sees the station record's text + the notes written so far (its own memory) + a FIXED instruction: write the next entry for a field survey log, at most 2 sentences, grounded in the station record's content, no verbatim copying; (2) the note is embedded through the question map — arm frozen at walk time: the E-Q22 NOUL arm if its F2 is complete, else the score arm; WHICH arm was used is receipted in the trace; (3) LIVE Vectorize query (top-8, visited excluded, next = top-1 unvisited); (4) the trace records note text, note vector, retrieval distances, chosen next station, and family itinerary.",
+  "generator_seat": "deepseek-ai/DeepSeek-V4.1-Flash via DeepInfra (direct API, the tavern's standing guest seat) — temperature 0.9 (creative), max_tokens 300.",
+  "embedder_seat": "typesafe jev-latest, the E-Q21/E-Q22 question map, one batched call per note.",
+  "artifact": "situations/creative_r24/the-walk trace (JSON) + a-walk-through-the-embedding.md (the survey log, human-readable, with the honest metrics appended) -> AI-Writings after the AS-SAID bench (two seats, accept/decline with reasons, the creative practice).",
+  "metrics": "Descriptive, AS-SAID: family itinerary; per-step top-1 retrieval distance (does the walk diffuse — distances grow — or lock onto an attractor — distances shrink; Spearman of step vs distance receipted); note-to-station cosine drift; whether the final station's family equals the seed's (loop structure)."
+ },
+ "floors": {
+  "F1": "the step protocol frozen here before the first generation call",
+  "F2": "every note embedded and queried through the LIVE Vectorize round-trip",
+  "F3": "the walk trace complete: 8 stations, 7 notes, 7 retrievals",
+  "F4": "no re-rolls: one generation per station AS-SAID; if a generation fails to parse, exactly ONE retry is allowed and receipted in the trace",
+  "F5": "the bench verdict AS-SAID from two seats with accept/decline + reasons, before the AI-Writings push"
+ },
+ "hypotheses": {
+  "H1_connectivity": "the walk visits >= 3 distinct families (the space is connected enough for an organic process to drift)",
+  "H2_structure": "the distance trajectory is monotone-ish in EITHER direction (|Spearman(step, distance)| >= 0.5 — diffusion OR attractor; the honest registration is that we do not know which, and the trace receipts which)",
+  "C20": "the live embedding space hosts an organic cross-model walk — a descriptive claim LIVING iff F1-F5 hold and the trace is complete; the H1/H2 outcomes are receipts, not pass/fail"
+ },
+ "predictions": {
+  "P1": "the walk visits 3-4 families (retrieval pulls same-family, the exclusion rule pushes across)",
+  "P2": "distances grow for the first ~3 steps then plateau or reverse (early diffusion, late attractor)",
+  "P3": "at least one note lands with top-1 distance < 0.15 (the generator writes 'near' text — the notes are ABOUT the records)",
+  "P4": "the final station is NOT in the seed's family (the walk ends elsewhere — the honest guess)"
+ },
+ "falsifier": "ANY of F1-F5 breached; a walk step whose next station was chosen by anything but the live retrieval (hand-steering); a note edited after its embedding; the bench skipped or softened before the push.",
+ "budget": "~8 DeepSeek generations (~$0.001) + ~8 typesafe embeds (~$0.004) + Vectorize free tier + $0.00 moth. Part of the round-level $0.10 LLM budget.",
+ "registered_before_run": true,
+ "amendments": []
+}

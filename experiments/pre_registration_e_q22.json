@@ -1,0 +1,45 @@
+{
+ "law": "REGISTRATION of E-Q22 — the axis-calibration x ternary-quantization factorial (ORCH-R24 lane T15-b). The question map's 8-axis vectors exist in TWO representations (ordinal score levels 0-4, the E-Q21 incumbent; noul calibrated mass p in [0,1], this lane's new arm) and TWO precisions (continuous; median-centered TERNARY codes in {-1,0,+1}). This is qthe's namesake made literal — Quilt-Ternary Hyper-Embeddings has never yet QUANTIZED an embedding to the ternary alphabet — and it experimentally answers jev-lattice's published finding (their typesafe deep-dive: score criteria levels are ordered but NOT numerically calibrated) on OUR cosine geometry. Committed BEFORE ANY EMBED CALL.",
+ "task_id": "ORCH-R24/T15-b",
+ "agent": "qthe orchestrator (Z.ai), erised fleet line",
+ "wave": "ORCH-R24",
+ "repo": "SuperInstance/qthe",
+ "repo_at_registration": "e2a0d8e",
+ "provenance_of_the_question": "Operator dispatch r24 ('go a lot deeper with your JEV-as-embedder idea… this could be big… many more novel ways') + the jev-lattice recon (R24-RECON-LATTICE, synergy ideas #1 and #6, open questions #1 and #4: are noul-probability axes better embedding axes than score levels, and do ternary-quantized 8-axis vectors retain retrieval). The three-way convergence: qthe's identity (ternary alphabet in the project name, no ternary-quantization experiment yet), the lattice's calibration confound (levels ordered but uncalibrated), and the typesafe API's own division (noul = calibrated mass).",
+ "design_frozen": {
+  "corpus": "THE SAME sealed E-Q21 corpus (situations/embedding_r23/corpus.json, 20 records, 4 families x 5, sha frozen in the e_q21 chain). No re-draw, no edits — F1 pins the sha.",
+  "arms": "S = score-continuous (incumbent: E-Q21 sealed rows typesafe_embed_rows_r23.jsonl, jev-latest, /4 normalized — NO new calls); N = noul-continuous (NEW: the same 8 axis CONCEPTS as noul questions 'Does this record concern X?' with true/false criteria; the answer's noul p in [0,1] IS the axis value; 20 records + 3 stability repeats N1/P4/A5 = 23 batched calls, jev-latest, one call per record with all 8 questions); TS = score-ternary (derived from S in code); TN = noul-ternary (derived from N in code).",
+  "ternarization": "Per axis a over the 20 CORPUS vectors of the parent arm: m_a = median, MAD_a = median absolute deviation. tern(x) = +1 if x > m_a + 0.5*MAD_a; -1 if x < m_a - 0.5*MAD_a; else 0. The m_a/MAD_a table is derived from corpus vectors ONLY (never from query-time data), frozen in the results file, and recomputable by the checker (F6).",
+  "eval": "Identical protocol to E-Q21: each record's own vector queries Cloudflare Vectorize (index qthe-jev-embed, 32-dim cosine, AM1 zero-pad carries over; ternary vectors upserted as -1/0/+1 floats under arm-prefixed ids eq22S:/eq22N:/eq22TS:/eq22TN:), top-1 non-self WITHIN-ARM family accuracy over LIVE REST queries. Baselines: majority 0.25, permutation null (1000 draws), BOW 0.80 (all sealed from E-Q21).",
+  "ternary_code_stats": "Per ternary arm: per-axis mass on {-1,0,+1}, code entropy in bits/axis, count of distinct codes, code collisions (records sharing a code), and the storage receipt: 8 ternary axes = 16 bits vs 8 float32 = 256 bits = 16x representational compression (honest note: Vectorize internally stores float32 — the compression claim is about the embedder's OUTPUT representation, portable to any ternary-native store).",
+  "stability_band": "F5 for the noul arm uses 0.10 (calibrated mass; the r12 finding — noul repeats stable to ~2 decimals — licenses a TIGHTER band than the score arm's 0.25)."
+ },
+ "floors": {
+  "F1": "corpus.json sha equal to the sha sealed in the e_q21 chain rules row",
+  "F2": "all 23 noul rows complete: 8 noul answers each, p in [0,1], http 200",
+  "F3": "all four arms' vectors recomputable from sealed rows by an independent recompute",
+  "F4": "all four arms upserted AND live-queried through the Vectorize REST round-trip",
+  "F5": "noul stability: 24/24 re-embedded axes within 0.10",
+  "F6": "the ternarization table (m_a, MAD_a per arm) recomputable from the arm's corpus vectors; ternary vectors equal tern(parent) on recompute"
+ },
+ "hypotheses": {
+  "H1_calibration": "N top-1 accuracy > S top-1 accuracy (0.70) — calibrated mass beats ordinal levels (C17 LIVES iff strict >; equality = calibration-neutral receipt; N < S = C17 DIES with the ordinal-geometry-survives finding)",
+  "H2_ternary_survival": "TS >= S - 0.15 AND TN >= N - 0.15 (the ternary alphabet keeps all but <= 3 records of the parent's retrieval)",
+  "H3_ternary_floor": "both ternary arms > majority (0.25) AND > permutation null (0.2122) — the 16-bit code still carries the family signal",
+  "H4_interaction": "ternarization does not INVERT the calibration effect: (TN - TS) has the same sign as (N - S) or shrinks it toward 0",
+  "C16": "ternary quantization of question-map embeddings retains retrieval signal at 16x representational compression — LIVES iff H2 AND H3",
+  "C17": "noul-calibrated axes outperform ordinal score axes for retrieval — per H1's three-way rule"
+ },
+ "predictions": {
+  "P1": "N lands in [0.65, 0.90] — same axis concepts, calibration should recover the two jev calibration-cost records of E-Q21",
+  "P2": "TS lands in [0.60, 0.75] — family structure is coarse enough to survive 3 levels (<= 2 records lost vs S)",
+  "P3": "at least one ternary arm >= 0.60",
+  "P4": "ternary code entropy < 2.0 bits/axis (mass concentrates on 0 and one sign per axis — records are typical on most axes, distinctive on few)",
+  "P5": "noul stability 24/24 within 0.10, tighter than the score arm's 0.25 band would have been",
+  "P6": "the Q family (loosest cluster, the crossover records) pays the largest ternarization cost"
+ },
+ "falsifier": "ANY of F1-F6 breached; a checkpoint written before its floor passes; the accuracy comparison computed on anything but the sealed family labels; the ternarization table computed from anything but the arm's own 20 corpus vectors; a query that skips the LIVE round-trip.",
+ "budget": "23 typesafe calls (~$0.01 ceiling) + Vectorize free tier + $0.00 moth. Round-level budget registered in the r24 registration commit.",
+ "registered_before_run": true,
+ "amendments": []
+}
