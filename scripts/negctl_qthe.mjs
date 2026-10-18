@@ -353,7 +353,7 @@ const SABOTAGES = [
     id: 'R2-gate-block-removed', suite: 'run_tests',
     clause: 'gate coverage — the suite rewrites its own receipt chain (tests/receipts.jsonl) with whatever gates ran; is a REMOVED gate noticed?',
     what: 'tests/run_tests.mjs copy: delete the entire G1 (pack/unpack bijection) gate block',
-    predict: 'SURVIVED (no pin on gate count or receipt tip; PG6 explicitly excludes G0-G6 as "the gate is its own checker")',
+    predict: 'DETECTED (amended at the ORCH-R14 closure: the gate-set pin now fails the run loudly on a removed gate via exit-code regression; the ORIGINAL pre-closure prediction SURVIVED stands receipted in situations/negctl/run_receipt.txt v1)',
     apply: (ws) => {
       const rel = 'tests/run_tests.mjs';
       const p = join(ws, rel);
@@ -498,7 +498,11 @@ for (const sab of SABOTAGES) {
     sab.apply(ws); // every primitive dies loudly on a no-op / stale anchor
     applied = true;
     const r = runSuite(ws, sab.suite);
-    const detected = r.failures > base.failures && r.code !== 0;
+    // ORCH-R14 closure-proof amendment (receipted): detection = MORE failure
+    // lines than baseline (the original rule) OR an exit-code regression
+    // 0 -> nonzero. The gate-set pin (T5-c R2 closure) fails the RUN loudly
+    // without emitting a new gate FAIL line — exit 0->1 IS the suite noticing.
+    const detected = (r.failures > base.failures && r.code !== 0) || (base.code === 0 && r.code !== 0 && r.failures === base.failures && r.fails.length === base.fails.length);
     const verdict = detected ? 'DETECTED' : 'SURVIVED';
     out(`   sabotaged run: exit=${r.code} failures=${r.failures} (baseline ${base.failures}, ${r.ms} ms) -> ${verdict}`);
     if (r.fails.length) { out('   failing lines:'); for (const f of r.fails) out(`     ${f}`); }
