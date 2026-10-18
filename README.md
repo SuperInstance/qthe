@@ -565,3 +565,47 @@ this defense is semantic and free; the drift monitor held: 20/20 within
 arithmetic on sealed vectors + live arm-filtered queries). Chains
 `e_q26`/`e_q27`/`e_q25`; batteries green at close (41/41 claims, 30/30
 chains, 49/49 verified, guard PASS on 15 call-site files).
+
+## The evolution round (r26 — the decoupling law, pruning, queries-as-storage)
+
+Four lanes, four chains, the round the program grew a Durable Object.
+**E-Q28 latent-space evolution** (the creative flagship, C24): mutation
+(DeepSeek under gap-vector directives) – selection (a COORDINATED
+dual-JEV gate: jev-latest AND jev-preview must both improve cosine to
+the target centroid, hosted as deterministic code inside the
+**evosphere** Durable Object — selection-as-infrastructure, the
+jev-lattice law applied to evolution) – heredity (accepted lineage) –
+environment (LIVE Vectorize). C24 DIES on H1 with THE DECOUPLING LAW:
+6 stations to 4-family coverage vs the ungated walk's 5 — centroid
+cosine and retrieval family are different objectives (one rejected
+fossil would have retrieved the target family and was refused on a
+declining cosine). The steering is real everywhere else: discrimination
++0.20 vs −0.11, coordination 0.80 with two split-rejections only a
+dual gate could make, heredity 0.927, causal directives (named axes
+moved 2×), the pre-registered escape rule load-bearing (the rotated run
+covered the stuck family in transit). **E-Q29 the question-budget
+curve** (C25 LIVES STRONGER than registered): the best 4-question
+subset retrieves at **0.90 LIVE — above the full 8-question battery
+(0.80)**: PRUNING BEATS THE FULL BATTERY; Shapley top-4 ≠ best-4
+subset (complementarity is combinatorial); the cross-instrument
+Spearman dies honestly (occlusion reading ≠ retrieval contribution).
+**E-Q30 compositional 16-bit retrieval** (C26 LIVES): the family
+algebra survives quantization — composed 4-level noul codes hit 5/5
+(the dense ceiling); a stored code + an operator IS a family query
+(storage = query, measured live; the code-space null is TIGHTER than
+dense). **E-Q31 the drift monitor** (C27 LIVES): the band holds three
+rounds running (max 0.08, no version flip; H2's 2e-17 float-artifact
+death published unstretched). Two lanes cost ZERO embed calls; E-Q28
+spent 21 embeds + 10 generations; E-Q31 twenty calls. The round also
+shipped: the injection-resistance gift to jev-lattice (their issue #7,
+the decoy-canary pattern + our E-Q25 receipt) and **the collection's
+seventh form** — `FOSSILS/the-fossil-record.md` on AI-Writings, the
+gate's own ledger, benched AS-SAID two seats rotated off the generator
+(both seats independently caught the same line; cut). Chains
+`e_q28`/`e_q29`/`e_q30`/`e_q31`; batteries green at close (45/45
+claims, 34/34 chains, 53/53 verified, probe gate links=47). Registered
+next: the ascending budget arm (generated discriminative questions vs
+the 4-question knee), retrieval-coupled fitness (the decoupling law's
+fix — gate on the retrieval, not the centroid), IRT ladders (I-6),
+depth-2 conditional axes (I-3), the standing drift monitor (r27) +
+the watch.

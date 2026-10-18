@@ -353,3 +353,60 @@ expansion ≠ factual grounding; verify before adopting. Receipt:
 - **The drift band holds across rounds.** Fresh noul re-embeds a round
   later: max delta 0.06 vs sealed, 20/20 within 0.10 — the standing
   monitor's first clean re-reading.
+
+## ORCH-R26 additions (the evolution round: the decoupling law, pruning, queries-as-storage)
+
+- **THE DECOUPLING LAW (E-Q28).** Family-centroid cosine and top-1
+  retrieval family are DIFFERENT objectives. A directed mutant reached
+  0.8724 cosine to the P centroid and still retrieved an N record; one
+  rejected fossil would have retrieved the TARGET family and was refused
+  because one of its two cosines declined. Directed hill-climbing on a
+  centroid proxy overshot where the ungated walk's compounding residuals
+  arrived sooner (6 stations vs 5). Selection on a measurable proxy is
+  not selection on the objective — measure the objective if you can, or
+  expect the proxy tax.
+- **Coordinated gates reject what single gates accept (E-Q28).** A
+  k=2 gate (both JEV versions must improve) made TWO split-rejections a
+  single-model gate would have passed — the independence pattern is a
+  real selection pressure, not a formality. Coordination 0.80 across
+  attempts; splits cluster at thin margins, exactly where single
+  measurers are least trustworthy.
+- **Direction does not cost grounding (E-Q28).** Notes written under
+  gap-derived directives stayed 0.927 cosine with their stations (the
+  walk's undirected notes: 0.93–0.98), and the directives were CAUSAL:
+  named-axis movement 0.43 vs unnamed 0.22. You can ask a generator to
+  steer without breaking its grounding — the axis semantics are a
+  steering wheel, not a wheel swap.
+- **The escape rule is load-bearing (E-Q28).** Two stagnated
+  generations on an unreachable target triggered the pre-registered
+  rotation; the rotated run covered the stuck family IN TRANSIT. Evolve
+  the target, not just the population — and pre-register the escape
+  before you need it.
+- **PRUNING BEATS THE FULL BATTERY (E-Q29).** The best 4-question
+  subset retrieves at 0.90 LIVE vs the full 8-question map's 0.80: the
+  last four questions are net noise dimensions FOR RETRIEVAL (they
+  still pay for description, drift, tripwires, algebra). And Shapley
+  top-4 ≠ best-4 subset: P4_alloc is the LOWEST-marginal axis yet
+  belongs to the best subset — question selection is combinatorial,
+  not rankable (the QA-Emb lesson, measured on a fixed battery).
+- **Reading is not contributing (E-Q29).** Occlusion saliency mass
+  (where the map reads from) is UNCORRELATED with Shapley retrieval
+  value (Spearman −0.02). Two instruments, two different quantities —
+  never cite one as evidence about the other.
+- **QUERIES AS STORAGE (E-Q30).** The family algebra survives
+  quantization: composed 4-level noul codes hit 5/5 (the dense ceiling),
+  ternary 4/5 — a stored code plus an arithmetic operator IS a family
+  query. Storage and query collapse into one object; the code-space
+  null is TIGHTER than dense (p95 3 vs 4: fewer near-ties per bit).
+- **The band holds three rounds (E-Q31).** Same-version drift is
+  sampling noise around a fixed point (max 0.08, readings closer in
+  time agree more); axis structure is a VERSION-drift property, not a
+  sampling property. Publish raw-float threshold comparisons
+  unstretched — a 2e-17 death is a receipt, not a rounding away.
+- **Ops laws (r26)**: (1) POLL-UNTIL-VISIBLE is mandatory — a flat 30s
+  sleep after upsert raced the changeset and read ALL NO-NEIGHBOR.
+  (2) workers.dev 403s the default Python-urllib User-Agent (bot
+  management) — send a named UA. (3) `cd` is stripped by the sandbox —
+  run cwd-dependent tools via `node -e "process.chdir(...)"` or
+  absolute paths. (4) wrangler needs the FULL environment (HOME
+  included), not a minimal env dict.

@@ -34,3 +34,21 @@ What we adopted FROM the fleet this round (the learning side of the scout):
   with our ABV rule (measured independently on both sides)
 - reading-room's disagreement-as-output + windows/ read-the-record law ->
   generalized to tavern/rounds/ in fleet-seeds (SECTION C3)
+
+## r26 — the injection-resistance receipt to jev-lattice (issue #7)
+
+- shipped: SuperInstance/jev-lattice issue #7 (2026-10-19), the E-Q25
+  receipt + the decoy-canary pattern, framed per the Hermes law (concrete
+  examples, zero imperatives, honest caveats: n=2 poisoned states, one
+  injection shape, adaptive untested).
+- their side: jev-lattice R6 = comment-stripping (syntactic, kills 83/119
+  adaptive injections). Ours: typed noul question maps refuse the scorer-
+  addressed injection at the readout (semantic, free). Their invariant #2
+  (deterministic verdicts) untouched — the property lives in the substrate.
+- seed: situations/fleet_gifts/seed-decoy-canary-pattern.md
+- evidence: receipts/e_q25_chain.jsonl (tip db00cfd7…), C23 in the claims
+  table, recomputable from sealed rows.
+- motivation: their repo shipped 0.9.1 same-day (the Action gate fix #4);
+  the recon's caution ("wait for that fix") resolved — and the fix's shape
+  (a skipped gate step must FAIL the gate) is the same fail-closed family
+  our tripwire pattern extends into the measurement layer.
