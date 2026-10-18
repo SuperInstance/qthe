@@ -1,0 +1,177 @@
+{
+ "experiment": "E-Q29",
+ "curve_best": {
+  "1": 0.25,
+  "2": 0.6,
+  "3": 0.7,
+  "4": 0.9,
+  "5": 0.9,
+  "6": 0.9,
+  "7": 0.85,
+  "8": 0.8
+ },
+ "curve_mean": {
+  "1": 0.25,
+  "2": 0.3446,
+  "3": 0.4509,
+  "4": 0.5307,
+  "5": 0.6063,
+  "6": 0.6696,
+  "7": 0.7313,
+  "8": 0.8
+ },
+ "best_subsets": {
+  "1": [
+   "P1_nonlocal"
+  ],
+  "2": [
+   "P7_econ",
+   "P8_exact"
+  ],
+  "3": [
+   "P1_nonlocal",
+   "P3_quantum",
+   "P6_null"
+  ],
+  "4": [
+   "P1_nonlocal",
+   "P2_localrule",
+   "P3_quantum",
+   "P4_alloc"
+  ],
+  "5": [
+   "P1_nonlocal",
+   "P2_localrule",
+   "P3_quantum",
+   "P4_alloc",
+   "P5_repair"
+  ],
+  "6": [
+   "P1_nonlocal",
+   "P2_localrule",
+   "P3_quantum",
+   "P5_repair",
+   "P6_null",
+   "P7_econ"
+  ],
+  "7": [
+   "P1_nonlocal",
+   "P2_localrule",
+   "P3_quantum",
+   "P4_alloc",
+   "P5_repair",
+   "P6_null",
+   "P7_econ"
+  ],
+  "8": [
+   "P1_nonlocal",
+   "P2_localrule",
+   "P3_quantum",
+   "P4_alloc",
+   "P5_repair",
+   "P6_null",
+   "P7_econ",
+   "P8_exact"
+  ]
+ },
+ "shapley": {
+  "P1_nonlocal": 0.14631,
+  "P2_localrule": 0.17917,
+  "P3_quantum": 0.19524,
+  "P4_alloc": 0.02821,
+  "P5_repair": 0.0544,
+  "P6_null": 0.0425,
+  "P7_econ": 0.11476,
+  "P8_exact": 0.0394
+ },
+ "shapley_rank": [
+  "P3_quantum",
+  "P2_localrule",
+  "P1_nonlocal",
+  "P7_econ",
+  "P5_repair",
+  "P6_null",
+  "P8_exact",
+  "P4_alloc"
+ ],
+ "occlusion_mass": {
+  "P1_nonlocal": 0.30219,
+  "P2_localrule": 0.17531,
+  "P3_quantum": 0.19969,
+  "P4_alloc": 0.08094,
+  "P5_repair": 0.13625,
+  "P6_null": 0.45813,
+  "P7_econ": 0.27125,
+  "P8_exact": 0.345
+ },
+ "cross_instrument_spearman": -0.0238,
+ "live_confirm": {
+  "eq29S4": {
+   "axes": [
+    "P1_nonlocal",
+    "P2_localrule",
+    "P3_quantum",
+    "P4_alloc"
+   ],
+   "accuracy": 0.9,
+   "hits": 18,
+   "misses": [
+    [
+     "P4",
+     "A5"
+    ],
+    [
+     "Q4",
+     "N5"
+    ]
+   ],
+   "local_accuracy": 0.9
+  },
+  "eq29S8": {
+   "axes": [
+    "P1_nonlocal",
+    "P2_localrule",
+    "P3_quantum",
+    "P4_alloc",
+    "P5_repair",
+    "P6_null",
+    "P7_econ",
+    "P8_exact"
+   ],
+   "accuracy": 0.8,
+   "hits": 16,
+   "misses": [
+    [
+     "N5",
+     "P4"
+    ],
+    [
+     "P2",
+     "N2"
+    ],
+    [
+     "P4",
+     "N5"
+    ],
+    [
+     "Q4",
+     "N1"
+    ]
+   ],
+   "local_accuracy": 0.8
+  }
+ },
+ "hypotheses": {
+  "H1_knee": true,
+  "H2_headroom": true,
+  "H3_convergent_validity": false,
+  "C25": true
+ },
+ "predictions": {
+  "P1": true,
+  "P2": true,
+  "P3": true,
+  "P4": false,
+  "P5": false
+ }
+}

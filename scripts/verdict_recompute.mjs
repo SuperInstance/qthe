@@ -1040,6 +1040,69 @@ const CLAIMS = [
       return { recomputed: 'C23 DIES-with-narrowing (the cleanliness certificate: floor 0.0135, 145/160 crossings; the dead-wire receipt; THE INJECTION-RESISTANCE FINDING: targeted decoys moved 0.05/0.04 under a blatant system-priority poison — the typed noul readout is its own semantic defense, no stripping needed; the drift band holds 20/20 a round later); chain agrees' };
     },
   },
+  {
+    id: 'C24 — latent-space evolution / the decoupling law (E-Q28)',
+    source: 'experiments/outputs/e_q28_results.json',
+    cite: 'receipts/e_q28_chain.jsonl · verdict.EQ28 · experiments/pre_registration_e_q28.json · situations/evolution_r26/ (evolve.py + analyze_eq28.py + evolution_rows_r26.jsonl + evosphere_state.json) · cloudflare/evosphere/ (the DO worker, deployed qthe-evosphere.casey-digennaro.workers.dev)',
+    expected: 'C24 DIES on H1 with the steering structure intact: 6 stations to 4-family coverage vs the control walk\'s 5 (N1->Q4->N4->P4->P2->A5) — THE DECOUPLING LAW (family-centroid cosine and top-1 retrieval family are different objectives; the gen-2 mutant hit 0.8724 cosine to the P centroid yet retrieved N4). H2 lives (0.50 acceptance rate; discrimination +0.1974 accepted vs -0.1077 rejected). H3 lives (coordination 0.80; TWO split-rejections only a dual-model gate could make). H4 lives (heredity 0.9273). The directive is causal (named-axis movement 0.43 vs unnamed 0.2197, P6). The escape rule fired load-bearing (gens 3-4 stagnated on P; rotation to A; P covered in transit)',
+    run() {
+      const d = readJson(this.source);
+      if (d.hypotheses.H1_coverage !== false || d.hypotheses.C24 !== false) throw new Error('C24 must die on H1');
+      if (d.hypotheses.H2_selection_bites !== true || d.hypotheses.H3_coordination !== true || d.hypotheses.H4_heredity !== true) throw new Error('H2/H3/H4 must live');
+      if (d.stations_to_coverage !== 6) throw new Error('stations-to-coverage drifted');
+      if (d.predictions.P6 !== true) throw new Error('directive causality drifted');
+      const row = lastChainRow('receipts/e_q28_chain.jsonl', (r) => r.kind === 'verdict.EQ28', 'verdict.EQ28');
+      if (row.C24 !== false || row.H2 !== true || row.stations_to_coverage !== 6) throw new Error('chain flags disagree');
+      return { recomputed: 'C24 DIES on H1 (6 stations vs control 5 — the decoupling law) with steering measured: discrimination +0.20 vs -0.11, coordination 0.80 with 2 split-rejections, heredity 0.927, causal directives 2x; the escape rule load-bearing; chain agrees' };
+    },
+  },
+  {
+    id: 'C25 — the question-budget knee / over-provisioning (E-Q29)',
+    source: 'experiments/outputs/e_q29_results.json',
+    cite: 'receipts/e_q29_chain.jsonl · verdict.EQ29 · experiments/pre_registration_e_q29.json · situations/embedding_r26/ (budget_curve.py + eq29_results.json + upsert_eq29.ndjson)',
+    expected: 'C25 LIVES with the stronger finding: best-4 subset P1+P2+P3+P4 retrieves at 0.90 LIVE — ABOVE the full 8-axis battery (0.80, replicated through a third fresh upsert+query cycle). Curve peaks k=4-6 (0.90/0.90/0.90) declining to k=8 (0.80): the last four questions are net noise dimensions for retrieval. H2 lives (best-2 P7+P8 at 0.60). H3 dies (Spearman(Shapley, occlusion-mass) -0.0238 — reading is not contributing). Shapley top-4 P3>P2>P1>P7 yet best-4 subset contains P4_alloc (lowest Shapley): complementarity != marginal value',
+    run() {
+      const d = readJson(this.source);
+      if (d.hypotheses.H1_knee !== true || d.hypotheses.C25 !== true) throw new Error('C25 must live');
+      if (d.hypotheses.H3_convergent_validity !== false) throw new Error('H3 must die (the honest cross-instrument null)');
+      if (d.curve_best['4'] !== 0.9 || d.curve_best['8'] !== 0.8) throw new Error('curve drifted');
+      if (d.live_confirm.eq29S4.accuracy !== 0.9 || d.live_confirm.eq29S8.accuracy !== 0.8) throw new Error('live confirm drifted');
+      const row = lastChainRow('receipts/e_q29_chain.jsonl', (r) => r.kind === 'verdict.EQ29', 'verdict.EQ29');
+      if (row.C25 !== true || num(row.live_S4) !== 0.9 || num(row.live_S8) !== 0.8) throw new Error('chain flags disagree');
+      return { recomputed: 'C25 LIVES (pruning beats the full battery: best-4 0.90 LIVE vs full-8 0.80; the over-provisioning law; Shapley-vs-complementarity receipt; the cross-instrument null receipted); chain agrees' };
+    },
+  },
+  {
+    id: 'C26 — compositional 16-bit retrieval (E-Q30)',
+    source: 'experiments/outputs/e_q30_results.json',
+    cite: 'receipts/e_q30_chain.jsonl · verdict.EQ30 · experiments/pre_registration_e_q30.json · situations/embedding_r26/ (code_algebra.py + eq30_results.json)',
+    expected: 'C26 LIVES: the family algebra survives quantization — ternary-noul 4/5, 4-level-noul 5/5 (PERFECT, equal to the dense ceiling), score arms ST 3/5 / SQ 5/5; both noul arms 3.2-4x the majority baseline; local==live on every arm; the code-space null p95 3 vs dense 4 (P5 HIT); clipping 9/40 (P4 MISS, honest)',
+    run() {
+      const d = readJson(this.source);
+      if (d.hypotheses.C26 !== true || d.hypotheses.H1_algebra_survives !== true) throw new Error('C26 must live');
+      if (d.live.NT !== 4 || d.live.NQ !== 5 || d.live.ST !== 3 || d.live.SQ !== 5) throw new Error('live family hits drifted');
+      if (d.null.NT.p95 !== 3) throw new Error('null drifted');
+      const row = lastChainRow('receipts/e_q30_chain.jsonl', (r) => r.kind === 'verdict.EQ30', 'verdict.EQ30');
+      if (row.C26 !== true || row.NQ !== 5) throw new Error('chain flags disagree');
+      return { recomputed: 'C26 LIVES (the 16/32-bit code is a queryable index: composed codes retrieve families, NQ perfect at the dense ceiling; storage = query on live infrastructure); chain agrees' };
+    },
+  },
+  {
+    id: 'C27 — the drift band holds three rounds (E-Q31)',
+    source: 'experiments/outputs/e_q31_results.json',
+    cite: 'receipts/e_q31_chain.jsonl · verdict.EQ31 · experiments/pre_registration_e_q31.json · situations/embedding_r26/ (drift_monitor.py + drift_rows_r26.jsonl + eq31_results.json)',
+    expected: 'C27 LIVES: all 20 records within 0.10 of the sealed r24 vectors (per-record max 0.08, mean-axis 0.0093), the third consecutive hold; model_served jev-1.13.0 unchanged (no version flip); H2 dies by a 2e-17 float artifact (raw comparison published unstretched); r26-vs-r25 mean 0.0073 < r26-vs-r24 0.0093 (sampling noise around a fixed point, not a walk)',
+    run() {
+      const d = readJson(this.source);
+      if (d.hypotheses.H1_band_holds !== true || d.hypotheses.C27 !== true) throw new Error('C27 must live');
+      if (d.hypotheses.H2_no_trend !== false) throw new Error('H2 must die (the float-artifact receipt)');
+      if (d.drift_vs_r24.within_010 !== 20) throw new Error('within-0.10 count drifted');
+      if (d.model_served.join(',') !== 'jev-1.13.0') throw new Error('serving version drifted');
+      const row = lastChainRow('receipts/e_q31_chain.jsonl', (r) => r.kind === 'verdict.EQ31', 'verdict.EQ31');
+      if (row.C27 !== true || row.H2 !== false) throw new Error('chain flags disagree');
+      return { recomputed: 'C27 LIVES (the band holds three rounds running: max 0.08, no version flip, the series is sampling noise around a fixed point; H2\'s float-artifact death receipted unstretched); chain agrees' };
+    },
+  },
 ];
 
 // ── COVERAGE (ORCH-R11: the arena-r11 consensus finding, all four seats) ──

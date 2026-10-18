@@ -1,0 +1,66 @@
+{
+ "experiment": "E-Q31",
+ "claim": "C27 — the drift band holds three rounds running",
+ "kernel": {
+  "kernelKind": "real",
+  "kernelPath": "qthe/qthe.mjs"
+ },
+ "preRegSha": "aaeca0fb8906deff443b229bfc83d11e17282f3eb08ee2b378fb95fa45f46ff3",
+ "registration": "experiments/pre_registration_e_q31.json (no amendments — the run as registered)",
+ "task": {
+  "calls": 20,
+  "series": [
+   "r24 sealed",
+   "r25 (E-Q25)",
+   "r26 (this)"
+  ]
+ },
+ "drift_vs_r24": {
+  "max": 0.08000000000000002,
+  "mean_axis": 0.0093125,
+  "within_010": 20,
+  "per_record_max": {
+   "A1": 0.02,
+   "A2": 0.04,
+   "A3": 0.01,
+   "A4": 0.05,
+   "A5": 0.01,
+   "N1": 0.04,
+   "N2": 0.03,
+   "N3": 0.08,
+   "N4": 0.04,
+   "N5": 0.02,
+   "P1": 0.02,
+   "P2": 0.03,
+   "P3": 0.04,
+   "P4": 0.03,
+   "P5": 0.04,
+   "Q1": 0.02,
+   "Q2": 0.03,
+   "Q3": 0.02,
+   "Q4": 0.01,
+   "Q5": 0.04
+  }
+ },
+ "drift_vs_r25": {
+  "max": 0.06000000000000005,
+  "mean_axis": 0.0072499999999999995,
+  "within_010": 20
+ },
+ "model_served": [
+  "jev-1.13.0"
+ ],
+ "hypotheses": {
+  "H1_band_holds": true,
+  "H2_no_trend": false,
+  "C27": true,
+  "H2_float_artifact_receipt": true
+ },
+ "predictions": {
+  "P1": false,
+  "P2": true,
+  "P3": false,
+  "P4": true
+ },
+ "verdict": "E-Q31 VERDICT (the standing drift monitor's r26 re-read — 20 fresh embeds through the byte-identical E-Q22 noul map, the three-point time series r24/r25/r26): H1 LIVES — all 20 records within 0.10 of the sealed r24 vectors (per-record max 0.08, mean-axis 0.0093): C27 LIVES — THE BAND HOLDS THREE ROUNDS RUNNING: the 8-axis noul map is a stable coordinate contract under a fixed serving version (model_served jev-1.13.0 — unchanged from the r24/r25 serving, P2 HIT: no version flip). H2 DIES — BY A FLOAT ARTIFACT: the r26 per-record max 0.08 sits 2e-17 above the r25+0.02 tolerance (0.08): the honest receipt is numerical, not substantive — the raw-float comparison is published unstretched (the E-Q16 lexicographic precedent: report the artifact, never silently round the threshold). THE TIME-SERIES RECEIPT: r26-vs-r25 mean-axis 0.0073 < r26-vs-r24 0.0093 (P4 HIT) — readings closer in time agree more: the series behaves like sampling noise around a fixed point, NOT a walk. THE AXIS RECEIPT: the per-axis means are all tiny (<= 0.0165) with the largest on P7_econ/P8_exact — the E-Q23 version-drift structure (P2 mover, P4 calm) does NOT replicate in the same-version noise regime (P3 MISS): axis structure is a VERSION-drift property, not a sampling property. The monitor's next reading: r27."
+}

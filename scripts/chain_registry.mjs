@@ -56,6 +56,10 @@ export const STONE_CHAINS = [
   { path: 'receipts/e_q26_chain.jsonl', gate: 'e_q26', label: 'E-Q26 · axis algebra, analogy arithmetic over sealed vectors (ORCH-R25/T16-b)', pin: 'e_q26_algebra' },
   { path: 'receipts/e_q27_chain.jsonl', gate: 'e_q27', label: 'E-Q27 · the ternary zero — binary vs ternary vs 4-level (ORCH-R25/T16-c)', pin: 'e_q27_zero' },
   { path: 'receipts/e_q25_chain.jsonl', gate: 'e_q25', label: 'E-Q25 · tripwire axes — decoys + injection resistance (ORCH-R25/T16-a)', pin: 'e_q25_tripwire' },
+  { path: 'receipts/e_q28_chain.jsonl', gate: 'e_q28', label: 'E-Q28 · latent-space evolution, the evosphere DO selection gate (ORCH-R26/T17-a)', pin: 'e_q28_evolution' },
+  { path: 'receipts/e_q29_chain.jsonl', gate: 'e_q29', label: 'E-Q29 · the question-budget curve, descending arm (ORCH-R26/T17-b)', pin: 'e_q29_budget' },
+  { path: 'receipts/e_q30_chain.jsonl', gate: 'e_q30', label: 'E-Q30 · compositional 16-bit retrieval, code-space algebra (ORCH-R26/T17-c)', pin: 'e_q30_code_algebra' },
+  { path: 'receipts/e_q31_chain.jsonl', gate: 'e_q31', label: 'E-Q31 · the drift monitor r26 re-read, three-point series (ORCH-R26/T17-d)', pin: 'e_q31_drift' },
   { path: 'receipts/probe_gate_chain.jsonl', gate: 'probe_gate', label: 'probe gate runs', pin: 'probe_gate' },
 ];
 

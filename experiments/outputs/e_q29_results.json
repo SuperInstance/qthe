@@ -1,0 +1,162 @@
+{
+ "experiment": "E-Q29",
+ "claim": "C25 — the question budget has a knee (over-provisioning measured)",
+ "kernel": {
+  "kernelKind": "real",
+  "kernelPath": "qthe/qthe.mjs"
+ },
+ "preRegSha": "02e21f8602a17e7a4bf2cf9b46162e3f3fda159563893b79d7fa96560b7fbc2e",
+ "registration": "experiments/pre_registration_e_q29.json (no amendments — the run as registered)",
+ "task": {
+  "subsets": 255,
+  "live_arms": [
+   "eq29S4",
+   "eq29S8"
+  ],
+  "calls": "ZERO new embed calls"
+ },
+ "curve_best": {
+  "1": 0.25,
+  "2": 0.6,
+  "3": 0.7,
+  "4": 0.9,
+  "5": 0.9,
+  "6": 0.9,
+  "7": 0.85,
+  "8": 0.8
+ },
+ "best_subsets": {
+  "1": [
+   "P1_nonlocal"
+  ],
+  "2": [
+   "P7_econ",
+   "P8_exact"
+  ],
+  "3": [
+   "P1_nonlocal",
+   "P3_quantum",
+   "P6_null"
+  ],
+  "4": [
+   "P1_nonlocal",
+   "P2_localrule",
+   "P3_quantum",
+   "P4_alloc"
+  ],
+  "5": [
+   "P1_nonlocal",
+   "P2_localrule",
+   "P3_quantum",
+   "P4_alloc",
+   "P5_repair"
+  ],
+  "6": [
+   "P1_nonlocal",
+   "P2_localrule",
+   "P3_quantum",
+   "P5_repair",
+   "P6_null",
+   "P7_econ"
+  ],
+  "7": [
+   "P1_nonlocal",
+   "P2_localrule",
+   "P3_quantum",
+   "P4_alloc",
+   "P5_repair",
+   "P6_null",
+   "P7_econ"
+  ],
+  "8": [
+   "P1_nonlocal",
+   "P2_localrule",
+   "P3_quantum",
+   "P4_alloc",
+   "P5_repair",
+   "P6_null",
+   "P7_econ",
+   "P8_exact"
+  ]
+ },
+ "shapley_rank": [
+  "P3_quantum",
+  "P2_localrule",
+  "P1_nonlocal",
+  "P7_econ",
+  "P5_repair",
+  "P6_null",
+  "P8_exact",
+  "P4_alloc"
+ ],
+ "hypotheses": {
+  "H1_knee": true,
+  "H2_headroom": true,
+  "H3_convergent_validity": false,
+  "C25": true
+ },
+ "predictions": {
+  "P1": true,
+  "P2": true,
+  "P3": true,
+  "P4": false,
+  "P5": false
+ },
+ "verdict": "E-Q29 VERDICT (the question-budget curve, descending arm — all 255 axis subsets of the sealed E-Q22 noul vectors, Shapley importance, best-4 + full-8 live confirm): H1 LIVES — with a STRONGER finding than registered: the best-4 subset P1+P2+P3+P4 retrieves at 0.9 LIVE — ABOVE the full 8-axis battery (0.8): PRUNING BEATS THE FULL BATTERY on this corpus. The curve peaks at k=4-6 (0.9/0.9/0.9) and DECLINES to the full 8 (0.8) — the last four questions (P5-P8) are net NOISE dimensions for family retrieval: they add descriptive resolution but misfile records (the S8 miss table vs the S4: 4 misses vs 2). THE OVER-PROVISIONING LAW: a fixed question battery carries value BEYOND retrieval (drift monitoring, tripwires, algebra) — but for retrieval alone, half the map is not just sufficient, it is BETTER. H2 LIVES: best-2 P7+P8 at 0.6 — half the family signal is already in the best two questions. THE SHAPLEY RECEIPT: P3 > P2 > P1 > P7 the top-4 marginal axes — yet the best-4 SUBSET contains P4_alloc (the LOWEST-Shapley axis): marginal value and complementarity are DIFFERENT — P4 is useless on average but disambiguates in the P1P2P3 context (question selection is combinatorial, not rankable — the QA-Emb lesson, measured). H3 DIES — the cross-instrument Spearman(Shapley, occlusion-mass) is -0.0238: occlusion saliency (where the map READS FROM) is UNCORRELATED with marginal retrieval value (what the coordinates DO for the index) — reading is not contributing; the distributed-reading law's cousin, measured honestly. THE CONSUMER LAW: the 4-question map beats the 300-dim BOW embedder (0.80) on this corpus at 4 calls/record — but defend the rate, not the absolute (20 records). THE OPS LAW (this round's receipt): the async-changeset poll-until-visible upgrade — a flat 30s sleep raced the enqueue and read ALL NO-NEIGHBOR; the poll loop is now mandatory everywhere.",
+ "live_confirm": {
+  "eq29S4": {
+   "axes": [
+    "P1_nonlocal",
+    "P2_localrule",
+    "P3_quantum",
+    "P4_alloc"
+   ],
+   "accuracy": 0.9,
+   "hits": 18,
+   "misses": [
+    [
+     "P4",
+     "A5"
+    ],
+    [
+     "Q4",
+     "N5"
+    ]
+   ],
+   "local_accuracy": 0.9
+  },
+  "eq29S8": {
+   "axes": [
+    "P1_nonlocal",
+    "P2_localrule",
+    "P3_quantum",
+    "P4_alloc",
+    "P5_repair",
+    "P6_null",
+    "P7_econ",
+    "P8_exact"
+   ],
+   "accuracy": 0.8,
+   "hits": 16,
+   "misses": [
+    [
+     "N5",
+     "P4"
+    ],
+    [
+     "P2",
+     "N2"
+    ],
+    [
+     "P4",
+     "N5"
+    ],
+    [
+     "Q4",
+     "N1"
+    ]
+   ],
+   "local_accuracy": 0.8
+  }
+ }
+}

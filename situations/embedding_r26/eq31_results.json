@@ -1,0 +1,64 @@
+{
+ "experiment": "E-Q31",
+ "model_served": [
+  "jev-1.13.0"
+ ],
+ "model_served_r24_sealed": [
+  "jev-1.13.0"
+ ],
+ "drift_vs_r24": {
+  "max": 0.08000000000000002,
+  "mean_axis": 0.0093125,
+  "within_010": 20,
+  "per_record_max": {
+   "A1": 0.02,
+   "A2": 0.04,
+   "A3": 0.01,
+   "A4": 0.05,
+   "A5": 0.01,
+   "N1": 0.04,
+   "N2": 0.03,
+   "N3": 0.08,
+   "N4": 0.04,
+   "N5": 0.02,
+   "P1": 0.02,
+   "P2": 0.03,
+   "P3": 0.04,
+   "P4": 0.03,
+   "P5": 0.04,
+   "Q1": 0.02,
+   "Q2": 0.03,
+   "Q3": 0.02,
+   "Q4": 0.01,
+   "Q5": 0.04
+  }
+ },
+ "drift_vs_r25": {
+  "max": 0.06000000000000005,
+  "mean_axis": 0.0072499999999999995,
+  "within_010": 20
+ },
+ "per_axis_mean_vs_r24": {
+  "P1_nonlocal": 0.0085,
+  "P2_localrule": 0.0065,
+  "P3_quantum": 0.0065,
+  "P4_alloc": 0.0095,
+  "P5_repair": 0.0055,
+  "P6_null": 0.007,
+  "P7_econ": 0.0145,
+  "P8_exact": 0.0165
+ },
+ "r25_reference_max": 0.06,
+ "hypotheses": {
+  "H1_band_holds": true,
+  "H2_no_trend": false,
+  "C27": true,
+  "H2_float_artifact_receipt": true
+ },
+ "predictions": {
+  "P1": false,
+  "P2": true,
+  "P3": false,
+  "P4": true
+ }
+}

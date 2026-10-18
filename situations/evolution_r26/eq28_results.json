@@ -1,0 +1,250 @@
+{
+ "experiment": "E-Q28",
+ "done": "coverage-complete-at-gen-7",
+ "itinerary": [
+  "N1",
+  "Q4",
+  "N4",
+  "P4",
+  "P2",
+  "A5"
+ ],
+ "family_sequence": [
+  "N",
+  "Q",
+  "N",
+  "P",
+  "P",
+  "A"
+ ],
+ "stations_to_coverage": 6,
+ "control_eq24": {
+  "stations_to_coverage": 5,
+  "itinerary": [
+   "N1",
+   "Q4",
+   "P3",
+   "P2",
+   "A2",
+   "A4",
+   "A1",
+   "P4"
+  ],
+  "families": [
+   "N",
+   "Q",
+   "P",
+   "P",
+   "A",
+   "A",
+   "A",
+   "P"
+  ]
+ },
+ "attempts_total": 10,
+ "accepted": 5,
+ "rejected": 5,
+ "acceptance_rate": 0.5,
+ "discrimination": {
+  "mean_delta_accepted": 0.1974,
+  "mean_delta_rejected": -0.1077
+ },
+ "coordination_rate": 0.8,
+ "split_rejections": 2,
+ "unanimous_rejects": 3,
+ "heredity": {
+  "per_note": [
+   0.9565,
+   0.8918,
+   0.9394,
+   0.8733,
+   0.9756
+  ],
+  "mean": 0.9273
+ },
+ "directive_causality": {
+  "mean_named_move": 0.43,
+  "mean_unnamed_move": 0.2197
+ },
+ "fitness_trajectory": [
+  {
+   "gen": 1,
+   "attempt": 1,
+   "target": "P",
+   "verdict": "accept",
+   "fL": 0.68444,
+   "fP": 0.669942
+  },
+  {
+   "gen": 2,
+   "attempt": 1,
+   "target": "P",
+   "verdict": "accept",
+   "fL": 0.872353,
+   "fP": 0.887238
+  },
+  {
+   "gen": 3,
+   "attempt": 1,
+   "target": "P",
+   "verdict": "reject",
+   "fL": 0.674132,
+   "fP": 0.650012
+  },
+  {
+   "gen": 3,
+   "attempt": 2,
+   "target": "P",
+   "verdict": "reject",
+   "fL": 0.880445,
+   "fP": 0.833841
+  },
+  {
+   "gen": 4,
+   "attempt": 1,
+   "target": "P",
+   "verdict": "reject",
+   "fL": 0.726412,
+   "fP": 0.715662
+  },
+  {
+   "gen": 4,
+   "attempt": 2,
+   "target": "P",
+   "verdict": "reject",
+   "fL": 0.73659,
+   "fP": 0.754812
+  },
+  {
+   "gen": 5,
+   "attempt": 1,
+   "target": "A",
+   "verdict": "accept",
+   "fL": 0.69799,
+   "fP": 0.723716
+  },
+  {
+   "gen": 6,
+   "attempt": 1,
+   "target": "A",
+   "verdict": "reject",
+   "fL": 0.698354,
+   "fP": 0.712986
+  },
+  {
+   "gen": 6,
+   "attempt": 2,
+   "target": "A",
+   "verdict": "accept",
+   "fL": 0.754612,
+   "fP": 0.760968
+  },
+  {
+   "gen": 7,
+   "attempt": 1,
+   "target": "A",
+   "verdict": "accept",
+   "fL": 0.901778,
+   "fP": 0.87884
+  }
+ ],
+ "fossils": [
+  {
+   "gen": 3,
+   "attempt": 1,
+   "target": "P",
+   "note": "At 64 slots priced against thousands of ticks, the row-major last-writer-wins rule makes every distant twin collision a real cost: the earlier abstaining writer's stale resonance is wasted work, a deterministic loss paid per tick and per duplicate value. No refuted hypothesis appears here \u2014 the semantics are exact and hold \u2014 so the keeper's null verdict must wait, though the slot table's finite 64-entry budget is itself a price the system pays for its zero-traversal coupling.",
+   "fL": 0.674132,
+   "fP": 0.650012,
+   "retrieval": {
+    "top1": "P4",
+    "family": "P",
+    "score": 0.8371432,
+    "revisit": false
+   }
+  },
+  {
+   "gen": 3,
+   "attempt": 2,
+   "target": "P",
+   "note": "Record N4 fixes the exact local mechanism the earlier stations left open: a cell's Abstain state stores under a key equal to its own value, so same-valued cells across the torus collide in one shared slot and the row-major last writer silently overwrites the rest \u2014 coupling that is real, deterministic, and entirely mediated by value, not by distance. No DIES or failed claim appears in this record; its only price is the stale resonance read by every earlier writer, an unrefuted cost of the shared-key scheme rather than a refuted hypothesis.",
+   "fL": 0.880445,
+   "fP": 0.833841,
+   "retrieval": {
+    "top1": "P4",
+    "family": "P",
+    "score": 0.9418684,
+    "revisit": false
+   }
+  },
+  {
+   "gen": 4,
+   "attempt": 1,
+   "target": "P",
+   "note": "The table's row-major last-writer-wins resolution means the 64th slot's occupant pays no extra read cost \u2014 every abstaining cell writes one slot per tick at a fixed price, so the stale-resonance failure for earlier same-value writers is a correctness loss, not a billed one. Yet this record carries no falsified claim and no cost verdict: the slot semantics are declared exact and deterministic, priced in nothing but tick order.",
+   "fL": 0.726412,
+   "fP": 0.715662,
+   "retrieval": {
+    "top1": "P4",
+    "family": "P",
+    "score": 0.9599463,
+    "revisit": false
+   }
+  },
+  {
+   "gen": 4,
+   "attempt": 2,
+   "target": "P",
+   "note": "Row-major last-writer-wins makes the table's collision rule purely local in index space: the winning write is decided by which abstaining cell sits nearest the table's row origin, not by distance across the torus, so identical values in one tick collapse to a single surviving resonance and the losers read stale. No DIES verdict or cost figure appears in this record \u2014 the semantics are asserted exact and deterministic, leaving the keeper's null unmet here.",
+   "fL": 0.73659,
+   "fP": 0.754812,
+   "retrieval": {
+    "top1": "P4",
+    "family": "P",
+    "score": 0.9329482,
+    "revisit": false
+   }
+  },
+  {
+   "gen": 6,
+   "attempt": 1,
+   "target": "A",
+   "note": "The harness fix is the keeper's economics in raw form: a closure consuming rng at call time burned compute per invocation until the bug was traced to the harness, not the kernel \u2014 determinism bought back by removing wasted draws. No refuted hypothesis registers here, though the cost ledger does: 353 to 5874 writes per slot as contention climbs, and completion paying one over sigma.",
+   "fL": 0.698354,
+   "fP": 0.712986,
+   "retrieval": {
+    "top1": "A5",
+    "family": "A",
+    "score": 0.77362376,
+    "revisit": false
+   }
+  }
+ ],
+ "escape_receipt": {
+  "fired_at_gen": 5,
+  "from_target": "P",
+  "to_target": "A",
+  "stagnated_gens": [
+   3,
+   4
+  ],
+  "rule": "escape_after 2 consecutive stagnated generations"
+ },
+ "embed_calls": 21,
+ "generator_calls": 10,
+ "hypotheses": {
+  "H1_coverage": false,
+  "H2_selection_bites": true,
+  "H3_coordination": true,
+  "H4_heredity": true,
+  "C24": false
+ },
+ "predictions": {
+  "P1": false,
+  "P2": false,
+  "P3": true,
+  "P4": true,
+  "P5": true,
+  "P6": true
+ }
+}

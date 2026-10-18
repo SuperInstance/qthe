@@ -1,0 +1,63 @@
+{
+ "experiment": "E-Q30",
+ "claim": "C26 — the 16-bit code is a queryable index (storage = query)",
+ "kernel": {
+  "kernelKind": "real",
+  "kernelPath": "qthe/qthe.mjs"
+ },
+ "preRegSha": "06fee45fe9ef56cf2d0f27288eae6dd9b4c3f0e20158be3de4bb08a56edcac7f",
+ "registration": "experiments/pre_registration_e_q30.json (no amendments — the run as registered)",
+ "task": {
+  "arms": "ST/SQ/NT/NQ",
+  "compositions": 5,
+  "calls": "ZERO new embed calls"
+ },
+ "live": {
+  "ST": 3,
+  "SQ": 5,
+  "NT": 4,
+  "NQ": 5
+ },
+ "null": {
+  "ST": {
+   "mean": 1.255,
+   "p95": 3,
+   "sd": 1.1764246682214718
+  },
+  "SQ": {
+   "mean": 1.221,
+   "p95": 3,
+   "sd": 1.1463677420444105
+  },
+  "NT": {
+   "mean": 1.186,
+   "p95": 3,
+   "sd": 1.1727761934827976
+  },
+  "NQ": {
+   "mean": 1.161,
+   "p95": 3,
+   "sd": 1.1140372525189632
+  }
+ },
+ "clip_total": {
+  "ST": 9,
+  "SQ": 9,
+  "NT": 9,
+  "NQ": 5
+ },
+ "hypotheses": {
+  "H1_algebra_survives": true,
+  "H2_resolution_pays": true,
+  "H3_above_baseline": true,
+  "C26": true
+ },
+ "predictions": {
+  "P1": true,
+  "P2": true,
+  "P3": true,
+  "P4": false,
+  "P5": true
+ },
+ "verdict": "E-Q30 VERDICT (does the E-Q26 family algebra survive E-Q27 quantization? — saturation arithmetic on the sealed ternary/4-level codes, live arm-filtered retrieval, seeded permutation null): H1 LIVES — the ternary-noul composed codes hit 4/5 family: the algebra survives 16-bit quantization (dense reference 5/5). AND THE 4-LEVEL NOUL CODE IS PERFECT: NQ 5/5 — equal to the dense ceiling: the E-Q27 consumer law's best practical code (NQ 0.70 retrieval) is ALSO the best algebra code. H2 LIVES: resolution pays at both comparisons — NQ 5/5 >= NT 4/5, and 4-level beats ternary on the score substrate too (SQ 5/5 vs ST 3/5); calibration pays at ternary (NT beats ST: the noul arm's mass geometry carries offsets better at low resolution). H3 LIVES: both noul arms at 0.8/1 vs the majority baseline 0.25 — 3.2-4x. C26 LIVES: THE 16-BIT CODE IS A QUERYABLE INDEX — a stored code plus an arithmetic operator IS a family query; storage and query collapse into the same object (queries AS storage, measured on live infrastructure). THE NULL RECEIPT: the code-space null p95 is 3 vs the dense null's 4 — quantized geometry has FEWER near-ties (P5 HIT): the composition effect is MORE significant per bit in code space than in dense space. THE CLIPPING RECEIPT: saturation bound on 9/40 ternary coordinates — slightly above the registered <= 8 (P4 MISS, honest: the offsets occasionally push past the code bounds; the clip is doing real work and the algebra survives it). LOCAL==LIVE on every arm (the F3 receipt: 3/5, 5/5, 4/5, 5/5 identical). THE LAW: nobody in the learning-to-hash literature composes queries by arithmetic on ternary QA-codes — binary codes at 100s-1000s bits matched by Hamming, never composed; the ternary/4-level QA-code is now measured as a query LANGUAGE, not just storage."
+}

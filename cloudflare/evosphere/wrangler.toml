@@ -1,0 +1,16 @@
+# evosphere — selection-as-infrastructure (ORCH-R26/T17-a, E-Q28)
+name = "qthe-evosphere"
+main = "src/worker.js"
+compatibility_date = "2026-10-01"
+account_id = "049ff5e84ecf636b53b162cbb580aae6"
+
+# the privacy law: no request/response telemetry is retained.
+[observability]
+enabled = false
+
+[durable_objects]
+bindings = [{ name = "EVOSPHERE", class_name = "Evosphere" }]
+
+[[migrations]]
+tag = "v1"
+new_classes = ["Evosphere"]

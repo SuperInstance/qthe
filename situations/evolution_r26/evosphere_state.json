@@ -1,0 +1,364 @@
+{
+ "initialized": true,
+ "gen": 8,
+ "done": "coverage-complete-at-gen-7",
+ "stagnation": 0,
+ "stations": [
+  {
+   "id": "N1",
+   "family": "N",
+   "gen": 0
+  },
+  {
+   "id": "Q4",
+   "family": "Q",
+   "gen": 1
+  },
+  {
+   "id": "N4",
+   "family": "N",
+   "gen": 2
+  },
+  {
+   "id": "P4",
+   "family": "P",
+   "gen": 5
+  },
+  {
+   "id": "P2",
+   "family": "P",
+   "gen": 6
+  },
+  {
+   "id": "A5",
+   "family": "A",
+   "gen": 7
+  }
+ ],
+ "counts": {
+  "N": 2,
+  "P": 2,
+  "Q": 1,
+  "A": 1
+ },
+ "lineage": [
+  {
+   "gen": 1,
+   "note": "Wormhole coupling here bypasses the local neighborhood entirely \u2014 twins 24 cells apart across the torus lock through the 64-slot table with zero graph traversal, so the local update rule's thresholds and cascades play no part in the alignment. The keeper's request for a null verdict goes unmet at this station: C2's DIES column is empty, 8/8 against 0/20 leaving the non-local channel unrefuted.",
+   "note_sha": "96c078518bd988e55d1c440dfc47ab0deab0a386b6f3c5df578b6556f3209288",
+   "station": "Q4",
+   "station_family": "Q",
+   "fitness_latest": 0.68444,
+   "fitness_preview": 0.669942,
+   "directive_axes": [
+    1,
+    5
+   ],
+   "retrieval": {
+    "top1": "Q4",
+    "family": "Q",
+    "score": 0.95662814,
+    "revisit": false
+   }
+  },
+  {
+   "gen": 2,
+   "note": "Wormholes off, the plateau ratio's climb from 1.18 to 1.58 shows the Moore-8 neighborhood coupling doing all the memory work alone \u2014 each cell's next state fixed exactly by its eight local inputs, no long-range traversal to blur the cascade. That byte-level determinism is the keeper's ground truth: the same ladder, replayed with the non-local channel disabled, must land on the same plateau.",
+   "note_sha": "a42ae8c3ef6ee3407a4ec4b4056626057d13e69098e8a554798ccda35c1e5b30",
+   "station": "N4",
+   "station_family": "N",
+   "fitness_latest": 0.872353,
+   "fitness_preview": 0.887238,
+   "directive_axes": [
+    1,
+    7
+   ],
+   "retrieval": {
+    "top1": "N4",
+    "family": "N",
+    "score": 0.8919174,
+    "revisit": false
+   }
+  },
+  {
+   "gen": 5,
+   "note": "Record N4 prices the technical cost of its semantics exactly: colliding Abstain writes in a single tick are resolved by row-major order, so all but the last writer pay for their stale resonance read. No falsified claim or DIES verdict appears here \u2014 the keeper's null concern is unmet again, as this station reports a deterministic, exact result with no refutation attached.",
+   "note_sha": "b1eba518e57ebe944cecce2041c3d79585e0f8ebdd239219f9a239b5308b13f7",
+   "station": "P4",
+   "station_family": "P",
+   "fitness_latest": 0.69799,
+   "fitness_preview": 0.723716,
+   "directive_axes": [
+    6,
+    5
+   ],
+   "retrieval": {
+    "top1": "P4",
+    "family": "P",
+    "score": 0.9395051,
+    "revisit": false
+   }
+  },
+  {
+   "gen": 6,
+   "note": "E-Q16's harness fix is the honest null worth recording: the seedFn closure drew rng at call time, so the kernel's determinism was never in question \u2014 the falsified claim belonged to the harness, and it died there. The dense sigma table's bridge metrics staying sigma-invariant while completion scales as one over sigma says the local update physics keeps its timbre across neighborhood density, with contention's monotone climb from 353 to 5874 writes per slot as the cascade's visible price.",
+   "note_sha": "446f738e09e2e609b615666c8ac4fe544c3d8a7af17b7949244611f117d881f0",
+   "station": "P2",
+   "station_family": "P",
+   "fitness_latest": 0.754612,
+   "fitness_preview": 0.760968,
+   "directive_axes": [
+    5,
+    6
+   ],
+   "retrieval": {
+    "top1": "P2",
+    "family": "P",
+    "score": 0.8729817,
+    "revisit": false
+   }
+  },
+  {
+   "gen": 7,
+   "note": "Completion time collapses from 38 ticks to 3 as sigma sweeps 0.25 to 4 \u2014 the kernel pays a price in wall-clock for every unit of scale it is denied, yet bridge formation stays flat across the same sweep. No allocation or arbitration appears here; the sigma sweep is the closest thing to a cost curve, and it prices speed alone, not routing or contention.",
+   "note_sha": "1fc5c8ebcda697d099ca02144da3c8b42cc258426c3cd9afabd8176d19fe37c0",
+   "station": "A5",
+   "station_family": "A",
+   "fitness_latest": 0.901778,
+   "fitness_preview": 0.87884,
+   "directive_axes": [
+    6,
+    3
+   ],
+   "retrieval": {
+    "top1": "A5",
+    "family": "A",
+    "score": 0.9755486,
+    "revisit": false
+   }
+  }
+ ],
+ "attempts": [
+  {
+   "gen": 1,
+   "attempt": 1,
+   "note_sha": "96c078518bd988e55d1c440dfc47ab0deab0a386b6f3c5df578b6556f3209288",
+   "target_family": "P",
+   "verdict": "accept",
+   "fitness_latest": 0.68444,
+   "fitness_preview": 0.669942,
+   "parent_fitness_latest": 0.528422,
+   "parent_fitness_preview": 0.528815,
+   "retrieval": {
+    "top1": "Q4",
+    "family": "Q",
+    "score": 0.95662814,
+    "revisit": false
+   },
+   "directive_axes": [
+    1,
+    5
+   ]
+  },
+  {
+   "gen": 2,
+   "attempt": 1,
+   "note_sha": "a42ae8c3ef6ee3407a4ec4b4056626057d13e69098e8a554798ccda35c1e5b30",
+   "target_family": "P",
+   "verdict": "accept",
+   "fitness_latest": 0.872353,
+   "fitness_preview": 0.887238,
+   "parent_fitness_latest": 0.68444,
+   "parent_fitness_preview": 0.669942,
+   "retrieval": {
+    "top1": "N4",
+    "family": "N",
+    "score": 0.8919174,
+    "revisit": false
+   },
+   "directive_axes": [
+    1,
+    7
+   ]
+  },
+  {
+   "gen": 3,
+   "attempt": 1,
+   "note_sha": "1ce84cf009db669947a765d459435f03cc33a6c3ac0e217b811a6e5d3ccbea5d",
+   "target_family": "P",
+   "verdict": "reject",
+   "fitness_latest": 0.674132,
+   "fitness_preview": 0.650012,
+   "parent_fitness_latest": 0.872353,
+   "parent_fitness_preview": 0.887238,
+   "retrieval": {
+    "top1": "P4",
+    "family": "P",
+    "score": 0.8371432,
+    "revisit": false
+   },
+   "directive_axes": [
+    5,
+    6
+   ]
+  },
+  {
+   "gen": 3,
+   "attempt": 2,
+   "note_sha": "34c43e147de7f2dfa259b336e6425b3537aefd726d1a4c0197a7fea469b6843f",
+   "target_family": "P",
+   "verdict": "reject",
+   "fitness_latest": 0.880445,
+   "fitness_preview": 0.833841,
+   "parent_fitness_latest": 0.872353,
+   "parent_fitness_preview": 0.887238,
+   "retrieval": {
+    "top1": "P4",
+    "family": "P",
+    "score": 0.9418684,
+    "revisit": false
+   },
+   "directive_axes": [
+    5,
+    6
+   ]
+  },
+  {
+   "gen": 4,
+   "attempt": 1,
+   "note_sha": "4f4ff2a8fee1df8511c57dcff77c62f9e1d8a5b934fa47cd112c2858a0b9116a",
+   "target_family": "P",
+   "verdict": "reject",
+   "fitness_latest": 0.726412,
+   "fitness_preview": 0.715662,
+   "parent_fitness_latest": 0.872353,
+   "parent_fitness_preview": 0.887238,
+   "retrieval": {
+    "top1": "P4",
+    "family": "P",
+    "score": 0.9599463,
+    "revisit": false
+   },
+   "directive_axes": [
+    5,
+    6
+   ]
+  },
+  {
+   "gen": 4,
+   "attempt": 2,
+   "note_sha": "ed9f38c9c96fe370b86e2d21d9547ce0d13616a074d98b705d6b0a9d16a43ff8",
+   "target_family": "P",
+   "verdict": "reject",
+   "fitness_latest": 0.73659,
+   "fitness_preview": 0.754812,
+   "parent_fitness_latest": 0.872353,
+   "parent_fitness_preview": 0.887238,
+   "retrieval": {
+    "top1": "P4",
+    "family": "P",
+    "score": 0.9329482,
+    "revisit": false
+   },
+   "directive_axes": [
+    5,
+    6
+   ]
+  },
+  {
+   "gen": 5,
+   "attempt": 1,
+   "note_sha": "b1eba518e57ebe944cecce2041c3d79585e0f8ebdd239219f9a239b5308b13f7",
+   "target_family": "A",
+   "verdict": "accept",
+   "fitness_latest": 0.69799,
+   "fitness_preview": 0.723716,
+   "parent_fitness_latest": 0.246392,
+   "parent_fitness_preview": 0.262143,
+   "retrieval": {
+    "top1": "P4",
+    "family": "P",
+    "score": 0.9395051,
+    "revisit": false
+   },
+   "directive_axes": [
+    6,
+    5
+   ]
+  },
+  {
+   "gen": 6,
+   "attempt": 1,
+   "note_sha": "5d9d5b2ea85a0da3266668d5cc2cad3697d8eaa1beeb13d732c7089e158ae07c",
+   "target_family": "A",
+   "verdict": "reject",
+   "fitness_latest": 0.698354,
+   "fitness_preview": 0.712986,
+   "parent_fitness_latest": 0.69799,
+   "parent_fitness_preview": 0.723716,
+   "retrieval": {
+    "top1": "A5",
+    "family": "A",
+    "score": 0.77362376,
+    "revisit": false
+   },
+   "directive_axes": [
+    5,
+    6
+   ]
+  },
+  {
+   "gen": 6,
+   "attempt": 2,
+   "note_sha": "446f738e09e2e609b615666c8ac4fe544c3d8a7af17b7949244611f117d881f0",
+   "target_family": "A",
+   "verdict": "accept",
+   "fitness_latest": 0.754612,
+   "fitness_preview": 0.760968,
+   "parent_fitness_latest": 0.69799,
+   "parent_fitness_preview": 0.723716,
+   "retrieval": {
+    "top1": "P2",
+    "family": "P",
+    "score": 0.8729817,
+    "revisit": false
+   },
+   "directive_axes": [
+    5,
+    6
+   ]
+  },
+  {
+   "gen": 7,
+   "attempt": 1,
+   "note_sha": "1fc5c8ebcda697d099ca02144da3c8b42cc258426c3cd9afabd8176d19fe37c0",
+   "target_family": "A",
+   "verdict": "accept",
+   "fitness_latest": 0.901778,
+   "fitness_preview": 0.87884,
+   "parent_fitness_latest": 0.754612,
+   "parent_fitness_preview": 0.760968,
+   "retrieval": {
+    "top1": "A5",
+    "family": "A",
+    "score": 0.9755486,
+    "revisit": false
+   },
+   "directive_axes": [
+    6,
+    3
+   ]
+  }
+ ],
+ "config": {
+  "max_gens": 10,
+  "max_attempts": 2,
+  "target_order": [
+   "P",
+   "Q",
+   "A",
+   "N"
+  ],
+  "escape_after": 2
+ }
+}
