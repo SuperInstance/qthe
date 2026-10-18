@@ -269,3 +269,40 @@ Ops laws banked (see the deployment addendum): the propagation-window law
 (build markers before trust), the local-first wrangler law (`--remote` or
 it didn't happen), the eventual-consistency law (the sidecar converges;
 retry with backoff, never assert immediacy).
+
+## LAYER 2 deployment receipts, addendum (ORCH-R17, 2026-10-18)
+
+**C6 is now PRICED — it DIES.** The r15 claim ("cross-substrate
+slot-histogram similarity predicts useful twin overlap") was run live
+against the dedicated `qthe-c6` Vectorize index through the Worker's
+experiment lane, under a pre-registered design + one receipted amendment
+(`cloudflare/e_c6_histogram_overlap.mjs`,
+`cloudflare/outputs/e_c6_histogram_overlap.json`):
+
+- Run 1 INVALID (receipted): the brand-new index did not serve its first
+  upserts within the 20 s settle (empty rankings; instrument), and the
+  original ground truth (binary occupied-slot Jaccard) is degenerate —
+  **a kernel finding kept from the run: the 64-slot table saturates after
+  ONE tick** (seeds 7000–7002, 32×32: ~256 Abstain writers cover all 64
+  slots; occupancy stays 64/64 through tick 40).
+- Run 2 VALID (M3 sanity gate 30/30; amended ground truth = behavioral
+  cross-resonance overlap, spread 22.5–122.9): **M1 precision@5 = 0.053**
+  (below the ~0.17 chance floor), **M2 Spearman = −0.16** (slightly
+  anti-correlated). The claim dies below chance.
+- **The mechanism**: L2-normalized histograms discard exactly the
+  resonance *mass* that drives behavioral overlap (a high-mass table
+  resonates everyone's abstainers) and keep only the slot-distribution
+  *shape* that behavior ignores. The retrieval signal and the behavioral
+  signal are near-orthogonal — mildly anti-correlated here.
+- The twin sidecar infrastructure (r16) remains live and useful for
+  exact slot lookup; what died is the histogram-similarity *pricing*
+  claim. A claim that dies, dies cheap and honest: total cost $0
+  (code + free tier), receipt kept beside the body.
+
+**KV HUD + cron beat: EARNED.** The 5-minute beat (the
+tminus-dispatcher convergence) fires at the boundary and advances
+`cron-field` exactly once per beat (P-D measured: 0 → 1, HUD sha256
+`e6fdcd1b…` ≡ the DO's `/hash`). The HUD line is served from KV at
+`GET /hud`. After ERRATUM 3 (the beat's `stub.fetch` calls defaulted to
+GET; init/tick require POST — the first beat wrote a hollow HUD; found
+by the P-D check, fixed, re-verified).

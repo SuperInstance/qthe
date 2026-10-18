@@ -25,7 +25,7 @@ import {
   makeSubstrate, nextD, tick, traceView, mulberry32,
 } from "./qthe-kernel.mjs";
 
-const BUILD = "r16-fix2 (multi-segment receipt keys)";
+const BUILD = "r17-fix1 (cron POST fix)";
 const INFO = {
   service: "qthe-cell", build: BUILD,
   what: "the qthe ternary-cell kernel, live on Cloudflare Workers",
@@ -43,6 +43,8 @@ const INFO = {
     "GET  /twins": "the whole synced twin index",
     "GET  /receipts": "R2 listing of the sealed chains (C7)",
     "GET  /receipt/:key": "fetch a chain from R2 (etag = sha256)",
+    "POST /c6/experiment": "ORCH-R17 experiment lane: upsert <=40 64-dim vectors (ids prefixed c6-) and return each one's ranking (dedicated qthe-c6 index)",
+    "GET  /hud": "the KV HUD line (ticks + state hash of cron-field, written by the 5-minute beat)",
   },
   determinism_contract: "same substrate + same tick sequence -> byte-identical state, always (kernel header, tests G3)",
 };
@@ -312,9 +314,86 @@ export default {
         return json({ tau: t, psi: psi(t), name: ["Ground", "Attract", "Repel", "Abstain"][t], byte: pack(t, 0) });
       }
 
+      // /hud (T8-b) — the KV HUD line written by the cron beat
+      if (request.method === "GET" && parts[0] === "hud" && parts.length === 1) {
+        const hud = await env.QTHE_HUD.get("cron-field", { type: "json" });
+        if (!hud) return json({ note: "no HUD yet — the beat fires every 5 minutes; retry shortly" });
+        return json({ ok: true, hud });
+      }
+
+      // POST /c6/experiment (T8-a) — the ORCH-R17 experiment lane.
+      // Bounded by design: <=40 vectors, exactly 64 dims, values in [-1,1],
+      // ids sanitized and prefixed "c6-". The service does vector storage +
+      // retrieval ONLY; the experiment design (ground truth, metrics) lives
+      // in the pre-registered local script, not here.
+      if (request.method === "POST" && parts[0] === "c6" && parts[1] === "experiment") {
+        const body = await request.json();
+        const vectors = body.vectors;
+        if (!Array.isArray(vectors) || vectors.length === 0 || vectors.length > 40) {
+          return json({ error: "vectors must be an array of 1..40 entries" }, 400);
+        }
+        const clean = [];
+        for (const v of vectors) {
+          const id = String(v.id || "").replace(/[^a-zA-Z0-9_-]/g, "").slice(0, 40);
+          if (!id) return json({ error: "every vector needs a sane id" }, 400);
+          if (!Array.isArray(v.values) || v.values.length !== 64) {
+            return json({ error: `vector ${id}: values must have exactly 64 dims` }, 400);
+          }
+          const values = v.values.map((x) => Math.max(-1, Math.min(1, Number(x) || 0)));
+          clean.push({ id: `c6-${id}`, values });
+        }
+        await env.QTHE_C6.upsert(clean);
+        // eventual-consistency law: the index needs a beat before queries see
+        // the upserts — the caller passes body.settle_seconds (default 15) and
+        // we sleep here so the whole experiment is one call.
+        const settle = Math.min(60, Math.max(0, parseInt(body.settle_seconds ?? "15", 10) | 0));
+        if (settle > 0) await new Promise((r) => setTimeout(r, settle * 1000));
+        const rankings = [];
+        for (const v of clean) {
+          const q = await env.QTHE_C6.query(v.values, { topK: clean.length, returnMetadata: "all" });
+          rankings.push({
+            id: v.id.slice(3),
+            matches: (q.matches || []).map((m) => ({ id: String(m.id || "").slice(3), score: m.score })),
+          });
+        }
+        return json({ ok: true, n: clean.length, settle_seconds: settle, rankings });
+      }
+
       return json({ error: "not found", see: "/" }, 404);
     } catch (e) {
       return json({ error: String(e && e.message || e) }, 500);
     }
+  },
+
+  // T8-b — the 5-minute beat (the tminus-dispatcher convergence): advance
+  // cron-field exactly one tick and write the HUD line to KV. The DO's
+  // single thread guarantees exactly-once application per beat.
+  // ERRATUM 3 (found by the P-D check, ORCH-R17): stub.fetch(url) defaults
+  // to GET — init/tick require POST. The first beat wrote a hollow HUD
+  // (no ticks, no hash) because both calls fell through to the 400 route.
+  async scheduled(event, env, ctx) {
+    const origin = "https://qthe-cell.casey-digennaro.workers.dev";
+    const id = env.QTHE_FIELD.idFromName("cron-field");
+    const stub = env.QTHE_FIELD.get(id);
+    // ensure the field exists (first beat after a wipe)
+    const h0 = await (await stub.fetch(`${origin}/field/cron-field/hash`)).json();
+    if (!h0.ok) {
+      await stub.fetch(`${origin}/field/cron-field/init?w=32&h=32&seed=90210`, { method: "POST" });
+    }
+    const t = await (await stub.fetch(`${origin}/field/cron-field/tick?times=1`, { method: "POST" })).json();
+    const hud = {
+      beat: "*/5 * * * *",
+      scheduled_for: event.scheduledTime,
+      ran_at: new Date().toISOString(),
+      ticks: t.ticks,
+      sha256: t.sha256,
+      twin_events_last_tick: t.twin_events_this_tick,
+      slots_occupied: t.wormhole_slots_occupied,
+    };
+    await env.QTHE_HUD.put("cron-field", JSON.stringify(hud));
+    // twin sidecar stays synced with the beat too
+    const v = await (await stub.fetch(`${origin}/field/cron-field`)).json();
+    if (v.ok) await syncTwins(env, v.view);
+    return new Response(null, { status: 200 });
   },
 };

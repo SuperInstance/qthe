@@ -251,3 +251,37 @@ failure).
 - The DO determinism claim covers the kernel path as vendored; the
   E-Q1-style 40/40 replay battery through the Worker API is the next
   registered step if the fleet wants the full protocol at the edge.
+
+---
+
+# ADDENDUM 2 — ORCH-R17: the C6 verdict, KV HUD, and the cron beat
+
+## The C6 experiment (pre-registered, one receipted amendment)
+
+Design + artifact: `cloudflare/e_c6_histogram_overlap.mjs` →
+`cloudflare/outputs/e_c6_histogram_overlap.json`. Verdict: **the claim
+dies below chance** (M1 0.053 vs ~0.17 chance; M2 −0.16), mechanism:
+L2-normalization discards the resonance mass that drives behavioral
+overlap. Two findings kept from the invalid first run: the new-index
+propagation law (a freshly created Vectorize index may need >20 s before
+its first upserts are queryable — the settle is now 45 s with a BLOCKING
+M3 sanity gate), and the kernel fact that **the 64-slot table saturates
+after one tick** on randomly seeded substrates (~256 Abstain writers
+cover all 64 slots).
+
+## The KV HUD + the 5-minute beat
+
+`[[kv_namespaces]] QTHE_HUD` + `[triggers] crons = ["*/5 * * * *"]`. The
+beat advances `cron-field` exactly once and writes the HUD line (ticks +
+state hash + twin census) to KV; `GET /hud` serves it. Measured: the
+beat fires at the boundary (05:20:17 for the 05:20 boundary), and after
+a manual re-init, the next beat advanced the field 0 → 1 exactly (P-D)
+with HUD sha256 ≡ the DO's `/hash`. ERRATUM 3 receipted in-code: the
+beat's `stub.fetch` calls defaulted to GET; init/tick require POST.
+
+## The Cloudflare primitive set is now complete
+
+Workers (r16), Durable Objects (r16, SQLite class), Vectorize (r16
+sidecar + r17 experiment index), R2 (r16), Pages (r16), KV (r17), Cron
+Triggers (r17). All on the free tier; every claim measured live; the
+whole battery re-runnable via `bash cloudflare/live_checks.sh`.

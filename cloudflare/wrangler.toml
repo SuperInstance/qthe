@@ -31,3 +31,18 @@ bucket_name = "qthe-receipts"
 
 [observability]
 enabled = true
+
+# T8-a — the C6 experiment index (histogram vectors, dedicated; the
+# slot sidecar stays in qthe-twins).
+[[vectorize]]
+binding = "QTHE_C6"
+index_name = "qthe-c6"
+
+# T8-b — the KV HUD (the r15 design's HUD, now with its second consumer:
+# the cron) and the 5-minute beat (the tminus-dispatcher convergence).
+[[kv_namespaces]]
+binding = "QTHE_HUD"
+id = "025bbc429d4e4c40afad92cfb1cbb689"
+
+[triggers]
+crons = ["*/5 * * * *"]

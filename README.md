@@ -125,6 +125,29 @@ The Cloudflare token arrived and the r15 design is now a **running service**
   (*heave the claim, boys* — the round cycle as a hauling song).
   Round spend: ~$0.004 (3 opinion calls), all other lanes $0 (free tier).
 
+## The pricing round (r17 — C6 dies, the beat lives)
+
+- **The old C6 claim is now PRICED — it DIES below chance.**
+  "Cross-substrate slot-histogram similarity predicts useful twin
+  overlap," run live against a dedicated Vectorize index under a
+  pre-registered design (+ one receipted amendment): M1 precision@5
+  0.053 (chance ≈ 0.17), M2 Spearman −0.16, M3 sanity 30/30. Mechanism:
+  L2-normalization discards the resonance *mass* that drives behavioral
+  overlap and keeps the *shape* behavior ignores
+  (`cloudflare/outputs/e_c6_histogram_overlap.json`). Two findings kept:
+  a fresh Vectorize index can need >20 s before first queries (settle 45 s
+  + blocking sanity gate now), and **the 64-slot table saturates after
+  ONE tick** on random substrates — binary slot occupancy is degenerate
+  as an overlap signal, a kernel fact worth having.
+- **The KV HUD + 5-minute cron beat: EARNED.** The beat advances
+  `cron-field` exactly once per fire (measured 0 → 1; HUD sha256 ≡ the
+  DO's `/hash`; `GET /hud`), completing the Cloudflare primitive set —
+  Workers, DOs, Vectorize, R2, Pages, KV, Cron — all measured, all free
+  tier, battery re-runnable (`bash cloudflare/live_checks.sh`).
+- **ERRATUM 3** (the beat's `stub.fetch` defaulted to GET; init/tick
+  need POST — the first HUD was hollow) found by the P-D check, fixed,
+  re-verified. Round spend $0.
+
 ## Documentation
 
 Wave-69 docs layer (added; nothing above was changed). Route by audience:

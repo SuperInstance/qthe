@@ -1,0 +1,156 @@
+{
+  "experiment": "e_c6_histogram_overlap",
+  "run": 2,
+  "round": "ORCH-R17",
+  "preregistration": "docs/discussions/2026-10-18-orch-r17-registration.md + AMENDMENT 1",
+  "invalid_run_1": {
+    "instrument": "new-index propagation > 20s settle -> empty rankings",
+    "ground_truth": "binary Jaccard degenerate (table saturates at tick 1; all pairs 1.0)"
+  },
+  "design": {
+    "K": 30,
+    "seeds": "7000..7029",
+    "ticks": 40,
+    "dims": "32x32",
+    "histogram": "slot resonance, L2-normalized",
+    "ground_truth_amended": "behavioral cross-resonance: overlap(A,B) = (mean_A res_B[d of A's abstainers] + mean_B res_A[d of B's abstainers]) / 2",
+    "service": "https://qthe-cell.casey-digennaro.workers.dev/c6/experiment",
+    "settle_seconds": 45
+  },
+  "gt_stats": {
+    "min": 22.4637,
+    "max": 122.869,
+    "spread": 100.4053
+  },
+  "metrics": {
+    "M1_precision_at_5": 0.0533,
+    "M2_mean_spearman": -0.1618,
+    "M3_self_top1": "30/30"
+  },
+  "verdict": "P-B: the claim DIES — histogram shape does not predict behavioral twin overlap at these parameters",
+  "rank_sample": {
+    "id": "sub-7000",
+    "matches": [
+      {
+        "id": "sub-7000",
+        "score": 0.999999
+      },
+      {
+        "id": "probe-7000",
+        "score": 0.999999
+      },
+      {
+        "id": "sub-7021",
+        "score": 0.88652295
+      },
+      {
+        "id": "sub-7002",
+        "score": 0.88590384
+      },
+      {
+        "id": "sub-7023",
+        "score": 0.87724626
+      },
+      {
+        "id": "sub-7020",
+        "score": 0.8717998
+      },
+      {
+        "id": "sub-7004",
+        "score": 0.8665424
+      },
+      {
+        "id": "sub-7018",
+        "score": 0.85561335
+      },
+      {
+        "id": "sub-7024",
+        "score": 0.8529767
+      },
+      {
+        "id": "sub-7029",
+        "score": 0.84894794
+      },
+      {
+        "id": "sub-7011",
+        "score": 0.8477766
+      },
+      {
+        "id": "sub-7006",
+        "score": 0.8448953
+      },
+      {
+        "id": "sub-7010",
+        "score": 0.8428234
+      },
+      {
+        "id": "sub-7027",
+        "score": 0.8377133
+      },
+      {
+        "id": "sub-7013",
+        "score": 0.8348306
+      },
+      {
+        "id": "sub-7003",
+        "score": 0.83375895
+      },
+      {
+        "id": "sub-7017",
+        "score": 0.8334205
+      },
+      {
+        "id": "sub-7022",
+        "score": 0.8330804
+      },
+      {
+        "id": "sub-7015",
+        "score": 0.8304084
+      },
+      {
+        "id": "sub-7014",
+        "score": 0.82690024
+      },
+      {
+        "id": "sub-7025",
+        "score": 0.8249328
+      },
+      {
+        "id": "sub-7026",
+        "score": 0.816255
+      },
+      {
+        "id": "sub-7008",
+        "score": 0.8122674
+      },
+      {
+        "id": "sub-7007",
+        "score": 0.8039643
+      },
+      {
+        "id": "sub-7028",
+        "score": 0.8011134
+      },
+      {
+        "id": "sub-7019",
+        "score": 0.7988555
+      },
+      {
+        "id": "sub-7005",
+        "score": 0.79285735
+      },
+      {
+        "id": "sub-7009",
+        "score": 0.787731
+      },
+      {
+        "id": "sub-7016",
+        "score": 0.7863023
+      },
+      {
+        "id": "sub-7001",
+        "score": 0.77098066
+      }
+    ]
+  }
+}
