@@ -1,57 +1,64 @@
 {
-  "law": "REGISTRATION of E-Q20 — the quantum-construction round (ORCH-R21 lane T12-b): does construction provenance leave a fingerprint that survives the tick dynamics, or does the tick operator wash it out? The F0 determinism law confines quantum entropy to CONSTRUCTION TIME (makeSubstrate's seedFn) — the kernel is never touched, never transcribed: every arm runs the REAL qthe.mjs tick (import). Committed BEFORE ANY RUN; arms, floors, metrics and verdict rules frozen; honest null = crown jewel. Claim C11: the tick operator is a construction-provenance blindfold.",
-  "task_id": "ORCH-R21/T12-b",
-  "agent": "qthe orchestrator (Z.ai), erised fleet line",
-  "wave": "ORCH-R21",
-  "repo": "SuperInstance/qthe",
-  "repo_at_registration": "c6a1ddd",
-  "provenance_of_the_question": "Operator dispatch (experiment with the moth key; enhance the tools). Fleet record: AI-Writings/situations/arch/MOTH-ENGINES.md (32 engines, 2026-09-29), MOTH-ENGINES-PROBES.md (blur-core exact mode; qpixl array law), labs/quantum-fx/qfx.mjs (browser-UA law; comet derive-sizing/retry law), labs/audit-lottery (live comet run: 125 conditioned bytes, S=2.80, emu/aer; commit-before-draw). Account job history: fleet sibling ran comet-qrng-v1 2026-10-16 (4 jobs). Trending context: QCA scrambling (PRB 107.144306, perturb-and-listen); quantum reservoir computing 2026; ternary-weight wave (BitNet b1.58, VibeVoice-ASR-BitNet). The r7/r9-era moth work (graph-v1, balance 0.55, von-Neumann debias) is superseded by comet's SP 800-90B certified stream.",
-  "design_frozen": {
-    "grid": "64x64 FIXED, T=64 ticks, checkpoints t in {0,1,2,4,8,16,32,64}. FALLBACK pre-registered: if blur-core-v1 rejects the 64x64 values shape, ALL arms drop to 32x32 (receipted as an amendment BEFORE any data row; no mixing of grids across arms).",
-    "arms": {
-      "A1_prng": "mulberry32(seed 20261018 + k) byte stream -> seedFn, n=10 planes (seeds k=0..9). The status-quo constructor AND the noise-floor population.",
-      "A2_qrng": "comet-qrng-v1 ONE job, mode emu, output_bytes 49152 (48 KiB), include_raw_counts false -> 40960 conditioned bytes consumed as 10 planes' seedFn journal (4096 B each), n=10. The certified-constructor arm. Bell witness + min-entropy certificate receipted in the seed receipt; provenance (mode/backend) reported, never hidden.",
-      "A3_qblur": "tau-field: A2's plane bytes' tau bits VERBATIM (tau provenance identical to A2 — the blur touches ONLY the d-field). d-field: A2's plane d-values (64x64 grid of integers 0..63) -> blur-core-v1 EXACT mode (shots OMITTED — deterministic quantum operator), strength 0.5, reach default -> output floats RESCALED to input max (receipted engine law) -> re-quantize round-half-up, clamp [0,63]. n=5 planes (5 x 1-credit jobs). The quantum-shaped-geometry arm.",
-      "A3S_shuffled_control": "A3's d-value MULTISET, spatial correlation destroyed by a fixed-seed deterministic permutation (mulberry32(20261018), Fisher-Yates — the E-Q9-DT shuffle idiom: the permutation key is NOT derived from the stream). tau-field identical to A3's. n=5, 0 credits. THE SHARP CONTROL: same marginals as A3, no correlation — separates 'the blur shifted the marginals' from 'the blur's correlation structure carries signal'."
-    },
-    "populations": "A1 n=10, A2 n=10, A3 n=5, A3S n=5. Cross-arm comparisons use population statistics; every plane individually hash-journaled.",
-    "moth_budget_law": "HARD CAPS in the runner: max 1 comet job (5 credits), max 5 blur jobs (5 credits), total 10 credits. Fail-closed: unreachable API yields DETERMINISTIC LABELED MOCK planes (live:false/mock:true everywhere — a mock never pretends to be quantum) and the round degrades to a plumbing test, honestly receipted. No retry burn past the caps."
+ "law": "REGISTRATION of E-Q20 — the quantum-construction round (ORCH-R21 lane T12-b): does construction provenance leave a fingerprint that survives the tick dynamics, or does the tick operator wash it out? The F0 determinism law confines quantum entropy to CONSTRUCTION TIME (makeSubstrate's seedFn) — the kernel is never touched, never transcribed: every arm runs the REAL qthe.mjs tick (import). Committed BEFORE ANY RUN; arms, floors, metrics and verdict rules frozen; honest null = crown jewel. Claim C11: the tick operator is a construction-provenance blindfold.",
+ "task_id": "ORCH-R21/T12-b",
+ "agent": "qthe orchestrator (Z.ai), erised fleet line",
+ "wave": "ORCH-R21",
+ "repo": "SuperInstance/qthe",
+ "repo_at_registration": "c6a1ddd",
+ "provenance_of_the_question": "Operator dispatch (experiment with the moth key; enhance the tools). Fleet record: AI-Writings/situations/arch/MOTH-ENGINES.md (32 engines, 2026-09-29), MOTH-ENGINES-PROBES.md (blur-core exact mode; qpixl array law), labs/quantum-fx/qfx.mjs (browser-UA law; comet derive-sizing/retry law), labs/audit-lottery (live comet run: 125 conditioned bytes, S=2.80, emu/aer; commit-before-draw). Account job history: fleet sibling ran comet-qrng-v1 2026-10-16 (4 jobs). Trending context: QCA scrambling (PRB 107.144306, perturb-and-listen); quantum reservoir computing 2026; ternary-weight wave (BitNet b1.58, VibeVoice-ASR-BitNet). The r7/r9-era moth work (graph-v1, balance 0.55, von-Neumann debias) is superseded by comet's SP 800-90B certified stream.",
+ "design_frozen": {
+  "grid": "64x64 FIXED, T=64 ticks, checkpoints t in {0,1,2,4,8,16,32,64}. FALLBACK pre-registered: if blur-core-v1 rejects the 64x64 values shape, ALL arms drop to 32x32 (receipted as an amendment BEFORE any data row; no mixing of grids across arms).",
+  "arms": {
+   "A1_prng": "mulberry32(seed 20261018 + k) byte stream -> seedFn, n=20 planes (seeds k=0..19; AM2: raised from 10 for floor stability — free local compute). The status-quo constructor AND the noise-floor population.",
+   "A2_qrng": "comet-qrng-v1 ONE job, mode emu, output_bytes 49152 (48 KiB), include_raw_counts false -> 40960 conditioned bytes consumed as 10 planes' seedFn journal (4096 B each), n=10. The certified-constructor arm. AM1 (byte-splitting law, from attack A1): the FIRST 40960 of the 49152 conditioned bytes are split into 10 CONTIGUOUS 4096-byte blocks, one per A2 plane, each block consumed row-major (x ascending, then y ascending) as that plane's seedFn journal; the trailing 8192 bytes are receipted UNUSED (consumption window explicit, reproducible). Bell witness + min-entropy certificate receipted in the seed receipt; provenance (mode/backend) reported, never hidden.",
+   "A3_qblur": "tau-field: A2's plane bytes' tau bits VERBATIM (tau provenance identical to A2 — the blur touches ONLY the d-field). d-field: A2's plane d-values (64x64 grid of integers 0..63) -> blur-core-v1 EXACT mode (shots OMITTED — deterministic quantum operator), strength 0.5, reach default -> output floats RESCALED to input max (receipted engine law) -> re-quantize round-half-up, clamp [0,63]. n=5 planes (5 x 1-credit jobs). The quantum-shaped-geometry arm.",
+   "A3S_shuffled_control": "A3's d-value MULTISET, spatial correlation destroyed by a fixed-seed deterministic permutation (mulberry32(20261018), Fisher-Yates — the E-Q9-DT shuffle idiom: the permutation key is NOT derived from the stream). tau-field identical to A3's. n=5, 0 credits. THE SHARP CONTROL: same marginals as A3, no correlation — separates 'the blur shifted the marginals' from 'the blur's correlation structure carries signal'."
   },
-  "metrics": {
-    "d_histogram_wasserstein": "per plane per checkpoint: 64-bin d-value histogram (normalized) -> Wasserstein-1 distance vs the A1 population leave-one-out reference at the same t.",
-    "tau_total_variation": "per plane per checkpoint: 4-bin tau fractions -> total variation distance vs the A1 leave-one-out reference.",
-    "morans_i": "per plane per checkpoint: Moran's I (rook-4 lag-1, torus wrap) on the d-field. The correlation-structure instrument: A3 should start HIGH (blur = smooth), A3S starts ~ A1's level (shuffled), and the question is whether A3's I decays to the A1 floor and when.",
-    "twin_event_rate": "kernel twin events per tick at each checkpoint window (the event stream the kernel itself emits — no re-implementation).",
-    "saturation_fraction": "fraction of cells at d == 63 per checkpoint.",
-    "plane_hash": "sha256 of the packed plane at every checkpoint (the determinism receipt AND the all-distinct sanity check).",
-    "noise_floor": "A1 leave-one-out: for each A1 plane, distance to the mean of the OTHER NINE; floor = 95th percentile per metric per checkpoint. The floor IS the threshold — no threshold you had to fit."
-  },
-  "hypotheses_and_verdict_rules": {
-    "H1_qrng_prng_equivalence": "LIVES iff A2's every per-metric per-checkpoint population distance <= the A1 noise floor (95th pct). DIES on any excursion with the metric and tick named. Registered death candidates: (a) comet's Toeplitz-extracted stream carries measurable structure mulberry32 lacks (would itself be a finding about the certified source); (b) an artifact of the 40960-of-49152 byte consumption window.",
-    "H2_washout": "LIVES iff at t=64 EVERY cross-arm distance (A2, A3, A3S vs A1 floor) is <= floor on every metric. DIES on any metric above floor at t=64 — with autopsy naming metric, tick, and the A3-vs-A3S decomposition (marginals vs correlation). Registered death candidates: (a) the blur's rescale-to-max leaves the d-field pinned at a saturation outlier that the tick dynamics cannot erase (saturationFraction carries a permanent shift); (b) Moran's I decays slower than 64 ticks (long-lived quantum-shaped geometry — the interesting death); (c) tau-marginal asymmetries in the comet stream persist.",
-    "H3_early_fingerprint": "LIVES iff A3's t=0 histogram distance AND Moran's I distance both exceed floor (the fingerprint exists before dynamics). DIES if the blur at strength 0.5 is already indistinguishable from noise (would send the round back to the strength ladder, honestly receipted as a design miss).",
-    "C11_verdict": "C11 LIVES iff H1 AND H2 hold AND determinism floors hold. Wash-out tick T* = the first checkpoint where A3's Moran's I distance <= floor AND stays <= floor at every later checkpoint. C11 DIES otherwise with the full autopsy. Either verdict ships: a LIVE C11 prices 'the constructor does not matter past t=T*'; a DEAD C11 prices exactly which constructor signature survives — both are boundary-map entries."
-  },
-  "floors_frozen": {
-    "EQ20_F0": "determinism: every plane (all 30) constructed twice from its journaled source and ticked to t=64 — byte-identical plane-hash sequences, else VOID.",
-    "EQ20_F1": "kernel-real by construction: the runner imports qthe.mjs and calls tick() — no transcription exists in this experiment.",
-    "EQ20_F2": "QRNG authenticity: the comet job's result carries bell_witness.S > 2 (classical bound) AND a min-entropy certificate field, else the A2/A3 arms are VOID (no silent classical downgrade — halt LOUD, receipt, re-register).",
-    "EQ20_F3": "blur exactness: every blur job runs with shots OMITTED (the engine's exact mode) AND its output shape equals its input shape (64x64), else the fallback amendment fires BEFORE any data row.",
-    "EQ20_F4": "all-distinct sanity: no two planes share a full plane-hash sequence unless they share constructor AND seed (0 expected collisions across 30 planes).",
-    "EQ20_F5": "A3S marginal identity: A3S's d-value histogram == A3's EXACTLY per plane (the control's premise), else the control is broken, LOUD."
-  },
-  "consult": {
-    "planned": "one Seed-2.0-mini ATTACK-briefed call on this registration (the E-Q17/E-Q18/E-Q19 discipline: attacks on the design, dispositions receipted as pre-run amendments, AS-SAID, sealed to situations/e_q20_design_attack.jsonl). Budget $0.01.",
-    "law": "no amendment after the first data row exists (the pricing-first law); amendments are append-only and pre-run only."
-  },
-  "endpoints": [
-    "per (arm, plane, checkpoint): planeHash, moransI, tauTV, dW1, twinRate, satFrac",
-    "per (arm, checkpoint): population medians + spreads; A1 leave-one-out floor per metric",
-    "cross-arm distance table vs floor at every checkpoint; T* (wash-out tick) if it exists",
-    "seed receipt: comet job id, output_bytes, bell_witness {S, sigma_S, bounds}, min-entropy certificate, provenance {mode, backend}; blur job ids + exact-mode assertion; NO key material anywhere",
-    "verdict block: H1/H2/H3 each LIVES/DIES; C11 verdict; wash-out T*; mechanism autopsy (marginals-vs-correlation decomposition)"
-  ],
-  "amendments_pre_run": {
-    "consult": "pending — situations/e_q20_design_attack.jsonl to be sealed before any data row"
-  }
+  "populations": "A1 n=20 (AM2), A2 n=10, A3 n=5, A3S n=5. Cross-arm comparisons use population statistics (median of per-plane distances vs the A1 LOO reference); every plane individually hash-journaled.",
+  "moth_budget_law": "HARD CAPS in the runner: max 1 comet job (5 credits), max 5 blur jobs (5 credits), total 10 credits. Fail-closed: unreachable API yields DETERMINISTIC LABELED MOCK planes (live:false/mock:true everywhere — a mock never pretends to be quantum) and the round degrades to a plumbing test, honestly receipted. No retry burn past the caps."
+ },
+ "metrics": {
+  "d_histogram_wasserstein": "per plane per checkpoint: 64-bin d-value histogram (normalized) -> Wasserstein-1 distance vs the A1 population leave-one-out reference at the same t.",
+  "tau_total_variation": "per plane per checkpoint: 4-bin tau fractions -> total variation distance vs the A1 leave-one-out reference.",
+  "morans_i": "per plane per checkpoint: Moran's I computed on BOTH rook-4 and Moore-8 lag-1 (torus wrap) on the d-field. MOORE-8 IS PRIMARY (AM3 — the kernel's tick couples Moore-8; the instrument must measure the structure the operator actually modifies); rook-4 kept as the conventional reference. The correlation-structure instrument: A3 should start HIGH (blur = smooth), A3S starts ~ A1's level (shuffled), and the question is whether A3's I decays to the A1 floor and when.",
+  "twin_event_rate": "kernel twin events per tick per CELL at each checkpoint window (AM4: normalized by cell count for cross-grid comparability under the 32x32 fallback), from the event stream the kernel itself emits — no re-implementation.",
+  "saturation_fraction": "fraction of cells at d == 63 per checkpoint.",
+  "plane_hash": "sha256 of the packed plane at every checkpoint (the determinism receipt AND the all-distinct sanity check).",
+  "noise_floor": "A1 leave-one-out: for each A1 plane, distance to the mean of the OTHER NINE; floor = 95th percentile per metric per checkpoint. The floor IS the threshold — no threshold you had to fit."
+ },
+ "hypotheses_and_verdict_rules": {
+  "H1_qrng_prng_equivalence": "LIVES iff A2's every per-metric per-checkpoint population distance <= the A1 noise floor (95th pct). DIES on any excursion with the metric and tick named. Registered death candidates: (a) comet's Toeplitz-extracted stream carries measurable structure mulberry32 lacks (would itself be a finding about the certified source); (b) an artifact of the 40960-of-49152 byte consumption window.",
+  "H2_washout": "LIVES iff at t=64 EVERY cross-arm distance (A2, A3, A3S vs A1 floor) is <= floor on every metric. DIES on any metric above floor at t=64 — with autopsy naming metric, tick, and the A3-vs-A3S decomposition (marginals vs correlation). Registered death candidates: (a) the blur's rescale-to-max leaves the d-field pinned at a saturation outlier that the tick dynamics cannot erase (saturationFraction carries a permanent shift); (b) Moran's I decays slower than 64 ticks (long-lived quantum-shaped geometry — the interesting death); (c) tau-marginal asymmetries in the comet stream persist.",
+  "H3_early_fingerprint": "LIVES iff A3's t=0 histogram distance AND Moran's I distance both exceed floor (the fingerprint exists before dynamics). DIES if the blur at strength 0.5 is already indistinguishable from noise (would send the round back to the strength ladder, honestly receipted as a design miss).",
+  "C11_verdict": "C11 LIVES iff H1 AND H2 hold AND determinism floors hold. Wash-out tick T* = the first checkpoint where A3's Moran's I distance <= floor AND stays <= floor at every later checkpoint. C11 DIES otherwise with the full autopsy. Either verdict ships: a LIVE C11 prices 'the constructor does not matter past t=T*'; a DEAD C11 prices exactly which constructor signature survives — both are boundary-map entries."
+ },
+ "floors_frozen": {
+  "EQ20_F0": "determinism: every plane (all 30) constructed twice from its journaled source and ticked to t=64 — byte-identical plane-hash sequences, else VOID.",
+  "EQ20_F1": "kernel-real by construction: the runner imports qthe.mjs and calls tick() — no transcription exists in this experiment.",
+  "EQ20_F2": "QRNG authenticity: the comet job's result carries bell_witness.S > 2 (classical bound) AND a min-entropy certificate field, else the A2/A3 arms are VOID (no silent classical downgrade — halt LOUD, receipt, re-register).",
+  "EQ20_F3": "blur exactness: every blur job runs with shots OMITTED (the engine's exact mode) AND its output shape equals its input shape (64x64), else the fallback amendment fires BEFORE any data row.",
+  "EQ20_F4": "all-distinct sanity: no two planes share a full plane-hash sequence unless they share constructor AND seed (0 expected collisions across 30 planes).",
+  "EQ20_F5": "A3S marginal identity: A3S's d-value histogram == A3's EXACTLY per plane (the control's premise), else the control is broken, LOUD."
+ },
+ "consult": {
+  "planned": "one Seed-2.0-mini ATTACK-briefed call on this registration (the E-Q17/E-Q18/E-Q19 discipline: attacks on the design, dispositions receipted as pre-run amendments, AS-SAID, sealed to situations/e_q20_design_attack.jsonl). Budget $0.01.",
+  "law": "no amendment after the first data row exists (the pricing-first law); amendments are append-only and pre-run only."
+ },
+ "endpoints": [
+  "per (arm, plane, checkpoint): planeHash, moransI, tauTV, dW1, twinRate, satFrac",
+  "per (arm, checkpoint): population medians + spreads; A1 leave-one-out floor per metric",
+  "cross-arm distance table vs floor at every checkpoint; T* (wash-out tick) if it exists",
+  "seed receipt: comet job id, output_bytes, bell_witness {S, sigma_S, bounds}, min-entropy certificate, provenance {mode, backend}; blur job ids + exact-mode assertion; NO key material anywhere",
+  "verdict block: H1/H2/H3 each LIVES/DIES; C11 verdict; wash-out T*; mechanism autopsy (marginals-vs-correlation decomposition)"
+ ],
+ "amendments_pre_run": {
+  "consult": "situations/e_q20_design_attack.jsonl (ByteDance/Seed-2.0-mini, ATTACK-briefed, 6 attacks, $0.005061, 58.9s, AS-SAID, sealed pre-run — no data row existed)",
+  "AM1_from_A1_ACCEPTED": "The byte-consumption window was genuinely unspecified. FROZEN: first 40960 of 49152 conditioned bytes, 10 contiguous 4096-byte blocks, row-major within each plane, trailing 8192 bytes receipted unused. H1 death-candidate (b) is now testable by construction.",
+  "AM2_from_A3_ACCEPTED_IN_PART": "A1 raised to n=20 (free local compute) to stabilize the LOO floor; the population statistic is precisely defined as the MEDIAN of per-plane distances. A3/A3S remain n=5 — credit-capped at the registered 10-credit ceiling, the power limitation receipted here and carried into the verdict as a caveat. No bootstrap substitution: the corpus law prefers the direct LOO floor (\"no threshold you had to fit\"); a resampled threshold would be a threshold we tuned. Multiplicity receipted: H1 is the strict every-checkpoint claim; H2 decides at t=64 only; earlier-tick excursions are H3’s expected fingerprint, not H2 failures.",
+  "AM3_from_A4_ACCEPTED": "Moran's I now computed on rook-4 AND Moore-8 lag-1, Moore-8 PRIMARY — the kernel's tick couples Moore-8 and the instrument must measure the structure the operator actually modifies. Rook-4 kept as the conventional reference. The runner reports both.",
+  "AM4_from_A5_ACCEPTED": "twinRate normalized per cell per tick (events/tick/cells) — cross-grid comparability under the pre-registered 32x32 fallback.",
+  "A2_REFUTED_AS_STATED_receipted": "The tau-from-A2 design is deliberate chain attribution, not a confound: A3 = A2 + blur-only-on-d isolates the blur in A3-vs-A2; H1 (A2-vs-A1) is the standing tau/d control; any A3-vs-A1 excursion with H1 clean attributes to the d-field blur by elimination. The proposed fix (tau from PRNG) would make A3-vs-A2 differ in TWO variables (tau source AND d blur) — strictly worse for attribution. Receipted, design unchanged.",
+  "A6_REFUTED_on_facts_receipted": "There is no truncation anywhere: for A1/A2 the seed byte IS the packed cell (tau = byte>>6, d = byte&0x3F — a direct 6-bit field, uniform over 0..63, no floor division). The requantization tie rule is receipted explicitly: round-half-up on the blur-rescaled floats (ties toward larger d; expected tie frequency ~0 for float outputs). A3’s d-marginal differing from uniform is H3’s expected t=0 fingerprint, and F5 pins A3S to A3 exactly.",
+  "law": "registered sha256 before amendment: 07330ca51fe27aaf168a4a8c4d4022daddf8ddde5c89824f460017e997de030c"
+ }
 }
