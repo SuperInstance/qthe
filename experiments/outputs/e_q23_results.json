@@ -1,0 +1,151 @@
+{
+ "experiment": "E-Q23",
+ "claim": "C18 — occlusion saliency through the question map; C19 — saliency family/stability structure",
+ "kernel": {
+  "kernelKind": "real",
+  "kernelPath": "qthe/qthe.mjs"
+ },
+ "preRegSha": "b9940089e4e3251021375d5aa9ca9132c2d62a1c80f0fbc9744bc97f0ffcf37f",
+ "corpusSha": "0aceb7fca51965e9dc1ca12af1cc48d61814b69e0e6a1a6c8223bd59df8a5388",
+ "spansSha": "ea6ec46a0aea7ae7cd419124e781a3e17a7f4192472c111ccf9e0f0f3560bb08",
+ "registration": "experiments/pre_registration_e_q23.json (subset rule + splitter frozen; spans sealed sha ea6ec46a0aea7ae7… before any call)",
+ "task": {
+  "subset": "N1,N3,P1,P3,Q1,Q3,A1,A3 (first+third per family)",
+  "spans": "28 sealed spans (3-5 per record)",
+  "calls": "8 full + 28 occlusions + 8 jev-preview drift = 44 batched calls, all served-model attributed"
+ },
+ "metrics": {
+  "M1": {
+   "per_record": {
+    "N1": 0.9897598885773943,
+    "N3": 0.7994100226686861,
+    "P1": 0.9107583180799667,
+    "P3": 0.7914641553432504,
+    "Q1": 0.9470907431224537,
+    "Q3": 0.912915627273778,
+    "A1": 0.9534052847515021,
+    "A3": 0.9583690325432339
+   },
+   "mean": 0.9078966340450332
+  },
+  "M2": {
+   "per_record": {
+    "N1": 0.6785714285714286,
+    "N3": 0.5714285714285714,
+    "P1": 0.7142857142857143,
+    "P3": 0.5714285714285714,
+    "Q1": 0.8928571428571429,
+    "Q3": 0.75,
+    "A1": 0.75,
+    "A3": 0.6785714285714286
+   },
+   "mean": 0.7008928571428572
+  },
+  "M3": {
+   "within_mean": 0.16673204309437864,
+   "cross_mean": -0.3328425203241068,
+   "n_within": 4,
+   "n_cross": 24
+  },
+  "M4": {
+   "e21_misfiled_in_subset": [
+    "P3"
+   ],
+   "mean_entropy_misfiled": 0.7914641553432504,
+   "mean_entropy_filed": 0.924529845288145,
+   "per_record_entropy": {
+    "N1": 0.9897598885773943,
+    "N3": 0.7994100226686861,
+    "P1": 0.9107583180799667,
+    "P3": 0.7914641553432504,
+    "Q1": 0.9470907431224537,
+    "Q3": 0.912915627273778,
+    "A1": 0.9534052847515021,
+    "A3": 0.9583690325432339
+   }
+  },
+  "M5": {
+   "per_record_max_delta": {
+    "N1": 0.017499999999999988,
+    "N3": 0.03,
+    "P1": 0.040000000000000036,
+    "P3": 0.01749999999999996,
+    "Q1": 0.027500000000000024,
+    "Q3": 0.044999999999999984,
+    "A1": 0.03749999999999998,
+    "A3": 0.0325
+   },
+   "spearman_entropy_vs_delta": 0.04761904761904767
+  },
+  "M6": {
+   "per_axis": [
+    {
+     "axis": "P1_nonlocal",
+     "mean_abs_delta": 0.022500000000000006,
+     "max": 0.08000000000000002
+    },
+    {
+     "axis": "P2_localrule",
+     "mean_abs_delta": 0.04031249999999999,
+     "max": 0.08250000000000002
+    },
+    {
+     "axis": "P3_quantum",
+     "mean_abs_delta": 0.021250000000000012,
+     "max": 0.07749999999999996
+    },
+    {
+     "axis": "P4_alloc",
+     "mean_abs_delta": 0.009374999999999998,
+     "max": 0.025000000000000022
+    },
+    {
+     "axis": "P5_repair",
+     "mean_abs_delta": 0.024062499999999994,
+     "max": 0.11999999999999997
+    },
+    {
+     "axis": "P6_null",
+     "mean_abs_delta": 0.029062500000000022,
+     "max": 0.07000000000000006
+    },
+    {
+     "axis": "P7_econ",
+     "mean_abs_delta": 0.025937500000000002,
+     "max": 0.0625
+    },
+    {
+     "axis": "P8_exact",
+     "mean_abs_delta": 0.03937499999999999,
+     "max": 0.057499999999999996
+    }
+   ],
+   "max_min_ratio": 4.3,
+   "top_axis": "P2_localrule",
+   "mean_vector_l1": 0.211875
+  },
+  "mean_abs_saliency": 0.07031249999999996,
+  "max_abs_saliency": 0.7000000000000001
+ },
+ "hypotheses": {
+  "H1": false,
+  "H2": true,
+  "H3": true,
+  "H4": false,
+  "H5": true,
+  "H6": true,
+  "H6a": true,
+  "H6b": false,
+  "C18": false,
+  "C19": true
+ },
+ "predictions": {
+  "P1": false,
+  "P2": true,
+  "P3": true,
+  "P4": false,
+  "P5": true,
+  "P6": false
+ },
+ "verdict": "E-Q23 VERDICT (occlusion gradients — the question map as readout function): H1 DIES — THE DISTRIBUTED-READING LAW: mean normalized span entropy 0.9079 (per-record 0.7915-0.9898), ABOVE the 0.85 concentration bar: the question map reads a record DISTRIBUTED, not concentrated — no single sentence carries the family signal (mean absolute saliency per occluded span-axis 0.0703, max 0.7 on the /4-normalized scale). The embedder is redundancy-robust: occluding ANY one span moves the axes only slightly and roughly evenly. For gate-style consumers (jev-lattice): the typed-map readout does NOT localize evidence — file-level attribution needs their hash-targeted channels, not occlusion. H2 LIVES: axis-specificity 0.7009 — 70.0893% of axis pairs peak on different spans; the 8 axes DO read different places even while each reads broadly. H3 LIVES — THE PROFILE LAW: within-family saliency-profile correlation 0.1667 vs cross-family -0.3328 (difference 0.4996, predicted >= 0.10, exceeded 5x): the saliency SHAPE is family-structured even where the saliency MASS is flat — same-family records agree on where the axes read, cross-family records anti-correlate. C18 DIES with the honest narrowing: the question map yields MEANINGFUL saliency (H2's specificity + H3's family structure prove the readout resolves span-axis structure) but NOT concentrated saliency — the concentration clause dies. C19 LIVES with the honest narrowing: H3 lives decisively but H5 is an honest NULL — the stability bridge is unmeasurable at this scale (spearman 0.0476, but the re-embed wobble itself is <= 0.045 across all 8 records — the question map's sampling noise sits BELOW the saliency-entropy effect scale; the lattice fragility bridge needs a near-bar population to test, and our records are all far from any bar). H4 DIES — INVERTED at n=1: the one misfiled record in the subset (P3) has entropy 0.7915 vs the filed mean 0.9245 — the misfiled record is MORE concentrated, not flatter (a single-source reading may be fragile in a different way; n=1 directional receipt, not a law). H6 (structure) LIVES: the jev-preview drift is axis-structured — max/min axis mean ratio 4.3, top axis P2_localrule (0.0403) vs P4_alloc least (0.0094); the top-axis call DIED (P6 MISS — P2_localrule, not the C15-predicted P8_exact/P3_quantum): the 1.13.0->1.14.0 upgrade wobbles the LOCAL-RULE axis most while the cross-embedder divergence wobbled P8_exact most — version drift and embedder divergence are DIFFERENT axes' problems. Mean vector L1 drift 0.2119 over 8 axes — small in absolute terms (the drift-monitor consumer law: the noul arm's 0.03 re-embed band is the right alarm threshold; a version upgrade moves P2 by ~0.04 mean, within an order of magnitude of sampling noise, so UPGRADE drift is visible only in AGGREGATE, not per-record)."
+}

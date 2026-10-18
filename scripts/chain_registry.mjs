@@ -51,6 +51,7 @@ export const STONE_CHAINS = [
   { path: 'receipts/e_q20c_chain.jsonl', gate: 'e_q20c', label: 'E-Q20c · plateau-mechanism ablation, wormholes OFF (ORCH-R23/T14-b)', pin: 'e_q20c_ablation' },
   { path: 'receipts/e_q21_chain.jsonl', gate: 'e_q21', label: 'E-Q21 · the question map as an embedding function (ORCH-R23/T14-a)', pin: 'e_q21_embedding' },
   { path: 'receipts/e_q22_chain.jsonl', gate: 'e_q22', label: 'E-Q22 · axis-calibration x ternary-quantization factorial (ORCH-R24/T15-b)', pin: 'e_q22_factorial' },
+  { path: 'receipts/e_q23_chain.jsonl', gate: 'e_q23', label: 'E-Q23 · occlusion gradients, saliency through the question map (ORCH-R24/T15-c)', pin: 'e_q23_occlusion' },
   { path: 'receipts/probe_gate_chain.jsonl', gate: 'probe_gate', label: 'probe gate runs', pin: 'probe_gate' },
 ];
 

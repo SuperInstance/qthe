@@ -1,0 +1,61 @@
+{
+ "subset_rule": "first + third by id order within each family (frozen in pre_registration_e_q23.json)",
+ "splitter": "re.split(r'(?<=[.])\\s+') on stripped text; spans < 30 chars merge into the PREVIOUS span (leading/trailing short spans merge forward/backward on re-check)",
+ "families": {
+  "N1": "N",
+  "N3": "N",
+  "P1": "P",
+  "P3": "P",
+  "Q1": "Q",
+  "Q3": "Q",
+  "A1": "A",
+  "A3": "A"
+ },
+ "spans": {
+  "N1": [
+   "Claim C2, experiment E-Q1: the wormhole channel is the only non-local alignment mechanism.",
+   "Planted twin pairs at least 24 cells apart on a 64x64 torus found each other in 8 of 8 runs with wormholes ON and 0 of 20 with wormholes OFF \u2014 moire worms crawled to their twins only through the Abstain cells' remote reads.",
+   "The verdict LIVES: distant cells holding the same value resonate through the compile-time 64-slot table; no graph traversal runs."
+  ],
+  "N3": [
+   "Claim C9, experiment E-Q18: hierarchical wormholes with folded addressing (8x8 regions plus 8, d&7 fold) were built to restore provenance under population load.",
+   "The verdict DIES with prejudice, in the opposite direction: hierarchical provenance fraction was WORSE than flat at every population level \u2014 0.0066 vs 0.0725 at clean, eleven times worse \u2014 because the fold trades cross-region anonymity for eight times denser cross-cargo aliasing and the drift convoy floods it.",
+   "Delivery latency survived; the who-channel died."
+  ],
+  "P1": [
+   "Claim C1, experiment E-Q13: the byte IS the coupling \u2014 intra-cell timbre versus inter-cell porting.",
+   "Porting a cell's update rule to run against a different neighborhood composition gained 47.40 percent bytes-gain over the baseline, while the founder's estimate of 25 percent was an understatement.",
+   "The local Moore-8 rule's behavior is inseparable from which ternary timbre state a cell holds: Ground, Attract, Repel, or Abstain-as-i. The verdict LIVES."
+  ],
+  "P3": [
+   "Claim C4, experiment E-Q7: a phase threshold above pi/4 was proposed to trigger useful non-local transfer through checkerboard cascades.",
+   "The cascade itself is real \u2014 alternating Attract/Repel checkerboards propagate a phase wave across the torus \u2014 but the threshold claim DIES, falsified under the guest's own sealed rule: transfer happens below the threshold too, and the wave carries no useful cargo distinction.",
+   "The cascade is a transport phenomenon, not a gate."
+  ],
+  "Q1": [
+   "Claim C11, experiment E-Q20: the tick operator as a construction-provenance blindfold.",
+   "H1 LIVES \u2014 the SP 800-90B certified comet root, SHA-256-counter-expanded, is statistically indistinguishable from mulberry32 at every checkpoint on every metric.",
+   "H3 LIVES \u2014 the exact quantum blur is interference-shaped: Moore-8 Moran's I negative at minus 0.068, where a classical smoothing blur is strongly positive.",
+   "H2 DIES \u2014 spatial autocorrelation had not equilibrated by tick 64.",
+   "C11 DIES on H2; the certified bytes are invisible, the quantum geometry is not."
+  ],
+  "Q3": [
+   "Experiment E-Q20b, the burn-in ladder to t=512 at zero credits: the relaxation time T* exceeds 512.",
+   "The structure the coarse ladder hid: the quantum-blurred arm's distance dips below the floor at t=8 (0.003 vs 0.013), re-excites at t=16 (0.048), then holds a metastable plateau around 0.030 \u2014 sixteen to twenty percent above the floor \u2014 from t=128 through t=512 with no trend.",
+   "Marginals washed out by t=64; geometry is remembered at least eight times longer.",
+   "The shuffled control reached the floor exactly at the ladder's edge."
+  ],
+  "A1": [
+   "Claim C10, experiment E-Q19: a tiled task-arbitration docket on the substrate \u2014 4 jurisdiction tiles, tasks stamped at home-region hash positions, epochs of real kernel ticks plus tile claims.",
+   "The verdict DIES on H1: the debounce changes timing, not throughput share (static stable starvation 0.4435, equal to the heap inbox).",
+   "The physics bundle cut starvation 0.44 to 0.32 but bought it with stable p99 up 33 percent (845 vs 633).",
+   "The flood cap LIVES: tiles aligned with source homes cap the flooder at 0.339 max share versus the heap's 0.75."
+  ],
+  "A3": [
+   "The batching economics, priced T4-a with a fail-closed static guard: batching typed question maps per guest measured 12.36x cheaper than per-question calls at document-dominated state \u2014 zero of 30 batch-hostile findings \u2014 and the question map costs about 147 tokens per question, so the ratio tracks state-chars per question.",
+   "A novel refinement: per-artifact grouping is about 29 percent cheaper than per-guest on the state axis.",
+   "The guard now enforces the pattern at CI time."
+  ]
+ },
+ "spans_sha256": "ea6ec46a0aea7ae7cd419124e781a3e17a7f4192472c111ccf9e0f0f3560bb08"
+}

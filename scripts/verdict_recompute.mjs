@@ -956,6 +956,25 @@ const CLAIMS = [
       return { recomputed: 'C17 LIVES (noul 0.80 vs score 0.70 strict, LIVE round-trip, S-arm replication receipt, 24/24 stability within 0.10 max 0.03); C16 DIES-with-narrowing (16-bit ternary codes carry signal at 2.2-2.4x majority with zero collisions, but noul-side retention 0.6875 breaks the 0.85 clause; P6 HIT-as-shared — the TN strict-miss table ties N=P=Q=3, A=0, sealed in ternary_cost_by_family); H4: calibration and quantization are SUBSTITUTES; chain agrees' };
     },
   },
+  {
+    id: 'C18/C19 — occlusion gradients through the question map (E-Q23)',
+    source: 'experiments/outputs/e_q23_results.json',
+    cite: 'receipts/e_q23_chain.jsonl · verdict.EQ23 · experiments/pre_registration_e_q23.json · situations/embedding_r24/ (spans_eq23.json sealed sha + occlusion rows + eq23_results.json)',
+    expected: 'THE DISTRIBUTED-READING LAW (H1 dies): mean normalized span entropy 0.9079 > the 0.85 bar — the question map reads records distributed, redundancy-robust, no single-span dependence (mean abs saliency 0.0703, max 0.7). H2 lives (axis-specificity 0.7009 — 70% of axis pairs peak on different spans). H3 lives — THE PROFILE LAW: within-family saliency correlation 0.1667 vs cross -0.3328 (diff 0.4996, 5x the registered 0.10). C18 dies-with-narrowing (meaningful saliency, not concentrated). C19 lives-with-narrowing (H5 technically 0.0476 > 0 but the re-embed wobble floor <= 0.045 makes the stability bridge unmeasurable at this scale — an honest null receipt). H4 inverted at n=1 (the misfiled P3 is MORE concentrated 0.7915 vs 0.9245). H6 lives: drift max/min 4.30, top axis P2_localrule (P6 MISS — version drift and cross-embedder divergence are different axes problems); mean L1 0.2119',
+    run() {
+      const d = readJson(this.source);
+      if (d.hypotheses.H1 !== false) throw new Error('H1 must die (the distributed-reading law)');
+      if (d.hypotheses.H2 !== true || d.hypotheses.H3 !== true) throw new Error('H2/H3 must live');
+      if (d.hypotheses.C18 !== false || d.hypotheses.C19 !== true) throw new Error('C18 dies / C19 lives (with narrowings)');
+      if (Math.abs(d.metrics.M1.mean - 0.9079) > 1e-3) throw new Error('M1 entropy drifted');
+      if (Math.abs(d.metrics.M2.mean - 0.7009) > 1e-3) throw new Error('M2 specificity drifted');
+      if (Math.abs(d.metrics.M3.within_mean - 0.1667) > 1e-3 || Math.abs(d.metrics.M3.cross_mean - (-0.3328)) > 1e-3) throw new Error('M3 correlations drifted');
+      if (d.metrics.M6.top_axis !== 'P2_localrule' || Math.abs(d.metrics.M6.max_min_ratio - 4.3) > 0.01) throw new Error('drift lane drifted');
+      const row = lastChainRow('receipts/e_q23_chain.jsonl', (r) => r.kind === 'verdict.EQ23', 'verdict.EQ23');
+      if (row.H1 !== false || row.H3 !== true || row.C18 !== false || row.C19 !== true) throw new Error('chain flags disagree');
+      return { recomputed: 'DISTRIBUTED-READING LAW (entropy 0.9079, redundancy-robust readout, occlusion does not localize — attribution needs hash-targeted channels); PROFILE LAW (within 0.1667 vs cross -0.3328: the saliency shape is family-structured where its mass is flat); axis-specificity 0.7009; C18 dies-with-narrowing / C19 lives-with-narrowing (stability bridge null at the 0.045 wobble floor, H5 technically 0.0476); drift axis-structured 4.30x, top P2_localrule (version drift != embedder divergence), mean L1 0.2119; chain agrees' };
+    },
+  },
 ];
 
 // ── COVERAGE (ORCH-R11: the arena-r11 consensus finding, all four seats) ──
