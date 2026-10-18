@@ -1,0 +1,28 @@
+BRIEFING — the E-Q20b experiment record (SuperInstance/qthe, sealed 2026-10-18).
+
+E-Q20b extended the sealed E-Q20 experiment: the same 64x64 ternary-cell planes (a quantum-blur-conditioned arm A3 and its shuffled control A3S, plus a 20-plane PRNG noise-floor population A1) were run to t=512 ticks (E-Q20 stopped at t=64). Zero new quantum-service credits were spent; everything replayed from sealed journals.
+
+VERDICT (verbatim): E-Q20b VERDICT (the burn-in ladder, zero credits — where is T*?): H1b DIES — T* > 512 (the slow-mode law EXTENDS; the honest null branch fired, p~0.15 as registered) (A3 Moore-8 distance median vs A1 LOO 95th-pct floor, sticky crossing). H2b DIES (re-excitations above 1.5x floor after first touch @8: [16, 32, 64]). Controls (the washed-out family) EXCURSIONS: A3.dW1@8; A3.dW1@16; A3.dW1@32; A3S.dW1@8; A3S.dW1@16; A3S.dW1@32. A3S sticky crossing: 512 (P2 unscorable). Monotonicity (AS-SAID): violations [8->16, 16->32, 256->320, 320->384, 384->448]. F0' gate: byte-exact reproduction of E-Q20's sealed t<=64 values (hashes 30/30, floor 32/32, cross 64/64). C11's sealed DIES verdict is NOT reopened; its T* annotation extends to T* > 512 (append-only).
+
+THE LADDER (Moore-8 Moran's I distance, median per arm, vs the A1 leave-one-out 95th-percentile noise floor):
+| t | A3 | A3S | floor |
+|---|---|---|---|
+| 0 | 0.071265 | 0.007411 | 0.014439 |
+| 1 | 0.069746 | 0.004184 | 0.015379 |
+| 2 | 0.063461 | 0.007504 | 0.015587 |
+| 4 | 0.044197 | 0.017754 | 0.017662 |
+| 8 | 0.002977 | 0.044789 | 0.013417 |
+| 16 | 0.048195 | 0.068701 | 0.018918 |
+| 32 | 0.048311 | 0.052074 | 0.022726 |
+| 64 | 0.038166 | 0.033836 | 0.021348 |
+| 128 | 0.030232 | 0.025147 | 0.026559 |
+| 192 | 0.029774 | 0.025985 | 0.026118 |
+| 256 | 0.029613 | 0.025171 | 0.024944 |
+| 320 | 0.029899 | 0.025422 | 0.025352 |
+| 384 | 0.030022 | 0.025333 | 0.025206 |
+| 448 | 0.030056 | 0.025540 | 0.025029 |
+| 512 | 0.029985 | 0.025762 | 0.025779 |
+
+The A1 floor is itself checkpoint-dependent (it is recomputed at each checkpoint from the PRNG population's own spread).
+
+Six statements about this experiment follow. For each, answer TRUE, FALSE, or UNCERTAIN, with a confidence in [0,1]. Judge only from the briefing above.

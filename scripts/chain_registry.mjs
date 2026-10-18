@@ -47,6 +47,7 @@ export const STONE_CHAINS = [
   { path: 'receipts/e_q18_chain.jsonl', gate: 'e_q18', label: 'E-Q18 · hierarchical wormholes, population axis (ORCH-R18/T9-a)', pin: 'e_q18_hier_population' },
   { path: 'receipts/e_q19_chain.jsonl', gate: 'e_q19', label: 'E-Q19 · docket arbitration, first consumer pricing (ORCH-R20/T11-b2)', pin: 'e_q19_docket' },
   { path: 'receipts/e_q20_chain.jsonl', gate: 'e_q20', label: 'E-Q20 · construction provenance, quantum constructors (ORCH-R21/T12-b)', pin: 'e_q20_construction' },
+  { path: 'receipts/e_q20b_chain.jsonl', gate: 'e_q20b', label: 'E-Q20b · burn-in ladder, T* relaxation time (ORCH-R22/T13-d)', pin: 'e_q20b_burnin' },
   { path: 'receipts/probe_gate_chain.jsonl', gate: 'probe_gate', label: 'probe gate runs', pin: 'probe_gate' },
 ];
 

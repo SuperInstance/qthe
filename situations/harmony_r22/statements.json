@@ -1,0 +1,8 @@
+{
+  "S1": "The replay gate reproduced E-Q20's sealed values byte-exactly (hashes at t=64, the floor table, and the cross-arm medians all matched).",
+  "S2": "A3's Moore-8 distance crossed below the A1 noise floor at t=8 and stayed below the floor through t=512.",
+  "S3": "The shuffled control A3S's Moore-8 distance reached the floor at t=512 (the ladder's final checkpoint).",
+  "S4": "The dW1 control was at or below the floor at every checkpoint from t=8 onward.",
+  "S5": "From t=128 through t=512, A3's Moore-8 distance plateaued around 0.030 — roughly 20% above the floor, not converging to it.",
+  "S6": "The E-Q20b experiment spent 10 moth credits (one comet root plus five blur jobs)."
+}
