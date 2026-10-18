@@ -1,0 +1,231 @@
+{
+ "status": "ROOT-RECEIPTED (AM5)",
+ "job_id": "3d7d0a34-5bbf-4ff1-8fde-c158a8a021c3",
+ "why_reusable": "the job COMPLETED with a valid certificate; the fail-closed exit was on SIZE (142 conditioned bytes < 40960 requested), not authenticity; no data row ever existed (exit 3 wrote only this receipt line)",
+ "root_hex": "ffb94a27c35a5bd22628313507d11d791a66f26ca4e2ef10da628f2c5547a1c81ed573e65747eed34c50f6bb4ddd86c6ced5c03a24d623d1d4bc42b0b46197f230e22da1fae047f26b53b9f997adae0a37af547b4aed0f7d0c4831cf1c737e6a4c2d74213236870cc79af9706558687093a5d8fa6ccd7bcd58dc74290a6ecb12892f9acf1ae3f8d96b4b81b1a92b",
+ "root_bits": 1136,
+ "root_bytes": 142,
+ "requested_bytes": 49152,
+ "bell_witness": {
+  "S": 2.8349609375,
+  "caveat": "Fixed measurement settings, no space-like separation, fair sampling assumed: this witnesses entangling-gate and readout fidelity on the device that produced the randomness. It is not device-independent certification.",
+  "classical_bound": 2,
+  "correlators": [
+   {
+    "E": 0.69775390625,
+    "counts": {
+     "00": 1686,
+     "01": 324,
+     "10": 295,
+     "11": 1791
+    },
+    "qubits": [
+     12,
+     13
+    ],
+    "setting": "E(a,b)",
+    "sigma": 0.011192774227178985
+   },
+   {
+    "E": -0.71044921875,
+    "counts": {
+     "00": 297,
+     "01": 1711,
+     "10": 1792,
+     "11": 296
+    },
+    "qubits": [
+     14,
+     15
+    ],
+    "setting": "E(a,b')",
+    "sigma": 0.010996069827655091
+   },
+   {
+    "E": 0.71240234375,
+    "counts": {
+     "00": 1692,
+     "01": 294,
+     "10": 295,
+     "11": 1815
+    },
+    "qubits": [
+     16,
+     17
+    ],
+    "setting": "E(a',b)",
+    "sigma": 0.0109651759292343
+   },
+   {
+    "E": 0.71435546875,
+    "counts": {
+     "00": 1793,
+     "01": 298,
+     "10": 287,
+     "11": 1718
+    },
+    "qubits": [
+     18,
+     19
+    ],
+    "setting": "E(a',b')",
+    "sigma": 0.010934109566777839
+   }
+  ],
+  "enabled": true,
+  "equivalent_depolarising_p": 0,
+  "kind": "chsh_fidelity_witness",
+  "p_value_local_realist": 3.2806565216e-314,
+  "sigma_S": 0.02204498994630369,
+  "tsirelson_bound": 2.8284271247461903,
+  "violates_classical_3sigma": true,
+  "z_above_classical": 37.87531495971487
+ },
+ "entropy": {
+  "budget_bits": 1264.6849661751767,
+  "h_bit": 0.9056545380881841,
+  "raw_bits": 49152,
+  "shots": 4096,
+  "n_rand": 12,
+  "h_shot_assumption_free": 8.21235761918944
+ },
+ "entropy_report": {
+  "epsilon_log2": 64,
+  "grade": "simulator-baseline",
+  "health_passed": true,
+  "output_bits": 1136,
+  "statements": [
+   "49152 raw Born-rule bits from 12 qubits \u00d7 4096 shots (counts readout)",
+   "conservative per-bit min-entropy h = 0.9057 (SP 800-90B estimators at 99% confidence)",
+   "modelled budget = 1264.7 bits (no dependence beyond pairwise correlations \u2014 ASSUMED, tested only by collision consistency against the pairwise tree model: full-register z = 0.37, 0/256 sub-registers failed)",
+   "assumption-free budget = 0.0 bits (whole-shot most-common-value bound, 8.21 bits/shot; capped near log2(shots) by sample size)",
+   "extractable min-entropy budget = 1264.7 bits after subtracting log2(shots!) = 43250.0 bits for counts-only readout",
+   "bytes were extracted on the modelled-independence tier",
+   "Toeplitz extractor output 1136 bits, 2^-64-close to uniform given that budget (leftover hash lemma: m \u2264 budget \u2212 2\u00b764); seed 'toeplitz-v1' is a shipped uniform seed from a documented ceremony (information-theoretic)",
+   "OUTPUT BYTES ARE PUBLIC: recomputable by anyone from the raw counts and the seed. Not key material.",
+   "requested 49152 bytes, delivered 142: budget-limited",
+   "mode='emu': bits come from a classical simulator's PRNG; not accounted as hardware entropy by construction",
+   "CHSH witness S = 2.835 \u00b1 0.022 (violates the classical bound at 3\u03c3)"
+  ]
+ },
+ "extractor": {
+  "epsilon_log2": 64,
+  "input_bits": 49152,
+  "input_serialisation": "sorted bitstrings repeated by count (canonical multiset)",
+  "kind": "toeplitz",
+  "output_bits": 1136,
+  "public_seed": "toeplitz-v1",
+  "seed_id": "toeplitz-v1",
+  "seed_mode": "shipped"
+ },
+ "pulse": {
+  "commitment": {
+   "commit": "c09ec339e5f26e40c1b412f211b9cc4ec4a3740085ee06f35eec2762398ededb",
+   "salt": "859d3bc3a74c7a16b4b59335c518ce3a113e44716b4673139c95df23bea424bc"
+  },
+  "entropy": {
+   "basis": "modelled-independence",
+   "budget_bits": 1264.6849661751767,
+   "budget_bits_assumption_free": 0,
+   "h_bit": 0.9056545380881841,
+   "health_passed": true,
+   "readout": "counts"
+  },
+  "extractor": {
+   "epsilon_log2": 64,
+   "input_bits": 49152,
+   "input_serialisation": "sorted bitstrings repeated by count (canonical multiset)",
+   "kind": "toeplitz",
+   "output_bits": 1136,
+   "public_seed": "toeplitz-v1",
+   "seed_id": "toeplitz-v1",
+   "seed_mode": "shipped"
+  },
+  "index": null,
+  "output_hash": "5858d3fdee3dbf46d89862489bbf0fa084344458906f790e3e7dce6a01405468",
+  "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+  "provenance": {
+   "backend": "aer",
+   "built_at": "2026-10-18T09:21:58+00:00",
+   "circuit": {
+    "bell_witness": true,
+    "n_rand": 12,
+    "n_total": 20,
+    "witness_pairs": [
+     [
+      12,
+      13
+     ],
+     [
+      14,
+      15
+     ],
+     [
+      16,
+      17
+     ],
+     [
+      18,
+      19
+     ]
+    ]
+   },
+   "circuit_hash": "76b9752d54d5aa067d4b615ddb73b55669bad46a4a2d51e754d7da4bf9c05d16",
+   "collected_at": null,
+   "committed_at": "2026-10-18T09:21:59+00:00",
+   "engine": "comet-qrng-v1",
+   "engine_version": "1.0.0",
+   "formatted_at": "2026-10-18T09:22:08+00:00",
+   "initial_layout": null,
+   "mode": "emu",
+   "provider_job_id": "d86208acc93a433a885fa2d458f475c8",
+   "qpu_seconds": null,
+   "readout": "counts",
+   "shots": 4096
+  },
+  "pulse_hash": "8c260c4fc0982deb36c7cc84192fc6cc6b5d6292599dfa389b1a1f322b87f414",
+  "raw_counts_hash": "3baedf3cb10997149a42f62449657b31e4b6cae6c1ec585a3965b4433a20da00",
+  "timestamp": "2026-10-18T09:22:08+00:00",
+  "version": 2
+ },
+ "provenance": {
+  "backend": "aer",
+  "built_at": "2026-10-18T09:21:58+00:00",
+  "circuit": {
+   "bell_witness": true,
+   "n_rand": 12,
+   "n_total": 20,
+   "witness_pairs": [
+    [
+     12,
+     13
+    ],
+    [
+     14,
+     15
+    ],
+    [
+     16,
+     17
+    ],
+    [
+     18,
+     19
+    ]
+   ]
+  },
+  "circuit_hash": "76b9752d54d5aa067d4b615ddb73b55669bad46a4a2d51e754d7da4bf9c05d16",
+  "collected_at": null,
+  "committed_at": "2026-10-18T09:21:59+00:00",
+  "engine": "comet-qrng-v1",
+  "engine_version": "1.0.0",
+  "formatted_at": "2026-10-18T09:22:08+00:00",
+  "initial_layout": null,
+  "mode": "emu",
+  "provider_job_id": "d86208acc93a433a885fa2d458f475c8",
+  "qpu_seconds": null,
+  "readout": "counts",
+  "shots": 4096
+ },
+ "key_material": "NONE"
+}
