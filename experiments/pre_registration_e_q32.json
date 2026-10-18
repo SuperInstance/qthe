@@ -1,0 +1,39 @@
+{
+ "law": "REGISTRATION of E-Q32 — retrieval-coupled fitness (ORCH-R27 lane T18-a): the DECOUPLING LAW's fix. E-Q28's gate selected on family-centroid cosine and arrived one station late; this lane selects on the RETRIEVAL ITSELF — the gate accepts a mutant iff BOTH models' top-1 unvisited retrievals land in the SAME UNVISITED family (a coordinated, retrieval-coupled, dual-JEV gate; the preview vector queries the eq22N arm cross-model — the C15 question made load-bearing: do the two Jev versions' note vectors retrieve the same family through the latest-built index?). Everything else carries from E-Q28: the evosphere DO (a NEW instance 'r27', gate_mode=retrieval-coupled), the gap-vector directives (the target remains the steering hint), DeepSeek variation, LIVE Vectorize, the sealed E-Q24 walk as control, the E-Q28 run as the direct comparison.",
+ "task_id": "ORCH-R27/T18-a",
+ "agent": "qthe orchestrator (Z.ai), erised fleet line",
+ "wave": "ORCH-R27",
+ "repo": "SuperInstance/qthe",
+ "repo_at_registration": "d7d455d",
+ "provenance_of_the_question": "E-Q28's decoupling law: one rejected fossil would have retrieved the target family and was refused on a declining centroid cosine. The obvious repair: make the fitness the thing you actually want (a family flip in the retrieval), not a proxy for it. The dual-model retrieval agreement is the k=2 independence pattern applied at the retrieval layer — unmeasured until now.",
+ "design_frozen": {
+  "gate": "accept iff retrieval_latest(top-1 unvisited, from the jev-latest note vector) has an UNVISITED family AND retrieval_preview(top-1 unvisited, from the jev-preview note vector, SAME index, SAME arm) has the SAME unvisited family. The centroid cosines are still computed and receipted per attempt (the decoupling delta: how often centroid improves while retrieval refuses, and vice versa) but they no longer decide.",
+  "loop": "Same as E-Q28 (max 10 gens, 2 attempts/gen, escape after 2 stagnated generations rotates the target; the directive stays gap-derived toward the least-visited family). The retrieval for the gate: two live queries per attempt (both models' vectors, arm-filtered eq22N).",
+  "measures": "M1 stations-to-coverage (E-Q28: 6; the walk: 5; the strong form: 4 — every acceptance flips a family BY CONSTRUCTION here); M2 acceptance rate + rejection anatomy (which clause refused: latest-retrieval, preview-retrieval, or family-disagreement between models); M3 CROSS-MODEL RETRIEVAL AGREEMENT (do the two Jev versions' note vectors retrieve the same top-1/family through the same index — the C15 question at the retrieval layer); M4 heredity under forced flips (do family-jumping notes stay grounded — E-Q28: 0.9273, the walk: 0.93-0.98); M5 the decoupling delta (per attempt: did centroid-cosine improve while the retrieval refused, or vice versa — the proxy-vs-objective disagreement rate, now measurable directly); M6 the directive causality check (named-axis movement, E-Q28: 0.43 vs 0.22)."
+ },
+ "floors": {
+  "F1": "qmap byte-identical to E-Q22's noul map (both models)",
+  "F2": "both retrievals LIVE through the same index and arm, top-1 unvisited, per attempt",
+  "F3": "the DO gate deterministic code, append-only attempts, new instance r27 (the r26 world untouched)",
+  "F4": "the generator sees only concept texts (no vectors, no gate outputs)",
+  "F5": "AS-SAID rows for every call; the hard cap 40 embed calls carries"
+ },
+ "hypotheses": {
+  "H1_coverage": "stations-to-coverage <= 5 (matches or beats the walk; the strong form 4 — every acceptance flips a family)",
+  "H2_agreement": "cross-model retrieval family agreement >= 60% on attempts (the two Jev versions' note vectors retrieve the same family through the latest-built index — the gate is satisfiable)",
+  "H3_heredity": "accepted notes' cosine with their stations >= 0.75 mean (family-JUMPING notes are less grounded than E-Q28's 0.9273 — the flip-forcing discount, pre-registered in the weaker direction)",
+  "C30": "retrieval-coupled selection repairs the decoupling — LIVES iff H1 (steering on the objective itself compresses coverage)"
+ },
+ "predictions": {
+  "P1": "coverage in exactly 4-5 stations (the gate forces a flip per acceptance; only wasted attempts cost stations)",
+  "P2": "the rejection anatomy is dominated by the LATEST-retrieval clause (the preview rarely disagrees when the latest flips — version drift is smaller than family distance)",
+  "P3": "cross-model agreement in [0.6, 0.9] (above chance 0.25, below same-model stability)",
+  "P4": "heredity in [0.70, 0.90] (the flip discount visible but bounded)",
+  "P5": "the decoupling delta is large on rejected attempts (centroid improves while retrieval refuses >= 40% of rejections — the E-Q28 failure mode still trying to happen)",
+  "P6": "at least one stagnation event (the strict gate occasionally unsatisfiable from the current station)"
+ },
+ "falsifier": "ANY of F1-F5 breached; the gate computed anywhere but the DO; a retrieval from a non-live source; the E-Q28 comparison made against anything but its sealed state.",
+ "budget": "<= 40 typesafe embed calls + <= 25 DeepInfra generations + free-tier CF/DO. Part of the r27 round budget ($0.10 ceiling, carried).",
+ "registered_before_run": true,
+ "amendments": []
+}

@@ -1,0 +1,37 @@
+{
+ "law": "REGISTRATION of E-Q33 — the question-budget curve, ASCENDING arm (ORCH-R27 lane T18-b, Q4's other half): can a GENERATOR produce discriminative questions that beat the measured fixed knee? E-Q29 found the best fixed 4-subset at 0.90 LIVE (P1+P2+P3+4) and the full 8 at 0.80. QA-Emb and CQG-MBQA select/generate questions per task; our fixed battery is a coordinate CONTRACT. The ascending arm asks the one-shot question: one DeepSeek call proposes a 4-question yes/no battery from 2 example records per family (the frozen 8-record occlusion subset); the battery is then embedded over all 20 records (noul, jev-latest) and evaluated LIVE against the sealed corpus.",
+ "task_id": "ORCH-R27/T18-b",
+ "agent": "qthe orchestrator (Z.ai), erised fleet line",
+ "wave": "ORCH-R27",
+ "repo": "SuperInstance/qthe",
+ "repo_at_registration": "d7d455d",
+ "provenance_of_the_question": "The prior-art pass Q4's ascending half, now with a measured knee to beat. The comparison is honest about a design asymmetry BOTH sides share: the fixed battery was hand-designed on this corpus over rounds (E-Q21->E-Q29); the generated battery sees 8 of the 20 records at design time. One shot each, no cherry-picking, no iteration — the single-shot dignity rule.",
+ "design_frozen": {
+  "generation": "ONE DeepSeek-V4.1-Flash call (temperature 0.7): given the 8 example records (2 per family, labeled with family letters only — no axis names, no concepts from our map), 'propose exactly 4 yes/no questions that best distinguish these four families of records; each question must be answerable from a single record's text; return them as a JSON array of 4 strings'. The prompt RECEIPTS that our 8 axis concepts are hidden from the generator. One parse-retry allowed and receipted.",
+  "embedding": "The 4 generated questions typed as noul (the same question shape as the map, concept text swapped for the generated question text), one batched call per record over all 20 (jev-latest). 20 calls.",
+  "evaluation": "Upsert arm=eq33G (pad-to-32), poll-until-visible, query all 20 arm-filtered, strict top-1 family accuracy — the E-Q29 convention, live. The fixed references: best-4 0.90, full-8 0.80 (both live-confirmed at r26). Also the subset curve over the generated battery's own 4 axes (15 subsets, local, free) and its Shapley ranking.",
+  "measures": "M1 the generated battery's live accuracy; M2 its best-subset curve (does IT have a knee?); M3 axis-text similarity to our fixed axes (do the generated questions rediscover our concepts — embedder-measured overlap or plain inspection, receipted); M4 the per-family miss table vs the fixed battery's."
+ },
+ "floors": {
+  "F1": "the generated battery is the FIRST parseable output (one retry allowed, receipted); no regeneration after seeing accuracy",
+  "F2": "the 20 embed calls use the byte-identical question shape (noul type, criteria true/false), only the concept text differs",
+  "F3": "live evaluation through the index, arm-filtered, poll-until-visible",
+  "F4": "the fixed references are the sealed r26 numbers (0.90 / 0.80), not re-measured"
+ },
+ "hypotheses": {
+  "H1_beats_full": "generated-4 >= 0.70 (beats the full 8-question fixed battery)",
+  "H2_beats_knee": "generated-4 >= 0.90 (matches the fixed knee — the strong form)",
+  "H3_concept_rediscovery": "at least 2 of the 4 generated questions are recognizably the same CONCERN as a fixed axis (the generator rediscovers the map's geometry — inspection receipted, one paragraph)",
+  "C31": "the ascending arm — generated discriminative questions — is competitive with the fixed contract at equal budget — LIVES iff H1"
+ },
+ "predictions": {
+  "P1": "accuracy in [0.65, 0.85] (competitive but below the knee: the fixed battery's advantage is its design iteration across rounds)",
+  "P2": "the generator rediscovers the nonlocal/local split (a wormhole-or-neighborhood question appears)",
+  "P3": "the generated battery's best-subset curve is FLATTER than the fixed one (its 4 questions are more redundant — less complementary than P1/P2/P3/P4)",
+  "P4": "the miss tables disagree: the generated battery misfiles different records than the fixed knee (different question geometry, different errors)"
+ },
+ "falsifier": "ANY of F1-F4 breached; a second generation attempt unreceipted; the references quietly re-measured; the concept-rediscovery inspection written after the accuracy is used to select anything.",
+ "budget": "20 embed calls + 1-2 generator calls + free-tier CF. Part of the r27 round budget.",
+ "registered_before_run": true,
+ "amendments": []
+}

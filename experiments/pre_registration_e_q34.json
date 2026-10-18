@@ -1,0 +1,37 @@
+{
+ "law": "REGISTRATION of E-Q34 — IRT strictness ladders (ORCH-R27 lane T18-c, the r24 ideas battery I-6): turn the question map into a PSYCHOMETRIC instrument. Each of the 8 axes is asked at FIVE strictness rungs (from 'appears at all' to 'is the dominant concern') over the frozen 8-record subset — one batched 40-question call per record. The ladders give assumption-light discrimination measures (monotonicity, threshold location, family separation) and a SECOND cross-instrument convergence test: does family separation align with the E-Q29 Shapley values where the E-Q23 occlusion mass did not?",
+ "task_id": "ORCH-R27/T18-c",
+ "agent": "qthe orchestrator (Z.ai), erised fleet line",
+ "wave": "ORCH-R27",
+ "repo": "SuperInstance/qthe",
+ "repo_at_registration": "d7d455d",
+ "provenance_of_the_question": "The r24 ideas battery I-6 (novelty 4.5 / feasibility 3): the map's axes as test ITEMS, records as PERSONS, strictness as the difficulty dimension. QA-Emb treats questions as features; IRT treats them as calibrated items — the psychometric frame is unoccupied territory for QA-embedders.",
+ "design_frozen": {
+  "ladders": "For each axis concept X, five rungs phrased as noul questions of INCREASING strictness: R1 'does X appear in this record at all, even in passing'; R2 'does the record substantively concern X'; R3 'is X a central concern of the record'; R4 'is X among the record's two most dominant concerns'; R5 'is X THE single dominant concern of the record'. R2 is the map's standard phrasing (the anchor rung — its answers must replicate the sealed E-Q22 vectors for the 8 records: the F2 replication check).",
+  "calls": "One batched call per record (40 questions: 8 axes x 5 rungs) over the frozen 8-record subset (N1,N3,P1,P3,Q1,Q3,A1,A3 — the E-Q23 subset), jev-latest. 8 calls.",
+  "measures": "M1 MONOTONICITY: per (record, axis), is p monotone non-increasing across rungs R1->R5? The perfect-ladder rate (the scale reliability analog). M2 THRESHOLD LOCATION: the rung at which p crosses 0.5 (per record-axis) — the difficulty map. M3 FAMILY SEPARATION: per axis, the max gap between the mean p of the axis's home-family records and the mean p of the others, taken at the BEST rung (the discriminating rung may differ from R2). M4 CROSS-INSTRUMENT: Spearman(family separation per axis, E-Q29 Shapley per axis) — the second convergence test (the occlusion mass failed at -0.02; does an IRT-style measure converge?). M5 the anchor replication (R2 vs the sealed E-Q22 vectors)."
+ },
+ "floors": {
+  "F1": "the 40 question texts frozen here (the five rung templates x the 8 sealed concept texts, byte-identical construction)",
+  "F2": "the anchor check: R2 answers within the drift band (<= 0.10) of the sealed E-Q22 vectors for all 8 records — a failed anchor fails the lane",
+  "F3": "one batched call per record, all 40 answers present, p in [0,1]",
+  "F4": "the Shapley comparison from the sealed E-Q29 results only"
+ },
+ "hypotheses": {
+  "H1_monotone": "the perfect-ladder rate >= 0.70 (the rungs behave as a scale — stricter questions, lower mass)",
+  "H2_separation": "family separation > 0 at some rung for >= 6 of 8 axes (the ladders can discriminate families, not just measure intensity)",
+  "H3_convergence": "Spearman(separation, Shapley) > 0.4 (the IRT-style measure converges where occlusion did not — OR dies like occlusion did: either direction is the receipt)",
+  "C32": "strictness ladders turn the question map into a psychometric instrument — LIVES iff H1 AND H2"
+ },
+ "predictions": {
+  "P1": "perfect-ladder rate in [0.70, 0.90] (the R2-R3 rungs wobble; the extremes are clean)",
+  "P2": "thresholds for home-family records sit LATER (higher rung) than for foreign-family records — records 'pass' their own axis's strict rungs",
+  "P3": "the best discriminating rung is R3 (central concern) more often than R2 (substantive) — one notch stricter than the map's default",
+  "P4": "the convergence Spearman in [0.3, 0.7] — positive but partial (separation and marginal retrieval value are related but not identical quantities)",
+  "P5": "the anchor replicates (R2 within 0.10 of sealed on all 8 records)"
+ },
+ "falsifier": "ANY of F1-F4 breached; a rung text edited after registration; the anchor band stretched; the convergence computed against anything but the sealed Shapley table.",
+ "budget": "8 typesafe calls. Part of the r27 round budget.",
+ "registered_before_run": true,
+ "amendments": []
+}
