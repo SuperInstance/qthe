@@ -1,0 +1,239 @@
+{
+ "experiment": "E-Q21",
+ "claim": "C14 — the question map is an embedding; C15 — cross-embedder robustness",
+ "kernel": {
+  "kernelKind": "real",
+  "kernelPath": "qthe/qthe.mjs"
+ },
+ "preRegSha": "a4385a495b832a75c10cb1bd9791e5d01c9e4307949babc73e3379fbe3029333",
+ "corpusSha": "0aceb7fca51965e9dc1ca12af1cc48d61814b69e0e6a1a6c8223bd59df8a5388",
+ "registration": "experiments/pre_registration_e_q21.json (+AM1: dims 8->32 zero-padded, Vectorize minimum; ranking equivalence proven)",
+ "task": {
+  "corpus": "situations/embedding_r23/corpus.json (20 records, 4 families x 5, sealed before calls)",
+  "probes": 8,
+  "rubric": "[\"zero\",\"low\",\"moderate\",\"high\",\"central\"]",
+  "index": "qthe-jev-embed (Cloudflare Vectorize, 32-dim cosine, zero-padded from 8)",
+  "embedders": [
+   "typesafe/jev-latest (sandbox)",
+   "groq/qwen3.8-27b (Actions seat)",
+   "groq/gpt-oss-20b (Actions seat)"
+  ]
+ },
+ "retrieval": {
+  "jev": {
+   "accuracy": 0.7,
+   "misses": [
+    [
+     "N4",
+     "P4"
+    ],
+    [
+     "P2",
+     "A4"
+    ],
+    [
+     "P3",
+     "Q4"
+    ],
+    [
+     "P4",
+     "N4"
+    ],
+    [
+     "Q4",
+     "P3"
+    ],
+    [
+     "A4",
+     "P2"
+    ]
+   ]
+  },
+  "qwen38-27b": {
+   "accuracy": 0.85,
+   "misses": [
+    [
+     "N3",
+     "P3"
+    ],
+    [
+     "P4",
+     "A3"
+    ],
+    [
+     "Q4",
+     "P3"
+    ]
+   ]
+  },
+  "gpt-oss-20b": {
+   "accuracy": 0.7,
+   "misses": [
+    [
+     "P1",
+     "Q4"
+    ],
+    [
+     "P2",
+     "A2"
+    ],
+    [
+     "P3",
+     "Q4"
+    ],
+    [
+     "Q1",
+     "N2"
+    ],
+    [
+     "Q4",
+     "P3"
+    ],
+    [
+     "A2",
+     "N5"
+    ]
+   ]
+  }
+ },
+ "baselines": {
+  "bow": 0.8,
+  "permutation_null": 0.2122,
+  "majority": 0.25,
+  "jev_local_sanity": 0.7
+ },
+ "stability": {
+  "within": 24,
+  "total": 24,
+  "per_record": {
+   "N1": {
+    "max_delta": 0.027499999999999997,
+    "mean_delta": 0.007812500000000003
+   },
+   "P4": {
+    "max_delta": 0.04999999999999999,
+    "mean_delta": 0.01812500000000001
+   },
+   "A5": {
+    "max_delta": 0.03749999999999998,
+    "mean_delta": 0.010937499999999994
+   }
+  }
+ },
+ "divergence": {
+  "qwen38-27b": [
+   {
+    "axis": "P1_nonlocal",
+    "mean_abs_delta": 0.15375,
+    "max": 0.52
+   },
+   {
+    "axis": "P2_localrule",
+    "mean_abs_delta": 0.1395,
+    "max": 0.4525
+   },
+   {
+    "axis": "P3_quantum",
+    "mean_abs_delta": 0.075375,
+    "max": 0.39
+   },
+   {
+    "axis": "P4_alloc",
+    "mean_abs_delta": 0.07999999999999999,
+    "max": 0.3575
+   },
+   {
+    "axis": "P5_repair",
+    "mean_abs_delta": 0.05737500000000001,
+    "max": 0.5075000000000001
+   },
+   {
+    "axis": "P6_null",
+    "mean_abs_delta": 0.104625,
+    "max": 0.495
+   },
+   {
+    "axis": "P7_econ",
+    "mean_abs_delta": 0.06987499999999999,
+    "max": 0.3125
+   },
+   {
+    "axis": "P8_exact",
+    "mean_abs_delta": 0.23937500000000003,
+    "max": 0.625
+   }
+  ],
+  "gpt-oss-20b": [
+   {
+    "axis": "P1_nonlocal",
+    "mean_abs_delta": 0.14525,
+    "max": 0.3875
+   },
+   {
+    "axis": "P2_localrule",
+    "mean_abs_delta": 0.1955,
+    "max": 0.5
+   },
+   {
+    "axis": "P3_quantum",
+    "mean_abs_delta": 0.09962499999999999,
+    "max": 0.49250000000000005
+   },
+   {
+    "axis": "P4_alloc",
+    "mean_abs_delta": 0.06649999999999999,
+    "max": 0.425
+   },
+   {
+    "axis": "P5_repair",
+    "mean_abs_delta": 0.058125,
+    "max": 0.2625
+   },
+   {
+    "axis": "P6_null",
+    "mean_abs_delta": 0.171375,
+    "max": 0.745
+   },
+   {
+    "axis": "P7_econ",
+    "mean_abs_delta": 0.15987500000000002,
+    "max": 0.5925
+   },
+   {
+    "axis": "P8_exact",
+    "mean_abs_delta": 0.279125,
+    "max": 0.625
+   }
+  ]
+ },
+ "separation": {
+  "jev": {
+   "same_mean": 0.7584969400101269,
+   "cross_mean": 0.5431800267960863,
+   "same_min": 0.3222176493489833,
+   "cross_max": 0.9350954368978767
+  },
+  "qwen38-27b": {
+   "same_mean": 0.615430407014559,
+   "cross_mean": 0.4344970905078726,
+   "same_min": 0,
+   "cross_max": 0.8230548917531016
+  },
+  "gpt-oss-20b": {
+   "same_mean": 0.6405094895014096,
+   "cross_mean": 0.4183540114482381,
+   "same_min": 0.10241831129983785,
+   "cross_max": 0.8647908694379512
+  }
+ },
+ "hypotheses": {
+  "H1": true,
+  "H2": false,
+  "H3acc": true,
+  "H3div": true,
+  "C14": true,
+  "C15": true,
+  "F5": true
+ },
+ "verdict": "E-Q21 VERDICT (the question map is an embedding function — C14/C15): H1 LIVES — C14 LIVES: the jev 8-probe embedding retrieves same-family records at 0.7 top-1 accuracy via LIVE Vectorize cosine, vs the majority baseline 0.25 and the permutation null 0.2122 (the instrument panel IS a metric space). H2 DIES — BOW-cosine on the same texts scores 0.8 vs jev's 0.7 (P2 HIT, predicted): the honest narrowing — the 8 interpretable axes buy ~88% of full-vocab BOW accuracy at ~1/300th the dimensionality, and the SAME axes through qwen3.8-27b score 0.85, ABOVE BOW: the axes are sufficient; jev's per-axis calibration is what cost the two records. The value claim: interpretable, dimensionality-economical, portable. H3 (C15) LIVES: both Groq seats' embeddings land within one family-error of jev's (0.85 and 0.7 vs jev 0.7), and the per-axis divergence is STRUCTURED — P8_exact diverges most (means 0.2394/0.2791), P5_repair least (0.0574/0.0581), top-3 axis overlap 2/3 across seats (the harmony finding extended from answers to embedding spaces; embedder choice is a calibration choice, not a paradigm choice). F5 stability: 24/24 re-embedded axes within 0.25 (P5 HIT — scores are calmer than choices). Separation (jev space): same-family cosine 0.7585 vs cross 0.5432; family cohesion N 0.77 > P 0.763 > A 0.758 > Q 0.743 (P6 HIT — the non-local family is tightest; Q is loosest because Q4 the ablation record is the crossover object: quantum content ABOUT the wormhole channel, misfiled by every embedder)."
+}

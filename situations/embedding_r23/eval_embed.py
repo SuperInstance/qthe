@@ -122,16 +122,23 @@ if up.returncode != 0:
     sys.exit(4)
 
 # ── live queries (F4 round-trip + retrieval) ────────────────────────────────
+# r23 receipt: wrangler CLI query's --vector parsing is broken ("got 0
+# dimensions" for any input) — queries go through the Vectorize REST API
+# directly (the endpoint the CLI error itself revealed).
+import urllib.request as _urq
+
 def query_topk(vec, k=20):
-    vstr = ",".join(f"{x:.6f}" for x in pad(vec))
-    r = subprocess.run(
-        ["npx", "wrangler", "vectorize", "query", "qthe-jev-embed", "--vector", vstr, "--topK", str(k), "--json"],
-        cwd=str(ROOT / "cloudflare"), env=env, capture_output=True, text=True, timeout=120)
-    if r.returncode != 0:
-        print("query failed:", r.stderr[-400:])
+    body = json.dumps({"vector": pad(vec), "topK": k}).encode()
+    req = _urq.Request(
+        "https://api.cloudflare.com/client/v4/accounts/049ff5e84ecf636b53b162cbb580aae6/vectorize/v2/indexes/qthe-jev-embed/query",
+        data=body, method="POST")
+    req.add_header("Authorization", "Bearer " + env["CLOUDFLARE_API_TOKEN"])
+    req.add_header("Content-Type", "application/json")
+    with _urq.urlopen(req, timeout=60) as r:
+        d = json.loads(r.read().decode())
+    if not d.get("success"):
         return None
-    out = json.loads(r.stdout)
-    return out.get("result", out) if isinstance(out, dict) else out
+    return (d.get("result") or {}).get("matches", [])
 
 def accuracy_via_vectorize(seat):
     hits, misses, total = 0, [], 0

@@ -138,9 +138,9 @@
       </tr>
       <tr>
         <td class="claim"><b>C11</b> the tick operator is a construction-provenance blindfold: PRNG / quantum-ROOTED hash-expanded comet-certified (SP 800-90B root) / quantum-blur-conditioned planes become statistically indistinguishable within the PRNG noise floor by tick 64, each individually byte-deterministic</td>
-        <td class="v r">DIES<span class="q"> (on H2)</span><span class="d">H1 LIVES cleanly: the certified quantum root, SHA-256-expanded, is indistinguishable from mulberry32 at EVERY checkpoint x metric (byte provenance is invisible — the NIST 90B-to-90A pattern is behaviorally transparent). H3 LIVES: the blur's t=0 fingerprint is huge (dW1 12.06 vs floor 0.51) and the exact circuit is INTERFERENCE-SHAPED — Moore-8 Moran's I NEGATIVE (−0.068; a classical smoothing blur would be strongly positive) — a measured quantum-native geometry. H2 DIES: spatial autocorrelation has not equilibrated by t=64 (A3 0.038 / A3S 0.034 vs floor 0.021, converging monotonically) while dW1/tauTV/twinRate DID wash out — initial spatial correlation is a SLOW MODE of the tick operator; the A3S excursion proves the persistence is dynamical, not quantum-specific. T* &gt; 64</span></td>
+        <td class="v r">DIES<span class="q"> (on H2)</span><span class="d">H1 LIVES cleanly: the certified quantum root, SHA-256-expanded, is indistinguishable from mulberry32 at EVERY checkpoint x metric (byte provenance is invisible — the NIST 90B-to-90A pattern is behaviorally transparent). H3 LIVES: the blur's t=0 fingerprint is huge (dW1 12.06 vs floor 0.51) and the exact circuit is INTERFERENCE-SHAPED — Moore-8 Moran's I NEGATIVE (−0.068; a classical smoothing blur would be strongly positive) — a measured quantum-native geometry. H2 DIES: spatial autocorrelation has not equilibrated by t=64 (A3 0.038 / A3S 0.034 vs floor 0.021, converging monotonically) while dW1/tauTV/twinRate DID wash out — initial spatial correlation is a SLOW MODE of the tick operator; the A3S excursion proves the persistence is dynamical, not quantum-specific. T* &gt; 64 **(r22 annotation, E-Q20b: T* &gt; 512 — the &quot;converging monotonically&quot; reading was a checkpoint-sampling artifact; the true shape is dip-at-8 → re-excite → metastable plateau ~20% above floor through t=512; see the C11 annotation section)**</span></td>
         <td class="mech">undefined</td>
-        <td class="dim">E-Q20 (ORCH-R21)</td>
+        <td class="dim">E-Q20 (ORCH-R21) + E-Q20b (ORCH-R22)</td>
         <td class="tip" title="stone-v1 chain tip — full a310f37e10e6f746ebb8a7362a71e5f108d2110b945d365316bae02d7a78a8cc">a310f37e10e6f746</td>
         <td class="num">22</td>
       </tr>
@@ -151,7 +151,7 @@
   </div>
 
   <div class="panel" id="chains">
-    <h2>chain of chains &middot; 22 stone-v1 receipts pinned by fleet-seeds (741 rows)</h2>
+    <h2>chain of chains &middot; 24 stone-v1 receipts pinned by fleet-seeds (750 rows)</h2>
     <table>
       <thead><tr><th>chain</th><th>rows</th><th>tip (sha256 of chain file)</th><th>probe gate</th></tr></thead>
       <tbody>
@@ -282,15 +282,27 @@
         <td class="dim">PG1 &middot; stone &check;</td>
       </tr>
       <tr>
+        <td class="claim"><b>e_q20c_ablation</b> <span class="dim">receipts/e_q20c_chain.jsonl</span></td>
+        <td class="num">4</td>
+        <td class="tip" title="sha256 of the chain file — full 951f8405b25da1f50ce59f2b8fbff22ec1b56207cf47cf60e124a536db4895b4">951f8405b25da1f5</td>
+        <td class="dim">PG1 &middot; stone &check;</td>
+      </tr>
+      <tr>
+        <td class="claim"><b>e_q21_embedding</b> <span class="dim">receipts/e_q21_chain.jsonl</span></td>
+        <td class="num">4</td>
+        <td class="tip" title="sha256 of the chain file — full 23c7e3205ef6051efb3ed867f1c4b68aa000e59e1b0d62ac14dde031856be47a">23c7e3205ef6051e</td>
+        <td class="dim">PG1 &middot; stone &check;</td>
+      </tr>
+      <tr>
         <td class="claim"><b>probe_gate</b> <span class="dim">receipts/probe_gate_chain.jsonl</span></td>
-        <td class="num">34</td>
-        <td class="tip" title="sha256 of the chain file — full 4c2afc112c4e4aab62719357e5a6855675fbf0168ee5fb530d4c06ba13df01a3">4c2afc112c4e4aab</td>
+        <td class="num">35</td>
+        <td class="tip" title="sha256 of the chain file — full af3841ef05edc068ccd91b0d0226ce4896cee3aa25f2868814e238b6bafe69ec">af3841ef05edc068</td>
         <td class="dim">self — the gate&rsquo;s own receipt</td>
       </tr>
       </tbody>
     </table>
-    <p class="note">verified by the probe gate — sealed run: <b>PROBE-GATE PASS</b> (scope=all, 0 failed) &middot; PG1 stone 22/22 verified from disk &middot; PG2 tip-pin 24 checked &middot; PG3 tamper control refused the flipped byte &middot; PG4 1000-tick twin probe byte-identical &middot; PG5 113ms / 67MB within 10000ms/512MB &middot; PG6 verdict-recompute 33/33 claims re-derived from the sealed outputs.<br>
-    gate scope today: 22 stone chains + 2 content-hash tips (the sealed run covers the full current scope). every pin above was recomputed from disk at build time.</p>
+    <p class="note">verified by the probe gate — sealed run: <b>PROBE-GATE PASS</b> (scope=all, 0 failed) &middot; PG1 stone 24/24 verified from disk &middot; PG2 tip-pin 26 checked &middot; PG3 tamper control refused the flipped byte &middot; PG4 1000-tick twin probe byte-identical &middot; PG5 112ms / 66MB within 10000ms/512MB &middot; PG6 verdict-recompute 35/35 claims re-derived from the sealed outputs.<br>
+    gate scope today: 24 stone chains + 2 content-hash tips (the sealed run covers the full current scope). every pin above was recomputed from disk at build time.</p>
   </div>
 
   <div class="panel" id="budget">
@@ -311,12 +323,12 @@
       <li><b>G4 — hand-computed literal wrong, kernel right (preserved standing)</b> — priced by gates <span class="dim">(tests/receipts.jsonl)</span></li>
       <li><b>E-Q7 lane expectation — ON/OFF same-regime falsified by own run (nu channel not sign-impotent)</b> — priced by E-Q7 <span class="dim">(commit 55ddced)</span></li>
     </ul>
-    <p class="note">the reading: 7 banked nulls and 9 caught defects against zero silent failures — every cost converted into a boundary the next system inherits for free. source: docs/FALSIFICATION-BUDGET.md (18 chain files, 673 rows on disk; fleet-seeds pins 22 chains, 741 rows — regenerate both from the same disk state to reconcile).</p>
+    <p class="note">the reading: 7 banked nulls and 9 caught defects against zero silent failures — every cost converted into a boundary the next system inherits for free. source: docs/FALSIFICATION-BUDGET.md (18 chain files, 673 rows on disk; fleet-seeds pins 24 chains, 750 rows — regenerate both from the same disk state to reconcile).</p>
   </div>
 
   <div class="panel" id="verify">
     <h2>how to verify this page</h2>
-    <p class="note">every number above was parsed from the sealed record and cross-checked at build time (kernel sha &check; qthe.mjs &middot; 6/6 verdicts &check; fleet-seeds scoreboard &middot; 6/6 tips &check; pinned tip files &middot; 22/22 chain pins recomputed from disk &middot; budget accounts &check; their lists). re-derive it yourself, from a fresh clone:</p>
+    <p class="note">every number above was parsed from the sealed record and cross-checked at build time (kernel sha &check; qthe.mjs &middot; 6/6 verdicts &check; fleet-seeds scoreboard &middot; 6/6 tips &check; pinned tip files &middot; 24/24 chain pins recomputed from disk &middot; budget accounts &check; their lists). re-derive it yourself, from a fresh clone:</p>
     <pre><span class="cmd">node scripts/verify_all_chains.mjs</span>     <span class="c"># every stone-v1 chain re-verified from disk (fail-loud)</span>
 <span class="cmd">node scripts/probe_gate.mjs</span>              <span class="c"># PG1-PG6 harness integrity gate (tamper + determinism + bounds + verdict-recompute)</span>
 <span class="cmd">node scripts/falsification_budget.mjs</span>    <span class="c"># regenerate the falsification-budget ledger from the sealed record</span></pre>

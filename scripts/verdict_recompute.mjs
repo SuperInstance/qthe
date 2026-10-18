@@ -901,6 +901,43 @@ const CLAIMS = [
       return { recomputed: "F0' byte-exact (30/30+32/32+64/64); H1b DIES T*>512 (the honest null, P5 HIT); H2b DIES re-excitations [16,32,64]; the dip-then-re-excite structure verifies (t=8 sub-floor 0.00298 vs 0.01342, t=16 re-excited 0.0482); the plateau holds above-floor at t=384-512; A3S crossing 512; zero credits; chain agrees" };
     },
   },
+  {
+    id: 'E-Q20c plateau ablation — the wormhole channel is a correlation DISSIPATOR',
+    source: 'experiments/outputs/e_q20c_results.json',
+    cite: 'receipts/e_q20c_chain.jsonl · verdict.EQ20c · experiments/pre_registration_e_q20c.json (sha-frozen) · the AM1 direction amendment in e_q20c_verdict.md',
+    expected: "F0'' ON-gate byte-exact vs sealed E-Q20b (30/30 hashes, 60/60 floor, 120/120 cross); F-m1 twinRate==0 under OFF; F-m2 determinism 30/30; ON plateau ratio 1.1843 vs OFF 1.5771 (drop -33.17%, BOTH H1c and H0c die; the unregistered third direction is decisive: the twin channel DISSIPATES correlation — the t=8 dip 8.6x deeper ON)",
+    run() {
+      const d = readJson(this.source);
+      if (d.floors.F0pp !== true) throw new Error("F0'' ON-gate did not pass");
+      if (d.floors.Fm1 !== true || d.floors.twinMax !== 0) throw new Error('F-m1 broken');
+      if (d.floors.Fm2 !== true || d.floors.detOk !== 30) throw new Error('F-m2 broken');
+      if (d.hypotheses.H1c !== false || d.hypotheses.H0c !== false) throw new Error('both hypotheses must die (the third direction)');
+      if (!(d.onRatios.plateau < d.offRatios.plateau)) throw new Error('OFF must be WORSE (the dissipator direction)');
+      if (Math.abs(d.hypotheses.drop - (d.onRatios.plateau - d.offRatios.plateau) / d.onRatios.plateau) > 1e-9) throw new Error('drop arithmetic drifted');
+      if (d.task.mothCredits !== 0) throw new Error('the zero-credit law drifted');
+      const row = lastChainRow('receipts/e_q20c_chain.jsonl', (r) => r.kind === 'verdict.EQ20c', 'verdict.EQ20c');
+      if (row.H1c !== false || row.H0c !== false || row.F0pp !== true) throw new Error('chain flags disagree');
+      return { recomputed: "F0'' byte-exact, twinRate==0 under OFF, determinism 30/30; ON 1.1843 vs OFF 1.5771 (drop -33.17%): the wormhole channel DISSIPATES correlation — with it ON the geometry relaxes faster at every horizon (the t=8 dip 0.0030 vs 0.0259, 8.6x); the slow mode is the LOCAL rule's own memory; zero credits; chain agrees" };
+    },
+  },
+  {
+    id: 'C14/C15 — the question map is an embedding (E-Q21, cross-embedder robustness)',
+    source: 'experiments/outputs/e_q21_results.json',
+    cite: 'receipts/e_q21_chain.jsonl · verdict.EQ21 · experiments/pre_registration_e_q21.json (+AM1 zero-pad) · situations/embedding_r23/ (corpus sealed pre-call + eval_results.json + all rows)',
+    expected: 'C14 LIVES: jev 8-probe embedding top-1 family accuracy 0.70 via LIVE Vectorize cosine vs majority 0.25 and permutation null 0.2122; H2 DIES with the honest narrowing (BOW 0.80 > jev 0.70, but the same axes through qwen 0.85 > BOW — the axes are sufficient, jev calibration cost 2 records); C15 LIVES (qwen 0.85, gpt-oss 0.70, both within one family-error of jev; divergence structured: P8_exact max 0.24/0.28, P5_repair min 0.057/0.058); F5 stability 24/24',
+    run() {
+      const d = readJson(this.source);
+      if (d.hypotheses.C14 !== true || d.hypotheses.H1 !== true) throw new Error('C14/H1 must live');
+      if (d.hypotheses.H2 !== false) throw new Error('H2 must die (the BOW narrowing, as predicted P2)');
+      if (d.hypotheses.C15 !== true || d.hypotheses.H3acc !== true || d.hypotheses.H3div !== true) throw new Error('C15 clauses must live');
+      if (d.retrieval.jev.accuracy !== 0.7 || d.retrieval['qwen38-27b'].accuracy !== 0.85 || d.retrieval['gpt-oss-20b'].accuracy !== 0.7) throw new Error('retrieval accuracies drifted');
+      if (d.baselines.bow !== 0.8 || d.baselines.majority !== 0.25) throw new Error('baselines drifted');
+      if (d.stability.within !== 24 || d.stability.total !== 24) throw new Error('F5 stability drifted');
+      const row = lastChainRow('receipts/e_q21_chain.jsonl', (r) => r.kind === 'verdict.EQ21', 'verdict.EQ21');
+      if (row.C14 !== true || row.C15 !== true || row.F5 !== true) throw new Error('chain flags disagree');
+      return { recomputed: 'C14 LIVES (0.70 vs 0.25/0.2122 baselines, live Vectorize round-trip); H2 DIES honestly (BOW 0.80; qwen-on-same-axes 0.85 above BOW — interpretable 8-dim axes at ~1/300 BOW dimensionality); C15 LIVES (0.85/0.70 within one family-error; structured divergence P8-exact max, P5-repair min, top-3 overlap 2/3); stability 24/24; chain agrees' };
+    },
+  },
 ];
 
 // ── COVERAGE (ORCH-R11: the arena-r11 consensus finding, all four seats) ──

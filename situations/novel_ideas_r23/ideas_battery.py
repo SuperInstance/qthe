@@ -32,7 +32,9 @@ BRIEF = """FLEET CONTEXT — what we have ALREADY tried with the typesafe.ai sys
 - subject-key routing (identity decided in code; the model barred from same-entity questions)
 - cross-exam batteries, adjudication panels, cache-economics pricing
 - THIS ROUND (E-Q21, in flight): the question map as an EMBEDDING FUNCTION — a fixed 8-probe score battery per record, vectors in Cloudflare Vectorize, retrieval scored against sealed family labels.
-API surface: POST /v1/systemone {"state": text, "model": "jev-latest"|"jev-preview", "questions": {id: {"type": "noul|choice|score", "instructions": text, "criteria": ...}}} -> per-question answers with probabilities/confidence. Two served models: jev-latest (jev-1.13.0) and jev-preview (jev-1.14.0)."""
+API surface: POST /v1/systemone with a state text, a model id (jev-latest | jev-preview), and a
+questions map (id -> {type, instructions, criteria}) -> per-question answers with
+probabilities/confidence. Two served models: jev-latest (jev-1.13.0) and jev-preview (jev-1.14.0)."""
 
 GEN_PROMPT = f"""{BRIEF}
 

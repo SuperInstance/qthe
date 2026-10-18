@@ -49,6 +49,7 @@ export const STONE_CHAINS = [
   { path: 'receipts/e_q20_chain.jsonl', gate: 'e_q20', label: 'E-Q20 · construction provenance, quantum constructors (ORCH-R21/T12-b)', pin: 'e_q20_construction' },
   { path: 'receipts/e_q20b_chain.jsonl', gate: 'e_q20b', label: 'E-Q20b · burn-in ladder, T* relaxation time (ORCH-R22/T13-d)', pin: 'e_q20b_burnin' },
   { path: 'receipts/e_q20c_chain.jsonl', gate: 'e_q20c', label: 'E-Q20c · plateau-mechanism ablation, wormholes OFF (ORCH-R23/T14-b)', pin: 'e_q20c_ablation' },
+  { path: 'receipts/e_q21_chain.jsonl', gate: 'e_q21', label: 'E-Q21 · the question map as an embedding function (ORCH-R23/T14-a)', pin: 'e_q21_embedding' },
   { path: 'receipts/probe_gate_chain.jsonl', gate: 'probe_gate', label: 'probe gate runs', pin: 'probe_gate' },
 ];
 
