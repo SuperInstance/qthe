@@ -76,8 +76,11 @@ CRITERIA = {
     "FALSE": "The record contradicts the statement: an inverted trajectory, a wrong value, a misattributed spend, or a gate result the record does not own.",
     "UNCERTAIN": "The briefing cannot settle the statement either way.",
 }
-questions = {
-    sid: {
+# explicit aggregation loop — the T5-a guard's BATCHED pattern (a comprehension
+# is invisible to it; this site IS batched: 6 questions, one call)
+questions = {}
+for sid in ids:
+    questions[sid] = {
         "type": "choice",
         "instructions": (
             f"Statement [{sid}]: {statements[sid]}  "
@@ -86,8 +89,6 @@ questions = {
         ),
         "criteria": CRITERIA,
     }
-    for sid in ids
-}
 
 rows_path = HERE / f"typesafe_rows_{ROUND}.jsonl"
 sealed_ids = set()

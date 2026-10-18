@@ -42,7 +42,7 @@ if groq_path.exists():
             continue
         r = json.loads(line)
         seat = r["seat"]
-        is_v2 = r["call_id"].endswith("-v2")
+        is_v2 = re.search(r"v2$", r["call_id"]) is not None
         if seat in groq and not is_v2:
             continue  # v2 supersedes v1 for scoring; v1 stays receipted
         if seat in groq and is_v2:
@@ -153,6 +153,10 @@ if gl in SEATS and gp in SEATS:
 lines.append("- The harmony finding (candidate for the next round to price): seat families "
              "misread DIFFERENT statements — the union of a cheap diverse panel covers "
              "more of the record than any single seat, at cents total.")
+lines.append("- Honesty note on S3 (the discriminator): A3S's t=512 distance beat the floor "
+             "by 1.7e-5 (0.025762 vs 0.025779) — a knife-edge ground truth. The three FALSE "
+             "answers are defensible readings of 'reached' as meaningfully-below; S3 separates "
+             "literal readers from lenient ones more than it separates good from bad.")
 lines.append("")
 (HERE / "verdict.md").write_text("\n".join(lines))
 print("\n".join(lines))
