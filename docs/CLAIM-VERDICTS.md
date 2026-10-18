@@ -17,6 +17,7 @@
 | C5 | the substrate self-repairs (armor-ring) | **DIES** (honest null) — ring self-dissolves; no repair term exists | E-Q5 | `4425545f…` (25 links) |
 | C5′ | repair via injector (one-pager) | **STANDS** — definitional, receipted as such | E-Q10 | `50ddf5f9…` (24 links) |
 | C9 | hierarchical wormholes (8×8+8, folded addressing) restore provenance under population load | **DIES** (with prejudice, opposite direction) — hier provFrac WORSE than flat at every population level (clean 0.0066 vs 0.0725, 11× worse); the d&7 fold trades cross-region anonymity for 8× denser cross-cargo aliasing and the drift convoy floods it. H2 (escalation latency) LIVES: 8/8 delivery, first-delivery 7 == 7 — the delivery channel is addressing-robust; the WHO channel is what dies | E-Q18 (ORCH-R18) | `fe059a2e…` (254 links) |
+| C10 | a qthe-docket (tiled task arbitration) reduces starvation and source-monopolization under flapping and source-local flooding vs a FIFO+static-priority inbox, at spatial-baseline parity | **DIES on H1** — the debounce changes timing, not throughput share (A-static stableStarve == the heap's exactly, 0.4435); the physics bundle cuts starvation 0.44→0.32 (the re-boost-as-FIFO-penalty law, AM6(i) confirmed) but buys it with stable p99 +33% (845 vs 633). **H2 flood-cap LIVES structurally** — tiles aligned with source homes cap the flooder at maxShare@500 0.339 vs the heap's 0.75; T_end erosion 0.436 = the backlog-bounded boundary. H3/H4 vacuous in the drained regime (p50=0 both; receipted as unmeasured, not passed) | E-Q19 (ORCH-R20) | `568bfef3…` (19 links) |
 
 Supporting mechanism verdicts (not LAYER 2 claims, but they bound the claims):
 E-Q6 slot semantics = S3 live-read row-major LWW (`ab4ea196…`, 15 links);
@@ -287,6 +288,47 @@ not touch LAYER 2 (the tool explicitly does not test pricing claims) — it is
 the LAYER 1 "same input, same bytes, independent of who computes it" claim,
 receipted by a stranger. Cross-referenced from the README per the fleet
 Reader's Fold: we carry the pointer, not a verdict about the tool.
+
+## C10 — DIES on H1 (the debounce is timing, not share); the flood cap LIVES (E-Q19, ORCH-R20)
+
+**Priced:** the first consumer-driven claim. The docket — task arbitration
+on a ticking 64×64 substrate, jurisdiction tiles, best-ATTRACT claims (max
+current d, ties age/id), Abstain deferral with wormhole escalation, the REAL
+kernel every epoch — against the standard inbox (FIFO + static priority)
+and the naive spatial baseline (nearest-first), under L1 uniform / L2
+flapping (source 0 re-boosts to [48..62] every 8 epochs) / L3 source-local
+flood at 50% volume under overload. 5 arms × 3 loads × 10 seeds × 2
+determinism runs, 150/150 byte-identical.
+
+**The autopsy:** (1) *the debounce changes timing, not throughput share* —
+A-static's stableStarve equals the heap's EXACTLY (0.443539…): with
+flappers spread across every tile and capacity binding, the epochs a
+flapper spends deferred are epochs a stable task eats that it would have
+eaten anyway in expectation; capping a gamer under overload needs admission
+control, not arbitration physics. (2) *the physics cuts starvation anyway*
+— full-A 0.3194 vs A-static 0.4435: under 0.90 saturation, d-ties at 63
+break by age and the re-boost re-stamps the flapper's cell at [48..62],
+resetting its own aging — the gamer's boost is a self-inflicted FIFO
+penalty (the AM6(i) prediction, confirmed). (3) *but it buys starvation
+with tail latency* — stable p99 845 vs the heap's 633; age-tie serving
+queues young stable work behind old. (4) *the flood cap is structural and
+backlog-bounded* — tiles aligned with homes cap the flooder at 0.339 of
+served at the pre-overflow checkpoint vs the heap's 0.75; once the flood
+backlog overflows its region (7,113 overflows per run receipted) the cap
+erodes to 0.436. Plane capacity is flood insurance. (5) *AM2 confirmed* —
+the wormhole escalation carried 1 claim in 12,000 tasks: the table is
+written at the deferred task's drifted d and read at the claimer's cargo
+slot — E-Q14's WHO-loss, consumer-side; a consumer needing deferred-task
+recovery must pin the defer band to the claimer band or accept eventual
+re-visibility by τ-flip as the only guarantee.
+
+**What survives:** the docket ships as the second live consumer (T11-b)
+with an honest label — flood-capping and gaming-penalty yes, flapping
+starvation no, tail latency the price. The 8×64+8 hierarchical survivor's
+trigger now carries E-Q19's warning: its provenance channel is the exact
+channel AM2 prices as addressing-mismatched under drift.
+
+---
 
 ## LAYER 2 deployment receipts (ORCH-R16, 2026-10-18)
 

@@ -83,6 +83,26 @@ fraction rises monotonically to 1.0 while every pair still delivers.
 
 ## The map's edge
 
+## The consumer row (E-Q19, ORCH-R20 — the docket boundary)
+
+The first consumer-priced boundary, for anyone building task arbitration on
+the substrate: **the debounce is timing, not share** — Abstain deferral
+redistributes when stable work gets claimed, not how much of the binding
+capacity it gets (A-static's stable starvation equaled the heap's exactly);
+**saturation converts re-boost gaming into FIFO penalty** (ties at d=63
+break by age; the re-boost re-stamp resets the gamer's own aging — stable
+starvation 0.44→0.32), **at the price of tail latency** (stable p99 +33%);
+**the spatial flood cap is real but backlog-bounded** (tiles aligned with
+source homes cap a flooder at ~0.34 of served vs the heap's 0.75 — until
+the flood physically overflows its region, then the cap erodes; plane
+capacity is flood insurance); and **deferred-task recovery by address is
+drift-blind** (the wormhole escalation carried 1 claim in 12,000 — the
+consumer-side WHO-loss; pin the defer band to the claimer band or accept
+τ-flip re-visibility as the guarantee). Drained regimes measure nothing:
+at 75% utilization both arbiters serve within the arrival epoch (p50=0)
+and priority fidelity is unmeasurable — price arbitration under backlog
+or not at all.
+
 The map is complete only where the receipts reach. The grid-scaling row is
 now drawn from the sealed E-Q16-C numbers (it stood PENDING until ORCH-R10
 found the seal had never landed in the row — the commit message had
