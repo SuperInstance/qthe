@@ -73,6 +73,12 @@
 3. **jev-garden live wiring** is contract-delivered; the lane that owns that
    repo executes it (P21).
 
+## Post-roadmap rounds (the 50 phases are closed; the rounds continue)
+
+| round | lanes | status / receipts |
+|-------|-------|-------------------|
+| ORCH-R20 | **crossimpl/rs** (the Rust port, subagent lane) · **E-Q19/C10** (the first consumer-driven pricing) · **the docket deployed** (the second live consumer) | Rust BYTE-EXACT 19/19 both planes (rs chain, tip `f3abf8db…`) · C10 DIES on H1 with the five-law autopsy (e_q19 chain, tip `568bfef3…`; scoreboard 8 claims, 3/5/1) · `QtheDocket` DO live, build `r20-docket1`, arbitration determinism `77d865d0…`, honest label traveling with the service · batteries 38/38 + 29-claim gate + negctl 28/28 + ALL LIVE CHECKS PASS (incl. the new P-D) |
+
 ## New chains this orchestration sealed
 
 e_q13 (25 links), e_q14 (70, incl. autopsy row), e_q15 (54), e_q16 (19,
