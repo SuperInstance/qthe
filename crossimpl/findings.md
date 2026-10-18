@@ -128,3 +128,36 @@ node crossimpl/seal_receipts.mjs          # reseal + verify chain from disk
 Artifacts in `crossimpl/artifacts/` (vectors seed 0x5EED34E, results,
 verdict, probe, logs); chain in `crossimpl/receipts/crossimpl_chain.jsonl`
 (stone-v1, verified from disk at seal time).
+
+## Rust lane (ORCH-R20, T11-a) — the fourth language, both planes
+
+`crossimpl/rs/` (Rust, std-only, edition 2021, `#![forbid(unsafe_code)]`) is
+the fourth cross-implementation and the second full-LAYER-0+1 port after
+C99. It replays the C lane's sealed `fixtures.txt` (sha256 `dd866748…`,
+regeneration re-proven byte-identical in the port's worktree before any port
+code existed) on BOTH planes:
+
+| section | domain | N | matched | divergences | verdict |
+|---|---|---|---|---|---|
+| VEC vectorPass | the C lane's 4 seeded battery cases (4×6, 8×3, 1×1, 5×5) | 4 | 4 | 0 | **PASS** |
+| CASE float plane | twin ON/OFF, P-B3 random 2/3, checkerboard, σ 0.5/4, cooker, E-Q8 boards 2/3+8/5, fresh twins, mixed | 12 | 12 | 0 | **PASS** |
+| CASE fixed plane (R8) | random 2/3 + default + E-Q8 2/3 | 3 | 3 | 0 | **PASS** |
+| **total** | shared sealed fixtures, both planes | **19** | **19** | **0** | **PASS** |
+
+Byte-exactness was enforced per event tuple INCLUDING the tick field (one
+field stricter than the C runner) and per term BIT PATTERN (float) /
+term_q INTEGER (fixed); plane hash per `experiments/_harness.mjs`
+(`WxH@t=T:<hex>`, sha256). Determinism: the sealer runs the battery twice
+and refuses on any difference — byte-identical, output sha256 `6899aa24…`.
+Negative controls on temp fixture copies (plane-byte flip / term-bit flip /
+event-count tamper) all DETECTED with exit 1. Unit tests 13/13 (exhaustive
+pack bijection, i·i=−1 and i⁴=+1 as channel-coefficient compositions onto
+the Repel/Attract operators, Ψ(0) absorbing, torus wraparound, saturation
+cap/floor, R2/R4 live-read/never-self, R8 scaled domain, mulberry32 KAT vs
+the JS kernel, sha256/plane-hash KATs). Chain:
+`crossimpl/receipts/rs_chain.jsonl` (6 links, tip `29cc74c3…`), registered
+in `scripts/chain_registry.mjs` in the sealing commit; `verify_all_chains`
+ALL CLEAN 35/35. New SPEC-silence findings: A-R1/A-R2/A-R3 in
+`crossimpl/AMBIGUITY.md` (telemetry surface, degenerate tori, FP rounding
+discipline). Reproduce: `cd crossimpl/rs && cargo test --release && cargo
+build --release && ./target/release/conformance ../c/fixtures.txt`.
