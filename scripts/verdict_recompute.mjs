@@ -938,6 +938,24 @@ const CLAIMS = [
       return { recomputed: 'C14 LIVES (0.70 vs 0.25/0.2122 baselines, live Vectorize round-trip); H2 DIES honestly (BOW 0.80; qwen-on-same-axes 0.85 above BOW — interpretable 8-dim axes at ~1/300 BOW dimensionality); C15 LIVES (0.85/0.70 within one family-error; structured divergence P8-exact max, P5-repair min, top-3 overlap 2/3); stability 24/24; chain agrees' };
     },
   },
+  {
+    id: 'C16/C17 — axis calibration x ternary quantization (E-Q22 factorial)',
+    source: 'experiments/outputs/e_q22_results.json',
+    cite: 'receipts/e_q22_chain.jsonl · verdict.EQ22 · experiments/pre_registration_e_q22.json (+AM1 the NO-NEIGHBOR strict scoring rule, appended before sealing) · situations/embedding_r24/ (noul rows + eval)',
+    expected: 'C17 LIVES: the noul-calibrated arm 0.80 strict vs the ordinal score arm 0.70 (the S arm replicates E-Q21 through a fresh changeset; separation margin 0.2565 vs 0.2153; F5 24/24 within 0.10, max delta 0.03 — ~10x tighter than the score arm). C16 DIES with the honest narrowing: H2 fails on the noul side (TS 0.60 retains 0.857 of S, within the 0.85 clause; TN 0.55 retains only 0.6875 of N — the lenient cross-check fails by 0.003); H3 lives (TS/TN 0.60/0.55 vs majority 0.25, perm null 0.2122 — the 16-bit code carries signal at 2.4/2.2x, zero collisions, 1.54/1.52 bits/axis); H4 dies — ternarization INVERTS the calibration effect: calibration and quantization are SUBSTITUTES',
+    run() {
+      const d = readJson(this.source);
+      if (d.hypotheses.C17 !== true || d.hypotheses.H1 !== true) throw new Error('C17/H1 must live');
+      if (d.hypotheses.C16 !== false || d.hypotheses.H2 !== false) throw new Error('C16/H2 must die (the noul-side retention clause)');
+      if (d.hypotheses.H3 !== true || d.hypotheses.H4 !== false) throw new Error('H3 must live, H4 must die (the substitution finding)');
+      if (d.scoring.strict.S !== 0.7 || d.scoring.strict.N !== 0.8 || d.scoring.strict.TS !== 0.6 || d.scoring.strict.TN !== 0.55) throw new Error('strict arm accuracies drifted');
+      if (d.stability.within !== 24 || d.stability.total !== 24) throw new Error('F5 stability drifted');
+      if (d.ternary_stats.TS.distinct_codes !== 20 || d.ternary_stats.TN.collisions.length !== 0) throw new Error('ternary census drifted');
+      const row = lastChainRow('receipts/e_q22_chain.jsonl', (r) => r.kind === 'verdict.EQ22', 'verdict.EQ22');
+      if (row.C17 !== true || row.C16 !== false || row.F5 !== true) throw new Error('chain flags disagree');
+      return { recomputed: 'C17 LIVES (noul 0.80 vs score 0.70 strict, LIVE round-trip, S-arm replication receipt, 24/24 stability within 0.10 max 0.03); C16 DIES-with-narrowing (16-bit ternary codes carry signal at 2.2-2.4x majority with zero collisions, but noul-side retention 0.6875 breaks the 0.85 clause; P6 HIT-as-shared — the TN strict-miss table ties N=P=Q=3, A=0, sealed in ternary_cost_by_family); H4: calibration and quantization are SUBSTITUTES; chain agrees' };
+    },
+  },
 ];
 
 // ── COVERAGE (ORCH-R11: the arena-r11 consensus finding, all four seats) ──

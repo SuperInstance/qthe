@@ -41,5 +41,14 @@
  "falsifier": "ANY of F1-F6 breached; a checkpoint written before its floor passes; the accuracy comparison computed on anything but the sealed family labels; the ternarization table computed from anything but the arm's own 20 corpus vectors; a query that skips the LIVE round-trip.",
  "budget": "23 typesafe calls (~$0.01 ceiling) + Vectorize free tier + $0.00 moth. Round-level budget registered in the r24 registration commit.",
  "registered_before_run": true,
- "amendments": []
+ "amendments": [
+  {
+   "id": "AM1",
+   "appended": "after the eval run, BEFORE hypothesis sealing",
+   "what": "the NO-NEIGHBOR scoring rule. The registered protocol ('top-1 non-self WITHIN-ARM family accuracy over LIVE REST queries') was silent on records whose arm-filtered neighbor set is empty (topK=20 is computed ACROSS the whole index — a mostly-zero ternary vector with small norm can fail to place any same-arm vector in the global top-20). E-Q21 never produced a NO-NEIGHBOR so the ambiguity never fired; this lane produced 2 (TS) and 3 (TN).",
+   "rule": "STRICT is primary and governs hypothesis calls: a NO-NEIGHBOR counts as a MISS with denominator 20 (the conservative reading — a retrieval failure is a failure). The LENIENT numbers (denominator = records that had neighbors) are published as secondary. Both are reported; where they disagree the strict verdict governs and the disagreement is receipted.",
+   "honesty_note": "the numbers were seen before this amendment was written — it is a post-hoc disambiguation of an unforeseen protocol event, not a pre-commitment. The conservative direction was chosen BECAUSE it is conservative, and both scorings are published so the reader can price the choice. The verdict happens to be identical under both scorings for every hypothesis (H2's noul clause fails by 0.10 strict / 0.003 lenient — the narrowest possible disagreement, receipted).",
+   "consumer_law": "future ternary/low-norm evals should use a namespace filter or arm-filtered topK so the neighbor set is never starved by cross-arm matches — the NO-NEIGHBOR is a topK artifact, not a property of the code."
+  }
+ ]
 }

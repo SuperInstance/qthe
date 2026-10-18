@@ -1,0 +1,412 @@
+{
+ "experiment": "E-Q22",
+ "claim": "C16 — ternary quantization of question-map embeddings; C17 — calibrated mass vs ordinal levels",
+ "kernel": {
+  "kernelKind": "real",
+  "kernelPath": "qthe/qthe.mjs"
+ },
+ "preRegSha": "7579bc9ce3e32954a1349d6de55f0c2e691a2729eba407dd1544f7f750cbfec2",
+ "corpusSha": "0aceb7fca51965e9dc1ca12af1cc48d61814b69e0e6a1a6c8223bd59df8a5388",
+ "registration": "experiments/pre_registration_e_q22.json + AM1 (the NO-NEIGHBOR strict scoring rule, appended after the eval run and BEFORE hypothesis sealing)",
+ "task": {
+  "corpus": "situations/embedding_r23/corpus.json (the sealed E-Q21 corpus, unchanged)",
+  "arms": "S score-continuous (E-Q21 sealed rows, zero new calls) / N noul-continuous (23 r24 calls) / TS score-ternary / TN noul-ternary (median-centered {-1,0,+1}, MAD 0.5)",
+  "index": "qthe-jev-embed (arm-prefixed ids, LIVE round-trip)"
+ },
+ "scoring": {
+  "strict": {
+   "S": 0.7,
+   "N": 0.8,
+   "TS": 0.6,
+   "TN": 0.55
+  },
+  "lenient": {
+   "S": 0.7,
+   "N": 0.8,
+   "TS": 0.6666666666666666,
+   "TN": 0.6470588235294118
+  },
+  "rule": "AM1: strict governs (NO-NEIGHBOR = miss, denominator 20); lenient = as-measured denominator"
+ },
+ "retrieval": {
+  "S": {
+   "accuracy": 0.7,
+   "misses": [
+    [
+     "N4",
+     "P4"
+    ],
+    [
+     "P2",
+     "A4"
+    ],
+    [
+     "P3",
+     "Q4"
+    ],
+    [
+     "P4",
+     "N4"
+    ],
+    [
+     "Q4",
+     "P3"
+    ],
+    [
+     "A4",
+     "P2"
+    ]
+   ]
+  },
+  "N": {
+   "accuracy": 0.8,
+   "misses": [
+    [
+     "N5",
+     "P4"
+    ],
+    [
+     "P2",
+     "N2"
+    ],
+    [
+     "P4",
+     "N5"
+    ],
+    [
+     "Q4",
+     "N1"
+    ]
+   ]
+  },
+  "TS": {
+   "accuracy": 0.6666666666666666,
+   "misses": [
+    [
+     "N1",
+     "Q2"
+    ],
+    [
+     "N3",
+     "A1"
+    ],
+    [
+     "N4",
+     "P1"
+    ],
+    [
+     "P1",
+     "N4"
+    ],
+    [
+     "P2",
+     "NO-NEIGHBOR"
+    ],
+    [
+     "P3",
+     "Q4"
+    ],
+    [
+     "P4",
+     "NO-NEIGHBOR"
+    ],
+    [
+     "Q4",
+     "P3"
+    ]
+   ]
+  },
+  "TN": {
+   "accuracy": 0.6470588235294118,
+   "misses": [
+    [
+     "N1",
+     "Q2"
+    ],
+    [
+     "N3",
+     "P2"
+    ],
+    [
+     "N4",
+     "NO-NEIGHBOR"
+    ],
+    [
+     "P2",
+     "Q3"
+    ],
+    [
+     "P3",
+     "Q4"
+    ],
+    [
+     "P4",
+     "NO-NEIGHBOR"
+    ],
+    [
+     "Q1",
+     "NO-NEIGHBOR"
+    ],
+    [
+     "Q3",
+     "P2"
+    ],
+    [
+     "Q4",
+     "P3"
+    ]
+   ]
+  }
+ },
+ "baselines": {
+  "majority": 0.25,
+  "permutation_null": 0.2122,
+  "bow": 0.8
+ },
+ "stability": {
+  "within": 24,
+  "total": 24,
+  "band": 0.1,
+  "per_record": {
+   "N1": {
+    "max_delta": 0.020000000000000018,
+    "mean_delta": 0.005000000000000002
+   },
+   "P4": {
+    "max_delta": 0.030000000000000027,
+    "mean_delta": 0.011250000000000003
+   },
+   "A5": {
+    "max_delta": 0.010000000000000009,
+    "mean_delta": 0.0025000000000000005
+   }
+  }
+ },
+ "ternarization": {
+  "TS_table": [
+   {
+    "m": 0.31125,
+    "mad": 0.2975
+   },
+   {
+    "m": 0.45625,
+    "mad": 0.3425
+   },
+   {
+    "m": 0.08375,
+    "mad": 0.08125
+   },
+   {
+    "m": 0.04375,
+    "mad": 0.03874999999999999
+   },
+   {
+    "m": 0.02375,
+    "mad": 0.02
+   },
+   {
+    "m": 0.48375,
+    "mad": 0.4575
+   },
+   {
+    "m": 0.24125000000000002,
+    "mad": 0.22000000000000003
+   },
+   {
+    "m": 0.635,
+    "mad": 0.22625
+   }
+  ],
+  "TN_table": [
+   {
+    "m": 0.21,
+    "mad": 0.18
+   },
+   {
+    "m": 0.2,
+    "mad": 0.16
+   },
+   {
+    "m": 0.06,
+    "mad": 0.039999999999999994
+   },
+   {
+    "m": 0.065,
+    "mad": 0.035
+   },
+   {
+    "m": 0.05,
+    "mad": 0.020000000000000004
+   },
+   {
+    "m": 0.375,
+    "mad": 0.32
+   },
+   {
+    "m": 0.16999999999999998,
+    "mad": 0.145
+   },
+   {
+    "m": 0.345,
+    "mad": 0.21999999999999997
+   }
+  ],
+  "rule": "+1 if x > m+0.5*MAD; -1 if x < m-0.5*MAD; else 0 (m/MAD per axis over the arm's 20 corpus vectors)"
+ },
+ "ternary_stats": {
+  "TS": {
+   "distinct_codes": 20,
+   "collisions": [],
+   "per_axis_mass": {
+    "P1_nonlocal": {
+     "neg": 5,
+     "zero": 7,
+     "pos": 8
+    },
+    "P2_localrule": {
+     "neg": 9,
+     "zero": 5,
+     "pos": 6
+    },
+    "P3_quantum": {
+     "neg": 9,
+     "zero": 3,
+     "pos": 8
+    },
+    "P4_alloc": {
+     "neg": 7,
+     "zero": 5,
+     "pos": 8
+    },
+    "P5_repair": {
+     "neg": 8,
+     "zero": 4,
+     "pos": 8
+    },
+    "P6_null": {
+     "neg": 6,
+     "zero": 6,
+     "pos": 8
+    },
+    "P7_econ": {
+     "neg": 6,
+     "zero": 5,
+     "pos": 9
+    },
+    "P8_exact": {
+     "neg": 8,
+     "zero": 5,
+     "pos": 7
+    }
+   },
+   "mean_bits_per_axis": 1.5382742305510657
+  },
+  "TN": {
+   "distinct_codes": 20,
+   "collisions": [],
+   "per_axis_mass": {
+    "P1_nonlocal": {
+     "neg": 7,
+     "zero": 5,
+     "pos": 8
+    },
+    "P2_localrule": {
+     "neg": 9,
+     "zero": 2,
+     "pos": 9
+    },
+    "P3_quantum": {
+     "neg": 9,
+     "zero": 3,
+     "pos": 8
+    },
+    "P4_alloc": {
+     "neg": 7,
+     "zero": 6,
+     "pos": 7
+    },
+    "P5_repair": {
+     "neg": 6,
+     "zero": 8,
+     "pos": 6
+    },
+    "P6_null": {
+     "neg": 8,
+     "zero": 4,
+     "pos": 8
+    },
+    "P7_econ": {
+     "neg": 6,
+     "zero": 5,
+     "pos": 9
+    },
+    "P8_exact": {
+     "neg": 8,
+     "zero": 5,
+     "pos": 7
+    }
+   },
+   "mean_bits_per_axis": 1.5197646773103761
+  }
+ },
+ "separation": {
+  "S": {
+   "same_mean": 0.7584969400101269,
+   "cross_mean": 0.5431800267960863,
+   "same_min": 0.3222176493489833,
+   "cross_max": 0.9350954368978767
+  },
+  "N": {
+   "same_mean": 0.7035499822999747,
+   "cross_mean": 0.4470622756272825,
+   "same_min": 0.2238441293536711,
+   "cross_max": 0.9217729298659711
+  },
+  "TS": {
+   "same_mean": 0.2552291185498322,
+   "cross_mean": -0.11804540987378168,
+   "same_min": -0.33333333333333337,
+   "cross_max": 0.7302967433402214
+  },
+  "TN": {
+   "same_mean": 0.25524897969931465,
+   "cross_mean": -0.12869435646739807,
+   "same_min": -0.4629100498862757,
+   "cross_max": 0.7071067811865475
+  }
+ },
+ "hypotheses": {
+  "H1": true,
+  "H2": false,
+  "H3": true,
+  "H4": false,
+  "C16": false,
+  "C17": true,
+  "F5": true,
+  "H2len": false,
+  "H4len": false
+ },
+ "predictions": {
+  "P1": true,
+  "P2": true,
+  "P3": true,
+  "P4": true,
+  "P5": true,
+  "P6": true
+ },
+ "ternary_cost_by_family": {
+  "TS": {
+   "N": 3,
+   "P": 4,
+   "Q": 1,
+   "A": 0
+  },
+  "TN": {
+   "N": 3,
+   "P": 3,
+   "Q": 3,
+   "A": 0
+  }
+ },
+ "verdict": "E-Q22 VERDICT (the axis-calibration x ternary-quantization factorial — C16/C17, AM1 strict scoring): H1 LIVES — C17 LIVES: the NOUL-calibrated arm retrieves at 0.8 top-1 versus the ordinal score arm's 0.7 (both arms re-upserted and re-queried LIVE this lane — the S arm's 0.70 replicates E-Q21 through a fresh changeset, itself a stability receipt; the same 8 axis CONCEPTS, only the question TYPE changed). The jev-lattice calibration confound is real and fixable: typing the axes as calibrated mass gains a record, widens the separation margin (same-minus-cross 0.2565 vs 0.2153), and stabilizes the vectors ~10x (F5: 24/24 axes within 0.10, max delta 0.03). H2 DIES: the ternary survival clause fails on the noul side — TS 0.6 retains 0.8571 of S (within the 0.85 clause), but TN 0.55 retains only 0.6875 of N (0.25 absolute drop vs the 0.15 registered tolerance; lenient cross-check 0.6471 vs required 0.65 — fails by 0.003 there, by 0.10 strict: the verdict is identical under both scorings). H3 LIVES: both ternary arms clear the baselines decisively (TS 0.6 and TN 0.55 vs majority 0.25 and permutation null 0.2122) — the 16-bit ternary code carries the family signal at 2.4-2.2x the majority baseline. H4 DIES: ternarization INVERTS the calibration effect ((TN - TS) = -0.05 vs (N - S) = 0.1): calibration and quantization are SUBSTITUTES, not complements — the ordinal arm's mid-range spread survives median-centering better than the noul arm's saturated near-0/1 mass (noul saturation concentrates records at the code corners where intra-family resolution is lost). C16 (ternary at 16x compression) DIES with the honest narrowing: the code retains signal far above baselines with ZERO collisions (20 distinct codes, 1.5383/1.5198 bits/axis entropy — P4 HIT), but the strict retention clause fails on the noul side; C17 (calibrated mass beats ordinal levels) LIVES at 0.8 vs 0.7. The consumer law: for RETRIEVAL use the noul arm continuous (0.80, the new best single-jev configuration); for COMPRESSION use the score arm ternary (0.60 at 16 bits, 86% retention); never buy both — the noul-ternary combination is the worst of the four arms' retention ratios."
+}
