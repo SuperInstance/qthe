@@ -1,0 +1,31 @@
+{
+  "law": "REGISTRATION of E-Q20c — the plateau-mechanism ablation (ORCH-R23 lane T14-b): E-Q20b sealed a metastable plateau (A3 Moore-8 distance ~16-20% above the A1 floor, t=128..512, no trend). THE QUESTION: is the correlation reservoir the WORMHOLE TWIN CHANNEL or the LOCAL Moore-8 coupling? Ablation: the SAME arms and ladder with tick(sub, {wormholes:false}), ZERO credits. Committed BEFORE ANY RUN.",
+  "task_id": "ORCH-R23/T14-b",
+  "agent": "qthe orchestrator (Z.ai), erised fleet line",
+  "wave": "ORCH-R23",
+  "repo": "SuperInstance/qthe",
+  "repo_at_registration": "7980577",
+  "provenance_of_the_question": "E-Q20b verdict (chain e_q20b, tip 4aa12d65…): H1b DIES T* > 512 with the dip-then-re-excite-then-plateau structure; the r22 close-out registered 'the plateau-mechanism question (the wormhole twin channel as the correlation reservoir?)' as the r23 candidate. The kernel's tick accepts {wormholes:false} (qthe.mjs line 175-185; the E-Q1 OFF-arm idiom).",
+  "design_frozen": {
+    "arms": "identical construction to E-Q20b: A1 mulberry32(20261018+k) n=20, A3 tau-from-comet-expanded + sealed blur grids n=5, A3S the ONE fixed permutation n=5. A2 excluded (inherited).",
+    "manipulation": "tick(sub, { wormholes: false }) for EVERY tick of every arm, t=512, checkpoints {0,1,2,4,8,16,32,64,128,192,256,320,384,448,512}.",
+    "floors": "F0'' the ON-gate: with wormholes ON the harness must reproduce E-Q20b's sealed values byte-exactly (hashes at t=512, floor table, cross-arm medians) — run BEFORE the OFF arm, a mismatch VOIDS LOUD; F-m1 the manipulation check: twinRate == 0 at every checkpoint under OFF (any nonzero twin event = the OFF arm is not OFF, VOID); F-m2 determinism: full journal replay x2 byte-identical under OFF.",
+    "metrics": "same as E-Q20b: Moore-8 Moran's I distance (primary), dW1/tauTV/twinRate (controls; twinRate expected 0 by F-m1). Floor = A1 LOO 95th pct nearest-rank per checkpoint (computed within the OFF run).",
+    "hypotheses": {
+      "H1c": "the twin channel carries (part of) the memory: OFF plateau ratio (mean over t in {256,320,384,448,512} of A3 median-distance / floor) is at least 15% BELOW the ON ratio (0.2049 from the sealed E-Q20b table — recomputed, not transcribed).",
+      "H0c": "the reservoir is local: OFF ratio within the plane-bootstrap 95% CI of the ON ratio (bootstrap: resample the 5 A3 planes' per-plane distances with replacement, 2000 draws).",
+      "secondary": "the A3S upward excursion structure (0.0687@16 ON) — does it survive OFF? Reported AS-SAID with the same ratio comparison."
+    },
+    "verdict_rules": "H1c evaluated on the primary metric only, ON values from the sealed e_q20b_results.json re-derived by the F0'' gate. If H1c and H0c disagree in direction, H1c wins (the registered primary); a result between the 15% line and the CI edge is receipted as INCONCLUSIVE-BY-DESIGN (the two thresholds are deliberately different instruments).",
+    "moth_credits": 0,
+    "llm_usd": 0
+  },
+  "falsifier": "ANY of: F0'' mismatch; a nonzero twinRate under OFF; determinism disagreement; a checkpoint row written before F0'' and F-m1 pass.",
+  "predictions": {
+    "P1": "H0c lives — the plateau survives OFF within noise (the Moore-8 local coupling is the reservoir; the twin channel is per-cell RARE and its removal shifts distances only marginally)",
+    "P2": "the OFF plateau ratio lands in [0.18, 0.23] (a small shift, inside the CI)",
+    "P3": "the A3S excursion SURVIVES OFF (it is the tick operator's local rule building correlation, not the wormhole table)",
+    "P4": "the early ladder (t=0..32) is visually indistinguishable from ON (twin events are ~1e-4 per cell per tick — sub-noise at these horizons)",
+    "P5": "the honest-null branch (H1c lives, the twin channel is the reservoir) has p ~= 0.25 — registered live; if it fires it is the RESULT, not a failure"
+  }
+}
