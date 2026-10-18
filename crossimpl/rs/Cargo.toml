@@ -1,0 +1,39 @@
+# crossimpl/rs/Cargo.toml — the Rust port of the qthe kernel (ORCH-R20, lane
+# T11-a). Mirrors the C99 lane's contract (crossimpl/c/REGISTRATION.md):
+# byte-exact against the sealed fixtures on BOTH planes, sigma as BITS (never
+# std f64 libm-style transcendental evaluation), zero dependencies (std only).
+#
+# Build:   cargo build --release
+# Test:    cargo test            (LAYER-0 algebra unit tests)
+# Conform: ./target/release/conformance ../c/fixtures.txt
+[package]
+name = "qthe-crossimpl"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.75"
+description = "qthe: an 8-bit ternary substrate — fourth cross-implementation (Rust), byte-exact vs qthe.mjs (float plane) and qthe_fixed.mjs (R8 fixed plane)"
+license = "MIT"
+publish = false
+
+[lib]
+name = "qthe"
+path = "src/lib.rs"
+
+# The conformance runner: reads the SAME fixtures the C lane sealed
+# (crossimpl/c/fixtures.txt) and replays both planes byte-exact.
+[[bin]]
+name = "conformance"
+path = "src/bin/conformance.rs"
+
+# Zero dependencies — the port is std-only (no_external_crates law of the
+# crossimpl lanes). Cargo.lock is committed for reproducible resolution (it
+# pins nothing but this package).
+
+[profile.release]
+# Determinism note: the conformance OUTPUT BYTES are integer/IEEE754-exact
+# arithmetic + hex formatting — independent of optimization level. These
+# settings are sane defaults, not a determinism mechanism.
+opt-level = 3
+lto = true
+codegen-units = 1
+debug = false

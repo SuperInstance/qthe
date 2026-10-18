@@ -1,0 +1,2 @@
+# build artifacts — never commit (the sealed binary is rebuilt by seal_rs.mjs)
+/target
