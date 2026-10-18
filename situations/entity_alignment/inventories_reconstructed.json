@@ -1,0 +1,620 @@
+{
+ "lane": "T4-c",
+ "provenance": {
+  "pref fix_parent_commit": null,
+  "prefix_commit": "92f7c68a650358e2107c0b775d7975b18054e95d",
+  "prefix_commit_subject": "ORCH-R10 RUN COMPLETE — the eight-seat audit, sealed and priced: 9 calls / $0.05",
+  "fix_commit": "74bc4b54b5d1e81609fa82b1be661b282474390b",
+  "fix_commit_subject": "ORCH-R10 CORRECTION BATCH — defect #7 (chain-registry drift) repaired AND made i",
+  "extraction_commands": [
+   "git show 74bc4b5^:scripts/verify_all_chains.mjs",
+   "git show 74bc4b5^:scripts/probe_gate.mjs",
+   "git show 74bc4b5^:scripts/emit_fleet_seeds.mjs",
+   "git show 74bc4b5^:scripts/falsification_budget.mjs  (glob semantics re-run against git ls-tree 74bc4b5^)",
+   "git show 74bc4b5:scripts/chain_registry.mjs",
+   "git show 74bc4b5^:docs/PHASES-REPORT.md"
+  ],
+  "row_count_method": "non-empty lines of git show <commit>:<path> (identical to the tools' own split-newline/filter-trim counts)",
+  "git_usage": "read-only (show/ls-tree/rev-parse/log); no commits, no branch operations, no writes to git state"
+ },
+ "lists": {
+  "A_verify_all_chains": {
+   "script": "scripts/verify_all_chains.mjs",
+   "commit": "74bc4b5^",
+   "stone_chains": [
+    {
+     "path": "tests/receipts.jsonl",
+     "label": "kernel gates G0–G6",
+     "kind": "stone_chain",
+     "rows_stated": 10
+    },
+    {
+     "path": "crossimpl/receipts/crossimpl_chain.jsonl",
+     "label": "python LAYER 0 crossimpl",
+     "kind": "stone_chain",
+     "rows_stated": 11
+    },
+    {
+     "path": "crossimpl/receipts/cimpl_chain.jsonl",
+     "label": "c LAYER 0+1 crossimpl (ORCH-7)",
+     "kind": "stone_chain",
+     "rows_stated": 10
+    },
+    {
+     "path": "fixedpoint/receipts/fixedpoint_chain.jsonl",
+     "label": "no-floats plane R8",
+     "kind": "stone_chain",
+     "rows_stated": 26
+    },
+    {
+     "path": "receipts/e_q1_chain.jsonl",
+     "label": "E-Q1 · C2 wormhole",
+     "kind": "stone_chain",
+     "rows_stated": 25
+    },
+    {
+     "path": "receipts/e_q2_chain.jsonl",
+     "label": "E-Q2 · C3 sigma sweep",
+     "kind": "stone_chain",
+     "rows_stated": 14
+    },
+    {
+     "path": "receipts/e_q5_chain.jsonl",
+     "label": "E-Q5 · C5 armor ring",
+     "kind": "stone_chain",
+     "rows_stated": 25
+    },
+    {
+     "path": "receipts/e_q6_chain.jsonl",
+     "label": "E-Q6 · slot collision",
+     "kind": "stone_chain",
+     "rows_stated": 15
+    },
+    {
+     "path": "receipts/e_q7_chain.jsonl",
+     "label": "E-Q7 · C4 checkerboard cascade",
+     "kind": "stone_chain",
+     "rows_stated": 36
+    },
+    {
+     "path": "receipts/e_q8_chain.jsonl",
+     "label": "E-Q8 · float-only artifact probe",
+     "kind": "stone_chain",
+     "rows_stated": 17
+    },
+    {
+     "path": "receipts/e_q10_chain.jsonl",
+     "label": "E-Q10 · C5' injector one-pager",
+     "kind": "stone_chain",
+     "rows_stated": 24
+    }
+   ],
+   "content_tips": [
+    {
+     "path": "experiments/outputs/e_q11_tip.txt",
+     "results_file": "experiments/outputs/e_q11_results.json",
+     "label": "E-Q11 · collapse predicate (content-hash receipt)",
+     "kind": "content_tip",
+     "rows_stated": null
+    },
+    {
+     "path": "experiments/outputs/e_q12_tip.txt",
+     "results_file": "experiments/outputs/e_q12_results.json",
+     "label": "E-Q12 · k-family predicate (content-hash receipt)",
+     "kind": "content_tip",
+     "rows_stated": null
+    }
+   ],
+   "chains_count": 11,
+   "rows_sum_over_its_chains": 213,
+   "counts_rows_per_chain_at_runtime": true,
+   "missed_entities_vs_registry": [
+    "e_q13",
+    "e_q14",
+    "e_q15",
+    "e_q16",
+    "probe_gate"
+   ]
+  },
+  "B_probe_gate": {
+   "script": "scripts/probe_gate.mjs",
+   "commit": "74bc4b5^",
+   "stone_chains": [
+    {
+     "path": "tests/receipts.jsonl",
+     "gate": "G0-G6",
+     "kind": "stone_chain",
+     "rows_stated": null
+    },
+    {
+     "path": "crossimpl/receipts/crossimpl_chain.jsonl",
+     "gate": "crossimpl-py",
+     "kind": "stone_chain",
+     "rows_stated": null
+    },
+    {
+     "path": "crossimpl/receipts/cimpl_chain.jsonl",
+     "gate": "crossimpl-c",
+     "kind": "stone_chain",
+     "rows_stated": null
+    },
+    {
+     "path": "fixedpoint/receipts/fixedpoint_chain.jsonl",
+     "gate": "fixedpoint",
+     "kind": "stone_chain",
+     "rows_stated": null
+    },
+    {
+     "path": "receipts/e_q1_chain.jsonl",
+     "gate": "e_q1",
+     "kind": "stone_chain",
+     "rows_stated": null
+    },
+    {
+     "path": "receipts/e_q2_chain.jsonl",
+     "gate": "e_q2",
+     "kind": "stone_chain",
+     "rows_stated": null
+    },
+    {
+     "path": "receipts/e_q5_chain.jsonl",
+     "gate": "e_q5",
+     "kind": "stone_chain",
+     "rows_stated": null
+    },
+    {
+     "path": "receipts/e_q6_chain.jsonl",
+     "gate": "e_q6",
+     "kind": "stone_chain",
+     "rows_stated": null
+    },
+    {
+     "path": "receipts/e_q7_chain.jsonl",
+     "gate": "e_q7",
+     "kind": "stone_chain",
+     "rows_stated": null
+    },
+    {
+     "path": "receipts/e_q8_chain.jsonl",
+     "gate": "e_q8",
+     "kind": "stone_chain",
+     "rows_stated": null
+    },
+    {
+     "path": "receipts/e_q10_chain.jsonl",
+     "gate": "e_q10",
+     "kind": "stone_chain",
+     "rows_stated": null
+    },
+    {
+     "path": "receipts/e_q13_chain.jsonl",
+     "gate": "e_q13",
+     "kind": "stone_chain",
+     "rows_stated": null
+    },
+    {
+     "path": "receipts/e_q14_chain.jsonl",
+     "gate": "e_q14",
+     "kind": "stone_chain",
+     "rows_stated": null
+    }
+   ],
+   "content_tips": [
+    {
+     "path": "experiments/outputs/e_q11_tip.txt",
+     "gate": "e_q11",
+     "kind": "content_tip",
+     "rows_stated": null
+    },
+    {
+     "path": "experiments/outputs/e_q12_tip.txt",
+     "gate": "e_q12",
+     "kind": "content_tip",
+     "rows_stated": null
+    }
+   ],
+   "chains_count": 13,
+   "rows_sum_over_its_chains": null,
+   "counts_rows_per_chain_at_runtime": false,
+   "missed_entities_vs_registry": [
+    "e_q15",
+    "e_q16",
+    "probe_gate (its own chain)"
+   ]
+  },
+  "C_emit_fleet_seeds": {
+   "script": "scripts/emit_fleet_seeds.mjs",
+   "commit": "74bc4b5^",
+   "stone_chains": [
+    {
+     "pin": "gates_G0_G6",
+     "path": "tests/receipts.jsonl",
+     "kind": "stone_chain",
+     "rows_stated": 10
+    },
+    {
+     "pin": "crossimpl_py",
+     "path": "crossimpl/receipts/crossimpl_chain.jsonl",
+     "kind": "stone_chain",
+     "rows_stated": 11
+    },
+    {
+     "pin": "crossimpl_c",
+     "path": "crossimpl/receipts/cimpl_chain.jsonl",
+     "kind": "stone_chain",
+     "rows_stated": 10
+    },
+    {
+     "pin": "fixedpoint_R8",
+     "path": "fixedpoint/receipts/fixedpoint_chain.jsonl",
+     "kind": "stone_chain",
+     "rows_stated": 26
+    },
+    {
+     "pin": "e_q1_C2",
+     "path": "receipts/e_q1_chain.jsonl",
+     "kind": "stone_chain",
+     "rows_stated": 25
+    },
+    {
+     "pin": "e_q2_C3",
+     "path": "receipts/e_q2_chain.jsonl",
+     "kind": "stone_chain",
+     "rows_stated": 14
+    },
+    {
+     "pin": "e_q5_C5",
+     "path": "receipts/e_q5_chain.jsonl",
+     "kind": "stone_chain",
+     "rows_stated": 25
+    },
+    {
+     "pin": "e_q6_slots",
+     "path": "receipts/e_q6_chain.jsonl",
+     "kind": "stone_chain",
+     "rows_stated": 15
+    },
+    {
+     "pin": "e_q7_C4",
+     "path": "receipts/e_q7_chain.jsonl",
+     "kind": "stone_chain",
+     "rows_stated": 36
+    },
+    {
+     "pin": "e_q8_float_artifact",
+     "path": "receipts/e_q8_chain.jsonl",
+     "kind": "stone_chain",
+     "rows_stated": 17
+    },
+    {
+     "pin": "e_q10_C5i",
+     "path": "receipts/e_q10_chain.jsonl",
+     "kind": "stone_chain",
+     "rows_stated": 24
+    },
+    {
+     "pin": "e_q13_C1",
+     "path": "receipts/e_q13_chain.jsonl",
+     "kind": "stone_chain",
+     "rows_stated": 25
+    },
+    {
+     "pin": "e_q14_adversarial",
+     "path": "receipts/e_q14_chain.jsonl",
+     "kind": "stone_chain",
+     "rows_stated": 70
+    },
+    {
+     "pin": "probe_gate",
+     "path": "receipts/probe_gate_chain.jsonl",
+     "kind": "stone_chain",
+     "rows_stated": 4
+    }
+   ],
+   "content_tips": [],
+   "chains_count": 14,
+   "rows_sum_over_its_chains": 312,
+   "counts_rows_per_chain_at_runtime": true,
+   "missed_entities_vs_registry": [
+    "e_q15",
+    "e_q16",
+    "e_q11/e_q12 content tips"
+   ]
+  },
+  "D_falsification_budget": {
+   "script": "scripts/falsification_budget.mjs",
+   "commit": "74bc4b5^",
+   "stone_chains": [
+    {
+     "name": "e_q10",
+     "matched_file": "receipts/e_q10_chain.jsonl",
+     "kind": "stone_chain",
+     "rows_stated": 24
+    },
+    {
+     "name": "e_q13",
+     "matched_file": "receipts/e_q13_chain.jsonl",
+     "kind": "stone_chain",
+     "rows_stated": 25
+    },
+    {
+     "name": "e_q14",
+     "matched_file": "receipts/e_q14_chain.jsonl",
+     "kind": "stone_chain",
+     "rows_stated": 70
+    },
+    {
+     "name": "e_q15",
+     "matched_file": "receipts/e_q15_chain.jsonl",
+     "kind": "stone_chain",
+     "rows_stated": 54
+    },
+    {
+     "name": "e_q16",
+     "matched_file": "receipts/e_q16_chain.jsonl",
+     "kind": "stone_chain",
+     "rows_stated": 18
+    },
+    {
+     "name": "e_q1",
+     "matched_file": "receipts/e_q1_chain.jsonl",
+     "kind": "stone_chain",
+     "rows_stated": 25
+    },
+    {
+     "name": "e_q2",
+     "matched_file": "receipts/e_q2_chain.jsonl",
+     "kind": "stone_chain",
+     "rows_stated": 14
+    },
+    {
+     "name": "e_q5",
+     "matched_file": "receipts/e_q5_chain.jsonl",
+     "kind": "stone_chain",
+     "rows_stated": 25
+    },
+    {
+     "name": "e_q6",
+     "matched_file": "receipts/e_q6_chain.jsonl",
+     "kind": "stone_chain",
+     "rows_stated": 15
+    },
+    {
+     "name": "e_q7",
+     "matched_file": "receipts/e_q7_chain.jsonl",
+     "kind": "stone_chain",
+     "rows_stated": 36
+    },
+    {
+     "name": "e_q8",
+     "matched_file": "receipts/e_q8_chain.jsonl",
+     "kind": "stone_chain",
+     "rows_stated": 17
+    },
+    {
+     "name": "probe_gate",
+     "matched_file": "receipts/probe_gate_chain.jsonl",
+     "kind": "stone_chain",
+     "rows_stated": 4
+    },
+    {
+     "name": "cimpl",
+     "matched_file": "crossimpl/receipts/cimpl_chain.jsonl",
+     "kind": "stone_chain",
+     "rows_stated": 10
+    },
+    {
+     "name": "crossimpl",
+     "matched_file": "crossimpl/receipts/crossimpl_chain.jsonl",
+     "kind": "stone_chain",
+     "rows_stated": 11
+    },
+    {
+     "name": "fixedpoint",
+     "matched_file": "fixedpoint/receipts/fixedpoint_chain.jsonl",
+     "kind": "stone_chain",
+     "rows_stated": 26
+    }
+   ],
+   "content_tips": [],
+   "chains_count": 15,
+   "rows_sum_over_its_chains": 374,
+   "counts_rows_per_chain_at_runtime": true,
+   "glob": "*_chain.jsonl over receipts/, crossimpl/receipts/, fixedpoint/receipts/",
+   "missed_entities_vs_registry": [
+    "gates (tests/receipts.jsonl -- pattern mismatch)",
+    "e_q11/e_q12 content tips"
+   ]
+  },
+  "R_chain_registry": {
+   "script": "scripts/chain_registry.mjs",
+   "commit": "74bc4b5",
+   "stone_chains": [
+    {
+     "path": "tests/receipts.jsonl",
+     "gate": "G0-G6",
+     "label": "kernel gates G0–G6",
+     "pin": "gates_G0_G6",
+     "kind": "stone_chain",
+     "rows_stated": null,
+     "registry_rows_at_fix": 10
+    },
+    {
+     "path": "crossimpl/receipts/crossimpl_chain.jsonl",
+     "gate": "crossimpl-py",
+     "label": "python LAYER 0 crossimpl",
+     "pin": "crossimpl_py",
+     "kind": "stone_chain",
+     "rows_stated": null,
+     "registry_rows_at_fix": 11
+    },
+    {
+     "path": "crossimpl/receipts/cimpl_chain.jsonl",
+     "gate": "crossimpl-c",
+     "label": "c LAYER 0+1 crossimpl (ORCH-7)",
+     "pin": "crossimpl_c",
+     "kind": "stone_chain",
+     "rows_stated": null,
+     "registry_rows_at_fix": 10
+    },
+    {
+     "path": "fixedpoint/receipts/fixedpoint_chain.jsonl",
+     "gate": "fixedpoint",
+     "label": "no-floats plane R8",
+     "pin": "fixedpoint_R8",
+     "kind": "stone_chain",
+     "rows_stated": null,
+     "registry_rows_at_fix": 26
+    },
+    {
+     "path": "receipts/e_q1_chain.jsonl",
+     "gate": "e_q1",
+     "label": "E-Q1 · C2 wormhole",
+     "pin": "e_q1_C2",
+     "kind": "stone_chain",
+     "rows_stated": null,
+     "registry_rows_at_fix": 25
+    },
+    {
+     "path": "receipts/e_q2_chain.jsonl",
+     "gate": "e_q2",
+     "label": "E-Q2 · C3 sigma sweep",
+     "pin": "e_q2_C3",
+     "kind": "stone_chain",
+     "rows_stated": null,
+     "registry_rows_at_fix": 14
+    },
+    {
+     "path": "receipts/e_q5_chain.jsonl",
+     "gate": "e_q5",
+     "label": "E-Q5 · C5 armor ring",
+     "pin": "e_q5_C5",
+     "kind": "stone_chain",
+     "rows_stated": null,
+     "registry_rows_at_fix": 25
+    },
+    {
+     "path": "receipts/e_q6_chain.jsonl",
+     "gate": "e_q6",
+     "label": "E-Q6 · slot collision",
+     "pin": "e_q6_slots",
+     "kind": "stone_chain",
+     "rows_stated": null,
+     "registry_rows_at_fix": 15
+    },
+    {
+     "path": "receipts/e_q7_chain.jsonl",
+     "gate": "e_q7",
+     "label": "E-Q7 · C4 checkerboard cascade",
+     "pin": "e_q7_C4",
+     "kind": "stone_chain",
+     "rows_stated": null,
+     "registry_rows_at_fix": 36
+    },
+    {
+     "path": "receipts/e_q8_chain.jsonl",
+     "gate": "e_q8",
+     "label": "E-Q8 · float-only artifact probe",
+     "pin": "e_q8_float_artifact",
+     "kind": "stone_chain",
+     "rows_stated": null,
+     "registry_rows_at_fix": 17
+    },
+    {
+     "path": "receipts/e_q10_chain.jsonl",
+     "gate": "e_q10",
+     "label": "E-Q10 · C5' injector one-pager",
+     "pin": "e_q10_C5i",
+     "kind": "stone_chain",
+     "rows_stated": null,
+     "registry_rows_at_fix": 24
+    },
+    {
+     "path": "receipts/e_q13_chain.jsonl",
+     "gate": "e_q13",
+     "label": "E-Q13 · C1 gain of function",
+     "pin": "e_q13_C1",
+     "kind": "stone_chain",
+     "rows_stated": null,
+     "registry_rows_at_fix": 25
+    },
+    {
+     "path": "receipts/e_q14_chain.jsonl",
+     "gate": "e_q14",
+     "label": "E-Q14 · adversarial probes",
+     "pin": "e_q14_adversarial",
+     "kind": "stone_chain",
+     "rows_stated": null,
+     "registry_rows_at_fix": 70
+    },
+    {
+     "path": "receipts/e_q15_chain.jsonl",
+     "gate": "e_q15",
+     "label": "E-Q15 · reweighting probe",
+     "pin": "e_q15_reweighting",
+     "kind": "stone_chain",
+     "rows_stated": null,
+     "registry_rows_at_fix": 54
+    },
+    {
+     "path": "receipts/e_q16_chain.jsonl",
+     "gate": "e_q16",
+     "label": "E-Q16 · measurement wave",
+     "pin": "e_q16_measurement",
+     "kind": "stone_chain",
+     "rows_stated": null,
+     "registry_rows_at_fix": 19
+    },
+    {
+     "path": "receipts/probe_gate_chain.jsonl",
+     "gate": "probe_gate",
+     "label": "probe gate runs",
+     "pin": "probe_gate",
+     "kind": "stone_chain",
+     "rows_stated": null,
+     "registry_rows_at_fix": 6
+    }
+   ],
+   "content_tips": [
+    {
+     "path": "experiments/outputs/e_q11_tip.txt",
+     "gate": "e_q11",
+     "label": "E-Q11 · collapse predicate (content-hash receipt)",
+     "pin": null,
+     "kind": "content_tip",
+     "rows_stated": null,
+     "registry_rows_at_fix": null
+    },
+    {
+     "path": "experiments/outputs/e_q12_tip.txt",
+     "gate": "e_q12",
+     "label": "E-Q12 · k-family predicate (content-hash receipt)",
+     "pin": null,
+     "kind": "content_tip",
+     "rows_stated": null,
+     "registry_rows_at_fix": null
+    }
+   ],
+   "chains_count": 16,
+   "rows_sum_at_fix": 387,
+   "counts_rows_per_chain_at_runtime": false,
+   "missed_entities_vs_registry": [],
+   "note": "THE sealed human reconciliation (ground truth)"
+  }
+ },
+ "published_claims_receipt": {
+  "ORCH-C_worklog": "fleet-seeds pins 14 chains/305 rows; budget scanner counts 13 *_chain.jsonl/295 rows (worklog.md lines 354-355, ORCH-C era snapshot -- TRUE then, before E-Q15/E-Q16 were sealed)",
+  "PHASES-REPORT_at_prefix": [
+   "Total corpus: 14 chains, 400+ rows, ALL CLEAN from disk."
+  ],
+  "disk_truth_at_prefix": {
+   "stone_chains": 16,
+   "rows_total": 384
+  },
+  "disk_truth_at_fix": {
+   "stone_chains": 16,
+   "rows_total": 387
+  },
+  "fix_commit_message_claim": "16 chains, 387 rows (probe_gate re-sealed 4->6 links, e_q16 erratum 18->19 rows -- both appends happened IN the fix commit, which is why pre-fix lists hold 18/4 for those two chains)"
+ }
+}

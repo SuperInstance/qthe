@@ -1,0 +1,639 @@
+{
+ "lane": "T4-c",
+ "part": 1,
+ "selection_rule": "Every cross-inventory pair where at least one side is an entity that some list missed or misnamed (the brief's frozen spec), capped at ~40 by a receipted trim: for entities present in 4 catalogues, 4 of 6 cross pairs kept (naming-format diversity); all pairs kept for entities in <=3 catalogues; 14 different-entity confusable pairs (merge-danger direction); 10 agreeing-pair controls over entities no list missed. 43 total.",
+ "ground_truth_source": "scripts/chain_registry.mjs @ 74bc4b5 (the sealed human reconciliation): same_entity iff both entries map to the same registry record",
+ "abv_rule": "row counts are compared IN CODE by the runner (rows_a==rows_b, rows_a==registry_rows, rows_b==registry_rows); the model sees the numbers only as published text and is never asked to compare them",
+ "pairs": [
+  {
+   "list_a": "A",
+   "list_b": "B",
+   "ground_truth": "same_entity",
+   "pair_note": "gates: label 'kernel gates G0–G6' vs gate/pin naming variants",
+   "pair_id": "p1-001",
+   "state_entry_a": "ENTRY FROM LIST: verify_all_chains.mjs (chain-of-chains auditor, pre-fix)\npath: tests/receipts.jsonl\nlabel: kernel gates G0–G6\nrows: 10",
+   "state_entry_b": "ENTRY FROM LIST: probe_gate.mjs (probe harness gate, pre-fix)\npath: tests/receipts.jsonl\ngate name: G0-G6\nrows: (not stated -- this list states no row counts)",
+   "abv_inputs": {
+    "rows_a": 10,
+    "rows_b": null,
+    "registry_rows": 10
+   }
+  },
+  {
+   "list_a": "A",
+   "list_b": "C",
+   "ground_truth": "same_entity",
+   "pair_note": "gates: label 'kernel gates G0–G6' vs gate/pin naming variants",
+   "pair_id": "p1-002",
+   "state_entry_a": "ENTRY FROM LIST: verify_all_chains.mjs (chain-of-chains auditor, pre-fix)\npath: tests/receipts.jsonl\nlabel: kernel gates G0–G6\nrows: 10",
+   "state_entry_b": "ENTRY FROM LIST: emit_fleet_seeds.mjs (fleet-seeds ledger producer, pre-fix)\npin name: gates_G0_G6\npath: tests/receipts.jsonl\nrows: 10",
+   "abv_inputs": {
+    "rows_a": 10,
+    "rows_b": 10,
+    "registry_rows": 10
+   }
+  },
+  {
+   "list_a": "B",
+   "list_b": "R",
+   "ground_truth": "same_entity",
+   "pair_note": "gates: label 'kernel gates G0–G6' vs gate/pin naming variants",
+   "pair_id": "p1-003",
+   "state_entry_a": "ENTRY FROM LIST: probe_gate.mjs (probe harness gate, pre-fix)\npath: tests/receipts.jsonl\ngate name: G0-G6\nrows: (not stated -- this list states no row counts)",
+   "state_entry_b": "ENTRY FROM LIST: chain_registry.mjs (THE registry, single source of truth at fix)\npath: tests/receipts.jsonl\ngate: G0-G6\nlabel: kernel gates G0–G6\npin: gates_G0_G6\nrows: (not stated)",
+   "abv_inputs": {
+    "rows_a": null,
+    "rows_b": null,
+    "registry_rows": 10
+   }
+  },
+  {
+   "list_a": "C",
+   "list_b": "R",
+   "ground_truth": "same_entity",
+   "pair_note": "gates: label 'kernel gates G0–G6' vs gate/pin naming variants",
+   "pair_id": "p1-004",
+   "state_entry_a": "ENTRY FROM LIST: emit_fleet_seeds.mjs (fleet-seeds ledger producer, pre-fix)\npin name: gates_G0_G6\npath: tests/receipts.jsonl\nrows: 10",
+   "state_entry_b": "ENTRY FROM LIST: chain_registry.mjs (THE registry, single source of truth at fix)\npath: tests/receipts.jsonl\ngate: G0-G6\nlabel: kernel gates G0–G6\npin: gates_G0_G6\nrows: (not stated)",
+   "abv_inputs": {
+    "rows_a": 10,
+    "rows_b": null,
+    "registry_rows": 10
+   }
+  },
+  {
+   "list_a": "B",
+   "list_b": "C",
+   "ground_truth": "same_entity",
+   "pair_note": "e_q13: missed by verify_all_chains",
+   "pair_id": "p1-005",
+   "state_entry_a": "ENTRY FROM LIST: probe_gate.mjs (probe harness gate, pre-fix)\npath: receipts/e_q13_chain.jsonl\ngate name: e_q13\nrows: (not stated -- this list states no row counts)",
+   "state_entry_b": "ENTRY FROM LIST: emit_fleet_seeds.mjs (fleet-seeds ledger producer, pre-fix)\npin name: e_q13_C1\npath: receipts/e_q13_chain.jsonl\nrows: 25",
+   "abv_inputs": {
+    "rows_a": null,
+    "rows_b": 25,
+    "registry_rows": 25
+   }
+  },
+  {
+   "list_a": "B",
+   "list_b": "D",
+   "ground_truth": "same_entity",
+   "pair_note": "e_q13: missed by verify_all_chains",
+   "pair_id": "p1-006",
+   "state_entry_a": "ENTRY FROM LIST: probe_gate.mjs (probe harness gate, pre-fix)\npath: receipts/e_q13_chain.jsonl\ngate name: e_q13\nrows: (not stated -- this list states no row counts)",
+   "state_entry_b": "ENTRY FROM LIST: falsification_budget.mjs (budget ledger scanner, pre-fix)\nchain name (file stem): e_q13\nmatched file (glob *_chain.jsonl): receipts/e_q13_chain.jsonl\nrows: 25",
+   "abv_inputs": {
+    "rows_a": null,
+    "rows_b": 25,
+    "registry_rows": 25
+   }
+  },
+  {
+   "list_a": "C",
+   "list_b": "R",
+   "ground_truth": "same_entity",
+   "pair_note": "e_q13: missed by verify_all_chains",
+   "pair_id": "p1-007",
+   "state_entry_a": "ENTRY FROM LIST: emit_fleet_seeds.mjs (fleet-seeds ledger producer, pre-fix)\npin name: e_q13_C1\npath: receipts/e_q13_chain.jsonl\nrows: 25",
+   "state_entry_b": "ENTRY FROM LIST: chain_registry.mjs (THE registry, single source of truth at fix)\npath: receipts/e_q13_chain.jsonl\ngate: e_q13\nlabel: E-Q13 · C1 gain of function\npin: e_q13_C1\nrows: (not stated)",
+   "abv_inputs": {
+    "rows_a": 25,
+    "rows_b": null,
+    "registry_rows": 25
+   }
+  },
+  {
+   "list_a": "D",
+   "list_b": "R",
+   "ground_truth": "same_entity",
+   "pair_note": "e_q13: missed by verify_all_chains",
+   "pair_id": "p1-008",
+   "state_entry_a": "ENTRY FROM LIST: falsification_budget.mjs (budget ledger scanner, pre-fix)\nchain name (file stem): e_q13\nmatched file (glob *_chain.jsonl): receipts/e_q13_chain.jsonl\nrows: 25",
+   "state_entry_b": "ENTRY FROM LIST: chain_registry.mjs (THE registry, single source of truth at fix)\npath: receipts/e_q13_chain.jsonl\ngate: e_q13\nlabel: E-Q13 · C1 gain of function\npin: e_q13_C1\nrows: (not stated)",
+   "abv_inputs": {
+    "rows_a": 25,
+    "rows_b": null,
+    "registry_rows": 25
+   }
+  },
+  {
+   "list_a": "B",
+   "list_b": "C",
+   "ground_truth": "same_entity",
+   "pair_note": "e_q14: missed by verify_all_chains",
+   "pair_id": "p1-009",
+   "state_entry_a": "ENTRY FROM LIST: probe_gate.mjs (probe harness gate, pre-fix)\npath: receipts/e_q14_chain.jsonl\ngate name: e_q14\nrows: (not stated -- this list states no row counts)",
+   "state_entry_b": "ENTRY FROM LIST: emit_fleet_seeds.mjs (fleet-seeds ledger producer, pre-fix)\npin name: e_q14_adversarial\npath: receipts/e_q14_chain.jsonl\nrows: 70",
+   "abv_inputs": {
+    "rows_a": null,
+    "rows_b": 70,
+    "registry_rows": 70
+   }
+  },
+  {
+   "list_a": "B",
+   "list_b": "R",
+   "ground_truth": "same_entity",
+   "pair_note": "e_q14: missed by verify_all_chains",
+   "pair_id": "p1-010",
+   "state_entry_a": "ENTRY FROM LIST: probe_gate.mjs (probe harness gate, pre-fix)\npath: receipts/e_q14_chain.jsonl\ngate name: e_q14\nrows: (not stated -- this list states no row counts)",
+   "state_entry_b": "ENTRY FROM LIST: chain_registry.mjs (THE registry, single source of truth at fix)\npath: receipts/e_q14_chain.jsonl\ngate: e_q14\nlabel: E-Q14 · adversarial probes\npin: e_q14_adversarial\nrows: (not stated)",
+   "abv_inputs": {
+    "rows_a": null,
+    "rows_b": null,
+    "registry_rows": 70
+   }
+  },
+  {
+   "list_a": "C",
+   "list_b": "D",
+   "ground_truth": "same_entity",
+   "pair_note": "e_q14: missed by verify_all_chains",
+   "pair_id": "p1-011",
+   "state_entry_a": "ENTRY FROM LIST: emit_fleet_seeds.mjs (fleet-seeds ledger producer, pre-fix)\npin name: e_q14_adversarial\npath: receipts/e_q14_chain.jsonl\nrows: 70",
+   "state_entry_b": "ENTRY FROM LIST: falsification_budget.mjs (budget ledger scanner, pre-fix)\nchain name (file stem): e_q14\nmatched file (glob *_chain.jsonl): receipts/e_q14_chain.jsonl\nrows: 70",
+   "abv_inputs": {
+    "rows_a": 70,
+    "rows_b": 70,
+    "registry_rows": 70
+   }
+  },
+  {
+   "list_a": "D",
+   "list_b": "R",
+   "ground_truth": "same_entity",
+   "pair_note": "e_q14: missed by verify_all_chains",
+   "pair_id": "p1-012",
+   "state_entry_a": "ENTRY FROM LIST: falsification_budget.mjs (budget ledger scanner, pre-fix)\nchain name (file stem): e_q14\nmatched file (glob *_chain.jsonl): receipts/e_q14_chain.jsonl\nrows: 70",
+   "state_entry_b": "ENTRY FROM LIST: chain_registry.mjs (THE registry, single source of truth at fix)\npath: receipts/e_q14_chain.jsonl\ngate: e_q14\nlabel: E-Q14 · adversarial probes\npin: e_q14_adversarial\nrows: (not stated)",
+   "abv_inputs": {
+    "rows_a": 70,
+    "rows_b": null,
+    "registry_rows": 70
+   }
+  },
+  {
+   "list_a": "D",
+   "list_b": "R",
+   "ground_truth": "same_entity",
+   "pair_note": "e_q15: only the scanner glob and the registry had it (A, B, C all missed)",
+   "pair_id": "p1-013",
+   "state_entry_a": "ENTRY FROM LIST: falsification_budget.mjs (budget ledger scanner, pre-fix)\nchain name (file stem): e_q15\nmatched file (glob *_chain.jsonl): receipts/e_q15_chain.jsonl\nrows: 54",
+   "state_entry_b": "ENTRY FROM LIST: chain_registry.mjs (THE registry, single source of truth at fix)\npath: receipts/e_q15_chain.jsonl\ngate: e_q15\nlabel: E-Q15 · reweighting probe\npin: e_q15_reweighting\nrows: (not stated)",
+   "abv_inputs": {
+    "rows_a": 54,
+    "rows_b": null,
+    "registry_rows": 54
+   }
+  },
+  {
+   "list_a": "D",
+   "list_b": "R",
+   "ground_truth": "same_entity",
+   "pair_note": "e_q16: only the scanner glob and the registry had it; rows differ across the fix (erratum appended in the fix commit)",
+   "pair_id": "p1-014",
+   "state_entry_a": "ENTRY FROM LIST: falsification_budget.mjs (budget ledger scanner, pre-fix)\nchain name (file stem): e_q16\nmatched file (glob *_chain.jsonl): receipts/e_q16_chain.jsonl\nrows: 18",
+   "state_entry_b": "ENTRY FROM LIST: chain_registry.mjs (THE registry, single source of truth at fix)\npath: receipts/e_q16_chain.jsonl\ngate: e_q16\nlabel: E-Q16 · measurement wave\npin: e_q16_measurement\nrows: (not stated)",
+   "abv_inputs": {
+    "rows_a": 18,
+    "rows_b": null,
+    "registry_rows": 19
+   }
+  },
+  {
+   "list_a": "C",
+   "list_b": "D",
+   "ground_truth": "same_entity",
+   "pair_note": "probe_gate: missed by the auditor AND by the gate's own scope",
+   "pair_id": "p1-015",
+   "state_entry_a": "ENTRY FROM LIST: emit_fleet_seeds.mjs (fleet-seeds ledger producer, pre-fix)\npin name: probe_gate\npath: receipts/probe_gate_chain.jsonl\nrows: 4",
+   "state_entry_b": "ENTRY FROM LIST: falsification_budget.mjs (budget ledger scanner, pre-fix)\nchain name (file stem): probe_gate\nmatched file (glob *_chain.jsonl): receipts/probe_gate_chain.jsonl\nrows: 4",
+   "abv_inputs": {
+    "rows_a": 4,
+    "rows_b": 4,
+    "registry_rows": 6
+   }
+  },
+  {
+   "list_a": "C",
+   "list_b": "R",
+   "ground_truth": "same_entity",
+   "pair_note": "probe_gate: missed by the auditor AND by the gate's own scope",
+   "pair_id": "p1-016",
+   "state_entry_a": "ENTRY FROM LIST: emit_fleet_seeds.mjs (fleet-seeds ledger producer, pre-fix)\npin name: probe_gate\npath: receipts/probe_gate_chain.jsonl\nrows: 4",
+   "state_entry_b": "ENTRY FROM LIST: chain_registry.mjs (THE registry, single source of truth at fix)\npath: receipts/probe_gate_chain.jsonl\ngate: probe_gate\nlabel: probe gate runs\npin: probe_gate\nrows: (not stated)",
+   "abv_inputs": {
+    "rows_a": 4,
+    "rows_b": null,
+    "registry_rows": 6
+   }
+  },
+  {
+   "list_a": "D",
+   "list_b": "R",
+   "ground_truth": "same_entity",
+   "pair_note": "probe_gate: missed by the auditor AND by the gate's own scope",
+   "pair_id": "p1-017",
+   "state_entry_a": "ENTRY FROM LIST: falsification_budget.mjs (budget ledger scanner, pre-fix)\nchain name (file stem): probe_gate\nmatched file (glob *_chain.jsonl): receipts/probe_gate_chain.jsonl\nrows: 4",
+   "state_entry_b": "ENTRY FROM LIST: chain_registry.mjs (THE registry, single source of truth at fix)\npath: receipts/probe_gate_chain.jsonl\ngate: probe_gate\nlabel: probe gate runs\npin: probe_gate\nrows: (not stated)",
+   "abv_inputs": {
+    "rows_a": 4,
+    "rows_b": null,
+    "registry_rows": 6
+   }
+  },
+  {
+   "list_a": "A",
+   "list_b": "R",
+   "ground_truth": "same_entity",
+   "pair_note": "e_q11 content-hash tip: emit_fleet_seeds and the budget scanner missed it",
+   "pair_id": "p1-018",
+   "state_entry_a": "ENTRY FROM LIST: verify_all_chains.mjs (chain-of-chains auditor, pre-fix)\npath: experiments/outputs/e_q11_tip.txt\nresults file: experiments/outputs/e_q11_results.json\nlabel: E-Q11 · collapse predicate (content-hash receipt)\nkind: content-hash tip (not a stone chain)\nrows: (not stated)",
+   "state_entry_b": "ENTRY FROM LIST: chain_registry.mjs (THE registry, single source of truth at fix)\npath: experiments/outputs/e_q11_tip.txt\ngate: e_q11\nlabel: E-Q11 · collapse predicate (content-hash receipt)\nkind: content-hash tip (not a stone chain)\nrows: (not stated)",
+   "abv_inputs": {
+    "rows_a": null,
+    "rows_b": null,
+    "registry_rows": null
+   }
+  },
+  {
+   "list_a": "B",
+   "list_b": "R",
+   "ground_truth": "same_entity",
+   "pair_note": "e_q12 content-hash tip: emit_fleet_seeds and the budget scanner missed it",
+   "pair_id": "p1-019",
+   "state_entry_a": "ENTRY FROM LIST: probe_gate.mjs (probe harness gate, pre-fix)\npath: experiments/outputs/e_q12_tip.txt\ngate name: e_q12\nkind: content-hash tip (not a stone chain)\nrows: (not stated)",
+   "state_entry_b": "ENTRY FROM LIST: chain_registry.mjs (THE registry, single source of truth at fix)\npath: experiments/outputs/e_q12_tip.txt\ngate: e_q12\nlabel: E-Q12 · k-family predicate (content-hash receipt)\nkind: content-hash tip (not a stone chain)\nrows: (not stated)",
+   "abv_inputs": {
+    "rows_a": null,
+    "rows_b": null,
+    "registry_rows": null
+   }
+  },
+  {
+   "list_a": "A",
+   "list_b": "C",
+   "ground_truth": "different_entity",
+   "pair_note": "DIFFERENT gates chain vs the probe gate's own chain (both 'gate' named)",
+   "pair_id": "p1-020",
+   "state_entry_a": "ENTRY FROM LIST: verify_all_chains.mjs (chain-of-chains auditor, pre-fix)\npath: tests/receipts.jsonl\nlabel: kernel gates G0–G6\nrows: 10",
+   "state_entry_b": "ENTRY FROM LIST: emit_fleet_seeds.mjs (fleet-seeds ledger producer, pre-fix)\npin name: probe_gate\npath: receipts/probe_gate_chain.jsonl\nrows: 4",
+   "abv_inputs": {
+    "rows_a": 10,
+    "rows_b": 4,
+    "registry_rows": null,
+    "registry_rows_a": 10,
+    "registry_rows_b": 6
+   }
+  },
+  {
+   "list_a": "B",
+   "list_b": "D",
+   "ground_truth": "different_entity",
+   "pair_note": "DIFFERENT gate name 'G0-G6' vs chain stem 'probe_gate'",
+   "pair_id": "p1-021",
+   "state_entry_a": "ENTRY FROM LIST: probe_gate.mjs (probe harness gate, pre-fix)\npath: tests/receipts.jsonl\ngate name: G0-G6\nrows: (not stated -- this list states no row counts)",
+   "state_entry_b": "ENTRY FROM LIST: falsification_budget.mjs (budget ledger scanner, pre-fix)\nchain name (file stem): probe_gate\nmatched file (glob *_chain.jsonl): receipts/probe_gate_chain.jsonl\nrows: 4",
+   "abv_inputs": {
+    "rows_a": null,
+    "rows_b": 4,
+    "registry_rows": null,
+    "registry_rows_a": 10,
+    "registry_rows_b": 6
+   }
+  },
+  {
+   "list_a": "B",
+   "list_b": "C",
+   "ground_truth": "different_entity",
+   "pair_note": "DIFFERENT adjacent E-Q experiment chains",
+   "pair_id": "p1-022",
+   "state_entry_a": "ENTRY FROM LIST: probe_gate.mjs (probe harness gate, pre-fix)\npath: receipts/e_q13_chain.jsonl\ngate name: e_q13\nrows: (not stated -- this list states no row counts)",
+   "state_entry_b": "ENTRY FROM LIST: emit_fleet_seeds.mjs (fleet-seeds ledger producer, pre-fix)\npin name: e_q14_adversarial\npath: receipts/e_q14_chain.jsonl\nrows: 70",
+   "abv_inputs": {
+    "rows_a": null,
+    "rows_b": 70,
+    "registry_rows": null,
+    "registry_rows_a": 25,
+    "registry_rows_b": 70
+   }
+  },
+  {
+   "list_a": "D",
+   "list_b": "R",
+   "ground_truth": "different_entity",
+   "pair_note": "DIFFERENT the two chains every hand-list missed, adjacent ids",
+   "pair_id": "p1-023",
+   "state_entry_a": "ENTRY FROM LIST: falsification_budget.mjs (budget ledger scanner, pre-fix)\nchain name (file stem): e_q15\nmatched file (glob *_chain.jsonl): receipts/e_q15_chain.jsonl\nrows: 54",
+   "state_entry_b": "ENTRY FROM LIST: chain_registry.mjs (THE registry, single source of truth at fix)\npath: receipts/e_q16_chain.jsonl\ngate: e_q16\nlabel: E-Q16 · measurement wave\npin: e_q16_measurement\nrows: (not stated)",
+   "abv_inputs": {
+    "rows_a": 54,
+    "rows_b": null,
+    "registry_rows": null,
+    "registry_rows_a": 54,
+    "registry_rows_b": 19
+   }
+  },
+  {
+   "list_a": "D",
+   "list_b": "R",
+   "ground_truth": "different_entity",
+   "pair_note": "DIFFERENT mirror of the above",
+   "pair_id": "p1-024",
+   "state_entry_a": "ENTRY FROM LIST: falsification_budget.mjs (budget ledger scanner, pre-fix)\nchain name (file stem): e_q16\nmatched file (glob *_chain.jsonl): receipts/e_q16_chain.jsonl\nrows: 18",
+   "state_entry_b": "ENTRY FROM LIST: chain_registry.mjs (THE registry, single source of truth at fix)\npath: receipts/e_q15_chain.jsonl\ngate: e_q15\nlabel: E-Q15 · reweighting probe\npin: e_q15_reweighting\nrows: (not stated)",
+   "abv_inputs": {
+    "rows_a": 18,
+    "rows_b": null,
+    "registry_rows": null,
+    "registry_rows_a": 19,
+    "registry_rows_b": 54
+   }
+  },
+  {
+   "list_a": "D",
+   "list_b": "C",
+   "ground_truth": "different_entity",
+   "pair_note": "DIFFERENT e_q15 (only scanner+registry) vs e_q14 (pinned by fleet seeds)",
+   "pair_id": "p1-025",
+   "state_entry_a": "ENTRY FROM LIST: falsification_budget.mjs (budget ledger scanner, pre-fix)\nchain name (file stem): e_q15\nmatched file (glob *_chain.jsonl): receipts/e_q15_chain.jsonl\nrows: 54",
+   "state_entry_b": "ENTRY FROM LIST: emit_fleet_seeds.mjs (fleet-seeds ledger producer, pre-fix)\npin name: e_q14_adversarial\npath: receipts/e_q14_chain.jsonl\nrows: 70",
+   "abv_inputs": {
+    "rows_a": 54,
+    "rows_b": 70,
+    "registry_rows": null,
+    "registry_rows_a": 54,
+    "registry_rows_b": 70
+   }
+  },
+  {
+   "list_a": "D",
+   "list_b": "B",
+   "ground_truth": "different_entity",
+   "pair_note": "DIFFERENT e_q16 vs e_q13 across scanner and gate scopes",
+   "pair_id": "p1-026",
+   "state_entry_a": "ENTRY FROM LIST: falsification_budget.mjs (budget ledger scanner, pre-fix)\nchain name (file stem): e_q16\nmatched file (glob *_chain.jsonl): receipts/e_q16_chain.jsonl\nrows: 18",
+   "state_entry_b": "ENTRY FROM LIST: probe_gate.mjs (probe harness gate, pre-fix)\npath: receipts/e_q13_chain.jsonl\ngate name: e_q13\nrows: (not stated -- this list states no row counts)",
+   "abv_inputs": {
+    "rows_a": 18,
+    "rows_b": null,
+    "registry_rows": null,
+    "registry_rows_a": 19,
+    "registry_rows_b": 25
+   }
+  },
+  {
+   "list_a": "A",
+   "list_b": "B",
+   "ground_truth": "different_entity",
+   "pair_note": "DIFFERENT the two content-hash tips: same shape, different experiments",
+   "pair_id": "p1-027",
+   "state_entry_a": "ENTRY FROM LIST: verify_all_chains.mjs (chain-of-chains auditor, pre-fix)\npath: experiments/outputs/e_q11_tip.txt\nresults file: experiments/outputs/e_q11_results.json\nlabel: E-Q11 · collapse predicate (content-hash receipt)\nkind: content-hash tip (not a stone chain)\nrows: (not stated)",
+   "state_entry_b": "ENTRY FROM LIST: probe_gate.mjs (probe harness gate, pre-fix)\npath: experiments/outputs/e_q12_tip.txt\ngate name: e_q12\nkind: content-hash tip (not a stone chain)\nrows: (not stated)",
+   "abv_inputs": {
+    "rows_a": null,
+    "rows_b": null,
+    "registry_rows": null,
+    "registry_rows_a": null,
+    "registry_rows_b": null
+   }
+  },
+  {
+   "list_a": "C",
+   "list_b": "D",
+   "ground_truth": "different_entity",
+   "pair_note": "DIFFERENT E-Q family neighbours across pin and stem naming",
+   "pair_id": "p1-028",
+   "state_entry_a": "ENTRY FROM LIST: emit_fleet_seeds.mjs (fleet-seeds ledger producer, pre-fix)\npin name: e_q13_C1\npath: receipts/e_q13_chain.jsonl\nrows: 25",
+   "state_entry_b": "ENTRY FROM LIST: falsification_budget.mjs (budget ledger scanner, pre-fix)\nchain name (file stem): e_q15\nmatched file (glob *_chain.jsonl): receipts/e_q15_chain.jsonl\nrows: 54",
+   "abv_inputs": {
+    "rows_a": 25,
+    "rows_b": 54,
+    "registry_rows": null,
+    "registry_rows_a": 25,
+    "registry_rows_b": 54
+   }
+  },
+  {
+   "list_a": "C",
+   "list_b": "D",
+   "ground_truth": "different_entity",
+   "pair_note": "DIFFERENT E-Q family neighbours across pin and stem naming",
+   "pair_id": "p1-029",
+   "state_entry_a": "ENTRY FROM LIST: emit_fleet_seeds.mjs (fleet-seeds ledger producer, pre-fix)\npin name: e_q14_adversarial\npath: receipts/e_q14_chain.jsonl\nrows: 70",
+   "state_entry_b": "ENTRY FROM LIST: falsification_budget.mjs (budget ledger scanner, pre-fix)\nchain name (file stem): e_q16\nmatched file (glob *_chain.jsonl): receipts/e_q16_chain.jsonl\nrows: 18",
+   "abv_inputs": {
+    "rows_a": 70,
+    "rows_b": 18,
+    "registry_rows": null,
+    "registry_rows_a": 70,
+    "registry_rows_b": 19
+   }
+  },
+  {
+   "list_a": "D",
+   "list_b": "C",
+   "ground_truth": "different_entity",
+   "pair_note": "DIFFERENT stem naming vs pin naming, different chains",
+   "pair_id": "p1-030",
+   "state_entry_a": "ENTRY FROM LIST: falsification_budget.mjs (budget ledger scanner, pre-fix)\nchain name (file stem): e_q15\nmatched file (glob *_chain.jsonl): receipts/e_q15_chain.jsonl\nrows: 54",
+   "state_entry_b": "ENTRY FROM LIST: emit_fleet_seeds.mjs (fleet-seeds ledger producer, pre-fix)\npin name: probe_gate\npath: receipts/probe_gate_chain.jsonl\nrows: 4",
+   "abv_inputs": {
+    "rows_a": 54,
+    "rows_b": 4,
+    "registry_rows": null,
+    "registry_rows_a": 54,
+    "registry_rows_b": 6
+   }
+  },
+  {
+   "list_a": "D",
+   "list_b": "R",
+   "ground_truth": "different_entity",
+   "pair_note": "DIFFERENT registry vs scanner on two different chains",
+   "pair_id": "p1-031",
+   "state_entry_a": "ENTRY FROM LIST: falsification_budget.mjs (budget ledger scanner, pre-fix)\nchain name (file stem): e_q16\nmatched file (glob *_chain.jsonl): receipts/e_q16_chain.jsonl\nrows: 18",
+   "state_entry_b": "ENTRY FROM LIST: chain_registry.mjs (THE registry, single source of truth at fix)\npath: receipts/probe_gate_chain.jsonl\ngate: probe_gate\nlabel: probe gate runs\npin: probe_gate\nrows: (not stated)",
+   "abv_inputs": {
+    "rows_a": 18,
+    "rows_b": null,
+    "registry_rows": null,
+    "registry_rows_a": 19,
+    "registry_rows_b": 6
+   }
+  },
+  {
+   "list_a": "B",
+   "list_b": "R",
+   "ground_truth": "different_entity",
+   "pair_note": "DIFFERENT mirror of the tips confusion",
+   "pair_id": "p1-032",
+   "state_entry_a": "ENTRY FROM LIST: probe_gate.mjs (probe harness gate, pre-fix)\npath: experiments/outputs/e_q11_tip.txt\ngate name: e_q11\nkind: content-hash tip (not a stone chain)\nrows: (not stated)",
+   "state_entry_b": "ENTRY FROM LIST: chain_registry.mjs (THE registry, single source of truth at fix)\npath: experiments/outputs/e_q12_tip.txt\ngate: e_q12\nlabel: E-Q12 · k-family predicate (content-hash receipt)\nkind: content-hash tip (not a stone chain)\nrows: (not stated)",
+   "abv_inputs": {
+    "rows_a": null,
+    "rows_b": null,
+    "registry_rows": null,
+    "registry_rows_a": null,
+    "registry_rows_b": null
+   }
+  },
+  {
+   "list_a": "D",
+   "list_b": "B",
+   "ground_truth": "different_entity",
+   "pair_note": "DIFFERENT stem vs gate naming on adjacent chains",
+   "pair_id": "p1-033",
+   "state_entry_a": "ENTRY FROM LIST: falsification_budget.mjs (budget ledger scanner, pre-fix)\nchain name (file stem): e_q13\nmatched file (glob *_chain.jsonl): receipts/e_q13_chain.jsonl\nrows: 25",
+   "state_entry_b": "ENTRY FROM LIST: probe_gate.mjs (probe harness gate, pre-fix)\npath: receipts/e_q14_chain.jsonl\ngate name: e_q14\nrows: (not stated -- this list states no row counts)",
+   "abv_inputs": {
+    "rows_a": 25,
+    "rows_b": null,
+    "registry_rows": null,
+    "registry_rows_a": 25,
+    "registry_rows_b": 70
+   }
+  },
+  {
+   "list_a": "A",
+   "list_b": "C",
+   "ground_truth": "same_entity",
+   "pair_note": "CONTROL: entity all lists got right",
+   "pair_id": "p1-034",
+   "state_entry_a": "ENTRY FROM LIST: verify_all_chains.mjs (chain-of-chains auditor, pre-fix)\npath: receipts/e_q1_chain.jsonl\nlabel: E-Q1 · C2 wormhole\nrows: 25",
+   "state_entry_b": "ENTRY FROM LIST: emit_fleet_seeds.mjs (fleet-seeds ledger producer, pre-fix)\npin name: e_q1_C2\npath: receipts/e_q1_chain.jsonl\nrows: 25",
+   "abv_inputs": {
+    "rows_a": 25,
+    "rows_b": 25,
+    "registry_rows": 25
+   }
+  },
+  {
+   "list_a": "B",
+   "list_b": "D",
+   "ground_truth": "same_entity",
+   "pair_note": "CONTROL: entity all lists got right",
+   "pair_id": "p1-035",
+   "state_entry_a": "ENTRY FROM LIST: probe_gate.mjs (probe harness gate, pre-fix)\npath: receipts/e_q2_chain.jsonl\ngate name: e_q2\nrows: (not stated -- this list states no row counts)",
+   "state_entry_b": "ENTRY FROM LIST: falsification_budget.mjs (budget ledger scanner, pre-fix)\nchain name (file stem): e_q2\nmatched file (glob *_chain.jsonl): receipts/e_q2_chain.jsonl\nrows: 14",
+   "abv_inputs": {
+    "rows_a": null,
+    "rows_b": 14,
+    "registry_rows": 14
+   }
+  },
+  {
+   "list_a": "A",
+   "list_b": "R",
+   "ground_truth": "same_entity",
+   "pair_note": "CONTROL: entity all lists got right",
+   "pair_id": "p1-036",
+   "state_entry_a": "ENTRY FROM LIST: verify_all_chains.mjs (chain-of-chains auditor, pre-fix)\npath: receipts/e_q5_chain.jsonl\nlabel: E-Q5 · C5 armor ring\nrows: 25",
+   "state_entry_b": "ENTRY FROM LIST: chain_registry.mjs (THE registry, single source of truth at fix)\npath: receipts/e_q5_chain.jsonl\ngate: e_q5\nlabel: E-Q5 · C5 armor ring\npin: e_q5_C5\nrows: (not stated)",
+   "abv_inputs": {
+    "rows_a": 25,
+    "rows_b": null,
+    "registry_rows": 25
+   }
+  },
+  {
+   "list_a": "B",
+   "list_b": "C",
+   "ground_truth": "same_entity",
+   "pair_note": "CONTROL: entity all lists got right",
+   "pair_id": "p1-037",
+   "state_entry_a": "ENTRY FROM LIST: probe_gate.mjs (probe harness gate, pre-fix)\npath: receipts/e_q6_chain.jsonl\ngate name: e_q6\nrows: (not stated -- this list states no row counts)",
+   "state_entry_b": "ENTRY FROM LIST: emit_fleet_seeds.mjs (fleet-seeds ledger producer, pre-fix)\npin name: e_q6_slots\npath: receipts/e_q6_chain.jsonl\nrows: 15",
+   "abv_inputs": {
+    "rows_a": null,
+    "rows_b": 15,
+    "registry_rows": 15
+   }
+  },
+  {
+   "list_a": "D",
+   "list_b": "R",
+   "ground_truth": "same_entity",
+   "pair_note": "CONTROL: entity all lists got right",
+   "pair_id": "p1-038",
+   "state_entry_a": "ENTRY FROM LIST: falsification_budget.mjs (budget ledger scanner, pre-fix)\nchain name (file stem): e_q7\nmatched file (glob *_chain.jsonl): receipts/e_q7_chain.jsonl\nrows: 36",
+   "state_entry_b": "ENTRY FROM LIST: chain_registry.mjs (THE registry, single source of truth at fix)\npath: receipts/e_q7_chain.jsonl\ngate: e_q7\nlabel: E-Q7 · C4 checkerboard cascade\npin: e_q7_C4\nrows: (not stated)",
+   "abv_inputs": {
+    "rows_a": 36,
+    "rows_b": null,
+    "registry_rows": 36
+   }
+  },
+  {
+   "list_a": "A",
+   "list_b": "B",
+   "ground_truth": "same_entity",
+   "pair_note": "CONTROL: entity all lists got right",
+   "pair_id": "p1-039",
+   "state_entry_a": "ENTRY FROM LIST: verify_all_chains.mjs (chain-of-chains auditor, pre-fix)\npath: receipts/e_q8_chain.jsonl\nlabel: E-Q8 · float-only artifact probe\nrows: 17",
+   "state_entry_b": "ENTRY FROM LIST: probe_gate.mjs (probe harness gate, pre-fix)\npath: receipts/e_q8_chain.jsonl\ngate name: e_q8\nrows: (not stated -- this list states no row counts)",
+   "abv_inputs": {
+    "rows_a": 17,
+    "rows_b": null,
+    "registry_rows": 17
+   }
+  },
+  {
+   "list_a": "C",
+   "list_b": "R",
+   "ground_truth": "same_entity",
+   "pair_note": "CONTROL: entity all lists got right",
+   "pair_id": "p1-040",
+   "state_entry_a": "ENTRY FROM LIST: emit_fleet_seeds.mjs (fleet-seeds ledger producer, pre-fix)\npin name: e_q10_C5i\npath: receipts/e_q10_chain.jsonl\nrows: 24",
+   "state_entry_b": "ENTRY FROM LIST: chain_registry.mjs (THE registry, single source of truth at fix)\npath: receipts/e_q10_chain.jsonl\ngate: e_q10\nlabel: E-Q10 · C5' injector one-pager\npin: e_q10_C5i\nrows: (not stated)",
+   "abv_inputs": {
+    "rows_a": 24,
+    "rows_b": null,
+    "registry_rows": 24
+   }
+  },
+  {
+   "list_a": "A",
+   "list_b": "D",
+   "ground_truth": "same_entity",
+   "pair_note": "CONTROL: entity all lists got right",
+   "pair_id": "p1-041",
+   "state_entry_a": "ENTRY FROM LIST: verify_all_chains.mjs (chain-of-chains auditor, pre-fix)\npath: crossimpl/receipts/crossimpl_chain.jsonl\nlabel: python LAYER 0 crossimpl\nrows: 11",
+   "state_entry_b": "ENTRY FROM LIST: falsification_budget.mjs (budget ledger scanner, pre-fix)\nchain name (file stem): crossimpl\nmatched file (glob *_chain.jsonl): crossimpl/receipts/crossimpl_chain.jsonl\nrows: 11",
+   "abv_inputs": {
+    "rows_a": 11,
+    "rows_b": 11,
+    "registry_rows": 11
+   }
+  },
+  {
+   "list_a": "B",
+   "list_b": "R",
+   "ground_truth": "same_entity",
+   "pair_note": "CONTROL: entity all lists got right",
+   "pair_id": "p1-042",
+   "state_entry_a": "ENTRY FROM LIST: probe_gate.mjs (probe harness gate, pre-fix)\npath: crossimpl/receipts/cimpl_chain.jsonl\ngate name: crossimpl-c\nrows: (not stated -- this list states no row counts)",
+   "state_entry_b": "ENTRY FROM LIST: chain_registry.mjs (THE registry, single source of truth at fix)\npath: crossimpl/receipts/cimpl_chain.jsonl\ngate: crossimpl-c\nlabel: c LAYER 0+1 crossimpl (ORCH-7)\npin: crossimpl_c\nrows: (not stated)",
+   "abv_inputs": {
+    "rows_a": null,
+    "rows_b": null,
+    "registry_rows": 10
+   }
+  },
+  {
+   "list_a": "C",
+   "list_b": "D",
+   "ground_truth": "same_entity",
+   "pair_note": "CONTROL: entity all lists got right",
+   "pair_id": "p1-043",
+   "state_entry_a": "ENTRY FROM LIST: emit_fleet_seeds.mjs (fleet-seeds ledger producer, pre-fix)\npin name: fixedpoint_R8\npath: fixedpoint/receipts/fixedpoint_chain.jsonl\nrows: 26",
+   "state_entry_b": "ENTRY FROM LIST: falsification_budget.mjs (budget ledger scanner, pre-fix)\nchain name (file stem): fixedpoint\nmatched file (glob *_chain.jsonl): fixedpoint/receipts/fixedpoint_chain.jsonl\nrows: 26",
+   "abv_inputs": {
+    "rows_a": 26,
+    "rows_b": 26,
+    "registry_rows": 26
+   }
+  }
+ ]
+}

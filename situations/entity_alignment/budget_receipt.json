@@ -1,0 +1,37 @@
+{
+  "lane": "T4-c (ORCH-R13, entity alignment)",
+  "ceiling_usd": 0.030,
+  "spend_usd": 0.002266,
+  "ceiling_fraction": 0.0755,
+  "calls": {
+    "total": 74,
+    "canary": 1,
+    "part1_pairs": 43,
+    "part2_pairs": 30,
+    "failed_receipted": 0,
+    "http_errors": 0,
+    "backoff_events": 0
+  },
+  "tokens": {
+    "input": 53942,
+    "output": 3743,
+    "pricing": "input $0.042/1M, output $0/1M (per lane brief; output priced $0)",
+    "input_usd": 0.002265564,
+    "output_usd": 0.0
+  },
+  "latency_ms": {
+    "min": 190,
+    "max": 310,
+    "mean": 222
+  },
+  "model_served": "jev-1.13.0 (74/74 calls, version attributed from each response)",
+  "resume_check": "re-running run1+run2 after the seal: 73 skips, 0 new calls, 0 duplicates (verified live post-run)",
+  "house_laws": {
+    "as_said": "responses sealed verbatim in response_raw; parse_method declared per row",
+    "append_flush": "rows appended and flushed per call to rows_part1.jsonl / rows_part2.jsonl",
+    "fail_closed": "TYPESAFE_API_KEY read from env only (source qthe-orchestra/.secrets/env); never printed, never written to any file",
+    "no_format_on_json": "states built by string concatenation only; json.dumps for payloads",
+    "foreground_only": true,
+    "git_usage": "read-only (show / ls-tree / rev-parse / log); no commits, no branch operations"
+  }
+}
