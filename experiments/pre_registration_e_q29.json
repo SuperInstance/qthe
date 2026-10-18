@@ -1,0 +1,39 @@
+{
+ "law": "REGISTRATION of E-Q29 — the question-budget curve, descending arm (ORCH-R26 lane T17-b, the prior-art pass open question Q4): how much of the family-retrieval signal survives as questions are REMOVED from the battery? The exhaustive subset analysis over the sealed E-Q22 noul vectors — all 255 non-empty axis subsets, strict top-1 family accuracy, Shapley-style per-axis marginal importance — plus a live-confirm arm (the best 4-axis subset and the full 8 upserted arm-tagged and queried LIVE, the local-vs-live equivalence receipt). ZERO new embed calls for the curve itself.",
+ "task_id": "ORCH-R26/T17-b",
+ "agent": "qthe orchestrator (Z.ai), erised fleet line",
+ "wave": "ORCH-R26",
+ "repo": "SuperInstance/qthe",
+ "repo_at_registration": "e0147c4",
+ "provenance_of_the_question": "The EMBEDDER-PRIOR-ART open question Q4 (the question-budget curve): QA-Emb selects questions by training; we run a FIXED 8-question battery. The descending arm asks the cheap, decisive half first: if 4 of 8 questions retain most of the signal, the battery has a knee, and the ascending arm (generated discriminative questions) only needs to beat the knee, not the ceiling. Cross-instrument: E-Q23 measured axis importance INTERVENTIONALLY (occlusion saliency); this lane measures it by SUBSET PERFORMANCE — if the two agree, the instrument has convergent validity.",
+ "design_frozen": {
+  "data": "The sealed E-Q22 noul vectors (20 records x 8 axes, situations/embedding_r24/eval_eq22_results.json) and the sealed family labels; NOTHING else enters the curve.",
+  "curve": "For every non-empty subset S of the 8 axes (255 subsets): strict top-1 family accuracy = fraction of records whose nearest NON-SELF neighbor (cosine on the subset-projected vectors) is same-family. Best-subset curve B(k) = max accuracy over |S|=k, k=1..8. Per-axis importance I(a) = the Shapley value of axis a over the accuracy function (exact enumeration, 256 subsets, deterministic).",
+  "live_confirm": "The best 4-axis subset (by the local curve) and the full 8-axis reference upserted into qthe-jev-embed arm-tagged eq29S4 / eq29S8 (40 vectors, zero-padded to 32 dims — the AM1 rule); after the async-changeset wait, all 20 records queried LIVE per arm, arm-filtered topK 20, strict scoring. F3 receipts local==live. If they disagree, the LIVE number governs and the discrepancy is sealed as a finding.",
+  "cross_instrument": "Spearman(Shapley importance, E-Q23 occlusion axis-mass) over the 8 axes, from the sealed eq23_results.json salience table (the interventional measure) vs this lane's subset-performance measure."
+ },
+ "floors": {
+  "F1": "vectors byte-identical to the sealed E-Q22 eval output (recomputed, not copy-pasted claims)",
+  "F2": "the subset enumeration is exhaustive and deterministic (255/255 subsets reported, no sampling)",
+  "F3": "live confirm through the index, arm-filtered, async-wait honored; local-vs-live delta reported per arm",
+  "F4": "the cross-instrument Spearman computed from the two sealed files only"
+ },
+ "hypotheses": {
+  "H1_knee": "the best-subset curve saturates early: B(4) >= 0.70 (4 of 8 questions retain >= 87.5% of the full 0.80)",
+  "H2_headroom": "B(2) >= 0.50 (half the family signal is already in the best two questions)"
+  ,
+  "H3_convergent_validity": "Spearman(Shapley, occlusion-mass) > 0.4 (the two independent importance instruments agree on which axes carry the family signal)",
+  "C25": "the question budget has a knee — the fixed battery is over-provisioned for family retrieval — LIVES iff H1"
+ },
+ "predictions": {
+  "P1": "B(2) in [0.50, 0.70]",
+  "P2": "B(4) >= 0.70 with the top Shapley axes being the family-defining ones (P1_nonlocal, P2_localrule, P3_quantum, P7_econ)",
+  "P3": "B(5) within 0.05 of B(8) (saturation by 5)",
+  "P4": "the cross-instrument Spearman in [0.4, 0.8] (agreement but not identity — occlusion measures reading locality, Shapley measures marginal retrieval value)",
+  "P5": "P6_null and P5_repair are the two lowest-Shapley axes (the null and repair concerns are family-blind on this corpus)"
+ },
+ "falsifier": "ANY of F1-F4 breached; a subset accuracy computed with self-matches included; the Shapley enumeration approximated by sampling; the live confirm skipped or its disagreement with local left unsealed.",
+ "budget": "ZERO new embed calls. Free-tier CF (40 upserts + 40 queries). Part of the r26 round budget.",
+ "registered_before_run": true,
+ "amendments": []
+}

@@ -1,0 +1,35 @@
+{
+ "law": "REGISTRATION of E-Q31 — the drift monitor, r26 re-read (ORCH-R26 lane T17-d, the standing registered instrument): the third reading of the E-Q22 stability band. 20 fresh embeds of the sealed corpus through the byte-identical noul question map, jev-latest, compared against the SEALED r24 E-Q22 vectors — and, new this round, against the r25 E-Q25 reading — making the monitor a THREE-POINT TIME SERIES (r24 sealed, r25, r26). The monitor's job is to catch serving drift (model version changes, calibration creep) before it corrupts cross-round comparability: every row receipts model_served.",
+ "task_id": "ORCH-R26/T17-d",
+ "agent": "qthe orchestrator (Z.ai), erised fleet line",
+ "wave": "ORCH-R26",
+ "repo": "SuperInstance/qthe",
+ "repo_at_registration": "e0147c4",
+ "provenance_of_the_question": "The standing instrument registered at the r24 close-out and re-read at r25 (E-Q25 P5: 20/20 within 0.10, max 0.06). E-Q23's drift lane measured jev-preview 1.14.0 vs jev-latest 1.13.0 diverging axis-structured 4.30x — if the serving layer has flipped jev-latest to 1.14.x since r25, THIS monitor is where it shows up first (the model_served field, not the delta, is the primary readout for version flips).",
+ "design_frozen": {
+  "calls": "The SAME sealed 20-record corpus, one batched call per record, the byte-identical E-Q22 noul map (qmap sha must match), model jev-latest. 20 calls, no stability repeats (the r24/r25 repeats already fixed the intra-round band at <= 0.03-0.06).",
+  "comparison": "Per record, per axis: |fresh - sealed_r24| and |fresh - r25|; the r25 vectors re-derived from the sealed E-Q25 rows (the 8 real axes of the 12-question calls). Reported: max/mean delta per comparison, within-0.10 counts, per-axis mean deltas (the axis-structure view), and the model_served receipt per call.",
+  "verdict_rule": "The band HOLDS iff all 20 records are within 0.10 of the sealed r24 vectors (the E-Q22/E-Q25 clause). A version flip (model_served != the r24-r25 served version) is NOT automatically a breach — it is receipted and the delta table under the flip is the finding."
+ },
+ "floors": {
+  "F1": "qmap sha byte-identical to E-Q22's (verified at runtime, hard fail otherwise)",
+  "F2": "all 20 rows complete (8 answers, p in [0,1], model_served receipted)",
+  "F3": "the r25 comparison vectors recomputed from the sealed E-Q25 rows, not from memory",
+  "F4": "deltas computed against the SAME record's sealed vector, axis-aligned"
+ },
+ "hypotheses": {
+  "H1_band_holds": "all 20 fresh-vs-sealed-r24 deltas within 0.10 (the third consecutive hold)",
+  "H2_no_trend": "the r26 max delta <= the r25 max delta + 0.02 (no compounding drift across readings)",
+  "C27": "the drift band holds three rounds running — the 8-axis noul map is a STABLE coordinate contract under a fixed serving version — LIVES iff H1"
+ },
+ "predictions": {
+  "P1": "all 20 within 0.10, max in [0.03, 0.08]",
+  "P2": "model_served unchanged from the r24/r25 serving (no version flip)",
+  "P3": "per-axis deltas replicate the E-Q23 structure (P2_localrule/P8_exact the movers, P4_alloc/P5_repair the calm ones)",
+  "P4": "the r26-vs-r25 deltas are SMALLER than r26-vs-r24 (readings closer in time agree more — the series behaves like sampling noise around a fixed point, not a walk)"
+ },
+ "falsifier": "ANY of F1-F4 breached; a band claim without the full 20-record delta table; a version flip left unreceipted; the r25 comparison silently skipped.",
+ "budget": "20 typesafe calls (~$0.006). Part of the r26 round budget ($0.10 ceiling, carried).",
+ "registered_before_run": true,
+ "amendments": []
+}

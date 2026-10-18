@@ -1,0 +1,44 @@
+{
+ "law": "REGISTRATION of E-Q28 — latent-space evolution (ORCH-R26 lane T17-a, the r24 ideas battery I-5, the creative flagship): mutation-selection-heredity inside the LIVE embedding space, with selection as a deterministic code-side gate hosted by a Cloudflare Durable Object (the evosphere — selection-as-infrastructure, the lattice DO pattern applied to evolution). Variation: DeepSeek-V4.1-Flash (DeepInfra) writes mutant field notes under gap-vector-derived directives (it never sees vectors — only axis CONCEPT names). Measurement: each note embedded by BOTH JEV models (jev-latest AND jev-preview) through the byte-identical E-Q22 noul 8-axis map. Selection: a COORDINATED gate (the jev-lattice k-independent-proofs pattern, k=2 across model versions) — a mutant is accepted iff its cosine to the target family centroid improves on BOTH models vs the parent. Heredity: accepted mutants join the lineage; the retrieval (LIVE Vectorize, arm-filtered eq22N) moves the station. Environment: qthe-jev-embed. Control: the sealed E-Q24 walk (same seed N1, same generator, same embedder, NO gate).",
+ "task_id": "ORCH-R26/T17-a",
+ "agent": "qthe orchestrator (Z.ai), erised fleet line",
+ "wave": "ORCH-R26",
+ "repo": "SuperInstance/qthe",
+ "repo_at_registration": "e0147c4",
+ "provenance_of_the_question": "The r24 ideas battery I-5 (novelty 5 / feasibility 3) building on: E-Q24's walk (compounding residuals — undirected drift covers 4 families in 5 stations), E-Q26's family algebra (composed vectors are free family probes — offsets carry family geometry), jev-lattice's COORDINATED contract (k independent proofs, decisions computed by code), and the E-Q23 drift lane (jev-latest 1.13.0 vs jev-preview 1.14.0 diverge axis-structured 4.30x — does cross-version disagreement break a gate?). Open question: can a DETERMINISTIC predicate over calibrated question-map embeddings STEER a generative process — directed evolution in a space nobody has evolved in?",
+ "design_frozen": {
+  "init": "stations=[N1] (same seed as the E-Q24 control), visited={N1}, memory=[]; parent phenotype for generation 1 = the seed's SEALED eq22N vector (jev-latest) + ONE fresh jev-preview embed of the seed record (the dual-model gate needs both parents). Family centroids FROZEN from the sealed eq22N arm (mean of the 5 members each) and installed into the Durable Object at /init with the config — the DO holds the protocol as code.",
+  "loop": "Per generation (max 10): (1) target = least-visited family among stations, ties in fixed order P,Q,A,N; after 2 consecutive stagnated generations the target rotates to the second-least-visited (pre-registered escape rule, stagnation counter resets). (2) gap = target_centroid - parent_note_vector (8-dim, sealed centroid vs measured parent); the top-2 axes by positive gap become the DIRECTIVE. (3) The generator writes a mutant note (<= 2 sentences, AS-SAID, grounded in the current station record, pushing toward the directive's axis concepts; it sees NO vectors, NO scores). (4) The note is embedded on jev-latest AND jev-preview (2 calls). (5) LIVE arm-filtered eq22N query (jev-latest vector, topK 20) -> candidate = top-1 unvisited. (6) GATE (in the DO, deterministic): accept iff cos(v_latest, target_centroid) > cos(parent_latest, target_centroid) AND cos(v_preview, target_centroid) > cos(parent_preview, target_centroid). (7) Accept: note joins memory, station <- candidate, parent <- mutant (both vectors). Reject: fossil logged; if attempts < 2 this generation, retry with the RESIDUAL-sharpened directive (the axes where the mutant's gap remains largest); if attempts exhausted, the generation stagnates (station unchanged).",
+  "stop": "SUCCESS when all 4 families visited, else after 10 generations. Hard cap 40 embed calls (10 gens x 2 attempts x 2 models).",
+  "measures": "M1 stations-to-4-family-coverage (control E-Q24: 5 stations including seed); M2 acceptance rate + the discrimination receipt (mean fitness delta of accepted vs rejected attempts); M3 the dual-model coordination rate (sign agreement of the two models' fitness deltas across attempts); M4 heredity under selection (accepted notes' cosine with their stations; control was 0.9262-0.9836); M5 the directive causality check (named-axis movement vs unnamed-axis movement in accepted mutants); M6 the fitness trajectory per generation (improvement shape, plateaus, dips); M7 the fossil record (rejected notes: their vectors, their gaps, what the gate refused).",
+  "control": "The sealed E-Q24 walk trace (same seed/generator/embedder/retrieval, NO gate, NO directive) — no re-run; its sealed numbers are the control arm. Note the control asymmetry receipted up front: E-Q24 made ONE note per station (no retries), E-Q28 makes up to 2 attempts per generation under selection."
+ },
+ "floors": {
+  "F1": "question map byte-identical to E-Q22's noul map (qmap sha match, both models)",
+  "F2": "family centroids recomputed from the sealed eq22N vectors only (no fresh calls)",
+  "F3": "the DO gate logic is deterministic code over submitted measured vectors; the DO never calls a model; every attempt (accepted or fossil) is appended to the DO log (append-only; the lattice pattern)"
+  ,
+  "F4": "the generator never sees vectors, scores, or axis VALUES — only axis concept texts and the station record (the three-role separation: generator varies, embedders measure, the gate decides)",
+  "F5": "retrieval through the LIVE index, arm-filtered eq22N, every step",
+  "F6": "resume law: every call row sealed AS-SAID before the next; the DO state version-checked against the local trace each step"
+ },
+ "hypotheses": {
+  "H1_coverage": "the gated process covers all 4 families in <= 5 stations (control parity or better; the strong form is 4 — every acceptance flips a new family)",
+  "H2_selection_bites": "at least one rejection occurs AND mean fitness delta(accepted) > mean fitness delta(rejected) (the gate discriminates, not decorates)",
+  "H3_coordination": "the two JEV models' fitness deltas agree in sign on >= 70% of attempts (the coordinated gate is not usually split — a split rate above 30% would be the E-Q23 drift finding biting a gate)",
+  "H4_heredity": "accepted notes' cosine with their stations >= 0.80 mean (grounding survives directed mutation, with a receipted discount vs the control's 0.93-0.98)",
+  "C24": "deterministic code-side selection over typed-map embeddings STEERS generation — LIVES iff H1 AND H2"
+ },
+ "predictions": {
+  "P1": "coverage in exactly 4 stations (the strong form)",
+  "P2": "1-3 rejections total (the gate bites but the directive is usually achievable)",
+  "P3": "dual-model sign agreement >= 70%",
+  "P4": "heredity mean >= 0.85",
+  "P5": "the fitness trajectory shows at least one plateau or dip (mutation noise visible) yet ends higher than it starts",
+  "P6": "in accepted mutants the DIRECTIVE-named axes move more than the un-named axes (mean |delta| named > un-named — the directive is causal)"
+ },
+ "falsifier": "ANY of F1-F6 breached; a directive text edited after registration; a gate verdict computed anywhere but the DO; an accepted note whose retrieval was not live; the control comparison made against anything but the sealed E-Q24 trace.",
+ "budget": "<= 40 typesafe embed calls (~$0.013) + <= 25 DeepInfra generations (~$0.01) + free-tier DO/Vectorize. Part of the r26 round budget ($0.10 ceiling, carried).",
+ "registered_before_run": true,
+ "amendments": []
+}

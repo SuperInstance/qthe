@@ -1,0 +1,41 @@
+{
+ "law": "REGISTRATION of E-Q30 — compositional 16-bit retrieval (ORCH-R26 lane T17-c, the prior-art pass open question Q5): does the E-Q26 FAMILY ALGEBRA survive quantization? E-Q26 measured perfect family-level analogy (5/5) in the dense noul space; E-Q27 quantized the same vectors to ternary (16-bit) and 4-level codes. If code-space composition (saturation arithmetic on the E-Q27 codes, retrieved by code matching) also lands in the target family, then a 16-bit code plus an operator IS a family query — storage and query collapse into the same object (queries AS storage). ZERO new embed calls.",
+ "task_id": "ORCH-R26/T17-c",
+ "agent": "qthe orchestrator (Z.ai), erised fleet line",
+ "wave": "ORCH-R26",
+ "repo": "SuperInstance/qthe",
+ "repo_at_registration": "e0147c4",
+ "provenance_of_the_question": "EMBEDDER-PRIOR-ART Q5 (compositional/logical retrieval over typed axes) crossed with the E-Q26 AM2 third direction (5/5 family algebra, offsets carry ~2 bits of family geometry) and the E-Q27 quantization curves (ST 0.60 / NQ 0.70 retrieval). Nobody in the learning-to-hash literature composes QUERIES by arithmetic on ternary QA-codes — the literature is binary codes at 100s-1000s bits, matched by Hamming, never composed. If composition survives the quantization floor, the ternary QA-code is not just storage (E-Q27) but a query LANGUAGE.",
+ "design_frozen": {
+  "data": "The sealed E-Q27 code tables (situations/embedding_r25/eq27_results.json: arms ST ternary-score, SQ 4-level-score, NT ternary-noul, NQ 4-level-noul, all 20 records x 8 axes) and the E-Q26 frozen compositions (the SAME five analogy tuples a-b+c->d, byte-identical selection rule).",
+  "composition": "For each analogy tuple and each code arm: composed = clip(code(a) - code(b) + code(c), arm range) — elementwise, saturation at the arm's code bounds ({-1,0,+1} for ternary, {-1.5,-0.5,+0.5,+1.5} for 4-level). Clipping incidence reported per arm (P4's measure).",
+  "retrieval_local": "For each composed code: strict rank by cosine over the 20 corpus codes of the same arm (self-components a,b,c included as candidates — the composed vector is NOT a corpus member, so no self-exclusion applies; the E-Q26 scoring convention). Family hit = top-1 code's family == family(d).",
+  "retrieval_live": "The composed codes queried LIVE against the eq27ST / eq27SQ / eq27NT / eq27NQ arms already resident in qthe-jev-embed (arm-filtered topK 20, zero-padded to 32 dims). The live number is the receipt of record; local==live deltas reported.",
+  "null": "The E-Q26 permutation null discipline: 1000 label-permutation draws (seed 20261026, fixed), recomputing code-space family hits per draw — the code-space null is NOT assumed to equal the dense null (quantization changes the geometry).",
+  "baselines": "Majority family baseline 0.25 per family-draw; the dense-space result 5/5 (E-Q26 AM2) as the ceiling reference."
+ },
+ "floors": {
+  "F1": "codes recomputed from the sealed E-Q27 quantization tables (byte-identical rules), not re-derived from raw rows",
+  "F2": "the five analogy tuples byte-identical to the sealed E-Q26 compositions",
+  "F3": "live retrieval through the index, arm-filtered, for every composed code",
+  "F4": "the null computed on the pre-committed seed BEFORE the live numbers are read off"
+ },
+ "hypotheses": {
+  "H1_algebra_survives": "ternary-composed family hits >= 4/5 on the live retrieval (the algebra survives 16-bit quantization)"
+  ,
+  "H2_resolution_pays": "4-level family hits >= ternary family hits (resolution helps algebra as it helped retrieval in E-Q27) — OR the inversion: ternary > 4-level because offset arithmetic is cleanest on {-1,0,+1} (either direction is a finding; the clause is the COMPARISON, pre-registered both ways)",
+  "H3_above_baseline": "both code arms beat the majority baseline 0.25 by >= 2x on family hit rate",
+  "C26": "the 16-bit code is a queryable index — composed codes retrieve families, storage = query — LIVES iff H1 AND H3"
+ },
+ "predictions": {
+  "P1": "ternary >= 4/5 family hits",
+  "P2": "4-level >= ternary (resolution pays)",
+  "P3": "both arms >= 0.50 family hit rate vs null p95 reported alongside",
+  "P4": "clipping binds on <= 8 of 40 composed coordinates (the offsets are small — the E-Q26 autopsy showed residual deltas well inside code range)",
+  "P5": "the code-space null is TIGHTER than the dense null (quantized geometry has fewer near-ties: fewer accidental family hits under permutation)"
+ },
+ "falsifier": "ANY of F1-F4 breached; a composition tuple re-chosen after seeing results; the null seeded after the live read; a family hit claimed from local numbers where the live number disagrees (live governs).",
+ "budget": "ZERO new embed calls. Free-tier CF queries only. Part of the r26 round budget.",
+ "registered_before_run": true,
+ "amendments": []
+}
