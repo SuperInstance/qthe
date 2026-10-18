@@ -440,3 +440,106 @@ equivalence proven).
   PASS (C7 mirror now carries 4 chains) · CI green · fleet seeds
   re-emitted (24 chains) · `docs/CREATIVE-PRACTICE.md` shipped (the
   between-rounds discipline, taught forward per the dispatch).
+
+## The deep-embedding round (r24 — calibration beats levels, ternary at 16 bits, the walk, the prior-art receipt)
+
+**Three experiments, one theme: what the JEV question map IS as a
+geometry.** The round registered three lanes before any spend
+(`pre_registration_e_q22/23/24.json`), ran them at ~$0.035 total, and
+closed with all batteries green.
+
+- **E-Q22 — the axis-calibration × ternary-quantization factorial (the
+  project's namesake made literal).** The same 8 axis CONCEPTS in two
+  representations (ordinal score levels vs NOUL calibrated mass) × two
+  precisions (continuous vs median-centered ternary `{-1,0,+1}`), all
+  four arms live in Vectorize. **C17 LIVES: the noul arm retrieves at
+  0.80 top-1 vs the score arm's 0.70** — the S arm replicates E-Q21
+  through a fresh upsert/changeset/query cycle, the separation margin
+  widens (0.257 vs 0.215), and re-embed stability tightens ~10× (24/24
+  axes within 0.10, max delta 0.03). The jev-lattice calibration
+  finding ("score levels ordered but NOT numerically calibrated") is
+  real, and typing the axes as calibrated mass fixes it — reaching BOW
+  parity (0.80) at ~1/300 the dimensionality. **C16 DIES with the
+  honest narrowing: THE SUBSTITUTION LAW** — the 16-bit ternary code
+  carries the family signal at 2.2–2.4× majority (zero collisions, 20
+  distinct codes, ~1.5 bits/axis), but ternarization INVERTS the
+  calibration advantage ((TN−TS) = −0.05 vs (N−S) = +0.10): calibration
+  and quantization are SUBSTITUTES — saturated near-0/1 noul mass
+  concentrates records at code corners and loses intra-family
+  resolution, while the ordinal arm's mid-range spread survives
+  median-centering. **Consumer law: buy calibration OR compression,
+  never both.** AM1 (the NO-NEIGHBOR strict scoring rule) appended
+  pre-seal. Chain `e_q22` (4 links, tip `f6456f64…`).
+- **E-Q23 — occlusion gradients: the question map as readout
+  function.** 28 sealed spans across 8 records, occluded one at a time.
+  **THE DISTRIBUTED-READING LAW (H1 dies):** mean normalized span
+  entropy 0.9079 — the map reads a record DISTRIBUTED, not
+  concentrated; no single sentence carries the family signal (occluding
+  ANY span moves the axes slightly and evenly). The embedder is
+  redundancy-robust — and occlusion does NOT localize evidence (for
+  gate consumers: attribution needs hash-targeted channels, not
+  typed-map occlusion). **THE PROFILE LAW (H3 lives):** within-family
+  saliency-profile correlation 0.167 vs cross-family −0.333 (a 0.50
+  gap, 5× the registered floor) — the saliency SHAPE is
+  family-structured even where its MASS is flat. Axis-specificity 0.70
+  (the 8 axes read different places). The stability bridge is an honest
+  null (re-embed wobble ≤ 0.045 sits below the effect scale). **The
+  drift lane (jev-preview 1.14.0 vs jev-latest 1.13.0):** axis-
+  structured at 4.30× max/min, top axis P2_localrule — version drift
+  and cross-embedder divergence are DIFFERENT axes' problems (C15's
+  P8_exact is not the upgrade's casualty); mean vector L1 0.212,
+  visible only in aggregate. Chain `e_q23` (4 links, tip `0c1b91fd…`).
+- **E-Q24 — the embedding-space walk (the creative lane, AI-Writings
+  form #6: THE WALK).** Three providers in one organic instrument:
+  DeepSeek writes ≤2-sentence field notes at records; JEV's noul map
+  embeds each note; live Vectorize steers to the nearest unvisited
+  record. Neither model sees the whole path. Itinerary
+  N1→Q4→P3→P2→A2→A4→A1→P4 (4 families; Spearman(step, distance) 0.643 —
+  diffusion with an attractor-and-escape shape). **The mechanism
+  receipt: notes stay 0.93–0.98 cosine with their stations, yet the
+  walk travels three families — the drift is made of COMPOUNDING
+  RESIDUALS.** The emergence receipt: the surveyor, told only to write
+  field notes, developed the fleet's no-threshold thesis unprompted
+  with cross-station references. Benched AS-SAID (2 seats; both
+  independently caught the same afterword overclaim — accepted).
+  `WALKS/a-walk-through-the-embedding.md` (piece `ceaf18d62e`, INDEX
+  `8e344cd01b`). Chain `e_q24` (4 links, tip `bd6b9e51…`).
+- **The ideas battery + idea space (the standing challenge, organic
+  lane)**: six novel ideas generated against the forbidden-incumbents
+  list (top pick: TRIPWIRE AXES — decoy axes as in-call negative
+  controls, novelty 4/feasibility 5; plus axis algebra, depth-2
+  conditional axes, axis-contract gates for jev-lattice, latent-space
+  evolution with a lattice gate as fitness, IRT psychometrics of the
+  embedder) — and then the six idea texts were EMBEDDED through the
+  question map itself: the idea space is BIMODAL (ideas about the
+  substrate's physics carry real axis mass; meta-ideas about the
+  instrument embed near the null corner) — the map's meta/object
+  divide is visible in measured space. Provenance receipted in
+  `situations/novel_ideas_r24/idea_space_results.json`.
+- **THE PRIOR-ART RECEIPT (the research pass, honest and prominent):
+  QA-as-embedding is NOT novel.** QA-Emb ("Crafting Interpretable
+  Embeddings by Asking LLMs Questions", arXiv:2405.16714, NeurIPS
+  2024) builds embedding features from LLM question answers — the
+  closest prior art, read and receipted in
+  `docs/research/EMBEDDER-PRIOR-ART.md`. What remains ours, narrowed
+  honestly: the calibrated-probability substrate (noul axes), the
+  fixed typed-battery coordinate contract, LIVE production retrieval,
+  ternary quantization of QA-embeddings (no prior art found — the
+  binary hashing literature lives at 100s–1000s of bits), and the
+  falsification instruments shipped with the artifact.
+- **New laws banked**: the VECTORIZE ASYNC-CHANGESET law (queries
+  fired within seconds of an enqueue see only old vectors —
+  poll-until-visible is mandatory), the VECTORIZE METADATA-INDEX law
+  (filters return SILENT ZERO matches without an explicit metadata
+  index; creation is async; pre-index upserts are NOT indexed —
+  re-upsert mandatory; `--propertyName` not `--property`), the
+  substitution law (calibration × quantization), the
+  distributed-reading law, the arm-filtered-topK consumer law (applied
+  mid-walk after the step-5 trap), and the cwd law re-earned
+  (`verify_all_chains` from the repo root, always).
+- **Batteries at close**: run_tests all_pass · verify_all_chains ALL
+  CLEAN 46/46 · probe gate PASS links=39 (38/38 claims, 27/27 chains)
+  · guard PASS · negctl 28/28 DETECTED · ALL LIVE CHECKS PASS · CI
+  green. Next registered r25: tripwire axes (the battery's top pick),
+  axis algebra (the cheapest), the prior-art-narrowed open questions
+  Q3 (does the ternary zero do work?) and Q4 (question-budget curve).

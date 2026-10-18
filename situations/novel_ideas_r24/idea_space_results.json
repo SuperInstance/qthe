@@ -1,0 +1,247 @@
+{
+ "ideas": [
+  {
+   "id": "I-1",
+   "title": "Tripwire axes \u2014 negative-control decoys inside every embedding call",
+   "excerpt": "I-1. Tripwire axes \u2014 negative-control decoys inside every embedding call. Extend the sealed 8-axis noul battery with four DECOY axes in the same batched call: two semantically far (\"does the record substantively concern 17th-century naval architecture?\", \"\u2026recipe substitution in baking?\") and two near-miss confusables (\"\u2026a fictional or narrative-creative piece?\", \"\u2026a human scientist's biography?\"). Batching is free, so the decoys ride at zero marginal call cost. The decoy mass per record is an *empirical, record-specific false-positive floor*: z-score every real axis against the record's own d"
+  },
+  {
+   "id": "I-2",
+   "title": "Axis algebra with pre-registered compositions \u2014 analogy arithmetic you can read",
+   "excerpt": "I-2. Axis algebra with pre-registered compositions \u2014 analogy arithmetic you can read. Pure recomposition of the *sealed* E-Q22 noul vectors \u2014 near-zero new calls. Before any query, seal 10 compositions as predictions (the sealed-prediction law): each is v(a) \u2212 v(b) + v(c) with a named target record, chosen so the intended meaning is legible off the axis deltas. Examples: v(N1) \u2212 v(P5) + v(Q2) \u2192 keep nonlocal \u2248 0.9, strip local-rule mass, add quantum provenance \u2192 predicted target Q1 (the certified root feeding construction); v(A4) + v(N2) \u2212 v(A1) \u2192 \"the economics of a dead non-local deployment\""
+  },
+  {
+   "id": "I-3",
+   "title": "Depth-2 embedding \u2014 conditional axes that read stage-1's answers",
+   "excerpt": "I-3. Depth-2 embedding \u2014 conditional axes that read stage-1's answers. Make the battery a two-pass program. Stage 1 = the incumbent 8-axis noul call (already sealed). Stage 2 = one batched call whose STATE is the record text plus a machine-written receipt of its measured stage-1 profile (\"measured: nonlocal 0.91, localrule 0.04, \u2026\") and whose questions are second-order, *conditioned on that profile*: (a) RESIDUAL (noul): \"beyond the profiled primary concern, does the record carry a second substantive concern?\"; (b) POLARITY (choice over lives/dies \u2014 the criteria-keys law: criteria keys ARE the"
+  },
+  {
+   "id": "I-4",
+   "title": "Axis-contract gates \u2014 calibrated geometry for jev-lattice verdicts",
+   "excerpt": "I-4. Axis-contract gates \u2014 calibrated geometry for jev-lattice verdicts. Give jev-lattice a third contract type beside BINARY and COORDINATED: **AXIS**. A node's evidence is a pinned noul battery (question-map sha sealed) over an evidence document; the contract is a code-side predicate over the returned calibrated vector \u2014 the provider supplies measurements, code decides, extending their cardinal \"providers MUST NOT decide verdicts\" law rather than breaking it. The battery must be re-derived for gate traffic (their evidence is code-review/CI flavored, not kernel-physics): candidate axes A1 mec"
+  },
+  {
+   "id": "I-5",
+   "title": "Latent-space evolution \u2014 a deterministic lattice as fitness for an organic walk",
+   "excerpt": "I-5. Latent-space evolution \u2014 a deterministic lattice as fitness for an organic walk. The creative lane: turn e_q24's passive drift into an evolutionary loop whose fitness function is a jev-lattice gate. Each generation: (1) HEREDITY \u2014 the accepted note is the current station; (2) MUTATION \u2014 the disturber seat (Seed-2.0-mini, its earned attack role) rewrites the note, briefed with the axis GAP vector (target profile minus current profile \u2014 guided variation; the e_q24 receipts that notes sit 0.9262\u20130.9836 cosine to their stations make inverse-embedding steering plausible); (3) SELECTION \u2014 a lat"
+  },
+  {
+   "id": "I-6",
+   "title": "Psychometrics of the embedder \u2014 IRT discrimination ladders per axis",
+   "excerpt": "I-6. Psychometrics of the embedder \u2014 IRT discrimination ladders per axis. The moonshot: treat the question map as a test instrument and the records as examinees. For each of the 8 axis concepts write a 5-rung strictness ladder \u2014 \"does the record mention {concept} at all\" \u2192 \"\u2026touch on it in passing\" \u2192 \"\u2026discuss it substantively\" \u2192 \"\u2026is largely about it\" \u2192 \"\u2026is centrally about it\" \u2014 all noul; embed the 20-record corpus with the 40-question battery (one batched call per record; 40 questions is well under the measured 96-question high-water). The per-axis curve p(rung | record) is an item characte"
+  }
+ ],
+ "vectors": {
+  "I-1": [
+   0.08,
+   0.08,
+   0.05,
+   0.05,
+   0.06,
+   0.09,
+   0.16,
+   0.13
+  ],
+  "I-2": [
+   0.64,
+   0.12,
+   0.53,
+   0.06,
+   0.06,
+   0.09,
+   0.21,
+   0.48
+  ],
+  "I-3": [
+   0.56,
+   0.21,
+   0.38,
+   0.1,
+   0.11,
+   0.25,
+   0.08,
+   0.18
+  ],
+  "I-4": [
+   0.06,
+   0.07,
+   0.08,
+   0.09,
+   0.05,
+   0.06,
+   0.06,
+   0.52
+  ],
+  "I-5": [
+   0.08,
+   0.09,
+   0.05,
+   0.06,
+   0.05,
+   0.05,
+   0.05,
+   0.24
+  ],
+  "I-6": [
+   0.09,
+   0.08,
+   0.08,
+   0.08,
+   0.07,
+   0.07,
+   0.1,
+   0.12
+  ]
+ },
+ "nearest_records": {
+  "I-1": [
+   [
+    "P4",
+    0.8818307
+   ],
+   [
+    "A4",
+    0.8341471
+   ],
+   [
+    "N3",
+    0.7816157
+   ],
+   [
+    "A5",
+    0.77655005
+   ],
+   [
+    "N2",
+    0.7643926
+   ]
+  ],
+  "I-2": [
+   [
+    "N4",
+    0.8387818
+   ],
+   [
+    "N1",
+    0.8212201
+   ],
+   [
+    "Q2",
+    0.7679259
+   ],
+   [
+    "Q5",
+    0.747149
+   ],
+   [
+    "Q4",
+    0.7134058
+   ]
+  ],
+  "I-3": [
+   [
+    "Q4",
+    0.874762
+   ],
+   [
+    "N3",
+    0.8256702
+   ],
+   [
+    "N1",
+    0.81870484
+   ],
+   [
+    "P3",
+    0.8108588
+   ],
+   [
+    "N4",
+    0.7888079
+   ]
+  ],
+  "I-4": [
+   [
+    "N5",
+    0.9145978
+   ],
+   [
+    "P4",
+    0.91349906
+   ],
+   [
+    "Q5",
+    0.75338674
+   ],
+   [
+    "N4",
+    0.7316581
+   ],
+   [
+    "P5",
+    0.6897592
+   ]
+  ],
+  "I-5": [
+   [
+    "P4",
+    0.9682482
+   ],
+   [
+    "N5",
+    0.9106581
+   ],
+   [
+    "N4",
+    0.84197754
+   ],
+   [
+    "P5",
+    0.7965593
+   ],
+   [
+    "Q5",
+    0.7302316
+   ]
+  ],
+  "I-6": [
+   [
+    "P4",
+    0.89970165
+   ],
+   [
+    "N4",
+    0.78266114
+   ],
+   [
+    "N3",
+    0.769704
+   ],
+   [
+    "N5",
+    0.7441944
+   ],
+   [
+    "P2",
+    0.7182897
+   ]
+  ]
+ },
+ "idea_pair_cosine": {
+  "I-1|I-2": 0.7399,
+  "I-1|I-3": 0.7111,
+  "I-1|I-4": 0.7074,
+  "I-1|I-5": 0.8377,
+  "I-1|I-6": 0.9573,
+  "I-2|I-3": 0.917,
+  "I-2|I-4": 0.6651,
+  "I-2|I-5": 0.7717,
+  "I-2|I-6": 0.8228,
+  "I-3|I-4": 0.4745,
+  "I-3|I-5": 0.6647,
+  "I-3|I-6": 0.8178,
+  "I-4|I-5": 0.9543,
+  "I-4|I-6": 0.7376,
+  "I-5|I-6": 0.8816
+ }
+}

@@ -272,3 +272,60 @@ expansion ≠ factual grounding; verify before adopting. Receipt:
   input parses as "0 dimensions". Query via the REST API
   (`/accounts/{id}/vectorize/v2/indexes/{index}/query`), which the
   CLI's own error message reveals.
+
+## ORCH-R24 additions (the deep-embedding round: calibration, ternary, the walk)
+
+- **Noul beats score for axis geometry — measured, not vibes.** The
+  same 8 axis concepts typed as nouls (calibrated mass) retrieve at
+  0.80 top-1 vs 0.70 as score rubrics, with ~10× tighter re-embed
+  stability (max delta 0.03 vs score wobble). jev's score criteria
+  levels are ordered but NOT evenly spaced — the ordinal /4
+  normalization distorts cosine; the noul p-values do not. Use nouls
+  whenever the vectors themselves are the product; use scores only
+  when the rubric's verbal anchors help the reader.
+- **Calibration and quantization are SUBSTITUTES.** Median-centered
+  ternarization preserves the ordinal arm's geometry (86% retention at
+  16 bits) but INVERTS the noul arm's advantage (69%): saturated
+  near-0/1 mass concentrates records at code corners and loses
+  intra-family resolution. If you quantize, start from an ordinal
+  spread, not a calibrated one.
+- **The question map reads DISTRIBUTED (entropy 0.91).** Occluding any
+  single sentence moves the axes only slightly and roughly evenly —
+  the readout is redundancy-robust and does NOT localize evidence.
+  Saliency PROFILES (which spans matter for which axes, relatively)
+  are still family-structured (within 0.17 vs cross −0.33). Do not use
+  typed-map occlusion for attribution; use it for fingerprinting HOW a
+  family is read.
+- **Version drift ≠ embedder divergence.** jev-1.13.0→1.14.0 moves
+  P2_localrule most (4.3× max/min axis ratio, mean L1 0.21) while
+  cross-EMBEDDER divergence (C15) peaked on P8_exact. Small in
+  absolute terms — upgrade drift is an aggregate signal, not a
+  per-record alarm; the noul arm's ±0.03 re-embed band is the right
+  per-record threshold.
+- **The walk: drift compounds through residuals.** A generator whose
+  notes stay 0.93–0.98 cosine with their stations still travels three
+  families across seven steps — each note is almost its station, and
+  "almost" points somewhere new. For any retrieval-driven generative
+  loop, expect the path to be made of small deflections, not jumps,
+  and expect family attractors with late escapes.
+- **The idea space is BIMODAL.** Embedding the ideas battery itself:
+  ideas about the substrate's physics carry real axis mass; meta-ideas
+  about the instrument embed near the null corner (all axes ≤ 0.16)
+  and their nearest-record cosines ride the padding. The map's
+  meta/object divide is measurable — useful for triaging a research
+  frontier into "about the thing" vs "about the measurement".
+- **Vectorize ops laws (both receipted live)**: (1) upserts are ASYNC
+  ("enqueued for upsertion") — queries fired within seconds see only
+  old vectors; poll until arm-visible. (2) Metadata filters return
+  SILENT ZERO matches without an explicit metadata index
+  (`wrangler vectorize create-metadata-index <idx> --propertyName=X
+  --type=string` — NOT `--property`); creation is async; vectors
+  upserted before the index existed are NOT indexed — re-upsert after
+  the index lands, or your filter keeps lying to you.
+- **The prior-art discipline**: QA-as-embedding exists (QA-Emb,
+  NeurIPS 2024, arXiv:2405.16714). The novelty claim must always be
+  the NARROWED one — substrate (calibrated nouls), contract (fixed
+  typed battery), deployment (live production retrieval), quantization
+  (ternary QA-codes), and falsification instruments — never the broad
+  gesture. Research-first rounds are cheaper than retraction-first
+  ones.
