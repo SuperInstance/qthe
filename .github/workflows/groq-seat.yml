@@ -47,7 +47,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
-      - name: egress + noauth receipts
+      - name: "egress + noauth receipts"
         run: |
           set -x
           curl -sS --max-time 10 https://ipinfo.io/json || true
@@ -67,14 +67,14 @@ jobs:
 
       - uses: actions/checkout@v4
 
-      - name: canary (both seats)
+      - name: "canary (both seats)"
         if: ${{ inputs.lane == 'canary' || inputs.lane == 'both' || inputs.lane == 'harmony' }}
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           GROQ_ROUND: ${{ inputs.round }}
         run: node situations/groq_seats/canary.mjs
 
-      - name: seat trial (the new-member law: design attack)
+      - name: "seat trial (the new-member law — design attack)"
         if: ${{ inputs.lane == 'trial' || inputs.lane == 'both' }}
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
@@ -87,7 +87,7 @@ jobs:
           rm -f situations/groq_seats/BLOCKED-SEAT-RECEIPT.md
           node situations/groq_seats/seat_trial.mjs "${{ inputs.target }}"
 
-      - name: upload rows
+      - name: "upload rows"
         if: always()
         uses: actions/upload-artifact@v4
         with:
