@@ -28,7 +28,7 @@ const user = `The experiment registration below is frozen and about to run (or h
 for (const [model, seat] of [['qwen/qwen3.8-27b', 'qwen38-27b'], ['openai/gpt-oss-20b', 'gpt-oss-20b']]) {
   const row = await chat({
     model, seat, round: ROUND, callId: `${ROUND}-seattrial-${seat}`, task: 'design-attack',
-    system, user, max_completion_tokens: 4096, temperature: 0.6, reasoning_effort: 'medium',
+    system, user, max_completion_tokens: 4096, // r22: temperature/top_p/reasoning_effort defer to MODELS defaults (the operator's per-model dispatch — gpt-oss 400s on effort=default)
   });
   const OUT = `situations/groq_seats/seat_trial_${ROUND}.jsonl`;
   const prev = existsSync(OUT) ? readFileSync(OUT, 'utf8') : '';

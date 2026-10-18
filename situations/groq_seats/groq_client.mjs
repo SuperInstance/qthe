@@ -26,8 +26,16 @@ import { createHash } from 'node:crypto';
 export const BASE = process.env.GROQ_BASE_URL || 'https://api.groq.com/openai/v1';
 export const RELAY_MODE = !!process.env.GROQ_BASE_URL;
 export const MODELS = {
-  'qwen/qwen3.8-27b': { in: 0.29, out: 0.59, reasoning_effort: true, note: 'the qwen seat (operator-dispatched)' },
-  'openai/gpt-oss-20b': { in: 0.10, out: 0.20, reasoning_effort: true, note: 'the oss seat (operator-dispatched)' },
+  'qwen/qwen3.8-27b': {
+    in: 0.29, out: 0.59,
+    defaults: { temperature: 0.6, top_p: 0.95, reasoning_effort: 'default' }, // the operator's dispatch, verbatim
+    note: 'the qwen seat (operator-dispatched)',
+  },
+  'openai/gpt-oss-20b': {
+    in: 0.10, out: 0.20,
+    defaults: { temperature: 1, top_p: 1, reasoning_effort: 'medium' }, // the operator's dispatch, verbatim
+    note: 'the oss seat (operator-dispatched). r22 receipt: gpt-oss REJECTS reasoning_effort=default (400 "must be one of low, medium, or high") — the per-model defaults are not optional decoration',
+  },
 };
 
 export class GroqError extends Error {
@@ -51,8 +59,14 @@ export function loadKey() {
 
 // one chat completion -> an AS-SAID-shaped row (the tavern ledger schema).
 // opts: { temperature, max_completion_tokens, top_p, reasoning_effort, stream:false }
-export async function chat({ model, system, user, round, callId, seat, task, temperature = 0.6, max_completion_tokens = 2048, top_p = 0.95, reasoning_effort = 'default', fetch: doFetch = globalThis.fetch, timeoutMs = 60000 }) {
+// Per-model defaults from MODELS[model].defaults apply when the opt is
+// undefined (the r22 law: gpt-oss 400s on effort=default; qwen takes it).
+export async function chat({ model, system, user, round, callId, seat, task, temperature, max_completion_tokens = 2048, top_p, reasoning_effort, fetch: doFetch = globalThis.fetch, timeoutMs = 60000 }) {
   if (!MODELS[model]) throw new GroqError(`unknown seat model ${model} (known: ${Object.keys(MODELS).join(', ')})`, { status: 0 });
+  const def = MODELS[model].defaults || {};
+  temperature = temperature ?? def.temperature ?? 0.6;
+  top_p = top_p ?? def.top_p ?? 0.95;
+  reasoning_effort = reasoning_effort ?? def.reasoning_effort ?? 'default';
   const key = loadKey();
   const prompt = (system || '') + '\n\n' + (user || '');
   const promptHash = createHash('sha256').update(prompt, 'utf8').digest('hex');
