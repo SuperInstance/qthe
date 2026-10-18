@@ -158,3 +158,31 @@ G4 and G4-P2 (same clause, pre-registered literal + corrected literal).
 - One sabotage per clause; one target suite per sabotage run; workspace
   recreated clean per run (no cross-contamination).
 - Zero network, zero LLM calls, zero git writes.
+
+---
+
+## ORCH-R14 CLOSURE SECTION (appended by the orchestrator after the lane)
+
+The five SURVIVED holes above are CLOSED. Timeline, receipted:
+
+1. v1 run (lane, HEAD 17465d6): 23/28 DETECTED, 5 SURVIVED, exit 1 — verbatim
+   log clobbered by the orchestrator's post-fix proof attempt (fail-closed
+   pre-flight refusal, committed as run_receipt.txt); reconstructed in
+   run_receipt_v1_reconstructed.md from the fragment + this table.
+2. Five fixes (milestone-2 commit 7c17a07): V6 content-tip recompute
+   implemented; V8 TIP-AGREE clause added (caught a REAL stale receipt on its
+   first live run — fixedpoint chain_tip.txt, refreshed with receipt);
+   P3 absent-tip fails for e_q*; P5b PG4 sampling t%97 + final checkpoint;
+   R2 gate-set pin (EXPECTED_GATES literal, sealed into the chain row).
+3. Detection-rule amendments (receipted in the harness source): exit-code
+   regression from a green baseline IS noticing; the R2 crash class (post-hoc
+   indexing breaks under gate-block removal) fails loudly = correct.
+4. v2 closure proof (HEAD 331ae16): **28/28 DETECTED, 0 SURVIVED, exit 0** —
+   run_receipt_v2_closure.txt, four PREDICTION MISMATCH receipts (the
+   pre-closure SURVIVED predicts flipping to DETECTED are the closure's own
+   receipts), every restore GREEN.
+
+Post-closure standing: the three suites are re-earned as evidence for every
+clause their menus cover. The harness is a standing tool — run it after any
+verifier change (`node scripts/negctl_qthe.mjs`, exit 0 = all sabotages
+detected + restores green).
