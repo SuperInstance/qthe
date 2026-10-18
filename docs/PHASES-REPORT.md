@@ -78,6 +78,7 @@
 | round | lanes | status / receipts |
 |-------|-------|-------------------|
 | ORCH-R20 | **crossimpl/rs** (the Rust port, subagent lane) · **E-Q19/C10** (the first consumer-driven pricing) · **the docket deployed** (the second live consumer) | Rust BYTE-EXACT 19/19 both planes (rs chain, tip `f3abf8db…`) · C10 DIES on H1 with the five-law autopsy (e_q19 chain, tip `568bfef3…`; scoreboard 8 claims, 3/5/1) · `QtheDocket` DO live, build `r20-docket1`, arbitration determinism `77d865d0…`, honest label traveling with the service · batteries 38/38 + 29-claim gate + negctl 28/28 + ALL LIVE CHECKS PASS (incl. the new P-D) |
+| ORCH-R21 | **moth_client_v2** (tools enhanced: comet/blur/qpixl/coinToss/otocEcho, browser-UA law, 13/13 offline fixtures) · **E-Q20/C11** (the first quantum-house pricing: comet SP 800-90B root + blur-core exact geometry vs PRNG, A3S shuffled-marginals control) · **Groq seats code-delivered** (client + canary + seat-trial; 403-blocked at this seat, receipted) | C11 DIES on H2 with the interference autopsy (e_q20 chain, tip `a310f37e…`, 22 links; scoreboard 9 claims, 3/6/—) · H1 LIVES: certified-root bytes invisible · H3 LIVES: the exact quantum blur is INTERFERENCE-SHAPED (t=0 Moran's I −0.068, negative — classical blurs are positive) · spatial correlation is a SLOW MODE (T* > 64; marginals wash out) · 10/10 moth credits, AM1-AM6 receipted pre-data-row · batteries 32/32 claims + coverage 21/21 |
 
 ## New chains this orchestration sealed
 

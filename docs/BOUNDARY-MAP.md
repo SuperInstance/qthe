@@ -116,3 +116,22 @@ fire on writer-population growth, which E-Q16's density-scaling regime
 already prices. Unmeasured regimes are marked pending, never extrapolated —
 the moment a stranger's rerun contradicts a row, the row dies and the
 autopsy begins; that is the whole law of this house.
+
+## The construction-provenance row (E-Q20, ORCH-R21 — the quantum-house boundary)
+
+The first quantum-priced boundary, for anyone seeding substrates from
+certified-quantum or quantum-computed sources (`experiments/outputs/e_q20_verdict.md`,
+chain `receipts/e_q20_chain.jsonl` tip `a310f37e…`, 22 links):
+
+| regime | outcome | mechanism | receipt |
+|---|---|---|---|
+| Byte-level construction provenance (PRNG vs SP 800-90B-certified comet root, SHA-256-expanded) | **INVISIBLE** | the tick operator's observables are a function of the initial BYTES, not their provenance; the hash expansion makes the certified 1136-bit root statistically indistinguishable from mulberry32 | E-Q20 H1: A2 <= A1 LOO 95th-pct floor at EVERY checkpoint x metric (dW1/tauTV/MoranI rook4+moore8/twinRate/satFrac) |
+| Quantum-computed geometry (blur-core-v1 exact, strength 0.5) at t=0 | **GIANT FINGERPRINT, INTERFERENCE-SHAPED** | the exact circuit's unitary walks values across qubit/bit neighbours with alternating structure: Moore-8 Moran's I NEGATIVE (−0.068) where a classical smoothing blur is strongly positive | E-Q20 H3: dW1 12.06 vs floor 0.51; Moran's-I distance 0.071 vs 0.014; recomputed from the sealed root receipt + blur journal by the claim auditor |
+| Spatial-correlation memory under tick dynamics | **SLOW MODE — survives t=64** | marginals, tau and twin-rates equilibrate within the floor by t=64, but the spatial autocorrelation converges only monotonically toward the intrinsic attractor (A1's own I grows 0.003 -> 0.175 over 64 ticks): initial correlation is a slow mode; the SHUFFLED control excurses too — the persistence is dynamical, not quantum-specific | E-Q20 H2 DIES: A3 0.038 / A3S 0.034 vs floor 0.021 at t=64 (gap shrinking t=32 -> t=64); T* > 64 |
+
+**The consumer law this buys:** any consumer that needs correlation-equilibrium
+statistics (tile statistics, twin-resonance overlap, the docket's spatial
+fairness) should pre-run a burn-in of T > 64 at 64x64 or treat early-tick
+spatial statistics as constructor-dependent. The burn-in length is a
+measurable quantity, not folklore — E-Q20b candidate: extend the checkpoint
+ladder to t=512 from the journaled sources, zero moth credits.

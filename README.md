@@ -11,7 +11,7 @@ where an honest null is a crown jewel.
 
 - [`SPEC.md`](./SPEC.md) — the vision, split into Layer 0/1/2 by honesty law
 - `qthe.mjs` — the zero-dependency reference kernel (Lanes: core)
-- `experiments/` — E-Q1..E-Q19 priced claims (all eight LAYER 2 claims CLOSED: C1 LIVES · C2 LIVES · C3/C4/C5 DIED honestly · C5′ STANDS · C9 hierarchical-folded-table DIED with prejudice · C10 docket-arbitration DIED on H1 with the flood-cap surviving — `docs/CLAIM-VERDICTS.md`)
+- `experiments/` — E-Q1..E-Q20 priced claims (all nine LAYER 2 claims CLOSED: C1 LIVES · C2 LIVES · C3/C4/C5 DIED honestly · C5′ STANDS · C9 hierarchical-folded-table DIED with prejudice · C10 docket-arbitration DIED on H1 with the flood-cap surviving · C11 construction-provenance DIED on H2 with the interference autopsy — `docs/CLAIM-VERDICTS.md`)
 - `qthe-core/` — the standalone zero-dependency distribution (JS float+fixed, C99 byte-exact, Python L0)
 - `index.html` — the A2UI live mirror: pixel = cell, direct buffer-to-canvas
 
@@ -261,3 +261,55 @@ Wave-69 docs layer (added; nothing above was changed). Route by audience:
 
 <sub>Regenerate: `node quilt-links.mjs` · Fleet map: [FLEET.md](https://github.com/SuperInstance/fleet-seeds/blob/main/FLEET.md)</sub>
 <!-- QUILT:LINKS:END -->
+
+## The quantum-construction round (r21 — C11 dies, the interference autopsy, the certified root is invisible)
+
+The operator's fresh Moth key met a richer engine catalog than the r7 era
+(fleet doc `AI-Writings/situations/arch/MOTH-ENGINES.md`, read this round),
+and the F0 determinism law confines quantum entropy to **construction time**
+— `makeSubstrate`'s seedFn is the entire attack surface. E-Q20 priced the
+question the QCA-scrambling literature asks: does construction provenance
+survive the tick dynamics?
+
+- **H1 LIVES — certified-quantum BYTES are invisible.** comet-qrng-v1's
+  SP 800-90B-certified root (142 conditioned bytes: min-entropy certificate,
+  Toeplitz extractor at ε 2⁻⁶⁴, CHSH S = 2.835 with z = 37.9 above the
+  classical bound, commit-before-collect pulse chain —
+  `experiments/outputs/e_q20_comet_root.json`), SHA-256-counter-expanded
+  (the NIST 90B→90A deployment pattern; the E-Q9-DT whitener recipe), is
+  statistically indistinguishable from mulberry32 at EVERY checkpoint on
+  EVERY metric (A1 leave-one-out 95th-pct floor, 20-plane population).
+- **H3 LIVES — the exact quantum blur is INTERFERENCE-SHAPED.** blur-core-v1
+  (exact mode, shots omitted — a deterministic quantum operator) on the
+  d-field produced a t=0 fingerprint of dW1 12.06 vs floor 0.51, and its
+  Moore-8 Moran's I is **NEGATIVE (−0.068)** — unitary interference walks
+  alternating structure where a classical smoothing blur is strongly
+  positive. A measured quantum-native geometry; the claim auditor
+  recomputes it from the sealed root receipt + blur journal.
+- **H2 DIES — spatial correlation is a SLOW MODE.** By t=64 the marginals,
+  tau fractions and twin rates all washed out to within floor, but Moran's I
+  had not equilibrated (A3 0.038 / A3S 0.034 vs floor 0.021, converging
+  monotonically): initial spatial correlation outlives t=64, and the
+  SHUFFLED control excurses too — the persistence is dynamical, not
+  quantum-specific. **Consumer law: burn in T > 64 at 64×64 before trusting
+  correlation-statistics, or treat early-tick spatial stats as
+  constructor-dependent.** Chain `e_q20` (22 links, tip `a310f37e…`);
+  scoreboard now 9 claims, 3 LIVES / 6 DIES / 1 STANDS.
+- **The discipline ledger**: Seed-2.0-mini design attack pre-run (6 attacks,
+  $0.005 — AM1 byte-splitting law, AM2 population/median sharpening, AM3
+  Moore-8-primary instrument, AM4 per-cell rates accepted; A2/A6 refuted
+  with receipts); two implementation-time failures BOTH caught fail-closed
+  before any data row — the comet raw-budget law (output_bytes is the RAW
+  Born-rule budget: 49152 raw bits → 1136 conditioned bits at ε 2⁻⁶⁴) and
+  the loadKernel law — fixed as AM5/AM6, the 5 spent blur credits recovered
+  by free GET into a replay journal, 10/10 credit cap held.
+- **Tools enhanced** (`experiments/moth_client_v2.mjs`, the fleet's laws
+  baked in: browser-UA, comet derive-sizing/retry with bell-witness
+  passthrough, blurExact shape assertions, qpixl/coinToss/otocEcho
+  wrappers; offline fixture selftest 13/13 at zero credits). **Groq seats
+  code-delivered** (client + canary + seat-trial in the tavern's AS-SAID
+  row schema) and **403-blocked at this seat** — pre-auth WAF, receipted in
+  `situations/groq_seats/BLOCKED-SEAT-RECEIPT.md`; the moment a reachable
+  seat exists, `qwen/qwen3.8-27b` and `openai/gpt-oss-20b` join the tavern
+  with zero code changes.
+

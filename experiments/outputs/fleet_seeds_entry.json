@@ -3,7 +3,7 @@
  "repo": "SuperInstance/qthe",
  "emitted_by": "scripts/emit_fleet_seeds.mjs (ORCH-25)",
  "kernel_sha256": "ef9a3bba0511c78026f30706214e407d362e8972a86f5684d9b16a9e16e3f091",
- "chain_registry_sha256": "7c2bcca8520476672a7865c5a88743f7d41b11e8e6cb377ab3e42eb9c35b51a3",
+ "chain_registry_sha256": "c1c91690fcaea208e91c8d9c2a8e7dab5fb3a9e6b06a3a4011d49842e1795c7b",
  "scoreboard": {
   "C1": "LIVES (E-Q13, 47.40%)",
   "C2": "LIVES (E-Q1, 8/8 vs 0/20)",
@@ -12,7 +12,8 @@
   "C5": "DIES honest-null (E-Q5)",
   "C5'": "STANDS definitional (E-Q10)",
   "C9": "DIES with prejudice, opposite direction (E-Q18, 0.0066 vs 0.0725 clean)",
-  "C10": "DIES on H1 (E-Q19, timing-not-share; H2 flood-cap LIVES structurally, 0.339 vs 0.75 @500)"
+  "C10": "DIES on H1 (E-Q19, timing-not-share; H2 flood-cap LIVES structurally, 0.339 vs 0.75 @500)",
+  "C11": "DIES on H2 (E-Q20, the slow mode; H1 LIVES — certified-root bytes invisible; the exact blur is interference-shaped, Moran I −0.068)"
  },
  "cross_language": {
   "js_float": "reference",
@@ -104,6 +105,10 @@
   "e_q19_docket": {
    "sha256": "0759043113a65965064642558ab655976170f01d37218b1137fb0edcbe67a19c",
    "rows": 19
+  },
+  "e_q20_construction": {
+   "sha256": "b713e876186d71cb672943eba4c85e5ddc8082c5ccba93a461bbdc789c1ed5e8",
+   "rows": 22
   },
   "probe_gate": {
    "sha256": "14f40d5ef160f100a785c0a4369b11d4eae0d99748b86d84d9e186cf0d6b34a1",

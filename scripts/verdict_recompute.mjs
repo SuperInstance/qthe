@@ -29,6 +29,7 @@
 //
 // Usage: node scripts/verdict_recompute.mjs     (exit 0 iff every claim PASSes)
 import { readFileSync } from 'node:fs';
+import { createHash } from 'node:crypto';
 import { join, dirname } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { STONE_CHAINS as REGISTRY } from './chain_registry.mjs';
@@ -767,6 +768,107 @@ const CLAIMS = [
       const row = lastChainRow('receipts/e_q19_chain.jsonl', (r) => r.kind === 'verdict.EQ19', 'verdict.EQ19');
       if (row.F0 !== true || row.F2 !== true || row.F3 !== true) throw new Error('chain floor flags disagree');
       return { recomputed: `F0 150/150, F2/F3 held, kernel real; the wormhole escalation quiet exactly as AM2 priced (1 claim on L2, 0 on A-off); H3/H4 vacuous in the drained regime (p50 0==0, spearman ~0) — receipted as unmeasured, not passed` };
+    },
+  },
+  {
+    // ORCH-R21: the three E-Q20 claims (the quantum-construction round — C11 dies on H2).
+    id: 'E-Q20-c11-dies-on-h2-slow-mode',
+    source: 'experiments/outputs/e_q20_results.json',
+    cite: 'receipts/e_q20_chain.jsonl · result.EQ20 rows + verdict.EQ20 (tip a310f37e…) · docs/CLAIM-VERDICTS.md C11 · experiments/outputs/e_q20_verdict.md',
+    expected: 'H1 LIVES (A2 quantum-rooted == A1 PRNG at EVERY checkpoint x metric — byte provenance invisible); H2 DIES at t=64: A3 excurses moransI4+moransI8+satFrac, A3S excurses moransI4+moransI8 but NOT satFrac, A2 excurses nothing; dW1/tauTV/twinRate all washed out within floor; T* null (not reached by t=64) — spatial correlation is a slow mode',
+    run() {
+      const d = readJson(this.source);
+      const h = d.hypotheses;
+      if (h.H1 !== true) throw new Error('H1 not true — the equivalence claim drifted');
+      if (h.H2 !== false || h.C11 !== false) throw new Error('H2/C11 flags disagree with the sealed death');
+      if (h.Tstar !== null) throw new Error(`Tstar ${h.Tstar} != null — the wash-out claim drifted`);
+      const ex = h.h2exc;
+      if (ex.A2.length !== 0) throw new Error(`A2 excursions ${JSON.stringify(ex.A2)} — H1/H2 contradiction`);
+      for (const m of ['moransI4', 'moransI8', 'satFrac']) if (!ex.A3.includes(m)) throw new Error(`A3 t=64 excursion missing ${m}`);
+      for (const m of ['moransI4', 'moransI8']) if (!ex.A3S.includes(m)) throw new Error(`A3S t=64 excursion missing ${m}`);
+      if (ex.A3S.includes('satFrac')) throw new Error('A3S satFrac excursion — the correlation-only attribution broke');
+      const c = d.crossArm, f = d.floorTable;
+      if (!(c.A3.moransI8['64'].median > f.moransI8['64'])) throw new Error('A3 moransI8 t=64 not above floor — the slow-mode receipt broke');
+      if (!(c.A3S.moransI8['64'].median > f.moransI8['64'])) throw new Error('A3S moransI8 t=64 not above floor — the dynamical-persistence receipt broke');
+      if (!(c.A3.dW1['64'].median <= f.dW1['64'])) throw new Error('A3 dW1 t=64 ABOVE floor — the marginal wash-out receipt broke');
+      if (!(c.A3.twinRate['64'].median <= f.twinRate['64'])) throw new Error('twinRate wash-out broke');
+      const row = lastChainRow('receipts/e_q20_chain.jsonl', (r) => r.kind === 'verdict.EQ20', 'verdict.EQ20');
+      if (row.H1 !== true || row.H2 !== false || row.C11 !== false || row.Tstar !== null) throw new Error('chain verdict flags disagree with the results file');
+      return { recomputed: `C11 DIES on H2 verbatim: A2 excursions none (H1 clean — the certified root is invisible); A3 [moransI4,moransI8,satFrac] and A3S [moransI4,moransI8] above floor at t=64 while dW1 ${c.A3.dW1['64'].median.toPrecision(4)} <= floor ${f.dW1['64'].toPrecision(4)} and twinRate washed out — marginals equilibrate, spatial correlation does not (T* > 64: the slow mode); the A3S excursion proves the persistence is dynamical, not quantum-specific; chain agrees` };
+    },
+  },
+  {
+    id: 'E-Q20-interference-fingerprint-recomputed',
+    source: 'experiments/outputs/e_q20_results.json',
+    cite: 'receipts/e_q20_chain.jsonl · verdict.EQ20 H3 · experiments/outputs/e_q20_comet_root.json + e_q20_blur_journal.json (the deterministic replay sources) · docs/BOUNDARY-MAP.md',
+    expected: 'H3 LIVES: A3 t=0 dW1 12.0597 vs floor 0.5077 and Moore-8 Moran I distance 0.07127 vs floor 0.01444; RECOMPUTED FROM THE SEALED SOURCES: the A3 t=0 Moore-8 Moran I median is NEGATIVE (<= -0.05) — the exact quantum blur is interference-shaped (sign-alternating), not smoothing-shaped (a classical blur gives strong POSITIVE I)',
+    run() {
+      const d = readJson(this.source);
+      const c = d.crossArm, f = d.floorTable;
+      if (!(c.A3.dW1['0'].median > 10 * f.dW1['0'])) throw new Error('A3 t=0 dW1 not >> floor — the fingerprint receipt broke');
+      if (!(c.A3.moransI8['0'].median > 4 * f.moransI8['0'])) throw new Error('A3 t=0 moransI8 distance not >> floor');
+      // ── recompute the raw A3 t=0 Moore-8 Moran's I from the sealed artifacts ──
+      // root receipt -> SHA-256 counter expansion -> A2 plane tau bits; blur journal -> d-field.
+      const root = readJson('experiments/outputs/e_q20_comet_root.json');
+      const jrn = readJson('experiments/outputs/e_q20_blur_journal.json');
+      const rootBytes = Buffer.from(root.root_hex, 'hex');
+      let expanded = Buffer.alloc(0);
+      for (let ctr = 0; expanded.length < 40960; ctr++) {
+        const b = Buffer.alloc(4); b.writeUInt32BE(ctr >>> 0, 0);
+        expanded = Buffer.concat([expanded, createHash('sha256').update(b).update(rootBytes).digest()]);
+      }
+      const W = 64, H = 64, N = W * H;
+      const mooreI = (cells) => {
+        const dd = new Float64Array(N); let mean = 0;
+        for (let i = 0; i < N; i++) { dd[i] = cells[i] & 63; mean += dd[i]; }
+        mean /= N; let num = 0, den = 0;
+        for (let y = 0; y < H; y++) { const yU = (y + H - 1) % H, yD = (y + 1) % H;
+          for (let x = 0; x < W; x++) { const i = y * W + x; const dz = dd[i] - mean; den += dz * dz;
+            const xL = (x + W - 1) % W, xR = (x + 1) % W;
+            for (const [ny, nx] of [[yU, xL], [yU, x], [yU, xR], [y, xL], [y, xR], [yD, xL], [yD, x], [yD, xR]]) num += dz * (dd[ny * W + nx] - mean);
+          } }
+        return (N / (8 * N)) * (num / den);
+      };
+      const med = (a) => { const s = [...a].sort((x, y) => x - y); return s[s.length >> 1]; };
+      const rawI = jrn.blurs.map((b, k) => {
+        const cells = new Uint8Array(N);
+        for (let i = 0; i < N; i++) {
+          const tau = expanded[k * N + i] >> 6;
+          const dv = Math.max(0, Math.min(63, Math.round(b.output[(i / W) | 0][i % W])));
+          cells[i] = (tau << 6) | dv;
+        }
+        return mooreI(cells);
+      });
+      const m = med(rawI);
+      if (!(m <= -0.05)) throw new Error(`recomputed A3 t=0 Moore-8 Moran I median ${m} not <= -0.05 — the interference-shaped receipt broke`);
+      const row = lastChainRow('receipts/e_q20_chain.jsonl', (r) => r.kind === 'verdict.EQ20', 'verdict.EQ20');
+      if (row.H3 !== true) throw new Error('chain H3 flag disagrees');
+      return { recomputed: `H3 LIVES and the quantum geometry receipt RECOMPUTES from sealed sources: A3 t=0 dW1 ${c.A3.dW1['0'].median.toPrecision(4)} vs floor ${f.dW1['0'].toPrecision(4)}; raw Moore-8 Moran I median ${m.toPrecision(4)} NEGATIVE across the 5 journaled blur outputs — the exact circuit's unitary interference walks alternating structure (a classical smoothing blur would be strongly positive); chain agrees H3 true` };
+    },
+  },
+  {
+    id: 'E-Q20-floors-and-certificates',
+    source: 'experiments/outputs/e_q20_results.json',
+    cite: 'receipts/e_q20_chain.jsonl · verdict.EQ20 floors · experiments/outputs/e_q20_comet_root.json (SP 800-90B certificate, CHSH witness, pulse chain) · experiments/pre_registration_e_q20.json (AM1-AM6)',
+    expected: 'F0 determinism 40/40 byte-identical; F4 40 distinct t=0 hashes; F5 A3S marginal identity EXACT; F2 CHSH S 2.834961 > 2 (emu/aer, caveat receipted); F3 blur exact-mode + shape; AM5 root: 142 certified bytes expanded to 40960 (the raw-budget law: 49152 raw bits -> 1136 conditioned bits at epsilon 2^-64); AM6 blur journal replay at 0 credits; moth spend 10/10',
+    run() {
+      const d = readJson(this.source);
+      if (d.floors.F0 !== true || d.floors.detOk !== 40 || d.floors.detPairs !== 40) throw new Error(`F0 broken: ${JSON.stringify(d.floors)}`);
+      if (d.floors.F4 !== true || d.floors.F5 !== true) throw new Error('F4/F5 broken');
+      if (!(d.floors.F2_S > 2)) throw new Error('F2 broken — S not above classical bound');
+      if (d.floors.F3 !== true) throw new Error('F3 broken');
+      const root = readJson('experiments/outputs/e_q20_comet_root.json');
+      if (root.root_bytes !== 142 || root.root_bits !== 1136) throw new Error('root receipt drifted (142 B / 1136 bits expected)');
+      if (root.entropy_report.output_bits !== 1136) throw new Error('the conditioned-output receipt drifted');
+      if (root.extractor.input_bits !== 49152 || root.extractor.output_bits !== 1136) throw new Error('the raw-budget certificate drifted (extractor input/output bits)');
+      if (!(root.bell_witness.S > 2) || root.bell_witness.violates_classical_3sigma !== true) throw new Error('the CHSH witness receipt drifted');
+      if (root.extractor.kind !== 'toeplitz' || root.extractor.epsilon_log2 !== 64) throw new Error('the extractor receipt drifted');
+      const seed = readJson('experiments/outputs/e_q20_seed_receipt.json');
+      if (seed.mothCredits.total !== 10 || seed.mothCredits.cap !== 10) throw new Error('the moth budget receipt drifted');
+      if (seed.comet.expanded_to !== 40960 || seed.comet.root_bytes !== 142) throw new Error('the AM5 expansion receipt drifted');
+      const row = lastChainRow('receipts/e_q20_chain.jsonl', (r) => r.kind === 'verdict.EQ20', 'verdict.EQ20');
+      if (row.F0 !== true || row.F4 !== true || row.F5 !== true || num(row.S) <= 2) throw new Error('chain floor flags disagree');
+      return { recomputed: `F0 40/40 byte-identical, F4/F5 held, S ${d.floors.F2_S} > 2 (violates_classical_3sigma true, caveat receipted); the AM5 raw-budget law verifies from the root receipt (49152 raw -> 1136 Toeplitz bits at epsilon 2^-64 = 142 B, expanded 40960); AM6 journal replay; moth 10/10 cap held; chain agrees` };
     },
   },
 ];

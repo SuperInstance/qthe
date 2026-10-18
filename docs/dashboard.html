@@ -136,6 +136,14 @@
         <td class="tip" title="stone-v1 chain tip — full 568bfef308622b0e0e5b8558442348d42f43ee258bb45c7ac0a7f3db3bb700c6">568bfef308622b0e</td>
         <td class="num">19</td>
       </tr>
+      <tr>
+        <td class="claim"><b>C11</b> the tick operator is a construction-provenance blindfold: PRNG / quantum-ROOTED hash-expanded comet-certified (SP 800-90B root) / quantum-blur-conditioned planes become statistically indistinguishable within the PRNG noise floor by tick 64, each individually byte-deterministic</td>
+        <td class="v r">DIES<span class="q"> (on H2)</span><span class="d">H1 LIVES cleanly: the certified quantum root, SHA-256-expanded, is indistinguishable from mulberry32 at EVERY checkpoint x metric (byte provenance is invisible — the NIST 90B-to-90A pattern is behaviorally transparent). H3 LIVES: the blur's t=0 fingerprint is huge (dW1 12.06 vs floor 0.51) and the exact circuit is INTERFERENCE-SHAPED — Moore-8 Moran's I NEGATIVE (−0.068; a classical smoothing blur would be strongly positive) — a measured quantum-native geometry. H2 DIES: spatial autocorrelation has not equilibrated by t=64 (A3 0.038 / A3S 0.034 vs floor 0.021, converging monotonically) while dW1/tauTV/twinRate DID wash out — initial spatial correlation is a SLOW MODE of the tick operator; the A3S excursion proves the persistence is dynamical, not quantum-specific. T* &gt; 64</span></td>
+        <td class="mech">undefined</td>
+        <td class="dim">E-Q20 (ORCH-R21)</td>
+        <td class="tip" title="stone-v1 chain tip — full a310f37e10e6f746ebb8a7362a71e5f108d2110b945d365316bae02d7a78a8cc">a310f37e10e6f746</td>
+        <td class="num">22</td>
+      </tr>
       </tbody>
     </table>
     <p class="legend">LIVES <i class="g">priced and held</i> &middot; DIES <i class="r">falsified or honest null — the body is kept</i> &middot; STANDS <i class="a">definitional, receipted as such</i></p>
@@ -143,7 +151,7 @@
   </div>
 
   <div class="panel" id="chains">
-    <h2>chain of chains &middot; 20 stone-v1 receipts pinned by fleet-seeds (711 rows)</h2>
+    <h2>chain of chains &middot; 21 stone-v1 receipts pinned by fleet-seeds (733 rows)</h2>
     <table>
       <thead><tr><th>chain</th><th>rows</th><th>tip (sha256 of chain file)</th><th>probe gate</th></tr></thead>
       <tbody>
@@ -262,6 +270,12 @@
         <td class="dim">PG1 &middot; stone &check;</td>
       </tr>
       <tr>
+        <td class="claim"><b>e_q20_construction</b> <span class="dim">receipts/e_q20_chain.jsonl</span></td>
+        <td class="num">22</td>
+        <td class="tip" title="sha256 of the chain file — full b713e876186d71cb672943eba4c85e5ddc8082c5ccba93a461bbdc789c1ed5e8">b713e876186d71cb</td>
+        <td class="dim">PG1 &middot; stone &check;</td>
+      </tr>
+      <tr>
         <td class="claim"><b>probe_gate</b> <span class="dim">receipts/probe_gate_chain.jsonl</span></td>
         <td class="num">32</td>
         <td class="tip" title="sha256 of the chain file — full 14f40d5ef160f100a785c0a4369b11d4eae0d99748b86d84d9e186cf0d6b34a1">14f40d5ef160f100</td>
@@ -270,7 +284,7 @@
       </tbody>
     </table>
     <p class="note">verified by the probe gate — sealed run: <b>PROBE-GATE PASS</b> (scope=all, 0 failed) &middot; PG1 stone 20/20 verified from disk &middot; PG2 tip-pin 22 checked &middot; PG3 tamper control refused the flipped byte &middot; PG4 1000-tick twin probe byte-identical &middot; PG5 120ms / 67MB within 10000ms/512MB &middot; PG6 verdict-recompute 29/29 claims re-derived from the sealed outputs.<br>
-    gate scope today: 20 stone chains + 2 content-hash tips (the sealed run covers the full current scope). every pin above was recomputed from disk at build time.</p>
+    gate scope today: 21 stone chains + 2 content-hash tips (the sealed run covered 20 stone chains — the scope has grown since; rerun the gate to re-seal it). every pin above was recomputed from disk at build time.</p>
   </div>
 
   <div class="panel" id="budget">
@@ -291,12 +305,12 @@
       <li><b>G4 — hand-computed literal wrong, kernel right (preserved standing)</b> — priced by gates <span class="dim">(tests/receipts.jsonl)</span></li>
       <li><b>E-Q7 lane expectation — ON/OFF same-regime falsified by own run (nu channel not sign-impotent)</b> — priced by E-Q7 <span class="dim">(commit 55ddced)</span></li>
     </ul>
-    <p class="note">the reading: 7 banked nulls and 9 caught defects against zero silent failures — every cost converted into a boundary the next system inherits for free. source: docs/FALSIFICATION-BUDGET.md (18 chain files, 673 rows on disk; fleet-seeds pins 20 chains, 711 rows — regenerate both from the same disk state to reconcile).</p>
+    <p class="note">the reading: 7 banked nulls and 9 caught defects against zero silent failures — every cost converted into a boundary the next system inherits for free. source: docs/FALSIFICATION-BUDGET.md (18 chain files, 673 rows on disk; fleet-seeds pins 21 chains, 733 rows — regenerate both from the same disk state to reconcile).</p>
   </div>
 
   <div class="panel" id="verify">
     <h2>how to verify this page</h2>
-    <p class="note">every number above was parsed from the sealed record and cross-checked at build time (kernel sha &check; qthe.mjs &middot; 6/6 verdicts &check; fleet-seeds scoreboard &middot; 6/6 tips &check; pinned tip files &middot; 20/20 chain pins recomputed from disk &middot; budget accounts &check; their lists). re-derive it yourself, from a fresh clone:</p>
+    <p class="note">every number above was parsed from the sealed record and cross-checked at build time (kernel sha &check; qthe.mjs &middot; 6/6 verdicts &check; fleet-seeds scoreboard &middot; 6/6 tips &check; pinned tip files &middot; 21/21 chain pins recomputed from disk &middot; budget accounts &check; their lists). re-derive it yourself, from a fresh clone:</p>
     <pre><span class="cmd">node scripts/verify_all_chains.mjs</span>     <span class="c"># every stone-v1 chain re-verified from disk (fail-loud)</span>
 <span class="cmd">node scripts/probe_gate.mjs</span>              <span class="c"># PG1-PG6 harness integrity gate (tamper + determinism + bounds + verdict-recompute)</span>
 <span class="cmd">node scripts/falsification_budget.mjs</span>    <span class="c"># regenerate the falsification-budget ledger from the sealed record</span></pre>
