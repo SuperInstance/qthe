@@ -1,0 +1,68 @@
+{
+  "law": "REGISTRATION of E-Q19 — the docket round (ORCH-R20 lane T11-b2): the FIRST consumer-driven pricing target. A qthe-backed task-arbitration docket (the second live consumer the frontier doc names as the hierarchical build's trigger) priced against the standard inbox under three loads. Committed BEFORE ANY RUN; arms, floors, metrics and verdict rules frozen; honest null = crown jewel. The kernel is NEVER touched and never transcribed: arm A runs the REAL qthe.mjs tick (import), the docket is a policy consumer over the substrate — LAYER 2 prices the workload, LAYER 0 does the physics.",
+  "task_id": "ORCH-R20/T11-b2",
+  "agent": "qthe orchestrator (Z.ai), erised fleet line",
+  "wave": "ORCH-R20",
+  "repo": "SuperInstance/qthe",
+  "repo_at_registration": "a4109c9",
+  "provenance_of_the_question": {
+    "frontier_doc": "docs/FRONTIER-DECISION.md: 'The trigger for the hierarchical build: a second live consumer.' The docket is that consumer; this experiment prices what it changes.",
+    "r19_close": "docs/discussions/2026-10-18-orch-r19-report.md: 'Next round candidates: the fleet's asks (watch continues), or the first consumer-driven pricing target.'",
+    "layer0_hooks": "qthe.mjs: Abstain contributes 0 to the real accumulator (the debounce); nextD saturates at min(d+1,63) (the aging cap); the wormhole table is written ONLY by Abstain cells at slot = current d, read live (R2/R3/R4) — the deferred-task recovery channel, the E-Q1 mechanism verbatim.",
+    "eq14_boundary": "E-Q14 B autopsy: delivery robust, WHO lost under congestion — the drift regime this design's wormhole channel inherits; pre-registered below as the known boundary."
+  },
+  "design_frozen": {
+    "grid": "32x32 FIXED, T=2000 epochs, seeds 81001..81010 (10 trials per arm x load).",
+    "substrate": "the REAL kernel: makeSubstrate + tick(sub) every epoch (arm A), tau NEVER changed by tick (R3); tasks are cells; the plane is the docket.",
+    "tasks": "{id, source, p0 in [1..62], cargo c in [8..15]}. Submission stamps cell = pack(ATTRACT, p0) at a position inside the SOURCE'S HOME REGION (agents submit from where they stand — the agent-fleet regime; a scatter-flood defeats locality and is pre-registered as the known boundary, BOUNDARY-MAP culture). Homes: L1/L2 4 sources -> 4 quadrants (16x16 each); L3 4 normal sources -> three strips + flood source F home = one 16x16 quadrant. Position = deterministic rejection sample (mulberry32(id)) within home, free-cell scan spiral on collision.",
+    "claimers": "8 anchors (L1/L2) or 4 (L3), spread >= 8 toroidal-Chebyshev, each with cargo affinity c_j = 8..15 distinct. Claimers are NOT cells (they query the plane; they never write it) — the substrate stays a pure task plane.",
+    "claim_rule": "per epoch: tick first (arm A / A-off), then claimers in fixed order, ONE claim each: (1) LOCAL: among the 8 Moore-8 neighbors of the anchor on the post-tick plane, cells holding live ATTRACT tasks; claim max current d; ties -> older submission, then lower id (fully deterministic). (2) ELSE WORMHOLE (arm A only): hit = table.read(c_j); if the occupant cell holds a live deferred (ABSTAIN) task, claim it (level='wormhole', resonance receipted). (3) Else no claim. Claimed task: cell -> Ground pack(0,0), serve receipt {epoch, taskId, source, claimer, level, dAtServe, p0, latency}. Capacity-matched: the baseline serves the same per-load claim count per epoch.",
+    "arms": {
+      "B_baseline": "the standard inbox: global FIFO + static priority heap on p0 (never ages), ties FIFO by submission. Same arrival stream, same per-epoch claim capacity.",
+      "A_docket": "the full docket: real kernel tick every epoch (Moore-8 pressure evolves d; saturation min(d+1,63)), local-view claims, Abstain invisibility in the real accumulator (the debounce), wormhole escalation for deferred tasks.",
+      "A_static": "attribution arm: the docket policy with d FROZEN at p0 (no tick; tau still flips per the load model; no table writes -> no wormhole claims). Isolates the physics/aging contribution.",
+      "A_off": "attribution arm: full ticks but wormholes:false (the table never written; deferred tasks invisible remotely). Isolates the wormhole channel (mechanism check F2)."
+    },
+    "loads": {
+      "L1_uniform": "4 sources x 1.5 tasks/epoch, p0 uniform [1..62], C=8. Utilization 75% (healthy regime). Parity + priority fidelity measured here.",
+      "L2_flapping": "source 0's tasks are ALL flappers: tau flips ATTRACT<->ABSTAIN with period 8 (phase = id mod 8); on every flip back to ATTRACT, p0 is RE-DRAWN from [48..62] (the gaming model: re-boost before sinking). Sources 1-3 normal. C=8. The baseline heap suffers re-boost monopolization; the docket's debounce (Abstain = 0 in acc) opens claim windows for stable tasks.",
+      "L3_flood": "flood source F submits 3 tasks/epoch at p0=62 into ITS home quadrant (50% of volume), 3 normal sources at 1/epoch into their strips. C=4 (overload 150% — the starvation regime; capacity is part of the LOAD, matched across arms)."
+    }
+  },
+  "metrics": {
+    "fairness": "Jain index over per-source served counts; maxShare = max source fraction of served.",
+    "starvation": "starveRate = tasks never served by T_end, split by flapper status where applicable (stableStarve vs flapStarve); unserved-age telemetry at T_end.",
+    "latency": "submission epoch -> claim epoch over served tasks; p50/p99 (corpus convention: numeric sort, UPPER middle index floor(n/2)).",
+    "priority_fidelity": "Spearman(p0, serve order) over served tasks per (arm, load) — the docket must degrade gracefully, not ignore priority.",
+    "mechanism_telemetry": "wormholeClaims/totalClaims (A only; A-off must be 0 — floor F2); saturationFrac = fraction of tasks whose cell reached d=63 (the aging cap receipt); defer-visibility: claims of deferred tasks by level.",
+    "plane": "final plane hash per run (the determinism receipt)."
+  },
+  "hypotheses_and_verdict_rules": {
+    "H1_flapping_debounce": "LIVES iff median(A L2 Jain) >= 0.80 AND median(B L2 Jain) < 0.65 AND median(A L2 stableStarve) <= 0.5 x median(B L2 stableStarve). DIES otherwise with mechanism autopsy. Registered death candidates: (a) defer windows too short relative to claim cadence (period-8 flappers visible 4 of 8 epochs — enough to keep winning views); (b) re-boost band [48..62] outranks everything in every view it appears in, defer or not.",
+    "H2_flood_cap": "LIVES iff median(A L3 maxShare) <= 0.40 AND median(B L3 maxShare) >= 0.70. DIES otherwise. Registered death candidate: claimer anchors adjacent to F's quadrant drain F's backlog no faster than F arrives (share -> arrival-capped 0.75 anyway — the spatial cap fails if anchors cluster near F).",
+    "H3_uniform_parity": "LIVES iff median(A L1 p50) <= 1.15 x median(B L1 p50). An honest null is tolerated by C10's verdict ONLY as a reported cost; if parity fails, C10's scope must name the latency price.",
+    "H4_priority_fidelity": "advisory (reported, not gating): median(A L1 Spearman) >= 0.25 — graceful degradation, not priority blindness.",
+    "C10_verdict": "C10 ('a qthe-docket reduces starvation and source-monopolization under source-local flapping and flooding loads versus a FIFO+static-priority inbox, at parity on uniform load') LIVES iff H1 AND H2 AND H3. Attribution (A vs A-static = physics/aging; A vs A-off = wormhole channel) reported LAYER 1, never folded into C10's verdict.",
+    "prediction_receipt": "Pre-run point predictions (the P1 discipline): B L3 maxShare ~0.75 (arrival-capped); A L3 maxShare ~0.30-0.40; B L2 stableStarve ~0.5+ (re-boost monopolization at 75% util is partial — revise: with C=8 > arrivals 6, the heap drains; monopolization shows as LATENCY skew, so H1's starve rule may read ~0 for both — the Jain clause and p99 latency carry the signal; if both starve ~0 the H1 starve clause is SATISFIED VACUOUSLY only if Jain+latency clauses hold — amended verdict rule: H1 LIVES iff Jain clause AND (starve clause OR A p99 <= 0.7 x B p99 on stable tasks)); A L1 Spearman ~0.5-0.8 vs B ~0.9+; A L1 saturationFrac < 0.05 (healthy load, few clusters saturate); A L3 saturationFrac ~0.3+ (F clusters age to the cap)."
+  },
+  "floors_frozen": {
+    "EQ19_F0": "determinism 2x fresh construction: byte-identical serve logs + final plane hashes, 120/120 runs (4 arms x 3 loads x 10 seeds), else VOID.",
+    "EQ19_F1": "kernel-real by construction: arm A imports qthe.mjs and calls tick() — no transcription exists in this experiment; receipted in the runner's import line.",
+    "EQ19_F2": "A-off wormhole claims == 0 across all runs (the OFF control is real), else the OFF arm is broken, LOUD.",
+    "EQ19_F3": "capacity match: claims offered per epoch identical across arms per load (8/8/4), receipted per run.",
+    "EQ19_F4": "arrival-stream identity: all arms consume the SAME seeded arrival stream per (load, seed) — asserted by comparing the first/last task ids and counts per source, else VOID."
+  },
+  "consult": {
+    "planned": "one Seed-2.0-mini ATTACK-briefed call on this registration (the E-Q17/E-Q18 discipline: attacks on the design, dispositions receipted as pre-run amendments, AS-SAID, sealed to situations/e_q19_design_attack.jsonl). Budget $0.01.",
+    "law": "no amendment after the first data row exists (the pricing-first law); amendments are append-only and pre-run only."
+  },
+  "endpoints": [
+    "per (arm, load, seed): served, perSourceServed, jain, maxShare, starveRate (+stable/flap split on L2), p50/p99 latency (+p99 stable on L2), spearman, wormholeClaims, saturationFrac, finalPlaneHash, determinism rerun ok, capacity+arrival assertions",
+    "per (arm, load): medians + per-seed lists",
+    "attribution table: A vs A-static vs A-off on L2/L3 (physics and wormhole deltas)",
+    "verdict block: H1 (amended rule verbatim) / H2 / H3 / H4 each LIVES/DIES; C10 verdict; mechanism autopsy candidates checked off or ruled out"
+  ],
+  "amendments_pre_run": {
+    "consult": "pending — situations/e_q19_design_attack.jsonl (Seed-2.0-mini, ATTACK-briefed), dispositions below after the call, before any run"
+  }
+}
