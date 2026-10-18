@@ -25,7 +25,7 @@ import {
   makeSubstrate, nextD, tick, traceView, mulberry32,
 } from "./qthe-kernel.mjs";
 
-const BUILD = "r17-fix1 (cron POST fix)";
+const BUILD = "r19-erratum4 (sidecar field namespace)";
 const INFO = {
   service: "qthe-cell", build: BUILD,
   what: "the qthe ternary-cell kernel, live on Cloudflare Workers",
@@ -205,22 +205,35 @@ export class QtheField extends DurableObject {
 
 // ── twin sidecar (C6): one-hot 64-dim vectors, metadata = the slot pairing ──
 
+// ERRATUM 4 (ORCH-R19, found by the live check failing where r17's retry
+// law had sufficed): vector ids were FIELD-AGNOSTIC (`slot-N`), so in a
+// multi-field deployment every field's sync OVERWROTE every other field's
+// slots — the cron beat's syncTwins(cron-field) could deterministically
+// clobber a livecheck's sidecar between its tick and its query: a race no
+// retry budget can fix. The observed failure was propagation latency
+// exceeding the 5x8s budget, but the collision sat beside it as a loaded
+// gun. FIX: ids namespaced per field (`${field}::slot-N`), metadata carries
+// `field`, /twins/:slot accepts ?field= to scope the lookup (unscoped
+// lookups prefer namespaced vectors during the transition), and the 64
+// legacy `slot-N` vectors are deleted post-deploy (receipt = the re-run of
+// live_checks.sh). The DO stays authoritative; the sidecar converges.
+
 function oneHot(slot) {
   const v = new Array(64).fill(0);
   v[slot % 64] = 1;
   return v;
 }
 
-async function syncTwins(env, view) {
+async function syncTwins(env, view, field = "default") {
   const slots = view.wormholes || [];
   if (!slots.length) return { upserted: 0 };
   const vectors = slots.map((s) => ({
-    id: `slot-${s.slot}`,
+    id: `${field}::slot-${s.slot}`,
     values: oneHot(s.slot),
-    metadata: { slot: s.slot, x: s.x, y: s.y, resonance: s.resonance, ticks: view.ticks },
+    metadata: { field, slot: s.slot, x: s.x, y: s.y, resonance: s.resonance, ticks: view.ticks },
   }));
   await env.QTHE_TWINS.upsert(vectors);
-  return { upserted: vectors.length, at_ticks: view.ticks };
+  return { upserted: vectors.length, at_ticks: view.ticks, field };
 }
 
 // ── the Worker ──────────────────────────────────────────────────────────────
@@ -245,25 +258,35 @@ export default {
           const body = await resp.json();
           // re-fetch the view to sync twins (the tick response is a summary)
           const v = await (await stub.fetch(new URL(`/field/${parts[1]}`, url.origin))).json();
-          const sync = v.ok ? await syncTwins(env, v.view) : { upserted: 0, error: "view fetch failed" };
+          const sync = v.ok ? await syncTwins(env, v.view, parts[1]) : { upserted: 0, error: "view fetch failed" };
           body.twin_sidecar = sync;
           return json(body);
         }
         return resp;
       }
 
-      // /twins/:slot (C6)
+      // /twins/:slot (C6) — ?field= scopes the lookup to one field's table
+      // (ERRATUM 4). Same-slot vectors across fields all score 1.0 against
+      // the one-hot query, so the field's vector is SELECTED from the match
+      // set by metadata, not hoped for from the ranking.
       if (request.method === "GET" && parts[0] === "twins" && parts.length === 2) {
         const slot = parseInt(parts[1], 10);
         if (!(slot >= 0 && slot < SLOT_COUNT)) return json({ error: `slot must be 0..${SLOT_COUNT - 1}` }, 400);
-        const q = await env.QTHE_TWINS.query(oneHot(slot), { topK: 3, returnMetadata: "all" });
-        const top = q.matches && q.matches[0];
+        const field = url.searchParams.get("field");
+        const q = await env.QTHE_TWINS.query(oneHot(slot), { topK: field ? 16 : 3, returnMetadata: "all" });
+        const matches = (q.matches || []).filter((m) => m.metadata);
+        let top;
+        if (field) {
+          top = matches.find((m) => m.metadata.field === field) || null;
+        } else {
+          top = matches.find((m) => m.metadata.field) || matches[0] || null; // prefer namespaced (ERRATUM 4 transition)
+        }
         return json({
-          ok: true, queried_slot: slot,
-          c6_twin_lookup: top && top.metadata
-            ? { slot: top.metadata.slot, x: top.metadata.x, y: top.metadata.y, resonance: top.metadata.resonance, at_ticks: top.metadata.ticks, similarity: top.score }
+          ok: true, queried_slot: slot, field: field || (top && top.metadata ? top.metadata.field : null),
+          c6_twin_lookup: top
+            ? { field: top.metadata.field ?? null, slot: top.metadata.slot, x: top.metadata.x, y: top.metadata.y, resonance: top.metadata.resonance, at_ticks: top.metadata.ticks, similarity: top.score }
             : null,
-          note: "Vectorize sidecar of the 64-slot wormhole table; matches the compile-time pairing (P4)",
+          note: "Vectorize sidecar of the 64-slot wormhole table; field-scoped (ERRATUM 4), DO authoritative, convergence eventual",
         });
       }
 
@@ -391,9 +414,9 @@ export default {
       slots_occupied: t.wormhole_slots_occupied,
     };
     await env.QTHE_HUD.put("cron-field", JSON.stringify(hud));
-    // twin sidecar stays synced with the beat too
+    // twin sidecar stays synced with the beat too (field-scoped, ERRATUM 4)
     const v = await (await stub.fetch(`${origin}/field/cron-field`)).json();
-    if (v.ok) await syncTwins(env, v.view);
+    if (v.ok) await syncTwins(env, v.view, "cron-field");
     return new Response(null, { status: 200 });
   },
 };

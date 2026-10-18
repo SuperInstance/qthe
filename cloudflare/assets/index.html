@@ -22,40 +22,42 @@
 </head>
 <body>
 <h1>qthe on Cloudflare</h1>
-<p class="note">The ternary-cell kernel, deployed. LAYER 2 claims, each measured live on 2026-10-18 — the receipts are the routes.</p>
+<p class="note">The ternary-cell kernel, deployed. The deployment claims (determinism, sidecar, receipts, mirror) are measured live — the receipts are the routes. The kernel's seven LAYER 2 verdicts live in the repo's <code>docs/CLAIM-VERDICTS.md</code>.</p>
 
 <h2>The live service</h2>
 <p>Worker: <a href="https://qthe-cell.casey-digennaro.workers.dev/"><code>qthe-cell.casey-digennaro.workers.dev</code></a> — the kernel vendored byte-identical (see the repo's <code>cloudflare/PROVENANCE.txt</code>), running as:</p>
 <ul>
   <li>a <b>Durable Object</b> per field — single-threaded per id, so ticks apply exactly-once, in order. The determinism law gets a runtime.</li>
-  <li>a <b>Vectorize</b> sidecar of the 64-slot wormhole table (claim C6),</li>
+  <li>a <b>Vectorize</b> sidecar of the 64-slot wormhole table — field-scoped since ERRATUM 4. The sidecar <i>infrastructure</i> is LIVE and exact; the old C6 <i>pricing</i> claim (histogram similarity predicts twin overlap) <b>died below chance</b> in r17 — measured honestly, kept beside the body.</li>
   <li>an <b>R2</b> bucket holding the sealed receipt chains, content-addressed (claim C7),</li>
   <li>this <b>Pages</b> mirror (claim C8).</li>
 </ul>
 
-<h2>The live checks (2026-10-18, build r16-fix2)</h2>
+<h2>The live checks (2026-10-18, build r19-erratum4)</h2>
 <table>
   <tr><th>check</th><th>what was measured</th><th>result</th></tr>
   <tr><td>determinism, cross-DO</td><td>two independently created fields, seed 33001, 50 ticks each</td><td class="ok">identical state hash <span class="mono">390083a9…80f05</span></td></tr>
   <tr><td>determinism, in-DO replay</td><td><code>/field/epsilon/abtest</code> — replay the whole history from the stored seed</td><td class="ok">live ≡ replay</td></tr>
   <tr><td>hash stability across save/load</td><td>the state hash before and after a DO storage round-trip</td><td class="ok">stable (after ERRATUM 1)</td></tr>
-  <tr><td>twin lookup (C6)</td><td><code>/twins/37</code> vs the DO's live table</td><td class="ok">{x:26, y:5, resonance:127} — exact, similarity 1.0</td></tr>
+  <tr><td>twin lookup, field-scoped</td><td><code>/twins/13?field=livecheck-a</code> vs the DO's live table</td><td class="ok">{x:29, y:12, resonance:84} — exact, similarity 1.0, converged attempt 1</td></tr>
   <tr><td>twin census</td><td>one-hot sweep over all 64 slots</td><td class="ok">64/64 slots synced</td></tr>
   <tr><td>receipt integrity (C7)</td><td>fetch <code>e_q1_chain.jsonl</code> and <code>e_q17_chain.jsonl</code> from R2; sha256 vs local sealed file</td><td class="ok">byte-identical, sha256 match</td></tr>
 </ul>
 
 <h2>Errata found by the checks themselves</h2>
-<p>Two, both found live before any claim was written (the falsifier law, pointed at my own deployment):</p>
+<p>Four, all found live before any claim was written (the falsifier law, pointed at my own deployment):</p>
 <ul>
   <li><b>ERRATUM 1</b> — the first deploy's state hash included the per-tick twin <i>events</i>, which are real telemetry but do not survive a save/load round-trip; the hash was not stable. Fixed: the hash basis is the persisted state only (cells, table, ticks).</li>
   <li><b>ERRATUM 2</b> — the receipt route matched only single-segment keys, so <code>receipts/e_q1_chain.jsonl</code> 404'd. Fixed: all remaining segments join into the key.</li>
+  <li><b>ERRATUM 3</b> (r17) — the cron beat's <code>stub.fetch</code> calls defaulted to GET while init/tick need POST; the first HUD was hollow. Found by the P-D check, fixed, re-verified.</li>
+  <li><b>ERRATUM 4</b> (r19) — the sidecar's vector ids were field-agnostic (<code>slot-N</code>), so any field's sync could clobber any other's (the 5-minute beat included): a race no retry budget fixes. Fixed: ids namespaced per field, <code>?field=</code> scopes the lookup, 64 legacy vectors deleted. Found by the live check failing where r17's retry law had sufficed — the falsifier law pointed at its own deployment again.</li>
 </ul>
 <p class="note">Ops law banked: after a DO deploy, never trust a curl until a build marker in the response confirms the new code — the propagation window will happily serve you the old version with a straight face.</p>
 
 <h2>Poke it</h2>
 <ul>
   <li><a href="https://qthe-cell.casey-digennaro.workers.dev/field/epsilon/abtest"><code>GET /field/epsilon/abtest</code></a> — the determinism law, self-verifying</li>
-  <li><a href="https://qthe-cell.casey-digennaro.workers.dev/twins/37"><code>GET /twins/37</code></a> — the wormhole twin sidecar</li>
+  <li><a href="https://qthe-cell.casey-digennaro.workers.dev/twins/13?field=livecheck-a"><code>GET /twins/13?field=livecheck-a</code></a> — the wormhole twin sidecar, field-scoped</li>
   <li><a href="https://qthe-cell.casey-digennaro.workers.dev/receipts"><code>GET /receipts</code></a> — the sealed chains in R2</li>
   <li><a href="https://qthe-cell.casey-digennaro.workers.dev/psi/3"><code>GET /psi/3</code></a> — Abstain, the honest null</li>
   <li><a href="./demo.html">the A2UI live demo</a> — the field, the HUD, the moiré worms (kernel inlined, zero dependencies)</li>
@@ -63,6 +65,6 @@
 
 <h2>The law</h2>
 <p>Same substrate + same tick sequence → byte-identical state, always — now true over HTTP, from a Durable Object, on the free tier, with the receipts one click away.</p>
-<p class="note">From the qthe orchestrator (Z.ai), erised fleet, round 16. Everything here is reproducible: the repo's <code>cloudflare/</code> directory deploys exactly this service.</p>
+<p class="note">From the qthe orchestrator (Z.ai), erised fleet; page current as of round 19. Everything here is reproducible: the repo's <code>cloudflare/</code> directory deploys exactly this service.</p>
 </body>
 </html>

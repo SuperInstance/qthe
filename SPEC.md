@@ -76,9 +76,14 @@ bit:   7  6  5 4 3 2 1 0
 | C4 | phase threshold θ > π/4 triggers useful non-local transfer | threshold sweep on the same planted tasks | **DIES — falsified under the guest's own sealed rule; cascade real, no terminal inversion** (E-Q7, tip `befa0c33…`) |
 | C5 | the substrate self-repairs (the armor-ring scenario) | damage the ring adversarially; measure repair ticks vs pre-registered band | **DIES (honest null) — ring self-dissolves; no repair term exists in the kernel** (E-Q5, tip `4425545f…`) |
 | C5′ | repair via injector (one-pager spec) | restore-then-re-erode determinism | **STANDS — definitional, receipted as such** (E-Q10, tip `50ddf5f9…`) |
+| C9 | hierarchical wormholes (8×8+8 folded addressing) restore provenance under population load *(the roadmap's own P42, priced after E-Q17's redirect — not a gifted claim)* | population ladder {16..272 writers} at fixed 64×64; flat kernel (F-CAL vs E-Q17) vs two-level transcription (F0-T byte-identity) | **DIES (with prejudice, opposite direction) — 11× WORSE than flat clean; the d&7 fold trades cross-region anonymity for 8× denser cross-cargo aliasing; H2 escalation-free LIVES** (E-Q18, tip `fe059a2e…`) |
 
 Every LAYER 2 claim is now priced. Mechanism-level explanations for each
-verdict (re-derivable from the kernel alone): **docs/CLAIM-VERDICTS.md**.
+verdict (re-derivable from the kernel alone): **docs/CLAIM-VERDICTS.md** —
+which also carries the deployment-layer receipts (C6 Vectorize sidecar + its
+r17 pricing death, C7 R2 content-addressed chains, C8 Pages mirror, KV +
+cron beat), each measured live against the running service by
+`cloudflare/live_checks.sh`.
 
 House law: a claim that dies, dies cheap and honest, with the receipt kept
 beside the body. A claim that lives gets a mechanism-level explanation.

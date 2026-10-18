@@ -33,16 +33,22 @@ say "== C6 twin sidecar (P4; eventual consistency — the DO is authoritative, t
 # Vectorize is eventually consistent: an upsert may take seconds to be visible
 # to queries. Retry with backoff and record convergence; the CLAIM is
 # convergence + exact agreement, not instantaneous match.
+# ORCH-R19: the C6 check is FIELD-SCOPED (ERRATUM 4 — vector ids namespaced
+# per field after the field-agnostic ids let any field's sync clobber any
+# other's) and the retry budget is 15x15s after a delete-mutation + fresh-upsert window observed >100s (the r16 eventual-consistency law;
+# observed propagation exceeded the old 5x8s budget on 2026-10-18 while the
+# values HAD converged two minutes later — the claim is convergence, the
+# retry prices the wait).
 C6=1; TRY=0
-while [ $TRY -lt 5 ]; do
+while [ $TRY -lt 15 ]; do
   TRY=$((TRY+1))
-  TW=$(curl -s "$W/twins/13")
+  TW=$(curl -s "$W/twins/13?field=livecheck-a")
   SLOT=$(echo "$TW" | J "d['c6_twin_lookup']['slot'] if d['c6_twin_lookup'] else -1")
   DO=$(curl -s "$W/field/livecheck-a" | J "str([s for s in d['view']['wormholes'] or [] if s['slot']==13][0])")
-  VC=$(echo "$TW" | J "str({'slot':d['c6_twin_lookup']['slot'],'x':d['c6_twin_lookup']['x'],'y':d['c6_twin_lookup']['y'],'resonance':d['c6_twin_lookup']['resonance']})")
+  VC=$(echo "$TW" | J "str({'slot':d['c6_twin_lookup']['slot'],'x':d['c6_twin_lookup']['x'],'y':d['c6_twin_lookup']['y'],'resonance':d['c6_twin_lookup']['resonance']}) if d['c6_twin_lookup'] else 'null'")
   if [ "$SLOT" = "13" ] && [ "$DO" = "$VC" ]; then C6=0; break; fi
-  say "      (attempt $TRY: sidecar lagging — retrying after 8s)"
-  sleep 8
+  say "      (attempt $TRY: sidecar lagging — retrying after 10s)"
+  sleep 15
 done
 chk $C6 "Vectorize slot 13 == DO live table after convergence (attempts: $TRY; $DO)"
 

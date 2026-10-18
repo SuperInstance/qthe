@@ -11,7 +11,7 @@ where an honest null is a crown jewel.
 
 - [`SPEC.md`](./SPEC.md) — the vision, split into Layer 0/1/2 by honesty law
 - `qthe.mjs` — the zero-dependency reference kernel (Lanes: core)
-- `experiments/` — E-Q1..E-Q17 priced claims (all six LAYER 2 claims CLOSED: C1 LIVES · C2 LIVES · C3/C4/C5 DIED honestly · C5′ STANDS — `docs/CLAIM-VERDICTS.md`)
+- `experiments/` — E-Q1..E-Q18 priced claims (all seven LAYER 2 claims CLOSED: C1 LIVES · C2 LIVES · C3/C4/C5 DIED honestly · C5′ STANDS · C9 hierarchical-folded-table DIED with prejudice — `docs/CLAIM-VERDICTS.md`)
 - `qthe-core/` — the standalone zero-dependency distribution (JS float+fixed, C99 byte-exact, Python L0)
 - `index.html` — the A2UI live mirror: pixel = cell, direct buffer-to-canvas
 
@@ -27,7 +27,7 @@ repo's own armor-ring demo geometry), and reproduces the sealed traces
 **12/12 byte-identical**. That is our LAYER 1 determinism contract receipted by
 a stranger — the doc-only-discipline existence proof for this repo. CI
 ([`ci.yml`](./.github/workflows/ci.yml)) runs the sabotage controls, the
-gate-pinned LAYER 0 suite, the 33/33 chain auditor, the 23-claim probe gate,
+gate-pinned LAYER 0 suite, the 34/34 chain auditor, the 26-claim probe gate,
 and the batched-call guard on every push.
 
 ## The audit tavern (r10–r14, priced)

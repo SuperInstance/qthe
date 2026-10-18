@@ -285,3 +285,46 @@ Workers (r16), Durable Objects (r16, SQLite class), Vectorize (r16
 sidecar + r17 experiment index), R2 (r16), Pages (r16), KV (r17), Cron
 Triggers (r17). All on the free tier; every claim measured live; the
 whole battery re-runnable via `bash cloudflare/live_checks.sh`.
+
+## Addendum 3 — ORCH-R19: ERRATUM 4 (the sidecar field namespace)
+
+The r19 health run found the C6 sidecar check failing where r17's retry
+law had sufficed. Two causes, one fix, both receipted:
+
+- **Observed**: Vectorize propagation exceeded the 5×8 s budget (the
+  values HAD converged two minutes later — the claim is convergence, and
+  the retry prices the wait; budget now 15×15 s).
+- **Latent (the real find)**: the sidecar's vector ids were
+  **field-agnostic** (`slot-N`). In a multi-field deployment every
+  field's `syncTwins` overwrote every other field's slots — the 5-minute
+  cron beat could deterministically clobber a livecheck's sidecar between
+  its tick and its query. A race no retry budget can fix; today it was
+  latency, but the collision sat beside it as a loaded gun.
+
+**The fix (worker build `r19-erratum4`, version
+`d362793a-016b-4f0d-88a7-f9b2c2e26c4b`):** vector ids namespaced per
+field (`${field}::slot-N`), metadata carries `field`, `GET /twins/:slot`
+accepts `?field=` to scope the lookup (same-slot vectors across fields
+all score 1.0 against the one-hot query, so the field's vector is
+SELECTED from the match set by metadata, not hoped for from the ranking);
+unscoped lookups prefer namespaced vectors during the transition. The 64
+legacy `slot-N` vectors were deleted post-deploy via the Vectorize REST
+`delete_by_ids` endpoint (mutation `56ca507c-e907-46f7-89c0-b149bda1b9a2`;
+note: the endpoint is `delete_by_ids` with underscores — the dashed
+variant 404s, and the v1 endpoint reports the api-version mismatch
+itself).
+
+**Post-fix battery (2026-10-18): ALL LIVE CHECKS PASS** — cross-DO
+determinism 753da5a1…, in-DO replay, field-scoped twin lookup exact
+({x:29, y:12, resonance:84}, converged attempt 1), R2 chain
+sha256-identical, Pages mirror live. The census (`GET /twins`) remains
+field-agnostic by design: it counts the 64 slots, whichever field's
+vector answers.
+
+The landing page (`cloudflare/assets/index.html`) was updated to the
+same standard: the sidecar bullet now separates the LIVE infrastructure
+from the r17 pricing death, ERRATA 1–4 are all listed, and the poke links
+use the field-scoped route. Ops law banked (the fifth): **a check that
+can fail two ways teaches you which one you have** — the retry-law fix
+(latency) and the namespace fix (collision) were both necessary; only the
+failing check made the second one visible.

@@ -50,7 +50,7 @@
 | 39 | Interactive REPL | DONE | `scripts/repl.mjs` (ORCH-B; 11 commands, save/load hash-verified) |
 | 40 | Falsification budget tracker | DONE | `docs/FALSIFICATION-BUDGET.md` + `scripts/falsification_budget.mjs` (7 nulls, 6 defects caught, 0 silent) |
 | 41 | Grid scaling, 64-slot fixed | DONE | E-Q16 family C: **locality holds to 256×256** at 10% Abstain; contention monotone 353→5874 |
-| 42 | Hierarchical wormholes | SPEC-DELIVERED | `docs/HIERARCHICAL-WORMHOLES.md` (two-level design, priced as the next claim — not built: current claims closed first, per the roadmap's own sequencing law) |
+| 42 | Hierarchical wormholes | DONE (investigation — DIES) | E-Q18 (ORCH-R18): the spec's own 8×8+8 design built as an F0-T-proven transcription and priced on the population axis E-Q17 redirected to — **C9 DIES with prejudice** (hier provFrac 11× worse than flat clean; the d&7 fold = cross-cargo aliasing); H2 escalation-free LIVES (8/8 delivery, 7==7 latency); survivor design 8×64+8 registered, untriggered |
 | 43 | Public demo site/notebook | DONE | `public-demo.html` (33 KB single file, zero external refs) |
 | 44 | External-facing technical note | DONE | `docs/TECHNICAL-NOTE.md` (ORCH-D; zero fleet context) |
 | 45 | Adoption kit | DONE | `docs/ADOPTION-KIT.md` (3 workloads, metrics, blockers — LICENSE is the one blocker) |
