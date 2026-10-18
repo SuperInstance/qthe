@@ -141,15 +141,18 @@ fn run_substrate_case(
     };
 
     for t in 1..=t_ticks {
+        // The event TICK is set inside the kernel as (ticks+1) — the 1-based
+        // loop index `t` the fixtures record; compared below (stricter than
+        // the C runner by exactly this one field). The debug assertion pins
+        // the kernel-side assignment on the events of THIS tick only (a tick
+        // that emits nothing leaves older events at the vec tail).
+        let before = events.len();
         if is_fixed {
             qthe::tick_fixed(&mut s, wormholes, sigma_q.unwrap_or(0), &mut events);
         } else {
             qthe::tick(&mut s, wormholes, sigma_d, &mut events);
         }
-        // The event TICK is set inside the kernel as (ticks+1) — the 1-based
-        // loop index `t` the fixtures record; compared below (stricter than
-        // the C runner by exactly this one field).
-        debug_assert!(events.last().map_or(true, |e| e.tick == t));
+        debug_assert!(events[before..].iter().all(|e| e.tick == t));
     }
 
     let mut ok = true;

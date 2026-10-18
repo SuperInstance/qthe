@@ -81,7 +81,8 @@ const rows = [
     unit_tests: { passed: unitPassed, failed: unitFailed } },
   { kind: 'result.rs', passed, failed, summary,
     negative_controls: 'pre-seal, on temp fixture copies: init-plane byte flip (c12) DETECTED exit 1; event term-bit flip (c1 event[0]) DETECTED exit 1; event-count tamper (f1 1842->1841) DETECTED exit 1 — the comparison is live, not vacuous',
-    stricter_than_c_lane_by: 'the event TICK field is compared too (the fixtures record it; the C runner deliberately skipped it)' },
+    stricter_than_c_lane_by: 'the event TICK field is compared too (the fixtures record it; the C runner deliberately skipped it)',
+    defects_found_and_fixed: 'run 1 (links 2-6): the conformance runner carried a debug-only assertion that read events.last() AFTER a possibly eventless tick — a false positive that panicked the DEBUG profile mid-battery (c9) while release (which skips debug_assertions) passed 19/19. Found by the port-profile cross-check (debug vs release outputs must be byte-identical), fixed to slice events[before..] of the CURRENT tick, re-verified: debug exit 0, release exit 0, outputs byte-identical. No kernel-side defect; the sealed release result of run 1 was and remains valid (its sha is unchanged by the fix)' },
   { kind: 'determinism.rs', method: 'two independent conformance runs in this seal, outputs compared as strings',
     byte_identical: true, output_sha256: outSha },
   { kind: 'verdict.rs', verdict: passed > 0 && failed === 0
