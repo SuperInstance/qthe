@@ -59,6 +59,15 @@ cmp -s /tmp/qthe_live_e_q1.jsonl receipts/e_q1_chain.jsonl
 CMP=$?
 [ "$RSHA" = "$LSHA" ] && [ "$CMP" = "0" ]; chk $? "R2 e_q1_chain sha256-identical ($LSHA)"
 
+# ORCH-R23 (T14-d): the r22/r23 experiment chains join the C7 mirror.
+for CH in e_q20b e_q20c; do
+  RSHA2=$(curl -sD - "$W/receipt/receipts/${CH}_chain.jsonl" -o /tmp/qthe_live_${CH}.jsonl | grep -i x-qthe-sha256 | tr -d '\r' | awk '{print $2}')
+  LSHA2=$(sha256sum receipts/${CH}_chain.jsonl | awk '{print $1}')
+  cmp -s /tmp/qthe_live_${CH}.jsonl receipts/${CH}_chain.jsonl
+  CMP2=$?
+  [ "$RSHA2" = "$LSHA2" ] && [ "$CMP2" = "0" ]; chk $? "R2 ${CH}_chain sha256-identical ($LSHA2)"
+done
+
 say "== C8 Pages mirror (P6) =="
 CODE=$(curl -sL -o /tmp/qthe_pages.html -w "%{http_code}" "$P/")
 [ "$CODE" = "200" ] && grep -q "qthe on Cloudflare" /tmp/qthe_pages.html; chk $? "Pages landing ($P, HTTP $CODE)"
