@@ -38,6 +38,14 @@ on:
         description: 'registration file the trial attacks (repo-relative)'
         required: false
         default: 'experiments/pre_registration_e_q20b.json'
+      seat_filter:
+        description: 'run only this seat in the harmony battery (empty = both)'
+        required: false
+        default: ''
+      suffix:
+        description: 'amendment suffix for harmony call_ids (e.g. v2)'
+        required: false
+        default: ''
 
 permissions:
   contents: read
@@ -79,7 +87,8 @@ jobs:
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           GROQ_ROUND: ${{ inputs.round }}
-        run: node situations/groq_seats/harmony_battery.mjs
+          GROQ_BATTERY_SUFFIX: ${{ inputs.suffix }}
+        run: node situations/groq_seats/harmony_battery.mjs "${{ inputs.seat_filter }}"
 
       - name: "seat trial (the new-member law — design attack)"
         if: ${{ inputs.lane == 'trial' || inputs.lane == 'both' }}

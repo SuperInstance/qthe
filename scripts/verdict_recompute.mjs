@@ -871,6 +871,36 @@ const CLAIMS = [
       return { recomputed: `F0 40/40 byte-identical, F4/F5 held, S ${d.floors.F2_S} > 2 (violates_classical_3sigma true, caveat receipted); the AM5 raw-budget law verifies from the root receipt (49152 raw -> 1136 Toeplitz bits at epsilon 2^-64 = 142 B, expanded 40960); AM6 journal replay; moth 10/10 cap held; chain agrees` };
     },
   },
+  {
+    id: 'C11-T* annotation — E-Q20b the burn-in ladder (T* > 512, the metastable plateau)',
+    source: 'experiments/outputs/e_q20b_results.json',
+    cite: 'receipts/e_q20b_chain.jsonl · verdict.EQ20b · experiments/pre_registration_e_q20b.json (sha-frozen) · situations/groq_seats/seat_trial_r22.jsonl (the 12-attack consult, both Groq seats)',
+    expected: "F0' gate byte-exact vs the sealed E-Q20 values (30/30 hashes, 32/32 floor values, 64/64 cross-arm medians); H1b DIES T* > 512 (the honest null); H2b DIES with re-excitations [16,32,64]; A3S sticky crossing 512; ZERO moth credits; A3 plateau ~1.16-1.20x floor at t=384-512; the dip-then-re-excite structure (t=8 sub-floor, t=16 re-excited)",
+    run() {
+      const d = readJson(this.source);
+      if (d.floors.F0p !== true) throw new Error("F0' gate did not pass");
+      const g = d.floors.gate;
+      if (g.hashOk !== 30 || g.hashChecks !== 30) throw new Error('hash gate drifted');
+      if (g.floorOk !== 32 || g.floorChecks !== 32) throw new Error('floor gate drifted');
+      if (g.crossOk !== 64 || g.crossChecks !== 64) throw new Error('cross gate drifted');
+      if (d.hypotheses.H1b !== false || d.hypotheses.Tstar !== null) throw new Error('H1b must be the honest null (T* > 512)');
+      if (d.hypotheses.H2b !== false) throw new Error('H2b must be false (re-excitations after first touch)');
+      if (d.hypotheses.TstarS !== 512) throw new Error('A3S sticky crossing drifted');
+      if (d.task.mothCredits !== 0) throw new Error('the zero-credit law drifted');
+      for (const t of [384, 448, 512]) {
+        const a3 = d.crossArm.A3.moransI8[String(t)].median, fl = d.floorTable.moransI8[String(t)];
+        if (!(a3 > fl)) throw new Error(`A3 must sit above the floor at t=${t} (the plateau)`);
+        if (!(a3 < fl * 1.5)) throw new Error(`A3 plateau runaway at t=${t} (expected ~1.2x floor)`);
+      }
+      const d8 = d.crossArm.A3.moransI8['8'].median, f8 = d.floorTable.moransI8['8'];
+      const d16 = d.crossArm.A3.moransI8['16'].median;
+      if (!(d8 <= f8)) throw new Error('the t=8 dip must be sub-floor');
+      if (!(d16 > f8 * 1.5)) throw new Error('the t=16 re-excitation must clear 1.5x the t=8 floor');
+      const row = lastChainRow('receipts/e_q20b_chain.jsonl', (r) => r.kind === 'verdict.EQ20b', 'verdict.EQ20b');
+      if (row.H1b !== false || row.F0p !== true) throw new Error('chain flags disagree');
+      return { recomputed: "F0' byte-exact (30/30+32/32+64/64); H1b DIES T*>512 (the honest null, P5 HIT); H2b DIES re-excitations [16,32,64]; the dip-then-re-excite structure verifies (t=8 sub-floor 0.00298 vs 0.01342, t=16 re-excited 0.0482); the plateau holds above-floor at t=384-512; A3S crossing 512; zero credits; chain agrees" };
+    },
+  },
 ];
 
 // ── COVERAGE (ORCH-R11: the arena-r11 consensus finding, all four seats) ──
@@ -889,7 +919,7 @@ const EXCLUDED = [
 ];
 
 function claimGate(claim) {
-  const m = claim.source.match(/e_q(\d+)_results\.json/);
+  const m = claim.source.match(/e_q(\d+[a-z]?)_results\.json/); // r22: the b-suffix ladder (e_q20b) maps to its own registered gate
   if (m) return `e_q${m[1]}`;
   if (claim.source.startsWith('fixedpoint/')) return 'fixedpoint';
   return null;

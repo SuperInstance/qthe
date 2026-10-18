@@ -67,24 +67,42 @@ if probe_status == 200 and isinstance(probe_body, dict):
         model_ids = [n for n in names if n][:2] or model_ids
     print(f"[typesafe-probe] served models: {names}")
 
-# ── the battery ──────────────────────────────────────────────────────────────
+# ── the battery ── v2: the criteria keys ARE the choices (the r12 working
+# shape: {option_id: description}); v1 used {statement, choices} and the
+# models echoed the key names — 2 rows sealed as the shape-erratum, spend
+# counted, no re-laundering.
+CRITERIA = {
+    "TRUE": "The experiment record in the briefing evidences the statement: the named values, trajectory, gate results, or spend match what the record says.",
+    "FALSE": "The record contradicts the statement: an inverted trajectory, a wrong value, a misattributed spend, or a gate result the record does not own.",
+    "UNCERTAIN": "The briefing cannot settle the statement either way.",
+}
 questions = {
     sid: {
         "type": "choice",
         "instructions": (
-            "From the briefing's experiment record, is this statement TRUE, FALSE, or UNCERTAIN? "
+            f"Statement [{sid}]: {statements[sid]}  "
+            "Is this statement TRUE, FALSE, or UNCERTAIN per the experiment record in the briefing? "
             "Judge strictly from the record; when the record settles it, do not answer UNCERTAIN."
         ),
-        "criteria": {
-            "statement": statements[sid],
-            "choices": ["TRUE", "FALSE", "UNCERTAIN"],
-        },
+        "criteria": CRITERIA,
     }
     for sid in ids
 }
 
 rows_path = HERE / f"typesafe_rows_{ROUND}.jsonl"
+sealed_ids = set()
+if rows_path.exists():
+    for line in rows_path.read_text().splitlines():
+        if line.strip():
+            try:
+                sealed_ids.add(json.loads(line)["call_id"])
+            except json.JSONDecodeError:
+                pass  # a torn tail line is skipped, never trusted
 for model in model_ids:
+    call_id = f"{ROUND}-harmony-typesafe-{model}-v2"
+    if call_id in sealed_ids:
+        print(f"[typesafe] {model}: call_id {call_id} already sealed — resuming past it (the tavern's resume law; no re-spend)")
+        continue
     payload = {"state": briefing, "model": model, "questions": questions}
     t0 = time.time()
     try:
@@ -94,7 +112,7 @@ for model in model_ids:
         body = {"error": str(e)}
     elapsed = int((time.time() - t0) * 1000)
     row = {
-        "round": ROUND, "call_id": f"{ROUND}-harmony-typesafe-{model}", "seat": f"typesafe/{model}",
+        "round": ROUND, "call_id": call_id, "seat": f"typesafe/{model}",
         "task": "harmony-battery",
         "model_requested": model, "model_served": body.get("model"),
         "briefing_sha256": sha(briefing), "question_map_sha256": sha(json.dumps(questions, sort_keys=True)),
@@ -106,7 +124,7 @@ for model in model_ids:
         f.write(json.dumps(row) + "\n")
     if status == 200:
         ans = body.get("answers", {})
-        print(f"[typesafe] {model} -> served {body.get('model')} {elapsed_ms}ms: " +
+        print(f"[typesafe] {model} -> served {body.get('model')} {elapsed}ms: " +
               " ".join(f"{sid}={ans.get(sid, {}).get('choice')}" for sid in ids))
     else:
         print(f"[typesafe] {model} -> HTTP {status} (row sealed with error body)")
