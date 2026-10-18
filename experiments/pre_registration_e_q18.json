@@ -1,0 +1,68 @@
+{
+  "law": "REGISTRATION of E-Q18 — hierarchical wormholes priced on the POPULATION axis at fixed grid (ORCH-R18 lane T9-a). Committed BEFORE ANY RUN (pricing-first); floors, arms, metrics and verdict rules frozen; honest null = crown jewel. qthe.mjs is NEVER touched: the flat arm runs the real kernel (the sealed baseline); the hierarchical arm runs a harness-side transcription of the rule table whose flat configuration is proven byte-identical to the kernel first (F0-T, the E-Q13 F1 precedent).",
+  "task_id": "ORCH-R18/T9-a",
+  "agent": "qthe orchestrator (Z.ai), erised fleet line",
+  "wave": "ORCH-R18",
+  "repo": "SuperInstance/qthe",
+  "repo_at_registration": "a16f37b",
+  "provenance_of_the_question": {
+    "eq17_verdict_redirect_verbatim": "experiments/outputs/e_q17_verdict.md: 'H1 (region tags restore WHO under congestion) remains unbuilt and untriggered by scale; if it is ever built, the registration skeleton's paired arms should vary POPULATION at fixed grid, where the load actually lives.'",
+    "eq17_sealed_ground": "E-Q17 (receipts/e_q17_chain.jsonl, 13 links, tip 0d9feae2): provFrac clean medians 0.0725/0.1043/0.1263 at 64/128/256 — WHO-loss is ~93% at the SMALLEST scale with only 16 writers; pf = 1.0 under 256 polluters at every scale. The flat table's provenance defect is population-borne, present at baseline.",
+    "r17_c6_degeneracy": "ORCH-R17 C6 run-1 ground-truth finding: the 64-slot table saturates after ONE tick at ~256 random Abstain writers (seeds 7000-7002 measured; all pairwise occupied-slot Jaccards 1.0). Kept as a kernel finding; the same axis E-Q17 redirected to.",
+    "spec": "docs/HIERARCHICAL-WORMHOLES.md (ORCH-42): '8 regional tables of 8 slots each, plus a global table of 8 region-buckets. A cell's address = (region, slot): writes go local-first; a reader misses locally then escalates.' H1/H2/H3 registered there, priced here."
+  },
+  "design_frozen": {
+    "grid": "64x64 FIXED (the population axis is the ladder; grid is the control)",
+    "task": "E-Q14-verbatim twin-delivery task, exactly E-Q17's runOnce planting order: plantTwinPairs(K=8, dMin=8, dMax=15, minPairSep=24, minCrossSep=8) then plantWeather(awayFromPairs=10, mutual=4) then polluters (E-Q14-verbatim: >=2 toroidal-Chebyshev from every pair member, unique positions, seeded d assignment from the pair d values), theta_del=8, T=200, sigma = kernel default log2(3), seeds 77001..77010 (10 trials per arm x level — the E-Q17 seeds, required for F-CAL).",
+    "ladder": "nPoll in {0, 16, 64, 256} => writer populations {16, 32, 80, 272}. The 0 and 256 cells of the flat arm must reproduce E-Q17's sealed 64x64 clean and density rows BIT-EXACTLY (F-CAL).",
+    "flat_arm": "the REAL KERNEL tick with an instrumented WormholeTable (the E-Q14/E-Q17 instrumentation verbatim: read() logs occupants; write path untouched). Baseline = the sealed record.",
+    "hier_arm": {
+      "transcription": "harness-side tickH: Moore-8 gather + nextD imported from the real kernel + tau<<6 packing, IDENTICAL loop structure to qthe.mjs tick(); the ONLY difference is the Abstain branch calls the pluggable table interface read(x, y, d) / write(x, y, d, acc) with reader coordinates explicit.",
+      "region_map": "region(x, y) = ((y >> 4) << 1) | (x >> 5) on 64x64 => 8 regions of 32x16. Compile-time, pure function of coordinates.",
+      "local_tables": "8 regions x 8 slots, s = d & 7. Entry {x, y, resonance} LWW, live row-major reads (the S3 discipline). Occupancy cap 64 total (8x8).",
+      "global_table": "8 buckets, b = d >> 3. Entry = 8-bit REGION PRESENCE MASK (monotone OR of writer regions for that cargo class; never cleared). Occupancy cap 8.",
+      "write_path": "per Abstain cell per tick, in the row-major pass: (1) LOCAL[reg][d&7] = (x, y, |acc|+1); (2) GLOBAL[d>>3] |= (1 << reg). Local-first: full address local, region presence global.",
+      "read_path": "per Abstain cell per tick: (1) h = LOCAL[reg][d&7]; if foreign hit => live twin event (level=local, writerRegion=own region by construction). (2) else set pending-escalation flag on the cell. Escalation resolves at the START of the NEXT tick, in row-major cell order, reading the tick-stale tables: scan regions r = 0..7 in FIXED compile-time order, skip own region, require GLOBAL mask bit r, read LOCAL[r][d&7]; FIRST foreign hit wins => escalated twin event at t+1 (level=escalated, writerRegion=r), its term applies as this tick's twin pressure IF no live local hit fires this tick (live hit wins; one-shot; a fresh miss re-arms). This is the '+1 tick worst case' of the spec's H2, by construction.",
+      "events": "same {kind:'twin', x, y, slot, resonance, term} fields as the kernel PLUS {level: 'local'|'escalated', writerRegion: r|null} — the hierarchical provenance tag. The flat arm's events carry writerRegion: null (flat has no tags: the honest asymmetry H1 prices)."
+    },
+    "occupancy_accounting": "flat: table.occupiedCount() <= 64 (kernel invariant). hier: local occupied slots <= 64 AND global occupied buckets <= 8, both receipted per checkpoint.",
+    "f0t_transcription_control": "tickH configured FLAT (single region 0 for every cell, 64 local slots, s = d NOT d&7, no escalation, live row-major LWW) must be byte-identical to the real kernel on the clean arm's 10 seeds: checkpoint plane hashes [0,50,100,150,200] AND per-tick twin event streams (x, y, slot, resonance, term), 10/10 seeds, else VOID. The E-Q13 F1 precedent applied to the wormhole branch.",
+    "f1_control_cleanliness": "a no-Abstain substrate (all cells tau in {0,1,2}): real kernel wormholes OFF vs tickH hier ON => byte-identical checkpoint planes (the table logic never fires), 10/10 seeds.",
+    "f0_determinism": "every (arm, nPoll, seed) runs TWICE from fresh construction => byte-identical checkpoint plane-hash sequences, 80/80 runs, else VOID.",
+    "f_cal_calibration": "flat arm 64x64 nPoll=0 and nPoll=256 reproduce E-Q17's sealed rows BIT-EXACTLY: per-seed pollutionFraction strings, pairEvents (31440 clean / 31971 at 256), partnerEvents, pollutedEvents, delivered 80/80 — asserted at runtime against experiments/outputs/e_q17_results.json (the sealed record), else VOID."
+  },
+  "metrics": {
+    "pf_definition": "pf = pollutionFraction = pollutedEvents / pairEvents, E-Q14/E-Q17's own field: pair-member twin events matched to the occupant of the address they read (flat: verbatim E-Q14 sequential log-order recovery; hier: the transcription records the occupant directly in the event — occupant identity, not just region, so the SAME partner-vs-polluted partition applies). occupant == partner => partnerEvents; everything else INCLUDING null occupant => pollutedEvents.",
+    "provFrac_definition": "provFrac = partnerEvents / pairEvents per run (the provenance-CORRECT fraction). Reported beside pf everywhere (interpretation-proof record).",
+    "instrument_asymmetry_receipt": "flat pf/provFrac ride the SEALED E-Q14 log-matching recovery (F-CAL requires bit-exact continuity with E-Q17); hier events carry the writer directly (the design's structural gain — the honest asymmetry H1 prices). To close the instrument gap a SECONDARY flat metric is pre-registered: flatProvDirect = direct-causation attribution — reads fire one per Abstain cell in row-major order, so the k-th read of tick t belongs to the k-th Abstain cell of the pre-tick snapshot; an event's (x,y) identifies its reader, hence its exact causing read and occupant. flatProvDirect is reported beside the sealed pf everywhere; H1's verdict rule is checked against BOTH (primary: sealed instrument; secondary: direct) and any divergence between them is itself a receipted finding about the sealed instrument.",
+    "delivery": "the E-Q1/E-Q14 meter: imag[x,y] += term over the event stream; a member DELIVERS at first tick meter >= 8; a pair delivers at max of members' first-delivery ticks. Reported: delivered/8 per run, per-pair delivery ticks, median first-pair-delivery tick.",
+    "contention": "writesPerOccupiedSlot = totalWrites / finalOccupiedSlots (E-Q16 family-C semantics). flat: one number. hier: per-table (local: localWrites/localOccupied; global: globalWrites/globalOccupied).",
+    "escalation_telemetry": "hier only: escalatedEvents / twinEvents (the escalation fraction), and writerRegionCorrect = partner events whose event.writerRegion equals the partner's ACTUAL region (by construction 1.0 — receipted as a construction invariant, a transcription bug detector).",
+    "h3_probe": "parking-lot probe (no substrate, pure table API, 1 tick): N in {16, 64, 272} writers at ONE shared cargo d (the party-line condition), writers placed one per region round-robin then random within region, seeded: contention per occupied address, flat (N writes / 1 slot) vs hier local (N/8 writes per regional slot). This isolates the ADDRESSING gain from dynamics."
+  },
+  "hypotheses_and_verdict_rules": {
+    "H1_provenance": "LIVES iff median(hier provFrac) >= median(flat provFrac) + 0.10 at >= 2 of the 4 ladder levels AND median(hier provFrac) >= median(flat provFrac) - 0.02 at ALL 4 levels (no regime where hierarchy is meaningfully worse). DIES otherwise with mechanism autopsy. Registered mechanism candidates for a death: (a) d-drift convoy blurs d&7 across pairs inside every regional table at 8x address coarseness, re-polluting locally; (b) the global presence mask is itself a party line at one remove (first-foreign-region-in-fixed-order rarely the partner's region).",
+    "H2_latency": "LIVES iff hier delivered median >= 4 of 8 AND hier clean-arm median first-pair-delivery tick <= flat clean-arm median + 2, at the clean level. DIES otherwise. HONEST NULL EXPECTED (the spec itself says so; escalation adds +1 tick and the mask must converge to a useful region first).",
+    "H3_contention": "TWO pre-registered readings. (a) parking-lot probe: hier local per-address contention <= flat / 4 (i.e. at least half the predicted 8x = linear-in-region-count gain; tolerance for round-robin imbalance). (b) under-drift (the main arms, where d evolves): PREDICTED NULL — the d&7 fold makes each regional slot 8x coarser, cancelling the 8x region split; verdict: no significant change (|hier - flat| within 2x) expected, and EITHER outcome is a priced result receipted against the drift-convoy mechanism.",
+    "prediction_receipt": "Pre-run point predictions (the P1 discipline): flat provFrac clean ~0.07 (E-Q17 sealed); hier provFrac clean in [0.07, 0.30] (uncertain — the escalation scan is pair-specific pre-drift, the drift blur is 8x less dense per regional table); hier clean escalatedFraction > 0.5 (most twins are cross-region => most events escalate); flat 256 provFrac 0 (E-Q17 sealed); hier 256 provFrac in [0, 0.10]."
+  },
+  "floors_frozen": {
+    "EQ18_F0": "determinism 2x fresh construction, byte-identical checkpoints, 80/80 runs, else VOID.",
+    "EQ18_F0T": "transcription-flat byte-identical to the real kernel (planes + per-tick event streams), 10/10 seeds, else VOID.",
+    "EQ18_F1": "no-Abstain control: kernel OFF vs tickH hier byte-identical, 10/10 seeds, else VOID.",
+    "EQ18_FCAL": "flat 64x64 nPoll=0 and nPoll=256 reproduce E-Q17's sealed per-seed pf strings and event counts bit-exactly, else VOID.",
+    "EQ18_delivery_floor": "delivery floor is REPORTED not gated (H2's own verdict rule carries it): a delivery collapse at any level is an escalation row, not a void — the spec expects the hierarchical arm to be delivery-weaker, and that is a priced result.",
+    "EQ18_occupancy": "flat <= 64; hier local <= 64 and global <= 8 at every checkpoint, else kernel/table defect finding, LOUD."
+  },
+  "consult": {
+    "planned": "one Seed-2.0-mini ATTACK-briefed call on this registration (the E-Q17 discipline: attacks on the design, dispositions receipted as pre-run amendments, AS-SAID, sealed to situations/e_q18_design_attack.jsonl). Budget $0.01.",
+    "law": "no amendment after the first data row exists (the pricing-first law); amendments are append-only and pre-run only."
+  },
+  "endpoints": [
+    "per (arm, nPoll, seed): pf, provFrac, pairEvents, partnerEvents, pollutedEvents, delivered, pairDelivers, first-delivery median, occupancy (per table), totalWrites (per table), writesPerOccupiedSlot (per table), escalatedFraction + writerRegionCorrect (hier), abstains0, determinism rerun ok",
+    "per (arm, nPoll): medians + per-seed lists (the corpus convention: numeric sort, UPPER middle index floor(n/2))",
+    "F0-T, F1, F-CAL, F0 receipts as boolean rows with counts",
+    "H3 parking-lot probe table (flat vs hier local, per N)",
+    "verdict block: H1/H2/H3(a)/(b) each LIVES/DIES with the frozen rule applied verbatim"
+  ]
+}
