@@ -43,10 +43,10 @@
   <tr><td>twin census</td><td>one-hot sweep over all 64 slots</td><td class="ok">64/64 slots synced</td></tr>
   <tr><td>receipt integrity (C7)</td><td>fetch <code>e_q1_chain.jsonl</code> and <code>e_q17_chain.jsonl</code> from R2; sha256 vs local sealed file</td><td class="ok">byte-identical, sha256 match</td></tr>
   <tr><td>docket arbitration determinism (r20)</td><td>two independently created dockets, seed 1234, 24 tasks incl. 4 flippers, 40 epochs — the E-Q19 tiled law, live</td><td class="ok">identical arbitration hash <span class="mono">77d865d0…56c31</span>; 24/24 served, per-source 6/6/6/6</td></tr>
-</ul>
+</table>
 
 <h2>Errata found by the checks themselves</h2>
-<p>Four, all found live before any claim was written (the falsifier law, pointed at my own deployment):</p>
+<p>Four, all found live before any claim was written (the falsifier law, pointed at my own deployment) — plus one found by r20's own sweep:</p>
 <ul>
   <li><b>ERRATUM 1</b> — the first deploy's state hash included the per-tick twin <i>events</i>, which are real telemetry but do not survive a save/load round-trip; the hash was not stable. Fixed: the hash basis is the persisted state only (cells, table, ticks).</li>
   <li><b>ERRATUM 2</b> — the receipt route matched only single-segment keys, so <code>receipts/e_q1_chain.jsonl</code> 404'd. Fixed: all remaining segments join into the key.</li>
