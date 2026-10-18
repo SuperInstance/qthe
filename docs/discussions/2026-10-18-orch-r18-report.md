@@ -123,3 +123,28 @@ live_checks.sh not re-run this round (no infrastructure change; the r17
 regression gate stands — flag for r19 if any deploy-touching change
 lands). The next pricing targets: the fleet's asks (quiet this round) or
 the untested 8×64+8 survivor if a consumer materializes.
+
+## Post-close addendum — the registration-window law (CI receipt)
+
+CI on the registration commit `3be835e` FAILED (negctl pre-flight:
+"baseline is NOT GREEN for verify_all_chains") and on the close-out
+`2446ed5` and follow-up `339994b` is GREEN. The window is the finding:
+
+- **What happened:** the registration commit added
+  `receipts/e_q18_chain.jsonl` to `chain_registry.mjs` (required before
+  the run, because the seal-time law makes appendAndVerify refuse
+  unregistered chains) — but the chain FILE did not exist until the run
+  sealed it in `2446ed5`. Between the two commits the auditor pointed at
+  a missing file: red by design, loud, nothing silently broken.
+- **The law (amending our own process):** the R11 seal-time law's
+  verbatim form — "register the chain in the SAME commit that seals it" —
+  is the correct form; registering BEFORE the run to satisfy the local
+  seal-time check trades a local refusal for a CI window. The correct
+  round pattern: commit registration + runner WITHOUT the registry entry;
+  run locally; the seal refuses loudly on the unregistered chain; then
+  commit registry entry + chain + outputs together (one commit, the R11
+  law verbatim). The refusal is one wasted local run, not a red CI
+  window — and this round's `$0` compute makes the trade cheap.
+
+CI receipts: run 39103190023 (3be835e, failure — the window) ·
+runs on 2446ed5 and 339994b (success — the sealed state).
