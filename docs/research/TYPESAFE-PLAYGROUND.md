@@ -128,3 +128,67 @@ L2 = practical/economics claim (priced from receipts).
 ## Pending (lane fragments, not yet promoted)
 
 (none yet — lanes append through the orchestrator)
+
+## Entries (ORCH-R13, orchestrator-verified)
+
+- [L1] 2026-10-18 · "Batching adds no noise" REPRODUCES at the tavern's
+  shapes: 0/30 sampled questions batch-hostile (rule |mean_B − mean_S| >
+  2·std_S, min-noise floor 0.02 never fired); zero label flips in either
+  arm; measured cost ratio **12.36×** at document-dominated state
+  (11.45–12.86× per guest), 7.41× compact; latency ratio 17.7× · receipt:
+  situations/batching_falsifier/ (213 calls, $0.0221; rows_arm_b/s/docprobe)
+  · verified-by: orchestrator (batch-hostile re-derived 0/30 from raw rows;
+  top mover seed20mini F4__class 0.030 vs 0.043 floor; spend re-derived to
+  the digit).
+- [L1] 2026-10-18 · The question map is not free: ~147 marginal input
+  tokens per batched question (class instructions embed each finding's
+  text) cap the batching ratio below naive N× — document-dominated lands
+  at 0.63× of N, compact at 0.47× of N. The ratio tracks
+  state-chars-per-question, not a constant; budget projections from a
+  single tokenizer rate misprice by >2× (prose ~0.31 tok/char vs findings
+  JSON ~0.73) · receipt: batching_falsifier/metrics.json + verdict.md ·
+  verified-by: orchestrator (token counts re-read from sealed rows).
+- [L1] 2026-10-18 · Per-field bad-true noul batteries are highly repeatable
+  briefing-side: 630 (item,field) triples × 3 repeats, mean std 0.0112,
+  max 0.070, zero threshold-crossing spans — the §6.2 review band would be
+  nearly empty on this traffic · receipt: situations/sde_cascade/
+  rows_battery.jsonl (45 calls, $0.0121) · verified-by: orchestrator
+  (re-derived in the per-field analysis).
+- [L1] 2026-10-18 · Cascade economics are expensive-tier-price-relative:
+  against a $0.00034/finding earned loop, a 7-field battery ($0.0121/90
+  items) is itself 40% of the all-expensive budget; the cookbook's
+  up-and-left frontier (drawn at $0.10/extraction prices) collapses to a
+  weak trade (−10.4 fabrication-recall points for 29% saving at FIRE_T 0.7;
+  quality parity at 0.5 fires the no-separation clause at 53.5%) ·
+  receipt: sde_cascade/cascade_computation.json + verdict.md · verified-by:
+  orchestrator (sweep re-computed from sealed rows).
+- [L1] 2026-10-18 · The claim-density confound: all 13 CLEAN items that
+  fire a bad-true battery at 0.7 are dense factual claims (0.72–0.91);
+  ZERO prose audit findings fire — bad-true batteries read specificity as
+  risk; calibrate per text-shape before reuse · receipt:
+  sde_cascade/per_item_max_field · verified-by: orchestrator.
+- [L1] 2026-10-18 · Field-loading on fabrication traffic: `incomplete`
+  carries the signal (8/14 BAD items), `hallucinated` under-fires (3/14) —
+  invented-interface fabrications present as missing-qualifier risk to a
+  briefing-side battery; the artifact check belongs to code-side
+  candidate-set matching (§4.3), where the earned loop already puts it ·
+  receipt: sde_cascade per-field analysis (firing field per BAD item) ·
+  verified-by: orchestrator.
+- [L1] 2026-10-18 · DeepInfra thinking-model telemetry:
+  thinkingmachines/Inkling-Small reports `reasoning_tokens` inside
+  usage.completion_tokens_details-style fields and REASONING CONSUMES THE
+  max_tokens budget — a 250-word opinion needs 8,000 max_tokens (2,816
+  reasoning + 337 visible); finish=length with zero visible content is the
+  failure signature · receipt: situations/new_members/rows_opinion.jsonl
+  (both calls sealed, amendment law applied) · verified-by: orchestrator
+  (usage fields re-read from both rows).
+- [L1] 2026-10-18 · Entity-alignment Score vs mechanical keys on
+  alias-free corpora: when the ground truth's own key is the path, a
+  path-equality rule's 100% is tautological (29/29 same-entity pairs
+  byte-identical paths, zero alias cases) — a battery cannot demonstrate
+  semantic value on a corpus with no semantic-vs-path divergence; the
+  honest basis for code-only is the wrong-merge clause on
+  adjudication-grounded pairs (3/10, one at confidence 0.94) · receipt:
+  situations/entity_alignment/ pairs + the append-only correction in its
+  verdict.md (origin: Inkling-Small day-one attack, orchestrator-upheld)
+  · verified-by: orchestrator (alias census re-derived).

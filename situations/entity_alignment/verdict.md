@@ -163,3 +163,51 @@ same-subject vs same-issue — i.e., move one more field from the model to
 code, per the §0 law. The three-level shape itself is sound (2 correct
 curator deflections, zero wrong splits anywhere in 73 pairs); the failure
 is asking it to invent the subject key on the fly.
+
+---
+
+## APPEND-ONLY CORRECTION (ORCH-R13, new-member attack verified) — the ABV clause's reasoning, not its verdict
+
+> Origin: Inkling-Small (thinkingmachines/Inkling-Small), day-one opinion
+> probe, call r13-opinion-inkling-small-am1 (the amended call; the first
+> attempt exhausted its 2000-token budget on reasoning, zero visible
+> content — amendment law applied at 8000). The attack: "the sealed registry
+> reconciliation almost certainly used path-equality as its matching key...
+> a rule that clones that key scores 100% on the replay... tautological,
+> not predictive." Orchestrator verification: **UPHELD as to part 1's
+> reasoning.**
+
+Re-derived from pairs_part1.json: of the 43 pairs, **29 same-entity pairs
+carry byte-identical paths and ZERO same-entity pairs carry different
+paths** (no alias case exists anywhere in the corpus); the 14
+different-entity pairs carry different paths. Consequence:
+
+1. The verdict line "mechanical path-equality scores 43/43 = 100% and
+   decides the one Score deflection instantly" is TRUE but its evidentiary
+   weight was mis-stated: on this corpus the ABV comparison is
+   **tautological for same-entity pairs** (the registry's own key is the
+   path; the replay pairs inherit it) and trivial for different-entity
+   pairs. Part 1 contains no case where semantic identity diverges from
+   path identity, so part 1 CANNOT test the battery's semantic-alignment
+   value at all. The honest part-1 read: the battery matched a
+   path-tautology 42/43 times with one curator deflection — consistent
+   with, but not discriminative of, semantic skill.
+2. The VERDICT ITSELF (NOT-YET, keep it code-only) SURVIVES on the
+   part-2 clause, which Inkling's circularity argument does not reach:
+   the 3/10 wrong merges on known-different cross-seat pairs are grounded
+   in the round-time adjudication's subject mapping (orchestrator
+   repo-verification, not a path key), and the expensive-mistake direction
+   (one merge at confidence 0.94) is the registered fail condition.
+3. Inkling's stronger claim — "the 3 wrong merges are likely true
+   positives... the registry's known-different labels are artifacts of its
+   own matching failure" — is NOT upheld for part 2 (wrong registry), but
+   its WEAK form is already receipted in this verdict's own caveats: all
+   three merges sit on same-experiment cluster boundaries the pre-run
+   ground-truth receipts flagged as judgment calls. The re-registration
+   pointer (code-side SUBJECT key) is exactly the response to that
+   ambiguity, and it stands.
+
+Net change: verdict unchanged; the ABV clause's phrasing is corrected from
+"decides instantly at $0" to "restates the ground truth's own key on a
+corpus with zero alias cases." Filed append-only per the erratum law; the
+sealed rows and the original verdict text above stand unedited.

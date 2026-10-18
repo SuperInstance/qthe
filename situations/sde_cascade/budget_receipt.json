@@ -1,0 +1,13 @@
+{
+ "calls": 45,
+ "spend_usd": 0.012118,
+ "ceiling": 0.05,
+ "tokens": {
+  "in": 288516,
+  "out": 51081
+ },
+ "models": [
+  "jev-1.13.0"
+ ],
+ "errors": 0
+}

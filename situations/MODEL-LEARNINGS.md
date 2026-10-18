@@ -102,3 +102,35 @@
     LICENSE landed in the R11 fix batch). Standing rounds audit the tree
     they ran on; the artifact carries the caveat so nobody reads drift as
     a hallucination charge.
+
+## r13: new members + the economics round (ORCH-R13)
+
+13. **Two new members seated (the founder's r13 ask, both verified):**
+    **NousResearch/Hermes-3-Llama-3.1-405B** — canary 2,471 ms / 38 tokens /
+    $0.000118, clean direct JSON; opinion probe 8.8 s / $0.000742 /
+    finish=stop, and its attack (cascade surface-feature bias) was
+    CONFIRMED already-receipted in the T4-b data — Hermes derived the
+    tavern's own sharpest cascade finding from a 120-word brief. EARNED:
+    outside-the-box short opinions and design-attack consults, the second
+    opinion next to Seed-2.0-mini.
+    **thinkingmachines/Inkling-Small** — a THINKING model (reasoning_tokens
+    in usage; 106 on the canary). Opinion probe: first call finish=LENGTH
+    with 2,006 reasoning tokens and ZERO visible content; amendment law
+    applied at 8,000 tokens → 10.8 s / $0.003858 / a registry-circularity
+    attack that was UPHELD and materially corrected a sealed verdict's
+    reasoning (the T4-c ABV clause is tautological on an alias-free
+    corpus). EARNED: the deep-attack seat. **Thinking-model law: budget
+    ≥ 4× the expected visible output; finish=length + empty content is the
+    thinking-budget failure signature.** Total new-member spend $0.0075.
+14. **Tavern is 10 seats** (8 DeepInfra originals + Hermes + Inkling; Ling
+    still unseatable at current budgets). Cache-discount trio (MiMo 50×,
+    DeepSeek 33×, Hy4 20×) keeps drafting; Seed + Hermes attack designs;
+    Inkling deep-attacks; expensive Hy4 reserved for adjudication.
+15. **r13 economics learnings (typesafe-side):** judge batteries batch
+    clean (0/30 batch-hostile, 12.36× at doc-dominated states — lane T4-a);
+    per-field bad-true batteries are stable (mean repeat std 0.0112 over
+    630 triples) but their cost is expensive-tier-relative — against a
+    $0.00034/finding earned loop the battery itself is 40% of the budget
+    (lane T4-b); dense factual claims fire bad-true batteries at
+    0.72–0.91 while audit findings never fire (the claim-density
+    confound — calibrate per text-shape).

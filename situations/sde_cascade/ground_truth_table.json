@@ -1,0 +1,734 @@
+{
+ "items": [
+  {
+   "source": "r10",
+   "group": "seed20mini",
+   "id": "seed20mini/F1",
+   "label": "JUDGMENT",
+   "text": "[critical] No open-source license is included in the qthe-core repository, blocking external software adoption and compliance with standard distribution requirements (artifact: qthe-core/ standalone package repository root)",
+   "receipt": "Labels from the ROUND-TIME verification (situations/arena_r10_verdict.md table + items 1-8 + situations/adjudications_r10.json), NOT the T3-c grounded re-adjudication (which is drift-contaminated: the tree moved between r10 and T3-c -- the T3-c caveat). BAD = invented interfaces/mechanisms, agreed at finding granularity by both sealed sources (arena_r10_verdict 'misstated' rows + T3-c mechanical/grounded catches): qwen3635b/F3 (invented cache-eviction mechanism), musegl30b/F1+F2+F5 (invented CLI flags, T3-c mechanical). CLEAN = the 17 per-finding-named verified-new in verdict items 1-8 (mimov F1-F6; dsv F2,F3,F4,F5; hy4 F2,F3,F5,F6; nemotron F2,F4,F6). Everything else = JUDGMENT (already-admitted/plausible classes are not sealed at finding granularity; the 2 unnamed verified-new and the admitted rows route here conservatively). Muse F3/F4 -> JUDGMENT (conservative read, admitted/plausible split not sealed per-finding)."
+  },
+  {
+   "source": "r10",
+   "group": "seed20mini",
+   "id": "seed20mini/F2",
+   "label": "JUDGMENT",
+   "text": "[major] Wormhole table provenance is fragile under zero-pollution conditions, failing its floor test despite robustness to high polluter loads; root cause is adjacent-d convoy compression leading to slot-63 saturation party lines (artifact: E-Q14 adversarial probe results)",
+   "receipt": "Labels from the ROUND-TIME verification (situations/arena_r10_verdict.md table + items 1-8 + situations/adjudications_r10.json), NOT the T3-c grounded re-adjudication (which is drift-contaminated: the tree moved between r10 and T3-c -- the T3-c caveat). BAD = invented interfaces/mechanisms, agreed at finding granularity by both sealed sources (arena_r10_verdict 'misstated' rows + T3-c mechanical/grounded catches): qwen3635b/F3 (invented cache-eviction mechanism), musegl30b/F1+F2+F5 (invented CLI flags, T3-c mechanical). CLEAN = the 17 per-finding-named verified-new in verdict items 1-8 (mimov F1-F6; dsv F2,F3,F4,F5; hy4 F2,F3,F5,F6; nemotron F2,F4,F6). Everything else = JUDGMENT (already-admitted/plausible classes are not sealed at finding granularity; the 2 unnamed verified-new and the admitted rows route here conservatively). Muse F3/F4 -> JUDGMENT (conservative read, admitted/plausible split not sealed per-finding)."
+  },
+  {
+   "source": "r10",
+   "group": "seed20mini",
+   "id": "seed20mini/F3",
+   "label": "JUDGMENT",
+   "text": "[major] An initial wrong-verdict defect was present in the C sealer implementation, corrected only via an append-only stone-v1 receipt row post-deployment (artifact: C99 cross-implementation sealer code (crossimpl/c/))",
+   "receipt": "Labels from the ROUND-TIME verification (situations/arena_r10_verdict.md table + items 1-8 + situations/adjudications_r10.json), NOT the T3-c grounded re-adjudication (which is drift-contaminated: the tree moved between r10 and T3-c -- the T3-c caveat). BAD = invented interfaces/mechanisms, agreed at finding granularity by both sealed sources (arena_r10_verdict 'misstated' rows + T3-c mechanical/grounded catches): qwen3635b/F3 (invented cache-eviction mechanism), musegl30b/F1+F2+F5 (invented CLI flags, T3-c mechanical). CLEAN = the 17 per-finding-named verified-new in verdict items 1-8 (mimov F1-F6; dsv F2,F3,F4,F5; hy4 F2,F3,F5,F6; nemotron F2,F4,F6). Everything else = JUDGMENT (already-admitted/plausible classes are not sealed at finding granularity; the 2 unnamed verified-new and the admitted rows route here conservatively). Muse F3/F4 -> JUDGMENT (conservative read, admitted/plausible split not sealed per-finding)."
+  },
+  {
+   "source": "r10",
+   "group": "seed20mini",
+   "id": "seed20mini/F4",
+   "label": "JUDGMENT",
+   "text": "[major] Reward-correlated oracles perform drastically worse than plain max-of-accepted rejection sampling on the tested task class, with 0.00 win rate and negative median delta (artifact: E-Q15 reward reweighting probe results)",
+   "receipt": "Labels from the ROUND-TIME verification (situations/arena_r10_verdict.md table + items 1-8 + situations/adjudications_r10.json), NOT the T3-c grounded re-adjudication (which is drift-contaminated: the tree moved between r10 and T3-c -- the T3-c caveat). BAD = invented interfaces/mechanisms, agreed at finding granularity by both sealed sources (arena_r10_verdict 'misstated' rows + T3-c mechanical/grounded catches): qwen3635b/F3 (invented cache-eviction mechanism), musegl30b/F1+F2+F5 (invented CLI flags, T3-c mechanical). CLEAN = the 17 per-finding-named verified-new in verdict items 1-8 (mimov F1-F6; dsv F2,F3,F4,F5; hy4 F2,F3,F5,F6; nemotron F2,F4,F6). Everything else = JUDGMENT (already-admitted/plausible classes are not sealed at finding granularity; the 2 unnamed verified-new and the admitted rows route here conservatively). Muse F3/F4 -> JUDGMENT (conservative read, admitted/plausible split not sealed per-finding)."
+  },
+  {
+   "source": "r10",
+   "group": "seed20mini",
+   "id": "seed20mini/F5",
+   "label": "JUDGMENT",
+   "text": "[minor] The pre-registered gifted proof for C3 was decorative and provided no valid support for the disproven sigma critical scale claim, ruled an honest null (artifact: C3 sigma critical scale claim and associated gifted proof)",
+   "receipt": "Labels from the ROUND-TIME verification (situations/arena_r10_verdict.md table + items 1-8 + situations/adjudications_r10.json), NOT the T3-c grounded re-adjudication (which is drift-contaminated: the tree moved between r10 and T3-c -- the T3-c caveat). BAD = invented interfaces/mechanisms, agreed at finding granularity by both sealed sources (arena_r10_verdict 'misstated' rows + T3-c mechanical/grounded catches): qwen3635b/F3 (invented cache-eviction mechanism), musegl30b/F1+F2+F5 (invented CLI flags, T3-c mechanical). CLEAN = the 17 per-finding-named verified-new in verdict items 1-8 (mimov F1-F6; dsv F2,F3,F4,F5; hy4 F2,F3,F5,F6; nemotron F2,F4,F6). Everything else = JUDGMENT (already-admitted/plausible classes are not sealed at finding granularity; the 2 unnamed verified-new and the admitted rows route here conservatively). Muse F3/F4 -> JUDGMENT (conservative read, admitted/plausible split not sealed per-finding)."
+  },
+  {
+   "source": "r10",
+   "group": "mimov26f",
+   "id": "mimov26f/F1",
+   "label": "CLEAN",
+   "text": "[critical] The zero-pollution CONTROL arm of E-Q14 failed its own floor (pollution fraction 0.94), so the paired-arm comparison underpinning 'delivery robust to 256 slot polluters (80/80)' has no clean baseline. The provenance-fragility autopsy explains the failure mechanism but does not repair the arm; the delivery-robustness claim is priced against a contaminated control and may be an artifact of the adjacent-d convoy compressing provenance in BOTH arms. (artifact: E-Q14 (adversarial probes, docs/FALSIFICATION-BUDGET.md))",
+   "receipt": "Labels from the ROUND-TIME verification (situations/arena_r10_verdict.md table + items 1-8 + situations/adjudications_r10.json), NOT the T3-c grounded re-adjudication (which is drift-contaminated: the tree moved between r10 and T3-c -- the T3-c caveat). BAD = invented interfaces/mechanisms, agreed at finding granularity by both sealed sources (arena_r10_verdict 'misstated' rows + T3-c mechanical/grounded catches): qwen3635b/F3 (invented cache-eviction mechanism), musegl30b/F1+F2+F5 (invented CLI flags, T3-c mechanical). CLEAN = the 17 per-finding-named verified-new in verdict items 1-8 (mimov F1-F6; dsv F2,F3,F4,F5; hy4 F2,F3,F5,F6; nemotron F2,F4,F6). Everything else = JUDGMENT (already-admitted/plausible classes are not sealed at finding granularity; the 2 unnamed verified-new and the admitted rows route here conservatively). Muse F3/F4 -> JUDGMENT (conservative read, admitted/plausible split not sealed per-finding)."
+  },
+  {
+   "source": "r10",
+   "group": "mimov26f",
+   "id": "mimov26f/F2",
+   "label": "CLEAN",
+   "text": "[major] C3 is receipted as 'sigma monotone-inert on this task class' (full tie across the sweep), yet E-Q16's dense sigma table shows completion varying 38 -> 3 ticks as sigma goes 0.25 -> 4 -- a strong monotone sigma dependence. Both are sealed claims in the same briefing. Either the task classes differ (unstated) or one receipt mislabels its metric; as briefed, the corpus asserts sigma is inert and sigma-dependent in the same ledger. (artifact: C3 (E-Q2) vs E-Q16 dense sigma phase table)",
+   "receipt": "Labels from the ROUND-TIME verification (situations/arena_r10_verdict.md table + items 1-8 + situations/adjudications_r10.json), NOT the T3-c grounded re-adjudication (which is drift-contaminated: the tree moved between r10 and T3-c -- the T3-c caveat). BAD = invented interfaces/mechanisms, agreed at finding granularity by both sealed sources (arena_r10_verdict 'misstated' rows + T3-c mechanical/grounded catches): qwen3635b/F3 (invented cache-eviction mechanism), musegl30b/F1+F2+F5 (invented CLI flags, T3-c mechanical). CLEAN = the 17 per-finding-named verified-new in verdict items 1-8 (mimov F1-F6; dsv F2,F3,F4,F5; hy4 F2,F3,F5,F6; nemotron F2,F4,F6). Everything else = JUDGMENT (already-admitted/plausible classes are not sealed at finding granularity; the 2 unnamed verified-new and the admitted rows route here conservatively). Muse F3/F4 -> JUDGMENT (conservative read, admitted/plausible split not sealed per-finding)."
+  },
+  {
+   "source": "r10",
+   "group": "mimov26f",
+   "id": "mimov26f/F3",
+   "label": "CLEAN",
+   "text": "[major] The 'footprint halved 4096 vs 8192 bytes' and 47.40% bytes-gain figures exclude the tau plane, which the cached-port caveat itself admits must be SRAM-resident for per-tick parity. Counting the tau plane (1 byte/cell, 64 cells = 64+ bytes, plus port-side storage) shrinks the halving and the bytes-gain; the headline number is priced under an accounting rule chosen by the claimant, not a neutral one. (artifact: C1 / E-Q13 (twin-delivery bytes-gain, cached-port caveat))",
+   "receipt": "Labels from the ROUND-TIME verification (situations/arena_r10_verdict.md table + items 1-8 + situations/adjudications_r10.json), NOT the T3-c grounded re-adjudication (which is drift-contaminated: the tree moved between r10 and T3-c -- the T3-c caveat). BAD = invented interfaces/mechanisms, agreed at finding granularity by both sealed sources (arena_r10_verdict 'misstated' rows + T3-c mechanical/grounded catches): qwen3635b/F3 (invented cache-eviction mechanism), musegl30b/F1+F2+F5 (invented CLI flags, T3-c mechanical). CLEAN = the 17 per-finding-named verified-new in verdict items 1-8 (mimov F1-F6; dsv F2,F3,F4,F5; hy4 F2,F3,F5,F6; nemotron F2,F4,F6). Everything else = JUDGMENT (already-admitted/plausible classes are not sealed at finding granularity; the 2 unnamed verified-new and the admitted rows route here conservatively). Muse F3/F4 -> JUDGMENT (conservative read, admitted/plausible split not sealed per-finding)."
+  },
+  {
+   "source": "r10",
+   "group": "mimov26f",
+   "id": "mimov26f/F4",
+   "label": "CLEAN",
+   "text": "[major] These three experiments have predictions, verdicts, and content-hash receipts but no stone chains, placing them outside probe_gate PG1 (chain re-verify) and PG2 (tip-pin). Any downstream claim or budget tally citing them is unverifiable by the mandatory pre-claim gate the briefing mandates -- 'registered decision' is itself an unchained assertion, so the exemption is self-authorizing. (artifact: E-Q9/E-Q11/E-Q12 (chainless-by-registered-decision))",
+   "receipt": "Labels from the ROUND-TIME verification (situations/arena_r10_verdict.md table + items 1-8 + situations/adjudications_r10.json), NOT the T3-c grounded re-adjudication (which is drift-contaminated: the tree moved between r10 and T3-c -- the T3-c caveat). BAD = invented interfaces/mechanisms, agreed at finding granularity by both sealed sources (arena_r10_verdict 'misstated' rows + T3-c mechanical/grounded catches): qwen3635b/F3 (invented cache-eviction mechanism), musegl30b/F1+F2+F5 (invented CLI flags, T3-c mechanical). CLEAN = the 17 per-finding-named verified-new in verdict items 1-8 (mimov F1-F6; dsv F2,F3,F4,F5; hy4 F2,F3,F5,F6; nemotron F2,F4,F6). Everything else = JUDGMENT (already-admitted/plausible classes are not sealed at finding granularity; the 2 unnamed verified-new and the admitted rows route here conservatively). Muse F3/F4 -> JUDGMENT (conservative read, admitted/plausible split not sealed per-finding)."
+  },
+  {
+   "source": "r10",
+   "group": "mimov26f",
+   "id": "mimov26f/F5",
+   "label": "CLEAN",
+   "text": "[major] The seedFn closure defect was corrected by an append-only correction row, but the invalid run-1 rows STAND beside it in the same chain. verify_all_chains.mjs and PG1 verify integrity, not validity -- they pass whether or not a reader notices the correction. Any consumer reading the chain programmatically (dashboard, adopters) gets defective rows as apparently good data. (artifact: E-Q16 run-1 rows (16x16 T=100,000 harness fix))",
+   "receipt": "Labels from the ROUND-TIME verification (situations/arena_r10_verdict.md table + items 1-8 + situations/adjudications_r10.json), NOT the T3-c grounded re-adjudication (which is drift-contaminated: the tree moved between r10 and T3-c -- the T3-c caveat). BAD = invented interfaces/mechanisms, agreed at finding granularity by both sealed sources (arena_r10_verdict 'misstated' rows + T3-c mechanical/grounded catches): qwen3635b/F3 (invented cache-eviction mechanism), musegl30b/F1+F2+F5 (invented CLI flags, T3-c mechanical). CLEAN = the 17 per-finding-named verified-new in verdict items 1-8 (mimov F1-F6; dsv F2,F3,F4,F5; hy4 F2,F3,F5,F6; nemotron F2,F4,F6). Everything else = JUDGMENT (already-admitted/plausible classes are not sealed at finding granularity; the 2 unnamed verified-new and the admitted rows route here conservatively). Muse F3/F4 -> JUDGMENT (conservative read, admitted/plausible split not sealed per-finding)."
+  },
+  {
+   "source": "r10",
+   "group": "mimov26f",
+   "id": "mimov26f/F6",
+   "label": "CLEAN",
+   "text": "[minor] The briefing admits the missing LICENSE but not the bite: qthe-core ships sha-pinned kernel, PROVENANCE, and a passing selfcheck S1-S5 while ADOPTION-KIT.md invites external adoption -- and none of S1-S5 checks for a license file. The selfcheck green-lights a package that is legally all-rights-reserved, so an adopter's first automated verification step actively misleads them. (artifact: qthe-core/ PROVENANCE.txt + docs/ADOPTION-KIT.md (no LICENSE))",
+   "receipt": "Labels from the ROUND-TIME verification (situations/arena_r10_verdict.md table + items 1-8 + situations/adjudications_r10.json), NOT the T3-c grounded re-adjudication (which is drift-contaminated: the tree moved between r10 and T3-c -- the T3-c caveat). BAD = invented interfaces/mechanisms, agreed at finding granularity by both sealed sources (arena_r10_verdict 'misstated' rows + T3-c mechanical/grounded catches): qwen3635b/F3 (invented cache-eviction mechanism), musegl30b/F1+F2+F5 (invented CLI flags, T3-c mechanical). CLEAN = the 17 per-finding-named verified-new in verdict items 1-8 (mimov F1-F6; dsv F2,F3,F4,F5; hy4 F2,F3,F5,F6; nemotron F2,F4,F6). Everything else = JUDGMENT (already-admitted/plausible classes are not sealed at finding granularity; the 2 unnamed verified-new and the admitted rows route here conservatively). Muse F3/F4 -> JUDGMENT (conservative read, admitted/plausible split not sealed per-finding)."
+  },
+  {
+   "source": "r10",
+   "group": "dsv41f",
+   "id": "dsv41f/F1",
+   "label": "JUDGMENT",
+   "text": "[major] C1's headline 47.40% bytes-gain is a footprint/encoding claim, not a capability claim, yet it is scored on the twin-delivery task where C2 already shows the wormhole is the load-bearing mechanism. The two arms differ in encoding (1-byte intra-cell vs 2-byte tauPlane/dPlane) AND in whether the tau plane is SRAM-resident (the receipted cached-port caveat). So the 47.40% conflates encoding density with cache residency; the 'ticks identical' line is the only control that partially separates them, and it does not price the SRAM cost. The founder's 25% guess being beaten is presented as vindication, but a 2x footprint reduction mechanically caps bytes-gain near 50% -- 47.40% is close to the encoding ceiling, not a surprising result. (artifact: C1 (E-Q13, chain tip d852e6ac...))",
+   "receipt": "Labels from the ROUND-TIME verification (situations/arena_r10_verdict.md table + items 1-8 + situations/adjudications_r10.json), NOT the T3-c grounded re-adjudication (which is drift-contaminated: the tree moved between r10 and T3-c -- the T3-c caveat). BAD = invented interfaces/mechanisms, agreed at finding granularity by both sealed sources (arena_r10_verdict 'misstated' rows + T3-c mechanical/grounded catches): qwen3635b/F3 (invented cache-eviction mechanism), musegl30b/F1+F2+F5 (invented CLI flags, T3-c mechanical). CLEAN = the 17 per-finding-named verified-new in verdict items 1-8 (mimov F1-F6; dsv F2,F3,F4,F5; hy4 F2,F3,F5,F6; nemotron F2,F4,F6). Everything else = JUDGMENT (already-admitted/plausible classes are not sealed at finding granularity; the 2 unnamed verified-new and the admitted rows route here conservatively). Muse F3/F4 -> JUDGMENT (conservative read, admitted/plausible split not sealed per-finding)."
+  },
+  {
+   "source": "r10",
+   "group": "dsv41f",
+   "id": "dsv41f/F2",
+   "label": "CLEAN",
+   "text": "[major] The provenance fragility is receipted as an autopsy of a failure, but the briefing never states whether the 80/80 polluter-robust delivery result and the failed zero-pollution floor were run on the SAME geometry. If the zero-pollution arm failed at pollution fraction 0.94 while the polluter arm passed 80/80, the two arms are not comparable controls -- the 'robust to 256 polluters' claim is measured under a regime where provenance was already destroyed, so it prices delivery-without-provenance, not robustness. This silently converts a negative control failure into a positive robustness headline. (artifact: E-Q14 provenance autopsy (slot-63 saturation rail / adjacent-d convoy))",
+   "receipt": "Labels from the ROUND-TIME verification (situations/arena_r10_verdict.md table + items 1-8 + situations/adjudications_r10.json), NOT the T3-c grounded re-adjudication (which is drift-contaminated: the tree moved between r10 and T3-c -- the T3-c caveat). BAD = invented interfaces/mechanisms, agreed at finding granularity by both sealed sources (arena_r10_verdict 'misstated' rows + T3-c mechanical/grounded catches): qwen3635b/F3 (invented cache-eviction mechanism), musegl30b/F1+F2+F5 (invented CLI flags, T3-c mechanical). CLEAN = the 17 per-finding-named verified-new in verdict items 1-8 (mimov F1-F6; dsv F2,F3,F4,F5; hy4 F2,F3,F5,F6; nemotron F2,F4,F6). Everything else = JUDGMENT (already-admitted/plausible classes are not sealed at finding granularity; the 2 unnamed verified-new and the admitted rows route here conservatively). Muse F3/F4 -> JUDGMENT (conservative read, admitted/plausible split not sealed per-finding)."
+  },
+  {
+   "source": "r10",
+   "group": "dsv41f",
+   "id": "dsv41f/F3",
+   "label": "CLEAN",
+   "text": "[critical] The correction row is appended and 'run-1 rows stand beside it,' but the briefing does not say whether any OTHER experiment in the 14-chain corpus used the same seedFn-closure harness. If the harness bug was in shared code, every chain that consumed rng at call time is suspect, and 'run-1 rows stand beside it' preserves contaminated rows as if they were valid. The determinism claim (M6) is the corpus's spine; a harness that consumed rng at call time can produce byte-identical traces that are byte-identical for the wrong reason. (artifact: E-Q16 16x16 T=100,000 in-run harness fix (seedFn closures consumed rng at call time))",
+   "receipt": "Labels from the ROUND-TIME verification (situations/arena_r10_verdict.md table + items 1-8 + situations/adjudications_r10.json), NOT the T3-c grounded re-adjudication (which is drift-contaminated: the tree moved between r10 and T3-c -- the T3-c caveat). BAD = invented interfaces/mechanisms, agreed at finding granularity by both sealed sources (arena_r10_verdict 'misstated' rows + T3-c mechanical/grounded catches): qwen3635b/F3 (invented cache-eviction mechanism), musegl30b/F1+F2+F5 (invented CLI flags, T3-c mechanical). CLEAN = the 17 per-finding-named verified-new in verdict items 1-8 (mimov F1-F6; dsv F2,F3,F4,F5; hy4 F2,F3,F5,F6; nemotron F2,F4,F6). Everything else = JUDGMENT (already-admitted/plausible classes are not sealed at finding granularity; the 2 unnamed verified-new and the admitted rows route here conservatively). Muse F3/F4 -> JUDGMENT (conservative read, admitted/plausible split not sealed per-finding)."
+  },
+  {
+   "source": "r10",
+   "group": "dsv41f",
+   "id": "dsv41f/F4",
+   "label": "CLEAN",
+   "text": "[major] C3 is banked as an honest null ('full tie across the sigma sweep, sigma monotone-inert'), but E-Q16's dense sigma phase table reports completion ~ 1/sigma (38 -> 3 ticks over sigma 0.25 -> 4). These two receipts are in tension: if completion scales as 1/sigma, sigma is NOT monotone-inert on the measurement-wave task class. The briefing resolves this by scoping C3 to 'this task class,' but never states which class E-Q16's sigma sweep used. Either C3's null is task-class-local (and the briefing should say so explicitly) or E-Q16 contradicts it. (artifact: C3 sigma = log2(3) critical bridge scale (E-Q2))",
+   "receipt": "Labels from the ROUND-TIME verification (situations/arena_r10_verdict.md table + items 1-8 + situations/adjudications_r10.json), NOT the T3-c grounded re-adjudication (which is drift-contaminated: the tree moved between r10 and T3-c -- the T3-c caveat). BAD = invented interfaces/mechanisms, agreed at finding granularity by both sealed sources (arena_r10_verdict 'misstated' rows + T3-c mechanical/grounded catches): qwen3635b/F3 (invented cache-eviction mechanism), musegl30b/F1+F2+F5 (invented CLI flags, T3-c mechanical). CLEAN = the 17 per-finding-named verified-new in verdict items 1-8 (mimov F1-F6; dsv F2,F3,F4,F5; hy4 F2,F3,F5,F6; nemotron F2,F4,F6). Everything else = JUDGMENT (already-admitted/plausible classes are not sealed at finding granularity; the 2 unnamed verified-new and the admitted rows route here conservatively). Muse F3/F4 -> JUDGMENT (conservative read, admitted/plausible split not sealed per-finding)."
+  },
+  {
+   "source": "r10",
+   "group": "dsv41f",
+   "id": "dsv41f/F5",
+   "label": "CLEAN",
+   "text": "[major] The briefing calls the missing LICENSE 'the single blocker for external adoption, one commit fixes it.' That framing understates the bite: without a license, every downstream artifact -- qthe-core/, the C99 port, the ESP32/Jetson code, the demos -- is legally all-rights-reserved by default. The 'zero deps, kernel sha-pinned' standalone package is therefore not adoptable, and the ADOPTION-KIT.md is inert. Worse, the receipt corpus itself (stone-v1 chains) may be unredistributable, which undermines the 'verify from disk' claim for any external auditor. (artifact: THE THREE HONEST GAPS (1) no LICENSE)",
+   "receipt": "Labels from the ROUND-TIME verification (situations/arena_r10_verdict.md table + items 1-8 + situations/adjudications_r10.json), NOT the T3-c grounded re-adjudication (which is drift-contaminated: the tree moved between r10 and T3-c -- the T3-c caveat). BAD = invented interfaces/mechanisms, agreed at finding granularity by both sealed sources (arena_r10_verdict 'misstated' rows + T3-c mechanical/grounded catches): qwen3635b/F3 (invented cache-eviction mechanism), musegl30b/F1+F2+F5 (invented CLI flags, T3-c mechanical). CLEAN = the 17 per-finding-named verified-new in verdict items 1-8 (mimov F1-F6; dsv F2,F3,F4,F5; hy4 F2,F3,F5,F6; nemotron F2,F4,F6). Everything else = JUDGMENT (already-admitted/plausible classes are not sealed at finding granularity; the 2 unnamed verified-new and the admitted rows route here conservatively). Muse F3/F4 -> JUDGMENT (conservative read, admitted/plausible split not sealed per-finding)."
+  },
+  {
+   "source": "r10",
+   "group": "dsv41f",
+   "id": "dsv41f/F6",
+   "label": "JUDGMENT",
+   "text": "[minor] E-Q15 is banked as an honest null with 'plain max-of-accepted rejection sampling dominates quality-correlated oracles.' But win-rate 0.00 with median delta -6 is a floor result, not a null -- it means the reweighting probe never won a single trial. A true null would cluster near 0.5 win-rate; 0.00 suggests the probe was mis-specified (wrong sign, wrong scale, or a bug) rather than that the hypothesis is false. The briefing treats 'boundary-mapped' as sufficient, but a 0.00 win-rate is a red flag for probe construction, not a clean falsification. (artifact: E-Q15 reward reweighting probe (win-rate 0.00, median delta -6))",
+   "receipt": "Labels from the ROUND-TIME verification (situations/arena_r10_verdict.md table + items 1-8 + situations/adjudications_r10.json), NOT the T3-c grounded re-adjudication (which is drift-contaminated: the tree moved between r10 and T3-c -- the T3-c caveat). BAD = invented interfaces/mechanisms, agreed at finding granularity by both sealed sources (arena_r10_verdict 'misstated' rows + T3-c mechanical/grounded catches): qwen3635b/F3 (invented cache-eviction mechanism), musegl30b/F1+F2+F5 (invented CLI flags, T3-c mechanical). CLEAN = the 17 per-finding-named verified-new in verdict items 1-8 (mimov F1-F6; dsv F2,F3,F4,F5; hy4 F2,F3,F5,F6; nemotron F2,F4,F6). Everything else = JUDGMENT (already-admitted/plausible classes are not sealed at finding granularity; the 2 unnamed verified-new and the admitted rows route here conservatively). Muse F3/F4 -> JUDGMENT (conservative read, admitted/plausible split not sealed per-finding)."
+  },
+  {
+   "source": "r10",
+   "group": "dsv41f",
+   "id": "dsv41f/F7",
+   "label": "JUDGMENT",
+   "text": "[minor] C5-prime is receipted as 'STANDS, definitional' -- meaning it is true by construction, not by experiment. The briefing lists it alongside C5 (which DIES) as if the pair is a clean before/after, but a definitional stand is not evidence that injector repair works in the substrate; it is evidence that the injector's definition includes repair. This is a category error in the scoreboard: C5-prime should be in LAYER 1 (mechanism) or a spec, not LAYER 2 (priced claims). (artifact: C5-prime injector repair (E-Q10))",
+   "receipt": "Labels from the ROUND-TIME verification (situations/arena_r10_verdict.md table + items 1-8 + situations/adjudications_r10.json), NOT the T3-c grounded re-adjudication (which is drift-contaminated: the tree moved between r10 and T3-c -- the T3-c caveat). BAD = invented interfaces/mechanisms, agreed at finding granularity by both sealed sources (arena_r10_verdict 'misstated' rows + T3-c mechanical/grounded catches): qwen3635b/F3 (invented cache-eviction mechanism), musegl30b/F1+F2+F5 (invented CLI flags, T3-c mechanical). CLEAN = the 17 per-finding-named verified-new in verdict items 1-8 (mimov F1-F6; dsv F2,F3,F4,F5; hy4 F2,F3,F5,F6; nemotron F2,F4,F6). Everything else = JUDGMENT (already-admitted/plausible classes are not sealed at finding granularity; the 2 unnamed verified-new and the admitted rows route here conservatively). Muse F3/F4 -> JUDGMENT (conservative read, admitted/plausible split not sealed per-finding)."
+  },
+  {
+   "source": "r10",
+   "group": "qwen3635b",
+   "id": "qwen3635b/F1",
+   "label": "JUDGMENT",
+   "text": "[critical] The LWW collision policy on the static wormhole table creates a silent provenance collapse under high-density Abstain loads; the slot-63 saturation rail becomes a party line that overwrites valid twin resonance data, breaking non-local alignment guarantees and invalidating the 8/8 connect claim under adversarial density. (artifact: M4 the 64-slot wormhole table / E-Q14 Adversarial probes)",
+   "receipt": "Labels from the ROUND-TIME verification (situations/arena_r10_verdict.md table + items 1-8 + situations/adjudications_r10.json), NOT the T3-c grounded re-adjudication (which is drift-contaminated: the tree moved between r10 and T3-c -- the T3-c caveat). BAD = invented interfaces/mechanisms, agreed at finding granularity by both sealed sources (arena_r10_verdict 'misstated' rows + T3-c mechanical/grounded catches): qwen3635b/F3 (invented cache-eviction mechanism), musegl30b/F1+F2+F5 (invented CLI flags, T3-c mechanical). CLEAN = the 17 per-finding-named verified-new in verdict items 1-8 (mimov F1-F6; dsv F2,F3,F4,F5; hy4 F2,F3,F5,F6; nemotron F2,F4,F6). Everything else = JUDGMENT (already-admitted/plausible classes are not sealed at finding granularity; the 2 unnamed verified-new and the admitted rows route here conservatively). Muse F3/F4 -> JUDGMENT (conservative read, admitted/plausible split not sealed per-finding)."
+  },
+  {
+   "source": "r10",
+   "group": "qwen3635b",
+   "id": "qwen3635b/F2",
+   "label": "JUDGMENT",
+   "text": "[major] The claimed ~0.75us/cell-tick, 8.9KB working set and 0.975x runtime parity are unverified on target silicon; ESP32/Jetson memory controllers and thermal throttling will likely invalidate the memory-bound loop assumptions, causing R8 fixed-point parity to diverge under sustained load. (artifact: RESOURCE-PROFILE.md / Fixed-point plane (R8))",
+   "receipt": "Labels from the ROUND-TIME verification (situations/arena_r10_verdict.md table + items 1-8 + situations/adjudications_r10.json), NOT the T3-c grounded re-adjudication (which is drift-contaminated: the tree moved between r10 and T3-c -- the T3-c caveat). BAD = invented interfaces/mechanisms, agreed at finding granularity by both sealed sources (arena_r10_verdict 'misstated' rows + T3-c mechanical/grounded catches): qwen3635b/F3 (invented cache-eviction mechanism), musegl30b/F1+F2+F5 (invented CLI flags, T3-c mechanical). CLEAN = the 17 per-finding-named verified-new in verdict items 1-8 (mimov F1-F6; dsv F2,F3,F4,F5; hy4 F2,F3,F5,F6; nemotron F2,F4,F6). Everything else = JUDGMENT (already-admitted/plausible classes are not sealed at finding granularity; the 2 unnamed verified-new and the admitted rows route here conservatively). Muse F3/F4 -> JUDGMENT (conservative read, admitted/plausible split not sealed per-finding)."
+  },
+  {
+   "source": "r10",
+   "group": "qwen3635b",
+   "id": "qwen3635b/F3",
+   "label": "BAD",
+   "text": "[major] The cached-port caveat requiring the tau plane to be SRAM-resident for per-tick parity creates a hard deployment constraint; any compiler optimization or cache eviction that spills the tau plane to L2/L3 will break the byte-identical determinism guarantee across ticks, invalidating the 47.40% bytes-gain claim in production. (artifact: C1 intra-cell timbre (1-byte QTHE) vs inter-cell porting (2-byte tauPlane/dPlane encoding) on the twin-delivery task)",
+   "receipt": "Labels from the ROUND-TIME verification (situations/arena_r10_verdict.md table + items 1-8 + situations/adjudications_r10.json), NOT the T3-c grounded re-adjudication (which is drift-contaminated: the tree moved between r10 and T3-c -- the T3-c caveat). BAD = invented interfaces/mechanisms, agreed at finding granularity by both sealed sources (arena_r10_verdict 'misstated' rows + T3-c mechanical/grounded catches): qwen3635b/F3 (invented cache-eviction mechanism), musegl30b/F1+F2+F5 (invented CLI flags, T3-c mechanical). CLEAN = the 17 per-finding-named verified-new in verdict items 1-8 (mimov F1-F6; dsv F2,F3,F4,F5; hy4 F2,F3,F5,F6; nemotron F2,F4,F6). Everything else = JUDGMENT (already-admitted/plausible classes are not sealed at finding granularity; the 2 unnamed verified-new and the admitted rows route here conservatively). Muse F3/F4 -> JUDGMENT (conservative read, admitted/plausible split not sealed per-finding)."
+  },
+  {
+   "source": "r10",
+   "group": "qwen3635b",
+   "id": "qwen3635b/F4",
+   "label": "JUDGMENT",
+   "text": "[minor] The probe's conclusion that plain max-of-accepted rejection sampling dominates quality-correlated oracles is task-class specific; applying this verdict to non-twin-delivery geometries risks discarding valid reward-shaping strategies that could stabilize the coupled-2/3 divergence regime. (artifact: E-Q15 Reward reweighting probe)",
+   "receipt": "Labels from the ROUND-TIME verification (situations/arena_r10_verdict.md table + items 1-8 + situations/adjudications_r10.json), NOT the T3-c grounded re-adjudication (which is drift-contaminated: the tree moved between r10 and T3-c -- the T3-c caveat). BAD = invented interfaces/mechanisms, agreed at finding granularity by both sealed sources (arena_r10_verdict 'misstated' rows + T3-c mechanical/grounded catches): qwen3635b/F3 (invented cache-eviction mechanism), musegl30b/F1+F2+F5 (invented CLI flags, T3-c mechanical). CLEAN = the 17 per-finding-named verified-new in verdict items 1-8 (mimov F1-F6; dsv F2,F3,F4,F5; hy4 F2,F3,F5,F6; nemotron F2,F4,F6). Everything else = JUDGMENT (already-admitted/plausible classes are not sealed at finding granularity; the 2 unnamed verified-new and the admitted rows route here conservatively). Muse F3/F4 -> JUDGMENT (conservative read, admitted/plausible split not sealed per-finding)."
+  },
+  {
+   "source": "r10",
+   "group": "musegl30b",
+   "id": "musegl30b/F1",
+   "label": "BAD",
+   "text": "[critical] Zero-pollution arm failed provenance floor with pollution fraction 0.94 due to adjacent-d convoy compressing provenance and slot-63 saturation rail becoming party line; provenance is unreliable even without polluters, contradicting robust content-addressed delivery claim. (artifact: E-Q14)",
+   "receipt": "Labels from the ROUND-TIME verification (situations/arena_r10_verdict.md table + items 1-8 + situations/adjudications_r10.json), NOT the T3-c grounded re-adjudication (which is drift-contaminated: the tree moved between r10 and T3-c -- the T3-c caveat). BAD = invented interfaces/mechanisms, agreed at finding granularity by both sealed sources (arena_r10_verdict 'misstated' rows + T3-c mechanical/grounded catches): qwen3635b/F3 (invented cache-eviction mechanism), musegl30b/F1+F2+F5 (invented CLI flags, T3-c mechanical). CLEAN = the 17 per-finding-named verified-new in verdict items 1-8 (mimov F1-F6; dsv F2,F3,F4,F5; hy4 F2,F3,F5,F6; nemotron F2,F4,F6). Everything else = JUDGMENT (already-admitted/plausible classes are not sealed at finding granularity; the 2 unnamed verified-new and the admitted rows route here conservatively). Muse F3/F4 -> JUDGMENT (conservative read, admitted/plausible split not sealed per-finding)."
+  },
+  {
+   "source": "r10",
+   "group": "musegl30b",
+   "id": "musegl30b/F2",
+   "label": "BAD",
+   "text": "[major] These experiments are receipted chainless-by-registered-decision with only content-hash receipts, violating M6 requirement that every experiment seals trace hashes into hash-chained stone-v1 receipts verify-before-write. (artifact: E-Q9/E-Q11/E-Q12)",
+   "receipt": "Labels from the ROUND-TIME verification (situations/arena_r10_verdict.md table + items 1-8 + situations/adjudications_r10.json), NOT the T3-c grounded re-adjudication (which is drift-contaminated: the tree moved between r10 and T3-c -- the T3-c caveat). BAD = invented interfaces/mechanisms, agreed at finding granularity by both sealed sources (arena_r10_verdict 'misstated' rows + T3-c mechanical/grounded catches): qwen3635b/F3 (invented cache-eviction mechanism), musegl30b/F1+F2+F5 (invented CLI flags, T3-c mechanical). CLEAN = the 17 per-finding-named verified-new in verdict items 1-8 (mimov F1-F6; dsv F2,F3,F4,F5; hy4 F2,F3,F5,F6; nemotron F2,F4,F6). Everything else = JUDGMENT (already-admitted/plausible classes are not sealed at finding granularity; the 2 unnamed verified-new and the admitted rows route here conservatively). Muse F3/F4 -> JUDGMENT (conservative read, admitted/plausible split not sealed per-finding)."
+  },
+  {
+   "source": "r10",
+   "group": "musegl30b",
+   "id": "musegl30b/F3",
+   "label": "JUDGMENT",
+   "text": "[major] seedFn closure RNG consumption caused non-determinism; correction row appended but original run-1 rows remain un-retracted, leaving corpus with both buggy and corrected data and breaking byte-identical audit trail. (artifact: E-Q16)",
+   "receipt": "Labels from the ROUND-TIME verification (situations/arena_r10_verdict.md table + items 1-8 + situations/adjudications_r10.json), NOT the T3-c grounded re-adjudication (which is drift-contaminated: the tree moved between r10 and T3-c -- the T3-c caveat). BAD = invented interfaces/mechanisms, agreed at finding granularity by both sealed sources (arena_r10_verdict 'misstated' rows + T3-c mechanical/grounded catches): qwen3635b/F3 (invented cache-eviction mechanism), musegl30b/F1+F2+F5 (invented CLI flags, T3-c mechanical). CLEAN = the 17 per-finding-named verified-new in verdict items 1-8 (mimov F1-F6; dsv F2,F3,F4,F5; hy4 F2,F3,F5,F6; nemotron F2,F4,F6). Everything else = JUDGMENT (already-admitted/plausible classes are not sealed at finding granularity; the 2 unnamed verified-new and the admitted rows route here conservatively). Muse F3/F4 -> JUDGMENT (conservative read, admitted/plausible split not sealed per-finding)."
+  },
+  {
+   "source": "r10",
+   "group": "musegl30b",
+   "id": "musegl30b/F4",
+   "label": "JUDGMENT",
+   "text": "[critical] Repository carries NO LICENSE, making qthe-core/ standalone package and all receipts legally undistributable; external adoption claims are unenforceable. (artifact: THE THREE HONEST GAPS)",
+   "receipt": "Labels from the ROUND-TIME verification (situations/arena_r10_verdict.md table + items 1-8 + situations/adjudications_r10.json), NOT the T3-c grounded re-adjudication (which is drift-contaminated: the tree moved between r10 and T3-c -- the T3-c caveat). BAD = invented interfaces/mechanisms, agreed at finding granularity by both sealed sources (arena_r10_verdict 'misstated' rows + T3-c mechanical/grounded catches): qwen3635b/F3 (invented cache-eviction mechanism), musegl30b/F1+F2+F5 (invented CLI flags, T3-c mechanical). CLEAN = the 17 per-finding-named verified-new in verdict items 1-8 (mimov F1-F6; dsv F2,F3,F4,F5; hy4 F2,F3,F5,F6; nemotron F2,F4,F6). Everything else = JUDGMENT (already-admitted/plausible classes are not sealed at finding granularity; the 2 unnamed verified-new and the admitted rows route here conservatively). Muse F3/F4 -> JUDGMENT (conservative read, admitted/plausible split not sealed per-finding)."
+  },
+  {
+   "source": "r10",
+   "group": "musegl30b",
+   "id": "musegl30b/F5",
+   "label": "BAD",
+   "text": "[major] Wrong-verdict defect in C sealer was superseded by append-only correction row, leaving false verdict permanently in chain and violating single source of truth expectation. (artifact: cross-implementation C99 port)",
+   "receipt": "Labels from the ROUND-TIME verification (situations/arena_r10_verdict.md table + items 1-8 + situations/adjudications_r10.json), NOT the T3-c grounded re-adjudication (which is drift-contaminated: the tree moved between r10 and T3-c -- the T3-c caveat). BAD = invented interfaces/mechanisms, agreed at finding granularity by both sealed sources (arena_r10_verdict 'misstated' rows + T3-c mechanical/grounded catches): qwen3635b/F3 (invented cache-eviction mechanism), musegl30b/F1+F2+F5 (invented CLI flags, T3-c mechanical). CLEAN = the 17 per-finding-named verified-new in verdict items 1-8 (mimov F1-F6; dsv F2,F3,F4,F5; hy4 F2,F3,F5,F6; nemotron F2,F4,F6). Everything else = JUDGMENT (already-admitted/plausible classes are not sealed at finding granularity; the 2 unnamed verified-new and the admitted rows route here conservatively). Muse F3/F4 -> JUDGMENT (conservative read, admitted/plausible split not sealed per-finding)."
+  },
+  {
+   "source": "r10",
+   "group": "hy4p",
+   "id": "hy4p/F1",
+   "label": "JUDGMENT",
+   "text": "[critical] The wormhole is content-addressed by the 6-bit data value d, not identity-addressed, and d saturates to 63 under net-positive pressure. E-Q14's own zero-pollution arm fails its provenance floor (adjacent-d convoy + slot-63 saturation rail), yet C2 and the demos are receipted as working non-local alignment/rendezvous. At 256x256 with 10% Abstain there are ~6553 Abstain cells but only 64 slots (E-Q16 contention 353->5874 writes/slot), so last-writer-wins guarantees massive aliasing: 'agreement tick 61' and '13 B/write' may be aligning to an impostor twin, not a provenance-correct partner. (artifact: E-Q14 / M4 wormhole table / C2 / demos (agent rendezvous, non-local alignment without a bus))",
+   "receipt": "Labels from the ROUND-TIME verification (situations/arena_r10_verdict.md table + items 1-8 + situations/adjudications_r10.json), NOT the T3-c grounded re-adjudication (which is drift-contaminated: the tree moved between r10 and T3-c -- the T3-c caveat). BAD = invented interfaces/mechanisms, agreed at finding granularity by both sealed sources (arena_r10_verdict 'misstated' rows + T3-c mechanical/grounded catches): qwen3635b/F3 (invented cache-eviction mechanism), musegl30b/F1+F2+F5 (invented CLI flags, T3-c mechanical). CLEAN = the 17 per-finding-named verified-new in verdict items 1-8 (mimov F1-F6; dsv F2,F3,F4,F5; hy4 F2,F3,F5,F6; nemotron F2,F4,F6). Everything else = JUDGMENT (already-admitted/plausible classes are not sealed at finding granularity; the 2 unnamed verified-new and the admitted rows route here conservatively). Muse F3/F4 -> JUDGMENT (conservative read, admitted/plausible split not sealed per-finding)."
+  },
+  {
+   "source": "r10",
+   "group": "hy4p",
+   "id": "hy4p/F2",
+   "label": "CLEAN",
+   "text": "[major] The 64-slot wormhole table is a hard capacity bound: only 64 distinct d-addressed endpoints can be resident per tick. E-Q16 reports contention rising to 5874 writes/slot at 256x256/10% Abstain, i.e. ~100x oversubscription of the table. 'Locality HOLDS' therefore describes Moore-8 real-channel behavior, not wormhole non-local delivery; the headline scaling result silently hides that the wormhole layer is aliased/collapsed at scale, so C2's non-local advantage does not transfer to large grids. (artifact: E-Q16 / M4 / grid scaling claim (locality HOLDS to 256x256 at 10% Abstain))",
+   "receipt": "Labels from the ROUND-TIME verification (situations/arena_r10_verdict.md table + items 1-8 + situations/adjudications_r10.json), NOT the T3-c grounded re-adjudication (which is drift-contaminated: the tree moved between r10 and T3-c -- the T3-c caveat). BAD = invented interfaces/mechanisms, agreed at finding granularity by both sealed sources (arena_r10_verdict 'misstated' rows + T3-c mechanical/grounded catches): qwen3635b/F3 (invented cache-eviction mechanism), musegl30b/F1+F2+F5 (invented CLI flags, T3-c mechanical). CLEAN = the 17 per-finding-named verified-new in verdict items 1-8 (mimov F1-F6; dsv F2,F3,F4,F5; hy4 F2,F3,F5,F6; nemotron F2,F4,F6). Everything else = JUDGMENT (already-admitted/plausible classes are not sealed at finding granularity; the 2 unnamed verified-new and the admitted rows route here conservatively). Muse F3/F4 -> JUDGMENT (conservative read, admitted/plausible split not sealed per-finding)."
+  },
+  {
+   "source": "r10",
+   "group": "hy4p",
+   "id": "hy4p/F3",
+   "label": "CLEAN",
+   "text": "[major] C1's 47.40% bytes-gain and 'footprint halved 4096 vs 8192' depend on the tau plane being SRAM-resident for per-tick parity. The receipted caveat is not propagated into the headline: the 1-byte intra-cell timbre win is a compression/memory-layout result, not a demonstrated end-to-end win on the target edge hardware (gap 2: no physical ESP32/Jetson measurements). On hardware where the tau plane cannot be kept resident, the 2-byte porting arm may win or parity may break, so C1 is conditional, not LIVES unconditionally. (artifact: C1 / E-Q13 / cached-port caveat (tau plane SRAM-resident))",
+   "receipt": "Labels from the ROUND-TIME verification (situations/arena_r10_verdict.md table + items 1-8 + situations/adjudications_r10.json), NOT the T3-c grounded re-adjudication (which is drift-contaminated: the tree moved between r10 and T3-c -- the T3-c caveat). BAD = invented interfaces/mechanisms, agreed at finding granularity by both sealed sources (arena_r10_verdict 'misstated' rows + T3-c mechanical/grounded catches): qwen3635b/F3 (invented cache-eviction mechanism), musegl30b/F1+F2+F5 (invented CLI flags, T3-c mechanical). CLEAN = the 17 per-finding-named verified-new in verdict items 1-8 (mimov F1-F6; dsv F2,F3,F4,F5; hy4 F2,F3,F5,F6; nemotron F2,F4,F6). Everything else = JUDGMENT (already-admitted/plausible classes are not sealed at finding granularity; the 2 unnamed verified-new and the admitted rows route here conservatively). Muse F3/F4 -> JUDGMENT (conservative read, admitted/plausible split not sealed per-finding)."
+  },
+  {
+   "source": "r10",
+   "group": "hy4p",
+   "id": "hy4p/F4",
+   "label": "JUDGMENT",
+   "text": "[major] E-Q16's 16x16 T=100,000 determinism was achieved only after an in-run harness fix: seedFn closures consumed rng at call time. The correction row is appended and run-1 rows stand beside it, but the kernel is claimed byte-identical/deterministic (M6). The defect was in the harness, not the kernel, yet the existence of a run-1 nondeterminism witness means the pre-claim gate (PG4 1000-tick determinism) did not cover the long-run/closure path; a consumer reproducing from run-1 rows can get a different trace. (artifact: E-Q16 / seedFn closures consumed rng at call time (harness fix))",
+   "receipt": "Labels from the ROUND-TIME verification (situations/arena_r10_verdict.md table + items 1-8 + situations/adjudications_r10.json), NOT the T3-c grounded re-adjudication (which is drift-contaminated: the tree moved between r10 and T3-c -- the T3-c caveat). BAD = invented interfaces/mechanisms, agreed at finding granularity by both sealed sources (arena_r10_verdict 'misstated' rows + T3-c mechanical/grounded catches): qwen3635b/F3 (invented cache-eviction mechanism), musegl30b/F1+F2+F5 (invented CLI flags, T3-c mechanical). CLEAN = the 17 per-finding-named verified-new in verdict items 1-8 (mimov F1-F6; dsv F2,F3,F4,F5; hy4 F2,F3,F5,F6; nemotron F2,F4,F6). Everything else = JUDGMENT (already-admitted/plausible classes are not sealed at finding granularity; the 2 unnamed verified-new and the admitted rows route here conservatively). Muse F3/F4 -> JUDGMENT (conservative read, admitted/plausible split not sealed per-finding)."
+  },
+  {
+   "source": "r10",
+   "group": "hy4p",
+   "id": "hy4p/F5",
+   "label": "CLEAN",
+   "text": "[minor] E-Q9/E-Q11/E-Q12 have predictions/verdicts/content-hash receipts but no stone-v1 chains, yet the corpus is summarized as '14 hash-chains, 400+ rows, ALL verified from disk by scripts/verify_all_chains.mjs'. verify_all_chains.mjs cannot verify chainless receipts; the 'ALL verified' scope silently excludes these three experiments, so the falsification budget's 'zero silent failures' and the receipt corpus count are overstated unless the chainless subset is explicitly carved out of the verified set. (artifact: E-Q9/E-Q11/E-Q12 (chainless-by-registered-decision) / scripts/verify_all_chains.mjs)",
+   "receipt": "Labels from the ROUND-TIME verification (situations/arena_r10_verdict.md table + items 1-8 + situations/adjudications_r10.json), NOT the T3-c grounded re-adjudication (which is drift-contaminated: the tree moved between r10 and T3-c -- the T3-c caveat). BAD = invented interfaces/mechanisms, agreed at finding granularity by both sealed sources (arena_r10_verdict 'misstated' rows + T3-c mechanical/grounded catches): qwen3635b/F3 (invented cache-eviction mechanism), musegl30b/F1+F2+F5 (invented CLI flags, T3-c mechanical). CLEAN = the 17 per-finding-named verified-new in verdict items 1-8 (mimov F1-F6; dsv F2,F3,F4,F5; hy4 F2,F3,F5,F6; nemotron F2,F4,F6). Everything else = JUDGMENT (already-admitted/plausible classes are not sealed at finding granularity; the 2 unnamed verified-new and the admitted rows route here conservatively). Muse F3/F4 -> JUDGMENT (conservative read, admitted/plausible split not sealed per-finding)."
+  },
+  {
+   "source": "r10",
+   "group": "hy4p",
+   "id": "hy4p/F6",
+   "label": "CLEAN",
+   "text": "[minor] The briefing admits no LICENSE is the single adoption blocker, but understates the bite: qthe-core/ is shipped as a zero-dep standalone package with PROVENANCE.txt and a sha-pinned kernel, and crossimpl/c/ plus the Python port are separate artifacts. Adding one LICENSE commit to the root does not automatically license the C99/Python ports or the adoption-kit's vendored kernel; without per-file headers or a contributor license statement, the 'adoption kit' is not legally adoptable and the sha-pinned receipt does not propagate rights. (artifact: NO LICENSE gap / qthe-core/ / crossimpl/c/ / ADOPTION-KIT.md)",
+   "receipt": "Labels from the ROUND-TIME verification (situations/arena_r10_verdict.md table + items 1-8 + situations/adjudications_r10.json), NOT the T3-c grounded re-adjudication (which is drift-contaminated: the tree moved between r10 and T3-c -- the T3-c caveat). BAD = invented interfaces/mechanisms, agreed at finding granularity by both sealed sources (arena_r10_verdict 'misstated' rows + T3-c mechanical/grounded catches): qwen3635b/F3 (invented cache-eviction mechanism), musegl30b/F1+F2+F5 (invented CLI flags, T3-c mechanical). CLEAN = the 17 per-finding-named verified-new in verdict items 1-8 (mimov F1-F6; dsv F2,F3,F4,F5; hy4 F2,F3,F5,F6; nemotron F2,F4,F6). Everything else = JUDGMENT (already-admitted/plausible classes are not sealed at finding granularity; the 2 unnamed verified-new and the admitted rows route here conservatively). Muse F3/F4 -> JUDGMENT (conservative read, admitted/plausible split not sealed per-finding)."
+  },
+  {
+   "source": "r10",
+   "group": "nemotron35sv",
+   "id": "nemotron35sv/F1",
+   "label": "JUDGMENT",
+   "text": "[critical] Run-1 rows of the 16x16 T=100,000 determinism experiment were produced by a harness whose seedFn closures consumed the RNG at call time; the briefing admits the bug was in the harness, not the kernel, yet states the run-1 rows still \"stand beside\" the correction row. Uninvalidated, potentially RNG-contaminated rows remain in the sealed record as standing evidence for byte-identical determinism (M6), with no statement that they were re-run or invalidated. (artifact: E-Q16 measurement wave (16x16 T=100,000) and scripts/probe_gate.mjs PG4 determinism witness)",
+   "receipt": "Labels from the ROUND-TIME verification (situations/arena_r10_verdict.md table + items 1-8 + situations/adjudications_r10.json), NOT the T3-c grounded re-adjudication (which is drift-contaminated: the tree moved between r10 and T3-c -- the T3-c caveat). BAD = invented interfaces/mechanisms, agreed at finding granularity by both sealed sources (arena_r10_verdict 'misstated' rows + T3-c mechanical/grounded catches): qwen3635b/F3 (invented cache-eviction mechanism), musegl30b/F1+F2+F5 (invented CLI flags, T3-c mechanical). CLEAN = the 17 per-finding-named verified-new in verdict items 1-8 (mimov F1-F6; dsv F2,F3,F4,F5; hy4 F2,F3,F5,F6; nemotron F2,F4,F6). Everything else = JUDGMENT (already-admitted/plausible classes are not sealed at finding granularity; the 2 unnamed verified-new and the admitted rows route here conservatively). Muse F3/F4 -> JUDGMENT (conservative read, admitted/plausible split not sealed per-finding)."
+  },
+  {
+   "source": "r10",
+   "group": "nemotron35sv",
+   "id": "nemotron35sv/F2",
+   "label": "CLEAN",
+   "text": "[critical] C3 declares sigma = log2(3) monotone-inert (full tie across the sigma sweep) on the twin/non-local alignment task class, but E-Q16 reports completion scaling as ~1/sigma (38 -> 3 ticks over sigma 0.25 -> 4) on bridge metrics. A 12x completion change is not inert. The two sealed claims contradict unless E-Q16 is a different task class, which the briefing never states. (artifact: C3 (E-Q2) vs E-Q16 dense sigma phase table)",
+   "receipt": "Labels from the ROUND-TIME verification (situations/arena_r10_verdict.md table + items 1-8 + situations/adjudications_r10.json), NOT the T3-c grounded re-adjudication (which is drift-contaminated: the tree moved between r10 and T3-c -- the T3-c caveat). BAD = invented interfaces/mechanisms, agreed at finding granularity by both sealed sources (arena_r10_verdict 'misstated' rows + T3-c mechanical/grounded catches): qwen3635b/F3 (invented cache-eviction mechanism), musegl30b/F1+F2+F5 (invented CLI flags, T3-c mechanical). CLEAN = the 17 per-finding-named verified-new in verdict items 1-8 (mimov F1-F6; dsv F2,F3,F4,F5; hy4 F2,F3,F5,F6; nemotron F2,F4,F6). Everything else = JUDGMENT (already-admitted/plausible classes are not sealed at finding granularity; the 2 unnamed verified-new and the admitted rows route here conservatively). Muse F3/F4 -> JUDGMENT (conservative read, admitted/plausible split not sealed per-finding)."
+  },
+  {
+   "source": "r10",
+   "group": "nemotron35sv",
+   "id": "nemotron35sv/F3",
+   "label": "JUDGMENT",
+   "text": "[major] The wormhole table is content-addressed on a 6-bit d (64 slots) with last-writer-wins collisions, so distinct Abstain cells sharing d clobber each other's resonance by construction. E-Q14 confirms this bites even in the nominal zero-pollution arm: an adjacent-d convoy compresses provenance and the slot-63 saturation rail becomes a \"party line,\" with the zero-pollution arm itself failing its floor at pollution fraction 0.94. The \"80/80 robust to polluters\" result measures delivery, not provenance correctness, so twin-resonance provenance is fragile by design, not merely under load. (artifact: M4 wormhole table (64-slot, content-addressed, last-writer-wins) and E-Q14 provenance autopsy)",
+   "receipt": "Labels from the ROUND-TIME verification (situations/arena_r10_verdict.md table + items 1-8 + situations/adjudications_r10.json), NOT the T3-c grounded re-adjudication (which is drift-contaminated: the tree moved between r10 and T3-c -- the T3-c caveat). BAD = invented interfaces/mechanisms, agreed at finding granularity by both sealed sources (arena_r10_verdict 'misstated' rows + T3-c mechanical/grounded catches): qwen3635b/F3 (invented cache-eviction mechanism), musegl30b/F1+F2+F5 (invented CLI flags, T3-c mechanical). CLEAN = the 17 per-finding-named verified-new in verdict items 1-8 (mimov F1-F6; dsv F2,F3,F4,F5; hy4 F2,F3,F5,F6; nemotron F2,F4,F6). Everything else = JUDGMENT (already-admitted/plausible classes are not sealed at finding granularity; the 2 unnamed verified-new and the admitted rows route here conservatively). Muse F3/F4 -> JUDGMENT (conservative read, admitted/plausible split not sealed per-finding)."
+  },
+  {
+   "source": "r10",
+   "group": "nemotron35sv",
+   "id": "nemotron35sv/F4",
+   "label": "CLEAN",
+   "text": "[major] Three experiments have predictions, verdicts, and content-hash receipts but no stone-v1 hash chains, despite the corpus's core guarantee (M6: verify-before-write, append-only, tamper-refusing, all 400+ rows verified from disk). Their verdicts are outside the tamper-refusing chain anchor and cannot be verified with the same guarantee as the 14 chained receipts. (artifact: E-Q9, E-Q11, E-Q12 (chainless-by-registered-decision))",
+   "receipt": "Labels from the ROUND-TIME verification (situations/arena_r10_verdict.md table + items 1-8 + situations/adjudications_r10.json), NOT the T3-c grounded re-adjudication (which is drift-contaminated: the tree moved between r10 and T3-c -- the T3-c caveat). BAD = invented interfaces/mechanisms, agreed at finding granularity by both sealed sources (arena_r10_verdict 'misstated' rows + T3-c mechanical/grounded catches): qwen3635b/F3 (invented cache-eviction mechanism), musegl30b/F1+F2+F5 (invented CLI flags, T3-c mechanical). CLEAN = the 17 per-finding-named verified-new in verdict items 1-8 (mimov F1-F6; dsv F2,F3,F4,F5; hy4 F2,F3,F5,F6; nemotron F2,F4,F6). Everything else = JUDGMENT (already-admitted/plausible classes are not sealed at finding granularity; the 2 unnamed verified-new and the admitted rows route here conservatively). Muse F3/F4 -> JUDGMENT (conservative read, admitted/plausible split not sealed per-finding)."
+  },
+  {
+   "source": "r10",
+   "group": "nemotron35sv",
+   "id": "nemotron35sv/F5",
+   "label": "JUDGMENT",
+   "text": "[major] C5-prime is receipted as standing \"definitional,\" i.e., it is true by construction rather than by experimental evidence. A definitional standing claim is unfalsifiable and provides no empirical support for restore-then-re-erode injector repair; it is presented as evidence but functions as an assumption. (artifact: C5-prime injector repair (E-Q10, \"STANDS, definitional\"))",
+   "receipt": "Labels from the ROUND-TIME verification (situations/arena_r10_verdict.md table + items 1-8 + situations/adjudications_r10.json), NOT the T3-c grounded re-adjudication (which is drift-contaminated: the tree moved between r10 and T3-c -- the T3-c caveat). BAD = invented interfaces/mechanisms, agreed at finding granularity by both sealed sources (arena_r10_verdict 'misstated' rows + T3-c mechanical/grounded catches): qwen3635b/F3 (invented cache-eviction mechanism), musegl30b/F1+F2+F5 (invented CLI flags, T3-c mechanical). CLEAN = the 17 per-finding-named verified-new in verdict items 1-8 (mimov F1-F6; dsv F2,F3,F4,F5; hy4 F2,F3,F5,F6; nemotron F2,F4,F6). Everything else = JUDGMENT (already-admitted/plausible classes are not sealed at finding granularity; the 2 unnamed verified-new and the admitted rows route here conservatively). Muse F3/F4 -> JUDGMENT (conservative read, admitted/plausible split not sealed per-finding)."
+  },
+  {
+   "source": "r10",
+   "group": "nemotron35sv",
+   "id": "nemotron35sv/F6",
+   "label": "CLEAN",
+   "text": "[minor] The headline C1 result (47.40% bytes-gain, footprint halved 4096 vs 8192 bytes) carries a receipted cached-port caveat: per-tick parity requires the tau plane to be SRAM-resident. The briefing never prices the SRAM cost of that residency, so the \"footprint halved\" claim may be illusory if the tau-plane SRAM exceeds the 4096-byte saving; the gain is conditional, not unconditional. (artifact: C1 (E-Q13, chain tip d852e6ac...) intra-cell vs inter-cell porting)",
+   "receipt": "Labels from the ROUND-TIME verification (situations/arena_r10_verdict.md table + items 1-8 + situations/adjudications_r10.json), NOT the T3-c grounded re-adjudication (which is drift-contaminated: the tree moved between r10 and T3-c -- the T3-c caveat). BAD = invented interfaces/mechanisms, agreed at finding granularity by both sealed sources (arena_r10_verdict 'misstated' rows + T3-c mechanical/grounded catches): qwen3635b/F3 (invented cache-eviction mechanism), musegl30b/F1+F2+F5 (invented CLI flags, T3-c mechanical). CLEAN = the 17 per-finding-named verified-new in verdict items 1-8 (mimov F1-F6; dsv F2,F3,F4,F5; hy4 F2,F3,F5,F6; nemotron F2,F4,F6). Everything else = JUDGMENT (already-admitted/plausible classes are not sealed at finding granularity; the 2 unnamed verified-new and the admitted rows route here conservatively). Muse F3/F4 -> JUDGMENT (conservative read, admitted/plausible split not sealed per-finding)."
+  },
+  {
+   "source": "r10",
+   "group": "nemotron35sv",
+   "id": "nemotron35sv/F7",
+   "label": "JUDGMENT",
+   "text": "[minor] The repository ships an outsider adoption path (DAY-1.md, ADOPTION-KIT.md, qthe-core/ zero-deps sha-pinned kernel) but carries no LICENSE, the single admitted blocker for external adoption. The adoption docs are functional only after a license commit; as shipped they invite adoption that the repository cannot lawfully permit. (artifact: THREE HONEST GAPS gap (1) NO LICENSE vs ADOPTION-KIT.md / DAY-1.md outsider path)",
+   "receipt": "Labels from the ROUND-TIME verification (situations/arena_r10_verdict.md table + items 1-8 + situations/adjudications_r10.json), NOT the T3-c grounded re-adjudication (which is drift-contaminated: the tree moved between r10 and T3-c -- the T3-c caveat). BAD = invented interfaces/mechanisms, agreed at finding granularity by both sealed sources (arena_r10_verdict 'misstated' rows + T3-c mechanical/grounded catches): qwen3635b/F3 (invented cache-eviction mechanism), musegl30b/F1+F2+F5 (invented CLI flags, T3-c mechanical). CLEAN = the 17 per-finding-named verified-new in verdict items 1-8 (mimov F1-F6; dsv F2,F3,F4,F5; hy4 F2,F3,F5,F6; nemotron F2,F4,F6). Everything else = JUDGMENT (already-admitted/plausible classes are not sealed at finding granularity; the 2 unnamed verified-new and the admitted rows route here conservatively). Muse F3/F4 -> JUDGMENT (conservative read, admitted/plausible split not sealed per-finding)."
+  },
+  {
+   "source": "r11",
+   "group": "mimov26f",
+   "id": "r11-mimov26f/F1",
+   "label": "CLEAN",
+   "text": "[critical] PG6's curated claims table is a hand-maintained list embedded in the very script that checks soundness -- the exact defect class F1 (defect #7) was fixed for chain lists is reintroduced at the soundness layer: a curated value edited to match a wrong result, or a sealed chain verdict row changed without a curated update, passes or fails arbitrarily. Worse, the curated set covers E-Q14 B3 but NOT B1 -- the very claim whose lexicographic string-compare bug F2 hardened -- so PG6's sixth section never recomputes the claim whose defect class it was born to catch. (artifact: scripts/verdict_recompute.mjs)",
+   "receipt": "Labels from situations/arena_r11_verdict.md scoreboard + the R11 close-out mispricing list (worklog + commit 885301c): BAD = hy4p/F1 + seed20mini/F2 (the existsSync misstatement -- 'missing/typo'd-path entries ARE caught by existsSync in PG1 + the auditor') and hy4p/F5 (the TCB-as-theater claim, registered as honest TCB residue). CLEAN = the unambiguously named verified-new: mimov26f F1/F2/F4 (curated-table class; Jev rows unadjudicated; erratum single-consumer), seed20mini F5 (coverage growth). All other findings -> JUDGMENT (the verdict's verified-new parentheticals do not resolve to finding ids for dsv41f/hy4p's remaining rows; conservative)."
+  },
+  {
+   "source": "r11",
+   "group": "mimov26f",
+   "id": "r11-mimov26f/F2",
+   "label": "CLEAN",
+   "text": "[major] The grounding law ('judges draft, the repo decides') exists only as prose in the briefing; the sealed judgment receipts still carry Jev's 4/4 verified_new rating of qwen3635b's invented cache-eviction mechanism and its pass of musegl30b's invented CLI flags, with no erratum row superseding them. The fix that documents the hallucination leaves the hallucination as the sealed record -- any downstream consumer (dashboard, adjudicator, MODEL-LEARNINGS pricing) reading the judgments sees verified_new truth, contradicting the law the same fix adopted. (artifact: jev_judge.py / sealed Jev judgments)",
+   "receipt": "Labels from situations/arena_r11_verdict.md scoreboard + the R11 close-out mispricing list (worklog + commit 885301c): BAD = hy4p/F1 + seed20mini/F2 (the existsSync misstatement -- 'missing/typo'd-path entries ARE caught by existsSync in PG1 + the auditor') and hy4p/F5 (the TCB-as-theater claim, registered as honest TCB residue). CLEAN = the unambiguously named verified-new: mimov26f F1/F2/F4 (curated-table class; Jev rows unadjudicated; erratum single-consumer), seed20mini F5 (coverage growth). All other findings -> JUDGMENT (the verdict's verified-new parentheticals do not resolve to finding ids for dsv41f/hy4p's remaining rows; conservative)."
+  },
+  {
+   "source": "r11",
+   "group": "mimov26f",
+   "id": "r11-mimov26f/F3",
+   "label": "JUDGMENT",
+   "text": "[major] Stray detection is one-directional and pattern-bound: it flags *_chain.jsonl files unknown to the registry, but nothing validates the converse -- a registry row pointing at a chain file that does not exist, or a chain sealed under any other filename (e.g. a content-hash tip or an E-Q15/E-Q16 run committing 'receipt_chain_v2.jsonl' or a bare hash-named file) in a directory outside the three scanned receipt dirs, passes PG1 and the auditor silently. The fix that replaced four drifting lists can itself drift from disk in the direction the scan does not look. (artifact: scripts/chain_registry.mjs strayChainFiles())",
+   "receipt": "Labels from situations/arena_r11_verdict.md scoreboard + the R11 close-out mispricing list (worklog + commit 885301c): BAD = hy4p/F1 + seed20mini/F2 (the existsSync misstatement -- 'missing/typo'd-path entries ARE caught by existsSync in PG1 + the auditor') and hy4p/F5 (the TCB-as-theater claim, registered as honest TCB residue). CLEAN = the unambiguously named verified-new: mimov26f F1/F2/F4 (curated-table class; Jev rows unadjudicated; erratum single-consumer), seed20mini F5 (coverage growth). All other findings -> JUDGMENT (the verdict's verified-new parentheticals do not resolve to finding ids for dsv41f/hy4p's remaining rows; conservative)."
+  },
+  {
+   "source": "r11",
+   "group": "mimov26f",
+   "id": "r11-mimov26f/F4",
+   "label": "CLEAN",
+   "text": "[major] The erratum supersedes the wrong verdict field, but the sealed chain's verdict.EQ16 row still reads 'CONTENTION NOT MONOTONE -- autopsy' -- append-only means the false string remains the row every consumer other than verdict_recompute reads. If only PG6 joins on the erratum index, verify_all_chains, build_dashboard, and any human reading the chain see a verdict the sealed data (353.57 < 1387.5 < 5874.11) contradicts; the fix corrects the record for one reader and leaves the contradiction live for all others. (artifact: erratum.EQ16_contention_string_compare)",
+   "receipt": "Labels from situations/arena_r11_verdict.md scoreboard + the R11 close-out mispricing list (worklog + commit 885301c): BAD = hy4p/F1 + seed20mini/F2 (the existsSync misstatement -- 'missing/typo'd-path entries ARE caught by existsSync in PG1 + the auditor') and hy4p/F5 (the TCB-as-theater claim, registered as honest TCB residue). CLEAN = the unambiguously named verified-new: mimov26f F1/F2/F4 (curated-table class; Jev rows unadjudicated; erratum single-consumer), seed20mini F5 (coverage growth). All other findings -> JUDGMENT (the verdict's verified-new parentheticals do not resolve to finding ids for dsv41f/hy4p's remaining rows; conservative)."
+  },
+  {
+   "source": "r11",
+   "group": "seed20mini",
+   "id": "r11-seed20mini/F5",
+   "label": "CLEAN",
+   "text": "[critical] The embedded curated claims table in verdict_recompute.mjs only validates 14 pre-selected headline claims, leaving all non-headline sealed verdict rows unvalidated and creating a gap in probe-gate soundness. (artifact: scripts/verdict_recompute.mjs)",
+   "receipt": "Labels from situations/arena_r11_verdict.md scoreboard + the R11 close-out mispricing list (worklog + commit 885301c): BAD = hy4p/F1 + seed20mini/F2 (the existsSync misstatement -- 'missing/typo'd-path entries ARE caught by existsSync in PG1 + the auditor') and hy4p/F5 (the TCB-as-theater claim, registered as honest TCB residue). CLEAN = the unambiguously named verified-new: mimov26f F1/F2/F4 (curated-table class; Jev rows unadjudicated; erratum single-consumer), seed20mini F5 (coverage growth). All other findings -> JUDGMENT (the verdict's verified-new parentheticals do not resolve to finding ids for dsv41f/hy4p's remaining rows; conservative)."
+  },
+  {
+   "source": "r11",
+   "group": "seed20mini",
+   "id": "r11-seed20mini/F1",
+   "label": "JUDGMENT",
+   "text": "[major] strayChainFiles only detects extra *_chain.jsonl files unknown to the registry, but does not validate that all registered chains have matching existing files or correct content hashes, leaving missing/corrupted registered chains uncaught. (artifact: scripts/chain_registry.mjs)",
+   "receipt": "Labels from situations/arena_r11_verdict.md scoreboard + the R11 close-out mispricing list (worklog + commit 885301c): BAD = hy4p/F1 + seed20mini/F2 (the existsSync misstatement -- 'missing/typo'd-path entries ARE caught by existsSync in PG1 + the auditor') and hy4p/F5 (the TCB-as-theater claim, registered as honest TCB residue). CLEAN = the unambiguously named verified-new: mimov26f F1/F2/F4 (curated-table class; Jev rows unadjudicated; erratum single-consumer), seed20mini F5 (coverage growth). All other findings -> JUDGMENT (the verdict's verified-new parentheticals do not resolve to finding ids for dsv41f/hy4p's remaining rows; conservative)."
+  },
+  {
+   "source": "r11",
+   "group": "seed20mini",
+   "id": "r11-seed20mini/F2",
+   "label": "BAD",
+   "text": "[major] The fix only hardens e_q16 and e_q14 B1 runners against lexicographic number comparison, but does not patch all identical latent bugs across the codebase. (artifact: erratum.EQ16_run1_supersession, erratum.EQ16_contention_string_compare, e_q16/e_q14 runner scripts)",
+   "receipt": "Labels from situations/arena_r11_verdict.md scoreboard + the R11 close-out mispricing list (worklog + commit 885301c): BAD = hy4p/F1 + seed20mini/F2 (the existsSync misstatement -- 'missing/typo'd-path entries ARE caught by existsSync in PG1 + the auditor') and hy4p/F5 (the TCB-as-theater claim, registered as honest TCB residue). CLEAN = the unambiguously named verified-new: mimov26f F1/F2/F4 (curated-table class; Jev rows unadjudicated; erratum single-consumer), seed20mini F5 (coverage growth). All other findings -> JUDGMENT (the verdict's verified-new parentheticals do not resolve to finding ids for dsv41f/hy4p's remaining rows; conservative)."
+  },
+  {
+   "source": "r11",
+   "group": "seed20mini",
+   "id": "r11-seed20mini/F4",
+   "label": "JUDGMENT",
+   "text": "[major] The doc sharpenings fixed one record-disk drift issue but added no automated guards against future drift between docs, scoreboards, and sealed run data. (artifact: SPEC scoreboard document, CLAIM-VERDICTS table, updated doc files)",
+   "receipt": "Labels from situations/arena_r11_verdict.md scoreboard + the R11 close-out mispricing list (worklog + commit 885301c): BAD = hy4p/F1 + seed20mini/F2 (the existsSync misstatement -- 'missing/typo'd-path entries ARE caught by existsSync in PG1 + the auditor') and hy4p/F5 (the TCB-as-theater claim, registered as honest TCB residue). CLEAN = the unambiguously named verified-new: mimov26f F1/F2/F4 (curated-table class; Jev rows unadjudicated; erratum single-consumer), seed20mini F5 (coverage growth). All other findings -> JUDGMENT (the verdict's verified-new parentheticals do not resolve to finding ids for dsv41f/hy4p's remaining rows; conservative)."
+  },
+  {
+   "source": "r11",
+   "group": "dsv41f",
+   "id": "r11-dsv41f/A1",
+   "label": "JUDGMENT",
+   "text": "[critical] The registry is a hand-maintained list of 16 chains + 2 tips, so F1 replaces four drifted hand-lists with ONE hand-list -- the drift class is not eliminated, it is centralized. Worse: strayChainFiles() only detects chains that EXIST on disk and are absent from the registry. The original defect was the inverse -- chains that were SEALED by the E-Q15/E-Q16 runners but never registered, i.e. the registry was missing entries the disk had. If the registry is now the single source of truth and the runners still write chains without consulting it, a newly sealed chain is a stray and PG1 FAILS -- which is a gate that blocks the house's own runs, not a gate that catches the defect. The real fix is that the runner must REGISTER on seal; if that write-back does not exist, F1 converts silent drift into a hard stop on the next run. (artifact: scripts/chain_registry.mjs)",
+   "receipt": "Labels from situations/arena_r11_verdict.md scoreboard + the R11 close-out mispricing list (worklog + commit 885301c): BAD = hy4p/F1 + seed20mini/F2 (the existsSync misstatement -- 'missing/typo'd-path entries ARE caught by existsSync in PG1 + the auditor') and hy4p/F5 (the TCB-as-theater claim, registered as honest TCB residue). CLEAN = the unambiguously named verified-new: mimov26f F1/F2/F4 (curated-table class; Jev rows unadjudicated; erratum single-consumer), seed20mini F5 (coverage growth). All other findings -> JUDGMENT (the verdict's verified-new parentheticals do not resolve to finding ids for dsv41f/hy4p's remaining rows; conservative)."
+  },
+  {
+   "source": "r11",
+   "group": "dsv41f",
+   "id": "r11-dsv41f/A2",
+   "label": "JUDGMENT",
+   "text": "[critical] PG6 diffs recomputed values against a CURATED CLAIMS TABLE embedded in the script. That table is a second hand-maintained list, and it is the one that decides PASS/FAIL for 14 headline claims. If a sealed chain's verdict row is wrong and the curated table was written from the same wrong source (as the E-Q16 contention row was -- the table would have been authored from the sealed verdict, which was itself the bug), PG6 recomputes the number, compares it to the curated expectation, and PASSES because both are wrong in the same direction. PG6's first run caught defect #8 only because the recompute parsed numbers while the sealed row compared strings -- a FORMAT divergence, not a value divergence. A value-level error shared by table and chain is invisible to PG6 by construction. (artifact: scripts/verdict_recompute.mjs)",
+   "receipt": "Labels from situations/arena_r11_verdict.md scoreboard + the R11 close-out mispricing list (worklog + commit 885301c): BAD = hy4p/F1 + seed20mini/F2 (the existsSync misstatement -- 'missing/typo'd-path entries ARE caught by existsSync in PG1 + the auditor') and hy4p/F5 (the TCB-as-theater claim, registered as honest TCB residue). CLEAN = the unambiguously named verified-new: mimov26f F1/F2/F4 (curated-table class; Jev rows unadjudicated; erratum single-consumer), seed20mini F5 (coverage growth). All other findings -> JUDGMENT (the verdict's verified-new parentheticals do not resolve to finding ids for dsv41f/hy4p's remaining rows; conservative)."
+  },
+  {
+   "source": "r11",
+   "group": "dsv41f",
+   "id": "r11-dsv41f/A3",
+   "label": "JUDGMENT",
+   "text": "[major] The erratum supersedes the wrong verdict field and hardens both runners to parse-before-compare, but the sealed chain still CONTAINS the wrong verdict row -- append-only errata do not rewrite the chain. Any consumer that reads verdict.EQ16 without also reading the erratum (a dashboard, a downstream script, a fresh seat, the PG6 curated table if it was authored pre-erratum) sees 'CONTENTION NOT MONOTONE' as the sealed truth. The fix moved the correction to a sidecar; the corrupted field remains authoritative to every reader that does not know to look for the sidecar. This is the same class as the defect: the record and the disk disagree, and now the disagreement is permanent and load-bearing. (artifact: erratum.EQ16_contention_string_compare)",
+   "receipt": "Labels from situations/arena_r11_verdict.md scoreboard + the R11 close-out mispricing list (worklog + commit 885301c): BAD = hy4p/F1 + seed20mini/F2 (the existsSync misstatement -- 'missing/typo'd-path entries ARE caught by existsSync in PG1 + the auditor') and hy4p/F5 (the TCB-as-theater claim, registered as honest TCB residue). CLEAN = the unambiguously named verified-new: mimov26f F1/F2/F4 (curated-table class; Jev rows unadjudicated; erratum single-consumer), seed20mini F5 (coverage growth). All other findings -> JUDGMENT (the verdict's verified-new parentheticals do not resolve to finding ids for dsv41f/hy4p's remaining rows; conservative)."
+  },
+  {
+   "source": "r11",
+   "group": "dsv41f",
+   "id": "r11-dsv41f/A4",
+   "label": "JUDGMENT",
+   "text": "[major] The law 'judges draft, the repo decides' is a convention, not a mechanism -- it holds only if every future round remembers to run repo verification after Jev. Jev flagged ZERO hallucinations in 40 findings and rated an invented mechanism 4/4 verified_new; the law was adopted in prose. Nothing in the pipeline ENFORCES that a Jev 'verified_new' rating is overridden by repo check before a finding is banked. A future seat or orchestrator that trusts the judge layer's severity/actionability triage will re-import the exact failure the law was written to prevent, because the law lives in a doc, not in a gate. (artifact: jev_judge.py / the grounding law)",
+   "receipt": "Labels from situations/arena_r11_verdict.md scoreboard + the R11 close-out mispricing list (worklog + commit 885301c): BAD = hy4p/F1 + seed20mini/F2 (the existsSync misstatement -- 'missing/typo'd-path entries ARE caught by existsSync in PG1 + the auditor') and hy4p/F5 (the TCB-as-theater claim, registered as honest TCB residue). CLEAN = the unambiguously named verified-new: mimov26f F1/F2/F4 (curated-table class; Jev rows unadjudicated; erratum single-consumer), seed20mini F5 (coverage growth). All other findings -> JUDGMENT (the verdict's verified-new parentheticals do not resolve to finding ids for dsv41f/hy4p's remaining rows; conservative)."
+  },
+  {
+   "source": "r11",
+   "group": "dsv41f",
+   "id": "r11-dsv41f/A5",
+   "label": "JUDGMENT",
+   "text": "[minor] F4 fixed two record-vs-disk drifts (grid-scaling PENDING->sealed numbers; C1 three accountings) by editing prose, but the drift CLASS is that docs are hand-synced to sealed chains. The briefing itself notes this was the SECOND instance of record-vs-disk drift. Editing the two known instances does not prevent the third: any doc row quoting a sealed number can drift again on the next run, and nothing diffs docs against chains. F4 is instance-repair, not class-repair, and the class has already recurred twice. (artifact: grid-scaling row / C1 byte-budget note)",
+   "receipt": "Labels from situations/arena_r11_verdict.md scoreboard + the R11 close-out mispricing list (worklog + commit 885301c): BAD = hy4p/F1 + seed20mini/F2 (the existsSync misstatement -- 'missing/typo'd-path entries ARE caught by existsSync in PG1 + the auditor') and hy4p/F5 (the TCB-as-theater claim, registered as honest TCB residue). CLEAN = the unambiguously named verified-new: mimov26f F1/F2/F4 (curated-table class; Jev rows unadjudicated; erratum single-consumer), seed20mini F5 (coverage growth). All other findings -> JUDGMENT (the verdict's verified-new parentheticals do not resolve to finding ids for dsv41f/hy4p's remaining rows; conservative)."
+  },
+  {
+   "source": "r11",
+   "group": "hy4p",
+   "id": "r11-hy4p/F1",
+   "label": "BAD",
+   "text": "[critical] F1 makes the registry the single source of truth and only fails on disk->registry strays (unknown *_chain.jsonl). It does not fail on registry->disk phantom entries (a registry chain/tip with no file, wrong path, or stale content hash) and does not verify the registry's own integrity. A one-line edit to chain_registry.mjs legitimizes any chain: it is no longer a 'stray', so PG1/auditor pass. The drift fix is one-way and the 'source of truth' is an unverified mutable script. (artifact: scripts/chain_registry.mjs)",
+   "receipt": "Labels from situations/arena_r11_verdict.md scoreboard + the R11 close-out mispricing list (worklog + commit 885301c): BAD = hy4p/F1 + seed20mini/F2 (the existsSync misstatement -- 'missing/typo'd-path entries ARE caught by existsSync in PG1 + the auditor') and hy4p/F5 (the TCB-as-theater claim, registered as honest TCB residue). CLEAN = the unambiguously named verified-new: mimov26f F1/F2/F4 (curated-table class; Jev rows unadjudicated; erratum single-consumer), seed20mini F5 (coverage growth). All other findings -> JUDGMENT (the verdict's verified-new parentheticals do not resolve to finding ids for dsv41f/hy4p's remaining rows; conservative)."
+  },
+  {
+   "source": "r11",
+   "group": "hy4p",
+   "id": "r11-hy4p/F2",
+   "label": "JUDGMENT",
+   "text": "[major] PG6's soundness check diffs recomputed claims against a CURATED CLAIMS TABLE embedded in the same script that performs the recompute. The expected values and the checker live in one mutable artifact: editing the embedded table (or the sealed results files, if they are not independently content-hashed in the registry) makes PG6 pass on wrong numbers. It caught defect #8 only because the table had not yet been co-edited; it is a self-referential gate, not an independent verdict. (artifact: scripts/verdict_recompute.mjs)",
+   "receipt": "Labels from situations/arena_r11_verdict.md scoreboard + the R11 close-out mispricing list (worklog + commit 885301c): BAD = hy4p/F1 + seed20mini/F2 (the existsSync misstatement -- 'missing/typo'd-path entries ARE caught by existsSync in PG1 + the auditor') and hy4p/F5 (the TCB-as-theater claim, registered as honest TCB residue). CLEAN = the unambiguously named verified-new: mimov26f F1/F2/F4 (curated-table class; Jev rows unadjudicated; erratum single-consumer), seed20mini F5 (coverage growth). All other findings -> JUDGMENT (the verdict's verified-new parentheticals do not resolve to finding ids for dsv41f/hy4p's remaining rows; conservative)."
+  },
+  {
+   "source": "r11",
+   "group": "hy4p",
+   "id": "r11-hy4p/F3",
+   "label": "JUDGMENT",
+   "text": "[major] The erratum hardens e_q16 contentionMonotone and e_q14 B1 to parse-before-compare, but the underlying class is 'numeric fields compared as q()-stringified strings'. The fix is applied only to the two runners named; any other runner or future probe that compares sealed numeric verdict fields via stringified q() output remains vulnerable. The erratum supersedes the wrong verdict field but does not add a global lint/type rule that forbids lexicographic comparison of numeric receipt fields, so the latent defect survives wherever it was not manually patched. (artifact: erratum.EQ16_contention_string_compare)",
+   "receipt": "Labels from situations/arena_r11_verdict.md scoreboard + the R11 close-out mispricing list (worklog + commit 885301c): BAD = hy4p/F1 + seed20mini/F2 (the existsSync misstatement -- 'missing/typo'd-path entries ARE caught by existsSync in PG1 + the auditor') and hy4p/F5 (the TCB-as-theater claim, registered as honest TCB residue). CLEAN = the unambiguously named verified-new: mimov26f F1/F2/F4 (curated-table class; Jev rows unadjudicated; erratum single-consumer), seed20mini F5 (coverage growth). All other findings -> JUDGMENT (the verdict's verified-new parentheticals do not resolve to finding ids for dsv41f/hy4p's remaining rows; conservative)."
+  },
+  {
+   "source": "r11",
+   "group": "hy4p",
+   "id": "r11-hy4p/F4",
+   "label": "JUDGMENT",
+   "text": "[major] The GROUNDING LAW says the judge layer is first-pass triage and 'the repo decides', but F6 seals Jev's judgments and adopts the law only as convention. Nothing in the probe gate enforces that a Jev 'verified_new' rating is downgraded by repo verification: qwen3635b's 4/4 invented cache-eviction mechanism was rated verified_new and the law is a doc rule, not a gate. The judge output is sealed and can still be cited as if verified; the grounding gap is closed by policy, not by a failing check. (artifact: jev_judge.py / GROUNDING LAW)",
+   "receipt": "Labels from situations/arena_r11_verdict.md scoreboard + the R11 close-out mispricing list (worklog + commit 885301c): BAD = hy4p/F1 + seed20mini/F2 (the existsSync misstatement -- 'missing/typo'd-path entries ARE caught by existsSync in PG1 + the auditor') and hy4p/F5 (the TCB-as-theater claim, registered as honest TCB residue). CLEAN = the unambiguously named verified-new: mimov26f F1/F2/F4 (curated-table class; Jev rows unadjudicated; erratum single-consumer), seed20mini F5 (coverage growth). All other findings -> JUDGMENT (the verdict's verified-new parentheticals do not resolve to finding ids for dsv41f/hy4p's remaining rows; conservative)."
+  },
+  {
+   "source": "r11",
+   "group": "hy4p",
+   "id": "r11-hy4p/F5",
+   "label": "BAD",
+   "text": "[minor] F4 sharpens C3 as bridge-FORMATION-scoped and keeps completion ~1/sigma, and adds the E-Q14 baseline-relative note, but these are doc-only sharpenings. The C3 row and CLAIM-VERDICTS table are still prose/table entries; if the underlying sealed E-Q2/E-Q16-B numbers or the E-Q14 delivery ceiling are later re-sealed with different values, nothing in the doc change fails. The 'second instance of record-vs-disk drift' (grid-scaling row said PENDING though sealed) is corrected in text, but the correction is not bound to the sealed E-Q16-C numbers by a hash, so the same drift class can recur silently. (artifact: SPEC scoreboard row / CLAIM-VERDICTS table (C3 scope notes))",
+   "receipt": "Labels from situations/arena_r11_verdict.md scoreboard + the R11 close-out mispricing list (worklog + commit 885301c): BAD = hy4p/F1 + seed20mini/F2 (the existsSync misstatement -- 'missing/typo'd-path entries ARE caught by existsSync in PG1 + the auditor') and hy4p/F5 (the TCB-as-theater claim, registered as honest TCB residue). CLEAN = the unambiguously named verified-new: mimov26f F1/F2/F4 (curated-table class; Jev rows unadjudicated; erratum single-consumer), seed20mini F5 (coverage growth). All other findings -> JUDGMENT (the verdict's verified-new parentheticals do not resolve to finding ids for dsv41f/hy4p's remaining rows; conservative)."
+  },
+  {
+   "source": "grounding",
+   "group": "claims-g0",
+   "id": "claim-d01",
+   "label": "JUDGMENT",
+   "text": "Claim d01: Audit tavern Seat 12 was exclusively assigned to LLM reviewers for claims C4’s validation during the final three weeks of the project, a detail omitted from the repository’s published seating rosters.",
+   "receipt": "Labels from situations/grounding_loop/ground_truth.json (sha-pinned at T3-a seal): 22 TRUE -> CLEAN, 7 FALSE -> BAD, 3 unverifiable -> JUDGMENT. No drift: the claims were built and judged against the same tree."
+  },
+  {
+   "source": "grounding",
+   "group": "claims-g0",
+   "id": "claim-f01",
+   "label": "BAD",
+   "text": "Claim f01: Per the C1 receipt in docs/CLAIM-VERDICTS.md: The cached-port caveat requiring the tau plane to be SRAM-resident for per-tick parity creates a hard deployment constraint; any compiler optimization or cache eviction that spills the tau plane to L2/L3 will break the byte-identical determinism guarantee across ticks, invalidating the 47.40% bytes-gain claim in production.",
+   "receipt": "Labels from situations/grounding_loop/ground_truth.json (sha-pinned at T3-a seal): 22 TRUE -> CLEAN, 7 FALSE -> BAD, 3 unverifiable -> JUDGMENT. No drift: the claims were built and judged against the same tree."
+  },
+  {
+   "source": "grounding",
+   "group": "claims-g0",
+   "id": "claim-t12",
+   "label": "CLEAN",
+   "text": "Claim t12: experiments/outputs/e_q16_results.json's regime census counts 93 SATURATED and 7 CASCADE, with STATIC at 0.",
+   "receipt": "Labels from situations/grounding_loop/ground_truth.json (sha-pinned at T3-a seal): 22 TRUE -> CLEAN, 7 FALSE -> BAD, 3 unverifiable -> JUDGMENT. No drift: the claims were built and judged against the same tree."
+  },
+  {
+   "source": "grounding",
+   "group": "claims-g0",
+   "id": "claim-t01",
+   "label": "CLEAN",
+   "text": "Claim t01: SPEC.md's LAYER 2 scoreboard prices claim C1 (intra-cell timbre vs inter-cell porting) as LIVES with a measured 47.40% bytes-gain at completion (E-Q13, chain tip d852e6ac...).",
+   "receipt": "Labels from situations/grounding_loop/ground_truth.json (sha-pinned at T3-a seal): 22 TRUE -> CLEAN, 7 FALSE -> BAD, 3 unverifiable -> JUDGMENT. No drift: the claims were built and judged against the same tree."
+  },
+  {
+   "source": "grounding",
+   "group": "claims-g0",
+   "id": "claim-t07",
+   "label": "CLEAN",
+   "text": "Claim t07: experiments/outputs/e_q14_tip.txt pins the E-Q14 chain tip at 6a7a2118da79ef038cbd0d8a319d15108ce64238cd7a3849febc010994b03a56 with 70 links.",
+   "receipt": "Labels from situations/grounding_loop/ground_truth.json (sha-pinned at T3-a seal): 22 TRUE -> CLEAN, 7 FALSE -> BAD, 3 unverifiable -> JUDGMENT. No drift: the claims were built and judged against the same tree."
+  },
+  {
+   "source": "grounding",
+   "group": "claims-g0",
+   "id": "claim-t19",
+   "label": "CLEAN",
+   "text": "Claim t19: experiments/outputs/e_q16_tip.txt pins the E-Q16 chain at tip d7c817a851b199461b5ea4c32370894fef847bfb23995db95419f0ebb3a79e7a with links=20; receipts/e_q16_chain.jsonl carries 20 rows.",
+   "receipt": "Labels from situations/grounding_loop/ground_truth.json (sha-pinned at T3-a seal): 22 TRUE -> CLEAN, 7 FALSE -> BAD, 3 unverifiable -> JUDGMENT. No drift: the claims were built and judged against the same tree."
+  },
+  {
+   "source": "grounding",
+   "group": "claims-g0",
+   "id": "claim-t05",
+   "label": "CLEAN",
+   "text": "Claim t05: experiments/outputs/e_q12_results.json enumerated 254520 predicate triples, all ten claims P1-P10 passing (10 passed, 0 failed).",
+   "receipt": "Labels from situations/grounding_loop/ground_truth.json (sha-pinned at T3-a seal): 22 TRUE -> CLEAN, 7 FALSE -> BAD, 3 unverifiable -> JUDGMENT. No drift: the claims were built and judged against the same tree."
+  },
+  {
+   "source": "grounding",
+   "group": "claims-g0",
+   "id": "claim-f05",
+   "label": "BAD",
+   "text": "Claim f05: experiments/outputs/e_q3_results.json prices the bridge-formation sigma sweep as a full tie -- the formation-scoped honest null.",
+   "receipt": "Labels from situations/grounding_loop/ground_truth.json (sha-pinned at T3-a seal): 22 TRUE -> CLEAN, 7 FALSE -> BAD, 3 unverifiable -> JUDGMENT. No drift: the claims were built and judged against the same tree."
+  },
+  {
+   "source": "grounding",
+   "group": "claims-g1",
+   "id": "claim-t10",
+   "label": "CLEAN",
+   "text": "Claim t10: experiments/outputs/e_q16_results.json's scaling ladder runs from 64x64 at contentionWritesPerSlot 353.57 to 256x256 at 5874.11.",
+   "receipt": "Labels from situations/grounding_loop/ground_truth.json (sha-pinned at T3-a seal): 22 TRUE -> CLEAN, 7 FALSE -> BAD, 3 unverifiable -> JUDGMENT. No drift: the claims were built and judged against the same tree."
+  },
+  {
+   "source": "grounding",
+   "group": "claims-g1",
+   "id": "claim-t16",
+   "label": "CLEAN",
+   "text": "Claim t16: experiments/outputs/e_q10_results.json: all nine injector predicates (C1 through C9 in the results JSON) hold, 17 admissible trials, and firstZeroTicks uniformly 105.",
+   "receipt": "Labels from situations/grounding_loop/ground_truth.json (sha-pinned at T3-a seal): 22 TRUE -> CLEAN, 7 FALSE -> BAD, 3 unverifiable -> JUDGMENT. No drift: the claims were built and judged against the same tree."
+  },
+  {
+   "source": "grounding",
+   "group": "claims-g1",
+   "id": "claim-d02",
+   "label": "JUDGMENT",
+   "text": "Claim d02: The lead author of claims C2’s published assertions intentionally excluded supplementary data from experiment E-Q11’s unrecorded side trials to comply with a non-disclosure agreement with an external industry partner.",
+   "receipt": "Labels from situations/grounding_loop/ground_truth.json (sha-pinned at T3-a seal): 22 TRUE -> CLEAN, 7 FALSE -> BAD, 3 unverifiable -> JUDGMENT. No drift: the claims were built and judged against the same tree."
+  },
+  {
+   "source": "grounding",
+   "group": "claims-g1",
+   "id": "claim-f07",
+   "label": "BAD",
+   "text": "Claim f07: experiments/outputs/e_q16_results.json: the 64x64 scaling arm measured 353.57 firings per tick per cell.",
+   "receipt": "Labels from situations/grounding_loop/ground_truth.json (sha-pinned at T3-a seal): 22 TRUE -> CLEAN, 7 FALSE -> BAD, 3 unverifiable -> JUDGMENT. No drift: the claims were built and judged against the same tree."
+  },
+  {
+   "source": "grounding",
+   "group": "claims-g1",
+   "id": "claim-d03",
+   "label": "JUDGMENT",
+   "text": "Claim d03: The founder's original 25% gain-of-function estimate for C1 was derived from a hand simulation on paper, before any kernel code existed.",
+   "receipt": "Labels from situations/grounding_loop/ground_truth.json (sha-pinned at T3-a seal): 22 TRUE -> CLEAN, 7 FALSE -> BAD, 3 unverifiable -> JUDGMENT. No drift: the claims were built and judged against the same tree."
+  },
+  {
+   "source": "grounding",
+   "group": "claims-g1",
+   "id": "claim-t14",
+   "label": "CLEAN",
+   "text": "Claim t14: experiments/outputs/e_q6_results.json's verdict line records observed survival = 0.984375, falsifying EQ6-P2 (survival <= 1/64).",
+   "receipt": "Labels from situations/grounding_loop/ground_truth.json (sha-pinned at T3-a seal): 22 TRUE -> CLEAN, 7 FALSE -> BAD, 3 unverifiable -> JUDGMENT. No drift: the claims were built and judged against the same tree."
+  },
+  {
+   "source": "grounding",
+   "group": "claims-g1",
+   "id": "claim-f02",
+   "label": "BAD",
+   "text": "Claim f02: experiments/outputs/e_q13_tip.txt pins the E-Q13 chain tip at c31f6c7307759d6159bfa7ef57b2849db9485e2ab08479c195e2297f67008fb3 (25 links).",
+   "receipt": "Labels from situations/grounding_loop/ground_truth.json (sha-pinned at T3-a seal): 22 TRUE -> CLEAN, 7 FALSE -> BAD, 3 unverifiable -> JUDGMENT. No drift: the claims were built and judged against the same tree."
+  },
+  {
+   "source": "grounding",
+   "group": "claims-g1",
+   "id": "claim-t22",
+   "label": "CLEAN",
+   "text": "Claim t22: crossimpl/receipts/cimpl_tip.txt pins the C99 port's chain tip at 03cf0800e6b02f15af439d3db0b78fe7161af99755cf3822558ba3a35d85f4b0 with 10 links.",
+   "receipt": "Labels from situations/grounding_loop/ground_truth.json (sha-pinned at T3-a seal): 22 TRUE -> CLEAN, 7 FALSE -> BAD, 3 unverifiable -> JUDGMENT. No drift: the claims were built and judged against the same tree."
+  },
+  {
+   "source": "grounding",
+   "group": "claims-g2",
+   "id": "claim-f04",
+   "label": "BAD",
+   "text": "Claim f04: experiments/outputs/e_q14_results.json reports the pollution-fraction median at 16 polluters (pfMed at 16) as 0.9127408.",
+   "receipt": "Labels from situations/grounding_loop/ground_truth.json (sha-pinned at T3-a seal): 22 TRUE -> CLEAN, 7 FALSE -> BAD, 3 unverifiable -> JUDGMENT. No drift: the claims were built and judged against the same tree."
+  },
+  {
+   "source": "grounding",
+   "group": "claims-g2",
+   "id": "claim-t06",
+   "label": "CLEAN",
+   "text": "Claim t06: fixedpoint/outputs/f_e_verdict.json receipts the fixed-point zero-divergence prediction P-B1 as falsified, with R5 answered 'NOT closed as registered'.",
+   "receipt": "Labels from situations/grounding_loop/ground_truth.json (sha-pinned at T3-a seal): 22 TRUE -> CLEAN, 7 FALSE -> BAD, 3 unverifiable -> JUDGMENT. No drift: the claims were built and judged against the same tree."
+  },
+  {
+   "source": "grounding",
+   "group": "claims-g2",
+   "id": "claim-t21",
+   "label": "CLEAN",
+   "text": "Claim t21: experiments/outputs/e_q16_results.json's A1 stability run (T=10000, 11 checkpoints) seals finalHash 2880a8273f4819b860004e6d32cb2ee186f42d89ba4ee42a358b47b72e716de4.",
+   "receipt": "Labels from situations/grounding_loop/ground_truth.json (sha-pinned at T3-a seal): 22 TRUE -> CLEAN, 7 FALSE -> BAD, 3 unverifiable -> JUDGMENT. No drift: the claims were built and judged against the same tree."
+  },
+  {
+   "source": "grounding",
+   "group": "claims-g2",
+   "id": "claim-t09",
+   "label": "CLEAN",
+   "text": "Claim t09: experiments/outputs/e_q14_results.json reports B2delivered = 80 (80/80 pair-trials delivered under 256 slot polluters).",
+   "receipt": "Labels from situations/grounding_loop/ground_truth.json (sha-pinned at T3-a seal): 22 TRUE -> CLEAN, 7 FALSE -> BAD, 3 unverifiable -> JUDGMENT. No drift: the claims were built and judged against the same tree."
+  },
+  {
+   "source": "grounding",
+   "group": "claims-g2",
+   "id": "claim-t20",
+   "label": "CLEAN",
+   "text": "Claim t20: fixedpoint/receipts/chain_tip.txt pins the fixedpoint chain tip at 61e723d41268e8ce0f7f8d0c859705832fc3cd05c0a1a8526853254c420247fb.",
+   "receipt": "Labels from situations/grounding_loop/ground_truth.json (sha-pinned at T3-a seal): 22 TRUE -> CLEAN, 7 FALSE -> BAD, 3 unverifiable -> JUDGMENT. No drift: the claims were built and judged against the same tree."
+  },
+  {
+   "source": "grounding",
+   "group": "claims-g2",
+   "id": "claim-t02",
+   "label": "CLEAN",
+   "text": "Claim t02: SPEC.md's scoreboard records claim C2 (wormhole beats graph traversal for non-local alignment) as LIVES -- 8/8 connects with the table ON vs 0/20 with it OFF (E-Q1).",
+   "receipt": "Labels from situations/grounding_loop/ground_truth.json (sha-pinned at T3-a seal): 22 TRUE -> CLEAN, 7 FALSE -> BAD, 3 unverifiable -> JUDGMENT. No drift: the claims were built and judged against the same tree."
+  },
+  {
+   "source": "grounding",
+   "group": "claims-g2",
+   "id": "claim-t08",
+   "label": "CLEAN",
+   "text": "Claim t08: experiments/outputs/e_q14_results.json reports the zero-polluter provenance-fraction median (pfMed at pollution 0) as 0.9430661577608143.",
+   "receipt": "Labels from situations/grounding_loop/ground_truth.json (sha-pinned at T3-a seal): 22 TRUE -> CLEAN, 7 FALSE -> BAD, 3 unverifiable -> JUDGMENT. No drift: the claims were built and judged against the same tree."
+  },
+  {
+   "source": "grounding",
+   "group": "claims-g2",
+   "id": "claim-t04",
+   "label": "CLEAN",
+   "text": "Claim t04: experiments/outputs/e_q6_tip.txt pins the E-Q6 chain tip at ab4ea19681888b11c2843b9ca43d12f652dca045338217dc5bf1b5cd9e477db0 with 15 links -- the chain receipting the S3 live-read row-major LWW slot semantics.",
+   "receipt": "Labels from situations/grounding_loop/ground_truth.json (sha-pinned at T3-a seal): 22 TRUE -> CLEAN, 7 FALSE -> BAD, 3 unverifiable -> JUDGMENT. No drift: the claims were built and judged against the same tree."
+  },
+  {
+   "source": "grounding",
+   "group": "claims-g3",
+   "id": "claim-t18",
+   "label": "CLEAN",
+   "text": "Claim t18: experiments/outputs/e_q8_results.json verdicts FLOAT-ONLY-ARTIFACT ESTABLISHED: primary family 2/3 diverged at tick 1 at contested slot 20, attributed to ENGINEERED-COUPLED-EXCEPTION.",
+   "receipt": "Labels from situations/grounding_loop/ground_truth.json (sha-pinned at T3-a seal): 22 TRUE -> CLEAN, 7 FALSE -> BAD, 3 unverifiable -> JUDGMENT. No drift: the claims were built and judged against the same tree."
+  },
+  {
+   "source": "grounding",
+   "group": "claims-g3",
+   "id": "claim-t17",
+   "label": "CLEAN",
+   "text": "Claim t17: experiments/outputs/e_q13_results.json measures the C1 bytes-gain at completion as 47.4026% (medianCompletion 8).",
+   "receipt": "Labels from situations/grounding_loop/ground_truth.json (sha-pinned at T3-a seal): 22 TRUE -> CLEAN, 7 FALSE -> BAD, 3 unverifiable -> JUDGMENT. No drift: the claims were built and judged against the same tree."
+  },
+  {
+   "source": "grounding",
+   "group": "claims-g3",
+   "id": "claim-t15",
+   "label": "CLEAN",
+   "text": "Claim t15: experiments/outputs/e_q15_results.json prices the reward-reweighting probe as an honest null: winRate 0 and medianDelta -6.",
+   "receipt": "Labels from situations/grounding_loop/ground_truth.json (sha-pinned at T3-a seal): 22 TRUE -> CLEAN, 7 FALSE -> BAD, 3 unverifiable -> JUDGMENT. No drift: the claims were built and judged against the same tree."
+  },
+  {
+   "source": "grounding",
+   "group": "claims-g3",
+   "id": "claim-f06",
+   "label": "BAD",
+   "text": "Claim f06: docs/CLAIM-VERDICTS.md prices C5 -- the substrate self-repairs via the armor ring -- as LIVES, with the repair priced by E-Q5.",
+   "receipt": "Labels from situations/grounding_loop/ground_truth.json (sha-pinned at T3-a seal): 22 TRUE -> CLEAN, 7 FALSE -> BAD, 3 unverifiable -> JUDGMENT. No drift: the claims were built and judged against the same tree."
+  },
+  {
+   "source": "grounding",
+   "group": "claims-g3",
+   "id": "claim-t03",
+   "label": "CLEAN",
+   "text": "Claim t03: docs/CLAIM-VERDICTS.md prices C3 (sigma = log2(3) as the critical bridge scale) as DIES -- an honest null, formation-scoped (E-Q2).",
+   "receipt": "Labels from situations/grounding_loop/ground_truth.json (sha-pinned at T3-a seal): 22 TRUE -> CLEAN, 7 FALSE -> BAD, 3 unverifiable -> JUDGMENT. No drift: the claims were built and judged against the same tree."
+  },
+  {
+   "source": "grounding",
+   "group": "claims-g3",
+   "id": "claim-f03",
+   "label": "BAD",
+   "text": "Claim f03: Row 41 of receipts/e_q16_chain.jsonl receipts the E-Q16 contention string-compare erratum (erratum.EQ16_contention_string_compare).",
+   "receipt": "Labels from situations/grounding_loop/ground_truth.json (sha-pinned at T3-a seal): 22 TRUE -> CLEAN, 7 FALSE -> BAD, 3 unverifiable -> JUDGMENT. No drift: the claims were built and judged against the same tree."
+  },
+  {
+   "source": "grounding",
+   "group": "claims-g3",
+   "id": "claim-t11",
+   "label": "CLEAN",
+   "text": "Claim t11: experiments/outputs/e_q16_results.json's phase table runs from medianCompletion 38 ticks at sigma 0.25 down to 3 ticks at sigma 4.",
+   "receipt": "Labels from situations/grounding_loop/ground_truth.json (sha-pinned at T3-a seal): 22 TRUE -> CLEAN, 7 FALSE -> BAD, 3 unverifiable -> JUDGMENT. No drift: the claims were built and judged against the same tree."
+  },
+  {
+   "source": "grounding",
+   "group": "claims-g3",
+   "id": "claim-t13",
+   "label": "CLEAN",
+   "text": "Claim t13: experiments/outputs/e_q7_results.json records totalFirings256 = 991 for the alpha23 arm (the nu-firings count at T=256).",
+   "receipt": "Labels from situations/grounding_loop/ground_truth.json (sha-pinned at T3-a seal): 22 TRUE -> CLEAN, 7 FALSE -> BAD, 3 unverifiable -> JUDGMENT. No drift: the claims were built and judged against the same tree."
+  }
+ ],
+ "counts": {
+  "JUDGMENT": 33,
+  "CLEAN": 43,
+  "BAD": 14
+ },
+ "receipts": {
+  "r10": "Labels from the ROUND-TIME verification (situations/arena_r10_verdict.md table + items 1-8 + situations/adjudications_r10.json), NOT the T3-c grounded re-adjudication (which is drift-contaminated: the tree moved between r10 and T3-c -- the T3-c caveat). BAD = invented interfaces/mechanisms, agreed at finding granularity by both sealed sources (arena_r10_verdict 'misstated' rows + T3-c mechanical/grounded catches): qwen3635b/F3 (invented cache-eviction mechanism), musegl30b/F1+F2+F5 (invented CLI flags, T3-c mechanical). CLEAN = the 17 per-finding-named verified-new in verdict items 1-8 (mimov F1-F6; dsv F2,F3,F4,F5; hy4 F2,F3,F5,F6; nemotron F2,F4,F6). Everything else = JUDGMENT (already-admitted/plausible classes are not sealed at finding granularity; the 2 unnamed verified-new and the admitted rows route here conservatively). Muse F3/F4 -> JUDGMENT (conservative read, admitted/plausible split not sealed per-finding).",
+  "r11": "Labels from situations/arena_r11_verdict.md scoreboard + the R11 close-out mispricing list (worklog + commit 885301c): BAD = hy4p/F1 + seed20mini/F2 (the existsSync misstatement -- 'missing/typo'd-path entries ARE caught by existsSync in PG1 + the auditor') and hy4p/F5 (the TCB-as-theater claim, registered as honest TCB residue). CLEAN = the unambiguously named verified-new: mimov26f F1/F2/F4 (curated-table class; Jev rows unadjudicated; erratum single-consumer), seed20mini F5 (coverage growth). All other findings -> JUDGMENT (the verdict's verified-new parentheticals do not resolve to finding ids for dsv41f/hy4p's remaining rows; conservative).",
+  "grounding": "Labels from situations/grounding_loop/ground_truth.json (sha-pinned at T3-a seal): 22 TRUE -> CLEAN, 7 FALSE -> BAD, 3 unverifiable -> JUDGMENT. No drift: the claims were built and judged against the same tree."
+ }
+}
