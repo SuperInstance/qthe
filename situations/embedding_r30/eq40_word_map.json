@@ -1075,7 +1075,7 @@
     },
     {
      "word": "e-q20c",
-     "substitute": "e-q18",
+     "substitute": "e-q20b",
      "pos": "IDENT",
      "occurrences": 1,
      "tf": 1,
@@ -1373,7 +1373,7 @@
     },
     {
      "word": "batching",
-     "substitute": "grouping",
+     "substitute": "aggregating",
      "pos": "NOUN",
      "occurrences": 2,
      "tf": 2,

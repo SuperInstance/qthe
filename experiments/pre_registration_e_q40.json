@@ -54,6 +54,12 @@
       "ts": "2026-10-19 (pre-run, ZERO census calls spent; third catch by the same F2 pre-flight)",
       "what": "the case rule generalized to PER-POSITION case transfer for equal-length tokens: the experiment ids carry mixed case (E-Q20b \u2014 lowercase suffix letter), which neither the first-letter rule (AM0) nor the all-caps rule (AM1) reproduces. transfer_case maps case character-by-character when occurrence and substitute have equal length, with the all-caps and first-letter rules as fallbacks.",
       "why_honest": "same defect class as AM1/AM2 (application detail of the substitution, caught by the inverse-exactness floor before any spend); sample, substitutes, hypotheses, measures unchanged."
+    },
+    {
+      "id": "AM4",
+      "ts": "2026-10-19 (pre-run, ZERO census calls spent; a full-table enumeration of the F2 pre-flight \u2014 all 120 rows checked at once \u2014 found the last two defects)",
+      "what": "two substitution-table fixes: Q4 'e-q20c'->'e-q20b' (the 6-char mixed-case id keeps per-position case transfer inverse-exact; 'e-q18' is 5 chars and cannot reproduce the E-Q20c case pattern), and A3 'batching'->'aggregating' ('grouping' collides with the base text's own 'per-artifact grouping' \u2014 the floor forbids ambiguous inverses).",
+      "why_honest": "same defect class as AM1-AM3, caught by enumerating the F2 floor over the full table before any spend; sample, hypotheses, measures unchanged. Four pre-run amendments total \u2014 the floor has now caught every application defect it exists to catch."
     }
   ]
 }
