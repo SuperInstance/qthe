@@ -1,0 +1,1621 @@
+{
+ "experiment": "E-Q40",
+ "law": "the sealed lexical-sensitivity census word map (TF-IDF top-6 per record x hand-crafted single-token near-synonym substitutions; POS classes; mechanical echo flags vs the frozen E-Q25 12-question map)",
+ "salience_rule": "tokens [A-Za-z][A-Za-z0-9]*(-[A-Za-z0-9]+)* lowercased; stopword list + min length 3 frozen in eq40_build_wordmap.py; score = tf_in_record * ln(20/df_across_records); top 6 by (score desc, first-occurrence asc, token asc)",
+ "substitution_rule": "ALL occurrences of the exact surface form (case-insensitive) replaced, first-letter case preserved per occurrence; occurrence count receipted per row",
+ "echo_rule": "word-boundary match of {word, word+s, word-minus-s} in the frozen E-Q25 12-question map text (key + question json); mechanical, limitations receipted",
+ "records": {
+  "N1": {
+   "family": "N",
+   "words": [
+    {
+     "word": "cells",
+     "substitute": "units",
+     "pos": "NOUN",
+     "occurrences": 3,
+     "tf": 3,
+     "df": 2,
+     "echo_orig": true,
+     "echo_axes_orig": [
+      "P1_nonlocal",
+      "D3_near_bio"
+     ],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "runs",
+     "substitute": "trials",
+     "pos": "NOUN",
+     "occurrences": 2,
+     "tf": 2,
+     "df": 1,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "wormholes",
+     "substitute": "tunnels",
+     "pos": "NOUN",
+     "occurrences": 2,
+     "tf": 2,
+     "df": 3,
+     "echo_orig": true,
+     "echo_axes_orig": [
+      "P1_nonlocal"
+     ],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "e-q1",
+     "substitute": "e-q3",
+     "pos": "IDENT",
+     "occurrences": 1,
+     "tf": 1,
+     "df": 1,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "alignment",
+     "substitute": "correspondence",
+     "pos": "NOUN",
+     "occurrences": 1,
+     "tf": 1,
+     "df": 1,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "planted",
+     "substitute": "seeded",
+     "pos": "VERB",
+     "occurrences": 1,
+     "tf": 1,
+     "df": 1,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    }
+   ]
+  },
+  "N2": {
+   "family": "N",
+   "words": [
+    {
+     "word": "sidecar",
+     "substitute": "companion",
+     "pos": "NOUN",
+     "occurrences": 2,
+     "tf": 2,
+     "df": 1,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "table",
+     "substitute": "registry",
+     "pos": "NOUN",
+     "occurrences": 4,
+     "tf": 4,
+     "df": 5,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "twin",
+     "substitute": "mirror",
+     "pos": "NOUN",
+     "occurrences": 3,
+     "tf": 3,
+     "df": 4,
+     "echo_orig": true,
+     "echo_axes_orig": [
+      "P1_nonlocal"
+     ],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "slot",
+     "substitute": "bucket",
+     "pos": "NOUN",
+     "occurrences": 2,
+     "tf": 2,
+     "df": 4,
+     "echo_orig": true,
+     "echo_axes_orig": [
+      "P1_nonlocal"
+     ],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "dead",
+     "substitute": "defunct",
+     "pos": "ADJ",
+     "occurrences": 1,
+     "tf": 1,
+     "df": 1,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "layer",
+     "substitute": "tier",
+     "pos": "NOUN",
+     "occurrences": 1,
+     "tf": 1,
+     "df": 1,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": true,
+     "echo_axes_sub": [
+      "P7_econ"
+     ]
+    }
+   ]
+  },
+  "N3": {
+   "family": "N",
+   "words": [
+    {
+     "word": "hierarchical",
+     "substitute": "layered",
+     "pos": "ADJ",
+     "occurrences": 2,
+     "tf": 2,
+     "df": 1,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "fold",
+     "substitute": "bend",
+     "pos": "NOUN",
+     "occurrences": 2,
+     "tf": 2,
+     "df": 1,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "provenance",
+     "substitute": "lineage",
+     "pos": "NOUN",
+     "occurrences": 2,
+     "tf": 2,
+     "df": 1,
+     "echo_orig": true,
+     "echo_axes_orig": [
+      "P3_quantum"
+     ],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "population",
+     "substitute": "occupancy",
+     "pos": "NOUN",
+     "occurrences": 2,
+     "tf": 2,
+     "df": 1,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "worse",
+     "substitute": "poorer",
+     "pos": "ADJ",
+     "occurrences": 2,
+     "tf": 2,
+     "df": 2,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "times",
+     "substitute": "steps",
+     "pos": "NOUN",
+     "occurrences": 2,
+     "tf": 2,
+     "df": 4,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    }
+   ]
+  },
+  "N4": {
+   "family": "N",
+   "words": [
+    {
+     "word": "semantics",
+     "substitute": "definitions",
+     "pos": "NOUN",
+     "occurrences": 2,
+     "tf": 2,
+     "df": 1,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "row-major",
+     "substitute": "scanline",
+     "pos": "ADJ",
+     "occurrences": 2,
+     "tf": 2,
+     "df": 1,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "writes",
+     "substitute": "stores",
+     "pos": "VERB",
+     "occurrences": 2,
+     "tf": 2,
+     "df": 2,
+     "echo_orig": true,
+     "echo_axes_orig": [
+      "P1_nonlocal"
+     ],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "value",
+     "substitute": "quantity",
+     "pos": "NOUN",
+     "occurrences": 2,
+     "tf": 2,
+     "df": 2,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "slot",
+     "substitute": "bucket",
+     "pos": "NOUN",
+     "occurrences": 2,
+     "tf": 2,
+     "df": 4,
+     "echo_orig": true,
+     "echo_axes_orig": [
+      "P1_nonlocal"
+     ],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "e-q6",
+     "substitute": "e-q12",
+     "pos": "IDENT",
+     "occurrences": 1,
+     "tf": 1,
+     "df": 1,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    }
+   ]
+  },
+  "N5": {
+   "family": "N",
+   "words": [
+    {
+     "word": "artifact",
+     "substitute": "byproduct",
+     "pos": "NOUN",
+     "occurrences": 2,
+     "tf": 2,
+     "df": 1,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "property",
+     "substitute": "trait",
+     "pos": "NOUN",
+     "occurrences": 2,
+     "tf": 2,
+     "df": 1,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "families",
+     "substitute": "branches",
+     "pos": "NOUN",
+     "occurrences": 2,
+     "tf": 2,
+     "df": 2,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "kernel",
+     "substitute": "core",
+     "pos": "NOUN",
+     "occurrences": 2,
+     "tf": 2,
+     "df": 4,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "e-q8",
+     "substitute": "e-q14",
+     "pos": "IDENT",
+     "occurrences": 1,
+     "tf": 1,
+     "df": 1,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "same-slot",
+     "substitute": "same-position",
+     "pos": "ADJ",
+     "occurrences": 1,
+     "tf": 1,
+     "df": 1,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    }
+   ]
+  },
+  "P1": {
+   "family": "P",
+   "words": [
+    {
+     "word": "timbre",
+     "substitute": "tonality",
+     "pos": "NOUN",
+     "occurrences": 2,
+     "tf": 2,
+     "df": 1,
+     "echo_orig": true,
+     "echo_axes_orig": [
+      "P2_localrule"
+     ],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "porting",
+     "substitute": "transplanting",
+     "pos": "VERB",
+     "occurrences": 2,
+     "tf": 2,
+     "df": 1,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "cell",
+     "substitute": "unit",
+     "pos": "NOUN",
+     "occurrences": 2,
+     "tf": 2,
+     "df": 3,
+     "echo_orig": true,
+     "echo_axes_orig": [
+      "P1_nonlocal",
+      "D3_near_bio"
+     ],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "rule",
+     "substitute": "law",
+     "pos": "NOUN",
+     "occurrences": 2,
+     "tf": 2,
+     "df": 4,
+     "echo_orig": true,
+     "echo_axes_orig": [
+      "P2_localrule"
+     ],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "e-q13",
+     "substitute": "e-q16",
+     "pos": "IDENT",
+     "occurrences": 1,
+     "tf": 1,
+     "df": 1,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "byte",
+     "substitute": "octet",
+     "pos": "NOUN",
+     "occurrences": 1,
+     "tf": 1,
+     "df": 1,
+     "echo_orig": true,
+     "echo_axes_orig": [
+      "P8_exact"
+     ],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    }
+   ]
+  },
+  "P2": {
+   "family": "P",
+   "words": [
+    {
+     "word": "sigma",
+     "substitute": "spread",
+     "pos": "NOUN",
+     "occurrences": 5,
+     "tf": 5,
+     "df": 2,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "bridge",
+     "substitute": "linkage",
+     "pos": "NOUN",
+     "occurrences": 3,
+     "tf": 3,
+     "df": 2,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "critical",
+     "substitute": "pivotal",
+     "pos": "ADJ",
+     "occurrences": 2,
+     "tf": 2,
+     "df": 1,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "scale",
+     "substitute": "magnitude",
+     "pos": "NOUN",
+     "occurrences": 2,
+     "tf": 2,
+     "df": 1,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "formation",
+     "substitute": "genesis",
+     "pos": "NOUN",
+     "occurrences": 2,
+     "tf": 2,
+     "df": 1,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "completion",
+     "substitute": "finish",
+     "pos": "NOUN",
+     "occurrences": 2,
+     "tf": 2,
+     "df": 2,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    }
+   ]
+  },
+  "P3": {
+   "family": "P",
+   "words": [
+    {
+     "word": "threshold",
+     "substitute": "cutoff",
+     "pos": "NOUN",
+     "occurrences": 3,
+     "tf": 3,
+     "df": 1,
+     "echo_orig": true,
+     "echo_axes_orig": [
+      "P2_localrule"
+     ],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "useful",
+     "substitute": "valuable",
+     "pos": "ADJ",
+     "occurrences": 2,
+     "tf": 2,
+     "df": 1,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "transfer",
+     "substitute": "shipment",
+     "pos": "NOUN",
+     "occurrences": 2,
+     "tf": 2,
+     "df": 1,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "phase",
+     "substitute": "stage",
+     "pos": "NOUN",
+     "occurrences": 2,
+     "tf": 2,
+     "df": 2,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "cascade",
+     "substitute": "waterfall",
+     "pos": "NOUN",
+     "occurrences": 2,
+     "tf": 2,
+     "df": 2,
+     "echo_orig": true,
+     "echo_axes_orig": [
+      "P2_localrule"
+     ],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "wave",
+     "substitute": "ripple",
+     "pos": "NOUN",
+     "occurrences": 2,
+     "tf": 2,
+     "df": 2,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    }
+   ]
+  },
+  "P4": {
+   "family": "P",
+   "words": [
+    {
+     "word": "field",
+     "substitute": "grid",
+     "pos": "NOUN",
+     "occurrences": 2,
+     "tf": 2,
+     "df": 1,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "thousand",
+     "substitute": "myriad",
+     "pos": "NUM",
+     "occurrences": 2,
+     "tf": 2,
+     "df": 1,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "held",
+     "substitute": "kept",
+     "pos": "VERB",
+     "occurrences": 2,
+     "tf": 2,
+     "df": 1,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "harness",
+     "substitute": "rig",
+     "pos": "NOUN",
+     "occurrences": 2,
+     "tf": 2,
+     "df": 1,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "sigma",
+     "substitute": "spread",
+     "pos": "NOUN",
+     "occurrences": 2,
+     "tf": 2,
+     "df": 2,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "run",
+     "substitute": "trial",
+     "pos": "NOUN",
+     "occurrences": 2,
+     "tf": 2,
+     "df": 3,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    }
+   ]
+  },
+  "P5": {
+   "family": "P",
+   "words": [
+    {
+     "word": "neighbors",
+     "substitute": "adjacencies",
+     "pos": "NOUN",
+     "occurrences": 2,
+     "tf": 2,
+     "df": 1,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "toward",
+     "substitute": "into",
+     "pos": "ADP",
+     "occurrences": 2,
+     "tf": 2,
+     "df": 1,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "update",
+     "substitute": "refresh",
+     "pos": "NOUN",
+     "occurrences": 2,
+     "tf": 2,
+     "df": 2,
+     "echo_orig": true,
+     "echo_axes_orig": [
+      "P2_localrule"
+     ],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "add",
+     "substitute": "contribute",
+     "pos": "VERB",
+     "occurrences": 1,
+     "tf": 1,
+     "df": 1,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "subtract",
+     "substitute": "deduct",
+     "pos": "VERB",
+     "occurrences": 1,
+     "tf": 1,
+     "df": 1,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "accumulator",
+     "substitute": "collector",
+     "pos": "NOUN",
+     "occurrences": 1,
+     "tf": 1,
+     "df": 1,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    }
+   ]
+  },
+  "Q1": {
+   "family": "Q",
+   "words": [
+    {
+     "word": "c11",
+     "substitute": "c10",
+     "pos": "IDENT",
+     "occurrences": 2,
+     "tf": 2,
+     "df": 1,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "blur",
+     "substitute": "haze",
+     "pos": "NOUN",
+     "occurrences": 2,
+     "tf": 2,
+     "df": 1,
+     "echo_orig": true,
+     "echo_axes_orig": [
+      "P3_quantum"
+     ],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "certified",
+     "substitute": "accredited",
+     "pos": "ADJ",
+     "occurrences": 2,
+     "tf": 2,
+     "df": 2,
+     "echo_orig": true,
+     "echo_axes_orig": [
+      "P3_quantum"
+     ],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "quantum",
+     "substitute": "wave-mechanical",
+     "pos": "ADJ",
+     "occurrences": 2,
+     "tf": 2,
+     "df": 2,
+     "echo_orig": true,
+     "echo_axes_orig": [
+      "P3_quantum"
+     ],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "tick",
+     "substitute": "step",
+     "pos": "NOUN",
+     "occurrences": 2,
+     "tf": 2,
+     "df": 3,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "lives",
+     "substitute": "survives",
+     "pos": "VERB",
+     "occurrences": 2,
+     "tf": 2,
+     "df": 4,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    }
+   ]
+  },
+  "Q2": {
+   "family": "Q",
+   "words": [
+    {
+     "word": "certificate",
+     "substitute": "credential",
+     "pos": "NOUN",
+     "occurrences": 2,
+     "tf": 2,
+     "df": 1,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "root",
+     "substitute": "base",
+     "pos": "NOUN",
+     "occurrences": 2,
+     "tf": 2,
+     "df": 2,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "equal",
+     "substitute": "identical",
+     "pos": "ADJ",
+     "occurrences": 2,
+     "tf": 2,
+     "df": 2,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "conditioned",
+     "substitute": "treated",
+     "pos": "VERB",
+     "occurrences": 1,
+     "tf": 1,
+     "df": 1,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "bits",
+     "substitute": "digits",
+     "pos": "NOUN",
+     "occurrences": 1,
+     "tf": 1,
+     "df": 1,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "toeplitz",
+     "substitute": "circulant",
+     "pos": "IDENT",
+     "occurrences": 1,
+     "tf": 1,
+     "df": 1,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    }
+   ]
+  },
+  "Q3": {
+   "family": "Q",
+   "words": [
+    {
+     "word": "floor",
+     "substitute": "baseline",
+     "pos": "NOUN",
+     "occurrences": 3,
+     "tf": 3,
+     "df": 1,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "ladder",
+     "substitute": "staircase",
+     "pos": "NOUN",
+     "occurrences": 3,
+     "tf": 3,
+     "df": 2,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "e-q20b",
+     "substitute": "e-q20c",
+     "pos": "IDENT",
+     "occurrences": 1,
+     "tf": 1,
+     "df": 1,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "burn-in",
+     "substitute": "warmup",
+     "pos": "NOUN",
+     "occurrences": 1,
+     "tf": 1,
+     "df": 1,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "credits",
+     "substitute": "funds",
+     "pos": "NOUN",
+     "occurrences": 1,
+     "tf": 1,
+     "df": 1,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "relaxation",
+     "substitute": "cooling",
+     "pos": "NOUN",
+     "occurrences": 1,
+     "tf": 1,
+     "df": 1,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    }
+   ]
+  },
+  "Q4": {
+   "family": "Q",
+   "words": [
+    {
+     "word": "channel",
+     "substitute": "conduit",
+     "pos": "NOUN",
+     "occurrences": 2,
+     "tf": 2,
+     "df": 2,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "wormholes",
+     "substitute": "tunnels",
+     "pos": "NOUN",
+     "occurrences": 2,
+     "tf": 2,
+     "df": 3,
+     "echo_orig": true,
+     "echo_axes_orig": [
+      "P1_nonlocal"
+     ],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "e-q20c",
+     "substitute": "e-q18",
+     "pos": "IDENT",
+     "occurrences": 1,
+     "tf": 1,
+     "df": 1,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "plateau-mechanism",
+     "substitute": "mesa-mechanism",
+     "pos": "NOUN",
+     "occurrences": 1,
+     "tf": 1,
+     "df": 1,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "ablation",
+     "substitute": "dissection",
+     "pos": "NOUN",
+     "occurrences": 1,
+     "tf": 1,
+     "df": 1,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "arms",
+     "substitute": "branches",
+     "pos": "NOUN",
+     "occurrences": 1,
+     "tf": 1,
+     "df": 1,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    }
+   ]
+  },
+  "Q5": {
+   "family": "Q",
+   "words": [
+    {
+     "word": "grid",
+     "substitute": "lattice",
+     "pos": "NOUN",
+     "occurrences": 2,
+     "tf": 2,
+     "df": 1,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "r9-era",
+     "substitute": "r7-era",
+     "pos": "IDENT",
+     "occurrences": 1,
+     "tf": 1,
+     "df": 1,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "superseded",
+     "substitute": "retired",
+     "pos": "VERB",
+     "occurrences": 1,
+     "tf": 1,
+     "df": 1,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "graph-v1",
+     "substitute": "graph-v2",
+     "pos": "IDENT",
+     "occurrences": 1,
+     "tf": 1,
+     "df": 1,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "emulator",
+     "substitute": "simulator",
+     "pos": "NOUN",
+     "occurrences": 1,
+     "tf": 1,
+     "df": 1,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "balance",
+     "substitute": "evenness",
+     "pos": "NOUN",
+     "occurrences": 1,
+     "tf": 1,
+     "df": 1,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    }
+   ]
+  },
+  "A1": {
+   "family": "A",
+   "words": [
+    {
+     "word": "tiles",
+     "substitute": "patches",
+     "pos": "NOUN",
+     "occurrences": 2,
+     "tf": 2,
+     "df": 1,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "share",
+     "substitute": "allotment",
+     "pos": "NOUN",
+     "occurrences": 2,
+     "tf": 2,
+     "df": 1,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "stable",
+     "substitute": "steady",
+     "pos": "ADJ",
+     "occurrences": 2,
+     "tf": 2,
+     "df": 1,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "starvation",
+     "substitute": "deprivation",
+     "pos": "NOUN",
+     "occurrences": 2,
+     "tf": 2,
+     "df": 1,
+     "echo_orig": true,
+     "echo_axes_orig": [
+      "P4_alloc"
+     ],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "heap",
+     "substitute": "stack",
+     "pos": "NOUN",
+     "occurrences": 2,
+     "tf": 2,
+     "df": 1,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "cap",
+     "substitute": "ceiling",
+     "pos": "NOUN",
+     "occurrences": 2,
+     "tf": 2,
+     "df": 1,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    }
+   ]
+  },
+  "A2": {
+   "family": "A",
+   "words": [
+    {
+     "word": "reweighting",
+     "substitute": "rebalancing",
+     "pos": "NOUN",
+     "occurrences": 3,
+     "tf": 3,
+     "df": 1,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "quality-correlated",
+     "substitute": "merit-linked",
+     "pos": "ADJ",
+     "occurrences": 2,
+     "tf": 2,
+     "df": 1,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "plain",
+     "substitute": "simple",
+     "pos": "ADJ",
+     "occurrences": 2,
+     "tf": 2,
+     "df": 1,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "max-of-accepted",
+     "substitute": "best-of-accepted",
+     "pos": "NOUN",
+     "occurrences": 2,
+     "tf": 2,
+     "df": 1,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "e-q15",
+     "substitute": "e-q19",
+     "pos": "IDENT",
+     "occurrences": 1,
+     "tf": 1,
+     "df": 1,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "reward",
+     "substitute": "payoff",
+     "pos": "NOUN",
+     "occurrences": 1,
+     "tf": 1,
+     "df": 1,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    }
+   ]
+  },
+  "A3": {
+   "family": "A",
+   "words": [
+    {
+     "word": "question",
+     "substitute": "query",
+     "pos": "NOUN",
+     "occurrences": 4,
+     "tf": 4,
+     "df": 1,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "batching",
+     "substitute": "grouping",
+     "pos": "NOUN",
+     "occurrences": 2,
+     "tf": 2,
+     "df": 1,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "guard",
+     "substitute": "sentry",
+     "pos": "NOUN",
+     "occurrences": 2,
+     "tf": 2,
+     "df": 1,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "cheaper",
+     "substitute": "less-costly",
+     "pos": "ADJ",
+     "occurrences": 2,
+     "tf": 2,
+     "df": 1,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "state",
+     "substitute": "status",
+     "pos": "NOUN",
+     "occurrences": 2,
+     "tf": 2,
+     "df": 3,
+     "echo_orig": true,
+     "echo_axes_orig": [
+      "P2_localrule"
+     ],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "economics",
+     "substitute": "financials",
+     "pos": "NOUN",
+     "occurrences": 1,
+     "tf": 1,
+     "df": 1,
+     "echo_orig": true,
+     "echo_axes_orig": [
+      "P7_econ"
+     ],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    }
+   ]
+  },
+  "A4": {
+   "family": "A",
+   "words": [
+    {
+     "word": "price",
+     "substitute": "expense",
+     "pos": "NOUN",
+     "occurrences": 2,
+     "tf": 2,
+     "df": 1,
+     "echo_orig": true,
+     "echo_axes_orig": [
+      "P7_econ",
+      "D4_near_price"
+     ],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "recall",
+     "substitute": "sensitivity",
+     "pos": "NOUN",
+     "occurrences": 2,
+     "tf": 2,
+     "df": 1,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "cheap",
+     "substitute": "inexpensive",
+     "pos": "ADJ",
+     "occurrences": 2,
+     "tf": 2,
+     "df": 2,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "battery",
+     "substitute": "suite",
+     "pos": "NOUN",
+     "occurrences": 2,
+     "tf": 2,
+     "df": 2,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "percent",
+     "substitute": "pct",
+     "pos": "NOUN",
+     "occurrences": 3,
+     "tf": 3,
+     "df": 6,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "verify-tier",
+     "substitute": "check-tier",
+     "pos": "NOUN",
+     "occurrences": 1,
+     "tf": 1,
+     "df": 1,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    }
+   ]
+  },
+  "A5": {
+   "family": "A",
+   "words": [
+    {
+     "word": "seat",
+     "substitute": "bench",
+     "pos": "NOUN",
+     "occurrences": 3,
+     "tf": 3,
+     "df": 1,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "families",
+     "substitute": "branches",
+     "pos": "NOUN",
+     "occurrences": 3,
+     "tf": 3,
+     "df": 2,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "panel",
+     "substitute": "board",
+     "pos": "NOUN",
+     "occurrences": 2,
+     "tf": 2,
+     "df": 1,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "record",
+     "substitute": "account",
+     "pos": "NOUN",
+     "occurrences": 2,
+     "tf": 2,
+     "df": 2,
+     "echo_orig": true,
+     "echo_axes_orig": [
+      "P1_nonlocal",
+      "P2_localrule",
+      "P3_quantum",
+      "P4_alloc",
+      "P5_repair",
+      "P6_null",
+      "P7_econ",
+      "P8_exact",
+      "D1_far_marine",
+      "D2_far_painting",
+      "D3_near_bio",
+      "D4_near_price"
+     ],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "different",
+     "substitute": "distinct",
+     "pos": "ADJ",
+     "occurrences": 2,
+     "tf": 2,
+     "df": 3,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    },
+    {
+     "word": "harmony",
+     "substitute": "accord",
+     "pos": "NOUN",
+     "occurrences": 1,
+     "tf": 1,
+     "df": 1,
+     "echo_orig": false,
+     "echo_axes_orig": [],
+     "echo_sub": false,
+     "echo_axes_sub": []
+    }
+   ]
+  }
+ },
+ "n_words": 120,
+ "n_echo": 23,
+ "pos_counts": {
+  "NOUN": 82,
+  "IDENT": 11,
+  "VERB": 9,
+  "ADJ": 16,
+  "NUM": 1,
+  "ADP": 1
+ }
+}
