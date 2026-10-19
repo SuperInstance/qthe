@@ -1,0 +1,136 @@
+{
+ "experiment": "E-Q41",
+ "claim": "C39 — the quantization laws transfer (ladder + practical bound)",
+ "kernel": {
+  "kernelKind": "real",
+  "kernelPath": "qthe/qthe.mjs"
+ },
+ "preRegSha": "96cf9818089951ae113dca7867c6536fce7f89dbd0a5e5d958d19746fa9991e3",
+ "registration": "experiments/pre_registration_e_q41.json (no amendments — the run matched the registration exactly)",
+ "task": {
+  "typesafe_calls": 0,
+  "upserts": 180,
+  "live_queries": 240,
+  "arms": [
+   "eq41B60",
+   "eq41T60",
+   "eq41Q60",
+   "eq36N re-read"
+  ],
+  "models_served": "jev-1.13.0 (the sealed eq36 rows; zero new calls)"
+ },
+ "arms": {
+  "binary": {
+   "live": 0.6166666666666667,
+   "local": 0.5833333333333334,
+   "local_equals_live": false
+  },
+  "ternary": {
+   "live": 0.5666666666666667,
+   "local": 0.6,
+   "local_equals_live": false
+  },
+  "quad": {
+   "live": 0.7333333333333333,
+   "local": 0.7333333333333333,
+   "local_equals_live": true
+  }
+ },
+ "dense_reference": {
+  "live": 0.7333333333333333,
+  "local": 0.7333333333333333,
+  "sealed_eq36_live": 0.7333333333333333,
+  "replication_delta": 0,
+  "F4_pass": true
+ },
+ "zero_mass": 0.2125,
+ "majority_floor": 0.23728813559322035,
+ "margins": {
+  "ternary_minus_binary": -0.050000000000000044,
+  "quad_minus_ternary": 0.16666666666666663,
+  "dense_minus_quad": 0
+ },
+ "miss_counts": {
+  "binary": 23,
+  "ternary": 26,
+  "quad": 16
+ },
+ "mechanism_autopsy": {
+  "source": "situations/embedding_r30/eq41_autopsy.py (zero calls — arithmetic on the sealed artifacts)",
+  "tie_table": {
+   "dense": {
+    "top1_ties": 0,
+    "n": 60,
+    "bracket_optimistic": 0.7333333333333333,
+    "bracket_pessimistic": 0.7333333333333333
+   },
+   "binary": {
+    "top1_ties": 32,
+    "n": 60,
+    "bracket_optimistic": 0.7333333333333333,
+    "bracket_pessimistic": 0.4666666666666667
+   },
+   "ternary": {
+    "top1_ties": 15,
+    "n": 60,
+    "bracket_optimistic": 0.6333333333333333,
+    "bracket_pessimistic": 0.5333333333333333
+   },
+   "quad": {
+    "top1_ties": 0,
+    "n": 60,
+    "bracket_optimistic": 0.7333333333333333,
+    "bracket_pessimistic": 0.7333333333333333
+   }
+  },
+  "separation": {
+   "dense": {
+    "within": 0.6791243672495911,
+    "cross": 0.4630213726741438,
+    "separation": 0.21610299457544735
+   },
+   "binary": {
+    "within": 0.1583333333333333,
+    "cross": -0.06777777777777777,
+    "separation": 0.22611111111111107
+   },
+   "ternary": {
+    "within": 0.22464310709053065,
+    "cross": -0.08725342828013806,
+    "separation": 0.3118965353706687
+   },
+   "quad": {
+    "within": 0.2328371896840247,
+    "cross": -0.08728593832508576,
+    "separation": 0.32012312800911047
+   }
+  },
+  "miss_overlaps": {
+   "binary_ternary": 5,
+   "quad_dense": 2,
+   "quad_dense_both_n": [
+    16,
+    16
+   ]
+  },
+  "zeroed_axes": {
+   "mean_all": 1.7,
+   "mean_ternary_miss_binary_hit": 1.9047619047619047,
+   "mean_binary_miss_ternary_hit": 2
+  },
+  "the_finding": "THE TIE-DEGENERACY MECHANISM: the coarse codes' strict top-1 accuracies at 60 records are TIE-ORDER-DEPENDENT — binary has a top-1 score tie on 32/60 records (bracket [0.467, 0.733]), ternary on 15/60 (bracket [0.533, 0.633]), quad on 0/60 (bracket [0.733, 0.733] — degenerate, convention-free). The live readings (0.617 / 0.567 / 0.733) sit inside their brackets; the local-vs-live disagreements (P4's death) live exactly on the tie-degenerate arms and vanish on the tie-free arm — the E-Q30 local==live law is refined to: local==live IFF the code is tie-free at the operating scale. The mean-separation account is FALSIFIED as the ladder's explanation: ternary's separation (0.312) BEATS binary's (0.226) while its strict accuracy loses — mean separation is not the top-1 operator. The zeroed-axes account is likewise falsified (ternary-only misses average 1.9 zeroed axes vs binary-only 2.0 vs 1.7 overall — no material difference). The inversion receipt: the ternary zero's +0.20 margin at n=20 is gone at n=60 (point estimate -0.05, inside the overlapping tie brackets — the operative law is the margin's DEATH, not the sign of its ash). THE 4-LEVEL CODE IS THE SCALE-ROBUST RECEIPT: tie-free at 60 records, lossless in count vs dense (0.733 == 0.7333; the miss SETS reshuffle — only 2/16 shared — but the count is the invariant), and the dense arm itself replicated EXACTLY across sessions (delta 0.0000)."
+ },
+ "hypotheses": {
+  "H1_ladder": false,
+  "H2_zeros_worth": false,
+  "H3_practical_bound": true,
+  "C39": false
+ },
+ "predictions": {
+  "P1": true,
+  "P2": true,
+  "P3": true,
+  "P4": false
+ },
+ "verdict": "E-Q41 VERDICT (the cross-corpus transfer — the E-Q27 quantization laws re-run at 60 records on the eq36N substrate's OWN sealed vectors, ZERO typesafe calls, 180 upserts + 240 arm-filtered live queries, the recipe rule-identical with n=60 percentile indices): C39 DIES on H1 — THE QUANTIZATION LADDER DOES NOT TRANSFER, and the ternary zero's worth joins the family algebra as the SECOND SMALL-CORPUS ARTIFACT of the program. H1 DIES: binary 0.617 > ternary 0.567 (the n=20 ladder was 0.40 < 0.60 < 0.70 — the first rung INVERTS at 3x scale) while quad 0.733 stays on top. H2 DIES (the zero's margin: -0.05 vs the registered >= 0.10; at n=20 it was +0.20). H3 LIVES DECISIVELY: THE 4-LEVEL CODE IS NOW LOSSLESS IN COUNT — quad 0.733 == the same-session dense re-read 0.7333 (at n=20 the 4-level sat 0.10 below dense; at 60 records the 16-bit code loses NOTHING in count, though the miss SETS reshuffle — only 2/16 shared with dense's). THE MECHANISM (the autopsy row): the coarse codes are TIE-DEGENERATE at this scale — binary has a top-1 score tie on 32/60 records (adversarial bracket [0.467, 0.733]), ternary on 15/60 ([0.533, 0.633]), quad on 0/60 (bracket degenerate at [0.733, 0.733] — convention-free); the live readings sit inside their brackets, the local-vs-live disagreements (P4 DIES) live exactly on the tie-degenerate arms and vanish on the tie-free arm — the E-Q30 local==live law refines to: LOCAL==LIVE IFF TIE-FREE AT THE OPERATING SCALE. Two candidate mechanisms for the inversion are tested and FALSIFIED in the autopsy: mean separation (ternary 0.312 BEATS binary 0.226 while losing the strict accuracy — mean separation is not the top-1 operator) and zeroed-axes load (1.9 vs 2.0 vs 1.7 — no material difference). The receipts that scale: the dense arm re-read replicated the sealed E-Q36 reading EXACTLY (0.7333, delta 0.0000, F4 PASS — the live index is a stable executor across sessions); the ternary zero-level mass 0.2125 sits in the predicted [0.15, 0.35] (n=20: 0.2375 — a distribution property, scale-stable); every arm >= 2.4x the 14/59 majority floor. PREDICTIONS: P1 HIT, P2 HIT (the perfect replication), P3 HIT, P4 MISS (the tie mechanism — the prediction assumed tie-free codes at 60 records). The operative summary for the code designer: at 16 bits/record the 4-LEVEL code is the scale-robust choice (tie-free, count-lossless, miss-set-fluid); the ternary zero is a 20-record luxury; ANY strict-accuracy claim on a coarse code must report its tie bracket or a tie-breaking convention."
+}

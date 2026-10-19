@@ -580,3 +580,22 @@ expansion ≠ factual grounding; verify before adopting. Receipt:
   the hypotheses' favor are the receipt of resolution honesty. The
   E-Q31 precedent (float-artifact deaths published unstretched) extends
   to its mirror image: float-artifact LIVES are killed unstretched too.
+- **THE TERNARY ZERO'S WORTH IS A SMALL-CORPUS ARTIFACT (E-Q41).** The
+  E-Q27 margin (ternary +0.20 over binary at n=20) inverts to −0.05 at
+  60 records on the same substrate's own vectors — the second law of
+  the class (after the family algebra) to die at 3x scale. Mid-band
+  evidence that a sparse corpus treats as noise is net signal in a
+  dense one. Any quantization or pruning decision must be re-derived
+  at the operating corpus size.
+- **COARSE CODES GO TIE-DEGENERATE AT SCALE (E-Q41).** Binary codes at
+  60 records tie on the top-1 neighbor for 53% of records (adversarial
+  bracket 0.467–0.733); ternary for 25%. The strict top-1 accuracy of
+  a coarse code is a tie-breaking convention, not a property — report
+  the bracket. The E-Q30 local==live law refines to: local==live iff
+  the code is tie-free at the operating scale.
+- **THE 4-LEVEL CODE IS THE SCALE-ROBUST 16-BIT CHOICE (E-Q41).** Tie
+  -free at 60 records and lossless in count vs dense (0.733 ==
+  0.7333), with a reshuffled miss set (2/16 shared — the count is the
+  invariant, not the identity). Meanwhile the dense arm re-replicated
+  its sealed reading EXACTLY (delta 0.0000): the live index is a
+  stable executor across sessions.

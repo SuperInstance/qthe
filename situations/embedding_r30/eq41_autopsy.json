@@ -1,0 +1,65 @@
+{
+ "experiment": "E-Q41-autopsy",
+ "tie_table": {
+  "dense": {
+   "top1_ties": 0,
+   "n": 60,
+   "bracket_optimistic": 0.7333333333333333,
+   "bracket_pessimistic": 0.7333333333333333
+  },
+  "binary": {
+   "top1_ties": 32,
+   "n": 60,
+   "bracket_optimistic": 0.7333333333333333,
+   "bracket_pessimistic": 0.4666666666666667
+  },
+  "ternary": {
+   "top1_ties": 15,
+   "n": 60,
+   "bracket_optimistic": 0.6333333333333333,
+   "bracket_pessimistic": 0.5333333333333333
+  },
+  "quad": {
+   "top1_ties": 0,
+   "n": 60,
+   "bracket_optimistic": 0.7333333333333333,
+   "bracket_pessimistic": 0.7333333333333333
+  }
+ },
+ "separation": {
+  "dense": {
+   "within": 0.6791243672495911,
+   "cross": 0.4630213726741438,
+   "separation": 0.21610299457544735
+  },
+  "binary": {
+   "within": 0.1583333333333333,
+   "cross": -0.06777777777777777,
+   "separation": 0.22611111111111107
+  },
+  "ternary": {
+   "within": 0.22464310709053065,
+   "cross": -0.08725342828013806,
+   "separation": 0.3118965353706687
+  },
+  "quad": {
+   "within": 0.2328371896840247,
+   "cross": -0.08728593832508576,
+   "separation": 0.32012312800911047
+  }
+ },
+ "miss_overlaps": {
+  "binary_ternary": 5,
+  "quad_dense": 2,
+  "quad_dense_both_n": [
+   16,
+   16
+  ]
+ },
+ "zeroed_axes": {
+  "mean_all": 1.7,
+  "mean_ternary_miss_binary_hit": 1.9047619047619047,
+  "mean_binary_miss_ternary_hit": 2
+ },
+ "the_finding": "THE TIE-DEGENERACY MECHANISM: the coarse codes' strict top-1 accuracies at 60 records are TIE-ORDER-DEPENDENT \u2014 binary has a top-1 score tie on 32/60 records (bracket [0.467, 0.733]), ternary on 15/60 (bracket [0.533, 0.633]), quad on 0/60 (bracket [0.733, 0.733] \u2014 degenerate, convention-free). The live readings (0.617 / 0.567 / 0.733) sit inside their brackets; the local-vs-live disagreements (P4's death) live exactly on the tie-degenerate arms and vanish on the tie-free arm \u2014 the E-Q30 local==live law is refined to: local==live IFF the code is tie-free at the operating scale. The mean-separation account is FALSIFIED as the ladder's explanation: ternary's separation (0.312) BEATS binary's (0.226) while its strict accuracy loses \u2014 mean separation is not the top-1 operator. The zeroed-axes account is likewise falsified (ternary-only misses average 1.9 zeroed axes vs binary-only 2.0 vs 1.7 overall \u2014 no material difference). The inversion receipt: the ternary zero's +0.20 margin at n=20 is gone at n=60 (point estimate -0.05, inside the overlapping tie brackets \u2014 the operative law is the margin's DEATH, not the sign of its ash). THE 4-LEVEL CODE IS THE SCALE-ROBUST RECEIPT: tie-free at 60 records, lossless in count vs dense (0.733 == 0.7333; the miss SETS reshuffle \u2014 only 2/16 shared \u2014 but the count is the invariant), and the dense arm itself replicated EXACTLY across sessions (delta 0.0000)."
+}

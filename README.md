@@ -809,3 +809,34 @@ the watch.
   NOUN>VERB ordering) and shrank the breach count 13→11 — verdicts
   moved AGAINST the hypotheses' favor, the receipt that it is not
   outcome-shopping.
+- **E-Q41 — the cross-corpus transfer (the r28-close registered item,
+  ZERO typesafe calls): C39 DIES on H1 — THE QUANTIZATION LADDER DOES
+  NOT TRANSFER, and the ternary zero's worth joins the family algebra
+  as the program's SECOND SMALL-CORPUS ARTIFACT.** The E-Q27 laws
+  re-run at 60 records on the eq36N substrate's own sealed vectors
+  (binary/ternary/4-level quantization, the recipe rule-identical with
+  n=60 percentile indices; 180 upserts + 240 arm-filtered live
+  queries; $0 LLM): binary **0.617** > ternary **0.567** — the n=20
+  rungs were 0.40 < 0.60 < 0.70, so the ternary zero's +0.20 margin
+  INVERTS to −0.05 at 3x scale. **H3 LIVES DECISIVELY: the 4-level
+  code is now LOSSLESS IN COUNT** — quad 0.733 == the same-session
+  dense re-read 0.7333 (at n=20 it sat 0.10 below dense; at 60 records
+  the 16-bit code loses nothing in count, though the miss sets
+  reshuffle — only 2/16 shared). **THE MECHANISM (the autopsy row):
+  TIE-DEGENERACY** — binary has a top-1 score tie on 32/60 records
+  (adversarial bracket [0.467, 0.733]), ternary 15/60 ([0.533,
+  0.633]), quad 0/60 (bracket degenerate — convention-free); the
+  local-vs-live disagreements live exactly on the tie-degenerate arms
+  and vanish on the tie-free arm: **local==live IFF tie-free at the
+  operating scale** (the E-Q30 law refined). Two candidate mechanisms
+  tested and falsified: mean separation (ternary 0.312 beats binary
+  0.226 while losing the strict accuracy — mean separation is not the
+  top-1 operator) and zeroed-axes load (1.9 vs 2.0 — no difference).
+  The receipts that scale: the dense arm re-read replicated the sealed
+  E-Q36 reading EXACTLY (0.7333, delta 0.0000 — the live index is a
+  stable executor across sessions); zero-mass 0.2125 in the predicted
+  band; every arm ≥ 2.4× the majority floor. Chain `e_q41` (links=5
+  incl. the mechanism row). **For the code designer: at 16
+  bits/record the 4-LEVEL code is the scale-robust choice (tie-free,
+  count-lossless); the ternary zero is a 20-record luxury; any strict
+  -accuracy claim on a coarse code must report its tie bracket.**

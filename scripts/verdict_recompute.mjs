@@ -1270,6 +1270,32 @@ const CLAIMS = [
       return { recomputed: 'C38 DIES — the sensitivity is BROAD AND SHALLOW: 9.2% of words breach but the top-20% carry only 45.3% of the mass, and echo words breach at 1.58x not 2x (the readout is not a keyword matcher — the word "record", present in every question text, moves 0.02 when removed from the state); the two-tier receipt: content words 0.05 > identifiers 0.03; chain agrees' };
     },
   },
+  {
+    id: 'C39 — the cross-corpus transfer / the ladder dies, the 4-level code is scale-robust (E-Q41)',
+    source: 'experiments/outputs/e_q41_results.json',
+    cite: 'receipts/e_q41_chain.jsonl · verdict.EQ41 + mechanism.autopsy · experiments/pre_registration_e_q41.json · situations/embedding_r30/ (eq41_transfer.py + eq41_autopsy.py + eq41_results.json + eq41_autopsy.json + upsert_eq41.ndjson)',
+    expected: 'C39 DIES on H1: the E-Q27 ladder does not transfer to 60 records — binary 0.617 > ternary 0.567 (the n=20 rungs were 0.40 < 0.60 < 0.70; the ternary zero\'s +0.20 margin inverts to -0.05, the SECOND small-corpus artifact) while quad 0.733 stays on top. H3 LIVES DECISIVELY: the 4-level code is lossless in count vs the same-session dense re-read (0.733 == 0.7333, at n=20 it sat 0.10 below). THE MECHANISM (autopsy): tie-degeneracy — binary 32/60 top-1 ties (bracket [0.467, 0.733]), ternary 15/60, quad 0/60 (convention-free); local==live iff tie-free (P4 dies); mean-separation and zeroed-axes accounts both falsified. The dense arm replicated the sealed E-Q36 reading EXACTLY (delta 0.0000)',
+    run() {
+      const d = readJson(this.source);
+      if (d.hypotheses.H1_ladder !== false || d.hypotheses.C39 !== false) throw new Error('C39 must die on H1');
+      if (d.hypotheses.H2_zeros_worth !== false) throw new Error('H2 must die — the zero margin');
+      if (d.hypotheses.H3_practical_bound !== true) throw new Error('H3 must live — the practical bound');
+      if (d.task.typesafe_calls !== 0) throw new Error('this lane is zero-call by registration; a typesafe call is a falsifier');
+      if (Math.abs(d.arms.binary.live - 0.6167) > 0.001 || Math.abs(d.arms.ternary.live - 0.5667) > 0.001) throw new Error('coarse-arm accuracies drifted');
+      if (Math.abs(d.arms.quad.live - d.dense_reference.live) > 0.001) throw new Error('quad no longer count-lossless vs dense');
+      if (d.dense_reference.replication_delta > 1.0 / 60.0 || d.dense_reference.F4_pass !== true) throw new Error('the dense replication (F4) must hold');
+      if (d.margins.ternary_minus_binary > 0 || d.margins.dense_minus_quad > 0.15) throw new Error('margin logic disagrees with the sealed verdict');
+      if (d.predictions.P1 !== true || d.predictions.P2 !== true || d.predictions.P3 !== true || d.predictions.P4 !== false) throw new Error('prediction pattern drifted');
+      const tt = d.mechanism_autopsy.tie_table;
+      if (tt.binary.top1_ties !== 32 || tt.ternary.top1_ties !== 15 || tt.quad.top1_ties !== 0) throw new Error('tie table drifted');
+      if (!d.mechanism_autopsy.the_finding.includes('TIE-DEGENERACY')) throw new Error('mechanism autopsy lost its headline');
+      if (d.arms.quad.local_equals_live !== true || d.arms.binary.local_equals_live !== false) throw new Error('local==live pattern disagrees with the tie mechanism');
+      const row = lastChainRow('receipts/e_q41_chain.jsonl', (r) => r.kind === 'verdict.EQ41', 'verdict.EQ41');
+      if (row.C39 !== false || row.H1 !== false || row.H3 !== true) throw new Error('chain flags disagree');
+      if (!row.verdict.includes('DOES NOT TRANSFER')) throw new Error('verdict text lost its headline');
+      return { recomputed: 'C39 DIES on H1 — the ladder does not transfer (binary 0.617 > ternary 0.567 at 60 records; the ternary zero is the second small-corpus artifact) while H3 lives decisively: the 4-level 16-bit code is tie-free and lossless in count vs dense (0.733 == 0.7333, miss sets reshuffled 2/16), the dense arm replicating exactly across sessions (delta 0.0000); chain agrees' };
+    },
+  },
 ];
 
 // ── COVERAGE (ORCH-R11: the arena-r11 consensus finding, all four seats) ──
