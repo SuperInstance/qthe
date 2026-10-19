@@ -48,6 +48,12 @@
       "ts": "2026-10-19 (pre-run, ZERO census calls spent; caught by the same F2 pre-flight)",
       "what": "P5's 'toward' substitute changed 'into' -> 'towards': 'into' collides with the base text's own 'into a real accumulator', breaking inverse-exactness. 'towards' is a spelling variant \u2014 the ADP class's treatment is the weakest in the census by the nature of the class (prepositions have no true single-token synonyms); receipted here and flagged in the analysis.",
       "why_honest": "same class as AM1: an application-detail fix caught by the F2 floor before any spend; sample, hypotheses, measures unchanged."
+    },
+    {
+      "id": "AM3",
+      "ts": "2026-10-19 (pre-run, ZERO census calls spent; third catch by the same F2 pre-flight)",
+      "what": "the case rule generalized to PER-POSITION case transfer for equal-length tokens: the experiment ids carry mixed case (E-Q20b \u2014 lowercase suffix letter), which neither the first-letter rule (AM0) nor the all-caps rule (AM1) reproduces. transfer_case maps case character-by-character when occurrence and substitute have equal length, with the all-caps and first-letter rules as fallbacks.",
+      "why_honest": "same defect class as AM1/AM2 (application detail of the substitution, caught by the inverse-exactness floor before any spend); sample, substitutes, hypotheses, measures unchanged."
     }
   ]
 }

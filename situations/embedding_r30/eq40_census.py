@@ -76,12 +76,19 @@ def word_pattern(word):
     return re.compile(r"(?<![A-Za-z0-9-])" + re.escape(word) + r"(?![A-Za-z0-9-])", re.IGNORECASE)
 
 
+def transfer_case(orig, sub):
+    # AM3: per-position case transfer for equal-length tokens (E-Q20b -> E-Q20c);
+    # all-caps fallback (E-Q1 -> E-Q3); first-letter fallback otherwise.
+    if len(orig) == len(sub):
+        return "".join(s.upper() if o.isupper() else s.lower() for o, s in zip(orig, sub))
+    if orig.isupper():
+        return sub.upper()
+    return (sub[0].upper() + sub[1:]) if orig[0].isupper() else sub
+
+
 def substitute(text, word, sub):
     def repl(m):
-        s = m.group(0)
-        if s.isupper():
-            return sub.upper()          # AM1: all-caps occurrences (E-Q1) get the all-caps substitute
-        return (sub[0].upper() + sub[1:]) if s[0].isupper() else sub
+        return transfer_case(m.group(0), sub)
     return word_pattern(word).sub(repl, text)
 
 
@@ -99,13 +106,8 @@ for rid in wordmap["records"]:
         assert not word_pattern(sub).search(text), f"F2 BREACH {rid}: substitute '{sub}' already in base text"
         new = substitute(text, word, sub)
         assert word_pattern(word).findall(text) and new != text, f"F2 BREACH {rid}/{word}: no-op substitution"
-        # exact inverse with case (AM1: all-caps aware)
-        def inv(m):
-            s = m.group(0)
-            if s.isupper():
-                return word.upper()
-            return (word[0].upper() + word[1:]) if s[0].isupper() else word
-        back = word_pattern(sub).sub(inv, new)
+        # exact inverse with case (AM3: per-position transfer)
+        back = word_pattern(sub).sub(lambda m: transfer_case(m.group(0), word), new)
         assert back == text, f"F2 BREACH {rid}/{word}: inverse substitution is not byte-identical"
 print(f"[eq40] F2 pre-flight: 120 substitutions inverse-exact; qmap sha {QMAP_SHA[:12]}… (F1 verified vs E-Q25)")
 
