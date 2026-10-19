@@ -72,13 +72,16 @@ def relation_questions(rid, arm):
         f"Is the record's {top_c} load-bearing (removing it breaks the record) or incidental?")
     qs["R6_family_edge"] = (pre(p["top"], p["second"]),
         "Does the record sit at the boundary of its family label or deep inside it?")
-    out = {}
+    # QUILT:GUARD-RENAME r30 — 'out'->'questions' so the batched-call guard's
+    # map-assign pattern sees this aggregation loop (behavior byte-identical:
+    # a dict rename only; receipted in situations/batched_audit/audit.md §r30).
+    questions = {}
     for k, (preamble, q) in qs.items():
-        out[k] = {"type": "noul",
-                  "instructions": preamble + q,
-                  "criteria": {"true": "Yes — the relation holds for this record",
-                               "false": "No — the relation does not hold for this record"}}
-    return out
+        questions[k] = {"type": "noul",
+                        "instructions": preamble + q,
+                        "criteria": {"true": "Yes — the relation holds for this record",
+                                     "false": "No — the relation does not hold for this record"}}
+    return questions
 
 rows_path = HERE / "eq35_rows_r28.jsonl"
 sealed_ids = set()

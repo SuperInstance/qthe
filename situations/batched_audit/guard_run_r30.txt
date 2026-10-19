@@ -1,0 +1,134 @@
+QUILT T5-a batched-call guard -- repo: /home/z/my-project/qthe
+discovery: endpoint literal OR http_post(/call_and_seal(/seal_call( ; exts .py .mjs .js .ts .sh .c .h ; skipping .git/node_modules/__pycache__ + this guard file
+call-site files discovered: 25
+
+site: situations/creative_r24/walk.py
+  aggregation loop: for-header line 59 -> questions-map assign line 60 :: "questions[ax] = {"
+  single-question literals: none
+  verdict: BATCHED
+
+site: situations/embedding_r23/typesafe_embedder.py
+  aggregation loop: for-header line 67 -> questions-map assign line 68 :: "questions[ax] = {"
+  single-question literals: none
+  verdict: BATCHED
+
+site: situations/embedding_r24/noul_embedder.py
+  aggregation loop: for-header line 67 -> questions-map assign line 68 :: "questions[ax] = {"
+  single-question literals: none
+  verdict: BATCHED
+
+site: situations/embedding_r24/occlusion_embedder.py
+  aggregation loop: for-header line 67 -> questions-map assign line 68 :: "questions[ax] = {"
+  single-question literals: none
+  verdict: BATCHED
+
+site: situations/embedding_r26/ascending_budget.py
+  aggregation loop: for-header line 102 -> questions-map assign line 103 :: "qs[f\"G{i+1}\"] = {"
+  single-question literals: none
+  verdict: BATCHED
+
+site: situations/embedding_r26/drift_monitor.py
+  aggregation loop: for-header line 47 -> questions-map assign line 48 :: "questions[ax] = {"
+  single-question literals: none
+  verdict: BATCHED
+
+site: situations/embedding_r26/irt_ladders.py
+  aggregation loop: for-header line 62 -> questions-map assign line 64 :: "qs[f\"{ax}__{rung}\"] = {"
+  single-question literals: none
+  verdict: BATCHED
+
+site: situations/embedding_r28/eq35_conditional.py
+  aggregation loop: for-header line 79 -> questions-map assign line 80 :: "questions[k] = {\"type\": \"noul\","
+  single-question literals: none
+  verdict: BATCHED
+
+site: situations/embedding_r28/eq36_embedder.py
+  aggregation loop: for-header line 46 -> questions-map assign line 47 :: "questions[ax] = {\"type\": \"noul\","
+  single-question literals: none
+  verdict: BATCHED
+
+site: situations/embedding_r28/eq37_phrasing.py
+  aggregation loop: for-header line 61 -> questions-map assign line 62 :: "questions[ax] = f(concept)"
+  single-question literals: none
+  verdict: BATCHED
+
+site: situations/embedding_r28/eq38_drift.py
+  aggregation loop: for-header line 40 -> questions-map assign line 41 :: "questions[ax] = {\"type\": \"noul\","
+  single-question literals: none
+  verdict: BATCHED
+
+site: situations/embedding_r28/evolve_r28.py
+  aggregation loop: for-header line 35 -> questions-map assign line 36 :: "questions[ax] = {\"type\": \"noul\","
+  single-question literals: none
+  verdict: BATCHED
+
+site: situations/evolution_r26/evolve.py
+  aggregation loop: for-header line 56 -> questions-map assign line 57 :: "questions[ax] = {"
+  single-question literals: none
+  verdict: BATCHED
+
+site: situations/evolution_r26/evolve32.py
+  aggregation loop: for-header line 49 -> questions-map assign line 50 :: "questions[ax] = {"
+  single-question literals: none
+  verdict: BATCHED
+
+site: situations/grounding_loop/arm_a.py
+  aggregation loop: for-header line 72 -> questions-map assign line 74 :: "q[cid + \"__verdict\"] = {"
+  single-question literals: none
+  verdict: BATCHED
+
+site: situations/grounding_loop/arm_b.py
+  aggregation loop: for-header line 333 -> questions-map assign line 334 :: "questions[c[\"id\"] + \"__verdict\"] = {"
+  single-question literals: none
+  verdict: BATCHED
+
+site: situations/grounding_loop/canary.py
+  aggregation loop: NONE FOUND
+  single-question literal: line 18 (1 top-level key(s)) -- EXEMPT: canary key-check probe -- one question by design;
+  verdict: EXEMPT (receipted)
+
+site: situations/grounding_loop/jev_client.py
+  aggregation loop: NONE FOUND
+  single-question literals: none
+  verdict: TRANSPORT-ONLY (shared client; formulates no question map of its own)
+
+site: situations/harmony_r22/typesafe_seat.py
+  aggregation loop: for-header line 82 -> questions-map assign line 83 :: "questions[sid] = {"
+  single-question literals: none
+  verdict: BATCHED
+
+site: situations/jev_judge.py
+  aggregation loop: for-header line 161 -> questions-map assign line 163 :: "questions[f\"{fid}__class\"] = {"
+  single-question literal: line 197 (1 top-level key(s)) -- EXEMPT: canary key-check probe -- one question by design;
+  verdict: BATCHED (with exempt probe(s))
+
+site: situations/jev_triage.py
+  aggregation loop: for-header line 906 -> questions-map assign line 908 :: "questions[base + \"__verdict\"] = {"
+  single-question literals: none
+  verdict: BATCHED
+
+site: situations/novel_ideas_r23/ideas_battery.py
+  aggregation loop: for-header line 142 -> questions-map assign line 143 :: "questions[f\"{i['id']}__novelty\"] = {"
+  single-question literals: none
+  verdict: BATCHED
+
+site: situations/novel_ideas_r24/idea_space.py
+  aggregation loop: for-header line 39 -> questions-map assign line 40 :: "questions[ax] = {"
+  single-question literals: none
+  verdict: BATCHED
+
+site: situations/sde_cascade/run_cascade.py
+  aggregation loop: for-header line 294 -> questions-map assign line 295 :: "questions[qid_base + \"__\" + field] = {"
+  single-question literals: none
+  verdict: BATCHED
+
+site: situations/tripwire_r25/tripwire.py
+  aggregation loop: for-header line 44 -> questions-map assign line 45 :: "questions[ax] = {\"type\": \"noul\","
+  single-question literals: none
+  verdict: BATCHED
+
+hard expectation OK: /home/z/my-project/qthe/situations/jev_judge.py -- batches PER SEAT: build_call(seat_row) aggregates 3 questions per finding (for f in findings:), and cmd_judge makes ONE call per seat row (call_id r10-judge-<seat>) -- sealed rows situations/jev_judgments_r10.jsonl: 7 seat rows, question_count 12/15/15/18/18/21/21 = 120 questions
+hard expectation OK: /home/z/my-project/qthe/situations/sde_cascade/run_cascade.py -- GROUPS ITEMS: groups.setdefault((source, group)) + one build_call per group; ACTUAL GROUP KEY: r10/r11 arms -> the seat (the guest itself, per-guest); grounding arm -> fixed 8-claim chunks claims-g<i//8> of the claims corpus which has NO guest axis (receipted in audit.md with counterfactual economics)
+hard expectation OK: /home/z/my-project/qthe/situations/jev_triage.py -- standing triage: stage 1 reuses jev_judge.build_call PER SEAT; stage 2 groups by LOCATED FILE (key = secs[0]["path"]), GROUP_CAP-capped, one Choice per finding (mixed-seat groups receipted in audit.md with measured economics: per-seat regrouping would cost ~40% MORE, not less)
+
+GUARD PASS: 25 call-site file(s); all batched, exempt-with-receipt, or transport-only; hard expectations hold.

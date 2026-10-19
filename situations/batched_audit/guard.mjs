@@ -60,12 +60,19 @@ const ENDPOINT_RE = /api\.typesafe\.ai\/v1\/systemone/;
 const CLIENT_CALL_RE = /\b(?:http_post|call_and_seal|seal_call)\s*\(/;
 const EXEMPT_TAG_RE = /(?:\/\/|#)\s*QUILT:BATCH-EXEMPT:\s*(.+)/;
 const QUESTIONS_LITERAL_RE = /["']questions["']\s*:\s*\{/g;
-const FOR_PY_RE = /^\s*for\s+[A-Za-z_][A-Za-z0-9_,\s]*\s+in\s+[^\n]+:\s*$/;
+const FOR_PY_RE = /^\s*for\s+[A-Za-z_][A-Za-z0-9_,()\s]*\s+in\s+[^\n]+:\s*$/; // r30: parens allowed — tuple-unpacking headers (for k, (a, b) in d.items():) are aggregation loops too
 const FOR_JS_RE = /^\s*for\s*\(.*\)\s*\{\s*$/;
 // Map-assign into a questions dict. The key expression may itself contain
 // brackets (questions[c["id"] + "__verdict"] = {), so the key matcher is
 // .+ up to the LAST bracket before "= {" on that line.
-const MAP_ASSIGN_RE = /^\s*(?:questions|q|qs)\[.+\]\s*=\s*\{/;
+// ORCH-R30 WIDENING (receipted in audit.md §r30): the assign may also be a
+// FUNCTION CALL (questions[ax] = f(concept) — the E-Q37 treatment-map
+// pattern, a builder dispatch inside the aggregation loop). The r14 regex
+// required a literal "{", leaving genuinely-batched builder-dispatch sites
+// UNVERIFIABLE — the defect that turned CI red at cbf4968..7ac469b (found
+// by re-running the batteries at r30 open; the r28-close "guard PASS 21
+// files" receipt was stale, taken before the last r28 lanes landed).
+const MAP_ASSIGN_RE = /^\s*(?:questions|q|qs)\[.+\]\s*=\s*(?:\{|[A-Za-z_][A-Za-z0-9_]*\()/;
 
 function walk(dir, out) {
   for (const name of readdirSync(dir)) {

@@ -272,3 +272,34 @@ Files written by this lane: `situations/batched_audit/{audit.md, guard.mjs,
 guard_run.txt, counterfactual.py, counterfactual_results.json}`; comment-only
 tags added to `situations/jev_judge.py` and
 `situations/grounding_loop/canary.py`.
+
+## r30 — the stale-receipt defect and the guard widening (ORCH-R30 open)
+
+Re-running the full battery at r30 open (before any spend) found the guard
+RED at HEAD 7ac469b — and CI with it (both r28-close cbf4968 and r29-close
+7ac469b runs failed on the "batched-call guard" step; last green CI: 06ccf86,
+the r27 close). The r28 close-out's "guard PASS (21 call-site files)" receipt
+was STALE: taken mid-round before the last r28 lanes landed. Two genuinely
+batched sites were UNVERIFIABLE to the r14 heuristic:
+
+1. `situations/embedding_r28/eq37_phrasing.py` — the treatment builder
+   dispatches inside the aggregation loop as `questions[ax] = f(concept)`.
+   The r14 `MAP_ASSIGN_RE` required a literal `= {`, so builder-dispatch
+   assigns were invisible. FIXED by widening the regex to also accept a
+   function-call assign (`= f(`) — the backward for-header scan and every
+   other check unchanged.
+2. `situations/embedding_r28/eq35_conditional.py` — the relation-map builder
+   aggregates under `for k, (preamble, q) in qs.items():` (tuple-unpacking
+   header, invisible to `FOR_PY_RE`) into a dict named `out` (not a
+   questions/q/qs name). FIXED twice over: the loop-variable regex now
+   allows parens (tuple unpacking IS an aggregation loop), and the runner's
+   output dict was renamed `out` -> `questions` — a behavior-byte-identical
+   dict rename, tagged in-code (`QUILT:GUARD-RENAME r30`), sealed rows
+   untouched (the receipt of record is the rows + registration sha, not the
+   runner's local variable names).
+
+Post-fix receipt: `guard_run_r30.txt` — GUARD PASS, 25 call-site files, all
+hard expectations hold. The defect class this incident banks: **a battery
+receipt taken mid-round is not a close-out receipt** — the close-out battery
+list now re-runs the guard explicitly (it had been dropped from the r29
+close list, which is how the red CI went unnoticed for two commits).
