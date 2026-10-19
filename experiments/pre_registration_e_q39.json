@@ -1,0 +1,40 @@
+{
+  "law": "REGISTRATION of E-Q39 — THE 8x64+8 HIERARCHICAL SURVIVOR (ORCH-R29 lane T20-a, the kernel lane, ZERO LLM cost): the design C9's autopsy named 'the untested survivor' — region-splitting WITHOUT folding. The folded design (8 regions x 8 slots, s = d&7) died with prejudice because eight cargo classes shared each regional slot and d-drift swept every writer through the whole compressed space (cross-cargo aliasing 8x denser than the anonymity it traded). The survivor keeps the region structure and the global presence buckets but gives each region the FULL 64-slot namespace (s = d): a regional slot is cargo-exact, exactly like the flat table. Population ladder, seeds, and floors byte-identical to E-Q18 — the sealed flat baseline reproduces bit-exactly (F-CAL).",
+  "task_id": "ORCH-R29/T20-a",
+  "agent": "qthe orchestrator (Z.ai), erised fleet line",
+  "wave": "ORCH-R29",
+  "repo": "SuperInstance/qthe",
+  "repo_at_registration": "cbf4968",
+  "provenance_of_the_question": "The C9 verdict's own boundary text: 'Region-splitting without folding (8x64+8 = 520 slots) is the untested survivor of this verdict' — carried on every registered-next list since r18. The r28 close-out registered it as r29's kernel lane.",
+  "design_frozen": {
+    "table": "SplitTable: 8 regions x 64 local slots (s = d, NO fold) + 8 global presence buckets (gmask, 8-bit region presence per bucket b = d>>3) = 520 slots. Local read/write keyed (region, d); escalation pass reads foreign regions' (r, d) slots through the presence mask, FIRST foreign hit in fixed region order — the E-Q18 frozen rule byte-identical.",
+    "ladder": "nPoll in {0, 16, 32, 64, 128, 256} at fixed 64x64; seeds 77001..77010 (the E-Q17/E-Q18 seeds); K=8 twin pairs (d in 8..15, members >= 24 apart), T=200, theta_del=8, checkpoints [0,50,100,150,200].",
+    "arms": "flat (the REAL kernel + the E-Q14/E-Q17 instrumented table, F-CAL bit-exact vs E-Q17's sealed rows) vs split (tickS: the E-Q18 tickH transcription with s = d and the SplitTable).",
+    "controls": "F0-T transcription control re-run at split configuration (the shim vs the real kernel, byte-identical planes AND event streams); determinism 2x fresh per config (F0).",
+    "metrics": "provFrac = partnerEvents / pairEvents per (level, seed) — the E-Q18 primary; delivery 8/8 and first-delivery ticks; escalation counts and escalated events; local/global occupancy (caps 512/8); cross-cargo aliasing telemetry (the d&7 sweep is structurally impossible — the receipt is the absence)."
+  },
+  "floors": {
+    "F0": "determinism: every config run twice, byte-identical planes",
+    "F1": "kernel-real flat arm (import, no transcription) + F-CAL: the flat arm's 0/256 rows reproduce E-Q17's sealed 64x64 flat rows bit-exactly",
+    "F2": "the F0-T transcription control passes at the split configuration (shim vs kernel, planes AND events)",
+    "F3": "occupancy caps: local <= 512, global <= 8, asserted LOUD at checkpoints",
+    "F4": "the escalation rule and region map byte-identical to E-Q18's (only the slot width changes)"
+  },
+  "hypotheses": {
+    "H1_no_regression": "split provFrac >= flat provFrac - 0.02 at EVERY population level (the bound the folded design breached twice) — the survivor survives",
+    "H2_delivery": "8/8 delivery everywhere (the escalation channel is addressing-robust in both designs)",
+    "H3_clean_improvement": "split provFrac at clean (nPoll=0) within [flat - 0.02, flat + 0.10] (the region structure should neither help nor hurt when only 16 writers exist)",
+    "C37": "region-splitting without folding restores the hierarchical design's viability — LIVES iff H1 AND H2"
+  },
+  "predictions": {
+    "P1": "split provFrac tracks flat within 0.02-0.05 at ALL levels (the cargo-exact regional slot removes the fold's only registered failure mode)",
+    "P2": "escalated events > the folded design's 0.0% collapse (the presence mask still works when local slots are cargo-exact)",
+    "P3": "local occupancy saturates later than the flat table's 64 (the 512-slot namespace absorbs population)",
+    "P4": "first-delivery medians equal flat's 7 == 7 at every level (the delivery channel is addressing-robust)",
+    "P5": "one level shows split AHEAD of flat by > 0.05 (the presence-mask privacy bonus — cross-region writers cannot collide at all in-region)"
+  },
+  "falsifier": "ANY of F0-F4 breached; the region map or escalation rule edited; the flat arm failing F-CAL; the no-regression bound stretched.",
+  "budget": "ZERO LLM calls (pure kernel simulation; ~360 runs).",
+  "registered_before_run": true,
+  "amendments": []
+}
