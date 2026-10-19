@@ -1,13 +1,13 @@
 {
-  "law": "REGISTRATION of E-Q40 — THE LEXICAL-SENSITIVITY CENSUS (ORCH-R30 lane T21-a, the round's main event): the E-Q37 inverted decomposition (THE PHRASING LAW IS LEXICAL, NOT STRUCTURAL — question-side synonym swaps moved mass 16%/max 0.32 while reorder/reframe moved 2-3%) implies a per-word map on the STATE side: WHICH content words carry the noul mass? Design: the sealed E-Q21 20-record corpus; a principled sample of 6 content words per record (TF-IDF top-6, the salience rule frozen in situations/embedding_r30/eq40_build_wordmap.py and sealed in situations/embedding_r30/eq40_word_map.json BEFORE any spend); one single-word near-synonym substitution per call (all occurrences of the exact surface form, case-preserving, everything else byte-identical); movement measured against the sealed baselines and the 0.10 drift band. The census delivers the per-word sensitivity map, the distribution (do few words carry most of it?), the POS gradient (noun vs verb vs identifier), and the echo mechanism test (question-map lexical overlap).",
+  "law": "REGISTRATION of E-Q40 \u2014 THE LEXICAL-SENSITIVITY CENSUS (ORCH-R30 lane T21-a, the round's main event): the E-Q37 inverted decomposition (THE PHRASING LAW IS LEXICAL, NOT STRUCTURAL \u2014 question-side synonym swaps moved mass 16%/max 0.32 while reorder/reframe moved 2-3%) implies a per-word map on the STATE side: WHICH content words carry the noul mass? Design: the sealed E-Q21 20-record corpus; a principled sample of 6 content words per record (TF-IDF top-6, the salience rule frozen in situations/embedding_r30/eq40_build_wordmap.py and sealed in situations/embedding_r30/eq40_word_map.json BEFORE any spend); one single-word near-synonym substitution per call (all occurrences of the exact surface form, case-preserving, everything else byte-identical); movement measured against the sealed baselines and the 0.10 drift band. The census delivers the per-word sensitivity map, the distribution (do few words carry most of it?), the POS gradient (noun vs verb vs identifier), and the echo mechanism test (question-map lexical overlap).",
   "task_id": "ORCH-R30/T21-a",
   "agent": "JEV research lane (R30 subagent), erised fleet line",
   "wave": "ORCH-R30",
   "repo": "SuperInstance/qthe",
   "repo_at_registration": "68e9e8b",
-  "provenance_of_the_question": "The r28 close-out registration: 'the lexical-sensitivity census (which content words carry the mass — the T1 decomposition implies a per-word map)'. The r29+ plate carries it as the standing main event.",
+  "provenance_of_the_question": "The r28 close-out registration: 'the lexical-sensitivity census (which content words carry the mass \u2014 the T1 decomposition implies a per-word map)'. The r29+ plate carries it as the standing main event.",
   "design_frozen": {
-    "sample": "20 records x 6 words = 120 substitutions. Salience rule (mechanical, frozen): tokens [A-Za-z][A-Za-z0-9]*(-[A-Za-z0-9]+)* lowercased, frozen stopword list, min length 3; score = tf_in_record * ln(20/df_across_records); top 6 per record by (score desc, first-occurrence asc, token asc). Sealed in eq40_word_map.json with the frozen substitution table (hand-crafted single-token near-synonyms, same word class; identifiers swap to sibling identifiers — any id swap changes the reference, that is the nature of identifiers, receipted; myriad = 10^4 exactly for the number word), POS classes (NOUN 82 / ADJ 16 / IDENT 11 / VERB 9 / NUM 1 / ADP 1), and mechanical echo flags (word-boundary {word, word+s, word-minus-s} match against the frozen E-Q25 12-question map text; 23 echo words, 97 non-echo; 1 substitute-side echo, N2 layer->tier vs P7, receipted).",
+    "sample": "20 records x 6 words = 120 substitutions. Salience rule (mechanical, frozen): tokens [A-Za-z][A-Za-z0-9]*(-[A-Za-z0-9]+)* lowercased, frozen stopword list, min length 3; score = tf_in_record * ln(20/df_across_records); top 6 per record by (score desc, first-occurrence asc, token asc). Sealed in eq40_word_map.json with the frozen substitution table (hand-crafted single-token near-synonyms, same word class; identifiers swap to sibling identifiers \u2014 any id swap changes the reference, that is the nature of identifiers, receipted; myriad = 10^4 exactly for the number word), POS classes (NOUN 82 / ADJ 16 / IDENT 11 / VERB 9 / NUM 1 / ADP 1), and mechanical echo flags (word-boundary {word, word+s, word-minus-s} match against the frozen E-Q25 12-question map text; 23 echo words, 97 non-echo; 1 substitute-side echo, N2 layer->tier vs P7, receipted).",
     "calls": "One batched 12-question call per (record, word): 120 substitution calls + 4 in-run anchors (N1/P1/Q1/A1, byte-identical states) + the flip-check canary (separate, the drift_monitor.py shape) = 125 typesafe calls, jev-latest, AS-SAID rows, resume law, model_served receipted per call (the Oct-21 flip law: any mid-run model_served change aborts the lane for re-registration).",
     "measures": "M1 per (record, word): per-record max |dp| over the 8 real axes vs the sealed r28 E-Q38 baseline (primary) and the sealed r24 E-Q22 vectors (secondary); per-axis movement distribution. M2 CONCENTRATION: breach rate (per-record max > 0.10) and the top-20%-of-words share of total movement mass. M3 ECHO CONTRAST: breach rates and medians, echo vs non-echo. M4 POS GRADIENT: median movement by class (NOUN vs VERB vs IDENT; ADJ/NUM/ADP reported outside the strict test). M5 AXIS TARGETING: among echo-word substitutions that breach, does the largest axis movement land on one of the word's echo axes? M6 the decoy floor under substitutions (480 readings). M7 shape preservation: Spearman(profile_subst, profile_base) per word."
   },
@@ -21,20 +21,27 @@
   },
   "hypotheses": {
     "H1_few_words": "THE FEW-WORDS LAW: fewer than 30% of the 120 substitutions breach the 0.10 per-record band (a minority of words carry the sensitivity) AND the top 20% of words by movement carry at least 50% of total movement mass. LIVES iff both.",
-    "H2_echo": "THE ECHO LAW: words that lexically echo the question map breach the band at >= 2x the rate of non-echo words AND at least 3 echo words breach (the vacuous 0-vs-0 case DIES). The mechanism: the readout is a lexical-overlap matcher — removing the state-side echo removes the bridge.",
+    "H2_echo": "THE ECHO LAW: words that lexically echo the question map breach the band at >= 2x the rate of non-echo words AND at least 3 echo words breach (the vacuous 0-vs-0 case DIES). The mechanism: the readout is a lexical-overlap matcher \u2014 removing the state-side echo removes the bridge.",
     "H3_pos_gradient": "THE CATEGORY GRADIENT: median per-record max movement strictly ordered NOUN > VERB > IDENT (ADJ/NUM/ADP reported outside the strict ordering).",
-    "C38": "THE LEXICAL CENSUS LAW: state-side noul mass is carried by a concentrated minority of question-echoing content words — LIVES iff H1 AND H2 (H3 reported as the gradient refinement; the claim does not ride on it, per-class n is small)"
+    "C38": "THE LEXICAL CENSUS LAW: state-side noul mass is carried by a concentrated minority of question-echoing content words \u2014 LIVES iff H1 AND H2 (H3 reported as the gradient refinement; the claim does not ride on it, per-class n is small)"
   },
   "predictions": {
-    "P1": "the max single-word movement is >= 0.15 (one state word alone moves 1.5x the drift band — the T1 effect decomposes into single-word carriers)",
-    "P2": "the most-moved axis (mean |dp| across all substitutions) is P8_exact or P6_null — the abstract axes, convergent with E-Q37 (most phrasing-susceptible) and E-Q38 (highest-drift)",
+    "P1": "the max single-word movement is >= 0.15 (one state word alone moves 1.5x the drift band \u2014 the T1 effect decomposes into single-word carriers)",
+    "P2": "the most-moved axis (mean |dp| across all substitutions) is P8_exact or P6_null \u2014 the abstract axes, convergent with E-Q37 (most phrasing-susceptible) and E-Q38 (highest-drift)",
     "P3": "the decoy floor stays <= 0.05 under all substitutions (canary immunity extends to state-side word swaps)",
-    "P4": "median shape Spearman >= 0.95 (single-word swaps preserve the profile shape even better than T1's 0.961 — one word is a smaller perturbation than three)",
+    "P4": "median shape Spearman >= 0.95 (single-word swaps preserve the profile shape even better than T1's 0.961 \u2014 one word is a smaller perturbation than three)",
     "P5": "the IDENT class has the lowest median movement of the three classes (identifier swaps are the floor of the gradient)",
     "P6": "among echo-word substitutions that breach the band, the largest axis movement lands on one of the word's echo axes for >= 60% of them (movement is axis-targeted, not diffuse)"
   },
   "falsifier": "ANY of F1-F6 breached; the word map edited after registration; movement computed against re-derived baselines; the anchor band stretched; a mid-run model_served change unreceipted (aborts the lane).",
   "budget": "125 typesafe calls (~$0.03 at the r28 per-call rate). Round ceiling $0.10 carried.",
   "registered_before_run": true,
-  "amendments": []
+  "amendments": [
+    {
+      "id": "AM1",
+      "ts": "2026-10-19 (pre-run, BEFORE the first census call; the canary was the round's only spend)",
+      "what": "the substitution case rule extended: all-caps surface occurrences (the E-Q1..E-Q20c experiment ids, 8 IDENT words) receive the ALL-CAPS substitute (E-Q1 -> E-Q3, not E-q3); all other occurrences keep the first-letter case rule. Found by the runner's F2 inverse-exactness pre-flight, which failed loudly on N1/e-q1 before any call was made.",
+      "why_honest": "a case-normalization detail of the substitution APPLICATION, not of the sample, the substitutes, the hypotheses, or any measure; the F2 floor (states differ from the sealed texts only at the sampled word's occurrences) is what the amendment protects. Zero census calls spent at amendment time."
+    }
+  ]
 }

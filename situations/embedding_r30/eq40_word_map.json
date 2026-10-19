@@ -2,7 +2,7 @@
  "experiment": "E-Q40",
  "law": "the sealed lexical-sensitivity census word map (TF-IDF top-6 per record x hand-crafted single-token near-synonym substitutions; POS classes; mechanical echo flags vs the frozen E-Q25 12-question map)",
  "salience_rule": "tokens [A-Za-z][A-Za-z0-9]*(-[A-Za-z0-9]+)* lowercased; stopword list + min length 3 frozen in eq40_build_wordmap.py; score = tf_in_record * ln(20/df_across_records); top 6 by (score desc, first-occurrence asc, token asc)",
- "substitution_rule": "ALL occurrences of the exact surface form (case-insensitive) replaced, first-letter case preserved per occurrence; occurrence count receipted per row",
+ "substitution_rule": "ALL occurrences of the exact surface form (case-insensitive, boundary-consistent with the tokenizer) replaced; case pattern preserved per occurrence (AM1: all-caps occurrences e.g. E-Q1 receive the all-caps substitute E-Q3; otherwise first-letter case preserved); occurrence count receipted per row",
  "echo_rule": "word-boundary match of {word, word+s, word-minus-s} in the frozen E-Q25 12-question map text (key + question json); mechanical, limitations receipted",
  "records": {
   "N1": {
