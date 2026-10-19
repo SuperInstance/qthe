@@ -67,6 +67,7 @@ export const STONE_CHAINS = [
   { path: 'receipts/e_q36_chain.jsonl', gate: 'e_q36', label: 'E-Q36 · the at-scale corpus, 60 records, the scale round (ORCH-R28/T19-b)', pin: 'e_q36_at_scale' },
   { path: 'receipts/e_q37_chain.jsonl', gate: 'e_q37', label: 'E-Q37 · the phrasing-sensitivity curve, lexical not structural (ORCH-R28/T19-c)', pin: 'e_q37_phrasing' },
   { path: 'receipts/e_q38_chain.jsonl', gate: 'e_q38', label: 'E-Q38 · the drift monitor fourth reading, across a session boundary (ORCH-R28/T19-d)', pin: 'e_q38_drift' },
+  { path: 'receipts/e_q39_chain.jsonl', gate: 'e_q39', label: 'E-Q39 · the 8x64+8 hierarchical survivor, region-splitting without folding (ORCH-R29/T20-a)', pin: 'e_q39_split_survivor' },
   { path: 'receipts/probe_gate_chain.jsonl', gate: 'probe_gate', label: 'probe gate runs', pin: 'probe_gate' },
 ];
 

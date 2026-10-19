@@ -506,3 +506,22 @@ expansion ≠ factual grounding; verify before adopting. Receipt:
   not by luck). Selection on the objective is scale-robust where
   selection on proxies and arithmetic structure are not: the comparison
   ladder now reads walk 5 / proxy 6 / objective 4 / objective-at-3x 4.
+
+## r29 (kernel lane, opened in-session) — 1 law
+
+- **THE REGION IS THE KILLER, NOT THE FOLD (E-Q39).** The 8×64+8 survivor
+  (region-splitting without folding — C9's named untested design) ALSO
+  dies: split clean provFrac 0.0087 vs flat 0.0725, breaching the
+  no-regression bound at two levels. The autopsy falsifies the C9
+  attribution: cross-cargo aliasing (d&7) was a complication, not the
+  root cause. The cargo-exact slot DOES fix the escalation channel the
+  fold collapsed (escalated-partner 13.4% vs the fold's 0.0% — P2 hit),
+  but the local channel (77.6% of event volume) reads same-region
+  weather noise for straddled pairs — and at this geometry (members ≥ 24
+  apart, regions 32×16) ALL pairs straddle. Region-splitting at ANY slot
+  width loses to flat at provenance because flat's live-read gives every
+  reader direct same-tick access to the partner's write, while the
+  region design routes straddled pairs through a stale one-shot
+  escalation. When an autopsy names a survivor, test the survivor — the
+  death certificate's causal story was half right, and only the
+  survivor's death proved which half.

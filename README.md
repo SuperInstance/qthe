@@ -708,3 +708,32 @@ the watch.
   8×64+8 hierarchical survivor, the conditioning channel as a
   calibrated self-interrogation instrument (with the contamination
   receipt), the lexical-sensitivity census, the standing watches.
+
+## The survivor round (r29 kernel lane — the region is the killer, not the fold)
+
+- **E-Q39 — the 8×64+8 hierarchical survivor: C37 DIES, and the death
+  refines C9's causal story.** The design C9's autopsy named "the
+  untested survivor" — region-splitting WITHOUT folding (8 regions × 64
+  cargo-exact slots, s = d, + 8 presence buckets = 520 slots) — ran on
+  the E-Q18 population ladder byte-identical (F-CAL bit-exact vs
+  E-Q17's sealed rows, F0-T 10/10, F1 10/10, determinism 80/80). H2
+  LIVES (8/8 delivery at every level — the escalation channel is
+  addressing-robust at any slot width). H1 DIES: split clean provFrac
+  **0.0087** vs flat 0.0725 (two levels breach the −0.02 bound) —
+  better than the fold's 0.0066 but 8× below flat. **THE MECHANISM (the
+  autopsy, sealed as a chain row): ALL 8 twin pairs straddle regions at
+  this geometry (members ≥ 24 apart vs regions of 32×16); the local
+  channel — 77.6% of the event volume — reads same-region weather
+  Abstains (0.0% partner attribution); the escalated channel (the only
+  path to a straddled partner) actually BEATS flat's live-read partner
+  rate (13.4% vs 7.25%) but carries only a fifth of the volume. THE
+  REGION IS THE KILLER, NOT THE FOLD: the cargo-exact slot fixes the
+  escalation the fold collapsed (P2 HIT — the one prediction the
+  mechanism got right) but cannot fix the local channel, which is
+  weather noise in both designs. The C9 cross-cargo-aliasing
+  attribution is falsified as the ROOT cause — the fold was a
+  complication; the regional partition itself (vs straddled-pair
+  geometry + the stale one-shot escalation) is the disease. Chain
+  `e_q39` (128 links incl. the mechanism row); zero LLM cost. The
+  version-flip watch continues (canary at r28 close: jev-1.13.0, answer
+  within band).

@@ -3,7 +3,7 @@
  "repo": "SuperInstance/qthe",
  "emitted_by": "scripts/emit_fleet_seeds.mjs (ORCH-25)",
  "kernel_sha256": "ef9a3bba0511c78026f30706214e407d362e8972a86f5684d9b16a9e16e3f091",
- "chain_registry_sha256": "81c109d69fc8271dbe5b046ab823965de81a7a74515bd52cbbecd5f7e884c30d",
+ "chain_registry_sha256": "44ecfcf0c80e1904f7a7b9507deeb864edd115c555b62766d25e0a589f62b630",
  "scoreboard": {
   "C1": "LIVES (E-Q13, 47.40%)",
   "C2": "LIVES (E-Q1, 8/8 vs 0/20)",
@@ -190,9 +190,13 @@
    "sha256": "ff61695ea0d4d5fd38aec3b8ee5b7a136853e95ba03292c82ab75ebc579394d3",
    "rows": 4
   },
+  "e_q39_split_survivor": {
+   "sha256": "50ff38819bc04740cabbe9b6fa04e95d226c6e1ca1e7ed9d2b709caaf49e6cb7",
+   "rows": 128
+  },
   "probe_gate": {
-   "sha256": "583c674a951ae871089dcb18248f0969fbdf7bc7052b51523a7e7cc7e9cc1e51",
-   "rows": 54
+   "sha256": "4fee05d002159ec65b368b08f9e45c57ec6ba6a93d65be4c38bcf8cb8374b97a",
+   "rows": 55
   }
  }
 }

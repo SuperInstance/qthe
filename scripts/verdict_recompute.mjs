@@ -1223,6 +1223,25 @@ const CLAIMS = [
       return { recomputed: 'C36 LIVES — the band holds a fourth reading across a session boundary (20/20 within 0.10 vs all three baselines, flat trend 0.0087, jev-1.13.0 unchanged; the Oct-21 flip warning stands); chain agrees' };
     },
   },
+  {
+    id: 'C37 — the 8x64+8 hierarchical survivor / the region is the killer, not the fold (E-Q39)',
+    source: 'experiments/outputs/e_q39_results.json',
+    cite: 'receipts/e_q39_chain.jsonl · verdict row + mechanism.autopsy row · experiments/pre_registration_e_q39.json · experiments/e_q39_split_population.mjs + e_q39_autopsy.mjs',
+    expected: 'C37 DIES on H1 (no-regression breached at clean -0.064 and nPoll16 -0.038 vs the -0.02 bound): split clean provFrac 0.0087 vs flat 0.0725 — better than the fold\'s 0.0066 but 8x below flat. H2 LIVES (8/8 delivery at every level). THE MECHANISM (autopsy row): ALL pairs straddle regions; local events 0.0% partner; escalated 13.4% partner — THE REGION IS THE KILLER NOT THE FOLD: the cargo-exact slot fixes the escalation the fold collapsed (P2 HIT) but the local channel reads same-region weather noise in both designs; the C9 cross-cargo-aliasing attribution falsified as the ROOT cause',
+    run() {
+      const d = readJson(this.source);
+      const v = d.verdict;
+      if (v.H1_no_regression.lives !== false || v.C37.lives !== false) throw new Error('C37 must die on H1');
+      if (v.H2_delivery.lives !== true) throw new Error('H2 must live — delivery');
+      if (v.H1_no_regression.levelsWorse !== 2) throw new Error('breach count drifted');
+      if (!d.mechanism_autopsy || !d.mechanism_autopsy.the_finding.includes('THE REGION IS THE KILLER')) throw new Error('mechanism autopsy missing');
+      if (d.controls.FCAL.indexOf('PASS') !== 0) throw new Error('F-CAL must pass');
+      if (d.controls.F0T !== '10/10') throw new Error('F0-T drifted');
+      const row = lastChainRow('receipts/e_q39_chain.jsonl', (r) => r.kind === 'verdict', 'verdict');
+      if (row.verdict.C37.lives !== false || row.verdict.H1_no_regression.lives !== false) throw new Error('chain flags disagree');
+      return { recomputed: 'C37 DIES — the survivor does not survive: region-splitting at ANY slot width loses to flat at provenance because straddled pairs (all of them, at this geometry) reach partners only through the stale one-shot escalation; the fold was a complication, the region is the disease; chain agrees' };
+    },
+  },
 ];
 
 // ── COVERAGE (ORCH-R11: the arena-r11 consensus finding, all four seats) ──

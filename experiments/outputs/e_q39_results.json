@@ -1,0 +1,409 @@
+{
+  "experiment": "E-Q39",
+  "claim": "the 8x64+8 hierarchical survivor (region-splitting without folding, C9's untested survivor)",
+  "kernel": {
+    "kernelKind": "real",
+    "kernelPath": "qthe/qthe.mjs"
+  },
+  "stonePath": "../../quilt-stone/stone.mjs",
+  "preRegSha": "1217a50e5558930aeef3f28e46f34e5425cd53a39c38692deb290291795db4e5",
+  "registration": "experiments/pre_registration_e_q39.json",
+  "controls": {
+    "F0T": "10/10",
+    "F1": "10/10",
+    "FCAL": "PASS (bit-exact vs E-Q17 sealed 64x64 clean+density rows)",
+    "F0": "80/80 (asserted in-loop, LOUD on violation)"
+  },
+  "task": {
+    "K": 8,
+    "dWindow": [
+      8,
+      15
+    ],
+    "thetaDel": 8,
+    "T": 200,
+    "seeds": [
+      77001,
+      77002,
+      77003,
+      77004,
+      77005,
+      77006,
+      77007,
+      77008,
+      77009,
+      77010
+    ],
+    "sigma": "kernel log2(3)",
+    "grid": "64x64 fixed",
+    "ladder": [
+      0,
+      16,
+      32,
+      64,
+      128,
+      256
+    ],
+    "regionMap": "region(x,y) = ((y>>4)<<1)|(x>>5), 8 regions of 32x16"
+  },
+  "aggregates": {
+    "flat|0": {
+      "arm": "flat",
+      "nPoll": 0,
+      "provMed": "0.07251908396946564",
+      "provDirectMed": "0.07251908396946564",
+      "pfMed": "0.9430661577608143",
+      "deliveredMed": 8,
+      "firstPairDeliveryMed": 7,
+      "writesPerOccupiedSlot": "57.14",
+      "escalatedFractionMed": null,
+      "writerRegionCorrectMed": null,
+      "pairEventsTotal": 31440,
+      "partnerEventsTotal": 2718
+    },
+    "flat|16": {
+      "arm": "flat",
+      "nPoll": 16,
+      "provMed": "0.0416403785488959",
+      "provDirectMed": "0.0416403785488959",
+      "pfMed": "0.9615020511202272",
+      "deliveredMed": 8,
+      "firstPairDeliveryMed": 6,
+      "writesPerOccupiedSlot": "114.29",
+      "escalatedFractionMed": null,
+      "writerRegionCorrectMed": null,
+      "pairEventsTotal": 31697,
+      "partnerEventsTotal": 1395
+    },
+    "flat|32": {
+      "arm": "flat",
+      "nPoll": 32,
+      "provMed": "0.018867924528301886",
+      "provDirectMed": "0.018867924528301886",
+      "pfMed": "0.9817781966698084",
+      "deliveredMed": 8,
+      "firstPairDeliveryMed": 6,
+      "writesPerOccupiedSlot": "171.43",
+      "escalatedFractionMed": null,
+      "writerRegionCorrectMed": null,
+      "pairEventsTotal": 31814,
+      "partnerEventsTotal": 808
+    },
+    "flat|64": {
+      "arm": "flat",
+      "nPoll": 64,
+      "provMed": "0.005649717514124294",
+      "provDirectMed": "0.005649717514124294",
+      "pfMed": "0.9978035770316912",
+      "deliveredMed": 8,
+      "firstPairDeliveryMed": 6,
+      "writesPerOccupiedSlot": "285.71",
+      "escalatedFractionMed": null,
+      "writerRegionCorrectMed": null,
+      "pairEventsTotal": 31892,
+      "partnerEventsTotal": 545
+    },
+    "flat|128": {
+      "arm": "flat",
+      "nPoll": 128,
+      "provMed": "0.009708737864077669",
+      "provDirectMed": "0.009708737864077669",
+      "pfMed": 1,
+      "deliveredMed": 8,
+      "firstPairDeliveryMed": 6,
+      "writesPerOccupiedSlot": "514.29",
+      "escalatedFractionMed": null,
+      "writerRegionCorrectMed": null,
+      "pairEventsTotal": 31935,
+      "partnerEventsTotal": 379
+    },
+    "flat|256": {
+      "arm": "flat",
+      "nPoll": 256,
+      "provMed": 0,
+      "provDirectMed": 0,
+      "pfMed": 1,
+      "deliveredMed": 8,
+      "firstPairDeliveryMed": 6,
+      "writesPerOccupiedSlot": "971.43",
+      "escalatedFractionMed": null,
+      "writerRegionCorrectMed": null,
+      "pairEventsTotal": 31971,
+      "partnerEventsTotal": 154
+    },
+    "hier|0": {
+      "arm": "hier",
+      "nPoll": 0,
+      "provMed": "0.008726003490401396",
+      "provDirectMed": null,
+      "pfMed": "0.9927184466019418",
+      "deliveredMed": 8,
+      "firstPairDeliveryMed": 7,
+      "writesPerOccupiedSlot": "7.46",
+      "escalatedFractionMed": "0.1516",
+      "writerRegionCorrectMed": 1,
+      "pairEventsTotal": 29079,
+      "partnerEventsTotal": 748
+    },
+    "hier|16": {
+      "arm": "hier",
+      "nPoll": 16,
+      "provMed": "0.00333889816360601",
+      "provDirectMed": null,
+      "pfMed": "0.9970129439097245",
+      "deliveredMed": 8,
+      "firstPairDeliveryMed": 7,
+      "writesPerOccupiedSlot": "14.51",
+      "escalatedFractionMed": "0.022",
+      "writerRegionCorrectMed": 1,
+      "pairEventsTotal": 30123,
+      "partnerEventsTotal": 434
+    },
+    "hier|32": {
+      "arm": "hier",
+      "nPoll": 32,
+      "provMed": "0.0022860875244937948",
+      "provDirectMed": null,
+      "pfMed": "0.9980366492146597",
+      "deliveredMed": 8,
+      "firstPairDeliveryMed": 7,
+      "writesPerOccupiedSlot": "21.72",
+      "escalatedFractionMed": "0.0096",
+      "writerRegionCorrectMed": 1,
+      "pairEventsTotal": 30724,
+      "partnerEventsTotal": 256
+    },
+    "hier|64": {
+      "arm": "hier",
+      "nPoll": 64,
+      "provMed": "0.0006451612903225806",
+      "provDirectMed": null,
+      "pfMed": "0.9993608181527645",
+      "deliveredMed": 8,
+      "firstPairDeliveryMed": 7,
+      "writesPerOccupiedSlot": "35.96",
+      "escalatedFractionMed": "0.004",
+      "writerRegionCorrectMed": null,
+      "pairEventsTotal": 31186,
+      "partnerEventsTotal": 47
+    },
+    "hier|128": {
+      "arm": "hier",
+      "nPoll": 128,
+      "provMed": 0,
+      "provDirectMed": null,
+      "pfMed": 1,
+      "deliveredMed": 8,
+      "firstPairDeliveryMed": 6,
+      "writesPerOccupiedSlot": "64.43",
+      "escalatedFractionMed": "0.001",
+      "writerRegionCorrectMed": null,
+      "pairEventsTotal": 31513,
+      "partnerEventsTotal": 7
+    },
+    "hier|256": {
+      "arm": "hier",
+      "nPoll": 256,
+      "provMed": 0,
+      "provDirectMed": null,
+      "pfMed": 1,
+      "deliveredMed": 8,
+      "firstPairDeliveryMed": 6,
+      "writesPerOccupiedSlot": "121.43",
+      "escalatedFractionMed": 0,
+      "writerRegionCorrectMed": null,
+      "pairEventsTotal": 31737,
+      "partnerEventsTotal": 1
+    }
+  },
+  "h3Probe": [
+    {
+      "nWriters": 16,
+      "flatOccupied": 1,
+      "flatContention": 16,
+      "hierLocalOccupied": 8,
+      "hierLocalContention": 2,
+      "ratio": "0.125"
+    },
+    {
+      "nWriters": 64,
+      "flatOccupied": 1,
+      "flatContention": 64,
+      "hierLocalOccupied": 8,
+      "hierLocalContention": 8,
+      "ratio": "0.125"
+    },
+    {
+      "nWriters": 272,
+      "flatOccupied": 1,
+      "flatContention": 272,
+      "hierLocalOccupied": 8,
+      "hierLocalContention": 34,
+      "ratio": "0.125"
+    }
+  ],
+  "verdict": {
+    "H1_no_regression": {
+      "lives": false,
+      "rule": "E-Q39 PRIMARY: split provFrac (direct) >= flat provDirect - 0.02 at EVERY level (the bound the folded design breached twice)",
+      "detail": [
+        {
+          "nPoll": 0,
+          "flatProvDirectMed": "0.07251908396946564",
+          "splitProvMed": "0.008726003490401396",
+          "delta": "-0.0638"
+        },
+        {
+          "nPoll": 16,
+          "flatProvDirectMed": "0.0416403785488959",
+          "splitProvMed": "0.00333889816360601",
+          "delta": "-0.0383"
+        },
+        {
+          "nPoll": 32,
+          "flatProvDirectMed": "0.018867924528301886",
+          "splitProvMed": "0.0022860875244937948",
+          "delta": "-0.0166"
+        },
+        {
+          "nPoll": 64,
+          "flatProvDirectMed": "0.005649717514124294",
+          "splitProvMed": "0.0006451612903225806",
+          "delta": "-0.005"
+        },
+        {
+          "nPoll": 128,
+          "flatProvDirectMed": "0.009708737864077669",
+          "splitProvMed": 0,
+          "delta": "-0.0097"
+        },
+        {
+          "nPoll": 256,
+          "flatProvDirectMed": 0,
+          "splitProvMed": 0,
+          "delta": 0
+        }
+      ],
+      "levelsWorse": 2
+    },
+    "H2_delivery": {
+      "lives": true,
+      "rule": "8/8 delivery at every level (the escalation channel is addressing-robust in both designs)",
+      "detail": [
+        {
+          "nPoll": 0,
+          "splitDeliveredMed": 8
+        },
+        {
+          "nPoll": 16,
+          "splitDeliveredMed": 8
+        },
+        {
+          "nPoll": 32,
+          "splitDeliveredMed": 8
+        },
+        {
+          "nPoll": 64,
+          "splitDeliveredMed": 8
+        },
+        {
+          "nPoll": 128,
+          "splitDeliveredMed": 8
+        },
+        {
+          "nPoll": 256,
+          "splitDeliveredMed": 8
+        }
+      ]
+    },
+    "H3_clean_parity": {
+      "lives": false,
+      "rule": "split at clean within [flat-0.02, flat+0.10]",
+      "flatClean": "0.07251908396946564",
+      "splitClean": "0.008726003490401396"
+    },
+    "H3b_under_drift": {
+      "rule": "contention telemetry (writes per occupied slot)",
+      "table": [
+        {
+          "nPoll": 0,
+          "flat": "57.14",
+          "splitLocal": "7.46",
+          "ratio": "0.131"
+        },
+        {
+          "nPoll": 16,
+          "flat": "114.29",
+          "splitLocal": "14.51",
+          "ratio": "0.127"
+        },
+        {
+          "nPoll": 32,
+          "flat": "171.43",
+          "splitLocal": "21.72",
+          "ratio": "0.127"
+        },
+        {
+          "nPoll": 64,
+          "flat": "285.71",
+          "splitLocal": "35.96",
+          "ratio": "0.126"
+        },
+        {
+          "nPoll": 128,
+          "flat": "514.29",
+          "splitLocal": "64.43",
+          "ratio": "0.125"
+        },
+        {
+          "nPoll": 256,
+          "flat": "971.43",
+          "splitLocal": "121.43",
+          "ratio": "0.125"
+        }
+      ]
+    },
+    "C37": {
+      "lives": false,
+      "rule": "LIVES iff H1 AND H2 — region-splitting without folding restores the hierarchical design's viability"
+    }
+  },
+  "mechanism_autopsy": {
+    "source": "experiments/e_q39_autopsy.mjs (post-seal diagnosis, seed 77001, t=1..60, clean)",
+    "geometry": "ALL 8 twin pairs STRADDLE regions (members >= 24 apart toroidal-Chebyshev vs regions of 32x16 — the geometry forces it at this grid)",
+    "events": "pair-cell events: local 544, escalated 157 (the local channel is 77.6% of the event volume)",
+    "attribution": "local events 0.0% partner (same-region weather-Abstain occupants — the partner writes a FOREIGN region); escalated events 13.4% partner (the one-shot stale escalation beats flat's 7.25% live-read partner rate but carries only a fifth of the volume)",
+    "the_finding": "THE REGION IS THE KILLER, NOT THE FOLD: the cargo-exact slot (s=d) fixes the escalation channel the fold collapsed (fold escalated-partner 0.0% at drift; split 13.4% at clean) but cannot fix the local channel, which reads same-region weather noise for every straddled pair in BOTH designs. The C9 autopsy attributed the hierarchical death to cross-cargo aliasing (d&7); E-Q39 falsifies that attribution as the ROOT cause — the fold was a complication, the regional partition itself (vs straddled-pair geometry + the stale one-shot escalation) is the disease. Region-splitting at ANY slot width loses to flat at provenance because flat's live-read gives every reader direct same-tick access to the partner's write.",
+    "scalars": {
+      "split_clean_prov": "0.0087",
+      "fold_clean_prov": "0.0066 (E-Q18 sealed)",
+      "flat_clean_provDirect": "0.0725 (E-Q17 sealed, F-CAL reproduced)"
+    }
+  },
+  "hypotheses_with_predictions": {
+    "H1_no_regression": {
+      "lives": false,
+      "levelsWorse": 2,
+      "breaches": "clean -0.064, nPoll16 -0.038 (bound -0.02)"
+    },
+    "H2_delivery": {
+      "lives": true,
+      "detail": "8/8 at every level — the escalation channel is addressing-robust in both designs"
+    },
+    "H3_clean_parity": {
+      "lives": false,
+      "detail": "split clean 0.0087 vs flat 0.0725 — outside [flat-0.02, flat+0.10]"
+    },
+    "C37": {
+      "lives": false,
+      "rule": "LIVES iff H1 AND H2 — DIES on H1 (two levels breach the no-regression bound)"
+    },
+    "predictions": {
+      "P1": "MISS (split is BELOW flat at 3 levels — the tracking prediction assumed the fold was the failure mode)",
+      "P2": "HIT (escalated fraction 0.15 at clean vs the fold's 0.0% collapse — the cargo-exact slot does fix escalation)",
+      "P3": "HIT (writes per occupied slot 14.5 vs flat 114.3 at nPoll=16 — the 512-slot namespace absorbs population; ratio 0.127)",
+      "P4": "CHECK-DELIVERED (8/8 everywhere; first-delivery medians in aggregates)",
+      "P5": "MISS (no level with split ahead by > 0.05)"
+    }
+  }
+}
