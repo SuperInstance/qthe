@@ -1242,6 +1242,34 @@ const CLAIMS = [
       return { recomputed: 'C37 DIES — the survivor does not survive: region-splitting at ANY slot width loses to flat at provenance because straddled pairs (all of them, at this geometry) reach partners only through the stale one-shot escalation; the fold was a complication, the region is the disease; chain agrees' };
     },
   },
+  {
+    id: 'C38 — the lexical-sensitivity census / broad and shallow, not concentrated and echo-driven (E-Q40)',
+    source: 'experiments/outputs/e_q40_results.json',
+    cite: 'receipts/e_q40_chain.jsonl · verdict.EQ40 · experiments/pre_registration_e_q40.json (AM1-AM5) · situations/embedding_r30/ (eq40_build_wordmap.py + eq40_word_map.json + eq40_census.py + eq40_analysis.py + eq40_results.json + eq40_rows_r30.jsonl)',
+    expected: 'C38 DIES on BOTH halves of the concentration: H1 DIES split (the rate half lives — 11/120 = 9.2% breach the 0.10 band — but the top-20% of words carry only 45.3% of movement mass, under the registered 50%); H2 DIES decisively (echo words breach at 13.0% vs non-echo 8.2%, ratio 1.58x < 2x, class medians identical at 0.05 — THE READOUT IS NOT A KEYWORD MATCHER); H3 dies at the 2-decimal instrument resolution (NOUN and VERB medians both exactly 0.05; the receipt is two-tier: content words 0.05 > identifiers 0.03). What lives: P1-P5 (max 0.25, P8_exact the most-moved axis — the third instrument converging, decoy floor 0.0136 over 480, shape Spearman 0.976, IDENT the floor); P6 dies (0/3 echo breaches axis-targeted)',
+    run() {
+      const d = readJson(this.source);
+      if (d.hypotheses.H1_few_words !== false || d.hypotheses.C38 !== false) throw new Error('C38 must die');
+      if (d.hypotheses.H1_rate !== true || d.hypotheses.H1_concentration !== false) throw new Error('H1 must die on the concentration half only');
+      if (d.hypotheses.H2_echo !== false || d.hypotheses.H2_rate !== false || d.hypotheses.H2_count !== true) throw new Error('H2 must die on the rate');
+      if (d.hypotheses.H3_pos_gradient !== false) throw new Error('H3 must die at the grid resolution');
+      if (d.movement.breaches !== 11 || Math.abs(d.movement.breach_rate - 0.0917) > 0.0005) throw new Error('breach count drifted');
+      if (d.concentration.top20_share > 0.50 || d.concentration.top20_share < 0.45) throw new Error('top-20% share drifted');
+      if (d.echo.n_echo !== 23 || d.echo.n_nonecho !== 97 || d.echo.echo_breaches !== 3 || d.echo.nonecho_breaches !== 8) throw new Error('echo counts drifted');
+      if (d.echo.echo_breach_rate >= 2 * d.echo.nonecho_breach_rate) throw new Error('H2 rate logic disagrees with the sealed verdict — echo >= 2x non-echo would make H2_rate true'); // the registered >=2x test must FAIL as sealed (1.58x)
+      if (d.pos.medians.NOUN !== 0.05 || d.pos.medians.VERB !== 0.05 || d.pos.medians.IDENT !== 0.03) throw new Error('POS medians drifted');
+      if (d.most_moved_axis !== 'P8_exact') throw new Error('most-moved axis drifted');
+      if (d.predictions.P1 !== true || d.predictions.P2 !== true || d.predictions.P3 !== true || d.predictions.P4 !== true || d.predictions.P5 !== true || d.predictions.P6 !== false) throw new Error('prediction pattern drifted');
+      if (d.F4_anchor_band !== true) throw new Error('anchor band breached');
+      if (d.decoy_floor.mean > 0.05 || d.decoy_floor.n !== 480) throw new Error('decoy floor breached');
+      if (!d.task.model_served.startsWith('jev-1.13.0')) throw new Error('version flip unreceipted');
+      const row = lastChainRow('receipts/e_q40_chain.jsonl', (r) => r.kind === 'verdict.EQ40', 'verdict.EQ40');
+      if (row.C38 !== false || row.H1 !== false || row.H2 !== false || row.H3 !== false) throw new Error('chain flags disagree');
+      if (row.model_served !== 'jev-1.13.0') throw new Error('chain version receipt disagrees');
+      if (!row.verdict.includes('BROAD AND SHALLOW')) throw new Error('verdict text lost its headline');
+      return { recomputed: 'C38 DIES — the sensitivity is BROAD AND SHALLOW: 9.2% of words breach but the top-20% carry only 45.3% of the mass, and echo words breach at 1.58x not 2x (the readout is not a keyword matcher — the word "record", present in every question text, moves 0.02 when removed from the state); the two-tier receipt: content words 0.05 > identifiers 0.03; chain agrees' };
+    },
+  },
 ];
 
 // ── COVERAGE (ORCH-R11: the arena-r11 consensus finding, all four seats) ──

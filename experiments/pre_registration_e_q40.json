@@ -60,6 +60,12 @@
       "ts": "2026-10-19 (pre-run, ZERO census calls spent; a full-table enumeration of the F2 pre-flight \u2014 all 120 rows checked at once \u2014 found the last two defects)",
       "what": "two substitution-table fixes: Q4 'e-q20c'->'e-q20b' (the 6-char mixed-case id keeps per-position case transfer inverse-exact; 'e-q18' is 5 chars and cannot reproduce the E-Q20c case pattern), and A3 'batching'->'aggregating' ('grouping' collides with the base text's own 'per-artifact grouping' \u2014 the floor forbids ambiguous inverses).",
       "why_honest": "same defect class as AM1-AM3, caught by enumerating the F2 floor over the full table before any spend; sample, hypotheses, measures unchanged. Four pre-run amendments total \u2014 the floor has now caught every application defect it exists to catch."
+    },
+    {
+      "id": "AM5",
+      "ts": "2026-10-19, appended BEFORE the verdicts were sealed (the first analysis run was unsealed; the E-Q36 precedent \u2014 uncommitted seals are rebuildable)",
+      "what": "per-axis movement quantized to the API's 2-decimal grid (round(delta, 2)) before every band/median/share comparison. Both operands of every delta are 2-decimal quantized by the API, so the true delta is exactly a 2-decimal number; raw float subtraction injects 1e-17 noise the instrument cannot resolve. Caught at TWO boundaries on the first unsealed run: (a) two words sat at movement 0.10000000000000009 \u2014 counted as breaches by raw float though the instrument reads exactly 0.10 = within band (13 -> 11 breaches); (b) the H3 NOUN-vs-VERB median ordering existed only at 8e-17 (0.05000000000000003 vs 0.04999999999999999 \u2014 both exactly 0.05 on the grid).",
+      "why_honest": "the fix KILLS a spurious H3 LIVES (the strict three-way gradient becomes a two-tier receipt: content words 0.05 / identifiers 0.03) and shrinks the breach count \u2014 it moves verdicts AGAINST the hypotheses' favor, which is the receipt that it is resolution-honesty, not outcome-shopping. The E-Q31 precedent (float-artifact deaths published unstretched) extended to its mirror image: float-artifact LIVES published unstretched too."
     }
   ]
 }

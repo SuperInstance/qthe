@@ -525,3 +525,58 @@ expansion ≠ factual grounding; verify before adopting. Receipt:
   escalation. When an autopsy names a survivor, test the survivor — the
   death certificate's causal story was half right, and only the
   survivor's death proved which half.
+
+## r30 — the census round (6 laws)
+
+- **THE LEXICAL SENSITIVITY IS BROAD AND SHALLOW (E-Q40).** Swapping one
+  state-side content word for a near-synonym moves the 8-axis noul
+  profile by a median of 0.05 — half the drift band; only 9.2% of words
+  breach the band, and the top 20% of words carry just 45.3% of the
+  movement mass (2.27× uniform, not the 2.5×+ a concentrated carrier
+  law would print). There is no small set of load-bearing words to
+  attack or protect: robustness and adversarial surface are both
+  distributed across the whole lexical fabric, with a shallow tail of
+  0.11–0.25 movers (provenance, reweighting, byte, verify-tier). The
+  E-Q37 question-side synonym mass decomposes as the diffuse sum of
+  many small state-side contributions, each mostly sub-band.
+- **THE READOUT IS NOT A KEYWORD MATCHER (E-Q40).** Words that
+  lexically echo the question-map text breach at only 1.58× the
+  non-echo rate (13.0% vs 8.2%, medians identical at 0.05), and the
+  word "record" — present in every one of the 12 question texts —
+  moves the profile 0.02 when swapped out of the state. The noul
+  readout is not BM25-in-disguise: it reads the record's whole lexical
+  fabric, not its keyword overlaps with the question. Injection
+  resistance, paraphrase immunity, and now echo immunity are three
+  separable properties of the same envelope.
+- **IDENTIFIERS ARE THE FLOOR OF THE MAP (E-Q40).** Swapping experiment
+  ids (E-Q1→E-Q3, IDENT class) barely registers: median 0.03 vs 0.05
+  for all content classes. The readout keys on semantic fabric, not
+  surface identifiers — convergent with E-Q33's shortcut law (surface
+  features are not what retrieval sees) from the opposite direction.
+  The strict NOUN>VERB>IDENT gradient died at the 2-decimal instrument
+  resolution (AM5); what survives is two-tier: identifiers vs
+  everything else.
+- **THE EXACTNESS AXIS IS THE LEAST EXACT — A THIRD INSTRUMENT
+  (E-Q37+Q38+Q40).** P8_exact is the most phrasing-susceptible axis,
+  the highest-drift axis in the monitor series, and now the
+  most-moved axis under state-side single-word substitution (mean
+  0.0248). Three independent instruments, one seat. The axis that asks
+  about byte-identity is the noisiest channel on the board — treat its
+  readings as the canary of canaries.
+- **THE BAND HOLDS A FIFTH READING (E-Q40 anchors).** Four in-run
+  byte-identical anchors sat 0.02–0.03 from the sealed r28 vectors —
+  the tightest reading yet (r24 0.05 / r26 0.09 / r28 0.09 / r30
+  0.03). The fixed point is stable and the version readout
+  (model_served, still jev-1.13.0) remains the flip detector the
+  instrument carries for free. The Oct-21 flip warning stands.
+- **QUANTIZE TO THE INSTRUMENT'S GRID BEFORE COMPARING (E-Q40 AM5).**
+  Both operands of every delta are 2-decimal numbers from the API; raw
+  float subtraction injects 1e-17 noise the instrument cannot resolve.
+  The first unsealed census run had two words at movement
+  0.10000000000000009 (counted as breaches at exactly-band readings)
+  and an 8e-17 NOUN>VERB median ordering that would have sealed a
+  spurious H3 LIVES. The fix KILLED the spurious live verdict and
+  shrank the breach count 13→11 — amendments that move verdicts against
+  the hypotheses' favor are the receipt of resolution honesty. The
+  E-Q31 precedent (float-artifact deaths published unstretched) extends
+  to its mirror image: float-artifact LIVES are killed unstretched too.

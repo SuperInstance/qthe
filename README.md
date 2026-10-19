@@ -737,3 +737,75 @@ the watch.
   `e_q39` (128 links incl. the mechanism row); zero LLM cost. The
   version-flip watch continues (canary at r28 close: jev-1.13.0, answer
   within band).
+
+## The census round (r30 — the lexical sensitivity is broad and shallow, the readout is not a keyword matcher)
+
+- **The flip check (first call of the round): NO FLIP.** The canary —
+  the drift_monitor.py state+questions shape, model `jev-latest` —
+  reads **model_served jev-1.13.0** (2026-10-19T04:09Z, http 200,
+  246 ms, fully receipted in `situations/embedding_r30/flip_canary_r30.json`;
+  the ledger `situations/embedding_r26/flip_watch_r30.json` carries both
+  of the day's readings). The canary doubles as a one-record band check:
+  N1's vector vs the sealed r24 baseline moves 0.04 — within band.
+  **The Oct-21 flip warning stands** (typesafe's Oct-14 blog:
+  jev-latest → 1.14.0 within a week) — every census call receipts
+  model_served, and the census runner ABORTS on any non-1.13.0 serving.
+- **E-Q40 — the lexical-sensitivity census: C38 DIES, and the death is
+  the round's finding: THE LEXICAL SENSITIVITY IS BROAD AND SHALLOW,
+  NOT CONCENTRATED AND ECHO-DRIVEN.** The E-Q37 decomposition (the
+  phrasing law is lexical, not structural) implied a per-word map —
+  which state-side content words carry the noul mass? The sealed word
+  map (120 words: TF-IDF top-6 per record, frozen salience rule,
+  hand-crafted single-token near-synonyms, POS classes NOUN 82 / ADJ 16
+  / IDENT 11 / VERB 9 / NUM 1 / ADP 1, mechanical echo flags vs the
+  question-map text) was committed BEFORE any spend; one batched
+  12-question call per single-word substitution, states differing from
+  the sealed texts ONLY at the sampled word's occurrences (the F2
+  inverse-exactness pre-flight caught four application defects AM1-AM4
+  before a single call). 125 calls, all jev-1.13.0. **H1 DIES SPLIT**:
+  the rate half lives (11/120 = 9.2% breach the 0.10 drift band — a
+  minority of words) but the concentration half dies (the top 20% of
+  words carry 45.3% of movement mass — diffuse, 2.27× uniform, not the
+  predicted 2.5×+). **H2 DIES DECISIVELY — THE READOUT IS NOT A KEYWORD
+  MATCHER**: words that lexically echo the question-map text breach at
+  13.0% (3/23) vs 8.2% (8/97) for non-echo words (ratio 1.58× < 2×),
+  the class medians are IDENTICAL at 0.05, and the strongest possible
+  bridge — the word "record", present in every one of the 12 question
+  texts — moves **0.02** when swapped out of the state. The readout
+  reads the record's whole lexical fabric, not its keyword overlaps.
+  **H3 dies at the instrument's 2-decimal resolution** (AM5: NOUN and
+  VERB medians are both exactly 0.05; the receipt is two-tier — content
+  words 0.05 > identifiers 0.03). **What lives**: P1 (max single-word
+  movement 0.25 = 2.5× the band — one state word alone carries
+  T1-scale mass: N3 `provenance→lineage` 0.25, A2
+  `reweighting→rebalancing` 0.24, P1 `byte→octet` 0.24, A4
+  `verify-tier→check-tier` 0.23); P2 (P8_exact the most-moved axis at
+  mean 0.0248 — the THIRD independent instrument converging on the
+  exactness axis as the noisiest seat: E-Q37 phrasing, E-Q38 drift,
+  E-Q40 census); P3 (decoy floor 0.0136 over 480 readings — canary
+  immunity extends to state-side word swaps); P4 (median shape
+  Spearman 0.9762 — the profile shape survives single-word swaps better
+  than T1's question-side rewording); P5 (IDENT the lowest median —
+  swapping experiment ids barely registers). **P6 DIES** (0/3 echo
+  breaches axis-targeted — the breach argmax tracks the SUBSTITUTE's
+  field at least as often as the swapped word's semantic home). The
+  mechanism receipt for the T1 decomposition: the question-side synonym
+  mass was never "a few load-bearing words" — it is the diffuse sum of
+  many small state-side contributions, each individually mostly
+  sub-band (median 0.05), with a shallow tail of 0.11–0.25 movers. The
+  in-run anchors: 0.02–0.03 vs the sealed r28 baseline — **the drift
+  band holds a FIFTH reading, the tightest yet**. Chain `e_q40`
+  (links=4); ~$0.025, 125 calls, zero moth.
+- **The discipline receipts (r30)**: the mid-round battery receipt law
+  (a mid-round guard PASS is not a close-out receipt — CI had been red
+  since the r28 close because two r28 lanes landed after the mid-round
+  guard run; the batched-call guard widened, eq35's output dict
+  behavior-identically renamed, guard PASS 25 call-site files); the F2
+  inverse-exactness floor caught FOUR substitution-application defects
+  before any spend (AM1-AM4: case rules, a substitute collision, a
+  mixed-case id, a second collision); **AM5 — the resolution-honesty
+  amendment**: per-axis movement quantized to the API's 2-decimal grid
+  before every comparison, which KILLED a spurious H3 LIVES (an 8e-17
+  NOUN>VERB ordering) and shrank the breach count 13→11 — verdicts
+  moved AGAINST the hypotheses' favor, the receipt that it is not
+  outcome-shopping.
