@@ -1,0 +1,44 @@
+{
+ "ts": "2026-10-19T04:09:32Z",
+ "call_id": "r30-canary-N1",
+ "model_served": "jev-1.13.0",
+ "http_status": 200,
+ "elapsed_ms": 246,
+ "question_map_sha256": "ab80b69fa107f56973010417a60c9f639c6df61a7136dbfeb6b9a30ddf2ec5f2",
+ "state_sha256": "73f4242f1ef0d3123f0cd56c21f5e18beb580558a13088512e525ee5b93b04bb",
+ "answers_raw": {
+  "P1_nonlocal": {
+   "type": "noul",
+   "noul": 0.98
+  },
+  "P2_localrule": {
+   "type": "noul",
+   "noul": 0.08
+  },
+  "P3_quantum": {
+   "type": "noul",
+   "noul": 0.06
+  },
+  "P4_alloc": {
+   "type": "noul",
+   "noul": 0.05
+  },
+  "P5_repair": {
+   "type": "noul",
+   "noul": 0.06
+  },
+  "P6_null": {
+   "type": "noul",
+   "noul": 0.05
+  },
+  "P7_econ": {
+   "type": "noul",
+   "noul": 0.08
+  },
+  "P8_exact": {
+   "type": "noul",
+   "noul": 0.38
+  }
+ },
+ "flipped": false
+}

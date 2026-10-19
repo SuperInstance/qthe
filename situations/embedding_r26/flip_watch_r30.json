@@ -1,0 +1,16 @@
+{
+ "law": "the r30 flip watch: every reading preserved; the moment any call reports 1.14.0 the drift monitor's once-in-a-version reading fires",
+ "readings": [
+  {
+   "ts": "2026-10-19T03:48:13.979795Z",
+   "model_served": "jev-1.13.0",
+   "flipped": false
+  },
+  {
+   "ts": "2026-10-19T04:09:32Z",
+   "model_served": "jev-1.13.0",
+   "flipped": false,
+   "call_id": "r30-canary-N1"
+  }
+ ]
+}
