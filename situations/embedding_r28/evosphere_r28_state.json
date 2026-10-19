@@ -1,0 +1,422 @@
+{
+ "initialized": true,
+ "gen": 6,
+ "done": "coverage-complete-at-gen-5",
+ "stagnation": 0,
+ "stations": [
+  {
+   "id": "N1",
+   "family": "N",
+   "gen": 0
+  },
+  {
+   "id": "Q10",
+   "family": "Q",
+   "gen": 3
+  },
+  {
+   "id": "P10",
+   "family": "P",
+   "gen": 4
+  },
+  {
+   "id": "A1",
+   "family": "A",
+   "gen": 5
+  }
+ ],
+ "counts": {
+  "N": 1,
+  "P": 1,
+  "Q": 1,
+  "A": 1
+ },
+ "lineage": [
+  {
+   "gen": 3,
+   "note": "The wormhole mechanism here is purely compile-time \u2014 a 64-slot lookup table, no traversal, no neighborhood coupling, no threshold or cascade in any local update rule \u2014 so the 8/8 versus 0/20 split carries zero certified randomness or interference provenance and no Bell witness. Cost-wise, that table is fixed overhead paid once at compile time rather than per-step spend, but the record reports no token budget or speed figure, so the economics of the 28-run comparison remain an honest null.",
+   "note_sha": "66fc8c8150ad5256c86bb9c042f51fcd6f37af7a81fdd25bb272e1af44f84c3e",
+   "station": "Q10",
+   "station_family": "Q",
+   "fitness_latest": 0.892547,
+   "fitness_preview": 0.894577,
+   "directive_axes": [
+    2,
+    5
+   ],
+   "retrieval": {
+    "top1": "Q10",
+    "family": "Q",
+    "score": 0.89530927,
+    "revisit": false
+   }
+  },
+  {
+   "gen": 4,
+   "note": "The A3S arm's excursion above floor shows the local update's spatial memory surviving well past the point where dW1, tauTV, and twinRate have already been erased \u2014 the tick operator's neighborhood coupling has a slow tail, and the sensitive variant merely stretches it, not originates it. Nothing here reports healing or recovery from damage, so repair stays an honest null; what this station offers is a decay timeline for a perturbation the rule cannot yet shed.",
+   "note_sha": "53ded80915c877f4d8b6caeb4868379f0838398d743b31ae89815bf39de5f040",
+   "station": "P10",
+   "station_family": "P",
+   "fitness_latest": 0.873052,
+   "fitness_preview": 0.856356,
+   "directive_axes": [
+    4,
+    1
+   ],
+   "retrieval": {
+    "top1": "P10",
+    "family": "P",
+    "score": 0.9650818,
+    "revisit": false
+   }
+  },
+  {
+   "gen": 5,
+   "note": "The Repel ring is not a defended wall but a finite charge drawn down one unit per tick \u2014 a scheduled exhaustion, not arbitration, so no queue or priority governs which accumulator drains first; the Attract core stays starved behind Ground, unreachable. The claim C5's own half-erosion at tick 28 refutes any reading of the ring as persistent armor, an honest null on cost figures and on any routing policy among consumers.",
+   "note_sha": "a00f13a81c172a6214ad09c9ed71a62924f6b480f66de5bc0d62e825d693efa1",
+   "station": "A1",
+   "station_family": "A",
+   "fitness_latest": 0.943387,
+   "fitness_preview": 0.954618,
+   "directive_axes": [
+    6,
+    3
+   ],
+   "retrieval": {
+    "top1": "A1",
+    "family": "A",
+    "score": 0.99268985,
+    "revisit": false
+   }
+  }
+ ],
+ "attempts": [
+  {
+   "gen": 1,
+   "attempt": 1,
+   "note_sha": "53f0de62c4235e91822b4cf3d78895a1ad834508e1cd38c097a1ee4c5faeaa81",
+   "target_family": "P",
+   "gate_mode": "retrieval",
+   "verdict": "reject",
+   "rejection_clause": "latest-retrieval-not-novel",
+   "fitness_latest": 0.696704,
+   "fitness_preview": 0.729888,
+   "parent_fitness_latest": 0.504063,
+   "parent_fitness_preview": 0.49349,
+   "retrieval": {
+    "top1": "N8",
+    "family": "N",
+    "score": 0.9651553,
+    "revisit": false
+   },
+   "retrieval_latest": {
+    "top1": "N8",
+    "family": "N",
+    "score": 0.9651553,
+    "revisit": false
+   },
+   "retrieval_preview": {
+    "top1": "N8",
+    "family": "N",
+    "score": 0.97276235,
+    "revisit": false
+   },
+   "directive_axes": [
+    1,
+    5
+   ]
+  },
+  {
+   "gen": 1,
+   "attempt": 2,
+   "note_sha": "5ddcac277642be9f7ba3a58e0012b0746ac95b91f07440f1bf6b6ce7cf03392d",
+   "target_family": "P",
+   "gate_mode": "retrieval",
+   "verdict": "reject",
+   "rejection_clause": "latest-retrieval-not-novel",
+   "fitness_latest": 0.79247,
+   "fitness_preview": 0.809138,
+   "parent_fitness_latest": 0.504063,
+   "parent_fitness_preview": 0.49349,
+   "retrieval": {
+    "top1": "N2",
+    "family": "N",
+    "score": 0.9106187,
+    "revisit": false
+   },
+   "retrieval_latest": {
+    "top1": "N2",
+    "family": "N",
+    "score": 0.9106187,
+    "revisit": false
+   },
+   "retrieval_preview": {
+    "top1": "N2",
+    "family": "N",
+    "score": 0.9118967,
+    "revisit": false
+   },
+   "directive_axes": [
+    1,
+    5
+   ]
+  },
+  {
+   "gen": 2,
+   "attempt": 1,
+   "note_sha": "7472362bcb44da8bcb13452f219001ccdbc6e7fd0214ccf0b2f2cfdc687b66cc",
+   "target_family": "P",
+   "gate_mode": "retrieval",
+   "verdict": "reject",
+   "rejection_clause": "latest-retrieval-not-novel",
+   "fitness_latest": 0.72585,
+   "fitness_preview": 0.698001,
+   "parent_fitness_latest": 0.504063,
+   "parent_fitness_preview": 0.49349,
+   "retrieval": {
+    "top1": "N8",
+    "family": "N",
+    "score": 0.9765157,
+    "revisit": false
+   },
+   "retrieval_latest": {
+    "top1": "N8",
+    "family": "N",
+    "score": 0.9765157,
+    "revisit": false
+   },
+   "retrieval_preview": {
+    "top1": "N8",
+    "family": "N",
+    "score": 0.95084167,
+    "revisit": false
+   },
+   "directive_axes": [
+    1,
+    5
+   ]
+  },
+  {
+   "gen": 2,
+   "attempt": 2,
+   "note_sha": "dd4a505c6a2963882fcf7382be6426de4bcde9dda7580f9d773dc168dc87375d",
+   "target_family": "P",
+   "gate_mode": "retrieval",
+   "verdict": "reject",
+   "rejection_clause": "latest-retrieval-not-novel",
+   "fitness_latest": 0.7535,
+   "fitness_preview": 0.731686,
+   "parent_fitness_latest": 0.504063,
+   "parent_fitness_preview": 0.49349,
+   "retrieval": {
+    "top1": "N12",
+    "family": "N",
+    "score": 0.8776631,
+    "revisit": false
+   },
+   "retrieval_latest": {
+    "top1": "N12",
+    "family": "N",
+    "score": 0.8776631,
+    "revisit": false
+   },
+   "retrieval_preview": {
+    "top1": "N12",
+    "family": "N",
+    "score": 0.8808599,
+    "revisit": false
+   },
+   "directive_axes": [
+    1,
+    5
+   ]
+  },
+  {
+   "gen": 3,
+   "attempt": 1,
+   "note_sha": "1c0c9129ee06be76930dc16bbd7aaee1ecd62781e02e5c7f9938c2547843c4dd",
+   "target_family": "Q",
+   "gate_mode": "retrieval",
+   "verdict": "reject",
+   "rejection_clause": "latest-retrieval-not-novel",
+   "fitness_latest": 0.847666,
+   "fitness_preview": 0.83674,
+   "parent_fitness_latest": 0.458781,
+   "parent_fitness_preview": 0.449389,
+   "retrieval": {
+    "top1": "N12",
+    "family": "N",
+    "score": 0.80373275,
+    "revisit": false
+   },
+   "retrieval_latest": {
+    "top1": "N12",
+    "family": "N",
+    "score": 0.80373275,
+    "revisit": false
+   },
+   "retrieval_preview": {
+    "top1": "N9",
+    "family": "N",
+    "score": 0.8065769,
+    "revisit": false
+   },
+   "directive_axes": [
+    2,
+    5
+   ]
+  },
+  {
+   "gen": 3,
+   "attempt": 2,
+   "note_sha": "66fc8c8150ad5256c86bb9c042f51fcd6f37af7a81fdd25bb272e1af44f84c3e",
+   "target_family": "Q",
+   "gate_mode": "retrieval",
+   "verdict": "accept",
+   "rejection_clause": null,
+   "fitness_latest": 0.892547,
+   "fitness_preview": 0.894577,
+   "parent_fitness_latest": 0.458781,
+   "parent_fitness_preview": 0.449389,
+   "retrieval": {
+    "top1": "Q10",
+    "family": "Q",
+    "score": 0.89530927,
+    "revisit": false
+   },
+   "retrieval_latest": {
+    "top1": "Q10",
+    "family": "Q",
+    "score": 0.89530927,
+    "revisit": false
+   },
+   "retrieval_preview": {
+    "top1": "Q10",
+    "family": "Q",
+    "score": 0.8906439,
+    "revisit": false
+   },
+   "directive_axes": [
+    2,
+    5
+   ]
+  },
+  {
+   "gen": 4,
+   "attempt": 1,
+   "note_sha": "53ded80915c877f4d8b6caeb4868379f0838398d743b31ae89815bf39de5f040",
+   "target_family": "P",
+   "gate_mode": "retrieval",
+   "verdict": "accept",
+   "rejection_clause": null,
+   "fitness_latest": 0.873052,
+   "fitness_preview": 0.856356,
+   "parent_fitness_latest": 0.772455,
+   "parent_fitness_preview": 0.794348,
+   "retrieval": {
+    "top1": "P10",
+    "family": "P",
+    "score": 0.9650818,
+    "revisit": false
+   },
+   "retrieval_latest": {
+    "top1": "P10",
+    "family": "P",
+    "score": 0.9650818,
+    "revisit": false
+   },
+   "retrieval_preview": {
+    "top1": "P10",
+    "family": "P",
+    "score": 0.9858302,
+    "revisit": false
+   },
+   "directive_axes": [
+    4,
+    1
+   ]
+  },
+  {
+   "gen": 5,
+   "attempt": 1,
+   "note_sha": "6ac410a41bea920286ad27cf8090425214119b0e050e15a2edab6cea8eaf1a8e",
+   "target_family": "A",
+   "gate_mode": "retrieval",
+   "verdict": "reject",
+   "rejection_clause": "latest-retrieval-not-novel",
+   "fitness_latest": 0.885222,
+   "fitness_preview": 0.875564,
+   "parent_fitness_latest": 0.49163,
+   "parent_fitness_preview": 0.47962,
+   "retrieval": {
+    "top1": "P8",
+    "family": "P",
+    "score": 0.8867444,
+    "revisit": false
+   },
+   "retrieval_latest": {
+    "top1": "P8",
+    "family": "P",
+    "score": 0.8867444,
+    "revisit": false
+   },
+   "retrieval_preview": {
+    "top1": "P6",
+    "family": "P",
+    "score": 0.91485703,
+    "revisit": false
+   },
+   "directive_axes": [
+    6,
+    3
+   ]
+  },
+  {
+   "gen": 5,
+   "attempt": 2,
+   "note_sha": "a00f13a81c172a6214ad09c9ed71a62924f6b480f66de5bc0d62e825d693efa1",
+   "target_family": "A",
+   "gate_mode": "retrieval",
+   "verdict": "accept",
+   "rejection_clause": null,
+   "fitness_latest": 0.943387,
+   "fitness_preview": 0.954618,
+   "parent_fitness_latest": 0.49163,
+   "parent_fitness_preview": 0.47962,
+   "retrieval": {
+    "top1": "A1",
+    "family": "A",
+    "score": 0.99268985,
+    "revisit": false
+   },
+   "retrieval_latest": {
+    "top1": "A1",
+    "family": "A",
+    "score": 0.99268985,
+    "revisit": false
+   },
+   "retrieval_preview": {
+    "top1": "A1",
+    "family": "A",
+    "score": 0.99234444,
+    "revisit": false
+   },
+   "directive_axes": [
+    6,
+    3
+   ]
+  }
+ ],
+ "config": {
+  "max_gens": 10,
+  "max_attempts": 2,
+  "target_order": [
+   "P",
+   "Q",
+   "A",
+   "N"
+  ],
+  "escape_after": 2,
+  "gate_mode": "retrieval"
+ }
+}

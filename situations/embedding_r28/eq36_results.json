@@ -1,0 +1,399 @@
+{
+ "experiment": "E-Q36",
+ "models_served": [
+  "jev-1.13.0"
+ ],
+ "corpus_sha256": "c0d77c3296024cefa644fd9a1e2f406abd2e5ac2b67ef8b66bf94a8a3b102f6f",
+ "n_records": 60,
+ "stability_max_axis": {
+  "N8": 0.030000000000000027,
+  "P9": 0.03999999999999998,
+  "A11": 0.020000000000000018
+ },
+ "majority_baseline": 0.25,
+ "budget_curve": {
+  "1": {
+   "best": 0.25,
+   "best_subset": [
+    "P1_nonlocal"
+   ],
+   "mean": 0.25
+  },
+  "2": {
+   "best": 0.6333333333333333,
+   "best_subset": [
+    "P1_nonlocal",
+    "P3_quantum"
+   ],
+   "mean": 0.3672619047619048
+  },
+  "3": {
+   "best": 0.6666666666666666,
+   "best_subset": [
+    "P2_localrule",
+    "P3_quantum",
+    "P7_econ"
+   ],
+   "mean": 0.45535714285714285
+  },
+  "4": {
+   "best": 0.7166666666666667,
+   "best_subset": [
+    "P1_nonlocal",
+    "P2_localrule",
+    "P3_quantum",
+    "P4_alloc"
+   ],
+   "mean": 0.5173809523809524
+  },
+  "5": {
+   "best": 0.7833333333333333,
+   "best_subset": [
+    "P1_nonlocal",
+    "P2_localrule",
+    "P3_quantum",
+    "P4_alloc",
+    "P7_econ"
+   ],
+   "mean": 0.5738095238095238
+  },
+  "6": {
+   "best": 0.8166666666666667,
+   "best_subset": [
+    "P1_nonlocal",
+    "P2_localrule",
+    "P3_quantum",
+    "P4_alloc",
+    "P5_repair",
+    "P7_econ"
+   ],
+   "mean": 0.6226190476190476
+  },
+  "7": {
+   "best": 0.75,
+   "best_subset": [
+    "P1_nonlocal",
+    "P2_localrule",
+    "P3_quantum",
+    "P4_alloc",
+    "P5_repair",
+    "P7_econ",
+    "P8_exact"
+   ],
+   "mean": 0.6729166666666666
+  },
+  "8": {
+   "best": 0.7333333333333333,
+   "best_subset": [
+    "P1_nonlocal",
+    "P2_localrule",
+    "P3_quantum",
+    "P4_alloc",
+    "P5_repair",
+    "P6_null",
+    "P7_econ",
+    "P8_exact"
+   ],
+   "mean": 0.7333333333333333
+  }
+ },
+ "best_overall_k": 8,
+ "shapley": {
+  "P1_nonlocal": 0.10527777777777776,
+  "P2_localrule": 0.07805555555555549,
+  "P3_quantum": 0.1273412698412698,
+  "P4_alloc": 0.060555555555555515,
+  "P5_repair": 0.013531746031746028,
+  "P6_null": 0.00837301587301587,
+  "P7_econ": 0.06845238095238093,
+  "P8_exact": 0.021746031746031742
+ },
+ "live": {
+  "full8": {
+   "accuracy": 0.7333333333333333,
+   "subset": [
+    "P1_nonlocal",
+    "P2_localrule",
+    "P3_quantum",
+    "P4_alloc",
+    "P5_repair",
+    "P6_null",
+    "P7_econ",
+    "P8_exact"
+   ],
+   "misses": [
+    [
+     "N5",
+     "P13"
+    ],
+    [
+     "P2",
+     "Q9"
+    ],
+    [
+     "P3",
+     "Q10"
+    ],
+    [
+     "P4",
+     "N14"
+    ],
+    [
+     "Q4",
+     "N6"
+    ],
+    [
+     "N6",
+     "Q4"
+    ],
+    [
+     "N8",
+     "P3"
+    ],
+    [
+     "N11",
+     "P15"
+    ],
+    [
+     "N14",
+     "P14"
+    ],
+    [
+     "P6",
+     "A5"
+    ],
+    [
+     "P10",
+     "Q15"
+    ],
+    [
+     "P12",
+     "Q9"
+    ],
+    [
+     "P14",
+     "N14"
+    ],
+    [
+     "Q9",
+     "P2"
+    ],
+    [
+     "Q10",
+     "P3"
+    ],
+    [
+     "Q15",
+     "P10"
+    ]
+   ]
+  },
+  "best4": {
+   "accuracy": 0.6666666666666666,
+   "subset": [
+    "P1_nonlocal",
+    "P2_localrule",
+    "P3_quantum",
+    "P4_alloc"
+   ],
+   "misses": [
+    [
+     "P2",
+     "N6"
+    ],
+    [
+     "P3",
+     "N6"
+    ],
+    [
+     "P4",
+     "N10"
+    ],
+    [
+     "Q4",
+     "N6"
+    ],
+    [
+     "A2",
+     "N10"
+    ],
+    [
+     "A5",
+     "N10"
+    ],
+    [
+     "N6",
+     "Q4"
+    ],
+    [
+     "N14",
+     "Q8"
+    ],
+    [
+     "P14",
+     "Q8"
+    ],
+    [
+     "Q9",
+     "P1"
+    ],
+    [
+     "Q10",
+     "N6"
+    ],
+    [
+     "Q14",
+     "P1"
+    ],
+    [
+     "Q15",
+     "P1"
+    ],
+    [
+     "A6",
+     "N10"
+    ],
+    [
+     "A8",
+     "N10"
+    ],
+    [
+     "A9",
+     "Q8"
+    ],
+    [
+     "A10",
+     "N10"
+    ],
+    [
+     "A11",
+     "N10"
+    ],
+    [
+     "A14",
+     "Q8"
+    ],
+    [
+     "A15",
+     "N10"
+    ]
+   ]
+  }
+ },
+ "algebra": {
+  "compositions": [
+   {
+    "a": "A4",
+    "b": "Q8",
+    "c": "P1",
+    "target_family": "A",
+    "top1": "A4",
+    "family_hit": true
+   },
+   {
+    "a": "A1",
+    "b": "N6",
+    "c": "Q9",
+    "target_family": "A",
+    "top1": "A1",
+    "family_hit": true
+   },
+   {
+    "a": "P7",
+    "b": "N2",
+    "c": "Q9",
+    "target_family": "P",
+    "top1": "P7",
+    "family_hit": true
+   },
+   {
+    "a": "P3",
+    "b": "Q1",
+    "c": "N1",
+    "target_family": "P",
+    "top1": "Q4",
+    "family_hit": false
+   },
+   {
+    "a": "P8",
+    "b": "N7",
+    "c": "A5",
+    "target_family": "P",
+    "top1": "P6",
+    "family_hit": true
+   },
+   {
+    "a": "P15",
+    "b": "Q12",
+    "c": "A12",
+    "target_family": "P",
+    "top1": "N11",
+    "family_hit": false
+   },
+   {
+    "a": "N2",
+    "b": "P12",
+    "c": "A10",
+    "target_family": "N",
+    "top1": "N2",
+    "family_hit": true
+   },
+   {
+    "a": "N8",
+    "b": "Q4",
+    "c": "A8",
+    "target_family": "N",
+    "top1": "A8",
+    "family_hit": false
+   },
+   {
+    "a": "Q10",
+    "b": "N10",
+    "c": "P3",
+    "target_family": "Q",
+    "top1": "P3",
+    "family_hit": false
+   },
+   {
+    "a": "N2",
+    "b": "A4",
+    "c": "P11",
+    "target_family": "N",
+    "top1": "P11",
+    "family_hit": false
+   }
+  ],
+  "hits": 5,
+  "null_mean": 5.475,
+  "null_sd": 1.0389297377590074,
+  "null_p95": 7
+ },
+ "decoy_floor": {
+  "D1_far_marine": {
+   "mean": 0.010833333333333334,
+   "max": 0.02,
+   "n": 60
+  },
+  "D2_far_painting": {
+   "mean": 0.010166666666666668,
+   "max": 0.02,
+   "n": 60
+  },
+  "D3_near_bio": {
+   "mean": 0.029833333333333333,
+   "max": 0.12,
+   "n": 60
+  },
+  "D4_near_price": {
+   "mean": 0.013166666666666667,
+   "max": 0.03,
+   "n": 60
+  },
+  "all": {
+   "mean": 0.016,
+   "max": 0.12,
+   "n": 240
+  }
+ },
+ "null_seed": 20261020
+}
