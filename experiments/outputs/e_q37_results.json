@@ -1,0 +1,176 @@
+{
+ "experiment": "E-Q37",
+ "claim": "C35 — phrasing variance is bounded and structured (dies on the rate; the lexical/structural decomposition lives)",
+ "kernel": {
+  "kernelKind": "real",
+  "kernelPath": "qthe/qthe.mjs"
+ },
+ "preRegSha": "bb0bc05309188cc7de563ea5a1a44d262e3277b7a0c7dabfc813d8361bfb7ae5",
+ "registration": "experiments/pre_registration_e_q37.json (no amendments)",
+ "task": {
+  "calls": 32,
+  "records": 8,
+  "questions_per_call": 12,
+  "treatments": "T0 anchor, T1 synonym, T2 reorder, T3 reframe"
+ },
+ "anchor": {
+  "per_record_max": {
+   "N1": 0.010000000000000002,
+   "N3": 0.02999999999999997,
+   "P1": 0.010000000000000002,
+   "P3": 0.04999999999999999,
+   "Q1": 0.06,
+   "Q3": 0.04000000000000001,
+   "A1": 0.020000000000000018,
+   "A3": 0.03999999999999998
+  },
+  "within_010": 8
+ },
+ "M1_movement": {
+  "T1": {
+   "median": 0.02000000000000001,
+   "mean": 0.0459375,
+   "p90": 0.12,
+   "max": 0.32000000000000006,
+   "pct_over_band": 0.15625
+  },
+  "T2": {
+   "median": 0.010000000000000009,
+   "mean": 0.022968750000000003,
+   "p90": 0.06000000000000005,
+   "max": 0.10999999999999999,
+   "pct_over_band": 0.015625
+  },
+  "T3": {
+   "median": 0.010000000000000009,
+   "mean": 0.02203125,
+   "p90": 0.04999999999999993,
+   "max": 0.12,
+   "pct_over_band": 0.03125
+  }
+ },
+ "M2_shape": {
+  "T1": {
+   "per_record": [
+    0.873,
+    0.97,
+    0.946,
+    0.952,
+    0.97,
+    0.683,
+    0.994,
+    0.976
+   ],
+   "median": 0.961229112265346
+  },
+  "T2": {
+   "per_record": [
+    0.808,
+    0.929,
+    0.958,
+    0.994,
+    0.994,
+    0.934,
+    0.994,
+    0.982
+   ],
+   "median": 0.9699686117003814
+  },
+  "T3": {
+   "per_record": [
+    0.86,
+    0.994,
+    0.982,
+    1,
+    0.994,
+    0.881,
+    0.994,
+    0.994
+   ],
+   "median": 0.9939937229986493
+  }
+ },
+ "M3_susceptibility": {
+  "T1": {
+   "P1_nonlocal": 0.0175,
+   "P2_localrule": 0.04875000000000001,
+   "P3_quantum": 0.041249999999999995,
+   "P4_alloc": 0.012499999999999997,
+   "P5_repair": 0.016250000000000007,
+   "P6_null": 0.0725,
+   "P7_econ": 0.031249999999999997,
+   "P8_exact": 0.1275
+  },
+  "T2": {
+   "P1_nonlocal": 0.028750000000000008,
+   "P2_localrule": 0.031249999999999993,
+   "P3_quantum": 0.010000000000000004,
+   "P4_alloc": 0.017499999999999998,
+   "P5_repair": 0.018750000000000003,
+   "P6_null": 0.0125,
+   "P7_econ": 0.02625000000000001,
+   "P8_exact": 0.03874999999999999
+  },
+  "T3": {
+   "P1_nonlocal": 0.01875000000000001,
+   "P2_localrule": 0.026249999999999985,
+   "P3_quantum": 0.016249999999999994,
+   "P4_alloc": 0.017499999999999998,
+   "P5_repair": 0.018750000000000003,
+   "P6_null": 0.008750000000000006,
+   "P7_econ": 0.022500000000000003,
+   "P8_exact": 0.04749999999999999
+  }
+ },
+ "M3_susceptibility_rank_corr": {
+  "T1-T2": 0.2857142857142857,
+  "T1-T3": 0.2619047619047619,
+  "T2-T3": 0.9523809523809523
+ },
+ "M4_family_effect": {
+  "T1-N": 0.053125000000000006,
+  "T1-P": 0.0425,
+  "T1-Q": 0.058124999999999996,
+  "T1-A": 0.029999999999999995,
+  "T2-N": 0.026250000000000006,
+  "T2-P": 0.021875000000000006,
+  "T2-Q": 0.023749999999999993,
+  "T2-A": 0.020000000000000004,
+  "T3-N": 0.024375,
+  "T3-P": 0.023749999999999997,
+  "T3-Q": 0.02874999999999999,
+  "T3-A": 0.011250000000000003
+ },
+ "M5_decoy_floor": {
+  "T0": {
+   "mean": 0.01375,
+   "max": 0.04
+  },
+  "T1": {
+   "mean": 0.01375,
+   "max": 0.05
+  },
+  "T2": {
+   "mean": 0.01375,
+   "max": 0.04
+  },
+  "T3": {
+   "mean": 0.012812500000000001,
+   "max": 0.03
+  }
+ },
+ "hypotheses": {
+  "H1_movement": false,
+  "H2_shape": true,
+  "H3_susceptibility": false,
+  "C35": false
+ },
+ "predictions": {
+  "P1": "INVERTED-MISS (T1 synonym moves the most at 16%, T3 reframe among the least at 3% — predicted the reverse)",
+  "P2": "PARTIAL (mid-mass axes float most within T1; not measured as a registered band — the per-axis table is the receipt)",
+  "P3": "HIT (T1 shape 0.961; T2/T3 above 0.97 — all above the 0.9/0.7-0.9 bands)",
+  "P4": "HIT (decoy floor <= 0.05 under all treatments)",
+  "P5": "MISS (P8_exact is the most susceptible, not P6_null)"
+ },
+ "verdict": "E-Q37 VERDICT (the phrasing-sensitivity curve — 4 treatments x the frozen 8-record subset, question-side only; T0 anchor / T1 synonym-swap / T2 syntactic-reorder / T3 role-reframe; the 4 decoys byte-identical in every call): C35 DIES ON THE MOVEMENT RATE — H1 DIES: no treatment crossed the 0.10 band on a quarter of pairs — T1 (synonym) is the biggest mover at 0.15625 (median 0.02000000000000001, max 0.32000000000000006), T2 (reorder) 0.015625, T3 (reframe) 0.03125 — but the DECOMPOSITION is the finding: THE PHRASING LAW IS LEXICAL, NOT STRUCTURAL — synonym swaps move calibrated mass (16% over band, max 0.32) while clause reordering and auditor reframing barely move it (2-3%); the readout is WORD-sensitive, not FRAME-sensitive (P1 INVERTED — predicted T3 max / T1 min, measured the reverse). H2 LIVES DECISIVELY: the profile SHAPE survives everything — median Spearman(profile_T, profile_T0) = 0.961229112265346 / 0.9699686117003814 / 0.9939937229986493 (P3 HIT for T1 at 0.961 >= 0.9; T2/T3 above 0.97). H3 DIES AT THE TWO-PAIR BAND: only the structural pair converges — the rank correlation between T2 and T3 susceptibility profiles is 0.9523809523809523, but T1's lexical profile differs (0.2857142857142857/0.2619047619047619): susceptibility is a stable axis property WITHIN the structural-transform family only; the lexical treatment carries its own susceptibility pattern (one pair of three cleared the 0.6 band — the pre-registration demanded two). P8_exact is the MOST phrasing-susceptible axis under all three treatments (the exactness axis is the least exact under paraphrase; P5 MISS — predicted P6_null). The decoy floor stayed dead under ALL treatments (means 0.0128-0.0138, max 0.05 — P4 HIT): injection-resistance and paraphrase-immunity are different properties and the canaries have both. THE CONSUMER LAW: replication requires byte-identity, but the SHAPE survives paraphrase — cross-phrasing comparisons may compare profiles, never masses."
+}

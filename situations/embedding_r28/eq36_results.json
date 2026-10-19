@@ -97,7 +97,7 @@
    "mean": 0.7333333333333333
   }
  },
- "best_overall_k": 8,
+ "best_overall_k": 6,
  "shapley": {
   "P1_nonlocal": 0.10527777777777776,
   "P2_localrule": 0.07805555555555549,
@@ -395,5 +395,19 @@
    "n": 240
   }
  },
- "null_seed": 20261020
+ "null_seed": 20261020,
+ "evolution": {
+  "stations_to_coverage": 4,
+  "itinerary": "N1 -> Q10 -> P10 -> A1",
+  "families": [
+   "N",
+   "Q",
+   "P",
+   "A"
+  ],
+  "attempts": 9,
+  "done": "coverage-complete-at-gen-5",
+  "accepts": 3,
+  "rejects": 6
+ }
 }

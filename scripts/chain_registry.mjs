@@ -63,6 +63,10 @@ export const STONE_CHAINS = [
   { path: 'receipts/e_q32_chain.jsonl', gate: 'e_q32', label: 'E-Q32 · retrieval-coupled fitness, the decoupling repair (ORCH-R27/T18-a)', pin: 'e_q32_retrieval_gate' },
   { path: 'receipts/e_q33_chain.jsonl', gate: 'e_q33', label: 'E-Q33 · the ascending budget arm, generated questions (ORCH-R27/T18-b)', pin: 'e_q33_ascending' },
   { path: 'receipts/e_q34_chain.jsonl', gate: 'e_q34', label: 'E-Q34 · IRT strictness ladders + the phrasing law (ORCH-R27/T18-c)', pin: 'e_q34_irt' },
+  { path: 'receipts/e_q35_chain.jsonl', gate: 'e_q35', label: 'E-Q35 · depth-2 conditional axes, the program test (ORCH-R28/T19-a)', pin: 'e_q35_conditional' },
+  { path: 'receipts/e_q36_chain.jsonl', gate: 'e_q36', label: 'E-Q36 · the at-scale corpus, 60 records, the scale round (ORCH-R28/T19-b)', pin: 'e_q36_at_scale' },
+  { path: 'receipts/e_q37_chain.jsonl', gate: 'e_q37', label: 'E-Q37 · the phrasing-sensitivity curve, lexical not structural (ORCH-R28/T19-c)', pin: 'e_q37_phrasing' },
+  { path: 'receipts/e_q38_chain.jsonl', gate: 'e_q38', label: 'E-Q38 · the drift monitor fourth reading, across a session boundary (ORCH-R28/T19-d)', pin: 'e_q38_drift' },
   { path: 'receipts/probe_gate_chain.jsonl', gate: 'probe_gate', label: 'probe gate runs', pin: 'probe_gate' },
 ];
 

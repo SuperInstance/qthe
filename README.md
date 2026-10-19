@@ -642,3 +642,69 @@ evolution at scale (a larger corpus for the 4-station result), the
 phrasing-sensitivity curve (how much mass does sentence shape move,
 systematically), the standing drift monitor (next session's reading) +
 the watch.
+
+## The scale round (r28 — the algebra is an artifact, the knee moves, the band holds a fourth time)
+
+- **E-Q36 — the at-scale corpus: C34 DIES on the algebra, and the death
+  is the headline.** The corpus tripled to 60 records (4 families × 15,
+  the sealed E-Q21 20 byte-identical + 40 new from the sealed record,
+  sha c0d77c32…); everything re-ran through the byte-identical E-Q25
+  12-question map on a new `eq36N` arm. **THE FAMILY ALGEBRA IS A
+  SMALL-CORPUS ARTIFACT**: 5/10 family hits vs permutation null
+  5.475 ± 1.039 (p95 7) — at chance; the miss pattern is c-dominance,
+  the hits a-survivals; the E-Q26 5/5 at n=20 does not survive n=60 —
+  the CTC scale-reversal the r28 research pass warned about, confirmed
+  live. Everything else replicates and refines: **the knee MOVES**
+  (best-k=6 at 0.817, {P1,P2,P3,P4,P5,P7}, vs best-4 0.717 and full-8
+  0.733 — the 20-record k=4 was an under-sample, not a law);
+  **the gate scales** (the retrieval-coupled gate found the 4-station
+  theoretical minimum AGAIN — N1→Q10→P10→A1, 9 attempts, the P-trap
+  broken by the escape rule; cross-model retrieval 9/9 family-agree);
+  the decoy floor holds (0.016 over 240 readings); full-8 0.733 with the
+  graceful decline matching the IR literature's scale curve.
+- **E-Q35 — depth-2 conditional axes: C33 DIES on contamination with the
+  program effect ALIVE.** Stage-2 questions embedding stage-1's sealed
+  measured values make the subordination verdict track dominance
+  (Spearman 0.703 WITH values vs 0.252 WITHOUT — the values are the
+  causal variable; the map is programmable) — and telling the model its
+  own measurements moves 14/48 paired verdicts beyond the band
+  (family-edge most moved 0.186, subordination least 0.045; 9 flips).
+  A two-edged instrument: measurement yes, retrieval features never.
+- **E-Q37 — the phrasing curve: C35 DIES on the rate with the INVERTED
+  decomposition. THE PHRASING LAW IS LEXICAL, NOT STRUCTURAL** —
+  synonym swaps move mass (16% beyond band, max 0.32) while clause
+  reordering and auditor reframing barely move it (2-3%); the readout
+  is word-sensitive, not frame-sensitive. The profile SHAPE survives
+  everything (median Spearman 0.961/0.970/0.994); the decoy canaries
+  stay dead under all treatments (paraphrase-immunity is a second free
+  property of the envelope); P8_exact is the most susceptible axis.
+- **E-Q38 — the drift monitor: C36 LIVES.** The band holds a FOURTH
+  reading — the first across a session boundary — 20/20 within 0.10 vs
+  all three sealed baselines, trend flat (0.0087), model_served
+  jev-1.13.0 unchanged. **The Oct-21 flip warning stands** (typesafe's
+  blog: jev-latest → 1.14.0 within a week of Oct 14): the next reading
+  is the instrument's once-in-a-version measurement.
+- **The research lane (R28-RESEARCH)**: depth-2 conditional batteries
+  NARROWLY NOVEL (nearest fences OPRO + QA-Emb); phrasing sensitivity
+  OCCUPIED at greater magnitudes (FormatSpread 76 points, Mizrahi 6.5M
+  instances) — our residue is the measurement frame (the
+  phrasing÷drift-band ratio + the byte-identity law); corpus-scale
+  methodology OCCUPIED and CONSUMED (the 50-topic convention; the
+  recall-decline curve; CTC's scale-reversal warning, then confirmed
+  live by E-Q36). The watch: jev-lattice issue #7 still unanswered; no
+  activity after Oct 18. `research/r28_prior_art.md` (381 lines, 25
+  sources).
+- **The discipline receipts**: the corpus sealed before any embed call;
+  the map sha asserted per lane; **the E-Q16-pattern aggregate bug
+  caught by the claim check on its FIRST run** (`best_overall` compared
+  (k, accuracy) tuples k-first, sealing k=8 at 0.733 over the true k=6
+  at 0.817 — fixed, re-sealed pre-commit; the second defect of the
+  class in program history, both caught by verdict-recomputation).
+  Chains `e_q35`/`e_q36`/`e_q37`/`e_q38`; batteries green at close
+  (52/52 claims, 41/41 chains, 60/60 verified, probe gate links=54,
+  guard PASS 21 call-site files, seeds 41 chains, dashboard 32,266
+  bytes). Round spend ~$0.05 of $0.10; zero moth. Registered next: the
+  version-flip reading (the moment model_served reports 1.14.0), the
+  8×64+8 hierarchical survivor, the conditioning channel as a
+  calibrated self-interrogation instrument (with the contamination
+  receipt), the lexical-sensitivity census, the standing watches.

@@ -454,3 +454,55 @@ expansion ≠ factual grounding; verify before adopting. Receipt:
   alone; family separation and marginal retrieval value are two views
   of the same quantity. Instrument comparisons should publish the
   correlation, not assume it.
+
+## r28 — the scale round (8 laws)
+
+- **THE FAMILY ALGEBRA IS A SMALL-CORPUS ARTIFACT (E-Q36).** The E-Q26
+  5/5 perfect analogy arithmetic fell to 5/10 versus a null of 5.475 at
+  n=60 — at chance. The miss pattern is c-dominance (the composed vector
+  retrieves the c-record's family); the hits were a-survivals. Perfect
+  results at small n are not laws; they are under-samples. Every perfect
+  result must be re-derived against a recalibrated null before it is
+  quoted as a property of the space.
+- **THE KNEE MOVES WITH THE CORPUS (E-Q36).** Best-k moved from 4 (n=20)
+  to 6 (n=60): with 3x the records the extra axes EARN their seats.
+  Pruning beats the full battery at both scales, but the optimum is a
+  function of corpus size, not a constant. Question budgets must be
+  re-derived at every corpus scale — an axis is noise only relative to
+  how much there is to separate.
+- **THE CONDITIONING CHANNEL IS REAL AND CONTAMINATING (E-Q35).**
+  Embedding stage-1 measured values in stage-2 question instructions
+  makes verdicts track the measurements (Spearman 0.703 WITH values vs
+  0.252 without — the values are the causal variable) AND moves 29% of
+  paired verdicts beyond the drift band. The question map is a
+  programmable instrument whose program leaks: use it for measurement,
+  never for retrieval features.
+- **THE PHRASING LAW IS LEXICAL, NOT STRUCTURAL (E-Q37).** Synonym swaps
+  move calibrated mass (16% of pairs beyond band, max 0.32); clause
+  reordering and auditor reframing barely move it (2-3%). The readout is
+  WORD-sensitive, not FRAME-sensitive. The E-Q34 receipt (0.18) was a
+  lexical change in disguise. Cross-phrasing comparisons may compare
+  profile SHAPES (Spearman >= 0.96 survives everything); never masses.
+- **THE EXACTNESS AXIS IS THE LEAST EXACT (E-Q37+E-Q38).** P8_exact is
+  the most phrasing-susceptible axis under all treatments AND the
+  highest-drift axis in the four-point monitor series. The axis that
+  asks about byte-identity is the noisiest seat in the house — a
+  convergent finding from two independent instruments.
+- **CANARIES ARE PARAPHRASE-IMMUNE (E-Q37).** The decoy floor stayed
+  dead under every phrasing treatment (means 0.0128-0.0138): dead axes
+  stay dead when the question is reworded. Injection-resistance and
+  paraphrase-immunity are different properties; the in-call canary
+  envelope has both, at zero marginal cost.
+- **THE BAND HOLDS ACROSS SESSION BOUNDARIES (E-Q38).** The fourth
+  drift reading (r24/r25/r26/r28) is 20/20 within 0.10 against all
+  three sealed baselines with a flat trend (0.0087 vs 0.0093). The
+  fixed point is stable across days, not just hours — and the version
+  readout (model_served) is the flip detector the instrument carries
+  for free. The Oct-21 flip warning stands: the next reading is
+  load-bearing.
+- **THE GATE SCALES (E-Q36).** The retrieval-coupled gate found the
+  4-station theoretical minimum at 60 records exactly as at 20 — richer
+  families do not trap it (the P-trap was broken by the escape rule,
+  not by luck). Selection on the objective is scale-robust where
+  selection on proxies and arithmetic structure are not: the comparison
+  ladder now reads walk 5 / proxy 6 / objective 4 / objective-at-3x 4.

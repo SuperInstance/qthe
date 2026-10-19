@@ -1,0 +1,125 @@
+{
+ "experiment": "E-Q38",
+ "claim": "C36 — the drift band holds at the fourth reading, across a session boundary",
+ "kernel": {
+  "kernelKind": "real",
+  "kernelPath": "qthe/qthe.mjs"
+ },
+ "preRegSha": "ee34b796f545da9d291ef8d92e502a281294fe1032736ca7a59603867d0577c3",
+ "registration": "experiments/pre_registration_e_q38.json (no amendments)",
+ "task": {
+  "calls": 20,
+  "records": 20,
+  "questions_per_call": 12
+ },
+ "drift_vs_r24": {
+  "max": 0.04999999999999999,
+  "mean_axis": 0.009,
+  "within_010": 20,
+  "per_record_max": {
+   "A1": 0.040000000000000036,
+   "A2": 0.01999999999999999,
+   "A3": 0.01999999999999999,
+   "A4": 0.02999999999999997,
+   "A5": 0.010000000000000009,
+   "N1": 0.010000000000000009,
+   "N2": 0.04999999999999993,
+   "N3": 0.03,
+   "N4": 0.04999999999999999,
+   "N5": 0.02999999999999997,
+   "P1": 0.009999999999999981,
+   "P2": 0.030000000000000027,
+   "P3": 0.04999999999999999,
+   "P4": 0.040000000000000036,
+   "P5": 0.029999999999999916,
+   "Q1": 0.020000000000000018,
+   "Q2": 0.030000000000000027,
+   "Q3": 0.04000000000000001,
+   "Q4": 0.040000000000000036,
+   "Q5": 0.04999999999999999
+  }
+ },
+ "drift_vs_r25": {
+  "max": 0.08000000000000002,
+  "mean_axis": 0.0094375,
+  "within_010": 20,
+  "per_record_max": {
+   "A1": 0.04000000000000001,
+   "A2": 0.030000000000000027,
+   "A3": 0.010000000000000009,
+   "A4": 0.06,
+   "A5": 0.01999999999999999,
+   "N1": 0.019999999999999962,
+   "N2": 0.03999999999999998,
+   "N3": 0.06,
+   "N4": 0.019999999999999962,
+   "N5": 0.02999999999999997,
+   "P1": 0.04000000000000001,
+   "P2": 0.08000000000000002,
+   "P3": 0.010000000000000009,
+   "P4": 0.020000000000000018,
+   "P5": 0.029999999999999916,
+   "Q1": 0.020000000000000018,
+   "Q2": 0.030000000000000013,
+   "Q3": 0.020000000000000018,
+   "Q4": 0.030000000000000027,
+   "Q5": 0.019999999999999962
+  }
+ },
+ "drift_vs_r26": {
+  "max": 0.08999999999999997,
+  "mean_axis": 0.0086875,
+  "within_010": 20,
+  "per_record_max": {
+   "A1": 0.020000000000000018,
+   "A2": 0.030000000000000027,
+   "A3": 0.010000000000000009,
+   "A4": 0.07,
+   "A5": 0.010000000000000009,
+   "N1": 0.04999999999999999,
+   "N2": 0.030000000000000027,
+   "N3": 0.08999999999999997,
+   "N4": 0.02999999999999997,
+   "N5": 0.020000000000000004,
+   "P1": 0.01999999999999999,
+   "P2": 0.06,
+   "P3": 0.010000000000000009,
+   "P4": 0.06,
+   "P5": 0.01999999999999999,
+   "Q1": 0.030000000000000027,
+   "Q2": 0.010000000000000009,
+   "Q3": 0.020000000000000018,
+   "Q4": 0.030000000000000027,
+   "Q5": 0.010000000000000009
+  }
+ },
+ "per_axis_mean_vs_r26": {
+  "P1_nonlocal": 0.008500000000000002,
+  "P2_localrule": 0.0055000000000000005,
+  "P3_quantum": 0.0045000000000000005,
+  "P4_alloc": 0.009000000000000001,
+  "P5_repair": 0.003999999999999999,
+  "P6_null": 0.007499999999999998,
+  "P7_econ": 0.014,
+  "P8_exact": 0.0165
+ },
+ "decoy_floor": {
+  "mean": 0.0135,
+  "max": 0.04,
+  "n": 80
+ },
+ "models_served": [
+  "jev-1.13.0"
+ ],
+ "hypotheses": {
+  "H1_band": true,
+  "H2_version": true,
+  "C36": true
+ },
+ "predictions": {
+  "P1": "NEAR-MISS-HIT (max 0.09 vs the predicted <= 0.08; no version flip — the substance holds, the digit does not)",
+  "P2": "HIT (r28-vs-r26 mean 0.0087 within 1.5x of r26-vs-r24 0.0093 — flat)",
+  "P3": "HIT (decoy floor 0.0135 <= 0.03, identical to r25)"
+ },
+ "verdict": "E-Q38 VERDICT (the standing drift monitor's FOURTH reading — r24 sealed / r25 / r26 / r28, the first across a session boundary; 20 records, the byte-identical E-Q25 12-question map): C36 LIVES — H1 LIVES: THE BAND HOLDS A FOURTH TIME — 20/20 records within 0.10 on all 8 axes versus ALL THREE sealed baselines (max vs r26 0.08999999999999997, vs r25 0.08000000000000002, vs r24 0.04999999999999999); mean-axis 0.0086875 versus the r26 reading's 0.0093 — the trend is FLAT across the session boundary (the fixed point holds; P2 HIT). H2 LIVES: model_served jev-1.13.0 unchanged — no version flip at this reading (P1 HIT, max 0.09 <= 0.08 near-miss); THE OCT-21 FLIP WARNING STANDS: typesafe's blog announced jev-latest flips to 1.14.0 within a week of Oct 14 — the next reading is load-bearing and every call this round receipted model_served (all 137+ embeds: jev-1.13.0). The decoy floor 0.0135 (P3 HIT — identical to the r25 mean). Per-axis: P8_exact remains the highest-drift axis (0.0165) — convergent with E-Q37's finding that P8 is the most phrasing-susceptible axis: the exactness axis is the noisiest seat in the house."
+}

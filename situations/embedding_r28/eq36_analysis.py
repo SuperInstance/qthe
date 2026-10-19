@@ -126,7 +126,7 @@ for k in range(1, 9):
     curve[k] = {"best": accs[0][0], "best_subset": list(accs[0][1]), "mean": statistics.mean(a for a, _ in accs)}
     print(f"[curve] k={k}: best {accs[0][0]:.3f} {accs[0][1]}  mean {curve[k]['mean']:.3f}")
 
-best_overall = max((k, curve[k]["best"]) for k in range(1, 9))
+best_overall = max(((k, curve[k]["best"]) for k in range(1, 9)), key=lambda t: t[1])
 print(f"[curve] BEST-OVERALL k={best_overall[0]} at {best_overall[1]:.3f}")
 
 # Shapley (exact over the 255 subsets, efficiency characteristic = retrieval accuracy)

@@ -3,7 +3,7 @@
  "repo": "SuperInstance/qthe",
  "emitted_by": "scripts/emit_fleet_seeds.mjs (ORCH-25)",
  "kernel_sha256": "ef9a3bba0511c78026f30706214e407d362e8972a86f5684d9b16a9e16e3f091",
- "chain_registry_sha256": "0c086d7483ca99720c7676288cf81b6fcf5302a05f17ce406a77a94141ca5645",
+ "chain_registry_sha256": "81c109d69fc8271dbe5b046ab823965de81a7a74515bd52cbbecd5f7e884c30d",
  "scoreboard": {
   "C1": "LIVES (E-Q13, 47.40%)",
   "C2": "LIVES (E-Q1, 8/8 vs 0/20)",
@@ -174,9 +174,25 @@
    "sha256": "a651232d9705b4e63ade070912d168d01ada53c315e87c059537ae909bdf0e3a",
    "rows": 4
   },
+  "e_q35_conditional": {
+   "sha256": "65f4e3a3085a0cb8272a550a386aab30adb2dfdb9a6d82dbb81b108fbde16143",
+   "rows": 4
+  },
+  "e_q36_at_scale": {
+   "sha256": "a3472097c22b95c0b8992b931802d51761fa6ac421ee3fc0d95bcc54251cee9b",
+   "rows": 4
+  },
+  "e_q37_phrasing": {
+   "sha256": "e019698d1e1ca80337d7b8c04ccb1cedd74cc11a86a54153b83f084deb1d5d5d",
+   "rows": 4
+  },
+  "e_q38_drift": {
+   "sha256": "ff61695ea0d4d5fd38aec3b8ee5b7a136853e95ba03292c82ab75ebc579394d3",
+   "rows": 4
+  },
   "probe_gate": {
-   "sha256": "d6174ee2ba1546bd4ce051ea7f4dc10833a9fb4bf3ce31b3b12ebabdcffd1a52",
-   "rows": 50
+   "sha256": "583c674a951ae871089dcb18248f0969fbdf7bc7052b51523a7e7cc7e9cc1e51",
+   "rows": 54
   }
  }
 }

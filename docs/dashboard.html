@@ -151,7 +151,7 @@
   </div>
 
   <div class="panel" id="chains">
-    <h2>chain of chains &middot; 37 stone-v1 receipts pinned by fleet-seeds (821 rows)</h2>
+    <h2>chain of chains &middot; 41 stone-v1 receipts pinned by fleet-seeds (841 rows)</h2>
     <table>
       <thead><tr><th>chain</th><th>rows</th><th>tip (sha256 of chain file)</th><th>probe gate</th></tr></thead>
       <tbody>
@@ -372,15 +372,39 @@
         <td class="dim">PG1 &middot; stone &check;</td>
       </tr>
       <tr>
+        <td class="claim"><b>e_q35_conditional</b> <span class="dim">receipts/e_q35_chain.jsonl</span></td>
+        <td class="num">4</td>
+        <td class="tip" title="sha256 of the chain file — full 65f4e3a3085a0cb8272a550a386aab30adb2dfdb9a6d82dbb81b108fbde16143">65f4e3a3085a0cb8</td>
+        <td class="dim">PG1 &middot; stone &check;</td>
+      </tr>
+      <tr>
+        <td class="claim"><b>e_q36_at_scale</b> <span class="dim">receipts/e_q36_chain.jsonl</span></td>
+        <td class="num">4</td>
+        <td class="tip" title="sha256 of the chain file — full a3472097c22b95c0b8992b931802d51761fa6ac421ee3fc0d95bcc54251cee9b">a3472097c22b95c0</td>
+        <td class="dim">PG1 &middot; stone &check;</td>
+      </tr>
+      <tr>
+        <td class="claim"><b>e_q37_phrasing</b> <span class="dim">receipts/e_q37_chain.jsonl</span></td>
+        <td class="num">4</td>
+        <td class="tip" title="sha256 of the chain file — full e019698d1e1ca80337d7b8c04ccb1cedd74cc11a86a54153b83f084deb1d5d5d">e019698d1e1ca803</td>
+        <td class="dim">PG1 &middot; stone &check;</td>
+      </tr>
+      <tr>
+        <td class="claim"><b>e_q38_drift</b> <span class="dim">receipts/e_q38_chain.jsonl</span></td>
+        <td class="num">4</td>
+        <td class="tip" title="sha256 of the chain file — full ff61695ea0d4d5fd38aec3b8ee5b7a136853e95ba03292c82ab75ebc579394d3">ff61695ea0d4d5fd</td>
+        <td class="dim">PG1 &middot; stone &check;</td>
+      </tr>
+      <tr>
         <td class="claim"><b>probe_gate</b> <span class="dim">receipts/probe_gate_chain.jsonl</span></td>
-        <td class="num">50</td>
-        <td class="tip" title="sha256 of the chain file — full d6174ee2ba1546bd4ce051ea7f4dc10833a9fb4bf3ce31b3b12ebabdcffd1a52">d6174ee2ba1546bd</td>
+        <td class="num">54</td>
+        <td class="tip" title="sha256 of the chain file — full 583c674a951ae871089dcb18248f0969fbdf7bc7052b51523a7e7cc7e9cc1e51">583c674a951ae871</td>
         <td class="dim">self — the gate&rsquo;s own receipt</td>
       </tr>
       </tbody>
     </table>
-    <p class="note">verified by the probe gate — sealed run: <b>PROBE-GATE PASS</b> (scope=all, 0 failed) &middot; PG1 stone 37/37 verified from disk &middot; PG2 tip-pin 39 checked &middot; PG3 tamper control refused the flipped byte &middot; PG4 1000-tick twin probe byte-identical &middot; PG5 112ms / 68MB within 10000ms/512MB &middot; PG6 verdict-recompute 48/48 claims re-derived from the sealed outputs.<br>
-    gate scope today: 37 stone chains + 2 content-hash tips (the sealed run covers the full current scope). every pin above was recomputed from disk at build time.</p>
+    <p class="note">verified by the probe gate — sealed run: <b>PROBE-GATE PASS</b> (scope=all, 0 failed) &middot; PG1 stone 41/41 verified from disk &middot; PG2 tip-pin 43 checked &middot; PG3 tamper control refused the flipped byte &middot; PG4 1000-tick twin probe byte-identical &middot; PG5 120ms / 67MB within 10000ms/512MB &middot; PG6 verdict-recompute 52/52 claims re-derived from the sealed outputs.<br>
+    gate scope today: 41 stone chains + 2 content-hash tips (the sealed run covers the full current scope). every pin above was recomputed from disk at build time.</p>
   </div>
 
   <div class="panel" id="budget">
@@ -401,12 +425,12 @@
       <li><b>G4 — hand-computed literal wrong, kernel right (preserved standing)</b> — priced by gates <span class="dim">(tests/receipts.jsonl)</span></li>
       <li><b>E-Q7 lane expectation — ON/OFF same-regime falsified by own run (nu channel not sign-impotent)</b> — priced by E-Q7 <span class="dim">(commit 55ddced)</span></li>
     </ul>
-    <p class="note">the reading: 7 banked nulls and 9 caught defects against zero silent failures — every cost converted into a boundary the next system inherits for free. source: docs/FALSIFICATION-BUDGET.md (18 chain files, 673 rows on disk; fleet-seeds pins 37 chains, 821 rows — regenerate both from the same disk state to reconcile).</p>
+    <p class="note">the reading: 7 banked nulls and 9 caught defects against zero silent failures — every cost converted into a boundary the next system inherits for free. source: docs/FALSIFICATION-BUDGET.md (18 chain files, 673 rows on disk; fleet-seeds pins 41 chains, 841 rows — regenerate both from the same disk state to reconcile).</p>
   </div>
 
   <div class="panel" id="verify">
     <h2>how to verify this page</h2>
-    <p class="note">every number above was parsed from the sealed record and cross-checked at build time (kernel sha &check; qthe.mjs &middot; 6/6 verdicts &check; fleet-seeds scoreboard &middot; 6/6 tips &check; pinned tip files &middot; 37/37 chain pins recomputed from disk &middot; budget accounts &check; their lists). re-derive it yourself, from a fresh clone:</p>
+    <p class="note">every number above was parsed from the sealed record and cross-checked at build time (kernel sha &check; qthe.mjs &middot; 6/6 verdicts &check; fleet-seeds scoreboard &middot; 6/6 tips &check; pinned tip files &middot; 41/41 chain pins recomputed from disk &middot; budget accounts &check; their lists). re-derive it yourself, from a fresh clone:</p>
     <pre><span class="cmd">node scripts/verify_all_chains.mjs</span>     <span class="c"># every stone-v1 chain re-verified from disk (fail-loud)</span>
 <span class="cmd">node scripts/probe_gate.mjs</span>              <span class="c"># PG1-PG6 harness integrity gate (tamper + determinism + bounds + verdict-recompute)</span>
 <span class="cmd">node scripts/falsification_budget.mjs</span>    <span class="c"># regenerate the falsification-budget ledger from the sealed record</span></pre>

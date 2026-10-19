@@ -1152,6 +1152,77 @@ const CLAIMS = [
       return { recomputed: 'C32 DIES on monotonicity (0.19 — strictness is not a difficulty dimension) with two live receipts: separation-Shapley convergence 0.886 (the convergent-validity map) and the phrasing law (0.18 = 2x the band; byte-identity is the replication requirement); chain agrees' };
     },
   },
+  {
+    id: 'C33 — depth-2 conditional axes / the program effect lives, contamination kills the claim (E-Q35)',
+    source: 'experiments/outputs/e_q35_results.json',
+    cite: 'receipts/e_q35_chain.jsonl · verdict.EQ35 · experiments/pre_registration_e_q35.json + AM1 (implementation-time stability reading) · situations/embedding_r28/ (eq35_conditional.py + eq35_analysis.py + eq35_results.json + eq35_rows_r28.jsonl)',
+    expected: 'C33 DIES on premise-contamination: H1 LIVES (Spearman(dominance, p_C(R1)) 0.703 WITH values vs 0.252 control WITHOUT — the values are the causal variable; the map is programmable); H2 DIES (29% of 48 paired questions move beyond the 0.10 band when the model is told its own measurements; R6 family-edge most moved 0.186, R1 subordination least 0.045; 9 verdict flips); H3 DIES (best relation separates A at 0.172 vs best raw axis P7 at 0.720 — the A signature is mass, not relation)',
+    run() {
+      const d = readJson(this.source);
+      if (d.hypotheses.H1_program !== true) throw new Error('H1 must live — the program test');
+      if (d.hypotheses.H2_premise_innocence !== false || d.hypotheses.C33 !== false) throw new Error('C33 must die on contamination');
+      if (d.hypotheses.H3_relation_signature !== false) throw new Error('H3 must die');
+      if (d.M1_program_test.spearman_dominance_pC_R1 < 0.7 || d.M1_program_test.spearman_dominance_pC_R1 > 0.71) throw new Error('program Spearman drifted');
+      if (d.M1_program_test.spearman_dominance_pN_R1 > 0.26) throw new Error('control Spearman drifted');
+      if (d.M2_conditioning_delta.within_010 !== 34) throw new Error('conditioning delta count drifted');
+      const row = lastChainRow('receipts/e_q35_chain.jsonl', (r) => r.kind === 'verdict.EQ35', 'verdict.EQ35');
+      if (row.C33 !== false || row.H1 !== true) throw new Error('chain flags disagree');
+      return { recomputed: 'C33 DIES on premise-contamination with the program effect alive: 0.703 vs the 0.252 no-values control (the values are the causal variable) while 14/48 paired verdicts move beyond the band — a two-edged instrument; chain agrees' };
+    },
+  },
+  {
+    id: 'C34 — the at-scale replication / the algebra is the artifact (E-Q36)',
+    source: 'experiments/outputs/e_q36_results.json',
+    cite: 'receipts/e_q36_chain.jsonl · verdict.EQ36 · experiments/pre_registration_e_q36.json · situations/embedding_r28/ (corpus_at_scale.json sealed a859f12 + eq36_embedder.py + eq36_analysis.py + evolve_r28.py + eq36_results.json + eq36_rows_r28.jsonl + evolution_r28_rows.jsonl + evosphere_r28_state.json)',
+    expected: 'C34 DIES on the algebra: H1 LIVES (the knee MOVES to k=6 at 0.817 — {P1,P2,P3,P4,P5,P7} — vs best-4 0.717 and full-8 0.733; the 20-record k=4 was an under-sample); H2 DIES DECISIVELY (THE FAMILY ALGEBRA IS A SMALL-CORPUS ARTIFACT: 5/10 vs null 5.475±1.039 p95=7 — at chance; c-dominance miss pattern; the E-Q26 5/5 does not survive n=60); H3 LIVES (the gate replicates: 4 stations = the theoretical minimum again, N1->Q10->P10->A1, 9 attempts; the P-trap broken by the escape rule); H4 LIVES (decoy floor 0.016 over 240 readings)',
+    run() {
+      const d = readJson(this.source);
+      if (d.hypotheses.H1_knee !== true) throw new Error('H1 must live — the knee moves');
+      if (d.hypotheses.H2_algebra !== false || d.hypotheses.C34 !== false) throw new Error('C34 must die on the algebra');
+      if (d.hypotheses.H3_evolution !== true || d.hypotheses.H4_decoy_floor !== true) throw new Error('H3/H4 must live');
+      if (d.best_overall_k !== 6) throw new Error('best-k drifted');
+      if (d.algebra.hits !== 5) throw new Error('algebra hits drifted');
+      if (d.evolution.stations_to_coverage !== 4) throw new Error('stations drifted');
+      if (d.decoy_floor.all.mean > 0.03) throw new Error('floor breached');
+      const row = lastChainRow('receipts/e_q36_chain.jsonl', (r) => r.kind === 'verdict.EQ36', 'verdict.EQ36');
+      if (row.C34 !== false || row.H2 !== false || row.H3 !== true) throw new Error('chain flags disagree');
+      return { recomputed: 'C34 DIES on the algebra — THE FAMILY ALGEBRA IS A SMALL-CORPUS ARTIFACT (5/10 at null chance) while the knee moves to 6, the gate finds the 4-station minimum again, and the floor holds at 0.016: the 20-record caveat was hiding the artifact, not the robust results; chain agrees' };
+    },
+  },
+  {
+    id: 'C35 — the phrasing curve / lexical not structural (E-Q37)',
+    source: 'experiments/outputs/e_q37_results.json',
+    cite: 'receipts/e_q37_chain.jsonl · verdict.EQ37 · experiments/pre_registration_e_q37.json · situations/embedding_r28/ (eq37_phrasing.py + eq37_analysis.py + eq37_results.json + eq37_rows_r28.jsonl)',
+    expected: 'C35 DIES on the movement rate: H1 DIES (no treatment crosses the band on 25% of pairs — T1 synonym 16%, T2 reorder 2%, T3 reframe 3%) with the INVERTED decomposition: THE PHRASING LAW IS LEXICAL, NOT STRUCTURAL (synonym max 0.32; P1 inverted); H2 LIVES DECISIVELY (shape survives: median Spearman 0.961/0.970/0.994); H3 DIES at the two-pair band (only T2-T3 converges at 0.952); P8_exact the most susceptible axis; the decoy floor dead under ALL treatments',
+    run() {
+      const d = readJson(this.source);
+      if (d.hypotheses.H1_movement !== false || d.hypotheses.C35 !== false) throw new Error('C35 must die on the rate');
+      if (d.hypotheses.H2_shape !== true) throw new Error('H2 must live — the shape');
+      if (d.hypotheses.H3_susceptibility !== false) throw new Error('H3 must die at the two-pair band');
+      if (d.M1_movement.T1.pct_over_band > 0.16 || d.M1_movement.T1.pct_over_band < 0.15) throw new Error('T1 rate drifted');
+      if (d.M2_shape.T1.median < 0.95) throw new Error('shape drifted');
+      if (d.M5_decoy_floor.T1.max > 0.05) throw new Error('floor breached under paraphrase');
+      const row = lastChainRow('receipts/e_q37_chain.jsonl', (r) => r.kind === 'verdict.EQ37', 'verdict.EQ37');
+      if (row.C35 !== false || row.H2 !== true) throw new Error('chain flags disagree');
+      return { recomputed: 'C35 DIES on the rate with the inverted receipt: the phrasing law is LEXICAL not STRUCTURAL (synonyms move mass at 16%/max 0.32, reorder and reframe barely at 2-3%) while the shape survives everything (>= 0.96) and the canaries stay dead under all treatments; chain agrees' };
+    },
+  },
+  {
+    id: 'C36 — the drift band holds at the fourth reading (E-Q38)',
+    source: 'experiments/outputs/e_q38_results.json',
+    cite: 'receipts/e_q38_chain.jsonl · verdict.EQ38 · experiments/pre_registration_e_q38.json · situations/embedding_r28/ (eq38_drift.py + eq38_analysis.py + eq38_results.json + eq38_rows_r28.jsonl)',
+    expected: 'C36 LIVES: the band holds 20/20 within 0.10 vs all three sealed baselines (max vs r26 0.09, vs r25 0.08, vs r24 0.05); the trend FLAT across the session boundary (mean-axis 0.0087 vs the r26 reading\'s 0.0093); model_served jev-1.13.0 unchanged (no version flip — the Oct-21 warning stands); the decoy floor 0.0135; P8_exact the highest-drift axis (convergent with E-Q37)',
+    run() {
+      const d = readJson(this.source);
+      if (d.hypotheses.H1_band !== true || d.hypotheses.H2_version !== true || d.hypotheses.C36 !== true) throw new Error('C36 must live');
+      if (d.drift_vs_r26.within_010 !== 20 || d.drift_vs_r25.within_010 !== 20 || d.drift_vs_r24.within_010 !== 20) throw new Error('band breach');
+      if (d.models_served[0] !== 'jev-1.13.0' || d.models_served.length !== 1) throw new Error('version flip unreceipted');
+      if (d.drift_vs_r26.max > 0.10) throw new Error('max drifted beyond band');
+      const row = lastChainRow('receipts/e_q38_chain.jsonl', (r) => r.kind === 'verdict.EQ38', 'verdict.EQ38');
+      if (row.C36 !== true || row.H1 !== true || row.H2 !== true) throw new Error('chain flags disagree');
+      return { recomputed: 'C36 LIVES — the band holds a fourth reading across a session boundary (20/20 within 0.10 vs all three baselines, flat trend 0.0087, jev-1.13.0 unchanged; the Oct-21 flip warning stands); chain agrees' };
+    },
+  },
 ];
 
 // ── COVERAGE (ORCH-R11: the arena-r11 consensus finding, all four seats) ──
