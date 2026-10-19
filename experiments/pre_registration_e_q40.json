@@ -42,6 +42,12 @@
       "ts": "2026-10-19 (pre-run, BEFORE the first census call; the canary was the round's only spend)",
       "what": "the substitution case rule extended: all-caps surface occurrences (the E-Q1..E-Q20c experiment ids, 8 IDENT words) receive the ALL-CAPS substitute (E-Q1 -> E-Q3, not E-q3); all other occurrences keep the first-letter case rule. Found by the runner's F2 inverse-exactness pre-flight, which failed loudly on N1/e-q1 before any call was made.",
       "why_honest": "a case-normalization detail of the substitution APPLICATION, not of the sample, the substitutes, the hypotheses, or any measure; the F2 floor (states differ from the sealed texts only at the sampled word's occurrences) is what the amendment protects. Zero census calls spent at amendment time."
+    },
+    {
+      "id": "AM2",
+      "ts": "2026-10-19 (pre-run, ZERO census calls spent; caught by the same F2 pre-flight)",
+      "what": "P5's 'toward' substitute changed 'into' -> 'towards': 'into' collides with the base text's own 'into a real accumulator', breaking inverse-exactness. 'towards' is a spelling variant \u2014 the ADP class's treatment is the weakest in the census by the nature of the class (prepositions have no true single-token synonyms); receipted here and flagged in the analysis.",
+      "why_honest": "same class as AM1: an application-detail fix caught by the F2 floor before any spend; sample, hypotheses, measures unchanged."
     }
   ]
 }

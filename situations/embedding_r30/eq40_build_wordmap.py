@@ -116,7 +116,7 @@ SUBS = {
     "P4": {"field": ("grid", "NOUN"), "thousand": ("myriad", "NUM"),
            "held": ("kept", "VERB"), "harness": ("rig", "NOUN"),
            "sigma": ("spread", "NOUN"), "run": ("trial", "NOUN")},
-    "P5": {"neighbors": ("adjacencies", "NOUN"), "toward": ("into", "ADP"),
+    "P5": {"neighbors": ("adjacencies", "NOUN"), "toward": ("towards", "ADP"),
            "update": ("refresh", "NOUN"), "add": ("contribute", "VERB"),
            "subtract": ("deduct", "VERB"), "accumulator": ("collector", "NOUN")},
     "Q1": {"c11": ("c10", "IDENT"), "blur": ("haze", "NOUN"),
