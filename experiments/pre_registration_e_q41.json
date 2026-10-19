@@ -1,0 +1,39 @@
+{
+  "law": "REGISTRATION of E-Q41 — THE CROSS-CORPUS TRANSFER (ORCH-R30 lane T21-b, the r28-close registered item): do the 20-record quantization laws hold on the eq36N 60-record substrate's OWN vectors? E-Q27 (r25, n=20) found: the ternary zero is worth records (N-arm binary 0.40 / ternary 0.60 / quad 0.70 vs dense 0.80; the middle level carries the marginal information) and the best 16-bit practical code is the 4-level noul. E-Q36 (r28) embedded the 60-record at-scale corpus (arm eq36N, sealed rows, dense full-8 live 0.7333) but never re-ran the quantization ladder. The transfer question is whether the LADDER SHAPE and the PRACTICAL BOUND survive 3x scale on the substrate's own sealed vectors — ZERO new typesafe calls (pure arithmetic on the sealed eq36 rows + live arm-filtered Vectorize queries, the E-Q26/E-Q27 zero-embed-call pattern).",
+  "task_id": "ORCH-R30/T21-b",
+  "agent": "JEV research lane (R30 subagent), erised fleet line",
+  "wave": "ORCH-R30",
+  "repo": "SuperInstance/qthe",
+  "repo_at_registration": "42dac05",
+  "provenance_of_the_question": "The r28 close-out registration: 'the cross-corpus transfer question (do the 20-record laws hold on the eq36N substrate's OWN vectors — e.g., the ternary code at 60 records)'. The R30 dispatch carries it as plate item 3 (if the census finishes early — it did).",
+  "design_frozen": {
+    "vectors": "the 60 sealed eq36 base rows (situations/embedding_r28/eq36_rows_r28.jsonl, call_ids without the -stab suffix; the corpus sha c0d77c32… asserted; models_served jev-1.13.0 throughout) — NO re-embedding, no re-derivation.",
+    "quantization": "the E-Q27 frozen recipe, rule-identical, with the percentile order-statistic indices generalized from n=20 to n=60 (type-2 quantiles: the average of the two middle order statistics at the same percentile positions): binary {+1,-1} at the axis median; ternary {+1,0,-1} with thresholds m ± 0.5*MAD; 4-level {-1.5,-0.5,+0.5,+1.5} at the quartiles. Tables computed per axis over the arm's own 60-record distribution. No re-tuning, no post-hoc thresholds.",
+    "arms": "three new arms upserted to the standing index qthe-jev-embed: eq41B60 / eq41T60 / eq41Q60 (32-dim, 8 code values + 24 zero pad, metadata family+arm, ids eq41<arm>:<rid>) + a fresh live re-read of the dense arm eq36N as the same-session reference.",
+    "scoring": "strict NO-NEIGHBOR: for each record, the top-1 OTHER record under cosine via arm-filtered live queries (topK=60, filter arm=…), family match; poll-until-visible before scoring (the async-changeset law). Local (direct cosine on the quantized codes) computed alongside for the local==live check.",
+    "measures": "M1 per-arm strict accuracy (binary/ternary/quad/dense) + miss lists. M2 the ladder: the strict ordering and the pairwise margins (ternary-binary = the zero's worth; quad-ternary). M3 the practical bound: quad vs the same-session dense reading. M4 ternary zero-level mass (share of 0 levels in the 60x8 ternary code). M5 local==live per arm. M6 the dense replication: the fresh eq36N re-read vs the sealed E-Q36 full-8 live 0.7333."
+  },
+  "floors": {
+    "F1": "vectors read from the sealed eq36 rows only (the -stab rows excluded); corpus sha asserted; zero typesafe calls (a typesafe call in this lane is a falsifier)",
+    "F2": "quantization rule-identical to E-Q27 with the n=60 percentile indices stated here; no threshold re-tuning",
+    "F3": "arm-filtered live queries only; poll-until-visible before scoring; NO-NEIGHBOR strict scoring",
+    "F4": "the dense reference is the fresh same-session eq36N re-read; it must replicate the sealed E-Q36 full-8 live reading within one record (|delta| <= 1/60 = 0.0167), else the lane FAILS (an index-state drift invalidates the comparison)",
+    "F5": "the majority floor at 60 records is 14/59 = 0.2373 (a random other record's family) — every arm compared against it honestly"
+  },
+  "hypotheses": {
+    "H1_ladder": "THE LADDER TRANSFERS: binary < ternary AND ternary < quad strictly at 60 records (the E-Q27 shape survives 3x scale).",
+    "H2_zeros_worth": "THE ZERO'S MARGIN: ternary − binary >= 0.10 (at n=20 the middle level was worth +0.20 on the N-arm — five records).",
+    "H3_practical_bound": "THE PRACTICAL BOUND: the 4-level code stays within 0.15 of the same-session dense reading (at n=20: 0.70 vs 0.80 = 0.10).",
+    "C39": "THE QUANTIZATION LAWS TRANSFER: C39 LIVES iff H1 AND H3 (H2 reported as the margin refinement; the claim does not ride on the margin's size)."
+  },
+  "predictions": {
+    "P1": "ternary zero-level mass in [0.15, 0.35] (n=20 read 0.2375 — a distribution property, should be scale-stable)",
+    "P2": "the dense re-read replicates the sealed 0.7333 within one record (the index is stable across sessions)",
+    "P3": "every quantized arm >= 1.5x the 0.2373 majority floor (>= 0.36) — quantization loses information, not family structure",
+    "P4": "local == live on every arm (the E-Q30 law: the live index is a faithful executor of local arithmetic)"
+  },
+  "falsifier": "ANY of F1-F5 breached; a quantization threshold re-tuned after seeing results; scores computed on unfiltered or cross-arm queries; the dense replication outside one record with no fail-loud.",
+  "budget": "ZERO typesafe calls ($0 LLM). ~180 upserts + ~240 arm-filtered queries on the standing CF Vectorize index (free tier, the E-Q27/E-Q36 pattern). Round ceiling $0.10 carried; round LLM spend to date ~$0.025 (the E-Q40 census).",
+  "registered_before_run": true,
+  "amendments": []
+}
