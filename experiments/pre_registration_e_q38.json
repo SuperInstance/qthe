@@ -1,0 +1,33 @@
+{
+  "law": "REGISTRATION of E-Q38 — THE DRIFT MONITOR, r28 reading (ORCH-R28 lane T19-d): the standing instrument's FOURTH reading (r24 sealed baseline / r25 / r26 / r28 — the r27 reading deferred with receipt for temporal spacing, honored by this session boundary). 20 records re-embedded through the byte-identical 8-question map; per-axis movement vs all three sealed baselines; model_served as the version-flip readout. The band (<= 0.10) has held three readings; a fourth extends the time series across a session boundary — the longest spacing yet.",
+  "task_id": "ORCH-R28/T19-d",
+  "agent": "qthe orchestrator (Z.ai), erised fleet line",
+  "wave": "ORCH-R28",
+  "repo": "SuperInstance/qthe",
+  "repo_at_registration": "06ccf86",
+  "provenance_of_the_question": "The standing instrument (E-Q31 registration; readings r25/r26/r28). The r27 deferral receipt: same-session spacing defeats the instrument; this reading is the first to cross a full session boundary.",
+  "design_frozen": {
+    "calls": "One batched 12-question call per record — the byte-identical E-Q25 map (8 real + 4 decoys) over all 20 sealed records, jev-latest, 20 calls, AS-SAID rows, resume law. The 8-real-axis answers are the drift reading; the 4 decoy answers ride along as the in-call floor check (the r25 pattern).",
+    "measures": "M1 per (record, axis): movement vs the sealed r24, r25, r26 vectors (max, mean, within-0.10 count). M2 model_served (the version-flip readout). M3 the three-point trend: is r28-vs-r26 mean larger than r26-vs-r24 (a walk) or flat (sampling noise around a fixed point)? M4 the decoy floor (in-call, 80 readings)."
+  },
+  "floors": {
+    "F1": "the question map byte-identical to E-Q25/E-Q31 (sha asserted in code)",
+    "F2": "all 20 records, byte-identical texts (from the sealed corpus file)",
+    "F3": "one batched call per record, all 12 answers present, p in [0,1]",
+    "F4": "comparison against the sealed r24/r25/r26 vectors only (no re-derived baselines)"
+  },
+  "hypotheses": {
+    "H1_band": "all 20 records within 0.10 on all 8 axes vs the r26 baseline (the band holds across a session boundary)",
+    "H2_version": "model_served unchanged from jev-1.13.0 — OR the flip is receipted with the full per-axis delta table (either direction is the instrument doing its job)",
+    "C36": "the drift band holds at the fourth reading with the longest spacing — LIVES iff H1 AND H2"
+  },
+  "predictions": {
+    "P1": "max movement <= 0.08 (slightly tighter than r26's 0.08; no version flip)",
+    "P2": "r28-vs-r26 mean within 1.5x of r26-vs-r24 mean (flat trend — the fixed point holds)",
+    "P3": "decoy floor mean <= 0.03 (the canaries stay dead)"
+  },
+  "falsifier": "ANY of F1-F4 breached; the map sha mismatch; comparison against re-derived instead of sealed vectors.",
+  "budget": "20 typesafe calls. Part of the r28 round budget.",
+  "registered_before_run": true,
+  "amendments": []
+}

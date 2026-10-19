@@ -1,0 +1,38 @@
+{
+  "law": "REGISTRATION of E-Q37 — THE PHRASING-SENSITIVITY CURVE (ORCH-R28 lane T19-c): the E-Q34 AM1 receipt (one reworded anchor question moved noul mass 0.18 = 2x the version-drift band) systematized. How much mass does QUESTION phrasing move, as a function of edit TYPE? Four treatments x the frozen 8-record subset, question-side transforms only (the record texts byte-identical): T0 the anchor (byte-identical standard map), T1 synonym-swap (light lexical), T2 syntactic-reorder (same words, clause order flipped), T3 role-reframe (same semantics, auditor framing). The curve quantifies the replication tolerance any future question-map reuse must declare.",
+  "task_id": "ORCH-R28/T19-c",
+  "agent": "qthe orchestrator (Z.ai), erised fleet line",
+  "wave": "ORCH-R28",
+  "repo": "SuperInstance/qthe",
+  "repo_at_registration": "06ccf86",
+  "provenance_of_the_question": "The r27 close-out registration: 'the phrasing-sensitivity curve: how much mass does sentence shape move, systematically (the E-Q34 AM1 receipt at scale).' The phrasing law (byte-identity, not semantic identity, is the replication requirement) currently rests on n=1; this lane gives it a distribution.",
+  "design_frozen": {
+    "treatments": "All transforms applied to the 8 REAL question texts only (decoys ride along byte-identical in every call — in-call floor check). T0 ANCHOR: the byte-identical standard 8-question map (the E-Q22 map). T1 SYNONYM-SWAP: per question, exactly two content words replaced by near-synonyms ('substantively concern' -> 'meaningfully engage'; 'Judge whether' -> 'Assess whether'; 'about this concern' -> 'on this matter'). T2 SYNTACTIC-REORDER: the same sentences with clause order flipped ('Judge whether the record is about this concern. Record: does it substantively concern X?' -> 'Is the record about this concern? The record: does it substantively concern X. Judge.'). T3 ROLE-REFRAME: auditor framing ('You are auditing a sealed experiment record. Determine whether it substantively concerns X.'). The four treatment texts frozen here as templates, applied by explicit loop.",
+    "calls": "One batched 12-question call per record per treatment: 8 records x 4 treatments = 32 calls, jev-latest, AS-SAID rows, resume law. The T0 calls ARE the in-run anchor (same session, same everything).",
+    "measures": "M1 per (record, axis): |p_T - p_T0| for T in {T1,T2,T3} — the movement distribution per treatment (median, p90, max, % > 0.10 band). M2 SHAPE PRESERVATION: Spearman(8-axis profile under T, profile under T0) per record — does the RANK survive when the MASS does not? M3 AXIS SUSCEPTIBILITY: per axis, mean movement across records — is there a consistent per-axis phrasing susceptibility profile? M4 FAMILY EFFECT: does movement differ by record family? M5 the decoy floor under each treatment (the canaries must stay dead under paraphrase — injection resistance vs paraphrase are different properties)."
+  },
+  "floors": {
+    "F1": "the four treatment templates frozen here, byte-identical application by explicit loop; no post-hoc edits",
+    "F2": "record texts byte-identical across all treatments (question-side only)",
+    "F3": "one batched call per record per treatment, all 12 answers present, p in [0,1]",
+    "F4": "T0 must replicate the sealed E-Q22 vectors within the 0.10 band on >= 7 of 8 records (the anchor check; a failed anchor fails the lane)",
+    "F5": "movement measured against the IN-RUN T0 anchor (not the sealed vectors) for all treatment comparisons"
+  },
+  "hypotheses": {
+    "H1_movement": "at least one treatment moves > 0.10 on >= 25% of (record, axis) pairs — phrasing variance is a real component (the phrasing law at scale)",
+    "H2_shape": "median Spearman(profile_T, profile_T0) >= 0.8 across all treatments — the profile SHAPE is phrasing-robust even when MASS is not",
+    "H3_susceptibility": "per-axis susceptibility ranks correlate across treatments (Spearman >= 0.6 between at least two treatment pairs) — susceptibility is an AXIS property, not noise",
+    "C35": "phrasing variance is bounded and structured — mass moves beyond the band (H1) but the shape survives (H2); LIVES iff H1 AND H2"
+  },
+  "predictions": {
+    "P1": "T3 (role-reframe) moves the most mass (the persona shift reads as a different question); T1 (synonym) the least",
+    "P2": "movement concentrates on mid-mass axes (0.2-0.6) — extreme masses are pinned by the record text, ambiguous ones float with phrasing",
+    "P3": "shape Spearman >= 0.9 for T1, in [0.7, 0.9] for T2/T3",
+    "P4": "the decoy floor stays <= 0.05 under ALL treatments (dead axes stay dead — canary immunity to paraphrase)",
+    "P5": "P6_null (the refuted-hypothesis axis) is the most phrasing-susceptible real axis (its concept text is the most abstract)"
+  },
+  "falsifier": "ANY of F1-F5 breached; a treatment template edited after registration; movement computed against sealed vectors instead of the in-run anchor; the anchor band stretched.",
+  "budget": "32 typesafe calls. Part of the r28 round budget.",
+  "registered_before_run": true,
+  "amendments": []
+}

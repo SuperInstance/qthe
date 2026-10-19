@@ -1,0 +1,45 @@
+{
+  "law": "REGISTRATION of E-Q36 — THE AT-SCALE CORPUS (ORCH-R28 lane T19-b): the honest-caveat fix. Every strong result this program has — best-4 0.90, family algebra 5/5, the retrieval-coupled gate's 4-station minimum, the decoy floor 0.0135 — carries the same caveat: 20 records. This lane TRIPLES the corpus to 60 records (4 families x 15) drawn from the same sealed record, embeds them through the BYTE-IDENTICAL 12-question map (8 real + 4 decoys — the tripwire envelope rides at zero marginal cost), upserts arm=eq36N on the standing index, and re-runs the four headline instruments at scale: the retrieval battery + budget curve (all 255 axis subsets), the family algebra (10 fresh compositions, permutation null), the retrieval-coupled evolution (the E-Q32 gate protocol on the 60-record substrate), and the decoy floor (240 readings).",
+  "task_id": "ORCH-R28/T19-b",
+  "agent": "qthe orchestrator (Z.ai), erised fleet line",
+  "wave": "ORCH-R28",
+  "repo": "SuperInstance/qthe",
+  "repo_at_registration": "06ccf86",
+  "provenance_of_the_question": "The r27 close-out registration: 'retrieval-coupled evolution at scale — the 20-record ceiling is the honest caveat on every strong result this program has.' Corpus construction follows the E-Q21 law: texts composed from the sealed verdict record (CLAIM-VERDICTS.md, verdict files, round reports, MODEL-LEARNINGS); every number appears in the sealed record; family labels are the retrieval ground truth.",
+  "design_frozen": {
+    "corpus": "60 records, 4 families x 15 (N non-local channel; P local-rule physics; Q quantum construction & randomness provenance; A allocation & economics — the E-Q21 family definitions, byte-identical). IDs N6..N20, P6..P20, Q6..Q20, A6..A20 (1-5 reserved: the sealed 20 remain the standing substrate). Text length within [300, 600] chars matching the E-Q21 distribution. The 40 new texts are composed from the sealed record BEFORE any embed call, committed with this registration, sha-frozen.",
+    "question_map": "BYTE-IDENTICAL to the E-Q25 12-question map (8 real axes P1-P8 + the 4 frozen decoys D1-D4) — the anchor replicates by construction on the OLD 20 records only if re-embedded (NOT re-embedded here; E-Q38 owns the standing substrate). The map sha must equal the sealed E-Q25 sha.",
+    "calls": "One batched 12-question call per record, jev-latest, 60 calls, AS-SAID rows, resume law. Stability: 3 new records re-embedded once.",
+    "upsert": "arm=eq36N metadata on the standing qthe-jev-embed index; vector = the 12-dim profile; poll-until-visible law MANDATORY (the E-Q29 ops receipt); then a 5-record smoke query arm-filtered before any analysis.",
+    "retrieval_battery": "M1 majority baseline (each family 15/60 = 0.25); M2 full-8 retrieval; M3 the budget curve: ALL 255 non-empty axis subsets, retrieval accuracy per subset size k, Shapley per axis, best-k location — does best-4 survive 3x scale? M4 the knee-vs-Shapley relation at scale.",
+    "family_algebra": "M5: 10 FRESH compositions v(a)-v(b)+v(c) over NEW eq36N vectors (a,c from one family, b from another, target = a third), held out from subset analysis; permutation null seed 20261020 x1000 on family labels; LIVE arm-filtered queries; family-level top-1 hit rate.",
+    "evolution": "M6: the E-Q32 retrieval-coupled gate protocol (both Jev models' top-1 unvisited retrievals in the same unvisited family accepts) on a NEW r28 evosphere world initialized with the eq36N substrate reference; max 10 attempts; stations-to-coverage vs the 20-record result of 4; the station itinerary receipted.",
+    "decoy_floor": "M7: 60 records x 4 decoys = 240 floor readings; distribution vs the r25 0.0135 mean; the at-scale cleanliness certificate."
+  },
+  "floors": {
+    "F1": "the 60 corpus texts sha-frozen with this registration BEFORE the first embed call; family labels assigned at composition time from source material, never after seeing vectors",
+    "F2": "the question map byte-identical to E-Q25 (sha asserted in code; a mismatch aborts)",
+    "F3": "one batched call per record, all 12 answers present, p in [0,1]; AS-SAID rows with the resume law",
+    "F4": "upsert poll-until-visible + smoke query before analysis; all queries arm=eq36N filtered (no cross-arm contamination)",
+    "F5": "the 10 algebra compositions fixed by a pre-committed sampling rule (deterministic seed) BEFORE any query; the permutation null pre-committed seed x1000",
+    "F6": "the evolution run on a NEW world (r28); the sealed r26/r27 worlds untouched (append-only law)"
+  },
+  "hypotheses": {
+    "H1_knee": "the best-k optimum at 60 records is k in {4,5,6} — OR moves to k>=5 (more records reward more axes; either direction informative vs the 20-record k=4)",
+    "H2_algebra": "family-level analogy hits >= 7/10 vs null p95 (the 20-record result was 5/5)",
+    "H3_evolution": "stations-to-coverage <= 6 at 60 records (the gate stays efficient; richer families do not trap it)",
+    "H4_decoy_floor": "floor mean <= 0.03 at scale (the injection resistance scales)",
+    "C34": "the program's strong results replicate at 3x corpus scale — LIVES iff H2 AND H3 AND H4 (H1 either-way is the receipt)"
+  },
+  "predictions": {
+    "P1": "best-k moves to 5 (the P5_repair or P6_null axis earns its seat with more records to separate)",
+    "P2": "family analogy 8-9/10 (one or two compositions land on boundary records)",
+    "P3": "evolution takes 5 stations (one more than the 20-record minimum — bigger families mean more candidate traps)",
+    "P4": "decoy floor mean in [0.01, 0.03] (scales sub-linearly with corpus size)",
+    "P5": "full-8 retrieval at scale in [0.75, 0.90] (roughly the 20-record 0.80, wider families)"
+  },
+  "falsifier": "ANY of F1-F6 breached; a corpus text edited after registration; the question map sha mismatch; analysis on unfiltered queries; the sealed worlds touched.",
+  "budget": "63 typesafe calls (60 + 3 stability) + ~6-10 evolution embeds + ~4 DeepInfra generations. Part of the r28 round budget.",
+  "registered_before_run": true,
+  "amendments": []
+}
