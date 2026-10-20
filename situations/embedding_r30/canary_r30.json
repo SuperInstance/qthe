@@ -1,0 +1,14 @@
+{
+  "round": "r30",
+  "task": "flip-watch-canary",
+  "record_id": "N1",
+  "axis": "P1_nonlocal",
+  "model_served": "jev-1.13.0",
+  "p1_noul": 0.98,
+  "elapsed_ms": 208,
+  "sealed_r28_close": 0.96,
+  "band": 0.1,
+  "within_band": true,
+  "flip_detected": false,
+  "sealed_at": "2026-10-19T23:05:26Z"
+}
