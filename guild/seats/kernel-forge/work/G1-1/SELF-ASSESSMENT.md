@@ -1,0 +1,8 @@
+# SELF-ASSESSMENT — kernel-forge G1-1
+
+**Confident:** codec (spec-complete; 256/256 round-trip verified); split-channel vectorPass (closed algebra; only x_k's type was open); tick core — Moore-8 torus, snapshot discipline, clamps (item 5 read literally, bounds provable).
+**Least confident (test first):** A6 table carry-over (shapes every multi-tick trace); A4 σ (rational reconstruction; true arithmetic may differ); A17 no-feedback — if qthe-verify's ON/OFF arms diverge in *grid* state, my model breaks at exactly that seam; A3 collision; A10 channel scope.
+**Verified:** required compile clean (`cc` = gcc 14.2.0, `-std=c99 -Wall -Wextra`); also clean under `-Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wcast-qual -Wstrict-prototypes -Wmissing-prototypes`; a temporary smoke harness (deleted; deliverables kept exact) passed under ASan+UBSan — codec exhaustion, signed vectorPass, hand-computed 2-tick twin-resonance trace, σ∈{1, 1/2, log₂3}, clamps at 0/63, self-guards (1×1 and 3×3 fixed points), degenerate 2×2 torus, byte-identical determinism (memcmp + FNV hash, incl. seed-to-hash rebuild).
+Honesty note: the harness first caught a wrong expectation *in my own test* (−8·0 is 0, not −504) — the kernel was right; that is why assertions exist.
+**Ask the spec author:** (1) define σ — type and rounding; (2) table carry-over vs per-tick rebuild; (3) collision rule for simultaneous same-slot writes; (4) do Abstain cells receive neighborhood pressure; (5) can τ ever transition; (6) does the imaginary channel feed back into d movement?
+**Gaps:** item 7 A2UI and LAYER 2 out of scope by instruction; the trace-hash algorithm (A15) is my invention, not spec-fixed — stone-v1 receipts would need the reference algorithm.

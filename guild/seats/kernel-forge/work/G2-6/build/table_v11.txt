@@ -1,0 +1,32 @@
+=====================================================================
+ corpus g2-corpus-v1 (kernel b6953269d15df0fd1942d68d71fd755c16b7bd26)
+ replay against: qthe_l1_v1_1.c (v1.1: R-live + R-feedback + R-sigma)
+=====================================================================
+ case                           kind        plane        events                     verdict
+ -----------------------------------------------------------------
+ l0-codec-all256                codec       n/a          n/a                        PASS
+ l0-vectorpass-1                vectorpass  n/a          n/a                        PASS
+ l0-vectorpass-2                vectorpass  n/a          n/a                        PASS
+ l0-vectorpass-3                vectorpass  n/a          n/a                        PASS
+ sub-twins-desert-sigma-half    substrate   OK           OK                         PASS
+ sub-twins-desert-default       substrate   OK           OK                         PASS
+ sub-twins-noise-default        substrate   OK           OK                         PASS
+ sub-twins-noise-off            substrate   OK           OK                         PASS
+ sub-twins-noise-sigma-025      substrate   OK           OK                         PASS
+ sub-twins-noise-sigma-2        substrate   OK           OK                         PASS
+ sub-twins-noise-sigma-4        substrate   OK           OK                         PASS
+ sub-adjacent-lww-32x32         substrate   OK           OK                         PASS
+ sub-noise-8x8-t1               substrate   OK           OK                         PASS
+ sub-noise-8x8-t8               substrate   OK           OK                         PASS
+ sub-noise-13x7-t40             substrate   OK           OK                         PASS
+ sub-noise-32x32-t40            substrate   OK           OK                         PASS
+ sub-mixed-64x64-t50            substrate   OK           OK                         PASS
+ sub-checkers-16x16             substrate   OK           OK                         PASS
+ sub-ring-erode-16x16           substrate   OK           OK                         PASS
+ sub-all-ground-8x8             substrate   OK           OK                         PASS
+ sub-degenerate-2x2             substrate   OK           OK                         PASS
+ sub-degenerate-1x4             substrate   OK           OK                         PASS
+ sub-flood-abstain-16x16        substrate   OK           OK                         PASS
+ sub-quarter-abstain-32x32      substrate   OK           OK                         PASS
+ -----------------------------------------------------------------
+ CONFORMANCE: 24/24 PASS  (l0: 4/4, substrate: 20/20)

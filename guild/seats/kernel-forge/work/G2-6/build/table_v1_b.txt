@@ -1,0 +1,104 @@
+=====================================================================
+ corpus g2-corpus-v1 (kernel b6953269d15df0fd1942d68d71fd755c16b7bd26)
+ replay against: qthe_l1.c (G1-1 v1, UNCHANGED)
+=====================================================================
+ case                           kind        plane        events                     verdict
+ -----------------------------------------------------------------
+ l0-codec-all256                codec       n/a          n/a                        PASS
+ l0-vectorpass-1                vectorpass  n/a          n/a                        PASS
+ l0-vectorpass-2                vectorpass  n/a          n/a                        PASS
+ l0-vectorpass-3                vectorpass  n/a          n/a                        PASS
+ sub-twins-desert-sigma-half    substrate   DIFF         tick 1: mine 0 vs corpus 1 FAIL (BOTH)
+ sub-twins-desert-default       substrate   DIFF         tick 1: mine 0 vs corpus 1 FAIL (BOTH)
+ sub-twins-noise-default        substrate   DIFF         tick 1: mine 0 vs corpus 181 FAIL (BOTH)
+ sub-twins-noise-off            substrate   OK           OK                         PASS
+ sub-twins-noise-sigma-025      substrate   DIFF         tick 1: mine 0 vs corpus 181 FAIL (BOTH)
+ sub-twins-noise-sigma-2        substrate   DIFF         tick 1: mine 0 vs corpus 181 FAIL (BOTH)
+ sub-twins-noise-sigma-4        substrate   DIFF         tick 1: mine 0 vs corpus 181 FAIL (BOTH)
+ sub-adjacent-lww-32x32         substrate   DIFF         tick 1: mine 0 vs corpus 2 FAIL (BOTH)
+ sub-noise-8x8-t1               substrate   OK           tick 1: mine 0 vs corpus 1 FAIL (EVENTS-ONLY)
+ sub-noise-8x8-t8               substrate   DIFF         tick 1: mine 0 vs corpus 1 FAIL (BOTH)
+ sub-noise-13x7-t40             substrate   DIFF         tick 1: mine 0 vs corpus 4 FAIL (BOTH)
+ sub-noise-32x32-t40            substrate   DIFF         tick 1: mine 0 vs corpus 204 FAIL (BOTH)
+ sub-mixed-64x64-t50            substrate   DIFF         tick 1: mine 0 vs corpus 949 FAIL (BOTH)
+ sub-checkers-16x16             substrate   OK           OK                         PASS
+ sub-ring-erode-16x16           substrate   OK           OK                         PASS
+ sub-all-ground-8x8             substrate   OK           OK                         PASS
+ sub-degenerate-2x2             substrate   OK           OK                         PASS
+ sub-degenerate-1x4             substrate   OK           OK                         PASS
+ sub-flood-abstain-16x16        substrate   DIFF         tick 1: mine 0 vs corpus 192 FAIL (BOTH)
+ sub-quarter-abstain-32x32      substrate   DIFF         tick 1: mine 0 vs corpus 219 FAIL (BOTH)
+ -----------------------------------------------------------------
+ CONFORMANCE: 10/24 PASS  (l0: 4/4, substrate: 6/20)
+
+ divergence detail (substrate FAILs only):
+  sub-twins-desert-sigma-half:
+    evt mine    [0,1,1,1,1,1,...]
+    evt corpus  [1,1,2,1,1,2,...]
+    first event divergence: tick 1: mine 0 vs corpus 1
+    final plane: DIFF (2 cells differ; first at idx 132: mine cc corpus e6)
+  sub-twins-desert-default:
+    evt mine    [0,1,1,1,1,1,...]
+    evt corpus  [1,1,2,1,1,2,...]
+    first event divergence: tick 1: mine 0 vs corpus 1
+    final plane: DIFF (2 cells differ; first at idx 132: mine cc corpus e6)
+  sub-twins-noise-default:
+    evt mine    [0,234,242,240,241,241,...]
+    evt corpus  [181,241,242,242,243,243,...]
+    first event divergence: tick 1: mine 0 vs corpus 181
+    final plane: DIFF (167 cells differ; first at idx 1: mine c2 corpus fe)
+  sub-twins-noise-sigma-025:
+    evt mine    [0,234,242,240,241,241,...]
+    evt corpus  [181,241,242,243,243,243,...]
+    first event divergence: tick 1: mine 0 vs corpus 181
+    final plane: DIFF (80 cells differ; first at idx 4: mine ef corpus fa)
+  sub-twins-noise-sigma-2:
+    evt mine    [0,234,242,240,241,241,...]
+    evt corpus  [181,241,242,242,242,242,...]
+    first event divergence: tick 1: mine 0 vs corpus 181
+    final plane: DIFF (168 cells differ; first at idx 1: mine c2 corpus fe)
+  sub-twins-noise-sigma-4:
+    evt mine    [0,234,242,240,241,241,...]
+    evt corpus  [181,241,243,243,243,243,...]
+    first event divergence: tick 1: mine 0 vs corpus 181
+    final plane: DIFF (168 cells differ; first at idx 1: mine c2 corpus fe)
+  sub-adjacent-lww-32x32:
+    evt mine    [0,2,2,2,2,2,...]
+    evt corpus  [2,2,2,3,2,2,...]
+    first event divergence: tick 1: mine 0 vs corpus 2
+    final plane: DIFF (3 cells differ; first at idx 165: mine d4 corpus e3)
+  sub-noise-8x8-t1:
+    evt mine    [0]
+    evt corpus  [1]
+    first event divergence: tick 1: mine 0 vs corpus 1
+    final plane: OK (0 cells differ)
+  sub-noise-8x8-t8:
+    evt mine    [0,4,5,6,9,9,...]
+    evt corpus  [1,5,6,8,9,8,...]
+    first event divergence: tick 1: mine 0 vs corpus 1
+    final plane: DIFF (7 cells differ; first at idx 15: mine c4 corpus c6)
+  sub-noise-13x7-t40:
+    evt mine    [0,9,11,15,14,14,...]
+    evt corpus  [4,10,11,14,14,16,...]
+    first event divergence: tick 1: mine 0 vs corpus 4
+    final plane: DIFF (13 cells differ; first at idx 4: mine dd corpus e1)
+  sub-noise-32x32-t40:
+    evt mine    [0,267,266,266,266,267,...]
+    evt corpus  [204,268,268,267,267,267,...]
+    first event divergence: tick 1: mine 0 vs corpus 204
+    final plane: DIFF (180 cells differ; first at idx 2: mine c0 corpus fa)
+  sub-mixed-64x64-t50:
+    evt mine    [0,1012,1011,1011,1011,1010,...]
+    evt corpus  [949,1013,1013,1013,1013,1013,...]
+    first event divergence: tick 1: mine 0 vs corpus 949
+    final plane: DIFF (682 cells differ; first at idx 4: mine c0 corpus e6)
+  sub-flood-abstain-16x16:
+    evt mine    [0,192,192,192,192,192,...]
+    evt corpus  [192,252,256,256,256,256,...]
+    first event divergence: tick 1: mine 0 vs corpus 192
+    final plane: DIFF (251 cells differ; first at idx 0: mine c0 corpus c9)
+  sub-quarter-abstain-32x32:
+    evt mine    [0,275,279,279,277,280,...]
+    evt corpus  [219,281,282,282,282,281,...]
+    first event divergence: tick 1: mine 0 vs corpus 219
+    final plane: DIFF (150 cells differ; first at idx 3: mine d5 corpus ff)

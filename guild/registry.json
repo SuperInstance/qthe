@@ -1,0 +1,81 @@
+{
+  "program": "qthe-guild",
+  "founded": "2026-11-02",
+  "round": "G2",
+  "round_status": "complete",
+  "law_version": 1,
+  "shipping": {
+    "branch": "guild/toolkit-v0",
+    "base_commit": "b6953269d15df0fd1942d68d71fd755c16b7bd26",
+    "policy": "verified work only; main never pushed directly; fail-closed secret scan before every push"
+  },
+  "corpus": {
+    "id": "g2-corpus-v1",
+    "cases": 24,
+    "minted_from": "qthe.mjs @ b6953269d15df0fd1942d68d71fd755c16b7bd26",
+    "self_determinism": "PASS",
+    "known_limitation": "term-blind (falsification-bench G2-2): desert sigma cases distinguish signs only; corpus v2 must pin twin-term tokens",
+    "lineage": "operator-minted by the Guild Orchestrator; pins ambiguity rulings, not implementation correctness (qthe-verify remains the method-independent check)"
+  },
+  "seats": {
+    "kernel-forge": {
+      "stage": "coursework",
+      "tasks": {
+        "G1-1": { "title": "spec-only C99 re-derivation", "status": "graded", "grade": "A" },
+        "G2-6": { "title": "corpus battle test", "status": "graded", "grade": "A+", "verified": "orchestrator re-run: 10/24 blind -> 24/24 after N1/N2/N3; ASan/UBSan clean" }
+      },
+      "next": "G3 qualifying review; corpus v2 term-pinned cases"
+    },
+    "library-craft": {
+      "stage": "coursework",
+      "tasks": {
+        "G1-2": { "title": "@qthe/core v0 API + op-log spec + critiques", "status": "graded", "grade": "A" },
+        "G2-7": { "title": "API v0.1 + CODE-COMMENT-STYLE", "status": "graded", "grade": "A", "verified": "tsc --strict exit 0; TickOptions deleted (sigma-leak inexpressible)" }
+      },
+      "next": "G3 qualifying review; engine implementation (practice-gated)"
+    },
+    "standards-warden": {
+      "stage": "coursework",
+      "tasks": {
+        "G2-1": { "title": "SPEC v1.0 fold", "status": "graded", "grade": "A", "verified": "N1/N2 match kernel R2/R3; 24/24 corpus reproduced by seat's own model + counterfactual witnesses" }
+      },
+      "next": "G3 qualifying review; term-bit normative sentence when corpus v2 lands"
+    },
+    "falsification-bench": {
+      "stage": "coursework",
+      "tasks": {
+        "G2-2": { "title": "fuzzer + multi-writer corpus + edge designs", "status": "graded", "grade": "A", "verified": "term-blindness finding confirmed; P1 gate G1-G10 adopted" }
+      },
+      "next": "G3 qualifying review; corpus v2 format spec (term tokens)"
+    },
+    "stranger-experience": {
+      "stage": "coursework",
+      "tasks": {
+        "G1-3": { "title": "pitches + quickstart + jargon audit", "status": "graded", "grade": "A" },
+        "G2-4": { "title": "production docs: architecture + README v0 + look-and-feel", "status": "graded", "grade": "A (after RC2-01 amendment)", "verified": "snippets executed live; determinism receipts itemized in 5 places" }
+      },
+      "next": "G3 qualifying review; docs/production implementation (guides, llms.txt, manifest as real files)"
+    },
+    "red-chamber": {
+      "stage": "coursework",
+      "tasks": {
+        "G1-4": { "title": "attack on the production plan", "status": "graded", "grade": "A+" },
+        "G2-5": { "title": "attack: amended plan + docs orientation + the Guild", "status": "graded", "grade": "A+", "verified": "RC2-01 verified against primary sources and applied; 17 findings; Guild honesty grade B+ accepted" }
+      },
+      "next": "G3 review-board duty; verify AM-G2-1..5 landed"
+    },
+    "fleet-wrangler": {
+      "stage": "coursework",
+      "tasks": {
+        "G1-5": { "title": "cache playbook + experiment matrix + key law", "status": "graded", "grade": "A" }
+      },
+      "next": "Phase A live validation (gated on principal-supplied transient keys)"
+    },
+    "house-manager": {
+      "stage": "enrolled",
+      "activation": "G3 FIRST — inputs ready: FINDINGS-G2 + ADJUDICATIONS-G2 AM-G2-4",
+      "first_task": "G3-0 draft the qualifying-review rubric, inter-rater protocol, hash-chained journal format, scripted registry"
+    }
+  },
+  "amendments_binding": ["AM-G2-1 receipt itemization", "AM-G2-2 loud-failure law", "AM-G2-3 corpus honesty", "AM-G2-4 verifier verified at G3", "AM-G2-5 docs orientation guardrails"]
+}

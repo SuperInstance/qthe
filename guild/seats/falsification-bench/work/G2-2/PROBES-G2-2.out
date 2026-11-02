@@ -1,0 +1,12 @@
+P1 true 0.6897749109193683
+P2 [5] [5] [5,5]
+P3-float {"cells":"0000000000cd00000000cd0000000000","evts":[1,1,2,1,1,2,1,1]}
+P3-trunc {"cells":"0000000000c800000000c80000000000","evts":[1,2,2,2,2,2,2,2]}
+P8-sigma-half {"cells":"0000000000c400000081c60000000000","evts":[1,0,1,0],"t1":[1]}
+P8-sigma-two {"cells":"0000000000c400000081c80000000000","evts":[1,0,0,1],"t1":[4]}
+P8-default {"cells":"0000000000c400000081c80000000000","evts":[1,0,0,1],"t1":[3.169925001442312]}
+P9 29 (kernel: acc=-20+14=-6 -> 29; dedup build: +2 -> 31)
+P5-1x4 9 (self x2, acc=-20, one step down)
+P5-1x1 9 (self x8, acc=-80, one step down)
+P5-2x2 1 (no self-sample; acc=0; unchanged)
+P6-1x1-Abstain [] occupied= 1
