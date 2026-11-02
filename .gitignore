@@ -3,3 +3,11 @@ node_modules/
 *.log
 
 .wrangler/
+
+# compiler intermediates never ride along (the find -o precedence lesson,
+# guild G2-6): replay binaries are rebuilt on demand by run.sh from
+# corpus_replay.c + qthe_l1_v1_1.c; text receipts stay tracked.
+*.o
+*.asan
+*.asan.*
+tests/guild/conformance/build/
