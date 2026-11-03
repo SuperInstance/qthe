@@ -303,3 +303,33 @@ hard expectations hold. The defect class this incident banks: **a battery
 receipt taken mid-round is not a close-out receipt** — the close-out battery
 list now re-runs the guard explicitly (it had been dropped from the r29
 close list, which is how the red CI went unnoticed for two commits).
+
+## r31 — the R30 canary's uppercase map, and CI red since b695326 (guild/library-craft, 2026-11-03)
+
+Pushing branch `guild/toolkit-v0` re-ran CI on a fresh runner and found the
+guard RED — and it had been red on `main` since b695326 (the ORCH-R30
+flip-watch canary commit, 2026-10-20; the commit before it, 48d0bc0, was
+green). The r30 close-out battery (the one the r30 incident added to prevent
+exactly this) did not catch it because the canary lane landed after the
+battery ran — the same stale-receipt defect class as r30, one lane later.
+
+1. `situations/embedding_r30/canary_flip_watch.py` — the flip-watch canary
+   aggregates 12 axes+decoys into ONE call (the flip-watch budget law: one
+   call, the sealed E-Q25 qmap, exit 2 the moment model_served flips), but
+   its map was named `QUESTIONS` (uppercase) — outside `MAP_ASSIGN_RE`'s
+   `(questions|q|qs)` name set → UNVERIFIABLE → guard FAIL.
+   FIXED by the r30 precedent's own remedy (r30 fix #2: rename the site's
+   dict, do not widen the guard): `QUESTIONS` -> `questions`, a
+   behavior-byte-identical local rename, tagged in-code with a dated
+   decision marker, `python3 -m py_compile` clean after the edit.
+   An exemption tag was REJECTED on receipt grounds: `QUILT:BATCH-EXEMPT`
+   certifies "single question by design" (see §3) — this site is a
+   12-question battery in one call; tagging it exempt would have written a
+   false classification into the receipt record to make a gate green.
+
+Post-fix receipt: local run 2026-11-03 — GUARD PASS, 28 call-site files, all
+hard expectations hold, exit 0. The lesson this incident banks: **CI red on
+a branch is inherited from main until proven otherwise** — check the parent
+commit's CI before blaming your own diff (the failure predated this branch's
+first commit by 14 days).
+
