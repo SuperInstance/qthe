@@ -8,3 +8,13 @@ Rebuild: `node scripts/build_qthe_core.mjs` from the repo root.
 - `c/qthe_core.h` = `crossimpl/c/qthe_core.h` (C99 port header (byte-exact, both planes)) :: sha256 `9d5eb045c3e03eaafbf4d0a3adb7e02c74c1591886b2ed0b3432b2a5a43e6001`
 - `c/qthe_core.c` = `crossimpl/c/qthe_core.c` (C99 port implementation) :: sha256 `ccad0055e1e92b75ff8c8b0b76499888e98a76eddca2dbff3a5eca7219f23704`
 - `py/qthe_layer0.py` = `crossimpl/py/qthe_layer0.py` (python LAYER 0 re-derivation (strict)) :: sha256 `bd5c67786b33613562695a1ab29175eed740cfebd444d07a36013f512648c6de`
+
+# src/ — the v0 API (@qthe/core), 2026-11-03
+# NOT a copy: src/ is authored here (guild/library-craft line, G1-2 + G2-7),
+# implementing the adjudicated contract docs/production/api/api-surface-v0.1.d.ts
+# over the normative op/replay/hash spec guild/seats/library-craft/work/G1-2/OLOG-SPEC.md.
+# src/compat.mjs re-exports kernel/qthe.mjs 1:1 (identity, not a copy — cannot
+# drift by construction). Physics equality with the kernel is gate C-DIFF
+# (tests/core/run_core_tests.mjs, 25 random substrates byte-identical + OFF
+# arm + sigma arm + whWrite schedule); the §7.3 canary vector reproduces the
+# sealed hash qth1:69d81dfc… on this engine. Gates: 91 checks / 12, CI-wired.

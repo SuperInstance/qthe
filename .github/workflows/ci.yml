@@ -38,6 +38,8 @@ jobs:
         run: node scripts/negctl_qthe.mjs
       - name: LAYER 0 kernel gates G0-G6 (gate-set pinned)
         run: node tests/run_tests.mjs
+      - name: '@qthe/core v0 API gates (canary + replay + engine-vs-kernel differential)'
+        run: node tests/core/run_core_tests.mjs
       - name: chain-of-chains auditor (33/33 incl. 14 tip agreements)
         run: node scripts/verify_all_chains.mjs
       - name: probe gate PG1-PG6 (23-claim verdict recompute)

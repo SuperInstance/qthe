@@ -40,21 +40,28 @@ DECOYS = [
     ("D3_near_bio", "cell division cycles in biological tissue — mitosis, differentiation"),
     ("D4_near_price", "the market price of consumer compute hardware — GPU MSRPs, RAM spot prices"),
 ]
-QUESTIONS = {}
+questions = {}
 for ax, concept in AXES:
-    QUESTIONS[ax] = {"type": "noul",
+    questions[ax] = {"type": "noul",
         "instructions": f"Record: does it substantively concern {concept}? Judge whether the record is about this concern.",
         "criteria": {"true": "The record is substantively about this concern", "false": "The record is not substantively about this concern"}}
 for dx, concept in DECOYS:
-    QUESTIONS[dx] = {"type": "noul",
+    questions[dx] = {"type": "noul",
         "instructions": f"Record: does it substantively concern {concept}? Judge whether the record is about this concern.",
         "criteria": {"true": "The record is substantively about this concern", "false": "The record is not substantively about this concern"}}
+
+# [2026-11-03][library-craft] decision: map renamed QUESTIONS -> questions so
+# the T5-a batched-call guard verifies this site as BATCHED (it aggregates
+# 12 axes+decoys into ONE call — the flip-watch budget law); an exemption tag
+# would have misclassified a genuinely-batched site as single-question-by-
+# design; revisit if the guard ever learns case-insensitive map names (then
+# this comment is stale but harmless). Receipt: batched_audit/audit.md §r31.
 
 corpus = json.loads((HERE.parent / "embedding_r23" / "corpus.json").read_text())
 rec = [r for r in corpus["records"] if r["id"] == "N1"][0]
 state = "RECORD " + rec["id"] + " (from the qthe kernel's sealed experiment record):\n\n" + rec["text"]
 
-payload = {"state": state, "model": MODEL, "questions": QUESTIONS}
+payload = {"state": state, "model": MODEL, "questions": questions}
 req = urllib.request.Request(ENDPOINT, data=json.dumps(payload).encode(), headers={
     "Authorization": f"Bearer {key}", "Content-Type": "application/json"})
 t0 = time.time()

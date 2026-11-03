@@ -3,3 +3,36 @@ node_modules/
 *.log
 
 .wrangler/
+
+# --- secrets never ride along (production toolkit rule) ---
+# Keys live OUTSIDE the repo (e.g. ~/secrets/ or a password manager) and
+# enter only via environment variables or CI secret stores. If a file
+# matching any of these patterns lands in the tree, git will refuse to
+# track it — and `git ls-files | grep -E ...` in CI enforces the same.
+.env.*
+*.env
+secrets/
+**/secrets/
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.token
+*_token
+*.kube
+id_rsa*
+id_ed25519*
+*.pbkdf2
+credentials*.json
+service-account*.json
+.gnupg/
+.ssh/
+
+# compiler intermediates never ride along (the find -o precedence lesson,
+# guild G2-6): replay binaries are rebuilt on demand by run.sh from
+# corpus_replay.c + qthe_l1_v1_1.c; text receipts stay tracked.
+*.o
+*.asan
+*.asan.*
+tests/guild/conformance/build/
